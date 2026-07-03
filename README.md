@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AISecScanner — Open Source AI Infrastructure Security Scanner
 
 A free, open-source security scanner that integrates directly with your GitHub repositories to detect AI-specific vulnerabilities, misconfigurations, insecure model deployments, prompt injection risks, secret exposure, and agentic AI threats.
@@ -194,3 +195,7 @@ ai-sec-scan --local examples/vulnerable_repo --format html --output example_repo
 ## License
 
 MIT — Completely free and open source.
+=======
+# theron
+a pretty fun project, scans literally everything in a repo
+>>>>>>> 2ff3e5f6baec882e831dc68088b339a6e7ab85a1
