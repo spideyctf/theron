@@ -1,0 +1,43 @@
+rule_set:
+  name: ai_taint
+  version: "1.0.0"
+  category: sast
+  module: sast
+  description: "AI-specific taint analysis — user input to LLM prompt and LLM output to dangerous sinks."
+
+rules:
+  - id: AI-TAINT-001
+    title: "User Input to LLM Prompt Without Sanitization"
+    severity: HIGH
+    pattern: '(system|prompt|messages|instructions)\s*[=:].*(?:request\.|input\(|req\.|user_input|params\.|body\.|query\.)'
+    cwe: CWE-1039
+    confidence: medium
+    description: "User-controlled input flows directly into LLM prompt construction without sanitization — prompt injection risk."
+    recommendation: "Sanitize and validate all user input before including it in LLM prompts. Use structured prompts with clear delimiters. Implement output validation."
+
+  - id: AI-TAINT-002
+    title: "LLM Output to Code Execution"
+    severity: CRITICAL
+    pattern: '(eval|exec|subprocess|os\.system|child_process)\s*\(.*(?:llm|model|response|completion|output|result|message|content)'
+    cwe: CWE-94
+    confidence: medium
+    description: "LLM/model output flows into code execution — prompt injection could lead to arbitrary code execution."
+    recommendation: "Never execute LLM output as code. If code generation is required, use a sandboxed environment with strict resource limits."
+
+  - id: AI-TAINT-003
+    title: "LLM Output to SQL Query"
+    severity: CRITICAL
+    pattern: '(execute|cursor\.execute|query)\s*\(.*(?:llm|model|response|completion|output|result|message|content|agent)'
+    cwe: CWE-89
+    confidence: medium
+    description: "LLM/model output flows into SQL query — prompt injection could lead to SQL injection."
+    recommendation: "Never use LLM output directly in SQL queries. Use parameterized queries. Validate model outputs before database operations."
+
+  - id: AI-TAINT-004
+    title: "LLM Output to File Operation"
+    severity: HIGH
+    pattern: '(open|write|Path|fs\.)\s*\(.*(?:llm|model|response|completion|output|result|message|content|agent)'
+    cwe: CWE-22
+    confidence: medium
+    description: "LLM/model output used in file operations — prompt injection could lead to arbitrary file write/read."
+    recommendation: "Validate and constrain file paths from LLM output. Restrict to an allowlist of directories."

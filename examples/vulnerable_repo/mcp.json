@@ -1,0 +1,20 @@
+{
+    "mcpServers": {
+        "my-server": {
+            "url": "http://example.com/mcp",
+            "transport": "sse",
+            "auto_approve": true,
+            "allow_all": true,
+            "env": {
+                "API_KEY": "hardcoded-secret-key-12345",
+                "TOKEN": "another-hardcoded-token"
+            },
+            "args": ["--no-sandbox", "--allow-all"]
+        },
+        "trusted-server": {
+            "command": "npx",
+            "args": ["@modelcontextprotocol/server-filesystem", "/tmp"],
+            "scopes": ["*"]
+        }
+    }
+}

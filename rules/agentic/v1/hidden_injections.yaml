@@ -1,0 +1,86 @@
+rule_set:
+  name: hidden_injections
+  version: "1.0.0"
+  category: skill_injection
+  module: agentic
+  description: "Detects hidden instructions in comments, markup, and zero-width characters that could manipulate AI agents."
+
+rules:
+  - id: AG-HI-001
+    title: "HTML Comment with Hidden Injection"
+    severity: HIGH
+    pattern: '<!--.*(?:ignore|disregard|forget|override|bypass|skip).*(?:instruction|rule|safety|security|check|validation).*-->'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "HTML comment contains hidden injection instruction."
+    recommendation: "Remove the hidden instruction. Scan all files for hidden markup that could manipulate AI agents."
+
+  - id: AG-HI-002
+    title: "Bracketed Hidden Injection"
+    severity: HIGH
+    pattern: '\[.*(?:ignore|disregard|forget|override|bypass|skip).*(?:instruction|rule|safety|security|check|validation).*\]'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Bracketed hidden injection instruction."
+    recommendation: "Remove the hidden instruction. Review all bracketed text for injection attempts."
+
+  - id: AG-HI-003
+    title: "Python Comment with Hidden Injection"
+    severity: HIGH
+    pattern: '^\s*#\s*(?:ignore|disregard|forget|override|bypass|skip).*(?:instruction|rule|safety|security|check|validation)'
+    flags: IGNORECASE | MULTILINE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Python comment with hidden injection instruction."
+    recommendation: "Remove the hidden instruction. Comments should not contain agent directives."
+
+  - id: AG-HI-004
+    title: "JS Comment with Hidden Injection"
+    severity: HIGH
+    pattern: '^\s*//\s*(?:ignore|disregard|forget|override|bypass|skip).*(?:instruction|rule|safety|security|check|validation)'
+    flags: IGNORECASE | MULTILINE
+    cwe: CWE-1039
+    confidence: medium
+    description: "JavaScript comment with hidden injection instruction."
+    recommendation: "Remove the hidden instruction. Comments should not contain agent directives."
+
+  - id: AG-HI-005
+    title: "Escaped Newline with Hidden Injection"
+    severity: HIGH
+    pattern: '(?:\\n|\\r|\\t).*(?:ignore|disregard|forget|override|bypass).*(?:instruction|rule|safety|security)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Escaped newline with hidden injection instruction."
+    recommendation: "Remove the hidden instruction. Sanitize all escaped characters in files processed by AI agents."
+
+  - id: AG-HI-006
+    title: "Fake System Tag with Hidden Injection"
+    severity: HIGH
+    pattern: '<system>.*(?:ignore|disregard|forget|override|bypass).*(?:instruction|rule|safety|security).*</system>'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Fake system tag with hidden injection."
+    recommendation: "Remove the fake system tag. Strip all XML-like tags from user input before processing."
+
+  - id: AG-HI-007
+    title: "Zero-Width Character Detected"
+    severity: HIGH
+    pattern: '\u200b|\u200c|\u200d|\ufeff'
+    cwe: CWE-1039
+    confidence: medium
+    description: "Zero-width character detected — possible hidden instruction embedding."
+    recommendation: "Remove zero-width characters. Scan all files for invisible characters that could hide instructions."
+
+  - id: AG-HI-008
+    title: "Fake Priority Marker with Injection"
+    severity: HIGH
+    pattern: '^(?:IMPORTANT|NOTE|WARNING|CRITICAL)\s*:\s*(?:ignore|disregard|forget|override|bypass|do not|don''t).*(?:instruction|rule|safety|security|check|validation|filter|guardrail)'
+    flags: IGNORECASE | MULTILINE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Fake priority marker with injection instruction."
+    recommendation: "Remove the fake priority marker. Real system instructions should not use ad-hoc priority markers."

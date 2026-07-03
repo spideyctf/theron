@@ -1,0 +1,55 @@
+rule_set:
+  name: data_exfiltration
+  version: "1.0.0"
+  category: data_exfiltration
+  module: ai
+  description: "Detects potential data exfiltration of AI conversation data, prompts, or secrets to external endpoints."
+
+rules:
+  - id: AI-DE-001
+    title: "Data Exfiltration via requests to External Endpoint"
+    severity: HIGH
+    pattern: 'requests\.(post|get)\s*\(\s*[''"]https?://(?!localhost|127\.0\.0\.1|api\.openai\.com|api\.anthropic\.com|generativelanguage\.googleapis\.com)'
+    cwe: CWE-200
+    confidence: medium
+    description: "Potential data exfiltration — sending data to an external endpoint. Verify the destination is trusted."
+    recommendation: "Verify the destination URL is trusted. Implement allowlists for outbound connections. Never send raw user prompts or secrets to untrusted endpoints."
+
+  - id: AI-DE-002
+    title: "Data Exfiltration via httpx to External Endpoint"
+    severity: HIGH
+    pattern: 'httpx\.(post|get)\s*\(\s*[''"]https?://(?!localhost|127\.0\.0\.1)'
+    cwe: CWE-200
+    confidence: medium
+    description: "Potential data exfiltration via httpx — sending AI data to an external endpoint."
+    recommendation: "Verify the destination URL is trusted. Implement allowlists for outbound connections."
+
+  - id: AI-DE-003
+    title: "Webhook Exfiltration of AI Data"
+    severity: HIGH
+    pattern: 'webhook.*prompt|webhook.*user_input|webhook.*message|webhook.*conversation'
+    flags: IGNORECASE
+    cwe: CWE-200
+    confidence: medium
+    description: "Potential exfiltration — sending AI conversation data to a webhook."
+    recommendation: "Verify the webhook destination is trusted. Implement allowlists for outbound webhook calls."
+
+  - id: AI-DE-004
+    title: "Model/Data Upload to External Service"
+    severity: MEDIUM
+    pattern: 'upload.*model|upload.*weights|upload.*dataset'
+    flags: IGNORECASE
+    cwe: CWE-200
+    confidence: low
+    description: "Potential model or data exfiltration — uploading model or dataset externally."
+    recommendation: "Verify the upload destination is trusted and authorized. Implement data loss prevention controls."
+
+  - id: AI-DE-005
+    title: "Secret Exfiltration via HTTP"
+    severity: CRITICAL
+    pattern: 'requests\.post.*api_key|requests\.post.*token|requests\.post.*secret'
+    flags: IGNORECASE
+    cwe: CWE-200
+    confidence: medium
+    description: "Potential secret exfiltration — sending credentials to an external endpoint."
+    recommendation: "Never send API keys, tokens, or secrets to external endpoints. Review this code path immediately."

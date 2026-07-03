@@ -1,0 +1,117 @@
+rule_set:
+  name: insecure_deployment
+  version: "1.0.0"
+  category: insecure_model_deployment
+  module: ai
+  description: "Detects insecure model deployment configurations and model poisoning risks."
+
+rules:
+  - id: AI-ID-001
+    title: "Flask App Bound to All Interfaces"
+    severity: HIGH
+    pattern: 'app\.run\s*\(\s*host\s*=\s*[''"]0\.0\.0\.0[''"]'
+    cwe: CWE-918
+    confidence: high
+    description: "Flask app bound to 0.0.0.0 — model endpoint exposed to the entire network."
+    recommendation: "Bind to localhost (127.0.0.1) unless external access is required. If needed, use a reverse proxy with auth and TLS."
+
+  - id: AI-ID-002
+    title: "Uvicorn Server Bound to All Interfaces"
+    severity: HIGH
+    pattern: 'uvicorn\s+.*--host\s+0\.0\.0\.0'
+    cwe: CWE-918
+    confidence: high
+    description: "Uvicorn server bound to 0.0.0.0 — model endpoint exposed to the network."
+    recommendation: "Bind to localhost. Use a reverse proxy with authentication and TLS for external access."
+
+  - id: AI-ID-003
+    title: "Debug Mode Enabled"
+    severity: MEDIUM
+    pattern: 'debug\s*=\s*True'
+    flags: IGNORECASE
+    cwe: CWE-489
+    confidence: high
+    description: "Debug mode enabled — exposes stack traces and sensitive information."
+    recommendation: "Disable debug mode in production. Use environment-based configuration."
+
+  - id: AI-ID-004
+    title: "Wildcard CORS Policy"
+    severity: HIGH
+    pattern: 'cors\s*allow.*\*|Access-Control-Allow-Origin.*\*'
+    flags: IGNORECASE
+    cwe: CWE-942
+    confidence: high
+    description: "Wildcard CORS — any origin can access the model endpoint."
+    recommendation: "Restrict CORS to specific trusted origins. Avoid wildcard (*) for model inference endpoints."
+
+  - id: AI-ID-005
+    title: "SSL Verification Disabled"
+    severity: HIGH
+    pattern: 'ssl_verify\s*=\s*False|verify\s*=\s*False|CERT_NONE'
+    cwe: CWE-295
+    confidence: high
+    description: "SSL/TLS verification disabled — vulnerable to man-in-the-middle attacks."
+    recommendation: "Enable SSL/TLS verification. Never disable certificate verification in production."
+
+  - id: AI-ID-006
+    title: "Insecure Pickle Deserialization"
+    severity: CRITICAL
+    pattern: 'pickle\.load\s*\(|pickle\.loads\s*\('
+    cwe: CWE-502
+    confidence: high
+    description: "Pickle deserialization — arbitrary code execution risk if data is untrusted."
+    recommendation: "Avoid pickle for model serialization. Use safetensors or ONNX. If you must use pickle, only load from trusted, verified sources with integrity checks."
+
+  - id: AI-ID-007
+    title: "Insecure Joblib Deserialization"
+    severity: CRITICAL
+    pattern: 'joblib\.load\s*\('
+    cwe: CWE-502
+    confidence: high
+    description: "Joblib deserialization — arbitrary code execution risk if source is untrusted."
+    recommendation: "Avoid joblib for untrusted data. Use safetensors or ONNX format."
+
+  - id: AI-ID-008
+    title: "PyTorch Model Loading — Verify Source"
+    severity: MEDIUM
+    pattern: 'torch\.load\s*\('
+    cwe: CWE-502
+    confidence: medium
+    description: "PyTorch model loading — verify model source is trusted (potential model poisoning)."
+    recommendation: "Use torch.load with weights_only=True. Verify model source integrity with hash checks. Only load from trusted repositories."
+
+  - id: AI-ID-009
+    title: "PyTorch Hub Load from URL — Verify Trust"
+    severity: MEDIUM
+    pattern: 'torch\.hub\.load\s*\('
+    cwe: CWE-502
+    confidence: medium
+    description: "PyTorch hub load from URL — verify the URL is a trusted source."
+    recommendation: "Verify the hub URL is official/trusted. Pin the model commit hash. Implement integrity verification."
+
+  - id: AI-ID-010
+    title: "HuggingFace Model Download — Verify Trust"
+    severity: MEDIUM
+    pattern: 'huggingface_hub.*download|hf_hub_download|snapshot_download'
+    cwe: CWE-502
+    confidence: medium
+    description: "HuggingFace model download — verify the model repo is trusted."
+    recommendation: "Verify the HuggingFace model repo is trusted. Pin to a specific commit hash. Review the model card."
+
+  - id: AI-ID-011
+    title: "Transformers from_pretrained — Verify Trust"
+    severity: MEDIUM
+    pattern: 'transformers.*from_pretrained\s*\('
+    cwe: CWE-502
+    confidence: medium
+    description: "Loading model from_pretrained — verify the model repo is trusted."
+    recommendation: "Verify the model repo is trusted. Pin to a specific commit hash. Use safetensors format when available."
+
+  - id: AI-ID-012
+    title: "TensorFlow Model Loading — Verify Trust"
+    severity: MEDIUM
+    pattern: 'tf\.saved_model\.load\s*\('
+    cwe: CWE-502
+    confidence: medium
+    description: "TensorFlow model loading — verify model source is trusted."
+    recommendation: "Verify model source integrity. Check for unsafe ops in saved models."

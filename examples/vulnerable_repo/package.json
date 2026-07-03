@@ -1,0 +1,9 @@
+{
+    "dependencies": {
+        "langchain": "^0.1.0",
+        "openai": "^4.0.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0"
+    }
+}

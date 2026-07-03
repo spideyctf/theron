@@ -1,0 +1,84 @@
+rule_set:
+  name: agent_permissions
+  version: "1.0.0"
+  category: agentic_connector
+  module: agentic
+  description: "Detects overly permissive agent configurations and resource limit issues."
+
+rules:
+  - id: AG-AP-001
+    title: "Agent Granted Shell/Command Execution"
+    severity: HIGH
+    pattern: '(?:allow|grant|enable).*(?:shell|exec|subprocess|os\.system|command|terminal|bash)'
+    flags: IGNORECASE
+    cwe: CWE-732
+    confidence: medium
+    description: "Agent granted shell/command execution — ensure sandboxed."
+    recommendation: "Ensure shell execution is sandboxed. Apply principle of least privilege."
+
+  - id: AG-AP-002
+    title: "Agent Granted File System Access"
+    severity: HIGH
+    pattern: '(?:allow|grant|enable).*(?:file|filesystem|read|write|delete|mkdir|remove)'
+    flags: IGNORECASE
+    cwe: CWE-732
+    confidence: medium
+    description: "Agent granted file system access — ensure restricted to safe directories."
+    recommendation: "Restrict file system access to specific safe directories. Implement path validation."
+
+  - id: AG-AP-003
+    title: "Agent Granted Network Access"
+    severity: HIGH
+    pattern: '(?:allow|grant|enable).*(?:network|http|fetch|request|url|internet)'
+    flags: IGNORECASE
+    cwe: CWE-732
+    confidence: medium
+    description: "Agent granted network access — ensure allowlisted URLs only."
+    recommendation: "Restrict network access to allowlisted URLs. Block internal IP ranges."
+
+  - id: AG-AP-004
+    title: "Agent Granted Admin/Privileged Access"
+    severity: CRITICAL
+    pattern: '(?:allow|grant|enable).*(?:admin|root|sudo|privileged|superuser)'
+    flags: IGNORECASE
+    cwe: CWE-732
+    confidence: medium
+    description: "Agent granted admin/privileged access — extremely dangerous."
+    recommendation: "Never grant admin/root access to AI agents. Apply principle of least privilege."
+
+  - id: AG-AP-005
+    title: "Agent Granted Database Access"
+    severity: HIGH
+    pattern: '(?:allow|grant|enable).*(?:database|sql|query|drop|create|alter)'
+    flags: IGNORECASE
+    cwe: CWE-732
+    confidence: medium
+    description: "Agent granted database access — ensure read-only or parameterized."
+    recommendation: "Use read-only database roles for agents. Use parameterized queries."
+
+  - id: AG-AP-006
+    title: "Agent Has Unlimited Iterations"
+    severity: MEDIUM
+    pattern: 'max_iterations\s*[:=]\s*(?:0|9999|None|null|-1|float\([''"]inf[''"]\))'
+    cwe: CWE-400
+    confidence: high
+    description: "Agent has unlimited iterations — potential resource exhaustion / infinite loop."
+    recommendation: "Set a reasonable max_iterations limit. Default to 10-50 for most use cases."
+
+  - id: AG-AP-007
+    title: "Agent Has Unlimited Token Budget"
+    severity: MEDIUM
+    pattern: 'max_tokens\s*[:=]\s*(?:0|999999|None|null|-1)'
+    cwe: CWE-400
+    confidence: high
+    description: "Agent has unlimited token budget — potential cost/resource abuse."
+    recommendation: "Set a reasonable max_tokens limit based on your use case."
+
+  - id: AG-AP-008
+    title: "Agent Has No Timeout"
+    severity: MEDIUM
+    pattern: 'timeout\s*[:=]\s*(?:0|None|null|99999|-1)'
+    cwe: CWE-400
+    confidence: high
+    description: "Agent has no timeout — potential resource exhaustion."
+    recommendation: "Set a reasonable timeout. Agents should not run indefinitely."

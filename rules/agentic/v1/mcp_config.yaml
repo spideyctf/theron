@@ -1,0 +1,121 @@
+rule_set:
+  name: mcp_config
+  version: "1.0.0"
+  category: mcp_misconfig
+  module: agentic
+  description: "Detects MCP (Model Context Protocol) server misconfigurations."
+
+target_files:
+  exact:
+    - mcp.json
+    - mcp_config.json
+    - claude_desktop_config.json
+    - claude_code_config.json
+    - .mcp.json
+    - mcp_servers.json
+  pattern:
+    - "*mcp*.json"
+
+rules:
+  - id: AG-MCP-001
+    title: "MCP Server Runs Command — Verify Trust"
+    severity: MEDIUM
+    pattern: '"command"\s*:\s*"\s*(?:npx|npm|node|python|python3|bash|sh|curl|wget|powershell)\s+.*"'
+    cwe: CWE-732
+    confidence: high
+    description: "MCP server runs a command — verify the package/URL is trusted."
+    recommendation: "Verify the command and package are from a trusted source. Pin package versions. Avoid curl/wget in MCP commands."
+
+  - id: AG-MCP-002
+    title: "MCP Server Connects to Remote URL"
+    severity: MEDIUM
+    pattern: '"url"\s*:\s*["'']https?://(?!localhost|127\.0\.0\.1)'
+    cwe: CWE-918
+    confidence: high
+    description: "MCP server connects to a remote URL — verify the endpoint is trusted."
+    recommendation: "Verify the remote URL is trusted. Use HTTPS. Add authentication."
+
+  - id: AG-MCP-003
+    title: "MCP Server Uses SSE Transport"
+    severity: MEDIUM
+    pattern: '"transport"\s*:\s*["'']sse["'']'
+    cwe: CWE-319
+    confidence: high
+    description: "MCP server uses SSE transport — ensure TLS is used and endpoint is authenticated."
+    recommendation: "Ensure SSE transport uses TLS (HTTPS). Add authentication to the SSE endpoint."
+
+  - id: AG-MCP-004
+    title: "MCP Server Config Contains Secrets"
+    severity: CRITICAL
+    pattern: '"env"\s*:\s*\{.*(?:API_KEY|TOKEN|SECRET|PASSWORD|CREDENTIAL)'
+    cwe: CWE-798
+    confidence: high
+    description: "MCP server config contains secrets in env — ensure they're not hardcoded."
+    recommendation: "Remove hardcoded secrets from MCP config. Use environment variable references."
+
+  - id: AG-MCP-005
+    title: "MCP Server Args Disable Security"
+    severity: CRITICAL
+    pattern: '"args"\s*:\s*\[.*(?:--no-sandbox|--disable-security|--allow-all|--privileged)'
+    cwe: CWE-732
+    confidence: high
+    description: "MCP server args disable security features — dangerous configuration."
+    recommendation: "Remove security-disabling flags. Run MCP servers with minimal privileges and proper sandboxing."
+
+  - id: AG-MCP-006
+    title: "MCP Server Has Wildcard Permissions"
+    severity: HIGH
+    pattern: '"scopes?"\s*:\s*\[.*"\*".*\]|"permissions?"\s*:\s*\[.*"\*".*\]'
+    cwe: CWE-732
+    confidence: high
+    description: "MCP server has wildcard permissions — overly permissive scope."
+    recommendation: "Replace wildcard permissions with specific, scoped permissions."
+
+  - id: AG-MCP-007
+    title: "MCP Server Auto-Approve Enabled"
+    severity: CRITICAL
+    pattern: '"auto_approve"\s*:\s*true|"autoApprove"\s*:\s*true'
+    cwe: CWE-732
+    confidence: high
+    description: "MCP server auto-approves all tool calls — no human-in-the-loop safety."
+    recommendation: "Disable auto-approve. Require human confirmation for sensitive tool calls."
+
+  - id: AG-MCP-008
+    title: "MCP Server Allow-All Enabled"
+    severity: CRITICAL
+    pattern: '"allow_all"\s*:\s*true|"allowAll"\s*:\s*true'
+    cwe: CWE-732
+    confidence: high
+    description: "MCP server allows all operations — no permission scoping."
+    recommendation: "Disable allow-all. Implement proper permission scoping for MCP server operations."
+
+# Structural rules for JSON deep analysis (handled by the agentic scanner plugin)
+structural_rules:
+  - id: AG-MCP-STR-001
+    title: "MCP Server Without Authentication"
+    json_path: "mcpServers.*.url"
+    condition: "exists"
+    cwe: CWE-306
+    description: "MCP server connects to a URL without authentication."
+    recommendation: "Add authentication to the MCP server configuration."
+    references: []
+
+  - id: AG-MCP-STR-002
+    title: "MCP Server Using Insecure HTTP"
+    json_path: "mcpServers.*.url"
+    condition: "starts_with_http"
+    cwe: CWE-319
+    description: "MCP server uses insecure HTTP transport (no TLS)."
+    recommendation: "Use HTTPS for all MCP server connections."
+    references: []
+
+  - id: AG-MCP-STR-003
+    title: "Hardcoded Secret in MCP Server Environment"
+    json_path: "mcpServers.*.env.*"
+    key_match: "(?i)(KEY|TOKEN|SECRET|PASSWORD|CREDENTIAL)"
+    value_condition: "not_env_reference"
+    value_min_length: 5
+    cwe: CWE-798
+    description: "MCP server config contains hardcoded secret in environment variable."
+    recommendation: "Use environment variable references instead of hardcoded values."
+    references: []

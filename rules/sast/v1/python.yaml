@@ -1,0 +1,108 @@
+rule_set:
+  name: python_sast
+  version: "1.0.0"
+  category: sast
+  module: sast
+  language: python
+  file_extensions: [".py"]
+  description: "Static analysis rules for Python code vulnerabilities."
+
+rules:
+  - id: PY-SAST-001
+    title: "Command Injection"
+    severity: CRITICAL
+    pattern: '\b(os\.system|subprocess\.(call|run|Popen|check_output|check_call))\s*\(\s*.*(?:f[''"]|\.format|%s|\+|user_input|request\.|input\()'
+    cwe: CWE-78
+    confidence: medium
+    description: "Potential command injection — user-controlled input passed to system command execution."
+    recommendation: "Use subprocess with shell=False and argument lists. Never pass user input to os.system. Validate and sanitize all inputs."
+
+  - id: PY-SAST-002
+    title: "Code Injection via eval()"
+    severity: CRITICAL
+    pattern: '\beval\s*\(\s*.*(?:input|request|user|prompt|f[''"]|\.format|%s)'
+    cwe: CWE-94
+    confidence: medium
+    description: "Potential code injection — user-controlled input passed to eval()."
+    recommendation: "Never use eval() with user input. Use ast.literal_eval() for safe literal parsing, or implement a proper parser."
+
+  - id: PY-SAST-003
+    title: "Code Injection via exec()"
+    severity: CRITICAL
+    pattern: '\bexec\s*\(\s*.*(?:input|request|user|prompt|f[''"]|\.format|%s)'
+    cwe: CWE-94
+    confidence: medium
+    description: "Potential code injection — user-controlled input passed to exec()."
+    recommendation: "Never use exec() with user input. Refactor to avoid dynamic code execution."
+
+  - id: PY-SAST-004
+    title: "Path Traversal"
+    severity: HIGH
+    pattern: '(open|os\.path\.join|Path)\s*\(\s*.*(?:request\.|input\(|user_input|f[''"].*\{|\.format|%s).*\.\.'
+    cwe: CWE-22
+    confidence: medium
+    description: "Potential path traversal — user input used in file path construction with directory traversal."
+    recommendation: "Validate and sanitize file paths. Use os.path.realpath() and verify the resolved path is within the expected directory."
+
+  - id: PY-SAST-005
+    title: "SSRF — Server-Side Request Forgery"
+    severity: HIGH
+    pattern: '(requests|httpx|urllib)\.\w+\s*\(\s*.*(?:request\.|input\(|user_input|f[''"].*\{|\.format)'
+    cwe: CWE-918
+    confidence: medium
+    description: "Potential SSRF — user-controlled input used in outbound HTTP request URL."
+    recommendation: "Validate and restrict URLs to an allowlist. Block requests to internal IPs. Use a DNS resolver to prevent DNS rebinding."
+
+  - id: PY-SAST-006
+    title: "SQL Injection"
+    severity: CRITICAL
+    pattern: '(execute|cursor\.execute)\s*\(\s*.*(?:f[''"]|\.format|%s|\+).*user|request|input'
+    cwe: CWE-89
+    confidence: medium
+    description: "Potential SQL injection — user input concatenated into SQL query string."
+    recommendation: "Use parameterized queries / prepared statements. Never concatenate user input into SQL strings."
+
+  - id: PY-SAST-007
+    title: "Insecure Deserialization — pickle/yaml/marshal"
+    severity: CRITICAL
+    pattern: '(pickle\.loads?|yaml\.load\s*\(|marshal\.loads?|shelve\.open)\s*\('
+    cwe: CWE-502
+    confidence: high
+    description: "Insecure deserialization — loading untrusted data can execute arbitrary code."
+    recommendation: "Use yaml.safe_load() instead of yaml.load(). Avoid pickle/marshal for untrusted data. Use JSON."
+
+  - id: PY-SAST-008
+    title: "Weak Random for Security-Sensitive Value"
+    severity: HIGH
+    pattern: '(random\.random|random\.randint|random\.choice)\s*\(.*(?:token|password|secret|key|auth|session)'
+    cwe: CWE-338
+    confidence: medium
+    description: "Using non-cryptographic random for security-sensitive values."
+    recommendation: "Use secrets module (secrets.token_hex, secrets.token_urlsafe) or os.urandom() for security-sensitive values."
+
+  - id: PY-SAST-009
+    title: "Insecure Temporary File"
+    severity: MEDIUM
+    pattern: 'tempfile\.mktemp\s*\('
+    cwe: CWE-377
+    confidence: high
+    description: "tempfile.mktemp() is race-condition vulnerable."
+    recommendation: "Use tempfile.mkstemp() or tempfile.NamedTemporaryFile() instead of mktemp()."
+
+  - id: PY-SAST-010
+    title: "Assert Used for Security Check"
+    severity: MEDIUM
+    pattern: 'assert\s+.*(?:token|password|secret|key|auth|is_admin|permission|role)'
+    cwe: CWE-617
+    confidence: medium
+    description: "Using assert() for security checks — assertions are stripped with -O flag."
+    recommendation: "Use proper if/raise statements for security checks. Assertions can be disabled with python -O."
+
+  - id: PY-SAST-011
+    title: "Potential XXE — XML External Entity"
+    severity: HIGH
+    pattern: '(xml\.etree\.ElementTree\.parse|xml\.dom\.minidom\.parse|lxml\.etree\.parse)\s*\('
+    cwe: CWE-611
+    confidence: medium
+    description: "XML parsing without disabling external entities."
+    recommendation: "Disable external entities in XML parser. Use defusedxml library for safe XML parsing."

@@ -1,0 +1,133 @@
+rule_set:
+  name: prompt_injection
+  version: "1.0.0"
+  category: prompt_injection
+  module: ai
+  description: >
+    Detects prompt injection patterns in system prompts, instructions,
+    skill files, and agent configurations.
+
+rules:
+  - id: AI-PI-001
+    title: "Classic Prompt Injection — Override System Instructions"
+    severity: HIGH
+    severity_overrides:
+      - condition: "file_path matches *(skill.md|instructions*|agent*|prompt*)"
+        severity: CRITICAL
+    pattern: 'ignore\s+(all\s+)?(previous|prior|above)\s+(instructions?|prompts?|rules?)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Attempts to override system instructions by telling the model to ignore prior context."
+    recommendation: "Review this pattern. If in a system prompt or instructions file, ensure it cannot be manipulated by user input. Use input sanitization and structured prompts with delimiters."
+    references:
+      - "https://owasp.org/www-community/attacks/Prompt_Injection"
+      - "https://cwe.mitre.org/data/definitions/1039.html"
+
+  - id: AI-PI-002
+    title: "Role Override Injection — Change Agent Identity"
+    severity: HIGH
+    pattern: 'you\s+are\s+now\s+(a|an)\s+(different|new|jailbroken|unrestricted|dan)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Attempts to change the agent's identity or role, potentially bypassing safety guardrails."
+    recommendation: "Remove the injected instruction. Implement role-locked system prompts that cannot be overridden by user input."
+
+  - id: AI-PI-003
+    title: "Memory Wipe Injection"
+    severity: HIGH
+    pattern: 'forget\s+(everything|all\s+(rules|instructions|prior))'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Attempts to erase safety context by instructing the model to forget everything."
+    recommendation: "Remove this instruction. Ensure safety context is persisted and cannot be cleared by user input."
+
+  - id: AI-PI-004
+    title: "Safety Policy Bypass Injection"
+    severity: HIGH
+    pattern: 'act\s+as\s+if\s+you\s+(have\s+)?no\s+(restrictions?|rules?|guidelines?|safety)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Attempts to bypass safety guardrails by instructing the model to act without restrictions."
+    recommendation: "Remove this instruction. Safety policies should be enforced at the system level, not bypassable via prompts."
+
+  - id: AI-PI-005
+    title: "Prompt Extraction Attempt"
+    severity: MEDIUM
+    pattern: '(reveal|show|print|output)\s+(your\s+)?(system\s+)?(prompt|instructions?|rules?|guidelines?)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Attempts to exfiltrate the system prompt or instructions."
+    recommendation: "Implement output filtering to prevent system prompt leakage. Use structured prompts that separate system instructions from user input."
+
+  - id: AI-PI-006
+    title: "Arbitrary Code Execution Injection"
+    severity: CRITICAL
+    pattern: '(execute|run|eval|exec)\s+(any|all|arbitrary)\s+(command|code|script|python)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Attempts to get the agent to run arbitrary code or commands."
+    recommendation: "Never allow arbitrary code execution from prompt input. Sandbox all code execution and validate outputs."
+
+  - id: AI-PI-007
+    title: "Known Jailbreak Terminology"
+    severity: MEDIUM
+    pattern: 'jailbreak|dAN\s+mode|developer\s+mode|god\s+mode'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: low
+    description: "Contains known jailbreak terminology that may indicate an attempt to bypass safety measures."
+    recommendation: "Review the context. If this is user input, consider filtering known jailbreak terms."
+
+  - id: AI-PI-008
+    title: "Prompt Extraction via Repetition"
+    severity: MEDIUM
+    pattern: 'repeat\s+(everything|all\s+(instructions|rules|system\s+prompt))\s+(above|back\s+to\s+me)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Attempts to extract the system prompt by asking the model to repeat it."
+    recommendation: "Implement output filtering. System prompts should not be repeatable on request."
+
+  - id: AI-PI-009
+    title: "Special Token Injection — Chat Template Manipulation"
+    severity: CRITICAL
+    pattern: '<\|im_start\|>|<\|endoftext\|>|<\|system\|>'
+    cwe: CWE-1039
+    confidence: high
+    description: "Injects special chat template tokens that could manipulate the model's conversation structure."
+    recommendation: "Strip special tokens from all user input. Use structured prompt formats that escape or reject chat template markers."
+
+  - id: AI-PI-010
+    title: "Encoded Payload Injection"
+    severity: CRITICAL
+    pattern: '(base64|hex)\s+decode.*execute|eval\(.*decode\('
+    cwe: CWE-1039
+    confidence: high
+    description: "Attempts to bypass content filters by encoding the payload and decoding it at runtime."
+    recommendation: "Implement content filtering on decoded output. Block execution of dynamically decoded content from user input."
+
+  - id: AI-PI-011
+    title: "Disregard Instructions Injection"
+    severity: HIGH
+    pattern: 'disregard\s+(all\s+)?(previous|prior)\s+(instructions?|rules?|guidelines?)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Instructs the model to disregard prior context — classic prompt injection."
+    recommendation: "Review this pattern. Ensure system instructions cannot be overridden by user input."
+
+  - id: AI-PI-012
+    title: "Pretend No Content Policy"
+    severity: HIGH
+    pattern: '(pretend|assume)\s+you\s+(have\s+)?no\s+(content|safety)\s+polic'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: medium
+    description: "Attempts to bypass content safety policies by pretending they don't exist."
+    recommendation: "Remove this instruction. Content policies should be enforced at the system level."

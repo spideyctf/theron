@@ -1,0 +1,87 @@
+rule_set:
+  name: tool_poisoning
+  version: "1.0.0"
+  category: tool_poisoning
+  module: agentic
+  description: "Detects malicious tool descriptions that could manipulate AI agent behavior."
+
+rules:
+  - id: AG-TP-001
+    title: "Tool Description Contains Prompt Injection"
+    severity: CRITICAL
+    pattern: '(?:description|docstring|help)\s*[:=]\s*["''].*(?:ignore|disregard|forget|override|bypass).*(?:instruction|rule|safety|security|system\s+prompt).*["'']'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Tool description contains prompt injection — could manipulate agent behavior."
+    recommendation: "Remove the malicious content from the tool description. Tool descriptions should only describe functionality — never contain instructions to the agent."
+
+  - id: AG-TP-001b
+    title: "Tool Docstring Contains Prompt Injection"
+    severity: CRITICAL
+    pattern: '""".*(?:ignore|disregard|forget|override|bypass).*(?:instruction|rule|safety|security|system\s+prompt).*"""'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Tool docstring contains prompt injection — could manipulate agent behavior."
+    recommendation: "Remove the malicious content from the tool docstring. Tool descriptions should only describe functionality — never contain instructions to the agent."
+
+  - id: AG-TP-002
+    title: "Tool Description Contains Role Override"
+    severity: CRITICAL
+    pattern: '(?:description|docstring|help)\s*[:=]\s*[''"].*(?:you\s+are|act\s+as|pretend|new\s+instructions?).*[''"]'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Tool description contains role override — could hijack agent identity."
+    recommendation: "Remove the role override from the tool description."
+
+  - id: AG-TP-003
+    title: "Tool Description Instructs Code Execution"
+    severity: CRITICAL
+    pattern: '(?:description|docstring|help)\s*[:=]\s*[''"].*(?:execute|run|eval|exec|system|subprocess|os\.system).*[''"]'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Tool description instructs code execution — potential tool poisoning."
+    recommendation: "Remove the code execution instruction from the tool description."
+
+  - id: AG-TP-004
+    title: "Tool Description Requests Secrets"
+    severity: CRITICAL
+    pattern: '(?:description|docstring|help)\s*[:=]\s*[''"].*(?:secret|api[_-]?key|token|password|credential|private\s+key).*[''"]'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Tool description requests secrets — potential credential exfiltration via agent."
+    recommendation: "Remove the secret request from the tool description. Tools should never request credentials in their descriptions."
+
+  - id: AG-TP-005
+    title: "Tool Description Instructs Data Exfiltration"
+    severity: CRITICAL
+    pattern: '(?:description|docstring|help)\s*[:=]\s*[''"].*(?:download|fetch|send|upload|post|exfiltrate).*[''"]'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Tool description instructs data exfiltration — potential data theft via agent."
+    recommendation: "Remove the exfiltration instruction from the tool description."
+
+  - id: AG-TP-006
+    title: "LangChain @tool with Poisoned Description"
+    severity: CRITICAL
+    pattern: '@tool\s*(?:\n|.)*?(?:description|docstring)\s*[:=]\s*[''"].*(?:ignore|disregard|override|bypass|system\s+prompt).*[''"]'
+    flags: IGNORECASE | DOTALL
+    cwe: CWE-1039
+    confidence: high
+    description: "LangChain @tool decorator with poisoned description."
+    recommendation: "Remove the malicious content from the tool description."
+
+  - id: AG-TP-007
+    title: "CrewAI Tool with Poisoned Description"
+    severity: CRITICAL
+    pattern: 'Tool\s*\(\s*(?:\n|.)*?description\s*=\s*[''"].*(?:ignore|disregard|override|bypass|system\s+prompt).*[''"]'
+    flags: IGNORECASE | DOTALL
+    cwe: CWE-1039
+    confidence: high
+    description: "CrewAI Tool with poisoned description."
+    recommendation: "Remove the malicious content from the tool description."

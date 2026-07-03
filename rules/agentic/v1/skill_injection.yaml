@@ -1,0 +1,110 @@
+rule_set:
+  name: skill_injection
+  version: "1.0.0"
+  category: skill_injection
+  module: agentic
+  description: "Detects prompt injection and over-permissioned configurations in skill/instruction files."
+
+target_files:
+  pattern:
+    - "*SKILL.md"
+    - "*skill*.md"
+    - "*INSTRUCTIONS*.md"
+    - "*INSTRUCTIONS*.txt"
+    - "*system_prompt*"
+    - "*agent*.md"
+    - "*AGENTS*.md"
+    - "*CLAUDE.md"
+    - "*GUMMIE.md"
+    - "*AGENT.md"
+
+rules:
+  - id: AG-SI-001
+    title: "Skill File Prompt Injection — Override Instructions"
+    severity: CRITICAL
+    pattern: 'ignore\s+(all\s+)?(previous|prior|above)\s+(instructions?|prompts?|rules?)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Skill file contains prompt injection — override instructions. This file configures agent behavior — injection here compromises the entire agent."
+    recommendation: "Remove the injected instruction. Review the skill file to ensure it only contains legitimate agent configuration."
+
+  - id: AG-SI-002
+    title: "Skill File Role Override Injection"
+    severity: CRITICAL
+    pattern: 'you\s+are\s+now\s+(a|an)\s+(different|new|jailbroken|unrestricted)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Skill file contains role override injection."
+    recommendation: "Remove the injected instruction. Implement role-locked system prompts."
+
+  - id: AG-SI-003
+    title: "Skill File Prompt Extraction Attempt"
+    severity: HIGH
+    pattern: '(reveal|show|print|output)\s+(your\s+)?(system\s+)?(prompt|instructions?)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Skill file contains prompt extraction attempt."
+    recommendation: "Remove this instruction. Implement output filtering to prevent system prompt leakage."
+
+  - id: AG-SI-004
+    title: "Skill File Instructs Code Execution"
+    severity: CRITICAL
+    pattern: '(execute|run|eval|exec)\s+(any|all|arbitrary)\s+(command|code|script)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Skill file instructs arbitrary code execution."
+    recommendation: "Remove this instruction. Never allow arbitrary code execution from skill files."
+
+  - id: AG-SI-005
+    title: "Skill File Safety Bypass"
+    severity: CRITICAL
+    pattern: 'act\s+as\s+if\s+you\s+(have\s+)?no\s+(restrictions?|rules?|safety)'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Skill file attempts to bypass safety guardrails."
+    recommendation: "Remove this instruction. Safety policies should be enforced at the system level."
+
+  - id: AG-SI-006
+    title: "Skill File Memory Wipe Injection"
+    severity: CRITICAL
+    pattern: 'forget\s+(everything|all\s+(rules|instructions|prior))'
+    flags: IGNORECASE
+    cwe: CWE-1039
+    confidence: high
+    description: "Skill file contains memory wipe injection."
+    recommendation: "Remove this instruction. Safety context should be persistent."
+
+  - id: AG-SI-007
+    title: "Skill File Grants Dangerous Permissions"
+    severity: HIGH
+    pattern: '(?:allow|grant|enable|permit).*(?:shell|exec|subprocess|os\.system|command|terminal|bash|root|admin|sudo)'
+    flags: IGNORECASE
+    cwe: CWE-732
+    confidence: medium
+    description: "Skill file grants dangerous permissions (shell/exec/admin)."
+    recommendation: "Reduce permissions to the minimum necessary. Apply principle of least privilege."
+
+  - id: AG-SI-008
+    title: "Skill File Grants Destructive Permissions"
+    severity: HIGH
+    pattern: '(?:allow|grant|enable|permit).*(?:delete|remove|drop|destroy|wipe)'
+    flags: IGNORECASE
+    cwe: CWE-732
+    confidence: medium
+    description: "Skill file grants destructive permissions."
+    recommendation: "Reduce permissions. Destructive operations should require explicit confirmation."
+
+  - id: AG-SI-009
+    title: "Skill File Grants Network/Exfiltration Permissions"
+    severity: HIGH
+    pattern: '(?:allow|grant|enable|permit).*(?:network|internet|external|outbound|fetch.*url|send.*data)'
+    flags: IGNORECASE
+    cwe: CWE-732
+    confidence: medium
+    description: "Skill file grants network/exfiltration permissions."
+    recommendation: "Restrict network access to allowlisted URLs only. Implement data loss prevention."

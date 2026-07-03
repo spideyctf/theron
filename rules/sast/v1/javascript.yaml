@@ -1,0 +1,63 @@
+rule_set:
+  name: javascript_sast
+  version: "1.0.0"
+  category: sast
+  module: sast
+  language: javascript
+  file_extensions: [".js", ".ts", ".jsx", ".tsx"]
+  description: "Static analysis rules for JavaScript/TypeScript code vulnerabilities."
+
+rules:
+  - id: JS-SAST-001
+    title: "Code Injection via eval()"
+    severity: CRITICAL
+    pattern: '\beval\s*\(\s*.*(?:req\.|input|user|prompt|process\.argv|window\.location)'
+    cwe: CWE-94
+    confidence: medium
+    description: "Potential code injection — user-controlled input passed to eval()."
+    recommendation: "Never use eval() with user input. Use JSON.parse() for data parsing or implement a proper parser."
+
+  - id: JS-SAST-002
+    title: "Command Injection via child_process"
+    severity: CRITICAL
+    pattern: '(exec|execSync|spawn)\s*\(\s*.*(?:req\.|input|user|prompt|process\.argv|template)'
+    cwe: CWE-78
+    confidence: medium
+    description: "Potential command injection — user input passed to child_process.exec/spawn."
+    recommendation: "Use execFile/spawn with argument arrays instead of exec with string concatenation. Validate all inputs."
+
+  - id: JS-SAST-003
+    title: "XSS via innerHTML"
+    severity: HIGH
+    pattern: '\.innerHTML\s*=\s*.*(?:req\.|input|user|prompt|response|data)'
+    cwe: CWE-79
+    confidence: medium
+    description: "Potential XSS — user-controlled input assigned to innerHTML."
+    recommendation: "Use textContent or sanitize HTML with DOMPurify before assigning to innerHTML."
+
+  - id: JS-SAST-004
+    title: "XSS via dangerouslySetInnerHTML"
+    severity: HIGH
+    pattern: 'dangerouslySetInnerHTML\s*=\s*.*(?:req\.|input|user|prompt|response|data|props)'
+    cwe: CWE-79
+    confidence: medium
+    description: "Potential XSS — user input used with React's dangerouslySetInnerHTML."
+    recommendation: "Sanitize all HTML with DOMPurify before using dangerouslySetInnerHTML. Avoid this pattern if possible."
+
+  - id: JS-SAST-005
+    title: "Potential Prototype Pollution"
+    severity: HIGH
+    pattern: '(Object\.assign|merge|extend)\s*\(.*(?:req\.body|req\.query|user_input|payload)'
+    cwe: CWE-1321
+    confidence: medium
+    description: "User input merged into objects — potential prototype pollution."
+    recommendation: "Use Object.create(null) for merge targets. Validate keys to reject __proto__ and constructor. Use safe merge utilities."
+
+  - id: JS-SAST-006
+    title: "SSRF — Server-Side Request Forgery"
+    severity: HIGH
+    pattern: '(fetch|axios|http\.get|https\.get)\s*\(\s*.*(?:req\.|input|user|prompt|process\.argv|template)'
+    cwe: CWE-918
+    confidence: medium
+    description: "Potential SSRF — user-controlled input used in outbound HTTP request."
+    recommendation: "Validate and restrict URLs to an allowlist. Block internal IP ranges. Use a URL parser to validate scheme and host."

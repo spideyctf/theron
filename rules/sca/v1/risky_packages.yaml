@@ -1,0 +1,15 @@
+rule_set:
+  name: risky_packages
+  version: "1.0.0"
+  category: sca
+  module: sca
+  description: >
+    Flags AI/ML packages that warrant extra security scrutiny.
+    NOTE: Actual CVE/vulnerability data is fetched LIVE from OSV.dev API.
+    This file only defines which packages need extra review — no hardcoded CVEs.
+
+# This rule set has no regex rules — the SCA scanner plugin handles
+# risky package flagging in Python code using the RISKY_AI_PACKAGES dict.
+# OSV.dev queries are also handled in the scanner plugin code.
+# This file exists for documentation and future extensibility.
+rules: []
