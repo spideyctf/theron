@@ -1,41 +1,41 @@
-# AISecScanner — Open Source AI Infrastructure Security Scanner
+# Theron — Open Source AI Infrastructure Security Scanner
 
 A free, open-source security scanner that integrates directly with your GitHub repositories to detect AI-specific vulnerabilities, misconfigurations, insecure model deployments, prompt injection risks, secret exposure, and agentic AI threats.
 
 ## Features
 
-### 🔍 AI-Specific Security Analysis
+### AI-Specific Security Analysis
 - **Prompt Injection Detection** — Detects prompt injection patterns in system prompts, instructions, SKILL.md files, and agent configurations
 - **Secret Exposure Scanning** — Finds hardcoded API keys, tokens, credentials in code and config files (OpenAI, Anthropic, GitHub, AWS, HuggingFace, Slack, Google, and more)
 - **Insecure Model Deployment** — Checks for exposed model endpoints, missing auth, insecure serialization (pickle/joblib/torch.load)
 - **Model Poisoning Indicators** — Detects untrusted model loading, unsigned model files, suspicious weights
 - **Data Exfiltration Risks** — Identifies outbound data flows to untrusted endpoints from AI pipelines
 
-### 📦 SAST (Static Application Security Testing)
+### SAST (Static Application Security Testing)
 - Taint analysis for Python, JavaScript/TypeScript
 - Detects command injection, path traversal, SSRF, SQL injection, deserialization flaws, XXE
 - **AI-specific taint tracking**: user input → LLM prompt (prompt injection risk), LLM output → code execution (code injection via manipulated model)
 
-### 📋 SCA (Software Composition Analysis)
+### SCA (Software Composition Analysis)
 - Auto-generates SBOM (CycloneDX format) from dependency manifests
 - **Checks dependencies against OSV.dev vulnerability database (live API — no hardcoded CVEs)**
 - Flags AI/ML packages with known security risks (langchain, torch, transformers, crewai, autogen, etc.)
 - Supports: requirements.txt, package.json, pyproject.toml, go.mod, Pipfile
 
-### 🤖 Agentic AI Security
+### Agentic AI Security
 - **MCP (Model Context Protocol) Analysis** — Scans MCP server configs for malicious tools, overly permissive scopes, insecure transports, hardcoded secrets, auto-approve, wildcard permissions
 - **SKILL.md / Instructions Scanning** — Detects prompt injection, hidden instructions, privilege escalation in agent skill definitions
 - **Agent Connector Auditing** — Analyzes agentic AI connectors (LangChain tools, CrewAI tools, custom MCP tools) for injection vectors and unsafe operations
 - **Tool Poisoning Detection** — Identifies malicious tool descriptions that could manipulate agent behavior
 - **Hidden Injection Detection** — Finds hidden instructions in HTML comments, zero-width characters, escaped newlines, fake system tags
 
-### 🔗 GitHub Integration
+### GitHub Integration
 - Connects directly to your GitHub account via Personal Access Token
 - Scan single repos, all user repos, or entire organizations
 - Optional auto-issue creation for CRITICAL/HIGH findings
 - SARIF output for GitHub Code Scanning integration
 
-### 🖥️ Local Scanning
+### Local Scanning
 - Scan any local directory without GitHub connectivity
 - Same scanner plugins, same rules, same output formats
 
