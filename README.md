@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # AISecScanner — Open Source AI Infrastructure Security Scanner
 
 A free, open-source security scanner that integrates directly with your GitHub repositories to detect AI-specific vulnerabilities, misconfigurations, insecure model deployments, prompt injection risks, secret exposure, and agentic AI threats.
