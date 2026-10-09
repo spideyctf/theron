@@ -1,0 +1,4 @@
+# Repository-local defaults. CLI flags override these values.
+modules: [ai, sast, sca, agentic]
+exclude: []
+accepted_fingerprints: []

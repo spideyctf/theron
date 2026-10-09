@@ -12,6 +12,8 @@ Scans for vulnerabilities in:
 import re
 import json
 import os
+import yaml
+from urllib.parse import urlsplit
 from typing import List
 from scanner.models import Finding, ScanContext, Severity, Category
 from scanner.plugins.base import Scanner
@@ -52,13 +54,14 @@ class AgenticScanner(Scanner):
 
     def scan(self, context: ScanContext) -> List[Finding]:
         findings = []
+        self.include_experimental = bool(context.config.get("include_experimental"))
         rule_sets = context.rule_loader.load("agentic")
         profile = context.project_profile
         files = context.files
 
         for rule_set in rule_sets:
             for file_path, content in files.items():
-                if any(skip in file_path for skip in self.SKIP_DIRS):
+                if any(skip in file_path.replace("\\", "/").split("/") for skip in self.SKIP_DIRS):
                     continue
 
                 basename = os.path.basename(file_path)
@@ -103,16 +106,32 @@ class AgenticScanner(Scanner):
                 for rule in rule_set.rules:
                     findings.extend(self._apply_rule(rule, file_path, content, self.name))
 
-                # Apply structural (JSON) rules for MCP configs
-                if rule_set.structural_rules and basename.endswith(".json"):
+                # Parse MCP configs instead of relying only on text patterns. A broken
+                # config is itself useful triage information, not a scanner failure.
+                if rule_set.structural_rules and (basename.endswith(".json") or basename.endswith((".yaml", ".yml"))):
                     try:
-                        data = json.loads(content)
+                        data = json.loads(content) if basename.endswith(".json") else yaml.safe_load(content)
+                        if not isinstance(data, dict):
+                            raise TypeError("Expected configuration object")
+                        servers = data.get("mcpServers", data.get("mcp_servers", data.get("servers", {})))
+                        if not isinstance(servers, dict) or any(not isinstance(server, dict) for server in servers.values()):
+                            raise TypeError("Expected server configuration objects")
                         for struct_rule in rule_set.structural_rules:
                             findings.extend(
                                 self._apply_structural_rule(struct_rule, file_path, data, rule_set.module)
                             )
-                    except (json.JSONDecodeError, TypeError):
-                        pass
+                    except (ValueError, yaml.YAMLError, TypeError):
+                        findings.append(Finding(
+                            title="Malformed MCP configuration",
+                            severity=Severity.INFO,
+                            category=Category.MCP_MISCONFIG,
+                            module=self.name,
+                            description="The MCP configuration could not be parsed, so structured security checks were skipped.",
+                            file_path=file_path,
+                            recommendation="Fix the configuration syntax and scan again.",
+                            confidence="high",
+                            rule_id="MCP-CONFIG-PARSE-001",
+                        ))
 
         return findings
 
@@ -139,6 +158,8 @@ class AgenticScanner(Scanner):
         findings = []
         json_path = struct_rule.get("json_path", "")
         condition = struct_rule.get("condition", "")
+        if not self.include_experimental:
+            return findings
 
         # Navigate to mcpServers or similar top-level keys
         servers = data.get("mcpServers", data.get("mcp_servers", data.get("servers", {})))
@@ -163,7 +184,8 @@ class AgenticScanner(Scanner):
 
             # Check: HTTP (not HTTPS)
             url = config.get("url", "")
-            if url.startswith("http://"):
+            if (condition == "starts_with_http" and isinstance(url, str) and url.startswith("http://")
+                    and urlsplit(url).hostname not in {"localhost", "127.0.0.1", "::1"}):
                 findings.append(self._make_structural_finding(
                     struct_rule, file_path, module,
                     f"MCP Server '{server_name}' — Insecure HTTP Transport",
@@ -174,7 +196,7 @@ class AgenticScanner(Scanner):
 
             # Check: hardcoded secrets in env
             env = config.get("env", {})
-            if isinstance(env, dict):
+            if struct_rule.get("key_match") and isinstance(env, dict):
                 for key, value in env.items():
                     if any(s in key.upper() for s in ["KEY", "TOKEN", "SECRET", "PASSWORD", "CREDENTIAL"]):
                         if isinstance(value, str) and len(value) > 5 and not value.startswith("${") and not value.startswith("$("):
@@ -199,7 +221,8 @@ class AgenticScanner(Scanner):
             file_path=file_path,
             recommendation=rec,
             cwe=cwe,
-            confidence="high",
+            confidence="medium",
+            maturity="experimental",
             rule_id=rule.get("id", "STRUCT-UNKNOWN"),
             references=rule.get("references", []),
         )

@@ -14,6 +14,7 @@ Rules define patterns (regex), severity, CWE, recommendations, and references.
 
 import os
 import re
+import sysconfig
 import yaml
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -46,6 +47,7 @@ class Rule:
     key_match: Optional[str] = None
     value_condition: Optional[str] = None
     value_min_length: int = 0
+    maturity: str = "stable"
 
 
 @dataclass
@@ -71,6 +73,8 @@ class RuleLoader:
         if rules_dir is None:
             # Default: rules/ directory next to the scanner package
             rules_dir = Path(__file__).parent.parent / "rules"
+            if not rules_dir.exists():
+                rules_dir = Path(sysconfig.get_path("data")) / "ai-sec-scanner" / "rules"
         self.rules_dir = Path(rules_dir)
         self._cache: Dict[str, List[RuleSet]] = {}
 
@@ -156,6 +160,11 @@ class RuleLoader:
                 severity_overrides=r.get("severity_overrides", []),
                 language=rs.get("language"),
                 file_extensions=rs.get("file_extensions", []),
+                # Legacy regex matches are review candidates until validated independently.
+                maturity=r.get("maturity", "stable" if r["id"] in {
+                    "AI-SE-001", "AI-SE-002", "AI-SE-003", "AI-SE-004", "AI-SE-005",
+                    "AI-SE-006", "AI-SE-007", "AI-SE-008", "AI-SE-009", "AI-SE-011", "AI-SE-019",
+                } else "experimental"),
             ))
 
         target_files = target_files if isinstance(target_files, dict) else {}

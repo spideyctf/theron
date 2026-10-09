@@ -5,6 +5,7 @@ CLI entry point for ai-sec-scan.
 import argparse
 import sys
 import os
+from pathlib import Path
 
 
 def main():
@@ -30,21 +31,22 @@ def main():
     target.add_argument("--local", help="Scan a local directory instead of GitHub")
 
     parser.add_argument("--branch", help="Branch to scan (default: repo's default branch)")
-    parser.add_argument("--modules", default="ai,sast,sca,agentic",
-                        help="Comma-separated modules: ai,sast,sca,agentic (default: all)")
+    parser.add_argument("--modules", help="Comma-separated modules: ai,sast,sca,agentic (default: config or all)")
     parser.add_argument("--format", default="terminal", choices=["terminal", "json", "html", "sarif"],
                         help="Output format (default: terminal)")
     parser.add_argument("--output", "-o", help="Output file path (for json/html/sarif)")
-    parser.add_argument("--create-issues", action="store_true",
-                        help="Create GitHub issues for critical/high findings")
     parser.add_argument("--max-repos", type=int, default=50,
                         help="Max repos to scan for --user/--org/--mine (default: 50)")
     parser.add_argument("--rules-dir", help="Custom rules directory (default: bundled rules/)")
+    parser.add_argument("--config", help="Path to theron.yml (default: target's theron.yml)")
+    parser.add_argument("--include-experimental", action="store_true", help="Enable experimental rules")
+    parser.add_argument("--fail-on", choices=["critical", "high", "medium", "low"],
+                        help="Exit 2 when a new finding reaches this severity; default reports only")
 
     args = parser.parse_args()
 
     # Parse modules
-    module_names = [m.strip().lower() for m in args.modules.split(",")]
+    module_names = [m.strip().lower() for m in args.modules.split(",")] if args.modules else None
 
     # ── Local scan mode ──────────────────────────────────────────────────
     if args.local:
@@ -60,10 +62,12 @@ def main():
         sys.exit(1)
 
     from scanner.engine import ScanEngine
-    from scanner.models import Severity
+    from scanner.config import load_config
 
     try:
-        engine = ScanEngine(token, rules_dir=args.rules_dir)
+        config = load_config(os.getcwd(), args.config)
+        config["include_experimental"] = args.include_experimental
+        engine = ScanEngine(token, rules_dir=args.rules_dir, config=config)
     except Exception as e:
         print(f"Error initializing scanner: {e}")
         sys.exit(1)
@@ -73,46 +77,20 @@ def main():
             print("Error: --repo must be in format 'owner/repo'")
             sys.exit(1)
         owner, repo = args.repo.split("/", 1)
-        results = [engine.scan_repo(owner, repo, branch=args.branch, modules=module_names)]
+        results = [engine.scan_repo(owner, repo, branch=args.branch, modules=module_names or config["modules"])]
     elif args.user:
-        results = engine.scan_user_repos(args.user, modules=module_names, max_repos=args.max_repos)
+        results = engine.scan_user_repos(args.user, modules=module_names or config["modules"], max_repos=args.max_repos)
     elif args.org:
-        results = engine.scan_org_repos(args.org, modules=module_names, max_repos=args.max_repos)
+        results = engine.scan_org_repos(args.org, modules=module_names or config["modules"], max_repos=args.max_repos)
     elif args.mine:
-        results = engine.scan_my_repos(modules=module_names, max_repos=args.max_repos)
+        results = engine.scan_my_repos(modules=module_names or config["modules"], max_repos=args.max_repos)
     else:
         print("Error: No scan target specified.")
         sys.exit(1)
 
     _output_results(results, args, engine)
 
-    # Optionally create GitHub issues
-    if args.create_issues:
-        for result in results:
-            owner, repo = result.repo_full_name.split("/", 1)
-            critical_high = [f for f in result.findings if f.severity in (Severity.CRITICAL, Severity.HIGH)]
-            if critical_high:
-                print(f"\n  Creating GitHub issues for {result.repo_full_name} ({len(critical_high)} critical/high)...")
-                for finding in critical_high[:20]:
-                    try:
-                        body = _format_issue_body(finding)
-                        engine.github.create_issue(
-                            owner, repo,
-                            title=f"[SECURITY] {finding.severity.value}: {finding.title}",
-                            body=body,
-                            labels=["security", "ai-sec-scanner", f"severity:{finding.severity.value.lower()}"],
-                        )
-                        print(f"    ✅ Created issue: {finding.title[:60]}")
-                    except Exception as e:
-                        print(f"    ❌ Failed to create issue: {e}")
-
-    # Exit non-zero if critical findings
-    has_critical = any(
-        f.severity == Severity.CRITICAL
-        for result in results
-        for f in result.findings
-    )
-    if has_critical:
+    if _should_fail(results, args.fail_on):
         sys.exit(2)
 
 
@@ -120,6 +98,8 @@ def _run_local_scan(args, module_names):
     """Scan a local directory without GitHub."""
     import os
     from scanner.models import ScanResult, Severity, ScanContext
+    from scanner.config import load_config
+    from scanner.finding_utils import normalize_findings, coverage_finding
     from scanner.profiler import ProjectProfiler
     from scanner.rule_loader import RuleLoader
     from scanner.plugins import discover_plugins, clear_registry
@@ -129,6 +109,15 @@ def _run_local_scan(args, module_names):
         print(f"Error: Directory '{scan_dir}' does not exist.")
         sys.exit(1)
 
+    try:
+        config = load_config(scan_dir, args.config)
+    except ValueError as exc:
+        print(f"Error loading config: {exc}")
+        sys.exit(1)
+    config["include_experimental"] = args.include_experimental
+    if module_names is None:
+        module_names = config["modules"]
+
     clear_registry()
     scanners = discover_plugins()
     rule_loader = RuleLoader(args.rules_dir)
@@ -137,28 +126,31 @@ def _run_local_scan(args, module_names):
     # Collect files
     SKIP_DIRS = {"node_modules", ".git", "__pycache__", ".venv", "venv", "dist",
                  "build", ".next", "vendor", ".idea", ".vscode", "target",
-                 "coverage", ".cache", ".pytest_cache", ".mypy_cache"}
+                 "coverage", ".cache", ".pytest_cache", ".mypy_cache", ".benchmark-cache"}
     SCANABLE_EXT = {".py", ".js", ".ts", ".jsx", ".tsx", ".yaml", ".yml", ".json",
                     ".toml", ".env", ".cfg", ".ini", ".txt", ".md", ".xml"}
     SCANABLE_BASE = {"Dockerfile", "docker-compose.yml", "docker-compose.yaml",
                      "requirements.txt", "package.json", "pyproject.toml", "go.mod",
-                     "Pipfile", "SKILL.md", "AGENTS.md", "AGENT.md", "CLAUDE.md",
+                     "Pipfile", "Pipfile.lock", "SKILL.md", "AGENTS.md", "AGENT.md", "CLAUDE.md",
                      "GUMMIE.md", "INSTRUCTIONS.md", "README.md"}
 
     files = {}
+    coverage = []
     for root, dirs, filenames in os.walk(scan_dir):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
         for filename in filenames:
-            if os.path.getsize(os.path.join(root, filename)) > 500_000:
-                continue
             ext = "." + filename.rsplit(".", 1)[-1] if "." in filename else ""
             if ext in SCANABLE_EXT or filename in SCANABLE_BASE or filename.startswith("Dockerfile"):
                 full_path = os.path.join(root, filename)
-                rel_path = os.path.relpath(full_path, scan_dir)
+                rel_path = os.path.relpath(full_path, scan_dir).replace("\\", "/")
                 try:
-                    with open(full_path, "r", errors="replace") as f:
+                    if os.path.getsize(full_path) > 500_000:
+                        coverage.append(coverage_finding(rel_path, "The file exceeds the 500 KB analysis limit."))
+                        continue
+                    with open(full_path, "r", encoding="utf-8", errors="replace") as f:
                         files[rel_path] = f.read()
                 except Exception:
+                    coverage.append(coverage_finding(rel_path, "The local file could not be read."))
                     continue
 
     print(f"  Local scan: {scan_dir}")
@@ -169,8 +161,8 @@ def _run_local_scan(args, module_names):
     profile = profiler.analyze(files)
     print(f"  Project: {profile.primary_language}, AI frameworks: {len(profile.ai_frameworks)}")
 
-    context = ScanContext(files=files, repo_info={}, project_profile=profile, rule_loader=rule_loader)
-    result = ScanResult(repo_full_name=scan_dir, branch="local", files_scanned=len(files))
+    context = ScanContext(files=files, repo_info={}, project_profile=profile, rule_loader=rule_loader, config=config)
+    result = ScanResult(repo_full_name=scan_dir, branch="local", files_scanned=len(files), findings=coverage)
 
     for scanner in scanners.values():
         if module_names and scanner.name not in module_names:
@@ -184,12 +176,15 @@ def _run_local_scan(args, module_names):
         if sca:
             result.sbom = sca.generate_sbom(files, scan_dir)
 
+    result.findings = normalize_findings(result.findings, config)
     result.scan_duration_seconds = round(time.time() - start, 2)
 
     sev_order = {Severity.CRITICAL: 0, Severity.HIGH: 1, Severity.MEDIUM: 2, Severity.LOW: 3, Severity.INFO: 4}
     result.findings.sort(key=lambda f: sev_order.get(f.severity, 99))
 
     _output_results([result], args, None)
+    if _should_fail([result], args.fail_on):
+        sys.exit(2)
 
 
 def _output_results(results, args, engine):
@@ -202,44 +197,37 @@ def _output_results(results, args, engine):
         if args.format == "terminal":
             print_terminal_report(result)
         elif args.format == "json":
-            path = args.output or f"scan_{result.repo_full_name.replace('/', '_')}.json"
+            path = args.output or _default_output_path(result, "json")
             save_json_report(result, path)
             print(f"JSON report saved to {path}")
         elif args.format == "html":
-            path = args.output or f"scan_{result.repo_full_name.replace('/', '_')}.html"
+            path = args.output or _default_output_path(result, "html")
             save_html_report(result, path)
             print(f"HTML report saved to {path}")
         elif args.format == "sarif":
-            path = args.output or f"scan_{result.repo_full_name.replace('/', '_')}.sarif"
+            path = args.output or _default_output_path(result, "sarif")
             save_sarif_report(result, path)
             print(f"SARIF report saved to {path}")
 
 
-def _format_issue_body(finding):
-    return f"""## 🔍 Security Finding: {finding.title}
+def _default_output_path(result, extension):
+    """Use a portable name even when the scan target is a nested directory."""
+    name = Path(str(result.repo_full_name).replace("\\", "/")).name or "scan"
+    safe_name = "".join(char if char.isalnum() or char in "._-" else "_" for char in name)
+    return f"scan_{safe_name}.{extension}"
 
-**Severity:** {finding.severity.value}
-**Category:** {finding.category.value}
-**Module:** {finding.module}
-**CWE:** {finding.cwe or 'N/A'}
-**Confidence:** {finding.confidence}
-**Rule ID:** {finding.rule_id or 'N/A'}
 
-**File:** `{finding.file_path}:{finding.line_number or 'N/A'}`
-
-### Description
-{finding.description}
-
-### Code
-```
-{finding.code_snippet or 'N/A'}
-```
-
-### Recommendation
-{finding.recommendation or 'N/A'}
-
----
-*Generated by [ai-sec-scanner](https://github.com/aryaman-futane/ai-sec-scanner)*"""
+def _should_fail(results, threshold):
+    if not threshold:
+        return False
+    from scanner.models import Severity
+    levels = [Severity.CRITICAL, Severity.HIGH, Severity.MEDIUM, Severity.LOW]
+    cutoff = levels.index(Severity(threshold.upper()))
+    return any(
+        finding.status == "new" and levels.index(finding.severity) <= cutoff
+        for result in results for finding in result.findings
+        if finding.severity in levels
+    )
 
 
 if __name__ == "__main__":

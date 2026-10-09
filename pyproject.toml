@@ -3,8 +3,8 @@ requires = ["setuptools>=64.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ai-sec-scanner"
-version = "0.1.0"
+name = "theron"
+version = "1.0.0"
 description = "Open-source AI infrastructure security scanner with GitHub integration"
 readme = "README.md"
 license = {text = "MIT"}
@@ -28,10 +28,13 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
+    "httpx>=0.28.0",
 ]
+web = ["fastapi>=0.115.0", "uvicorn>=0.34.0"]
 
 [project.scripts]
 ai-sec-scan = "scanner.cli:main"
+theron-web = "scanner.web:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
@@ -39,3 +42,9 @@ include = ["scanner*"]
 
 [tool.setuptools.package-data]
 scanner = ["../rules/**/*.yaml"]
+
+[tool.setuptools.data-files]
+"ai-sec-scanner/rules/ai/v1" = ["rules/ai/v1/prompt_injection.yaml", "rules/ai/v1/secret_exposure.yaml", "rules/ai/v1/insecure_deployment.yaml", "rules/ai/v1/data_exfiltration.yaml"]
+"ai-sec-scanner/rules/sast/v1" = ["rules/sast/v1/python.yaml", "rules/sast/v1/javascript.yaml", "rules/sast/v1/ai_taint.yaml"]
+"ai-sec-scanner/rules/sca/v1" = ["rules/sca/v1/risky_packages.yaml"]
+"ai-sec-scanner/rules/agentic/v1" = ["rules/agentic/v1/mcp_config.yaml", "rules/agentic/v1/skill_injection.yaml", "rules/agentic/v1/tool_poisoning.yaml", "rules/agentic/v1/hidden_injections.yaml", "rules/agentic/v1/agent_permissions.yaml"]

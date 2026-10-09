@@ -12,6 +12,7 @@ from scanner.github_client import GitHubClient
 from scanner.profiler import ProjectProfiler
 from scanner.rule_loader import RuleLoader
 from scanner.plugins import discover_plugins
+from scanner.finding_utils import normalize_findings, coverage_finding
 
 
 SCANABLE_EXTENSIONS = {
@@ -23,14 +24,14 @@ SCANABLE_BASENAMES = {
     "Dockerfile", "Dockerfile.dev", "Dockerfile.prod", "Dockerfile.base",
     "docker-compose.yml", "docker-compose.yaml", "docker-compose.dev.yml",
     "requirements.txt", "package.json", "pyproject.toml", "go.mod",
-    "Pipfile", "SKILL.md", "AGENTS.md", "AGENT.md", "CLAUDE.md",
+    "Pipfile", "Pipfile.lock", "SKILL.md", "AGENTS.md", "AGENT.md", "CLAUDE.md",
     "GUMMIE.md", "INSTRUCTIONS.md", "README.md",
 }
 
 SKIP_DIRS = {
     "node_modules", ".git", "__pycache__", ".venv", "venv", "dist",
     "build", ".next", "vendor", ".idea", ".vscode", "target",
-    "coverage", ".cache", ".pytest_cache", ".mypy_cache",
+    "coverage", ".cache", ".pytest_cache", ".mypy_cache", ".benchmark-cache",
 }
 
 MAX_FILE_SIZE = 500_000
@@ -39,11 +40,12 @@ MAX_FILE_SIZE = 500_000
 class ScanEngine:
     """Orchestrates security scanning across all discovered plugins."""
 
-    def __init__(self, github_token: Optional[str] = None, rules_dir: Optional[str] = None):
+    def __init__(self, github_token: Optional[str] = None, rules_dir: Optional[str] = None, config: Optional[dict] = None):
         self.github = GitHubClient(github_token)
         self.rule_loader = RuleLoader(rules_dir)
         self.profiler = ProjectProfiler()
         self.scanners = discover_plugins()
+        self.config = config or {}
 
     def scan_repo(
         self,
@@ -66,19 +68,21 @@ class ScanEngine:
 
         # Filter files
         scanable_paths = []
+        coverage = []
         for item in tree:
             if item.get("type") != "blob":
                 continue
             path = item.get("path", "")
             size = item.get("size", 0)
-            if size > MAX_FILE_SIZE:
-                continue
-            if any(skip_dir in path for skip_dir in SKIP_DIRS):
+            if any(skip_dir in path.split("/") for skip_dir in SKIP_DIRS):
                 continue
             basename = path.rsplit("/", 1)[-1]
             ext = "." + basename.rsplit(".", 1)[-1] if "." in basename else ""
             if ext in SCANABLE_EXTENSIONS or basename in SCANABLE_BASENAMES or basename.startswith("Dockerfile"):
-                scanable_paths.append(path)
+                if size > MAX_FILE_SIZE:
+                    coverage.append(coverage_finding(path, "The file exceeds the 500 KB analysis limit."))
+                else:
+                    scanable_paths.append(path)
 
         print(f"  Found {len(scanable_paths)} files to scan")
 
@@ -88,8 +92,9 @@ class ScanEngine:
             try:
                 content = self.github.get_file_content(owner, repo, path, branch)
                 files[path] = content
-            except Exception as e:
-                print(f"  Warning: Could not fetch {path}: {e}")
+            except Exception:
+                print(f"  Warning: Could not fetch {path}")
+                coverage.append(coverage_finding(path, "The repository file could not be downloaded."))
                 continue
 
         print(f"  Fetched {len(files)} files")
@@ -106,6 +111,7 @@ class ScanEngine:
             repo_info=repo_info,
             project_profile=profile,
             rule_loader=self.rule_loader,
+            config=self.config,
         )
 
         # Run scanners
@@ -113,6 +119,7 @@ class ScanEngine:
             repo_full_name=f"{owner}/{repo}",
             branch=branch,
             files_scanned=len(files),
+            findings=coverage,
         )
 
         for scanner in self.scanners.values():
@@ -132,6 +139,7 @@ class ScanEngine:
             if sca_scanner:
                 result.sbom = sca_scanner.generate_sbom(files, f"{owner}/{repo}")
 
+        result.findings = normalize_findings(result.findings, self.config)
         result.scan_duration_seconds = round(time.time() - start_time, 2)
 
         # Sort findings by severity

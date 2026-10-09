@@ -18,6 +18,11 @@ from scanner.profiler import ProjectProfiler
 from scanner.plugins import ensure_plugins_loaded
 
 
+@pytest.fixture(autouse=True)
+def offline_advisories(monkeypatch):
+    monkeypatch.setattr(ensure_plugins_loaded()["sca"], "_query_osv", lambda package, version, ecosystem: [])
+
+
 @pytest.fixture
 def rule_loader():
     rules_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "rules")
@@ -139,6 +144,7 @@ def scan_context(vulnerable_files, rule_loader):
         repo_info={"full_name": "test/repo"},
         project_profile=profile,
         rule_loader=rule_loader,
+        config={"include_experimental": True},
     )
 
 
@@ -298,8 +304,9 @@ class TestSCAScanner:
         component_names = [c["name"] for c in sbom["components"]]
         assert "openai" in component_names or "langchain" in component_names
 
-    def test_flags_risky_packages(self, scan_context):
+    def test_flags_risky_packages(self, scan_context, monkeypatch):
         scanners = ensure_plugins_loaded()
+        monkeypatch.setattr(scanners["sca"], "_query_osv", lambda package, version, ecosystem: [])
         findings = scanners["sca"].scan(scan_context)
         risky = [f for f in findings if "Risky AI/ML" in f.title]
         assert len(risky) > 0

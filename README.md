@@ -1,38 +1,58 @@
 # Theron — Open Source AI Infrastructure Security Scanner
 
-A free, open-source security scanner that integrates directly with your GitHub repositories to detect AI-specific vulnerabilities, misconfigurations, insecure model deployments, prompt injection risks, secret exposure, and agentic AI threats.
+A local, read-only SAST/SCA scanner with CycloneDX SBOM output and AI-aware Python analysis. Findings are evidence for review, not a guarantee of exploitability or complete coverage.
+
+## v1 workflow
+
+Theron is report-only by default: it produces terminal, JSON, HTML, or SARIF evidence for a human to validate and turn into an issue or pull request. Python receives syntax-aware checks for AI data flows and unsafe model loading; JavaScript/TypeScript remain advisory, pattern-based coverage.
+
+Use `theron.yml` to exclude paths or accept finding fingerprints as an existing baseline. Add `--fail-on high` only when you want CI to block on new findings at that severity. Broad legacy regex and agent/config review checks now require `--include-experimental`; they are not confirmed bugs.
+
+### Detection quality and limits
+
+- Default Python checks require an observed external-input-to-execution/deserialization/SQLite-statement flow or model-text-to-execution flow. They resolve imports and OpenAI/Anthropic clients, track simple assignments and response-content extraction, clear reassigned values, and isolate function scopes. Passing user input to an LLM alone does **not** alert.
+- Safe subprocess argument lists, safe YAML loaders, ordinary `.generate()` methods, arbitrary credential-like variable names, and AI package presence do not produce default vulnerability alerts.
+- Analysis is conservative, with direct same-file helper/method calls bounded to three levels. Flask/Bottle/Quart request sources and typed FastAPI request/string-route inputs are recognised, along with selected string transformations. It does not prove runtime reachability, follow cross-file calls/dynamic dispatch/tainted helper returns, model every framework, or recognise every sanitizer. Unsupported and ambiguous flows can be missed. JavaScript/TypeScript remain opt-in advisory regex checks.
+- Provider-shaped credentials are redacted in evidence. A pattern match does not prove a credential is valid; the scanner never attempts authentication with discovered credentials.
+- SCA queries OSV using the manifest's ecosystem and an exact declared or locked version. Ranges and unpinned dependencies stay unresolved in the SBOM and produce informational coverage notices, not invented installed versions. An advisory match does not prove deployment or exploitability.
+- npm lockfiles (v1/v2/v3), npm shrinkwrap, and Pipfile.lock add locked transitive versions. Matching lock entries take precedence over declarations in the same directory. Unsupported lock formats are not analysed. Malformed supported manifests, failed advisory requests, unparseable Python, oversized files, and download/read failures produce informational notices. Advisory severity uses supplied metadata; unknown severity is provisionally medium (CVSS vectors are not scored).
+- Files over 500 KB and configured/generated directories are not analysed. An empty report is not a security certification. Default filtering favours precision over recall.
+
+## Local web workspace
+
+The React workspace in `frontend/` connects to a local Python API. Scan GitHub repositories, combine finding filters, inspect source evidence, and download JSON or SARIF. Tokens stay in the backend environment; session history resets when the backend restarts.
+
+```powershell
+python -m pip install -e ".[web]"
+python -m scanner.web
+```
+
+In a second terminal, run `npm ci` and `npm run dev` from `frontend/`, then open http://127.0.0.1:5173. Set `GITHUB_TOKEN` in the backend environment to enable live scans. See [frontend/README.md](frontend/README.md) for setup, production serving, and verification commands.
 
 ## Features
 
 ### AI-Specific Security Analysis
-- **Prompt Injection Detection** — Detects prompt injection patterns in system prompts, instructions, SKILL.md files, and agent configurations
-- **Secret Exposure Scanning** — Finds hardcoded API keys, tokens, credentials in code and config files (OpenAI, Anthropic, GitHub, AWS, HuggingFace, Slack, Google, and more)
-- **Insecure Model Deployment** — Checks for exposed model endpoints, missing auth, insecure serialization (pickle/joblib/torch.load)
-- **Model Poisoning Indicators** — Detects untrusted model loading, unsigned model files, suspicious weights
-- **Data Exfiltration Risks** — Identifies outbound data flows to untrusted endpoints from AI pipelines
+- Default: known provider-shaped credentials and observed Python model-text-to-execution flows.
+- Experimental: prompt/instruction patterns, deployment settings, generic credentials, and exfiltration review candidates.
 
 ### SAST (Static Application Security Testing)
-- Taint analysis for Python, JavaScript/TypeScript
-- Detects command injection, path traversal, SSRF, SQL injection, deserialization flaws, XXE
-- **AI-specific taint tracking**: user input → LLM prompt (prompt injection risk), LLM output → code execution (code injection via manipulated model)
+- Default: Python syntax-aware input-to-command/code execution, unsafe deserialization, resolved SQLite statement-injection checks, and reflected input in explicit Django/FastAPI/Starlette HTML responses. Selected Django, standard-library HTTP, Tornado, and resolved socket inputs are recognised. Parameterized SQL values and literal identifier allowlists are handled separately from unsafe interpolation.
+- Experimental: broader Python and advisory JS/TS patterns for SQLi, SSRF, traversal, and other security review candidates.
 
 ### SCA (Software Composition Analysis)
 - Auto-generates SBOM (CycloneDX format) from dependency manifests
 - **Checks dependencies against OSV.dev vulnerability database (live API — no hardcoded CVEs)**
-- Flags AI/ML packages with known security risks (langchain, torch, transformers, crewai, autogen, etc.)
-- Supports: requirements.txt, package.json, pyproject.toml, go.mod, Pipfile
+- AI/ML package review hints are experimental; using a package is not a bug.
+- Supported declarations: requirements.txt, package.json, pyproject.toml, go.mod, Pipfile. Supported locks: package-lock.json, npm-shrinkwrap.json, Pipfile.lock.
 
 ### Agentic AI Security
-- **MCP (Model Context Protocol) Analysis** — Scans MCP server configs for malicious tools, overly permissive scopes, insecure transports, hardcoded secrets, auto-approve, wildcard permissions
-- **SKILL.md / Instructions Scanning** — Detects prompt injection, hidden instructions, privilege escalation in agent skill definitions
-- **Agent Connector Auditing** — Analyzes agentic AI connectors (LangChain tools, CrewAI tools, custom MCP tools) for injection vectors and unsafe operations
-- **Tool Poisoning Detection** — Identifies malicious tool descriptions that could manipulate agent behavior
-- **Hidden Injection Detection** — Finds hidden instructions in HTML comments, zero-width characters, escaped newlines, fake system tags
+- Experimental MCP/config, SKILL/instruction, permission, and tool-description review checks.
+- Missing authentication fields alone do not prove a public endpoint lacks authentication. Malformed MCP files produce an informational parsing notice.
 
 ### GitHub Integration
 - Connects directly to your GitHub account via Personal Access Token
 - Scan single repos, all user repos, or entire organizations
-- Optional auto-issue creation for CRITICAL/HIGH findings
+- No automatic issues, PRs, bounty submissions, or production-site probing.
 - SARIF output for GitHub Code Scanning integration
 
 ### Local Scanning
@@ -129,8 +149,8 @@ ai-sec-scan --repo owner/repo-name --modules ai,agentic
 # Scan all your repos
 ai-sec-scan --mine
 
-# Create GitHub issues for findings
-ai-sec-scan --repo owner/repo-name --create-issues
+# Opt into broader review candidates (not confirmed vulnerabilities)
+ai-sec-scan --repo owner/repo-name --include-experimental
 ```
 
 ## Modules
@@ -168,6 +188,7 @@ rules:
     pattern: 'my_dangerous_pattern'
     cwe: CWE-798
     confidence: high
+    maturity: experimental
     description: "Detected a dangerous pattern."
     recommendation: "Fix this by doing X."
     references:
@@ -175,6 +196,8 @@ rules:
 ```
 
 ## Running Tests
+
+For the pinned external synthetic evaluation, results, scoring rules, and limits, see [PySASTBench evaluation](docs/PYSASTBENCH.md). This benchmark evaluates Python SAST only, not AI, SCA, or SBOM quality.
 
 ```bash
 pip install -e ".[dev]"
@@ -194,7 +217,3 @@ ai-sec-scan --local examples/vulnerable_repo --format html --output example_repo
 ## License
 
 MIT — Completely free and open source.
-=======
-# theron
-a pretty fun project, scans literally everything in a repo
->>>>>>> 2ff3e5f6baec882e831dc68088b339a6e7ab85a1

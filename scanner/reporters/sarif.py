@@ -49,7 +49,11 @@ def generate_sarif_report(result: ScanResult) -> str:
                 "module": finding.module,
                 "confidence": finding.confidence,
                 "recommendation": finding.recommendation,
+                "fingerprint": finding.fingerprint,
+                "maturity": finding.maturity,
+                "status": finding.status,
             },
+            "partialFingerprints": {"theron/v1": finding.fingerprint} if finding.fingerprint else {},
         })
 
     sarif = {
@@ -71,5 +75,5 @@ def generate_sarif_report(result: ScanResult) -> str:
 
 
 def save_sarif_report(result: ScanResult, output_path: str):
-    with open(output_path, "w") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(generate_sarif_report(result))

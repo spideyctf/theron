@@ -7,7 +7,7 @@ from typing import Set
 DEFAULT_SKIP_DIRS = {
     "node_modules", ".git", "__pycache__", ".venv", "venv", "dist",
     "build", ".next", "vendor", ".idea", ".vscode", "target",
-    "coverage", ".cache", ".pytest_cache", ".mypy_cache",
+    "coverage", ".cache", ".pytest_cache", ".mypy_cache", ".benchmark-cache",
 }
 
 SECURITY_RELEVANT_EXTENSIONS = {
@@ -18,7 +18,7 @@ SECURITY_RELEVANT_EXTENSIONS = {
 SECURITY_RELEVANT_BASENAMES = {
     "Dockerfile", "docker-compose.yml", "docker-compose.yaml",
     "requirements.txt", "package.json", "pyproject.toml", "go.mod",
-    "Pipfile", "SKILL.md", "AGENTS.md", "AGENT.md", "CLAUDE.md",
+    "Pipfile", "Pipfile.lock", "SKILL.md", "AGENTS.md", "AGENT.md", "CLAUDE.md",
     "GUMMIE.md", "INSTRUCTIONS.md",
 }
 
@@ -27,7 +27,7 @@ def should_scan_file(file_path: str, skip_dirs: Set[str] = None) -> bool:
     if skip_dirs is None:
         skip_dirs = DEFAULT_SKIP_DIRS
     for skip in skip_dirs:
-        if skip in file_path:
+        if skip in file_path.replace("\\", "/").split("/"):
             return False
     basename = os.path.basename(file_path)
     ext = "." + basename.rsplit(".", 1)[-1] if "." in basename else ""
@@ -58,3 +58,9 @@ def sanitize_for_report(text: str) -> str:
     text = text.replace("\x00", "")
     lines = text.splitlines()
     return "\n".join(truncate_string(line, 500) for line in lines)
+
+
+def redact_secrets(text: str) -> str:
+    """Mask credential-shaped values even in evidence for a different rule."""
+    text = re.sub(r"(?:sk-(?:proj-|ant-)?[\w-]{20,}|gh[pors]_[\w]{30,}|hf_[\w]{30,}|AIza[\w-]{35}|AKIA[A-Z0-9]{16}|xox[baprs]-[\w-]{10,})", "[REDACTED]", text)
+    return re.sub(r'''(?i)((?:[\w-]*(?:key|token|secret|password|credential)[\w-]*)["']?\s*[:=]\s*["'])([^"'\n]+)(["'])''', r"\1[REDACTED]\3", text)

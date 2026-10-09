@@ -2,6 +2,8 @@
 Terminal reporter — color-coded console output using rich.
 """
 
+import sys
+
 from scanner.models import ScanResult, Severity
 
 
@@ -13,6 +15,7 @@ SEVERITY_COLORS = {
     Severity.INFO: "dim",
 }
 
+_UNICODE = (sys.stdout.encoding or "").lower().startswith("utf")
 SEVERITY_ICONS = {
     Severity.CRITICAL: "🔴",
     Severity.HIGH: "🟠",
@@ -20,9 +23,14 @@ SEVERITY_ICONS = {
     Severity.LOW: "🔵",
     Severity.INFO: "⚪",
 }
+if not _UNICODE:
+    SEVERITY_ICONS = {severity: "*" for severity in SEVERITY_ICONS}
 
 
 def print_terminal_report(result: ScanResult):
+    if not _UNICODE:
+        _plain_report(result)
+        return
     try:
         from rich.console import Console
         from rich.table import Table
@@ -45,7 +53,7 @@ def _rich_report(console, result, Table, Panel, Text):
         f"Files Scanned: {summary['files_scanned']}\n"
         f"Modules: {', '.join(summary['modules_run'])}\n"
         f"Duration: {summary['scan_duration_seconds']}s",
-        title="🔍 AISecScanner",
+        title=("🔍 " if _UNICODE else "") + "Theron",
         border_style="cyan",
     ))
 
@@ -58,7 +66,7 @@ def _rich_report(console, result, Table, Panel, Text):
             console.print(f"  {SEVERITY_ICONS[sev]} [{color}]{sev.value}: {count}[/{color}]")
 
     if not result.findings:
-        console.print("\n[green]✅ No security findings detected![/green]")
+        console.print("\n[green]" + ("✅ " if _UNICODE else "") + "No security findings detected![/green]")
         return
 
     console.print("\n[bold]Findings:[/bold]\n")
@@ -93,6 +101,7 @@ def _rich_report(console, result, Table, Panel, Text):
             f"[dim]CWE:[/dim] {finding.cwe or 'N/A'}\n"
             f"[dim]Confidence:[/dim] {finding.confidence}\n"
             f"[dim]Rule ID:[/dim] {finding.rule_id or 'N/A'}\n\n"
+            f"[dim]Status:[/dim] {finding.status}  [dim]Fingerprint:[/dim] {finding.fingerprint or 'N/A'}\n\n"
             f"{finding.description}\n\n"
             f"[green]Recommendation:[/green] {finding.recommendation or 'N/A'}"
             + (f"\n\n[dim]Code:[/dim]\n```{finding.code_snippet}```" if finding.code_snippet else ""),
@@ -102,35 +111,41 @@ def _rich_report(console, result, Table, Panel, Text):
 
 
 def _plain_report(result: ScanResult):
+    encoding = sys.stdout.encoding or "ascii"
+
+    def out(value):
+        print(str(value).encode(encoding, errors="replace").decode(encoding))
+
     summary = result.summary
-    print(f"\n{'='*60}")
-    print(f"AI Infrastructure Security Scan Report")
-    print(f"{'='*60}")
-    print(f"Repository: {summary['repo']}")
-    print(f"Branch: {summary['branch']}")
-    print(f"Files Scanned: {summary['files_scanned']}")
-    print(f"Modules: {', '.join(summary['modules_run'])}")
-    print(f"Duration: {summary['scan_duration_seconds']}s")
-    print(f"Total Findings: {summary['total_findings']}")
+    out(f"\n{'='*60}")
+    out("AI Infrastructure Security Scan Report")
+    out(f"{'='*60}")
+    out(f"Repository: {summary['repo']}")
+    out(f"Branch: {summary['branch']}")
+    out(f"Files Scanned: {summary['files_scanned']}")
+    out(f"Modules: {', '.join(summary['modules_run'])}")
+    out(f"Duration: {summary['scan_duration_seconds']}s")
+    out(f"Total Findings: {summary['total_findings']}")
 
     by_sev = summary["by_severity"]
     for sev in ["CRITICAL", "HIGH", "MEDIUM", "LOW", "INFO"]:
         count = by_sev.get(sev, 0)
         if count:
-            print(f"  {sev}: {count}")
+            out(f"  {sev}: {count}")
 
     if not result.findings:
-        print("\n✅ No security findings detected!")
+        out("\n" + ("✅ " if _UNICODE else "") + "No security findings detected!")
         return
 
-    print(f"\n{'─'*60}")
+    out(f"\n{'-'*60}")
     for i, finding in enumerate(result.findings, 1):
-        print(f"\n#{i} [{finding.severity.value}] {finding.title}")
-        print(f"  Category: {finding.category.value}")
-        print(f"  File: {finding.file_path}:{finding.line_number or 'N/A'}")
-        print(f"  CWE: {finding.cwe or 'N/A'}")
-        print(f"  Description: {finding.description}")
-        print(f"  Recommendation: {finding.recommendation or 'N/A'}")
+        out(f"\n#{i} [{finding.severity.value}] {finding.title}")
+        out(f"  Category: {finding.category.value}")
+        out(f"  File: {finding.file_path}:{finding.line_number or 'N/A'}")
+        out(f"  CWE: {finding.cwe or 'N/A'}")
+        out(f"  Status: {finding.status} ({finding.fingerprint or 'N/A'})")
+        out(f"  Description: {finding.description}")
+        out(f"  Recommendation: {finding.recommendation or 'N/A'}")
         if finding.code_snippet:
-            print(f"  Code:\n    {finding.code_snippet.replace(chr(10), chr(10) + '    ')}")
-    print(f"\n{'='*60}")
+            out(f"  Code:\n    {finding.code_snippet.replace(chr(10), chr(10) + '    ')}")
+    out(f"\n{'='*60}")

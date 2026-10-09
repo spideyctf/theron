@@ -1,13 +1,14 @@
 """HTML reporter — generates an interactive HTML report with filtering and SBOM view."""
 
 import json
+from html import escape
 from scanner.models import ScanResult, Severity
 
 
 def generate_html_report(result: ScanResult) -> str:
     summary = result.summary
-    findings_json = json.dumps([f.to_dict() for f in result.findings])
-    sbom_json = json.dumps(result.sbom, indent=2) if result.sbom else "null"
+    findings_json = json.dumps([f.to_dict() for f in result.findings]).replace("<", "\\u003c")
+    sbom_json = json.dumps(result.sbom, indent=2).replace("<", "\\u003c") if result.sbom else "null"
 
     by_sev = summary["by_severity"]
     counts = {sev.value: by_sev.get(sev.value, 0) for sev in Severity}
@@ -17,7 +18,7 @@ def generate_html_report(result: ScanResult) -> str:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Security Scan Report — {summary['repo']}</title>
+    <title>AI Security Scan Report — {escape(summary['repo'])}</title>
     <style>
         :root {{
             --bg: #0d1117; --card-bg: #161b22; --border: #30363d;
@@ -74,10 +75,10 @@ def generate_html_report(result: ScanResult) -> str:
         <div class="header">
             <h1>🔍 AI Infrastructure Security Scan Report</h1>
             <p class="meta">
-                <strong>Repository:</strong> {summary['repo']} &nbsp;|&nbsp;
-                <strong>Branch:</strong> {summary['branch']} &nbsp;|&nbsp;
+                <strong>Repository:</strong> {escape(summary['repo'])} &nbsp;|&nbsp;
+                <strong>Branch:</strong> {escape(summary['branch'])} &nbsp;|&nbsp;
                 <strong>Files Scanned:</strong> {summary['files_scanned']} &nbsp;|&nbsp;
-                <strong>Modules:</strong> {', '.join(summary['modules_run'])} &nbsp;|&nbsp;
+                <strong>Modules:</strong> {escape(', '.join(summary['modules_run']))} &nbsp;|&nbsp;
                 <strong>Duration:</strong> {summary['scan_duration_seconds']}s
             </p>
         </div>
@@ -113,7 +114,7 @@ def generate_html_report(result: ScanResult) -> str:
     <script>
         const findings = {findings_json};
         const sbom = {sbom_json};
-        function esc(s) {{ return s ? s.replace(/</g,'&lt;').replace(/>/g,'&gt;') : ''; }}
+        function esc(s) {{ return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : ''; }}
         function renderFindings(filter) {{
             const list = document.getElementById('findings-list');
             const filtered = filter === 'all' ? findings : findings.filter(f => f.severity === filter);
@@ -152,5 +153,5 @@ def generate_html_report(result: ScanResult) -> str:
 
 
 def save_html_report(result: ScanResult, output_path: str):
-    with open(output_path, "w") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(generate_html_report(result))

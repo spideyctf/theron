@@ -9,10 +9,12 @@ Scans for:
 """
 
 import re
+import fnmatch
 from typing import List
 from scanner.models import Finding, ScanContext, Severity, Category
 from scanner.plugins.base import Scanner
 from scanner.plugins import register
+from scanner.python_analysis import analyze_python
 
 
 @register
@@ -36,12 +38,17 @@ class AISecurityScanner(Scanner):
 
     def scan(self, context: ScanContext) -> List[Finding]:
         findings = []
+        self.include_experimental = bool(context.config.get("include_experimental"))
         rule_sets = context.rule_loader.load("ai")
+
+        for file_path, content in context.files.items():
+            if file_path.endswith(".py") and not any(skip in file_path.replace("\\", "/").split("/") for skip in self.SKIP_DIRS):
+                findings.extend(analyze_python(file_path, content, include_experimental=self.include_experimental))
 
         for rule_set in rule_sets:
             # Check skip files
             for file_path, content in context.files.items():
-                if any(skip in file_path for skip in self.SKIP_DIRS):
+                if any(skip in file_path.replace("\\", "/").split("/") for skip in self.SKIP_DIRS):
                     continue
 
                 basename = file_path.rsplit("/", 1)[-1]
@@ -64,7 +71,7 @@ class AISecurityScanner(Scanner):
                     continue
 
                 # Check skip files
-                if any(basename == sf or file_path.endswith(sf) for sf in (rule_set.skip_files or [])):
+                if any(fnmatch.fnmatch(basename, sf) for sf in (rule_set.skip_files or [])):
                     continue
 
                 for rule in rule_set.rules:

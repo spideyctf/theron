@@ -46,6 +46,9 @@ class Finding:
     confidence: str = "high"
     rule_id: Optional[str] = None
     references: Optional[List[str]] = None
+    fingerprint: Optional[str] = None
+    maturity: str = "stable"
+    status: str = "new"
 
     def to_dict(self) -> dict:
         return {
@@ -62,6 +65,9 @@ class Finding:
             "confidence": self.confidence,
             "rule_id": self.rule_id,
             "references": self.references or [],
+            "fingerprint": self.fingerprint,
+            "maturity": self.maturity,
+            "status": self.status,
         }
 
 

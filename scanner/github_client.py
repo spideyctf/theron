@@ -28,14 +28,14 @@ class GitHubClient:
 
     def _get(self, endpoint: str, params: dict = None) -> dict:
         url = f"{self.API_BASE}{endpoint}"
-        resp = self.session.get(url, params=params)
+        resp = self.session.get(url, params=params, timeout=(5, 30))
         if resp.status_code == 403 and "rate limit" in resp.text.lower():
             raise RuntimeError("GitHub API rate limit exceeded. Wait and retry.")
         resp.raise_for_status()
         return resp.json()
 
     def _get_raw(self, url: str) -> str:
-        resp = self.session.get(url)
+        resp = self.session.get(url, timeout=(5, 30))
         resp.raise_for_status()
         return resp.text
 
@@ -83,6 +83,8 @@ class GitHubClient:
         if branch is None:
             branch = self.get_default_branch(owner, repo)
         data = self._get(f"/repos/{owner}/{repo}/git/trees/{branch}?recursive=1")
+        if data.get("truncated"):
+            raise RuntimeError("Repository tree is too large to scan completely.")
         return data.get("tree", [])
 
     def get_file_content(self, owner: str, repo: str, path: str, branch: str = None) -> str:
@@ -93,7 +95,7 @@ class GitHubClient:
 
     def create_issue(self, owner: str, repo: str, title: str, body: str, labels: list = None) -> dict:
         payload = {"title": title, "body": body, "labels": labels or ["security", "ai-sec-scanner"]}
-        resp = self.session.post(f"{self.API_BASE}/repos/{owner}/{repo}/issues", json=payload)
+        resp = self.session.post(f"{self.API_BASE}/repos/{owner}/{repo}/issues", json=payload, timeout=(5, 30))
         resp.raise_for_status()
         return resp.json()
 

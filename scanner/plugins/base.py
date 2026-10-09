@@ -41,10 +41,11 @@ class Scanner(ABC):
     @staticmethod
     def _get_lines(content: str, line_num: int, context: int = 2) -> str:
         """Extract a code snippet around a given line number."""
+        from scanner.utils.helpers import redact_secrets
         lines = content.splitlines()
         start = max(0, line_num - 1 - context)
         end = min(len(lines), line_num + context)
-        return "\n".join(f"{i+1}: {lines[i]}" for i in range(start, end))
+        return redact_secrets("\n".join(f"{i+1}: {lines[i]}" for i in range(start, end)))
 
     @staticmethod
     def _is_comment_line(line: str) -> bool:
@@ -66,6 +67,8 @@ class Scanner(ABC):
         from scanner.models import Finding, Severity, Category
 
         findings = []
+        if rule.maturity == "experimental" and not getattr(self, "include_experimental", False):
+            return findings
         lines = content.splitlines()
         compiled = None
         try:
@@ -87,7 +90,7 @@ class Scanner(ABC):
             matched_text = match.group()
             if self._is_placeholder(matched_text):
                 continue
-            if rule.skip_if_contains and self._is_placeholder(matched_text):
+            if rule.skip_if_contains and any(value.lower() in line.lower() for value in rule.skip_if_contains):
                 continue
 
             # Determine severity (with overrides)
@@ -114,15 +117,16 @@ class Scanner(ABC):
                 severity=severity,
                 category=category,
                 module=module_name,
-                description=rule.description,
+                description=(rule.description + " Credential validity has not been checked." if category == Category.SECRET_EXPOSURE else rule.description),
                 file_path=file_path,
                 line_number=i,
-                code_snippet=self._get_lines(content, i),
+                code_snippet=(f"{i}: [credential-like value redacted]" if category == Category.SECRET_EXPOSURE else self._get_lines(content, i)),
                 recommendation=rule.recommendation,
                 cwe=rule.cwe,
-                confidence=rule.confidence,
+                confidence="medium" if rule.maturity == "experimental" else rule.confidence,
                 rule_id=rule.id,
                 references=rule.references,
+                maturity=rule.maturity,
             ))
 
         return findings
