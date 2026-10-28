@@ -6,13 +6,14 @@ detection, and the rule loader for versioned YAML rules.
 """
 
 import time
+from concurrent.futures import ThreadPoolExecutor
 from typing import List, Optional
 from scanner.models import Finding, ScanResult, Severity, ScanContext
 from scanner.github_client import GitHubClient
 from scanner.profiler import ProjectProfiler
 from scanner.rule_loader import RuleLoader
 from scanner.plugins import discover_plugins
-from scanner.finding_utils import normalize_findings, coverage_finding
+from scanner.finding_utils import normalize_findings, coverage_finding, partition_findings
 from scanner.config import validate_modules
 from scanner.utils.helpers import should_scan_file, is_excluded
 
@@ -49,6 +50,7 @@ class ScanEngine:
 
         # Get file tree
         tree = self.github.get_tree(owner, repo, branch)
+        revision = getattr(self.github, "revision", None)
 
         # Filter files
         scanable_paths = []
@@ -70,14 +72,17 @@ class ScanEngine:
 
         # Fetch file contents
         files = {}
-        for path in scanable_paths:
+        def fetch(path):
             try:
-                content = self.github.get_file_content(owner, repo, path, branch)
-                files[path] = content
+                return path, self.github.get_file_content(owner, repo, path, revision or branch)
             except Exception:
-                print(f"  Warning: Could not fetch {path}")
-                coverage.append(coverage_finding(path, "The repository file could not be downloaded."))
-                continue
+                return path, None
+        with ThreadPoolExecutor(max_workers=4 if len(scanable_paths) > 8 else 1) as pool:
+            for path, content in pool.map(fetch, scanable_paths):
+                if content is None:
+                    coverage.append(coverage_finding(path, "The repository file could not be downloaded."))
+                else:
+                    files[path] = content
 
         print(f"  Fetched {len(files)} files")
 
@@ -103,6 +108,7 @@ class ScanEngine:
             files_scanned=len(files),
             findings=coverage,
             project_profile=profile.to_dict(),
+            commit_sha=revision,
         )
 
         for scanner in self.scanners.values():
@@ -123,6 +129,7 @@ class ScanEngine:
                 result.sbom = sca_scanner.generate_sbom(files, f"{owner}/{repo}")
 
         result.findings = normalize_findings(result.findings, self.config)
+        partition_findings(result)
         result.scan_duration_seconds = round(time.time() - start_time, 2)
 
         # Sort findings by severity

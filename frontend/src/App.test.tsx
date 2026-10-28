@@ -130,5 +130,23 @@ describe('workspace', () => {
     await user.click(screen.getByRole('tab', { name: 'Project profile' }))
     expect(screen.getByText('No project profile supplied')).toBeInTheDocument()
   })
+
+  it('keeps fixture detections inspectable without inflating application totals', async () => {
+    const user = userEvent.setup()
+    const report: ScanResult = { ...sampleReport, repo_full_name: 'owner/clean', findings: [], context_findings: [{ ...sampleReport.findings[0], file_path: 'tests/test_demo.py', scope: 'test', evidence_kind: 'static-flow', trace: [{ role: 'source', file_path: 'tests/test_demo.py', line_number: 1 }, { role: 'sink', file_path: 'helper.py', line_number: 4 }] }], commit_sha: 'abc123' }
+    const live: ScanJob = { id: 'clean', repository: 'owner/clean', status: 'completed', branch: 'main', modules: ['ai'], include_experimental: false, created_at: new Date().toISOString(), finished_at: null, error: null, result: report }
+    vi.spyOn(api, 'list').mockResolvedValue([live])
+    vi.spyOn(api, 'get').mockResolvedValue(live)
+    render(<App />)
+    await user.click(await screen.findByRole('button', { name: /clean.*completed/ }))
+    await screen.findByText('No findings reported')
+    expect(screen.getByRole('button', { name: '0 Critical' })).toBeInTheDocument()
+    await user.click(screen.getByRole('tab', { name: 'Tests / examples (1)' }))
+    expect(screen.getByText('Showing 1 of 1 findings')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'LLM output reaches code execution' }))
+    expect(screen.getByText(/static-flow · Scope: test/)).toBeInTheDocument()
+    expect(screen.getByText('helper.py:4')).toBeInTheDocument()
+    expect(sourceUrl(report, report.context_findings![0])).toContain('/blob/abc123/')
+  })
 })
 

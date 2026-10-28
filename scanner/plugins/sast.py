@@ -15,6 +15,7 @@ from scanner.models import Finding, ScanContext, Severity, Category
 from scanner.plugins.base import Scanner
 from scanner.plugins import register
 from scanner.python_analysis import analyze_python
+from scanner.python_project import PythonProject
 
 
 @register
@@ -36,10 +37,11 @@ class SASTScanner(Scanner):
         self.include_experimental = bool(context.config.get("include_experimental"))
         rule_sets = context.rule_loader.load("sast")
         profile = context.project_profile
+        project = PythonProject(context.files)
 
         for file_path, content in context.files.items():
             if file_path.endswith(".py") and not any(skip in file_path.replace("\\", "/").split("/") for skip in self.SKIP_DIRS):
-                findings.extend(analyze_python(file_path, content, module=self.name))
+                findings.extend(analyze_python(file_path, content, module=self.name, project=project))
 
         for rule_set in rule_sets:
             # Determine which files to scan based on language/extension scope

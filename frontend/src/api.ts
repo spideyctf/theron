@@ -7,10 +7,14 @@ export interface Finding {
   file_path: string; line_number: number | null; code_snippet: string | null
   recommendation: string | null; cwe: string | null; confidence: string; rule_id: string | null
   references: string[]; fingerprint: string | null; maturity: string; status: string
+  scope?: string; evidence_kind?: string; aliases?: string[]; severity_source?: string
+  trace?: { role: string; file_path: string; line_number: number }[]
 }
 export interface ScanResult {
   repo_full_name: string; branch: string; findings: Finding[]; files_scanned: number
   modules_run: string[]; sbom: unknown; scan_duration_seconds: number; project_profile: unknown
+  context_findings?: Finding[]
+  commit_sha?: string | null
   summary: { repo: string; branch: string; files_scanned: number; total_findings: number
     by_severity: Partial<Record<Severity, number>>; modules_run: string[]; scan_duration_seconds: number }
 }
@@ -40,7 +44,7 @@ export const api = {
 }
 export function sourceUrl(result: ScanResult, finding: Finding): string {
   const path = finding.file_path.replaceAll('\\', '/').split('/').map(encodeURIComponent).join('/')
-  return 'https://github.com/' + result.repo_full_name + '/blob/' + encodeURIComponent(result.branch) + '/' + path + (finding.line_number ? '#L' + finding.line_number : '')
+  return 'https://github.com/' + result.repo_full_name + '/blob/' + encodeURIComponent(result.commit_sha || result.branch) + '/' + path + (finding.line_number ? '#L' + finding.line_number : '')
 }
 export function filterFindings(findings: Finding[], search: string, severity: string, module: string, status: string) {
   const term = search.trim().toLowerCase()

@@ -49,6 +49,11 @@ class Finding:
     fingerprint: Optional[str] = None
     maturity: str = "stable"
     status: str = "new"
+    scope: str = "application"
+    evidence_kind: str = "static-pattern"
+    aliases: List[str] = field(default_factory=list)
+    severity_source: str = "rule"
+    trace: List[dict] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {
@@ -68,6 +73,11 @@ class Finding:
             "fingerprint": self.fingerprint,
             "maturity": self.maturity,
             "status": self.status,
+            "scope": self.scope,
+            "evidence_kind": self.evidence_kind,
+            "aliases": self.aliases,
+            "severity_source": self.severity_source,
+            "trace": self.trace,
         }
 
 
@@ -143,6 +153,8 @@ class ScanResult:
     sbom: Optional[dict] = None
     scan_duration_seconds: float = 0.0
     project_profile: Optional[dict] = None
+    context_findings: List[Finding] = field(default_factory=list)
+    commit_sha: Optional[str] = None
 
     @property
     def summary(self) -> dict:
@@ -155,6 +167,8 @@ class ScanResult:
             "branch": self.branch,
             "files_scanned": self.files_scanned,
             "total_findings": len(self.findings),
+            "context_findings": len(self.context_findings),
+            "vulnerability_findings": sum(f.severity != Severity.INFO for f in self.findings),
             "by_severity": counts,
             "modules_run": self.modules_run,
             "scan_duration_seconds": self.scan_duration_seconds,
@@ -171,4 +185,6 @@ class ScanResult:
             "scan_duration_seconds": self.scan_duration_seconds,
             "summary": self.summary,
             "project_profile": self.project_profile,
+            "context_findings": [f.to_dict() for f in self.context_findings],
+            "commit_sha": self.commit_sha,
         }

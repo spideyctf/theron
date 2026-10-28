@@ -5,6 +5,7 @@ GitHub API client for fetching repository contents, metadata, and creating issue
 import base64
 import os
 import requests
+from urllib.parse import quote
 from typing import Optional
 
 
@@ -15,6 +16,7 @@ class GitHubClient:
 
     def __init__(self, token: Optional[str] = None):
         self.token = token or os.environ.get("GITHUB_TOKEN")
+        self.revision = None
         if not self.token:
             raise ValueError(
                 "GitHub token required. Set GITHUB_TOKEN env var or pass token=."
@@ -35,7 +37,7 @@ class GitHubClient:
         return resp.json()
 
     def _get_raw(self, url: str) -> str:
-        resp = self.session.get(url, timeout=(5, 30))
+        resp = requests.get(url, headers=dict(self.session.headers), timeout=(5, 30))
         resp.raise_for_status()
         return resp.text
 
@@ -82,7 +84,9 @@ class GitHubClient:
     def get_tree(self, owner: str, repo: str, branch: str = None) -> list:
         if branch is None:
             branch = self.get_default_branch(owner, repo)
-        data = self._get(f"/repos/{owner}/{repo}/git/trees/{branch}?recursive=1")
+        commit = self._get(f"/repos/{owner}/{repo}/commits/{quote(branch, safe='')}")
+        self.revision = commit["sha"]
+        data = self._get(f"/repos/{owner}/{repo}/git/trees/{self.revision}?recursive=1")
         if data.get("truncated"):
             raise RuntimeError("Repository tree is too large to scan completely.")
         return data.get("tree", [])
@@ -90,7 +94,7 @@ class GitHubClient:
     def get_file_content(self, owner: str, repo: str, path: str, branch: str = None) -> str:
         if branch is None:
             branch = self.get_default_branch(owner, repo)
-        url = f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{path}"
+        url = f"https://raw.githubusercontent.com/{owner}/{repo}/{quote(branch, safe='/')}/{quote(path, safe='/')}"
         return self._get_raw(url)
 
     def create_issue(self, owner: str, repo: str, title: str, body: str, labels: list = None) -> dict:

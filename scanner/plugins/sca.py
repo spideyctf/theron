@@ -13,6 +13,7 @@ import json
 import re
 import os
 import requests
+from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import quote
 try:
     import tomllib
@@ -22,6 +23,7 @@ from typing import List, Tuple, Dict, Optional
 from scanner.models import Finding, ScanContext, Severity, Category
 from scanner.plugins.base import Scanner
 from scanner.plugins import register
+from scanner.advisories import group_advisories, group_severity, advisory_severity
 
 
 @register
@@ -349,6 +351,24 @@ class SCAScanner(Scanner):
     def _check_osv(self, dependencies: List[Tuple[str, str, str]]) -> List[Finding]:
         """Query OSV.dev API for known vulnerabilities. No hardcoded CVEs."""
         findings = []
+        pending = {}
+        for name, declared, source in dependencies:
+            exact = self._exact_version(declared)
+            if exact:
+                ecosystem = self._ecosystem(source)
+                key = f"{ecosystem}:{name}@{exact}"
+                if key not in self._osv_cache:
+                    pending[key] = (name, exact, ecosystem)
+        def query(item):
+            key, arguments = item
+            try:
+                return key, self._query_osv(*arguments)
+            except (requests.RequestException, ValueError, TypeError):
+                return key, None
+        with ThreadPoolExecutor(max_workers=4 if len(pending) > 8 else 1) as pool:
+            for key, records in pool.map(query, pending.items()):
+                if records is not None:
+                    self._osv_cache[key] = records
         for pkg_name, version, source_file in dependencies:
             version = self._exact_version(version)
             if not version:
@@ -358,21 +378,17 @@ class SCAScanner(Scanner):
             if cache_key in self._osv_cache:
                 vulns = self._osv_cache[cache_key]
             else:
-                try:
-                    vulns = self._query_osv(pkg_name, version, ecosystem)
-                except (requests.RequestException, ValueError, TypeError):
-                    findings.append(Finding(
-                        title="Dependency advisory lookup unavailable", severity=Severity.INFO, category=Category.SCA,
-                        module=self.name, description=f"Could not check {pkg_name}@{version} in {ecosystem}. This is not a clean vulnerability result.",
-                        file_path=source_file, recommendation="Retry when the advisory service is available.",
-                        confidence="high", rule_id="SCA-LOOKUP-001"))
-                    continue
-                self._osv_cache[cache_key] = vulns
+                findings.append(Finding(
+                    title="Dependency advisory lookup unavailable", severity=Severity.INFO, category=Category.SCA,
+                    module=self.name, description=f"Could not check {pkg_name}@{version} in {ecosystem}. This is not a clean vulnerability result.",
+                    file_path=source_file, recommendation="Retry when the advisory service is available.",
+                    confidence="high", rule_id="SCA-LOOKUP-001"))
+                continue
 
-            for vuln in vulns:
-                severity = self._osv_severity_to_finding(vuln)
-                vid = vuln.get("id", "unknown")
-                summary = vuln.get("summary", vuln.get("details", "No details available"))
+            for vid, aliases, members in group_advisories(vulns):
+                vuln = members[0]
+                severity, severity_source = group_severity(members)
+                summary = vuln.get("summary") or vuln.get("details") or "No details available"
                 if isinstance(summary, str) and len(summary) > 300:
                     summary = summary[:300] + "..."
 
@@ -381,13 +397,16 @@ class SCAScanner(Scanner):
                     severity=severity,
                     category=Category.SCA,
                     module=self.name,
-                    description=f"Declared exact {ecosystem} package '{pkg_name}' version {version} in {source_file} matches advisory {vid}: {summary}. Application reachability and exploitability have not been verified.",
+                    description=f"Declared exact {ecosystem} package '{pkg_name}' version {version} in {source_file} matches advisory {vid}: {summary}. Application reachability and exploitability have not been verified." + (" Severity is provisional because no supported severity metadata was supplied." if severity_source == "provisional-unknown" else ""),
                     file_path=source_file,
                     recommendation=f"Upgrade {pkg_name} to a patched version. See https://osv.dev/vulnerability/{vid} for details.",
                     cwe="CWE-1104",
                     confidence="high",
                     rule_id=f"SCA-{vid}",
-                    references=[f"https://osv.dev/vulnerability/{vid}"],
+                    references=[f"https://osv.dev/vulnerability/{member['id']}" for member in members],
+                    aliases=aliases,
+                    severity_source=severity_source,
+                    evidence_kind="dependency-version-match",
                 ))
         return findings
 
@@ -406,29 +425,4 @@ class SCAScanner(Scanner):
     @staticmethod
     def _osv_severity_to_finding(vuln: dict) -> Severity:
         """Map OSV severity to our Severity enum."""
-        db_specific = vuln.get("database_specific", {})
-        if "severity" in db_specific:
-            sev = db_specific["severity"].upper()
-            if "CRITICAL" in sev:
-                return Severity.CRITICAL
-            if "HIGH" in sev:
-                return Severity.HIGH
-            if "MEDIUM" in sev or "MODERATE" in sev:
-                return Severity.MEDIUM
-            if "LOW" in sev:
-                return Severity.LOW
-        # shortcut: CVSS vectors are not scored; use advisory severity metadata or provisional MEDIUM.
-        # Check affected ranges for severity hints
-        for affected in vuln.get("affected", []):
-            ec = affected.get("ecosystem_specific", {})
-            if "severity" in ec:
-                sev = ec["severity"].upper()
-                if "CRITICAL" in sev:
-                    return Severity.CRITICAL
-                if "HIGH" in sev:
-                    return Severity.HIGH
-                if "MEDIUM" in sev or "MODERATE" in sev:
-                    return Severity.MEDIUM
-                if "LOW" in sev:
-                    return Severity.LOW
-        return Severity.MEDIUM  # Unknown advisory severity is not evidence of high impact.
+        return advisory_severity(vuln)[0]

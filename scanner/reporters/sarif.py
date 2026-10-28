@@ -26,7 +26,7 @@ def generate_sarif_report(result: ScanResult) -> str:
                 "name": finding.category.value,
                 "shortDescription": {"text": finding.title},
                 "fullDescription": {"text": finding.description},
-                "helpUri": f"https://cwe.mitre.org/data/definitions/{(finding.cwe or '').replace('CWE-', '')}.html" if finding.cwe else "",
+                **({"helpUri": f"https://cwe.mitre.org/data/definitions/{finding.cwe.replace('CWE-', '')}.html"} if finding.cwe else {}),
                 "defaultConfiguration": {"level": SEVERITY_TO_SARIF.get(finding.severity, "warning")},
             })
 
@@ -53,6 +53,11 @@ def generate_sarif_report(result: ScanResult) -> str:
                 "fingerprint": finding.fingerprint,
                 "maturity": finding.maturity,
                 "status": finding.status,
+                "scope": finding.scope,
+                "evidence_kind": finding.evidence_kind,
+                "aliases": finding.aliases,
+                "severity_source": finding.severity_source,
+                "trace": finding.trace,
             },
             "partialFingerprints": {"theron/v1": finding.fingerprint} if finding.fingerprint else {},
         })
@@ -70,6 +75,7 @@ def generate_sarif_report(result: ScanResult) -> str:
                 }
             },
             "results": results,
+            "properties": {"commit_sha": result.commit_sha, "context_findings": [finding.to_dict() for finding in result.context_findings]},
         }],
     }
     return json.dumps(sarif, indent=2)

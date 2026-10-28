@@ -105,7 +105,7 @@ def _run_local_scan(args, module_names):
     import os
     from scanner.models import ScanResult, Severity, ScanContext
     from scanner.config import load_config
-    from scanner.finding_utils import normalize_findings, coverage_finding
+    from scanner.finding_utils import normalize_findings, coverage_finding, partition_findings
     from scanner.profiler import ProjectProfiler
     from scanner.rule_loader import RuleLoader
     from scanner.plugins import discover_plugins, clear_registry
@@ -176,6 +176,7 @@ def _run_local_scan(args, module_names):
             result.sbom = sca.generate_sbom(files, scan_dir)
 
     result.findings = normalize_findings(result.findings, config)
+    partition_findings(result)
     result.scan_duration_seconds = round(time.time() - start, 2)
 
     sev_order = {Severity.CRITICAL: 0, Severity.HIGH: 1, Severity.MEDIUM: 2, Severity.LOW: 3, Severity.INFO: 4}

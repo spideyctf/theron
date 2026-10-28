@@ -28,6 +28,8 @@ if not _UNICODE:
 
 
 def print_terminal_report(result: ScanResult):
+    if result.context_findings:
+        print(f"Context evidence: {len(result.context_findings)} detections in tests/examples/docs; excluded from application totals. See JSON or HTML for details.")
     if not _UNICODE:
         _plain_report(result)
         return
@@ -66,7 +68,7 @@ def _rich_report(console, result, Table, Panel, Text):
             console.print(f"  {SEVERITY_ICONS[sev]} [{color}]{sev.value}: {count}[/{color}]")
 
     if not result.findings:
-        console.print("\n[green]" + ("✅ " if _UNICODE else "") + "No security findings detected![/green]")
+        console.print("\n[green]" + ("✅ " if _UNICODE else "") + "No application findings reported. Review coverage and context evidence.[/green]")
         return
 
     console.print("\n[bold]Findings:[/bold]\n")
@@ -134,7 +136,7 @@ def _plain_report(result: ScanResult):
             out(f"  {sev}: {count}")
 
     if not result.findings:
-        out("\n" + ("✅ " if _UNICODE else "") + "No security findings detected!")
+        out("\n" + ("✅ " if _UNICODE else "") + "No application findings reported. Review coverage and context evidence.")
         return
 
     out(f"\n{'-'*60}")

@@ -8,6 +8,7 @@ from scanner.models import ScanResult, Severity
 def generate_html_report(result: ScanResult) -> str:
     summary = result.summary
     findings_json = json.dumps([f.to_dict() for f in result.findings]).replace("<", "\\u003c")
+    context_json = json.dumps([f.to_dict() for f in result.context_findings], indent=2).replace("<", "\\u003c")
     sbom_json = json.dumps(result.sbom, indent=2).replace("<", "\\u003c") if result.sbom else "null"
 
     by_sev = summary["by_severity"]
@@ -104,6 +105,7 @@ def generate_html_report(result: ScanResult) -> str:
                 <button class="filter-btn" onclick="filterFindings('INFO', this)">Info</button>
             </div>
             <div id="findings-list"></div>
+            <details><summary>Tests, examples and documentation evidence (excluded from application totals)</summary><pre class="sbom-pre" id="context-evidence"></pre></details>
         </div>
         <div id="tab-sbom" class="tab-content">
             <h2>Software Bill of Materials (SBOM)</h2>
@@ -113,6 +115,7 @@ def generate_html_report(result: ScanResult) -> str:
     </div>
     <script>
         const findings = {findings_json};
+        const contextEvidence = {context_json};
         const sbom = {sbom_json};
         function esc(s) {{ return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : ''; }}
         function renderFindings(filter) {{
@@ -144,6 +147,7 @@ def generate_html_report(result: ScanResult) -> str:
             event.target.classList.add('active');
             document.getElementById('tab-' + tabName).classList.add('active');
         }}
+        document.getElementById('context-evidence').textContent = JSON.stringify(contextEvidence, null, 2);
         renderFindings('all');
         document.getElementById('sbom-content').textContent = sbom ? JSON.stringify(sbom, null, 2) : 'No SBOM generated (SCA module not run or no dependencies found)';
     </script>

@@ -10,31 +10,33 @@ No benchmark applications, setup scripts, or third-party scanners were executed.
 
 Default SAST rules only, with identical scoring before and after tuning:
 
-| Measure | Initial | Previous tuning | October 9 | Current |
-| --- | ---: | ---: | ---: | ---: |
-| Labelled vulnerable variants detected | 8 | 26 | 28 | 33 |
-| Labelled vulnerable variants missed | 111 | 93 | 91 | 86 |
-| Fixed variants with matched alerts | 0 | 0 | 0 | 0 |
-| Fixed variants without matched alerts | 120 | 120 | 120 | 120 |
-| Unscorable vulnerable labels | 1 | 1 | 1 | 1 |
-| Recall over scorable vulnerable variants | 6.72% | 21.85% | 23.53% | 27.73% |
+| Measure | Initial | Previous tuning | October 9 | Control-flow fixes | Expanded analysis |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Labelled vulnerable variants detected | 8 | 26 | 28 | 33 | 91 |
+| Labelled vulnerable variants missed | 111 | 93 | 91 | 86 | 28 |
+| Fixed variants with matched alerts | 0 | 0 | 0 | 0 | 4 |
+| Fixed variants without matched alerts | 120 | 120 | 120 | 120 | 116 |
+| Unscorable vulnerable labels | 1 | 1 | 1 | 1 | 1 |
+| Recall over scorable vulnerable variants | 6.72% | 21.85% | 23.53% | 27.73% | 76.47% |
 
 | Labelled CWE | Detected / scorable vulnerable variants | Fixed variants with matched alerts |
 | --- | ---: | ---: |
-| 22: path traversal | 0 / 20 | 0 / 20 |
-| 77: command injection (includes child CWE-78) | 9 / 19 | 0 / 20 |
-| 79: XSS | 1 / 20 | 0 / 20 |
-| 89: SQL injection | 6 / 20 | 0 / 20 |
-| 94: code injection | 12 / 20 | 0 / 20 |
-| 502: deserialization | 5 / 20 | 0 / 20 |
+| 22: path traversal | 17 / 20 | 3 / 20 |
+| 77: command injection (includes child CWE-78) | 19 / 19 | 0 / 20 |
+| 79: XSS | 2 / 20 | 0 / 20 |
+| 89: SQL injection | 17 / 20 | 0 / 20 |
+| 94: code injection | 18 / 20 | 0 / 20 |
+| 502: deserialization | 18 / 20 | 1 / 20 |
 
-These are labelled synthetic-case results, **not** a claim of zero false positives in real projects.
-The current run also has zero alerts anywhere in the 120 fixed files, not just within labelled spans.
-Recall remains low. Default path traversal and stored-XSS coverage is absent in this evaluation.
+These are labelled synthetic-case results, **not** a claim of industry certification or real-world accuracy.
+Label-based precision is 95.79% and false-positive rate is 3.33%. Six of the 120 fixed files contain seven alerts in total, three outside the labelled CWE/function match. These whole-file counts are reported separately rather than hidden.
+The four label-matched alerts occur in `22_DS-1`, `22_DS-2`, `22_DS-3`, and `502_DS-8`. Manual inspection found plain `startswith(base)` path checks without a separator boundary in the three path cases, and uploaded model data passed to `joblib.load` in the deserialization case. Those remain meaningful review candidates: a plain string prefix is not path-component containment, and joblib remains pickle based. The evaluator retains the upstream labels and counts all four as false positives; it does not relabel them to inflate precision. Two other fixed files contain unrelated reflected-HTML alerts. See `docs/QUALITY.md` for an independent miniature demonstration of the path-prefix issue and the remaining limits.
+Stored-XSS coverage remains weak: 18 of 20 labelled XSS variants are still missed. There is no general persistent-store or template-context analysis.
 The same corpus was inspected during tuning; it is not an independent held-out validation set.
 
 ## What changed
 
+- Expanded known CLI and framework sources, typed FastAPI model fields, constructor/member state, nested helpers, return propagation, SQLite/Django/asyncpg resolution, local Python imports, and resolved socket accept/thread-callback flows. Added file-path sinks and exact outbound-URL sources. Sanitizers carry context-specific safety rather than erasing taint globally. Path validation requires an observed component boundary, not a function name such as `is_safe_path`. Calls remain bounded to five levels and 1500 invocations per entry file; budget exhaustion produces an informational notice. Repository-local cross-file behavior has original regression tests; this single-file benchmark does not evaluate it.
 - October 28: preserve possible taint across branches, exception paths and loops instead of requiring both paths to agree or clearing all taint. Merge import resolutions and literal allowlists separately, honor terminating branches, and retain safe assignments in all continuing paths. This fixes independently reproduced misses and detects five more command-injection cases. Loop handling remains bounded, without a fixed-point data-flow analysis.
 - Added exact SQLite connection/cursor resolution and input-to-statement detection, without treating arbitrary `.execute()` calls as SQL.
 - Added selected request sources, JSON/string propagation, and typed FastAPI string-route inputs; numeric parameters/conversions are not assumed injectable text.

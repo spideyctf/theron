@@ -39,6 +39,8 @@ export function ScanDetails({ result, job, sample }: { result: ScanResult; job: 
   return <div className="report-content"><h3>Scan details</h3><dl className="profile-grid">
     <div><dt>Repository</dt><dd>{result.repo_full_name}</dd></div><div><dt>Branch</dt><dd>{result.branch}</dd></div>
     <div><dt>Files analyzed</dt><dd>{result.files_scanned}</dd></div><div><dt>Duration</dt><dd>{result.scan_duration_seconds} seconds</dd></div>
+    <div><dt>Scanned commit</dt><dd><code>{result.commit_sha || 'Local or older scan; no commit supplied'}</code></dd></div>
+    <div><dt>Tests / examples / documentation</dt><dd>{result.context_findings?.length || 0} contextual detections, excluded from application totals</dd></div>
     <div><dt>Modules completed</dt><dd>{result.modules_run.join(', ') || 'None'}</dd></div><div><dt>Informational notices</dt><dd>{notices.length}</dd></div>
     <div><dt>Report origin</dt><dd>{sample ? 'Illustrative sample data' : 'Live scan'}</dd></div>
     {job && <><div><dt>Scan ID</dt><dd><code>{job.id}</code></dd></div><div><dt>Status</dt><dd>{job.status}</dd></div><div><dt>Modules requested</dt><dd>{job.modules.join(', ')}</dd></div><div><dt>Experimental rules</dt><dd>{job.include_experimental ? 'Enabled — review candidates' : 'Disabled'}</dd></div><div><dt>Created at</dt><dd>{job.created_at}</dd></div><div><dt>Finished at</dt><dd>{job.finished_at || 'Not finished'}</dd></div></>}
