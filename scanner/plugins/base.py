@@ -77,10 +77,15 @@ class Scanner(ABC):
         except _re.error:
             return findings
 
-        for i, line in enumerate(lines, 1):
-            match = compiled.search(line)
-            if not match:
-                continue
+        if rule.flags & _re.DOTALL:
+            matches = ((content.count("\n", 0, match.start()) + 1, match)
+                       for match in compiled.finditer(content))
+        else:
+            matches = ((i, match) for i, line in enumerate(lines, 1)
+                       for match in compiled.finditer(line))
+
+        for i, match in matches:
+            line = lines[i - 1]
 
             # Skip comments if configured
             if rule.skip_in_comments and self._is_comment_line(line):
@@ -120,7 +125,8 @@ class Scanner(ABC):
                 description=(rule.description + " Credential validity has not been checked." if category == Category.SECRET_EXPOSURE else rule.description),
                 file_path=file_path,
                 line_number=i,
-                code_snippet=(f"{i}: [credential-like value redacted]" if category == Category.SECRET_EXPOSURE else self._get_lines(content, i)),
+                code_snippet=(f"{i}: [credential-like value redacted]" if category == Category.SECRET_EXPOSURE
+                              else self._get_lines(content, i, context=min(30, max(2, matched_text.count("\n") + 1)))),
                 recommendation=rule.recommendation,
                 cwe=rule.cwe,
                 confidence="medium" if rule.maturity == "experimental" else rule.confidence,

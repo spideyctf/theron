@@ -67,7 +67,8 @@ class AISecurityScanner(Scanner):
                         continue
 
                 # Check extension filter
-                if ext not in self.SCANABLE_EXTENSIONS and basename not in {"Dockerfile", "docker-compose.yml"}:
+                if (ext not in self.SCANABLE_EXTENSIONS and basename not in {"Dockerfile", "docker-compose.yml", ".env"}
+                        and not basename.startswith(".env.")):
                     continue
 
                 # Check skip files

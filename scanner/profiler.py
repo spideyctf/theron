@@ -103,18 +103,20 @@ class ProjectProfiler:
             if lang:
                 profile.languages.add(lang)
         if profile.languages:
-            lang_to_ext = {v: k for k, v in self.EXT_TO_LANG.items()}
+            language_counts = {language: sum(count for ext, count in ext_counts.items()
+                                            if self.EXT_TO_LANG.get(ext) == language)
+                               for language in profile.languages}
             profile.primary_language = max(
                 profile.languages,
-                key=lambda l: ext_counts.get(lang_to_ext.get(l, ""), 0),
+                key=lambda language: (language_counts[language], language),
             )
 
         # ── Dependency manifests ───────────────────────────────────────
         for file_path, content in files.items():
             basename = file_path.rsplit("/", 1)[-1]
             if basename in ("requirements.txt", "package.json", "pyproject.toml",
-                            "go.mod", "Pipfile"):
-                profile.dependency_manifests[basename] = content
+                            "go.mod", "Pipfile", "Pipfile.lock", "package-lock.json", "npm-shrinkwrap.json"):
+                profile.dependency_manifests[file_path] = content
 
         # ── AI frameworks ──────────────────────────────────────────────
         for fw_name, sigs in self.FRAMEWORK_SIGNATURES.items():

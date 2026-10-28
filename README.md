@@ -18,6 +18,8 @@ Use `theron.yml` to exclude paths or accept finding fingerprints as an existing 
 - npm lockfiles (v1/v2/v3), npm shrinkwrap, and Pipfile.lock add locked transitive versions. Matching lock entries take precedence over declarations in the same directory. Unsupported lock formats are not analysed. Malformed supported manifests, failed advisory requests, unparseable Python, oversized files, and download/read failures produce informational notices. Advisory severity uses supplied metadata; unknown severity is provisionally medium (CVSS vectors are not scored).
 - Files over 500 KB and configured/generated directories are not analysed. An empty report is not a security certification. Default filtering favours precision over recall.
 
+Local and GitHub collection share file selection, including `.env` and `.env.*`. Configured path exclusions apply before reading/downloading files or querying their dependencies. CLI module selections and configuration list types are validated; invalid module names fail instead of returning an empty success. Possible Python taint is retained across selected branch/exception/loop paths; loop analysis remains bounded and cross-file flows remain unsupported.
+
 ## Local web workspace
 
 The React workspace in `frontend/` connects to a local Python API. Scan GitHub repositories, combine finding filters, inspect source evidence, and download JSON or SARIF. Tokens stay in the backend environment; session history resets when the backend restarts.
@@ -120,7 +122,7 @@ rules/  (versioned YAML, community-contributed)
 Each scanner (ai, sast, sca, agentic) is a plugin implementing a common `Scanner` interface. New scanners can be added by dropping a file in `scanner/plugins/` — the engine auto-discovers them.
 
 ### Versioned Rules
-All detection patterns are in versioned YAML files under `rules/`. Community members can add rules via PR without touching Python code. Rules support severity overrides, context-aware skipping, and structural (JSON-path) analysis.
+Regex patterns are in versioned YAML files under `rules/`. Default Python source, sink and flow analysis lives in `scanner/python_analysis.py`; SCA and structured configuration checks also use Python code. Community members can add rules via PR without touching Python code. Rules support severity overrides, context-aware skipping, and structural (JSON-path) analysis.
 
 ### Project Profiler
 Before scanning, the profiler detects languages, AI frameworks (LangChain, CrewAI, AutoGen, LlamaIndex, etc.), MCP configs, skill files, tool definitions, and infrastructure. This metadata is shared with all scanners for targeted scanning.

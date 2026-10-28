@@ -22,15 +22,27 @@ runs:
     - shell: bash
       run: python -m pip install "$GITHUB_ACTION_PATH"
     - shell: bash
-      run: >-
-        ai-sec-scan --local "$GITHUB_WORKSPACE" --modules "${{ inputs.modules }}"
-        --format sarif --output "${{ inputs.output }}"
-        ${{ inputs.include-experimental == 'true' && '--include-experimental' || '' }}
-        ${{ inputs.fail-on != '' && format('--fail-on {0}', inputs.fail-on) || '' }}
+      id: scan
+      continue-on-error: true
+      env:
+        THERON_MODULES: ${{ inputs.modules }}
+        THERON_OUTPUT: ${{ inputs.output }}
+        THERON_EXPERIMENTAL: ${{ inputs.include-experimental }}
+        THERON_FAIL_ON: ${{ inputs.fail-on }}
+      run: |
+        args=(--local "$GITHUB_WORKSPACE" --modules "$THERON_MODULES" --format sarif --output "$THERON_OUTPUT")
+        if [[ "$THERON_EXPERIMENTAL" == 'true' ]]; then args+=(--include-experimental); fi
+        if [[ -n "$THERON_FAIL_ON" ]]; then args+=(--fail-on "$THERON_FAIL_ON"); fi
+        ai-sec-scan "${args[@]}"
     - uses: github/codeql-action/upload-sarif@v3
+      if: ${{ !cancelled() && hashFiles(inputs.output) != '' }}
       with:
         sarif_file: ${{ inputs.output }}
     - shell: bash
+      if: ${{ !cancelled() }}
+      env:
+        THERON_SCAN_OUTCOME: ${{ steps.scan.outcome }}
       run: |
         echo "### Theron AI security scan" >> "$GITHUB_STEP_SUMMARY"
-        echo "SARIF uploaded from \`${{ inputs.output }}\`. Report-only unless \`fail-on\` is set." >> "$GITHUB_STEP_SUMMARY"
+        echo "Scan outcome: $THERON_SCAN_OUTCOME. Report-only unless fail-on is set." >> "$GITHUB_STEP_SUMMARY"
+        if [[ "$THERON_SCAN_OUTCOME" != 'success' ]]; then exit 1; fi

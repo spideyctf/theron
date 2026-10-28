@@ -2,6 +2,7 @@
 
 import json
 from scanner.models import ScanResult, Severity
+from scanner.version import VERSION, REPOSITORY_URL
 
 
 SEVERITY_TO_SARIF = {
@@ -62,9 +63,9 @@ def generate_sarif_report(result: ScanResult) -> str:
         "runs": [{
             "tool": {
                 "driver": {
-                    "name": "ai-sec-scanner",
-                    "version": "0.1.0",
-                    "informationUri": "https://github.com/aryaman-futane/ai-sec-scanner",
+                    "name": "Theron",
+                    "version": VERSION,
+                    "informationUri": REPOSITORY_URL,
                     "rules": rules,
                 }
             },

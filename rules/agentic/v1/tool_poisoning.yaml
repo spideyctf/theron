@@ -19,8 +19,8 @@ rules:
   - id: AG-TP-001b
     title: "Tool Docstring Contains Prompt Injection"
     severity: CRITICAL
-    pattern: '""".*(?:ignore|disregard|forget|override|bypass).*(?:instruction|rule|safety|security|system\s+prompt).*"""'
-    flags: IGNORECASE
+    pattern: '"""(?:(?!""").)*(?:ignore|disregard|forget|override|bypass)(?:(?!""").)*(?:instruction|rule|safety|security|system\s+prompt)(?:(?!""").)*"""'
+    flags: IGNORECASE | DOTALL
     cwe: CWE-1039
     confidence: high
     description: "Tool docstring contains prompt injection — could manipulate agent behavior."

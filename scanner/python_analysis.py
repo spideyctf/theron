@@ -83,8 +83,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 self.bindings[item.id] = ""
                 self.literal_sets.pop(item.id, None)
         # Parameter names alone are not evidence of attacker control.
-        for statement in node.body:
-            self.visit(statement)
+        self._visit_block(node.body)
         self.bindings, self.taint = old_bindings, old_taint
         self.literal_sets = old_literals
 
@@ -208,23 +207,59 @@ class PythonAIAnalyzer(ast.NodeVisitor):
 
     visit_AsyncWith = visit_With
 
+    def _state(self):
+        return self.bindings.copy(), self.taint.copy(), self.literal_sets.copy()
+
+    def _restore(self, state):
+        self.bindings, self.taint, self.literal_sets = (part.copy() for part in state)
+
+    def _merge_states(self, states):
+        """Keep possible taint, but only retain resolutions/allowlists shared by every path."""
+        if not states:
+            return
+        self.bindings = {key: value for key, value in states[0][0].items()
+                         if all(state[0].get(key) == value for state in states)}
+        self.taint = {}
+        for _, taint, _ in states:
+            for key, value in taint.items():
+                if key not in self.taint or self.taint[key][0] == "model-response":
+                    self.taint[key] = value
+        self.literal_sets = {key: value for key, value in states[0][2].items()
+                             if all(key in state[2] and ast.dump(state[2][key]) == ast.dump(value)
+                                    for state in states)}
+
+    @staticmethod
+    def _terminates(statement):
+        if isinstance(statement, (ast.Return, ast.Raise, ast.Break, ast.Continue)):
+            return True
+        if isinstance(statement, ast.If):
+            return bool(statement.body and statement.orelse
+                        and PythonAIAnalyzer._terminates(statement.body[-1])
+                        and PythonAIAnalyzer._terminates(statement.orelse[-1]))
+        return False
+
+    def _visit_block(self, statements):
+        for statement in statements:
+            self.visit(statement)
+            if self._terminates(statement):
+                return False
+        return True
+
     def visit_If(self, node):
         self.visit(node.test)
-        initial_bindings, initial_taint = self.bindings.copy(), self.taint.copy()
+        initial = self._state()
         allowed = self._literal_allowlist(node.test)
+        states = []
         if allowed and isinstance(node.test.ops[0], ast.In):
             self.taint.pop(allowed, None)
-        for statement in node.body:
-            self.visit(statement)
-        body_bindings, body_taint = self.bindings, self.taint
-        self.bindings, self.taint = initial_bindings.copy(), initial_taint.copy()
-        for statement in node.orelse:
-            self.visit(statement)
-        self.taint = {key: value for key, value in self.taint.items() if body_taint.get(key) == value}
-        self.bindings = {key: self.bindings.get(key, "") if body_bindings.get(key) == self.bindings.get(key) else ""
-                         for key in body_bindings.keys() | self.bindings.keys()}
-        if allowed and isinstance(node.test.ops[0], ast.NotIn) and node.body and isinstance(node.body[-1], (ast.Return, ast.Raise)):
+        if self._visit_block(node.body):
+            states.append(self._state())
+        self._restore(initial)
+        if allowed and isinstance(node.test.ops[0], ast.NotIn):
             self.taint.pop(allowed, None)
+        if self._visit_block(node.orelse):
+            states.append(self._state())
+        self._merge_states(states)
 
     def _literal_allowlist(self, test):
         if not isinstance(test, ast.Compare) or len(test.comparators) != 1:
@@ -240,33 +275,54 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         return None
 
     def visit_Try(self, node):
-        initial_bindings, initial_taint = self.bindings.copy(), self.taint.copy()
-        for statements in [node.body + node.orelse] + [handler.body for handler in node.handlers]:
-            self.bindings, self.taint = initial_bindings.copy(), initial_taint.copy()
-            for statement in statements:
-                self.visit(statement)
-        self.taint.clear()
-        self.bindings = initial_bindings
-        for item in ast.walk(node):
-            if isinstance(item, ast.Name) and isinstance(item.ctx, ast.Store):
-                self.bindings[item.id] = ""
-        for statement in node.finalbody:
+        # A handler may run after any prefix of the try block, not just its entry.
+        prefixes, states = [self._state()], []
+        falls_through = True
+        for statement in node.body:
             self.visit(statement)
+            prefixes.append(self._state())
+            if self._terminates(statement):
+                falls_through = False
+                break
+        if falls_through and self._visit_block(node.orelse):
+            states.append(self._state())
+        self._merge_states(prefixes)
+        handler_entry = self._state()
+        for handler in node.handlers:
+            self._restore(handler_entry)
+            if handler.name:
+                self.bindings[handler.name] = ""
+                self.taint.pop(handler.name, None)
+                self.literal_sets.pop(handler.name, None)
+            if self._visit_block(handler.body):
+                states.append(self._state())
+        self._merge_states(states)
+        self._visit_block(node.finalbody)
+
+    visit_TryStar = visit_Try
 
     def visit_For(self, node):
         self.visit(node.iter)
-        self._assign(node.target, None)
-        for statement in node.body + node.orelse:
-            self.visit(statement)
-        self.taint.clear()
+        initial = self._state()
+        self._assign(node.target, node.iter)
+        self._visit_block(node.body)
+        self._merge_states([initial, self._state()])
+        before_else = self._state()
+        self._visit_block(node.orelse)
+        if any(isinstance(item, ast.Break) for item in ast.walk(node)):
+            self._merge_states([before_else, self._state()])
 
     visit_AsyncFor = visit_For
 
     def visit_While(self, node):
         self.visit(node.test)
-        for statement in node.body + node.orelse:
-            self.visit(statement)
-        self.taint.clear()
+        initial = self._state()
+        self._visit_block(node.body)
+        self._merge_states([initial, self._state()])
+        before_else = self._state()
+        self._visit_block(node.orelse)
+        if any(isinstance(item, ast.Break) for item in ast.walk(node)):
+            self._merge_states([before_else, self._state()])
 
     def _is_llm_call(self, node):
         return self._name(node.func) in {

@@ -45,6 +45,8 @@ Open http://127.0.0.1:8000. The API serves `frontend/dist` if built before start
 4. Combine search, severity, module, and status filters. Click a finding for source evidence and remediation.
 5. Download JSON or SARIF from completed live scans; copy remediation or open source on GitHub.
 
+The report tabs expose **Findings**, **Dependencies / SBOM**, **Project profile**, and **Scan details**. Findings show maturity beside the rule, with informational coverage/advisory notices called out separately. Dependency search covers package names, versions, source paths and package URLs; unresolved versions remain explicit. Download the standalone SBOM or expand its complete metadata/properties. The project tab exposes all exported profiler fields, including framework evidence and configuration paths; these are static detections, not proof of deployment. Scan details include requested/completed modules, experimental-rule settings, timestamps, job metadata and the complete report JSON. Older reports without a profile show an explicit unavailable state.
+
 Use `/` to focus search and Escape to close dialogs. On mobile, the current-scan selector provides access to session history. A sample JSON export is available; sample SARIF export is disabled.
 
 History and results are held in backend memory and reset on restart. Closing a browser tab does not stop a scan. Repository code is inspected as text, not executed. Each GitHub request has a bounded timeout. Large repositories can take longer because files are fetched serially; there is no invented percentage or ETA.

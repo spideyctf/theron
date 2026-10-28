@@ -1,7 +1,7 @@
 # PySASTBench-backed detection tuning
 
 Reference: [Victor725/PySASTBench](https://github.com/Victor725/PySASTBench),
-commit `3ad04b72c516d0533a5dc9c8042c9808e69e0f40`. Evaluation run: 2026-10-09.
+commit `3ad04b72c516d0533a5dc9c8042c9808e69e0f40`. Latest evaluation run: 2026-10-28.
 The synthetic corpus has 120 labelled vulnerable/fixed pairs across six CWE categories.
 The external checkout is ignored and not shipped or redistributed with Theron.
 No benchmark applications, setup scripts, or third-party scanners were executed.
@@ -10,19 +10,19 @@ No benchmark applications, setup scripts, or third-party scanners were executed.
 
 Default SAST rules only, with identical scoring before and after tuning:
 
-| Measure | Initial | Previous tuning | Current |
-| --- | ---: | ---: | ---: |
-| Labelled vulnerable variants detected | 8 | 26 | 28 |
-| Labelled vulnerable variants missed | 111 | 93 | 91 |
-| Fixed variants with matched alerts | 0 | 0 | 0 |
-| Fixed variants without matched alerts | 120 | 120 | 120 |
-| Unscorable vulnerable labels | 1 | 1 | 1 |
-| Recall over scorable vulnerable variants | 6.72% | 21.85% | 23.53% |
+| Measure | Initial | Previous tuning | October 9 | Current |
+| --- | ---: | ---: | ---: | ---: |
+| Labelled vulnerable variants detected | 8 | 26 | 28 | 33 |
+| Labelled vulnerable variants missed | 111 | 93 | 91 | 86 |
+| Fixed variants with matched alerts | 0 | 0 | 0 | 0 |
+| Fixed variants without matched alerts | 120 | 120 | 120 | 120 |
+| Unscorable vulnerable labels | 1 | 1 | 1 | 1 |
+| Recall over scorable vulnerable variants | 6.72% | 21.85% | 23.53% | 27.73% |
 
 | Labelled CWE | Detected / scorable vulnerable variants | Fixed variants with matched alerts |
 | --- | ---: | ---: |
 | 22: path traversal | 0 / 20 | 0 / 20 |
-| 77: command injection (includes child CWE-78) | 4 / 19 | 0 / 20 |
+| 77: command injection (includes child CWE-78) | 9 / 19 | 0 / 20 |
 | 79: XSS | 1 / 20 | 0 / 20 |
 | 89: SQL injection | 6 / 20 | 0 / 20 |
 | 94: code injection | 12 / 20 | 0 / 20 |
@@ -35,6 +35,7 @@ The same corpus was inspected during tuning; it is not an independent held-out v
 
 ## What changed
 
+- October 28: preserve possible taint across branches, exception paths and loops instead of requiring both paths to agree or clearing all taint. Merge import resolutions and literal allowlists separately, honor terminating branches, and retain safe assignments in all continuing paths. This fixes independently reproduced misses and detects five more command-injection cases. Loop handling remains bounded, without a fixed-point data-flow analysis.
 - Added exact SQLite connection/cursor resolution and input-to-statement detection, without treating arbitrary `.execute()` calls as SQL.
 - Added selected request sources, JSON/string propagation, and typed FastAPI string-route inputs; numeric parameters/conversions are not assumed injectable text.
 - Added bounded direct same-file helper/method argument propagation. Parameter names alone still do not establish attacker control.

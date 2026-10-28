@@ -2,7 +2,7 @@
 Core data models for security findings and scan results.
 """
 
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from enum import Enum
 from typing import Optional, List, Dict
 
@@ -110,6 +110,16 @@ class ProjectProfile:
     uses_anthropic: bool = False
     repo_info: Dict = field(default_factory=dict)
     file_count: int = 0
+
+    def to_dict(self) -> dict:
+        profile = asdict(self)
+        for key, value in profile.items():
+            if isinstance(value, set):
+                profile[key] = sorted(value)
+        # Inventory paths, never raw manifest contents or arbitrary GitHub metadata.
+        profile["dependency_manifests"] = sorted(self.dependency_manifests)
+        profile.pop("repo_info", None)
+        return profile
 
 
 @dataclass

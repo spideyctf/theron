@@ -13,26 +13,9 @@ from scanner.profiler import ProjectProfiler
 from scanner.rule_loader import RuleLoader
 from scanner.plugins import discover_plugins
 from scanner.finding_utils import normalize_findings, coverage_finding
+from scanner.config import validate_modules
+from scanner.utils.helpers import should_scan_file, is_excluded
 
-
-SCANABLE_EXTENSIONS = {
-    ".py", ".js", ".ts", ".jsx", ".tsx", ".yaml", ".yml", ".json",
-    ".toml", ".env", ".cfg", ".ini", ".txt", ".md", ".xml",
-}
-
-SCANABLE_BASENAMES = {
-    "Dockerfile", "Dockerfile.dev", "Dockerfile.prod", "Dockerfile.base",
-    "docker-compose.yml", "docker-compose.yaml", "docker-compose.dev.yml",
-    "requirements.txt", "package.json", "pyproject.toml", "go.mod",
-    "Pipfile", "Pipfile.lock", "SKILL.md", "AGENTS.md", "AGENT.md", "CLAUDE.md",
-    "GUMMIE.md", "INSTRUCTIONS.md", "README.md",
-}
-
-SKIP_DIRS = {
-    "node_modules", ".git", "__pycache__", ".venv", "venv", "dist",
-    "build", ".next", "vendor", ".idea", ".vscode", "target",
-    "coverage", ".cache", ".pytest_cache", ".mypy_cache", ".benchmark-cache",
-}
 
 MAX_FILE_SIZE = 500_000
 
@@ -55,6 +38,7 @@ class ScanEngine:
         modules: Optional[List[str]] = None,
     ) -> ScanResult:
         start_time = time.time()
+        modules = validate_modules(modules if modules is not None else self.config.get("modules", ["ai", "sast", "sca", "agentic"]))
 
         # Get repo info
         repo_info = self.github.get_repo_info(owner, repo)
@@ -74,11 +58,9 @@ class ScanEngine:
                 continue
             path = item.get("path", "")
             size = item.get("size", 0)
-            if any(skip_dir in path.split("/") for skip_dir in SKIP_DIRS):
+            if is_excluded(path, self.config.get("exclude")):
                 continue
-            basename = path.rsplit("/", 1)[-1]
-            ext = "." + basename.rsplit(".", 1)[-1] if "." in basename else ""
-            if ext in SCANABLE_EXTENSIONS or basename in SCANABLE_BASENAMES or basename.startswith("Dockerfile"):
+            if should_scan_file(path):
                 if size > MAX_FILE_SIZE:
                     coverage.append(coverage_finding(path, "The file exceeds the 500 KB analysis limit."))
                 else:
@@ -120,6 +102,7 @@ class ScanEngine:
             branch=branch,
             files_scanned=len(files),
             findings=coverage,
+            project_profile=profile.to_dict(),
         )
 
         for scanner in self.scanners.values():

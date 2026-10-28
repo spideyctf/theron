@@ -2,6 +2,7 @@
 
 import os
 import re
+import fnmatch
 from typing import Set
 
 DEFAULT_SKIP_DIRS = {
@@ -29,7 +30,7 @@ def should_scan_file(file_path: str, skip_dirs: Set[str] = None) -> bool:
     for skip in skip_dirs:
         if skip in file_path.replace("\\", "/").split("/"):
             return False
-    basename = os.path.basename(file_path)
+    basename = file_path.replace("\\", "/").rsplit("/", 1)[-1]
     ext = "." + basename.rsplit(".", 1)[-1] if "." in basename else ""
     if ext in SECURITY_RELEVANT_EXTENSIONS:
         return True
@@ -37,9 +38,15 @@ def should_scan_file(file_path: str, skip_dirs: Set[str] = None) -> bool:
         return True
     if basename.startswith("Dockerfile"):
         return True
-    if basename.startswith(".env"):
+    if basename == ".env" or basename.startswith(".env."):
         return True
     return False
+
+
+def is_excluded(file_path: str, patterns) -> bool:
+    """Exclude paths before reading or sending their dependency names to OSV."""
+    path = file_path.replace("\\", "/")
+    return any(fnmatch.fnmatchcase(path, pattern) for pattern in patterns or [])
 
 
 def is_placeholder_value(value: str) -> bool:

@@ -12,8 +12,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/aryaman-futane/ai-sec-scanner.git
-cd ai-sec-scanner
+git clone https://github.com/spideyctf/theron.git
+cd theron
 
 # Install in development mode
 pip install -e .
@@ -26,8 +26,8 @@ ai-sec-scan --help
 
 ```bash
 # Unzip the project
-unzip ai-sec-scanner.zip
-cd ai-sec-scanner
+unzip theron.zip
+cd theron
 
 # Install
 pip install -e .
@@ -41,7 +41,7 @@ ai-sec-scan --help
 You can run the scanner directly without installing it as a package:
 
 ```bash
-cd ai-sec-scanner
+cd theron
 
 # Run via Python module
 python -m scanner.cli --local examples/vulnerable_repo
@@ -70,7 +70,7 @@ To scan GitHub repositories, you need a Personal Access Token:
 1. Go to https://github.com/settings/tokens
 2. Click "Generate new token (classic)"
 3. Select scopes:
-   - `repo` — to scan private repos and create issues
+   - `repo` — to read private repositories
    - `read:org` — if scanning organization repos
 4. Generate the token and copy it
 5. Set it as an environment variable:
@@ -149,13 +149,9 @@ ai-sec-scan --repo owner/repo --format html --output report.html
 ai-sec-scan --repo owner/repo --format sarif --output report.sarif
 ```
 
-### Create GitHub issues for findings
+### Report-only review
 
-```bash
-ai-sec-scan --repo owner/repo --create-issues
-```
-
-This creates GitHub issues for CRITICAL and HIGH findings (max 20 issues per scan).
+Theron exports evidence for human review. It does not create GitHub issues or pull requests. Use `--fail-on high` to opt into a nonzero exit for new findings at that severity or above.
 
 ### Use custom rules directory
 
@@ -261,5 +257,5 @@ pip install rich
 ## Uninstall
 
 ```bash
-pip uninstall ai-sec-scanner
+pip uninstall theron
 ```

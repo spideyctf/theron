@@ -47,6 +47,12 @@ def main():
 
     # Parse modules
     module_names = [m.strip().lower() for m in args.modules.split(",")] if args.modules else None
+    if args.modules is not None:
+        from scanner.config import validate_modules
+        try:
+            validate_modules(module_names)
+        except ValueError as exc:
+            parser.error(str(exc))
 
     # ── Local scan mode ──────────────────────────────────────────────────
     if args.local:
@@ -103,6 +109,7 @@ def _run_local_scan(args, module_names):
     from scanner.profiler import ProjectProfiler
     from scanner.rule_loader import RuleLoader
     from scanner.plugins import discover_plugins, clear_registry
+    from scanner.utils.helpers import should_scan_file, is_excluded, DEFAULT_SKIP_DIRS
 
     scan_dir = args.local
     if not os.path.isdir(scan_dir):
@@ -124,25 +131,16 @@ def _run_local_scan(args, module_names):
     profiler = ProjectProfiler()
 
     # Collect files
-    SKIP_DIRS = {"node_modules", ".git", "__pycache__", ".venv", "venv", "dist",
-                 "build", ".next", "vendor", ".idea", ".vscode", "target",
-                 "coverage", ".cache", ".pytest_cache", ".mypy_cache", ".benchmark-cache"}
-    SCANABLE_EXT = {".py", ".js", ".ts", ".jsx", ".tsx", ".yaml", ".yml", ".json",
-                    ".toml", ".env", ".cfg", ".ini", ".txt", ".md", ".xml"}
-    SCANABLE_BASE = {"Dockerfile", "docker-compose.yml", "docker-compose.yaml",
-                     "requirements.txt", "package.json", "pyproject.toml", "go.mod",
-                     "Pipfile", "Pipfile.lock", "SKILL.md", "AGENTS.md", "AGENT.md", "CLAUDE.md",
-                     "GUMMIE.md", "INSTRUCTIONS.md", "README.md"}
-
     files = {}
     coverage = []
     for root, dirs, filenames in os.walk(scan_dir):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        dirs[:] = [d for d in dirs if d not in DEFAULT_SKIP_DIRS]
         for filename in filenames:
-            ext = "." + filename.rsplit(".", 1)[-1] if "." in filename else ""
-            if ext in SCANABLE_EXT or filename in SCANABLE_BASE or filename.startswith("Dockerfile"):
+            if should_scan_file(filename):
                 full_path = os.path.join(root, filename)
                 rel_path = os.path.relpath(full_path, scan_dir).replace("\\", "/")
+                if is_excluded(rel_path, config.get("exclude")):
+                    continue
                 try:
                     if os.path.getsize(full_path) > 500_000:
                         coverage.append(coverage_finding(rel_path, "The file exceeds the 500 KB analysis limit."))
@@ -163,6 +161,7 @@ def _run_local_scan(args, module_names):
 
     context = ScanContext(files=files, repo_info={}, project_profile=profile, rule_loader=rule_loader, config=config)
     result = ScanResult(repo_full_name=scan_dir, branch="local", files_scanned=len(files), findings=coverage)
+    result.project_profile = profile.to_dict()
 
     for scanner in scanners.values():
         if module_names and scanner.name not in module_names:

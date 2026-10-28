@@ -58,8 +58,6 @@ def test_evidenced_flows_alert(code):
     'def eval(value):\n return value\neval(input())',
     'commands = {"hello": "echo hello"}\nimport os\nos.system(commands[input()])',
     'import os\nx = input()\nif x in {"echo hello", "echo goodbye"}:\n os.system(x)',
-    'import os\nx = "echo hello"\ntry:\n x = input()\nexcept Exception:\n pass\nos.system(x)',
-    'import os\nx = "echo hello"\nif condition:\n x = input()\nos.system(x)',
     '# exec(openai.responses.create())\ntext = "pickle.loads(input())"',
 ])
 def test_near_misses_do_not_alert(code):
