@@ -30,6 +30,8 @@ The [ByteDance PatchEval-Verified repository](https://github.com/bytedance/Patch
 
 This is a repair benchmark, so it needs a SAST adapter and label audit first. Audit patch URLs, identify vulnerable/fixed snapshots and labelled sinks, deduplicate by project/CVE/code against development data, then freeze a project-separated final split before inspecting held-out source. The upstream documentation warns that reference patches may not satisfy every strengthened PoC; do not automatically label every fixed function clean. This reserve has no Theron accuracy result yet. Pulling every Docker image is unnecessary for the planned static-first assessment.
 
+**Step 2 metadata checkpoint:** [audit, protocol and frozen manifest](evaluation/realworld-2026-11-12/README.md) now cover all 70 cases in 48 project components. Partitions are 26 development, 9 validation, 9 test and 26 development-only because of prior metadata exposure. All 310 metadata queries resolve. Exact code hashes and project/fork identities informed grouping; semantic duplicates and source/patch label correctness remain unverified. No target source was displayed or detector run, and zero cases are scorable. Next, adjudicate development source before changing detectors; independently adjudicate reserved labels without exposing them to tuning.
+
 ## Candidate contribution
 
 The proposed platform contribution is whether combining supported code, configuration, dependency and agent evidence identifies additional actionable risks or improves review decisions compared with the component tools/outputs alone. This is not yet demonstrated. The first planned pilot links an explicitly configured local Python entrypoint to a supported dangerous code flow, preserving unknown runtime exposure and privileges.

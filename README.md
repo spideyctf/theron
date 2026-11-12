@@ -13,6 +13,8 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 ## Latest evaluation: OWASP BenchmarkPython
 
+**Real-world preparation, 12 November 2026:** [Step 2 metadata audit](docs/evaluation/realworld-2026-11-12/README.md) froze 70 Python CVEs across 48 project groups: 26 development, 9 validation, 9 test, and 26 development-only due to prior exposure. All metadata references resolve, but source/patch labels remain unverified: **0 scorable real-world cases and no new accuracy result**.
+
 On **12 November 2026**, we added [OWASP BenchmarkPython](https://github.com/OWASP-Benchmark/BenchmarkPython), pinned to `f1291485808b66e20ddb6b01b10dc71b3df8c8ba`: **1,230 synthetic cases across 14 categories**. Whole upstream template families stay in one split: 737 development, 248 validation and 245 test cases. The detector was frozen at [`a504494`](https://github.com/spideyctf/theron/commit/a504494e35b961770a5c37896a7f115bfe025088) before validation/test; all categories, including unsupported ones, remain scored.
 
 | Split | Before: detected / vulnerable | After: detected / vulnerable | After precision | After F1 |
@@ -69,7 +71,7 @@ CWE-77 has one additional unscorable vulnerable label. A perfect result within a
 
 | Engineering check, 12 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 273 passed; 1 dependency deprecation warning |
+| Python regression suite | 288 passed; 1 dependency deprecation warning |
 | Frontend tests | 8 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |

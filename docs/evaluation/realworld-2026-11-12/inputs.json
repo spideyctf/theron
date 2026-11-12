@@ -1,0 +1,4374 @@
+{
+  "policy": "theron-realworld-metadata-v1",
+  "seed": "theron-realworld-2026-11-12-v1",
+  "metadata_revision": "b43285cdde80cc04608d5f1178a330b740c91c2d",
+  "metadata_sha256": "65e873923d738221389ed32408c4f5fa75882ea07609c500761207d013da0f62",
+  "reserve_sha256": "41e6cd6678bf4a39c4abd592667833db352fad69c704c6b38f64ee6ba929b868",
+  "prior_csv_sha256": "06ae70387ba9eaf6696409fc7ee7d08a387b7e14ed4524130cfc6eccb4ccefd4",
+  "prior_projects": [
+    "aimhubio/aim",
+    "aio-libs/aiohttp",
+    "apache/airflow",
+    "astropy/astropy",
+    "automatic1111/stable-diffusion-webui",
+    "berriai/litellm",
+    "bitmessage/pybitmessage",
+    "bmaltais/kohya_ss",
+    "ckan/ckan",
+    "cookiecutter/cookiecutter",
+    "deepset-ai/haystack",
+    "dgtlmoon/changedetection.io",
+    "django/django",
+    "dwisiswant0/apkleaks",
+    "ehco1996/django-sspanel",
+    "encode/django-rest-framework",
+    "facebookresearch/parlai",
+    "gerapy/gerapy",
+    "getsentry/sentry",
+    "gitpython-developers/gitpython",
+    "gradio-app/gradio",
+    "hhyo/archery",
+    "huggingface/transformers",
+    "iahispano/applio",
+    "ipython/ipython",
+    "joblib/joblib",
+    "jumpserver/jumpserver",
+    "jupyter/nbviewer",
+    "kizniche/mycodo",
+    "kovidgoyal/calibre",
+    "mindsdb/mindsdb",
+    "mlflow/mlflow",
+    "morpheus65535/bazarr",
+    "netease-youdao/qanything",
+    "nuitka/nuitka",
+    "nvbn/thefuck",
+    "odoo/odoo",
+    "onnx/onnx",
+    "openstack/swift",
+    "pallets/werkzeug",
+    "pantsudango/dango-translator",
+    "pyeve/eve",
+    "pypa/setuptools",
+    "pytorch/pytorch",
+    "qutebrowser/qutebrowser",
+    "rasahq/rasa",
+    "run-llama/llama_index",
+    "saltstack/salt",
+    "sanic-org/sanic",
+    "shuup/shuup",
+    "significant-gravitas/autogpt",
+    "stitionai/devika",
+    "streamlit/streamlit",
+    "tortoise/tortoise-orm",
+    "truefoundry/cognita",
+    "twisted/twisted",
+    "ultimaker/cura",
+    "wagtail/wagtail",
+    "weblateorg/weblate",
+    "welliamcao/opsmanage",
+    "xpixelgroup/basicsr",
+    "yt-dlp/yt-dlp"
+  ],
+  "recovered_prior_project_fields": [
+    {
+      "field_sha256": "838e5c7370aa095896e537c3fc3eb8c453f1d98a3d9f311011a092dc95b4c4b3",
+      "repetitions": 2,
+      "repositories": [
+        "django/django"
+      ]
+    },
+    {
+      "field_sha256": "838e5c7370aa095896e537c3fc3eb8c453f1d98a3d9f311011a092dc95b4c4b3",
+      "repetitions": 2,
+      "repositories": [
+        "django/django"
+      ]
+    },
+    {
+      "field_sha256": "838e5c7370aa095896e537c3fc3eb8c453f1d98a3d9f311011a092dc95b4c4b3",
+      "repetitions": 2,
+      "repositories": [
+        "django/django"
+      ]
+    },
+    {
+      "field_sha256": "838e5c7370aa095896e537c3fc3eb8c453f1d98a3d9f311011a092dc95b4c4b3",
+      "repetitions": 2,
+      "repositories": [
+        "django/django"
+      ]
+    },
+    {
+      "field_sha256": "838e5c7370aa095896e537c3fc3eb8c453f1d98a3d9f311011a092dc95b4c4b3",
+      "repetitions": 2,
+      "repositories": [
+        "django/django"
+      ]
+    },
+    {
+      "field_sha256": "861dcc1c2956eb766832ebe83d474247b7ada3b18117314e3ee328209258460c",
+      "repetitions": 5,
+      "repositories": [
+        "pantsudango/dango-translator"
+      ]
+    },
+    {
+      "field_sha256": "3ee6ea27f635e11ca5ae76629a1429f2af47a48351472204d6d5ef12b582e287",
+      "repetitions": 2,
+      "repositories": [
+        "xpixelgroup/basicsr"
+      ]
+    },
+    {
+      "field_sha256": "e9f93e5fc49d717ed8704f9c8177e4134d2bd61872c3547769e044aba2cf5323",
+      "repetitions": 3,
+      "repositories": [
+        "pallets/werkzeug"
+      ]
+    },
+    {
+      "field_sha256": "4e56bde959fef37b8d36c264da898b762b846079df1599ba81429c3b3c104f1d",
+      "repetitions": 3,
+      "repositories": [
+        "pyeve/eve"
+      ]
+    },
+    {
+      "field_sha256": "0907dd80342ea2241e08b0b6ee95c11dcb1630b89bcf67a0bfa5841c75aa303f",
+      "repetitions": 3,
+      "repositories": [
+        "ultimaker/cura"
+      ]
+    },
+    {
+      "field_sha256": "0a6cf881bf1acb830e527e8ec8d6c9ff4c55dbae636d781ba420ed669e197263",
+      "repetitions": 3,
+      "repositories": [
+        "hhyo/archery"
+      ]
+    },
+    {
+      "field_sha256": "0a6cf881bf1acb830e527e8ec8d6c9ff4c55dbae636d781ba420ed669e197263",
+      "repetitions": 3,
+      "repositories": [
+        "hhyo/archery"
+      ]
+    },
+    {
+      "field_sha256": "0a6cf881bf1acb830e527e8ec8d6c9ff4c55dbae636d781ba420ed669e197263",
+      "repetitions": 3,
+      "repositories": [
+        "hhyo/archery"
+      ]
+    },
+    {
+      "field_sha256": "db8daa831a83a2a44b644f2d12ac9965e34ce571b07b5743f6d988464aba34b1",
+      "repetitions": 3,
+      "repositories": [
+        "twisted/twisted"
+      ]
+    },
+    {
+      "field_sha256": "db8daa831a83a2a44b644f2d12ac9965e34ce571b07b5743f6d988464aba34b1",
+      "repetitions": 3,
+      "repositories": [
+        "twisted/twisted"
+      ]
+    },
+    {
+      "field_sha256": "537bb4776b4abf5be2de1baa813e84a0b682a3fec2c476d8d2bcae045a609c4d",
+      "repetitions": 3,
+      "repositories": [
+        "aimhubio/aim"
+      ]
+    },
+    {
+      "field_sha256": "9b0e57b6eed850ebe879c8181f80c514b77fd7ce95b9270b0e5b7abc623818af",
+      "repetitions": 3,
+      "repositories": [
+        "dwisiswant0/apkleaks"
+      ]
+    },
+    {
+      "field_sha256": "43bf153d7d9fc7c797daf84e975e406eff0f68c965486f30ddb05546d5487181",
+      "repetitions": 3,
+      "repositories": [
+        "weblateorg/weblate"
+      ]
+    },
+    {
+      "field_sha256": "a9f6ce7d24c7759e4b37fabff294e0f702a460a2ddbc99a7000f8e00f71bcd45",
+      "repetitions": 5,
+      "repositories": [
+        "tortoise/tortoise-orm"
+      ]
+    },
+    {
+      "field_sha256": "c9866e0535f98354d21d94d89f43eed9745ee4cda7c3337e43926bb386b51509",
+      "repetitions": 5,
+      "repositories": [
+        "gitpython-developers/gitpython"
+      ]
+    },
+    {
+      "field_sha256": "6a039b1beb33ac1c74a08cbb6bc3f4d06687bb4c98cc7ae68d12ebcbdd53d910",
+      "repetitions": 3,
+      "repositories": [
+        "ckan/ckan"
+      ]
+    },
+    {
+      "field_sha256": "6daa4c52bd516bffa7fa2e069f2092cd82b2b2485ad582bfc2bfecfbc3d1de7c",
+      "repetitions": 3,
+      "repositories": [
+        "astropy/astropy"
+      ]
+    },
+    {
+      "field_sha256": "338f97776da7247c7d3ce6ecb8ef04edb297d2bd52517d679928b3ad29c467ed",
+      "repetitions": 3,
+      "repositories": [
+        "joblib/joblib"
+      ]
+    },
+    {
+      "field_sha256": "20b9cc808781da543faa21b45632f29f28f45d01fbfec731c4804957f313b33d",
+      "repetitions": 3,
+      "repositories": [
+        "truefoundry/cognita"
+      ]
+    },
+    {
+      "field_sha256": "94bc8d5cf7dca6f76006682b512d6351052529d624ff257492b9d63ccc8f3641",
+      "repetitions": 3,
+      "repositories": [
+        "welliamcao/opsmanage"
+      ]
+    },
+    {
+      "field_sha256": "cd81a5ef887aa3c0fe222e05665b8539f0fe5fd8de7f02d9d304c6c17dd95a17",
+      "repetitions": 3,
+      "repositories": [
+        "gerapy/gerapy"
+      ]
+    },
+    {
+      "field_sha256": "b4f8979c99d8f7a4c7d43dfe4d7495ba4aa3628c367500ee3f7ea3b29c111226",
+      "repetitions": 5,
+      "repositories": [
+        "ehco1996/django-sspanel"
+      ]
+    },
+    {
+      "field_sha256": "9e6ec2c593295a4c4502f6841e189cb94af0d3238d6db019c8b1face12b2d7ae",
+      "repetitions": 3,
+      "repositories": [
+        "morpheus65535/bazarr"
+      ]
+    },
+    {
+      "field_sha256": "9e6ec2c593295a4c4502f6841e189cb94af0d3238d6db019c8b1face12b2d7ae",
+      "repetitions": 3,
+      "repositories": [
+        "morpheus65535/bazarr"
+      ]
+    },
+    {
+      "field_sha256": "b97045c9bff5bc6cd61c5e7f25902ed8b94631e8b1da0d6d58bf040dfceb0e57",
+      "repetitions": 3,
+      "repositories": [
+        "kizniche/mycodo"
+      ]
+    },
+    {
+      "field_sha256": "870a621318031a6c6b75fa67f0a7a427ca578c94089cb06c3b484ba6673ce79c",
+      "repetitions": 3,
+      "repositories": [
+        "bitmessage/pybitmessage"
+      ]
+    },
+    {
+      "field_sha256": "76d2445d0a410e9ead3b5186c0a69614639541d112643c54d44ec3322c4619e6",
+      "repetitions": 3,
+      "repositories": [
+        "openstack/swift"
+      ]
+    },
+    {
+      "field_sha256": "92538620e299763a6d9c0ad5f6fafa946ff42bd8852b3b7913566a60df4a6e8b",
+      "repetitions": 3,
+      "repositories": [
+        "pypa/setuptools"
+      ]
+    },
+    {
+      "field_sha256": "fb815d807854fd5366b2e23bd3f02c8863231e41f466617d1e60e1e4cc0f0171",
+      "repetitions": 3,
+      "repositories": [
+        "shuup/shuup"
+      ]
+    },
+    {
+      "field_sha256": "6aad0525d627ec2b78dbdb01ebf8f1668b0d5d2cae66a6143b821f2665d7c8b8",
+      "repetitions": 3,
+      "repositories": [
+        "jupyter/nbviewer"
+      ]
+    },
+    {
+      "field_sha256": "fda62dbb7965748a63b5fbc60cb814006e1cc68008cd959af445d682a89e643b",
+      "repetitions": 3,
+      "repositories": [
+        "iahispano/applio"
+      ]
+    }
+  ],
+  "invalid_prior_projects": [],
+  "prior_cves": [
+    "CVE-2012-4406",
+    "CVE-2016-10516",
+    "CVE-2017-10803",
+    "CVE-2017-16667",
+    "CVE-2017-9416",
+    "CVE-2018-1000070",
+    "CVE-2018-1000559",
+    "CVE-2018-15634",
+    "CVE-2018-15635",
+    "CVE-2018-8097",
+    "CVE-2019-1010259",
+    "CVE-2020-11001",
+    "CVE-2020-11010",
+    "CVE-2021-21386",
+    "CVE-2021-25283",
+    "CVE-2021-25963",
+    "CVE-2021-26947",
+    "CVE-2021-3148",
+    "CVE-2021-31607",
+    "CVE-2021-33203",
+    "CVE-2021-34363",
+    "CVE-2021-39207",
+    "CVE-2021-41127",
+    "CVE-2021-41185",
+    "CVE-2021-43775",
+    "CVE-2021-43857",
+    "CVE-2021-45452",
+    "CVE-2022-2054",
+    "CVE-2022-21797",
+    "CVE-2022-23522",
+    "CVE-2022-24065",
+    "CVE-2022-24710",
+    "CVE-2022-28347",
+    "CVE-2022-34265",
+    "CVE-2022-35918",
+    "CVE-2022-35920",
+    "CVE-2022-39348",
+    "CVE-2022-45907",
+    "CVE-2023-24816",
+    "CVE-2023-27494",
+    "CVE-2023-28836",
+    "CVE-2023-30557",
+    "CVE-2023-30558",
+    "CVE-2023-30605",
+    "CVE-2023-30620",
+    "CVE-2023-37274",
+    "CVE-2023-38941",
+    "CVE-2023-38942",
+    "CVE-2023-4033",
+    "CVE-2023-40581",
+    "CVE-2023-41040",
+    "CVE-2023-41334",
+    "CVE-2023-42819",
+    "CVE-2023-50264",
+    "CVE-2023-50265",
+    "CVE-2023-50943",
+    "CVE-2023-6568",
+    "CVE-2023-6709",
+    "CVE-2023-6730",
+    "CVE-2023-6940",
+    "CVE-2023-7018",
+    "CVE-2024-11662",
+    "CVE-2024-1561",
+    "CVE-2024-21520",
+    "CVE-2024-22423",
+    "CVE-2024-23334",
+    "CVE-2024-25722",
+    "CVE-2024-27132",
+    "CVE-2024-27133",
+    "CVE-2024-27306",
+    "CVE-2024-27763",
+    "CVE-2024-3098",
+    "CVE-2024-31462",
+    "CVE-2024-32023",
+    "CVE-2024-32024",
+    "CVE-2024-32025",
+    "CVE-2024-32026",
+    "CVE-2024-32027",
+    "CVE-2024-32651",
+    "CVE-2024-3271",
+    "CVE-2024-3568",
+    "CVE-2024-3573",
+    "CVE-2024-37058",
+    "CVE-2024-37059",
+    "CVE-2024-37060",
+    "CVE-2024-37061",
+    "CVE-2024-39330",
+    "CVE-2024-39863",
+    "CVE-2024-39877",
+    "CVE-2024-41656",
+    "CVE-2024-41675",
+    "CVE-2024-4181",
+    "CVE-2024-41810",
+    "CVE-2024-41950",
+    "CVE-2024-4890",
+    "CVE-2024-5187",
+    "CVE-2024-5547",
+    "CVE-2024-5548",
+    "CVE-2024-5711",
+    "CVE-2024-5751",
+    "CVE-2024-5926",
+    "CVE-2024-6345",
+    "CVE-2024-6781",
+    "CVE-2024-7008",
+    "CVE-2024-7009",
+    "CVE-2024-8374",
+    "CVE-2025-27519",
+    "CVE-2025-27787"
+  ],
+  "cases": [
+    {
+      "cve_id": "CVE-2020-26215",
+      "repository": "jupyter/notebook",
+      "patch_references": [
+        {
+          "repository": "jupyter/notebook",
+          "revision": "3cec4bbe21756de9f0c4bccf18cf61d840314d74",
+          "url": "https://github.com/jupyter/notebook/commit/3cec4bbe21756de9f0c4bccf18cf61d840314d74"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "notebook/base/handlers.py",
+          "requested_revision": "d8308e13803ba1c6e92f129381e615af6c6e00d3",
+          "start_line": 861,
+          "end_line": 863,
+          "snippet_sha256": "6f06ea169ce31d387981273c2bdd2c7123fba5d98063bcbe9f593aa4ce8db3ad",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "notebook/base/handlers.py",
+          "requested_revision": "3cec4bbe21756de9f0c4bccf18cf61d840314d74",
+          "start_line": 861,
+          "end_line": 867,
+          "snippet_sha256": "a8407ab485562c02570681fdf473b40e7c1e3b388478f3a2aed0826c67d1e3db",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-601"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "repository": "federatedai/fate",
+      "patch_references": [
+        {
+          "repository": "federatedai/fate",
+          "revision": "6feccf6d752184a6f9365d56a76fe627983e7139",
+          "url": "https://github.com/FederatedAI/FATE/commit/6feccf6d752184a6f9365d56a76fe627983e7139"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+          "requested_revision": "67708d5",
+          "start_line": 532,
+          "end_line": 544,
+          "snippet_sha256": "db4259e77f9c1e2854b4a80effd3c90a6a0836f10413a30eba49e5e579b1a1ba",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+          "requested_revision": "6feccf6",
+          "start_line": 544,
+          "end_line": 557,
+          "snippet_sha256": "c2dcc7a439301366c2a5e255ed0149913d8bb8ab881e6c03cbc7a6ca185c4478",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+          "requested_revision": "6feccf6",
+          "start_line": 532,
+          "end_line": 542,
+          "snippet_sha256": "f07b36d9e6f9d5bf33e98e89ed0001dfe320b1cff1022f3d862c856d433d1733",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-668"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2022-31506",
+      "repository": "cmusatyalab/opendiamond",
+      "patch_references": [
+        {
+          "repository": "cmusatyalab/opendiamond",
+          "revision": "398049c187ee644beabab44d6fece82251c1ea56",
+          "url": "https://github.com/cmusatyalab/opendiamond/commit/398049c187ee644beabab44d6fece82251c1ea56"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "opendiamond/dataretriever/diamond_store.py",
+          "requested_revision": "d2f20ffff793f88335f2c0244679d7193295abe2",
+          "start_line": 122,
+          "end_line": 123,
+          "snippet_sha256": "38cc0b9f1eedd6e09760786528ee6bbcfcfef898f0d5a2f8f086546ab29c05c3",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "opendiamond/dataretriever/diamond_store.py",
+          "requested_revision": "398049c187ee644beabab44d6fece82251c1ea56",
+          "start_line": 123,
+          "end_line": 124,
+          "snippet_sha256": "66a62a0fd0b60a2107c12ffaa6779148c39fae1e34b32e9c9116db95015b5c64",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2021-21360",
+      "repository": "zopefoundation/products.genericsetup",
+      "patch_references": [
+        {
+          "repository": "zopefoundation/products.genericsetup",
+          "revision": "700319512b3615b3871a1f24e096cf66dc488c57",
+          "url": "https://github.com/zopefoundation/Products.GenericSetup/commit/700319512b3615b3871a1f24e096cf66dc488c57"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "src/Products/GenericSetup/context.py",
+          "requested_revision": "835c1ac",
+          "start_line": 482,
+          "end_line": 501,
+          "snippet_sha256": "9bdbf2194fa57d81cd54298a1ae15cfd5e0d0243eb83c779a151ee1a1a3c43e1",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "src/Products/GenericSetup/context.py",
+          "requested_revision": "835c1ac",
+          "start_line": 547,
+          "end_line": 565,
+          "snippet_sha256": "ff7457c7329d539f8f2b3e56194939b8b1f7861f7cb30b7e86dddf04e05fd2e4",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "src/Products/GenericSetup/context.py",
+          "requested_revision": "700319512b3615b3871a1f24e096cf66dc488c57",
+          "start_line": 483,
+          "end_line": 506,
+          "snippet_sha256": "a7e6ea34c2f92a66aed029f3d87856b4ca6505fb27d33ff086e874175e046bb8",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "src/Products/GenericSetup/context.py",
+          "requested_revision": "700319512b3615b3871a1f24e096cf66dc488c57",
+          "start_line": 552,
+          "end_line": 572,
+          "snippet_sha256": "0c6a9a129987fac9fe8ff14640f5ca12a7c1d1ba3ee3e611ce87c4cb95141fd0",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-200"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2022-4724",
+      "repository": "ikus060/rdiffweb",
+      "patch_references": [
+        {
+          "repository": "ikus060/rdiffweb",
+          "revision": "c4a19cf67d575c4886171b8efcbf4675d51f3929",
+          "url": "https://github.com/ikus060/rdiffweb/commit/c4a19cf67d575c4886171b8efcbf4675d51f3929"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "rdiffweb/core/model/__init__.py",
+          "requested_revision": "d1aaa96",
+          "start_line": 70,
+          "end_line": 139,
+          "snippet_sha256": "294d6a8a8009de25382928d35d599521349bce55af966fdba4dbdb6341751fc2",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "rdiffweb/core/model/_user.py",
+          "requested_revision": "d1aaa96",
+          "start_line": 153,
+          "end_line": 185,
+          "snippet_sha256": "846e83bf1a80fc4be723a19356713b4d88eba12abf63634390b9f20c47a899f2",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "rdiffweb/core/model/__init__.py",
+          "requested_revision": "c4a19cf",
+          "start_line": 71,
+          "end_line": 158,
+          "snippet_sha256": "2d60ca4d9df48ba151584e1be766da55432dab11c991c99f6f98373af20e2cdc",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "rdiffweb/core/model/_sshkey.py",
+          "requested_revision": "c4a19cf",
+          "start_line": 24,
+          "end_line": 33,
+          "snippet_sha256": "829d58128693a7481b9838913746de08ee5d61621c2c6f0acb7fa5ac7f236a34",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "rdiffweb/core/model/_user.py",
+          "requested_revision": "c4a19cf",
+          "start_line": 153,
+          "end_line": 186,
+          "snippet_sha256": "0d2bad4602eae60cf8c8a5cb86b38db62105d349ee02e634f32502096a46c381",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-284"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2022-28347",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "00b0fc50e1738c7174c495464a5ef069408a4402",
+          "url": "https://github.com/django/django/commit/00b0fc50e1738c7174c495464a5ef069408a4402"
+        },
+        {
+          "repository": "django/django",
+          "revision": "29a6c98b4c13af82064f993f0acc6e8fafa4d3f5",
+          "url": "https://github.com/django/django/commit/29a6c98b4c13af82064f993f0acc6e8fafa4d3f5"
+        },
+        {
+          "repository": "django/django",
+          "revision": "6723a26e59b0b5429a0c5873941e01a2e1bdbb81",
+          "url": "https://github.com/django/django/commit/6723a26e59b0b5429a0c5873941e01a2e1bdbb81"
+        },
+        {
+          "repository": "django/django",
+          "revision": "9e19accb6e0a00ba77d5a95a91675bf18877c72d",
+          "url": "https://github.com/django/django/commit/9e19accb6e0a00ba77d5a95a91675bf18877c72d"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/db/backends/postgresql/operations.py",
+          "requested_revision": "8008288",
+          "start_line": 290,
+          "end_line": 304,
+          "snippet_sha256": "ad6653dc1a524caa9379cbbe5454f1129021d34c5953cb9c0b5aa2a75285b5e9",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "8008288",
+          "start_line": 587,
+          "end_line": 591,
+          "snippet_sha256": "26764d2bc0a9c38708b47a93a869b62a02c3d42239778333e83497d65edf0656",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/db/backends/postgresql/operations.py",
+          "requested_revision": "00b0fc5",
+          "start_line": 302,
+          "end_line": 319,
+          "snippet_sha256": "e7a0227a046f527d2e1804d43c92c63e91bef79959393d1d2f11a66c608c4e39",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "00b0fc5",
+          "start_line": 591,
+          "end_line": 601,
+          "snippet_sha256": "48469e733099df70776efcabf3d32bd7a571bcc5f32295f710a98c245fefde57",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "00b0fc5",
+          "start_line": 52,
+          "end_line": 55,
+          "snippet_sha256": "b99e49715caf1535eb5816b4a2ec7b4f6ef077f69c1a75331e8e71bbddb7cf99",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 3,
+          "path": "django/db/backends/postgresql/operations.py",
+          "requested_revision": "00b0fc5",
+          "start_line": 11,
+          "end_line": 22,
+          "snippet_sha256": "d01cea81bc8ca999806cc1a33ade34bb78b9985901073e98c4984acc7c72d4cc",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-89"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "patch_references": [
+        {
+          "repository": "spotify/luigi",
+          "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+          "url": "https://github.com/spotify/luigi/commit/b5d1b965ead7d9f777a3216369b5baf23ec08999"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "luigi/contrib/lsf_runner.py",
+          "requested_revision": "c9a0d20",
+          "start_line": 47,
+          "end_line": 62,
+          "snippet_sha256": "5c70f5199c41c7cc6990516987161ba42bb018cbebc275526c0a70e3577555a5",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "luigi/contrib/sge_runner.py",
+          "requested_revision": "c9a0d20",
+          "start_line": 59,
+          "end_line": 74,
+          "snippet_sha256": "a3f7c5efc6faead36cf22623e0c4a2118938bd58ceeff551a532bfce178e9ace",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "luigi/contrib/lsf_runner.py",
+          "requested_revision": "b5d1b96",
+          "start_line": 31,
+          "end_line": 31,
+          "snippet_sha256": "52b623020e2c01feddd220b9196530830b7e9314ca19e2eabeb8e5c73381d62b",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "luigi/contrib/lsf_runner.py",
+          "requested_revision": "b5d1b96",
+          "start_line": 47,
+          "end_line": 60,
+          "snippet_sha256": "562cdaf97f81b8b835f374cb3412677ca2b3e2ddcf09e85b8102ffe290baf4d8",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "luigi/contrib/sge_runner.py",
+          "requested_revision": "b5d1b96",
+          "start_line": 39,
+          "end_line": 39,
+          "snippet_sha256": "52b623020e2c01feddd220b9196530830b7e9314ca19e2eabeb8e5c73381d62b",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 3,
+          "path": "luigi/contrib/sge_runner.py",
+          "requested_revision": "b5d1b96",
+          "start_line": 59,
+          "end_line": 72,
+          "snippet_sha256": "031690c028d06a0108b2e2c2d2de93a0fc7ccb461c3ba4452ec401e213dbb541",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 4,
+          "path": "luigi/safe_extractor.py",
+          "requested_revision": "b5d1b96",
+          "start_line": 1,
+          "end_line": 97,
+          "snippet_sha256": "41dfaeec683b604c1ac2611fc0f979dcff934294ce1180a4f7e3afeeb89b3999",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2022-41672",
+      "repository": "apache/airflow",
+      "patch_references": [
+        {
+          "repository": "apache/airflow",
+          "revision": "12bfb571a895a28a58d3189b0fc10cfc1b89e24c",
+          "url": "https://github.com/apache/airflow/commit/12bfb571a895a28a58d3189b0fc10cfc1b89e24c"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "airflow/www/app.py",
+          "requested_revision": "d81b297",
+          "start_line": 72,
+          "end_line": 155,
+          "snippet_sha256": "c8ce19e4473b4b0cea4e546ed467dec1d9ae0b23fc116de76a32ddd1ce3eef10",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "airflow/www/app.py",
+          "requested_revision": "12bfb57",
+          "start_line": 76,
+          "end_line": 160,
+          "snippet_sha256": "35073d405bda15fcefedfaf7f3b24fc03f4ae312b77b609097e411ec81848387",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "airflow/www/extensions/init_security.py",
+          "requested_revision": "12bfb57",
+          "start_line": 68,
+          "end_line": 73,
+          "snippet_sha256": "fda762af8a46c9afb0dbda199a6929c0cab8a4c3f4fbbed2f4c6351fe1f1892f",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-250",
+        "CWE-269",
+        "CWE-285"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2021-23727",
+      "repository": "celery/celery",
+      "patch_references": [
+        {
+          "repository": "celery/celery",
+          "revision": "1f7ad7e6df1e02039b6ab9eec617d283598cad6b",
+          "url": "https://github.com/celery/celery/commit/1f7ad7e6df1e02039b6ab9eec617d283598cad6b"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "celery/backends/base.py",
+          "requested_revision": "2d8dbc2",
+          "start_line": 339,
+          "end_line": 369,
+          "snippet_sha256": "8960001fa6782a834464c72cd6a5e393f4a7d56ec1f3f6571d97e625fb7e5d80",
+          "localization_count": 2
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "celery/backends/base.py",
+          "requested_revision": "1f7ad7e",
+          "start_line": 340,
+          "end_line": 409,
+          "snippet_sha256": "b4925d06f9d93d93e5d0f6c9948d3b1a704282f1de7f8e2a0cdde054960b266e",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2018-14574",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "d6eaee092709aad477a9894598496c6deec532ff",
+          "url": "https://github.com/django/django/commit/d6eaee092709aad477a9894598496c6deec532ff"
+        },
+        {
+          "repository": "django/django",
+          "revision": "c4e5ff7fdb5fce447675e90291fd33fddd052b3c",
+          "url": "https://github.com/django/django/commit/c4e5ff7fdb5fce447675e90291fd33fddd052b3c"
+        },
+        {
+          "repository": "django/django",
+          "revision": "6fffc3c6d420e44f4029d5643f38d00a39b08525",
+          "url": "https://github.com/django/django/commit/6fffc3c6d420e44f4029d5643f38d00a39b08525"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/middleware/common.py",
+          "requested_revision": "af344691114e4a68334c30543bfb838996328212",
+          "start_line": 83,
+          "end_line": 102,
+          "snippet_sha256": "9899cf157eaa44b4088b02a42a16e62a42e612b9234be099f73a4e55120b7a72",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "django/urls/resolvers.py",
+          "requested_revision": "af344691114e4a68334c30543bfb838996328212",
+          "start_line": 564,
+          "end_line": 636,
+          "snippet_sha256": "155ec2686e3383268e79eb28114ee0d91ceb5e94f845d9abad61bbffa9ea2ccf",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/middleware/common.py",
+          "requested_revision": "6fffc3c6d420e44f4029d5643f38d00a39b08525",
+          "start_line": 84,
+          "end_line": 105,
+          "snippet_sha256": "4b5b366fef014b07914bb999d2dbd5621cbc2d446739f32bd977d27ba61eced7",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "django/urls/resolvers.py",
+          "requested_revision": "6fffc3c6d420e44f4029d5643f38d00a39b08525",
+          "start_line": 564,
+          "end_line": 634,
+          "snippet_sha256": "780cb528a9f625cda8fa31c95554b3b569b3df017332867e3453e24042b3a456",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-601"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2021-3281",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "52e409ed17287e9aabda847b6afe58be2fa9f86a",
+          "url": "https://github.com/django/django/commit/52e409ed17287e9aabda847b6afe58be2fa9f86a"
+        },
+        {
+          "repository": "django/django",
+          "revision": "05413afa8c18cdb978fcdf470e09f7a12b234a23",
+          "url": "https://github.com/django/django/commit/05413afa8c18cdb978fcdf470e09f7a12b234a23"
+        },
+        {
+          "repository": "django/django",
+          "revision": "02e6592835b4559909aa3aaaf67988fef435f624",
+          "url": "https://github.com/django/django/commit/02e6592835b4559909aa3aaaf67988fef435f624"
+        },
+        {
+          "repository": "django/django",
+          "revision": "21e7622dec1f8612c85c2fc37fe8efbfd3311e37",
+          "url": "https://github.com/django/django/commit/21e7622dec1f8612c85c2fc37fe8efbfd3311e37"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/utils/archive.py",
+          "requested_revision": "03a8678",
+          "start_line": 151,
+          "end_line": 179,
+          "snippet_sha256": "eabe08d2eb33a7a769005a4754f1671b72fb162b0376970cd43c5d8682fa9041",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "django/utils/archive.py",
+          "requested_revision": "03a8678",
+          "start_line": 193,
+          "end_line": 213,
+          "snippet_sha256": "d5155b7337da67b79705a43fb831d0eaeb4c740575ee42705a8f1d2c6c8b132f",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/utils/archive.py",
+          "requested_revision": "02e6592",
+          "start_line": 160,
+          "end_line": 188,
+          "snippet_sha256": "8ff7257c28ccf908f2b5cf82d235c4c06b5ce61d313e2b2d066617e2f35aac49",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "django/utils/archive.py",
+          "requested_revision": "02e6592",
+          "start_line": 202,
+          "end_line": 224,
+          "snippet_sha256": "79a8080048840d307324144b8c8aaa2ceba28d9484ada711141709f3af7c41d5",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "django/utils/archive.py",
+          "requested_revision": "02e6592",
+          "start_line": 138,
+          "end_line": 143,
+          "snippet_sha256": "f3911ec7d91fc6d3e76dfe46cbeeb3a53bba91e5515a3c8828f0b686cec81e1d",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2019-10856",
+      "repository": "jupyter/notebook",
+      "patch_references": [
+        {
+          "repository": "jupyter/notebook",
+          "revision": "979e0bd15e794ceb00cc63737fcd5fd9addc4a99",
+          "url": "https://github.com/jupyter/notebook/commit/979e0bd15e794ceb00cc63737fcd5fd9addc4a99"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "notebook/auth/login.py",
+          "requested_revision": "16cf97c",
+          "start_line": 33,
+          "end_line": 63,
+          "snippet_sha256": "d05fe67ec09f5549417a7710332bef5b288f41143541f1eccc0166baed78a87c",
+          "localization_count": 3
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "notebook/auth/login.py",
+          "requested_revision": "979e0bd15e794ceb00cc63737fcd5fd9addc4a99",
+          "start_line": 33,
+          "end_line": 66,
+          "snippet_sha256": "43e003e7b6c4cfa42bd0c5095b7e1583c114636d29f8145b4b5620bc1a1aa04b",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-601"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2015-1326",
+      "repository": "martinpitt/python-dbusmock",
+      "patch_references": [
+        {
+          "repository": "martinpitt/python-dbusmock",
+          "revision": "4e7d0df9093",
+          "url": "https://github.com/martinpitt/python-dbusmock/commit/4e7d0df9093"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "dbusmock/mockobject.py",
+          "requested_revision": "a4bd39f",
+          "start_line": 41,
+          "end_line": 50,
+          "snippet_sha256": "85817600ef2905f80989798d1ad630296b649b7efca37196c578786a870ebf05",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "dbusmock/mockobject.py",
+          "requested_revision": "4e7d0df9093",
+          "start_line": 42,
+          "end_line": 49,
+          "snippet_sha256": "13c105027f4c5f3f3c75a01c6998251c2c0ad91edccc767ebf6af5519b378297",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-20"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2024-39330",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "9f4f63e9ebb7bf6cb9547ee4e2526b9b96703270",
+          "url": "https://github.com/django/django/commit/9f4f63e9ebb7bf6cb9547ee4e2526b9b96703270"
+        },
+        {
+          "repository": "django/django",
+          "revision": "2b00edc0151a660d1eb86da4059904a0fc4e095e",
+          "url": "https://github.com/django/django/commit/2b00edc0151a660d1eb86da4059904a0fc4e095e"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/core/files/storage/base.py",
+          "requested_revision": "156d318",
+          "start_line": 24,
+          "end_line": 41,
+          "snippet_sha256": "27686835587b61b19f5399e2f49265ac0611547339e61d47e598eb94ec037630",
+          "localization_count": 2
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "django/core/files/utils.py",
+          "requested_revision": "156d318",
+          "start_line": 7,
+          "end_line": 24,
+          "snippet_sha256": "cde86b822fbae54e2304717e5d617bdca4c5d24a65fad49609f14c0553ac0df6",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/core/files/storage/base.py",
+          "requested_revision": "2b00edc0151a660d1eb86da4059904a0fc4e095e",
+          "start_line": 24,
+          "end_line": 52,
+          "snippet_sha256": "5b8fe87b92c6b427219f0f89ac50fbea18f6f7f35ace7b34036f807c78cb12b5",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "django/core/files/utils.py",
+          "requested_revision": "2b00edc0151a660d1eb86da4059904a0fc4e095e",
+          "start_line": 7,
+          "end_line": 23,
+          "snippet_sha256": "0f4d6c7683d1e73b3b3486beb9e843233dd931fc02de49bdf9bdf63e14cf9a2c",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2022-21712",
+      "repository": "twisted/twisted",
+      "patch_references": [
+        {
+          "repository": "twisted/twisted",
+          "revision": "af8fe78542a6f2bf2235ccee8158d9c88d31e8e2",
+          "url": "https://github.com/twisted/twisted/commit/af8fe78542a6f2bf2235ccee8158d9c88d31e8e2"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "src/twisted/web/client.py",
+          "requested_revision": "7039a20",
+          "start_line": 2144,
+          "end_line": 2146,
+          "snippet_sha256": "83c842d5b9e7bd7990bd05b6ad3b6732e7479387e2d8725ec4e63a5116051097",
+          "localization_count": 2
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "src/twisted/web/client.py",
+          "requested_revision": "7039a20",
+          "start_line": 2172,
+          "end_line": 2189,
+          "snippet_sha256": "31a118901fb9a0515451ea56f3afdc5f5b4430b47be36c7afa582dc2847f99ce",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "src/twisted/web/client.py",
+          "requested_revision": "af8fe78",
+          "start_line": 2114,
+          "end_line": 2172,
+          "snippet_sha256": "9d083dd4564846d0ee108c6a637c7ae060eaedcd98835d16a9a9ec4f25ece58b",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "src/twisted/web/client.py",
+          "requested_revision": "af8fe78",
+          "start_line": 2198,
+          "end_line": 2240,
+          "snippet_sha256": "4b0cf61dfd72b551e80a8731eba85dbc80f3fd9a7132bd01302ab02bd4ac774f",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-200"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "repository": "nyuccl/psiturk",
+      "patch_references": [
+        {
+          "repository": "nyuccl/psiturk",
+          "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "url": "https://github.com/NYUCCL/psiTurk/commit/47787e15cecd66f2aa87687bf852ae0194a4335f"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "psiturk/experiment.py",
+          "requested_revision": "231d566",
+          "start_line": 287,
+          "end_line": 391,
+          "snippet_sha256": "abda5e7010054d75aa8e30b831cf5b6ab9f527f0852b7afbcf71f0fe767c9dd5",
+          "localization_count": 2
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "psiturk/experiment.py",
+          "requested_revision": "231d566",
+          "start_line": 396,
+          "end_line": 415,
+          "snippet_sha256": "6762602226da0a9abbbe907a827f77c6382923ad51eff51e20958633d71a66b9",
+          "localization_count": 2
+        },
+        {
+          "role": "vul_func",
+          "location_index": 2,
+          "path": "psiturk/experiment.py",
+          "requested_revision": "231d566",
+          "start_line": 734,
+          "end_line": 747,
+          "snippet_sha256": "0666264f86f54b55a67bc0dc14afae34a7dfaaafe6d634cc411bb380bbf79dc2",
+          "localization_count": 2
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "psiturk/experiment.py",
+          "requested_revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "start_line": 287,
+          "end_line": 392,
+          "snippet_sha256": "e3fb64fac631c9677bc6cdb1eff7388c5c0e04841dea3e3efde4d66a824b6a1a",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "psiturk/experiment.py",
+          "requested_revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "start_line": 397,
+          "end_line": 417,
+          "snippet_sha256": "dcd9de0d07a3a765a758d5db6a7b28cec0e73ca35a64e63fe82be7cd44d49735",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "psiturk/experiment.py",
+          "requested_revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "start_line": 736,
+          "end_line": 749,
+          "snippet_sha256": "e5a7b5a3f01bb0e31ba7631746dfce0a24dc501bfdf6df47ab876cffb4030b31",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "repository": "thinkst/opencanary",
+      "patch_references": [
+        {
+          "repository": "thinkst/opencanary",
+          "revision": "2c11575b1a3dd8b0df26a879ba856c0aa350c049",
+          "url": "https://github.com/thinkst/opencanary/commit/2c11575b1a3dd8b0df26a879ba856c0aa350c049"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "opencanary/config.py",
+          "requested_revision": "d3956bc",
+          "start_line": 52,
+          "end_line": 84,
+          "snippet_sha256": "6e6de3a1209bd9d25e7b6015712de4d76cacf3f67a0330f15ad7046549efeb8c",
+          "localization_count": 3
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "opencanary/modules/portscan.py",
+          "requested_revision": "d3956bc",
+          "start_line": 70,
+          "end_line": 71,
+          "snippet_sha256": "4030823fc869d98e78cf484f464468a7a85048b582cb94dda14552def389d642",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "opencanary/config.py",
+          "requested_revision": "2c11575",
+          "start_line": 52,
+          "end_line": 87,
+          "snippet_sha256": "8cb136138f97dc986ff2ef55835f63e619d838dd382fc3314cbb03886d04c8fe",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "opencanary/modules/portscan.py",
+          "requested_revision": "2c11575",
+          "start_line": 70,
+          "end_line": 71,
+          "snippet_sha256": "e0b44fb9bd5cad44b07da3a71f9f75bc6ae1b55bed6b360ae88c9cb764bcb5b3",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-863"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "repository": "encode/starlette",
+      "patch_references": [
+        {
+          "repository": "encode/starlette",
+          "revision": "1797de464124b090f10cf570441e8292936d63e3",
+          "url": "https://github.com/encode/starlette/commit/1797de464124b090f10cf570441e8292936d63e3"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "starlette/staticfiles.py",
+          "requested_revision": "24c1fac",
+          "start_line": 162,
+          "end_line": 180,
+          "snippet_sha256": "2b71e01afb49547ffb45a8bbb2c12e447b1aaf0d4ee4113c08badd4e6193e807",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "starlette/staticfiles.py",
+          "requested_revision": "1797de4",
+          "start_line": 162,
+          "end_line": 180,
+          "snippet_sha256": "1809d5b612076cc117639eaddaf3681510ddb61d09b988c79ebe926f943fdd1e",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2021-33203",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "20c67a0693c4ede2b09af02574823485e82e4c8f",
+          "url": "https://github.com/django/django/commit/20c67a0693c4ede2b09af02574823485e82e4c8f"
+        },
+        {
+          "repository": "django/django",
+          "revision": "dfaba12cda060b8b292ae1d271b44bf810b1c5b9",
+          "url": "https://github.com/django/django/commit/dfaba12cda060b8b292ae1d271b44bf810b1c5b9"
+        },
+        {
+          "repository": "django/django",
+          "revision": "053cc9534d174dc89daba36724ed2dcb36755b90",
+          "url": "https://github.com/django/django/commit/053cc9534d174dc89daba36724ed2dcb36755b90"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/contrib/admindocs/views.py",
+          "requested_revision": "aa8781c",
+          "start_line": 321,
+          "end_line": 347,
+          "snippet_sha256": "9998af50ab79870eb14ab42f59f4c1c1b2b519650e40f9f774740e3fd7e0323a",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/contrib/admindocs/views.py",
+          "requested_revision": "20c67a0",
+          "start_line": 322,
+          "end_line": 348,
+          "snippet_sha256": "36ec33a8b6d75a6852da471e038d9768fca50062f2b2dcad277dc49013cd75df",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "repository": "pylons/waitress",
+      "patch_references": [
+        {
+          "repository": "pylons/waitress",
+          "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+          "url": "https://github.com/Pylons/waitress/commit/11d9e138125ad46e951027184b13242a3c1de017"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "waitress/parser.py",
+          "requested_revision": "f11093a",
+          "start_line": 190,
+          "end_line": 297,
+          "snippet_sha256": "608d808b51322c663eedadd979613e975db447d966dae6053b98144745f11a3c",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "waitress/parser.py",
+          "requested_revision": "f11093a",
+          "start_line": 348,
+          "end_line": 365,
+          "snippet_sha256": "98a99d48832994961edc63c247f43cd35e8d4ec524c6046d412ea3b7194e6e77",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 2,
+          "path": "waitress/utilities.py",
+          "requested_revision": "f11093a",
+          "start_line": 211,
+          "end_line": 218,
+          "snippet_sha256": "0838d68f5b07b1bcb78e8b694900279287ade00eb88c9e6147b531b35c87a4c0",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "waitress/parser.py",
+          "requested_revision": "11d9e138125ad46e951027184b13242a3c1de017",
+          "start_line": 190,
+          "end_line": 298,
+          "snippet_sha256": "3f7212f2ecf669401a5af3e16cf7d16186d77f92280ea7b6afa55e712ca26adf",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "waitress/parser.py",
+          "requested_revision": "11d9e138125ad46e951027184b13242a3c1de017",
+          "start_line": 349,
+          "end_line": 376,
+          "snippet_sha256": "540c4ff83d169472ebed6fee4a55469a5a1c262108b4d0aec286b129e879feb6",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "waitress/utilities.py",
+          "requested_revision": "11d9e138125ad46e951027184b13242a3c1de017",
+          "start_line": 222,
+          "end_line": 229,
+          "snippet_sha256": "c0cb390540368623bfc42ab613e94af5e3754c12c4444481bf14e466c5b7583c",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 3,
+          "path": "waitress/rfc7230.py",
+          "requested_revision": "11d9e138125ad46e951027184b13242a3c1de017",
+          "start_line": 1,
+          "end_line": 44,
+          "snippet_sha256": "b327b4dee7e8d1224630a8f50a40b55a0f0c53950f4c11579b22645ad983403c",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-444"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-41040",
+      "repository": "gitpython-developers/gitpython",
+      "patch_references": [
+        {
+          "repository": "gitpython-developers/gitpython",
+          "revision": "74e55ee4544867e1bd976b7df5a45869ee397b0b",
+          "url": "https://github.com/gitpython-developers/GitPython/commit/74e55ee4544867e1bd976b7df5a45869ee397b0b"
+        },
+        {
+          "repository": "gitpython-developers/gitpython",
+          "revision": "e98f57b81f792f0f5e18d33ee658ae395f9aa3c4",
+          "url": "https://github.com/gitpython-developers/GitPython/commit/e98f57b81f792f0f5e18d33ee658ae395f9aa3c4"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "git/refs/symbolic.py",
+          "requested_revision": "1774f1e",
+          "start_line": 165,
+          "end_line": 205,
+          "snippet_sha256": "0bd2dc837e5e8f05623d5f0cd04c8a9a36cdf348db63db8cffe30ad9c49fd173",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "git/refs/symbolic.py",
+          "requested_revision": "e98f57b81f792f0f5e18d33ee658ae395f9aa3c4",
+          "start_line": 210,
+          "end_line": 241,
+          "snippet_sha256": "d97c0dde351aad7a03a05a35e6e9090d54f45421ba0fc21ac67288197dcb18c1",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "git/refs/symbolic.py",
+          "requested_revision": "e98f57b81f792f0f5e18d33ee658ae395f9aa3c4",
+          "start_line": 164,
+          "end_line": 208,
+          "snippet_sha256": "342a8c2ddd208d1ee802f01004750e723d671c150d79ba8f47b8cf74fd42e100",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2021-45452",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "e1592e0f26302e79856cc7f2218ae848ae19b0f6",
+          "url": "https://github.com/django/django/commit/e1592e0f26302e79856cc7f2218ae848ae19b0f6"
+        },
+        {
+          "repository": "django/django",
+          "revision": "4cb35b384ceef52123fc66411a73c36a706825e1",
+          "url": "https://github.com/django/django/commit/4cb35b384ceef52123fc66411a73c36a706825e1"
+        },
+        {
+          "repository": "django/django",
+          "revision": "8d2f7cff76200cbd2337b2cf1707e383eb1fb54b",
+          "url": "https://github.com/django/django/commit/8d2f7cff76200cbd2337b2cf1707e383eb1fb54b"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/core/files/storage.py",
+          "requested_revision": "c9f648c",
+          "start_line": 40,
+          "end_line": 54,
+          "snippet_sha256": "563fd18ac0e60ab4cde9ed1acd5be6f6e992dcca32f50511d16056b6001671d8",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "django/core/files/storage.py",
+          "requested_revision": "c9f648c",
+          "start_line": 65,
+          "end_line": 97,
+          "snippet_sha256": "1073e0a3848c2cca28ac3d65bee6ebde6b492470f13a5759b42808eaf824a849",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 2,
+          "path": "django/core/files/storage.py",
+          "requested_revision": "c9f648c",
+          "start_line": 99,
+          "end_line": 108,
+          "snippet_sha256": "d6547c36dce2d91fb96298e3ff97d01afb7e8f6774f88ad6c9b2744bc89d730d",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 3,
+          "path": "django/core/files/storage.py",
+          "requested_revision": "c9f648c",
+          "start_line": 233,
+          "end_line": 300,
+          "snippet_sha256": "71818c0b04e5dcd06d504636d80d6afed091a92013b1a4f34148d1eff993ccc2",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/core/files/storage.py",
+          "requested_revision": "4cb35b3",
+          "start_line": 40,
+          "end_line": 57,
+          "snippet_sha256": "3876d6b6f603c17f32b04861a702b43e285c170bcb2ff9fef36f64a9e7d451d1",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "django/core/files/storage.py",
+          "requested_revision": "4cb35b3",
+          "start_line": 68,
+          "end_line": 101,
+          "snippet_sha256": "ed46f18c53bce06950ed65cb65d07223b3a6b2c15b9ef62aa543b51c5182274e",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "django/core/files/storage.py",
+          "requested_revision": "4cb35b3",
+          "start_line": 103,
+          "end_line": 113,
+          "snippet_sha256": "f158089bce08d771406ae37623dba44e7e53b11641dcb470364ecf142d3870a0",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 3,
+          "path": "django/core/files/storage.py",
+          "requested_revision": "4cb35b3",
+          "start_line": 238,
+          "end_line": 307,
+          "snippet_sha256": "7950220dd1e56ebf5a40df907d943baec3f504c4481ab085e049940394baa81c",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2023-41039",
+      "repository": "zopefoundation/restrictedpython",
+      "patch_references": [
+        {
+          "repository": "zopefoundation/restrictedpython",
+          "revision": "4134aedcff17c977da7717693ed89ce56d54c120",
+          "url": "https://github.com/zopefoundation/RestrictedPython/commit/4134aedcff17c977da7717693ed89ce56d54c120"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "src/RestrictedPython/Guards.py",
+          "requested_revision": "41a183d",
+          "start_line": 242,
+          "end_line": 257,
+          "snippet_sha256": "d6a0fcb0bb7bd9e49abcb8f87c9192493f6b06379adb6334be0de9291a72ed05",
+          "localization_count": 2
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "src/RestrictedPython/Utilities.py",
+          "requested_revision": "41a183d",
+          "start_line": 21,
+          "end_line": 21,
+          "snippet_sha256": "b6e5212ac94a3691ba14d53afc5bf0d43043e7468e5687849265268075c63cc5",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "src/RestrictedPython/Guards.py",
+          "requested_revision": "4134aedcff17c977da7717693ed89ce56d54c120",
+          "start_line": 242,
+          "end_line": 259,
+          "snippet_sha256": "ffdce55876efdf22673346cc4de4c9cc7917f8ad54ec4ee18de6b698ad7344a6",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "src/RestrictedPython/Utilities.py",
+          "requested_revision": "4134aedcff17c977da7717693ed89ce56d54c120",
+          "start_line": 21,
+          "end_line": 35,
+          "snippet_sha256": "15d48556d0981e32a1f7ac11c972dcebfd1ddd2f54fa8928c8e9c69cdfbcd203",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-74"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2021-31542",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "04ac1624bdc2fa737188401757cf95ced122d26d",
+          "url": "https://github.com/django/django/commit/04ac1624bdc2fa737188401757cf95ced122d26d"
+        },
+        {
+          "repository": "django/django",
+          "revision": "25d84d64122c15050a0ee739e859f22ddab5ac48",
+          "url": "https://github.com/django/django/commit/25d84d64122c15050a0ee739e859f22ddab5ac48"
+        },
+        {
+          "repository": "django/django",
+          "revision": "c98f446c188596d4ba6de71d1b77b4a6c5c2a007",
+          "url": "https://github.com/django/django/commit/c98f446c188596d4ba6de71d1b77b4a6c5c2a007"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/core/files/storage.py",
+          "requested_revision": "7f1b088",
+          "start_line": 63,
+          "end_line": 92,
+          "snippet_sha256": "19f7159a42eb3526c5acdc32bd40b5150a32bdb304966e5dab67423cfa35686c",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/core/files/storage.py",
+          "requested_revision": "04ac162",
+          "start_line": 65,
+          "end_line": 97,
+          "snippet_sha256": "1073e0a3848c2cca28ac3d65bee6ebde6b492470f13a5759b42808eaf824a849",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "django/core/files/utils.py",
+          "requested_revision": "04ac162",
+          "start_line": 6,
+          "end_line": 14,
+          "snippet_sha256": "a1e8191b084b3f5d16b858c8376ac02b33a8bed3bc838103c006cf7d60cd87cd",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2021-39163",
+      "repository": "matrix-org/synapse",
+      "patch_references": [
+        {
+          "repository": "matrix-org/synapse",
+          "revision": "cb35df940a",
+          "url": "https://github.com/matrix-org/synapse/commit/cb35df940a"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "synapse/groups/groups_server.py",
+          "requested_revision": "52c7a51",
+          "start_line": 321,
+          "end_line": 357,
+          "snippet_sha256": "dc50755cadf25142e0f4e238c9f500d6ac486d7392128cf966cc90aa3fd0a4ad",
+          "localization_count": 3
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "synapse/groups/groups_server.py",
+          "requested_revision": "cb35df940a828bc40b96daed997b5ad4c7842fd3",
+          "start_line": 321,
+          "end_line": 371,
+          "snippet_sha256": "2dac360b03e71914e5d0ef58c894ca6bbc2af0dfe7744ded02354e3d293b16d9",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-863"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-34457",
+      "repository": "mechanicalsoup/mechanicalsoup",
+      "patch_references": [
+        {
+          "repository": "mechanicalsoup/mechanicalsoup",
+          "revision": "d57c4a269bba3b9a0c5bfa20292955b849006d9e",
+          "url": "https://github.com/MechanicalSoup/MechanicalSoup/commit/d57c4a269bba3b9a0c5bfa20292955b849006d9e"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "mechanicalsoup/browser.py",
+          "requested_revision": "b9c8a0c",
+          "start_line": 187,
+          "end_line": 293,
+          "snippet_sha256": "ed846a078880e976252dca854ad2c8a4180e8af6e995ea7466f228c964876f25",
+          "localization_count": 3
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "mechanicalsoup/form.py",
+          "requested_revision": "b9c8a0c",
+          "start_line": 242,
+          "end_line": 281,
+          "snippet_sha256": "04b17b3c1eae11750ca9d4f4da60facfe732a55932a46a13b4495d9c2ef2ada4",
+          "localization_count": 2
+        },
+        {
+          "role": "vul_func",
+          "location_index": 2,
+          "path": "mechanicalsoup/form.py",
+          "requested_revision": "b9c8a0c",
+          "start_line": 283,
+          "end_line": 304,
+          "snippet_sha256": "44222db50fdd477ee1b2a4b0cd49cbab19568f6042c7fa963be384e3c177fc54",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "mechanicalsoup/browser.py",
+          "requested_revision": "d57c4a269bba3b9a0c5bfa20292955b849006d9e",
+          "start_line": 188,
+          "end_line": 296,
+          "snippet_sha256": "4f477cf4cbcd3c5ccedef6755c997e6e2c3a855337253dd0420ef174e93039cc",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "mechanicalsoup/form.py",
+          "requested_revision": "d57c4a269bba3b9a0c5bfa20292955b849006d9e",
+          "start_line": 244,
+          "end_line": 283,
+          "snippet_sha256": "dbc078463ff6dc86d850d5bd29d50ca1d10a6d2066ead249c9907d9d08eed266",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "mechanicalsoup/form.py",
+          "requested_revision": "d57c4a269bba3b9a0c5bfa20292955b849006d9e",
+          "start_line": 285,
+          "end_line": 307,
+          "snippet_sha256": "ad8587457e0dccfabf2623d73bf4c9d44f7968b204240c37e6c4dc802feeab7b",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 3,
+          "path": "mechanicalsoup/utils.py",
+          "requested_revision": "d57c4a269bba3b9a0c5bfa20292955b849006d9e",
+          "start_line": 19,
+          "end_line": 23,
+          "snippet_sha256": "c0f1dbbef0c9392e5d8bc214c5b97e4c7f4adfed7cab5c9531241ee9282751a8",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 4,
+          "path": "mechanicalsoup/form.py",
+          "requested_revision": "d57c4a269bba3b9a0c5bfa20292955b849006d9e",
+          "start_line": 390,
+          "end_line": 402,
+          "snippet_sha256": "76449c28fbf77be5e49f07baff3fa9ebea204c6dca8247006d75ad380f90214f",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-20"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2018-18074",
+      "repository": "requests/requests",
+      "patch_references": [
+        {
+          "repository": "requests/requests",
+          "revision": "c45d7c49ea75133e52ab22a8e9e13173938e36ff",
+          "url": "https://github.com/requests/requests/commit/c45d7c49ea75133e52ab22a8e9e13173938e36ff"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "requests/sessions.py",
+          "requested_revision": "dd754d1",
+          "start_line": 231,
+          "end_line": 253,
+          "snippet_sha256": "abeb7dee380077b36b7ce34b3bab3f855dced1618dde87428271e57b2abab370",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "requests/sessions.py",
+          "requested_revision": "c45d7c49ea75133e52ab22a8e9e13173938e36ff",
+          "start_line": 247,
+          "end_line": 265,
+          "snippet_sha256": "44a6e6af9893980e89c8438a599e7caa4bc58fa4cd4433f260b876a461dcf70f",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "requests/sessions.py",
+          "requested_revision": "c45d7c49ea75133e52ab22a8e9e13173938e36ff",
+          "start_line": 118,
+          "end_line": 133,
+          "snippet_sha256": "eec3e30db52fbb1ee97e60957988501a47bce341eec7a354ff8c143488dce2bb",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-522"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2022-21683",
+      "repository": "wagtail/wagtail",
+      "patch_references": [
+        {
+          "repository": "wagtail/wagtail",
+          "revision": "5fe901e5d86ed02dbbb63039a897582951266afd",
+          "url": "https://github.com/wagtail/wagtail/commit/5fe901e5d86ed02dbbb63039a897582951266afd"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "wagtail/admin/views/pages/edit.py",
+          "requested_revision": "335ece5",
+          "start_line": 121,
+          "end_line": 197,
+          "snippet_sha256": "46ee27e9489f734a17692328c67217eac7ec3578302bc0322c11554dfe6877b2",
+          "localization_count": 2
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "wagtail/admin/views/pages/edit.py",
+          "requested_revision": "5fe901e",
+          "start_line": 121,
+          "end_line": 197,
+          "snippet_sha256": "3b38ad6c9b0459917b02cf6a4fb170913b23a4f764b88bf15b155ce2951b457a",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-200"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2024-3848",
+      "repository": "mlflow/mlflow",
+      "patch_references": [
+        {
+          "repository": "mlflow/mlflow",
+          "revision": "f8d51e21523238280ebcfdb378612afd7844eca8",
+          "url": "https://github.com/mlflow/mlflow/commit/f8d51e21523238280ebcfdb378612afd7844eca8"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "c01c02a",
+          "start_line": 589,
+          "end_line": 612,
+          "snippet_sha256": "b17f0421b5af07cbb3532cbd1b2fe4d708add026b5d4c68cba666e48295ebba2",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "c01c02a",
+          "start_line": 1723,
+          "end_line": 1742,
+          "snippet_sha256": "af211cbae963cc8eed792c97159b100b2c71c18aff6446ed32f8f1c1c9a6373e",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "f8d51e2",
+          "start_line": 589,
+          "end_line": 616,
+          "snippet_sha256": "d4e5e999abd3a3e01f53fa1c7a8d2523a04fa75dd24a25be29fc9c612d23c090",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "f8d51e2",
+          "start_line": 1727,
+          "end_line": 1749,
+          "snippet_sha256": "c978855bdb831c6e97a6fa75f6a21ec4f62641416a162405b63292153be6ae03",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2015-8213",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "316bc3fc9437c5960c24baceb93c73f1939711e4",
+          "url": "https://github.com/django/django/commit/316bc3fc9437c5960c24baceb93c73f1939711e4"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/utils/formats.py",
+          "requested_revision": "710e11d",
+          "start_line": 85,
+          "end_line": 120,
+          "snippet_sha256": "81d9a26fcc98f2f3dadeb53af27f475ba0046e72bc9f16cc5da65589f8f79cfd",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/utils/formats.py",
+          "requested_revision": "316bc3fc9437c5960c24baceb93c73f1939711e4",
+          "start_line": 103,
+          "end_line": 140,
+          "snippet_sha256": "44108551fd5d860105aa3814ba5ff48204527c723af3fefde4b92ab9bb043985",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "django/utils/formats.py",
+          "requested_revision": "316bc3fc9437c5960c24baceb93c73f1939711e4",
+          "start_line": 33,
+          "end_line": 50,
+          "snippet_sha256": "26bb53a9ad7b4629caf3ce5322e4946c48059955fb1b50cf6d96b3bf2cf0eb60",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-200"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2018-7753",
+      "repository": "mozilla/bleach",
+      "patch_references": [
+        {
+          "repository": "mozilla/bleach",
+          "revision": "c5df5789ec3471a31311f42c2d19fc2cf21b35ef",
+          "url": "https://github.com/mozilla/bleach/commit/c5df5789ec3471a31311f42c2d19fc2cf21b35ef"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "bleach/sanitizer.py",
+          "requested_revision": "e7f83b8",
+          "start_line": 441,
+          "end_line": 489,
+          "snippet_sha256": "7e453969eb8bd41461e2b74a2718068910b1786b478c2f3fd5d95e9b82dd154a",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "bleach/sanitizer.py",
+          "requested_revision": "e7f83b8",
+          "start_line": 491,
+          "end_line": 556,
+          "snippet_sha256": "27d7e88beeebe59fa6afc8c312e1cc34a63aa1145df7cb0cf605c8c010ecc6a8",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "bleach/sanitizer.py",
+          "requested_revision": "c5df5789ec3471a31311f42c2d19fc2cf21b35ef",
+          "start_line": 493,
+          "end_line": 541,
+          "snippet_sha256": "d8086d66c539d1ceabaf8b5607dd8abeb29675c8115c46e13a6dbf063c45b678",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "bleach/sanitizer.py",
+          "requested_revision": "c5df5789ec3471a31311f42c2d19fc2cf21b35ef",
+          "start_line": 597,
+          "end_line": 654,
+          "snippet_sha256": "72ac0063308fefa70810ba11e593d396d43eab650421075abe8d2fa7c69f1e7d",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "bleach/sanitizer.py",
+          "requested_revision": "c5df5789ec3471a31311f42c2d19fc2cf21b35ef",
+          "start_line": 86,
+          "end_line": 101,
+          "snippet_sha256": "d78b5a22ea04bf568579cc39a9bcc3c6abcfdc713a2966f70827cfe8023305db",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 3,
+          "path": "bleach/sanitizer.py",
+          "requested_revision": "c5df5789ec3471a31311f42c2d19fc2cf21b35ef",
+          "start_line": 104,
+          "end_line": 131,
+          "snippet_sha256": "0b13a16d9f5d128bedbbcf82b278b4b91d358fbe9b73b010f5f60b17d21a8da5",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 4,
+          "path": "bleach/sanitizer.py",
+          "requested_revision": "c5df5789ec3471a31311f42c2d19fc2cf21b35ef",
+          "start_line": 543,
+          "end_line": 596,
+          "snippet_sha256": "a9b7a8b393c11d589c225aaac12091714a204ca1e963d3a83e0cfd9ce9444bc1",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-20"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-32303",
+      "repository": "planetlabs/planet-client-python",
+      "patch_references": [
+        {
+          "repository": "planetlabs/planet-client-python",
+          "revision": "d71415a83119c5e89d7b80d5f940d162376ee3b7",
+          "url": "https://github.com/planetlabs/planet-client-python/commit/d71415a83119c5e89d7b80d5f940d162376ee3b7"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "planet/auth.py",
+          "requested_revision": "9783607",
+          "start_line": 229,
+          "end_line": 230,
+          "snippet_sha256": "14b1e72692b11e77915c4614d6dbfbeb4d3aeed1a9fe5f78b8c7922f1942f476",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "planet/auth.py",
+          "requested_revision": "9783607",
+          "start_line": 241,
+          "end_line": 244,
+          "snippet_sha256": "4f591e0441fa2649bbf8324946d00fee0028cbed8de8eee7942cbc3f527e8514",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "planet/auth.py",
+          "requested_revision": "d71415a",
+          "start_line": 230,
+          "end_line": 238,
+          "snippet_sha256": "ff0630caea0ffd5ff5bcc7426aa0aaf72cfee1de2887cd63fe68242ccf584c09",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "planet/auth.py",
+          "requested_revision": "d71415a",
+          "start_line": 249,
+          "end_line": 256,
+          "snippet_sha256": "a5d24350f8fd9b0eee228a70c89a32bb053e1c858530eefdc99dc5c27672f6fb",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "planet/auth.py",
+          "requested_revision": "d71415a",
+          "start_line": 264,
+          "end_line": 276,
+          "snippet_sha256": "f11c95fef9a6b82cda446c7e558df5c548ef81cfd92bd6ac44677c6df34d6418",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-732"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2024-23334",
+      "repository": "aio-libs/aiohttp",
+      "patch_references": [
+        {
+          "repository": "aio-libs/aiohttp",
+          "revision": "1c335944d6a8b1298baf179b7c0b3069f10c514b",
+          "url": "https://github.com/aio-libs/aiohttp/commit/1c335944d6a8b1298baf179b7c0b3069f10c514b"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "aiohttp/web_urldispatcher.py",
+          "requested_revision": "33ccdfb0a12690af5bb49bda2319ec0907fa7827",
+          "start_line": 558,
+          "end_line": 592,
+          "snippet_sha256": "6dc0d572b73a0f73567573e6cc573717f421295dff4e7ed6ecb8fcb6ad1b4206",
+          "localization_count": 2
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "aiohttp/web_urldispatcher.py",
+          "requested_revision": "33ccdfb0a12690af5bb49bda2319ec0907fa7827",
+          "start_line": 634,
+          "end_line": 670,
+          "snippet_sha256": "edffa0004963d9aa082f37afac299338b87c7c57b1c891d31cfbec3945d93ee6",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "aiohttp/web_urldispatcher.py",
+          "requested_revision": "1c335944d6a8b1298baf179b7c0b3069f10c514b",
+          "start_line": 558,
+          "end_line": 597,
+          "snippet_sha256": "8cef898bf012bd1b3e526848bf58322ef7a9c9f452f7a525ce121da337a97275",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "aiohttp/web_urldispatcher.py",
+          "requested_revision": "1c335944d6a8b1298baf179b7c0b3069f10c514b",
+          "start_line": 639,
+          "end_line": 680,
+          "snippet_sha256": "25a33540409d5409aea62e0dcb2f50c89d3c57c8e655b583d74ed0ee4f03aea3",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "repository": "gaizhenbiao/chuanhuchatgpt",
+      "patch_references": [
+        {
+          "repository": "gaizhenbiao/chuanhuchatgpt",
+          "revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+          "url": "https://github.com/gaizhenbiao/chuanhuchatgpt/commit/720c23d755a4a955dcb0a54e8c200a2247a27f8b"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "modules/utils.py",
+          "requested_revision": "ffea5e9",
+          "start_line": 744,
+          "end_line": 760,
+          "snippet_sha256": "7b3e2a89136179771a076d67249adc2b2a74078f16535ddd3c4fd390abdc90b6",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "ChuanhuChatbot.py",
+          "requested_revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+          "start_line": 784,
+          "end_line": 784,
+          "snippet_sha256": "452c01a8f670135a7ea96f61f08c9db446082d17c58eaea555a2df9bb4153782",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "modules/utils.py",
+          "requested_revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+          "start_line": 744,
+          "end_line": 762,
+          "snippet_sha256": "fbcc19139ebf640ad4822edca3112caaf6f9cc29edd00a34c4adbc6f80f00dee",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "modules/utils.py",
+          "requested_revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+          "start_line": 30,
+          "end_line": 30,
+          "snippet_sha256": "1f5cfc9877d3be115738945fd3e4759056ffb7666e1e37f8e4c79ec26761c4a0",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-610"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2021-41125",
+      "repository": "scrapy/scrapy",
+      "patch_references": [
+        {
+          "repository": "scrapy/scrapy",
+          "revision": "b01d69a1bf48060daec8f751368622352d8b85a6",
+          "url": "https://github.com/scrapy/scrapy/commit/b01d69a1bf48060daec8f751368622352d8b85a6"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "scrapy/downloadermiddlewares/httpauth.py",
+          "requested_revision": "4183925",
+          "start_line": 22,
+          "end_line": 26,
+          "snippet_sha256": "1ce79778cd31c7b67b9cadb199067c71533fe07445882224c7a321b22540ae8d",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "scrapy/downloadermiddlewares/httpauth.py",
+          "requested_revision": "4183925",
+          "start_line": 28,
+          "end_line": 31,
+          "snippet_sha256": "5d655362197471b8dce3368869b8b01645b36970036a458aa30073924d3f03bd",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "scrapy/downloadermiddlewares/httpauth.py",
+          "requested_revision": "b01d69a1bf48060daec8f751368622352d8b85a6",
+          "start_line": 26,
+          "end_line": 40,
+          "snippet_sha256": "78d9ad32975d6d3ad995336116a090f7f1f3f4d37469ed39a731313449a7238e",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "scrapy/downloadermiddlewares/httpauth.py",
+          "requested_revision": "b01d69a1bf48060daec8f751368622352d8b85a6",
+          "start_line": 42,
+          "end_line": 50,
+          "snippet_sha256": "6bb3d10564f57c6780abf49bdc5747ace598ebf5989abc1932defd2d2bdfa45c",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-522"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2022-29217",
+      "repository": "jpadilla/pyjwt",
+      "patch_references": [
+        {
+          "repository": "jpadilla/pyjwt",
+          "revision": "9c528670c455b8d948aff95ed50e22940d1ad3fc",
+          "url": "https://github.com/jpadilla/pyjwt/commit/9c528670c455b8d948aff95ed50e22940d1ad3fc"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "jwt/algorithms.py",
+          "requested_revision": "24b29ad",
+          "start_line": 183,
+          "end_line": 199,
+          "snippet_sha256": "4e2318015eb605a1d79e07f2c71ef284e570f271ac29964f6f200ae9813a3030",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "jwt/algorithms.py",
+          "requested_revision": "24b29ad",
+          "start_line": 553,
+          "end_line": 573,
+          "snippet_sha256": "8c9febdc28aa3419d8e31c3a8116c08ab1a17557f66483e3a692720bdbeec883",
+          "localization_count": 2
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "jwt/algorithms.py",
+          "requested_revision": "9c528670c455b8d948aff95ed50e22940d1ad3fc",
+          "start_line": 185,
+          "end_line": 194,
+          "snippet_sha256": "38509aafe54a5e4d6029fabd76fd4f5e25bf4ff4085603d0ea06293396b69eaa",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "jwt/algorithms.py",
+          "requested_revision": "9c528670c455b8d948aff95ed50e22940d1ad3fc",
+          "start_line": 548,
+          "end_line": 570,
+          "snippet_sha256": "9cd78a94bb99e68772d71655b6b5398327102a48b5f4ac7e700d9d9bb4e82b10",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "jwt/utils.py",
+          "requested_revision": "9c528670c455b8d948aff95ed50e22940d1ad3fc",
+          "start_line": 101,
+          "end_line": 130,
+          "snippet_sha256": "e04c86b561f027de131d9c6f515f278340c0655ea9eb9f0aa9e14fdc5d8d4f6a",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 3,
+          "path": "jwt/utils.py",
+          "requested_revision": "9c528670c455b8d948aff95ed50e22940d1ad3fc",
+          "start_line": 133,
+          "end_line": 147,
+          "snippet_sha256": "504b258458ac37d7848d4d50ee4e9260383023e52fe148b06a84717b74a52a19",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 4,
+          "path": "jwt/utils.py",
+          "requested_revision": "9c528670c455b8d948aff95ed50e22940d1ad3fc",
+          "start_line": 150,
+          "end_line": 160,
+          "snippet_sha256": "1cdaa782506d350c88e1376417e830ac41b107f9d0739ac2753a83a846f4da9d",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-327"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2024-39877",
+      "repository": "apache/airflow",
+      "patch_references": [
+        {
+          "repository": "apache/airflow",
+          "revision": "8159f6e24704f5e0e3b3217cf79ecf5083dce531",
+          "url": "https://github.com/apache/airflow/commit/8159f6e24704f5e0e3b3217cf79ecf5083dce531"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "airflow/models/dag.py",
+          "requested_revision": "09bbc9c",
+          "start_line": 771,
+          "end_line": 788,
+          "snippet_sha256": "72736a81ff83c29a8da3c3bbbedb733bfdf1e4c4658360b308c08ad7f4d56fb0",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "airflow/models/dag.py",
+          "requested_revision": "8159f6e",
+          "start_line": 771,
+          "end_line": 781,
+          "snippet_sha256": "09416f0c03d3b777cd0fc052bc897466f8a262cba2779b0736c52fa92d80aa84",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2022-3298",
+      "repository": "ikus060/rdiffweb",
+      "patch_references": [
+        {
+          "repository": "ikus060/rdiffweb",
+          "revision": "626cca1b75b6c587afd4241a9692e8929b1921a5",
+          "url": "https://github.com/ikus060/rdiffweb/commit/626cca1b75b6c587afd4241a9692e8929b1921a5"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "rdiffweb/controller/pref_sshkeys.py",
+          "requested_revision": "667657c",
+          "start_line": 49,
+          "end_line": 63,
+          "snippet_sha256": "efc4532c2c7ce0d4d672953ec14d3f4574c32771840c3946ad71ce26f0648413",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "rdiffweb/controller/pref_sshkeys.py",
+          "requested_revision": "626cca1b75b6c587afd4241a9692e8929b1921a5",
+          "start_line": 49,
+          "end_line": 69,
+          "snippet_sha256": "83defe284e2751287e644f3c98c3f8fe6fa09152dc53b48a21af0a83406df87e",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-770"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-34233",
+      "repository": "snowflakedb/snowflake-connector-python",
+      "patch_references": [
+        {
+          "repository": "snowflakedb/snowflake-connector-python",
+          "revision": "1cdbd3b1403c5ef520d7f4d9614fe35165e101ac",
+          "url": "https://github.com/snowflakedb/snowflake-connector-python/commit/1cdbd3b1403c5ef520d7f4d9614fe35165e101ac"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "src/snowflake/connector/snow_logging.py",
+          "requested_revision": "4b1d474",
+          "start_line": 59,
+          "end_line": 72,
+          "snippet_sha256": "19df2d2c0107779dfd7226ab6a02b8337a96efa29e8abc2779bde50eca334159",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "src/snowflake/connector/auth/webbrowser.py",
+          "requested_revision": "4b1d474",
+          "start_line": 100,
+          "end_line": 174,
+          "snippet_sha256": "6c44259c2c6716b92577ed612f9dd898dda806dc5e2d71ecf964604999fe6801",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "src/snowflake/connector/snow_logging.py",
+          "requested_revision": "1cdbd3b",
+          "start_line": 59,
+          "end_line": 72,
+          "snippet_sha256": "aeb21106be73f6d826c868fc837c4c439b8fd5de6acca62397eff2df11e48e37",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "src/snowflake/connector/auth/webbrowser.py",
+          "requested_revision": "1cdbd3b",
+          "start_line": 102,
+          "end_line": 187,
+          "snippet_sha256": "24500d4605c87973a0bcbb10eed08d7d651cc3deccc13831e7d1e2532bbc53d8",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-39631",
+      "repository": "pydata/numexpr",
+      "patch_references": [
+        {
+          "repository": "pydata/numexpr",
+          "revision": "4b2d89cf14e75030d27629925b9998e1e91d23c7",
+          "url": "https://github.com/pydata/numexpr/commit/4b2d89cf14e75030d27629925b9998e1e91d23c7"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "numexpr/necompiler.py",
+          "requested_revision": "74d5973",
+          "start_line": 263,
+          "end_line": 296,
+          "snippet_sha256": "5997f97ddadee310d1b09d0f9dd65425e0176d7d9bf4f317579d04137ef284a2",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "numexpr/necompiler.py",
+          "requested_revision": "4b2d89c",
+          "start_line": 263,
+          "end_line": 306,
+          "snippet_sha256": "d75954704617c3241a525d3fc70b02de01357c6363b4f88eda7fa35b31887331",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2017-7233",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "8339277518c7d8ec280070a780915304654e3b66",
+          "url": "https://github.com/django/django/commit/8339277518c7d8ec280070a780915304654e3b66"
+        },
+        {
+          "repository": "django/django",
+          "revision": "254326cb3682389f55f886804d2c43f7b9f23e4f",
+          "url": "https://github.com/django/django/commit/254326cb3682389f55f886804d2c43f7b9f23e4f"
+        },
+        {
+          "repository": "django/django",
+          "revision": "f824655bc2c50b19d2f202d7640785caabc82787",
+          "url": "https://github.com/django/django/commit/f824655bc2c50b19d2f202d7640785caabc82787"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/utils/http.py",
+          "requested_revision": "5f1ffb0",
+          "start_line": 303,
+          "end_line": 321,
+          "snippet_sha256": "ad8cc5af9bef1f54824c7f67507f85b42d494ec9a6ad13e097dd4385aa711d2e",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/utils/http.py",
+          "requested_revision": "254326c",
+          "start_line": 314,
+          "end_line": 384,
+          "snippet_sha256": "e0b116e2839669163773264663e46ec5f7b26b9efa10a68667c3b03e951a17e6",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-601"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2019-7539",
+      "repository": "adi928/ipycache",
+      "patch_references": [
+        {
+          "repository": "adi928/ipycache",
+          "revision": "9cc7cb891ff169b3e8a6f5e84afd8238f566ad8e",
+          "url": "https://github.com/adi928/ipycache/commit/9cc7cb891ff169b3e8a6f5e84afd8238f566ad8e"
+        },
+        {
+          "repository": "adi928/ipycache",
+          "revision": "c73a726744c90cc2cb200b159edbaf5deddcb753",
+          "url": "https://github.com/adi928/ipycache/commit/c73a726744c90cc2cb200b159edbaf5deddcb753"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "ipycache.py",
+          "requested_revision": "2c334c5",
+          "start_line": 102,
+          "end_line": 141,
+          "snippet_sha256": "853543e87a42e5a47e7a0907787da049187bf318522b6acdb9231cfff2f514ee",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "ipycache.py",
+          "requested_revision": "9cc7cb891ff169b3e8a6f5e84afd8238f566ad8e",
+          "start_line": 101,
+          "end_line": 142,
+          "snippet_sha256": "da021161f986aca62866e42997fe376d0058cf34fe8ad7c271f18cb4ef35455a",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "ipycache.py",
+          "requested_revision": "9cc7cb891ff169b3e8a6f5e84afd8238f566ad8e",
+          "start_line": 160,
+          "end_line": 173,
+          "snippet_sha256": "747dc48c655061e23bc1cd895b77e8cf798bbbf921611bfa5383c1765c2eb12c",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2022-39286",
+      "repository": "jupyter/jupyter_core",
+      "patch_references": [
+        {
+          "repository": "jupyter/jupyter_core",
+          "revision": "1118c8ce01800cb689d51f655f5ccef19516e283",
+          "url": "https://github.com/jupyter/jupyter_core/commit/1118c8ce01800cb689d51f655f5ccef19516e283"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "jupyter_core/application.py",
+          "requested_revision": "d3f61f3",
+          "start_line": 88,
+          "end_line": 93,
+          "snippet_sha256": "96892541f6e686f1b43fc5ce102e7d011da234faef45a9261926cb389d0bf242",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "jupyter_core/application.py",
+          "requested_revision": "1118c8ce01800cb689d51f655f5ccef19516e283",
+          "start_line": 88,
+          "end_line": 93,
+          "snippet_sha256": "b73450072d8e948938bc2366ba45020193ace940ebe586ac805c03b28dd3f5e7",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-250",
+        "CWE-269",
+        "CWE-285"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2025-43859",
+      "repository": "python-hyper/h11",
+      "patch_references": [
+        {
+          "repository": "python-hyper/h11",
+          "revision": "114803a29ce50116dc47951c690ad4892b1a36ed",
+          "url": "https://github.com/python-hyper/h11/commit/114803a29ce50116dc47951c690ad4892b1a36ed"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "h11/_readers.py",
+          "requested_revision": "9462006f6ce4941661888228cbd4ac1ea80689b0",
+          "start_line": 149,
+          "end_line": 155,
+          "snippet_sha256": "1a7a32a0cc2e48165f4877704e9a762acaa0c962d7dc2088e391b1f27458760f",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "h11/_readers.py",
+          "requested_revision": "9462006f6ce4941661888228cbd4ac1ea80689b0",
+          "start_line": 157,
+          "end_line": 201,
+          "snippet_sha256": "acdaab4b51177e7bcefe4f9d2477c9589bdf8c91477d74a42e26a6e0e755e7bd",
+          "localization_count": 4
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "h11/_readers.py",
+          "requested_revision": "114803a29ce50116dc47951c690ad4892b1a36ed",
+          "start_line": 149,
+          "end_line": 154,
+          "snippet_sha256": "71f6c16eba52e955066035d5994bed31094d35682ae9f936276f5dd44b3665ee",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "h11/_readers.py",
+          "requested_revision": "114803a29ce50116dc47951c690ad4892b1a36ed",
+          "start_line": 156,
+          "end_line": 204,
+          "snippet_sha256": "03582f5bc36c898c78e3979f456b19a9fd308476113f17d963d312c4e38af5ee",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-444"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-45809",
+      "repository": "wagtail/wagtail",
+      "patch_references": [
+        {
+          "repository": "wagtail/wagtail",
+          "revision": "bc96aed6ac53f998b2f4c4bf97e2d4f5fe337e5b",
+          "url": "https://github.com/wagtail/wagtail/commit/bc96aed6ac53f998b2f4c4bf97e2d4f5fe337e5b"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "wagtail/users/views/bulk_actions/user_bulk_action.py",
+          "requested_revision": "190af78",
+          "start_line": 6,
+          "end_line": 8,
+          "snippet_sha256": "0ac4d70df06e5b5c5916edc4f31c1967915e948ff6d62a9ca78e837dc91260d5",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "wagtail/users/views/bulk_actions/user_bulk_action.py",
+          "requested_revision": "bc96aed6ac53f998b2f4c4bf97e2d4f5fe337e5b",
+          "start_line": 8,
+          "end_line": 14,
+          "snippet_sha256": "e5294cf4773854acdf88a6463ee53b74ef0127ad4241406b26b54ef90030383a",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-532"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2021-3583",
+      "repository": "ansible/ansible",
+      "patch_references": [
+        {
+          "repository": "ansible/ansible",
+          "revision": "8aa850e3573e48c9a2f12aef84e8a3a6f5ba4847",
+          "url": "https://github.com/ansible/ansible/commit/8aa850e3573e48c9a2f12aef84e8a3a6f5ba4847"
+        },
+        {
+          "repository": "ansible/ansible",
+          "revision": "03aff644cc1c00e1f7551195c68fbd0d13a39e6e",
+          "url": "https://github.com/ansible/ansible/commit/03aff644cc1c00e1f7551195c68fbd0d13a39e6e"
+        },
+        {
+          "repository": "ansible/ansible",
+          "revision": "8b17e5b9229ffaecfe10a4881bc3f87dd2c184e1",
+          "url": "https://github.com/ansible/ansible/commit/8b17e5b9229ffaecfe10a4881bc3f87dd2c184e1"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "lib/ansible/template/__init__.py",
+          "requested_revision": "c49092f",
+          "start_line": 812,
+          "end_line": 914,
+          "snippet_sha256": "acb827b98777b58a6ecceb8889f486843b271034ead3b73d5508a995bf6560f5",
+          "localization_count": 2
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "lib/ansible/template/__init__.py",
+          "requested_revision": "8aa850e",
+          "start_line": 1008,
+          "end_line": 1106,
+          "snippet_sha256": "71c5b4bced7a59a2a70b8828d91aa3e1a784903e2e016e53bc263ebee7cf6604",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2020-10691",
+      "repository": "ansible/ansible",
+      "patch_references": [
+        {
+          "repository": "ansible/ansible",
+          "revision": "b2551bb6943eec078066aa3a923e0bb3ed85abe8",
+          "url": "https://github.com/ansible/ansible/commit/b2551bb6943eec078066aa3a923e0bb3ed85abe8"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "lib/ansible/galaxy/collection.py",
+          "requested_revision": "cef6296",
+          "start_line": 148,
+          "end_line": 188,
+          "snippet_sha256": "db85f3c1243dc489c4bf076dffd59046cc23c6dc7c72e1f94fd4697ec3018f26",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "lib/ansible/galaxy/collection.py",
+          "requested_revision": "cef6296",
+          "start_line": 903,
+          "end_line": 942,
+          "snippet_sha256": "1aa7cd734f43153382e79a18407544e42a82438d3a73c5c81f60d34691da39db",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "lib/ansible/galaxy/collection.py",
+          "requested_revision": "b2551bb6943eec078066aa3a923e0bb3ed85abe8",
+          "start_line": 148,
+          "end_line": 198,
+          "snippet_sha256": "eff8ae743c39dc7df903b7d7b5038e08e9d414ecc92daa1dad5103858ba6c86c",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "lib/ansible/galaxy/collection.py",
+          "requested_revision": "b2551bb6943eec078066aa3a923e0bb3ed85abe8",
+          "start_line": 913,
+          "end_line": 956,
+          "snippet_sha256": "acf53c6dd64c69e7f75425ddd54bd27514a5fd3bfda8af94647a56f41520f5cc",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-33977",
+      "repository": "kiwitcms/kiwi",
+      "patch_references": [
+        {
+          "repository": "kiwitcms/kiwi",
+          "revision": "d789f4b51025de4f8c747c037d02e1b0da80b034",
+          "url": "https://github.com/kiwitcms/Kiwi/commit/d789f4b51025de4f8c747c037d02e1b0da80b034"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "tcms/kiwi_attachments/validators.py",
+          "requested_revision": "ce5b83e",
+          "start_line": 5,
+          "end_line": 9,
+          "snippet_sha256": "5ef930e8f34a1d16e03df40368ddf26bed3f90947723685b334f5ea1fe28fb03",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "tcms/kiwi_attachments/validators.py",
+          "requested_revision": "d789f4b",
+          "start_line": 5,
+          "end_line": 11,
+          "snippet_sha256": "c35c473ec35e8270f4f031cfb770e9be73301c9689a4939cac7d214a5263f178",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-79"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-30172",
+      "repository": "mlflow/mlflow",
+      "patch_references": [
+        {
+          "repository": "mlflow/mlflow",
+          "revision": "ac4b697bb0bb8a331944dca63f4235b4bf602ab8",
+          "url": "https://github.com/mlflow/mlflow/commit/ac4b697bb0bb8a331944dca63f4235b4bf602ab8"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "d1c7621",
+          "start_line": 528,
+          "end_line": 546,
+          "snippet_sha256": "40fc75ff8b552bb241ce7e94707721b404bd2509870eba3361fea2f9a9987743",
+          "localization_count": 3
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "d1c7621",
+          "start_line": 887,
+          "end_line": 916,
+          "snippet_sha256": "9d232b9cc4e1fb6a045221daca1193fe74f897e304bf9da5d381beafbd9c9f04",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 2,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "d1c7621",
+          "start_line": 1269,
+          "end_line": 1288,
+          "snippet_sha256": "be913959f7f8fa05a2a3c1014fe34a499c070a99299fda0d5b71375845909101",
+          "localization_count": 3
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "ac4b697",
+          "start_line": 548,
+          "end_line": 568,
+          "snippet_sha256": "b44b8f3ad1563631763bd2f14ec59e8da23adb5208393391bc4a4540ce4710ed",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "ac4b697",
+          "start_line": 909,
+          "end_line": 939,
+          "snippet_sha256": "7568ff5bb1ea2dc7d935caa3546996bd545a9dc844b67661358b4b7653e96493",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "ac4b697",
+          "start_line": 1292,
+          "end_line": 1312,
+          "snippet_sha256": "34a8cdbe130e75a9b57ffb72cc6fc79ca7d9c34334d604b180f9927b2e2fc26d",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 3,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "ac4b697",
+          "start_line": 530,
+          "end_line": 544,
+          "snippet_sha256": "8edc1aeb12ad5b4327050bb0fc267535b88c4bc697913881d39e6bd728aadfa5",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 4,
+          "path": "mlflow/server/handlers.py",
+          "requested_revision": "ac4b697",
+          "start_line": 527,
+          "end_line": 527,
+          "snippet_sha256": "30a9fac9ff2ac9a3cdf3000ff12385f3e469441a7271958b80e49f70ca388216",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2024-0243",
+      "repository": "langchain-ai/langchain",
+      "patch_references": [
+        {
+          "repository": "langchain-ai/langchain",
+          "revision": "bf0b3cc0b5ade1fb95a5b1b6fa260e99064c2e22",
+          "url": "https://github.com/langchain-ai/langchain/commit/bf0b3cc0b5ade1fb95a5b1b6fa260e99064c2e22"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "libs/core/langchain_core/utils/html.py",
+          "requested_revision": "817b84d",
+          "start_line": 47,
+          "end_line": 89,
+          "snippet_sha256": "01ab5b6d07a6eec430e1922ac10f2d65d5606e1e35abdcd3a7ed8558d6c5f9ef",
+          "localization_count": 6
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "libs/core/langchain_core/utils/html.py",
+          "requested_revision": "bf0b3cc",
+          "start_line": 47,
+          "end_line": 103,
+          "snippet_sha256": "cca8d5b48ee7df3ff13154dbaca5309404d6bcbd8f73a1b7a8f21b6062fdebfe",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-918"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-6831",
+      "repository": "mlflow/mlflow",
+      "patch_references": [
+        {
+          "repository": "mlflow/mlflow",
+          "revision": "1da75dfcecd4d169e34809ade55748384e8af6c1",
+          "url": "https://github.com/mlflow/mlflow/commit/1da75dfcecd4d169e34809ade55748384e8af6c1"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "mlflow/utils/uri.py",
+          "requested_revision": "9612ef0",
+          "start_line": 422,
+          "end_line": 446,
+          "snippet_sha256": "2bae541b42773df06a43d9fcd440e70eae0b1d339b9b7dfeb31a87add3ffde5b",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "mlflow/utils/uri.py",
+          "requested_revision": "1da75df",
+          "start_line": 422,
+          "end_line": 449,
+          "snippet_sha256": "72ce5a1fcdbc92cce1268a55d74a10a2ca94419fee9ac598b1ad7921d081f62d",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2021-21354",
+      "repository": "mozilla/pollbot",
+      "patch_references": [
+        {
+          "repository": "mozilla/pollbot",
+          "revision": "6db74a4fcbff258c7cdf51a6ff0724fc10c485e5",
+          "url": "https://github.com/mozilla/PollBot/commit/6db74a4fcbff258c7cdf51a6ff0724fc10c485e5"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "pollbot/middlewares.py",
+          "requested_revision": "78539af",
+          "start_line": 61,
+          "end_line": 69,
+          "snippet_sha256": "1d2d75f8906f8949bd19b6f455028f8ac21b47cdedda628c270ae2ad85542cbe",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "pollbot/middlewares.py",
+          "requested_revision": "6db74a4fcbff258c7cdf51a6ff0724fc10c485e5",
+          "start_line": 61,
+          "end_line": 69,
+          "snippet_sha256": "41c9e0204f9fb16d8a1315947ac9bb441886b1b22b26840b8e631f23ff11a2ba",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-601"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-40267",
+      "repository": "gitpython-developers/gitpython",
+      "patch_references": [
+        {
+          "repository": "gitpython-developers/gitpython",
+          "revision": "ca965ecc81853bca7675261729143f54e5bf4cdd",
+          "url": "https://github.com/gitpython-developers/GitPython/commit/ca965ecc81853bca7675261729143f54e5bf4cdd"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "git/repo/base.py",
+          "requested_revision": "c09a71e2caefd5c25195b0b2decc8177d658216a",
+          "start_line": 1172,
+          "end_line": 1255,
+          "snippet_sha256": "89d636f2c250bd16df70881003a7ceb690da9def6138d73e09de40dcabe35039",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "git/repo/base.py",
+          "requested_revision": "ca965ec",
+          "start_line": 1172,
+          "end_line": 1257,
+          "snippet_sha256": "d8bba450ea5b04694a74b9df178700ece986691d3b464ccc4455e195680aa630",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2021-35042",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "0bd57a879a0d54920bb9038a732645fb917040e9",
+          "url": "https://github.com/django/django/commit/0bd57a879a0d54920bb9038a732645fb917040e9"
+        },
+        {
+          "repository": "django/django",
+          "revision": "dae83a24519d6f284c74414e0b81d64d9b5a0db4",
+          "url": "https://github.com/django/django/commit/dae83a24519d6f284c74414e0b81d64d9b5a0db4"
+        },
+        {
+          "repository": "django/django",
+          "revision": "a34a5f724c5d5adb2109374ba3989ebb7b11f81f",
+          "url": "https://github.com/django/django/commit/a34a5f724c5d5adb2109374ba3989ebb7b11f81f"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "8dc1cc0",
+          "start_line": 1888,
+          "end_line": 1932,
+          "snippet_sha256": "f1101fb9987ac60984a291a1e09d20327973094ce7c23777234bddf69e5cb104",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "0bd57a879a0d54920bb9038a732645fb917040e9",
+          "start_line": 1890,
+          "end_line": 1934,
+          "snippet_sha256": "8fa6ed40970734fea7d465f4532a526364cdd26778353bc0c82e7fd4ba6c08dc",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "django/db/models/sql/constants.py",
+          "requested_revision": "0bd57a879a0d54920bb9038a732645fb917040e9",
+          "start_line": 22,
+          "end_line": 22,
+          "snippet_sha256": "117e3a43e2136bdf1161cb3a644c9d548e07b1b7a2230d35231707d124870ba6",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-89"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2017-0360",
+      "repository": "tryton/trytond",
+      "patch_references": [
+        {
+          "repository": "tryton/trytond",
+          "revision": "a67a7f03c30277515f530cad5950056171ed5bd1",
+          "url": "https://github.com/tryton/trytond/commit/a67a7f03c30277515f530cad5950056171ed5bd1"
+        },
+        {
+          "repository": "tryton/trytond",
+          "revision": "30e978593733385db3144f8c583eeb4679575cf0",
+          "url": "https://github.com/tryton/trytond/commit/30e978593733385db3144f8c583eeb4679575cf0"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "trytond/tools/misc.py",
+          "requested_revision": "5d7c4fa",
+          "start_line": 31,
+          "end_line": 37,
+          "snippet_sha256": "546d5067f9b02d8999b561f37a0e9a34fdeaa84fb43f377978c47b8183dfbd5f",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "trytond/tools/misc.py",
+          "requested_revision": "a67a7f03c30277515f530cad5950056171ed5bd1",
+          "start_line": 31,
+          "end_line": 37,
+          "snippet_sha256": "d017b6dc7c6f44c99cae5c6d0db50d7ae2c61a28bfb9fd387105c50a19f287cb",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-250",
+        "CWE-269",
+        "CWE-285"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2022-24065",
+      "repository": "cookiecutter/cookiecutter",
+      "patch_references": [
+        {
+          "repository": "cookiecutter/cookiecutter",
+          "revision": "fdffddb31fd2b46344dfa317531ff155e7999f77",
+          "url": "https://github.com/cookiecutter/cookiecutter/commit/fdffddb31fd2b46344dfa317531ff155e7999f77"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "cookiecutter/vcs.py",
+          "requested_revision": "94036d0",
+          "start_line": 57,
+          "end_line": 121,
+          "snippet_sha256": "31b71cde04f83d34d99fd2c6089b7368ccd773d37ed79bc9aab9715480d41706",
+          "localization_count": 2
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "cookiecutter/vcs.py",
+          "requested_revision": "fdffddb",
+          "start_line": 57,
+          "end_line": 125,
+          "snippet_sha256": "c2d0faa3db9bd23629173fdf08eaddce00b2e6e88469e64faf2930c853942942",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "repository": "spotipy-dev/spotipy",
+      "patch_references": [
+        {
+          "repository": "spotipy-dev/spotipy",
+          "revision": "1ca453f6ef87a2a9e9876f52b6cb38d13532ccf2",
+          "url": "https://github.com/spotipy-dev/spotipy/commit/1ca453f6ef87a2a9e9876f52b6cb38d13532ccf2"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "spotipy/cache_handler.py",
+          "requested_revision": "668158f",
+          "start_line": 93,
+          "end_line": 98,
+          "snippet_sha256": "afe336b56433e3e3d2b697c64922fd3bb072e9cb94065dbab20f8a76eda6c975",
+          "localization_count": 2
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "spotipy/cache_handler.py",
+          "requested_revision": "1ca453f",
+          "start_line": 93,
+          "end_line": 102,
+          "snippet_sha256": "f6cfcfbd8c6b4dd563f5ff5065db7cb43d3cdd2c21b8437eddad32615156fc4b",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-276"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2022-0577",
+      "repository": "scrapy/scrapy",
+      "patch_references": [
+        {
+          "repository": "scrapy/scrapy",
+          "revision": "8ce01b3b76d4634f55067d6cfdf632ec70ba304a",
+          "url": "https://github.com/scrapy/scrapy/commit/8ce01b3b76d4634f55067d6cfdf632ec70ba304a"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "scrapy/downloadermiddlewares/redirect.py",
+          "requested_revision": "aa0306a",
+          "start_line": 49,
+          "end_line": 53,
+          "snippet_sha256": "d4977160b1980da307aaf69f00f4964f4ad2c8278ce4130fb952e06892e73dcd",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "scrapy/downloadermiddlewares/redirect.py",
+          "requested_revision": "aa0306a",
+          "start_line": 62,
+          "end_line": 87,
+          "snippet_sha256": "36e3f8508dec246ae9ed8df069f1a8015f8620d757a9b9b043199203c7a7312f",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "scrapy/downloadermiddlewares/redirect.py",
+          "requested_revision": "8ce01b3",
+          "start_line": 65,
+          "end_line": 74,
+          "snippet_sha256": "6ec0823cfc00c8993c0759c134e642e8bea269bb33fc62e93845c9e891a9ed75",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "scrapy/downloadermiddlewares/redirect.py",
+          "requested_revision": "8ce01b3",
+          "start_line": 83,
+          "end_line": 108,
+          "snippet_sha256": "eb73c03d70b9146dec6f921c33af71fb1f609e6479ebc1e06f53846c90489a0f",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "scrapy/downloadermiddlewares/redirect.py",
+          "requested_revision": "8ce01b3",
+          "start_line": 15,
+          "end_line": 27,
+          "snippet_sha256": "931d8e454f997772c4d6bb8cfc2e216acf44a56b11fc4e42363d3c4a5f4b65f8",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-863"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-49736",
+      "repository": "apache/superset",
+      "patch_references": [
+        {
+          "repository": "apache/superset",
+          "revision": "1d403dab9822a8cee6108669c53e53fad881c751",
+          "url": "https://github.com/apache/superset/commit/1d403dab9822a8cee6108669c53e53fad881c751"
+        },
+        {
+          "repository": "apache/superset",
+          "revision": "34101594e284ab3acce692f41aff7759ccb4bf1d",
+          "url": "https://github.com/apache/superset/commit/34101594e284ab3acce692f41aff7759ccb4bf1d"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "superset/jinja_context.py",
+          "requested_revision": "2f46890",
+          "start_line": 400,
+          "end_line": 416,
+          "snippet_sha256": "ae99d9e373c431e63d13e75b1eb4867b7145e42244bc5da9c55172fc506bbeff",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "superset/jinja_context.py",
+          "requested_revision": "2f46890",
+          "start_line": 427,
+          "end_line": 452,
+          "snippet_sha256": "12c469d772efac5f929d17697043e3211094e19030641f7f63eac2f5715671f7",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "superset/jinja_context.py",
+          "requested_revision": "1d403da",
+          "start_line": 401,
+          "end_line": 433,
+          "snippet_sha256": "04a092eaafebb9d5a20bf8f6a4174225bf0e2058fa95e120dee7fe8e9d71acf4",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "superset/jinja_context.py",
+          "requested_revision": "1d403da",
+          "start_line": 444,
+          "end_line": 469,
+          "snippet_sha256": "52c837f61755f6f0a17e170b9116761888962164051c68c6c2b77f82104941ce",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-89"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2025-23042",
+      "repository": "gradio-app/gradio",
+      "patch_references": [
+        {
+          "repository": "gradio-app/gradio",
+          "revision": "6b63fdec441b5c9bf910f910a2505d8defbb6bf8",
+          "url": "https://github.com/gradio-app/gradio/commit/6b63fdec441b5c9bf910f910a2505d8defbb6bf8"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "gradio/utils.py",
+          "requested_revision": "345851d",
+          "start_line": 1507,
+          "end_line": 1524,
+          "snippet_sha256": "9d3f8de1607292560e7f33d57f9322fd3a1f418d6ed317aeb733e7051ee7623c",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "gradio/utils.py",
+          "requested_revision": "6b63fde",
+          "start_line": 1507,
+          "end_line": 1520,
+          "snippet_sha256": "15a626f5535360f6ca0ea3298a3b04a80e56807ecd508f613805034a0e76bd33",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-250",
+        "CWE-269",
+        "CWE-285"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2021-3987",
+      "repository": "janeczku/calibre-web",
+      "patch_references": [
+        {
+          "repository": "janeczku/calibre-web",
+          "revision": "bcdc97641447965af486964537f3821f47b28874",
+          "url": "https://github.com/janeczku/calibre-web/commit/bcdc97641447965af486964537f3821f47b28874"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "cps/shelf.py",
+          "requested_revision": "6aad937",
+          "start_line": 226,
+          "end_line": 228,
+          "snippet_sha256": "f8db51d8837df098682b928f04fc203fab365b1131ca92cdcd4ca5ab22d8cb0d",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "cps/shelf.py",
+          "requested_revision": "bcdc976",
+          "start_line": 226,
+          "end_line": 232,
+          "snippet_sha256": "bc56e2b5e8ce49c133254fa5b33a18f1323d5a6666df76f5f5d30d5364dc9bec",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-639",
+        "CWE-862"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2024-3571",
+      "repository": "langchain-ai/langchain",
+      "patch_references": [
+        {
+          "repository": "langchain-ai/langchain",
+          "revision": "aad3d8bd47d7f5598156ff2bdcc8f736f24a7412",
+          "url": "https://github.com/langchain-ai/langchain/commit/aad3d8bd47d7f5598156ff2bdcc8f736f24a7412"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "libs/langchain/langchain/storage/file_system.py",
+          "requested_revision": "501cc83",
+          "start_line": 38,
+          "end_line": 45,
+          "snippet_sha256": "c0b5f9987fed88faa28d8129c69ba5c844a2ccb19ef18381f36ad644fee98b29",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "libs/langchain/langchain/storage/file_system.py",
+          "requested_revision": "501cc83",
+          "start_line": 47,
+          "end_line": 58,
+          "snippet_sha256": "3e684ada757fd31cb8fada64b0f7f72be30655baaf9b42cc8bcda64d69065776",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "libs/langchain/langchain/storage/file_system.py",
+          "requested_revision": "aad3d8b",
+          "start_line": 39,
+          "end_line": 46,
+          "snippet_sha256": "a2454d27b8c67b20e766362be3f23297591be676fda0d21378b73e8969b8438a",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "libs/langchain/langchain/storage/file_system.py",
+          "requested_revision": "aad3d8b",
+          "start_line": 48,
+          "end_line": 67,
+          "snippet_sha256": "2c8368e0d8f20a4b724528894d2034e77b54e0848d8b94cf7cf389a740cde5bf",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2024-42005",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "f4af67b9b41e0f4c117a8741da3abbd1c869ab28",
+          "url": "https://github.com/django/django/commit/f4af67b9b41e0f4c117a8741da3abbd1c869ab28"
+        },
+        {
+          "repository": "django/django",
+          "revision": "32ebcbf2e1fe3e5ba79a6554a167efce81f7422d",
+          "url": "https://github.com/django/django/commit/32ebcbf2e1fe3e5ba79a6554a167efce81f7422d"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "523da87",
+          "start_line": 2442,
+          "end_line": 2502,
+          "snippet_sha256": "680dcc84b9ce87c3031bc1660b0366e38b87f8bdaf47157a34827b9b5eaf78ca",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "32ebcbf",
+          "start_line": 2442,
+          "end_line": 2504,
+          "snippet_sha256": "d5519d2484550e0ed4feb278cdb31a543a5ac39622154849a2efd237af784103",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-89"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "repository": "oauthlib/oauthlib",
+      "patch_references": [
+        {
+          "repository": "oauthlib/oauthlib",
+          "revision": "2e40b412c844ecc4673c3fa3f72181f228bdbacd",
+          "url": "https://github.com/oauthlib/oauthlib/commit/2e40b412c844ecc4673c3fa3f72181f228bdbacd"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "oauthlib/uri_validate.py",
+          "requested_revision": "b4bdd09",
+          "start_line": 68,
+          "end_line": 69,
+          "snippet_sha256": "35c42c5bac866e0be1d66d7a7fd2a9d13af1e7fca2774f773156b7a3d6afcd53",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "oauthlib/uri_validate.py",
+          "requested_revision": "2e40b41",
+          "start_line": 69,
+          "end_line": 69,
+          "snippet_sha256": "ef7de8af9aea39d677dab49d470d700dca383a4062dd88821c71657bc2b4d67a",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-601"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2020-15278",
+      "repository": "cog-creators/red-discordbot",
+      "patch_references": [
+        {
+          "repository": "cog-creators/red-discordbot",
+          "revision": "726bfd38adfdfaef760412a68e01447b470f438b",
+          "url": "https://github.com/Cog-Creators/Red-DiscordBot/commit/726bfd38adfdfaef760412a68e01447b470f438b"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "redbot/cogs/mod/kickban.py",
+          "requested_revision": "21f9a6f",
+          "start_line": 369,
+          "end_line": 514,
+          "snippet_sha256": "e42adac874f4df1c2c346edfcd473453826d4a437ddeef6ca121311ad1cf6b40",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "redbot/cogs/mod/kickban.py",
+          "requested_revision": "726bfd38adfdfaef760412a68e01447b470f438b",
+          "start_line": 369,
+          "end_line": 527,
+          "snippet_sha256": "d2c3d5df59280ab47dee49f85e44a3fedf9be0a28bda13b876e31ce951441a68",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-250",
+        "CWE-269",
+        "CWE-285",
+        "CWE-863"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2022-21699",
+      "repository": "ipython/ipython",
+      "patch_references": [
+        {
+          "repository": "ipython/ipython",
+          "revision": "46a51ed69cdf41b4333943d9ceeb945c4ede5668",
+          "url": "https://github.com/ipython/ipython/commit/46a51ed69cdf41b4333943d9ceeb945c4ede5668"
+        },
+        {
+          "repository": "ipython/ipython",
+          "revision": "5fa1e409d2dc126c456510c16ece18e08b524e5b",
+          "url": "https://github.com/ipython/ipython/commit/5fa1e409d2dc126c456510c16ece18e08b524e5b"
+        },
+        {
+          "repository": "ipython/ipython",
+          "revision": "a06ca837273271b4acb82c29be97c0b6d12a30ea",
+          "url": "https://github.com/ipython/ipython/commit/a06ca837273271b4acb82c29be97c0b6d12a30ea"
+        },
+        {
+          "repository": "ipython/ipython",
+          "revision": "67ca2b3aa9039438e6f80e3fccca556f26100b4d",
+          "url": "https://github.com/ipython/ipython/commit/67ca2b3aa9039438e6f80e3fccca556f26100b4d"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "IPython/core/profiledir.py",
+          "requested_revision": "50b3d1f",
+          "start_line": 184,
+          "end_line": 209,
+          "snippet_sha256": "6ba4551190cfe68ee1a80a0f407bd000f7ceb8ee8b7b0ce419620ed0931d10e6",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "IPython/core/profiledir.py",
+          "requested_revision": "46a51ed",
+          "start_line": 184,
+          "end_line": 209,
+          "snippet_sha256": "44b2f268917986024acd5baadffa1d28c9ca0c5ad1ea28b7a6747dbf8e6caa6e",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-250",
+        "CWE-269",
+        "CWE-285"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    },
+    {
+      "cve_id": "CVE-2023-26145",
+      "repository": "dgilland/pydash",
+      "patch_references": [
+        {
+          "repository": "dgilland/pydash",
+          "revision": "6ff0831ad285fff937cafd2a853f20cc9ae92021",
+          "url": "https://github.com/dgilland/pydash/commit/6ff0831ad285fff937cafd2a853f20cc9ae92021"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "src/pydash/helpers.py",
+          "requested_revision": "1947d2a",
+          "start_line": 178,
+          "end_line": 186,
+          "snippet_sha256": "99f88c237ae33f23fd3c20332c19974224fe30817e9cb50619b0662857a34122",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "src/pydash/helpers.py",
+          "requested_revision": "1947d2a",
+          "start_line": 189,
+          "end_line": 218,
+          "snippet_sha256": "a7a47d7335a5b8ce641a2017dc4d9cde9248e606503be9d04d897cf45f946bdc",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "src/pydash/helpers.py",
+          "requested_revision": "6ff0831ad285fff937cafd2a853f20cc9ae92021",
+          "start_line": 178,
+          "end_line": 187,
+          "snippet_sha256": "c1e7b313b2d97cd8c172e3921b2092ebef59718a3bb1e983172b944de2d4931e",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "src/pydash/helpers.py",
+          "requested_revision": "6ff0831ad285fff937cafd2a853f20cc9ae92021",
+          "start_line": 197,
+          "end_line": 227,
+          "snippet_sha256": "39dfe92ebfa5d78831078c0c12b94c38acd0b7c9bd88a18587de5f10e8524acc",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "src/pydash/helpers.py",
+          "requested_revision": "6ff0831ad285fff937cafd2a853f20cc9ae92021",
+          "start_line": 19,
+          "end_line": 196,
+          "snippet_sha256": "0581833d8fbec08640ae0a427c6348eb2fc98f138913b1b59113a8d1aaa5ce2d",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2024-49750",
+      "repository": "snowflakedb/snowflake-connector-python",
+      "patch_references": [
+        {
+          "repository": "snowflakedb/snowflake-connector-python",
+          "revision": "dbc9284a3c0382c131b971b35e8d6ab93c46f37a",
+          "url": "https://github.com/snowflakedb/snowflake-connector-python/commit/dbc9284a3c0382c131b971b35e8d6ab93c46f37a"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "src/snowflake/connector/secret_detector.py",
+          "requested_revision": "7ddbf3175f05e0ec1410487938d6eed2f73539a8",
+          "start_line": 22,
+          "end_line": 53,
+          "snippet_sha256": "cdd0079b573d0c573c0a92c3e16aa2b14313d675f099263986e950efe3241880",
+          "localization_count": 2
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "src/snowflake/connector/secret_detector.py",
+          "requested_revision": "dbc9284a3c0382c131b971b35e8d6ab93c46f37a",
+          "start_line": 22,
+          "end_line": 53,
+          "snippet_sha256": "92a180782cd268d52843bd95d37c41f21689141da21abd175f4dd9e67860bb90",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-532"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2023-39660",
+      "repository": "gventuri/pandas-ai",
+      "patch_references": [
+        {
+          "repository": "gventuri/pandas-ai",
+          "revision": "3aac79be8fc1d18b53d66a566adddbbdd2b38ad5",
+          "url": "https://github.com/gventuri/pandas-ai/commit/3aac79be8fc1d18b53d66a566adddbbdd2b38ad5"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "pandasai/__init__.py",
+          "requested_revision": "b452b3b",
+          "start_line": 589,
+          "end_line": 616,
+          "snippet_sha256": "338cddb67be2274d413fa0756206c9c5fa4f80e0c499aed32ccddc956694537e",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "pandasai/__init__.py",
+          "requested_revision": "3aac79be8fc1d18b53d66a566adddbbdd2b38ad5",
+          "start_line": 607,
+          "end_line": 634,
+          "snippet_sha256": "69fe40759afa5ba7b8f3e01bc450ec7dc10e8ebe93a883283bc7558bd2d50018",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "pandasai/__init__.py",
+          "requested_revision": "3aac79be8fc1d18b53d66a566adddbbdd2b38ad5",
+          "start_line": 589,
+          "end_line": 606,
+          "snippet_sha256": "0a36f47b07ebca1f2ea43cd59eef60a2c50c413ec72c7b053b05c078e358065a",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "input_blockers": [],
+      "review_notes": []
+    },
+    {
+      "cve_id": "CVE-2022-28346",
+      "repository": "django/django",
+      "patch_references": [
+        {
+          "repository": "django/django",
+          "revision": "93cae5cb2f9a4ef1514cf1a41f714fef08005200",
+          "url": "https://github.com/django/django/commit/93cae5cb2f9a4ef1514cf1a41f714fef08005200"
+        },
+        {
+          "repository": "django/django",
+          "revision": "2c09e68ec911919360d5f8502cefc312f9e03c5d",
+          "url": "https://github.com/django/django/commit/2c09e68ec911919360d5f8502cefc312f9e03c5d"
+        },
+        {
+          "repository": "django/django",
+          "revision": "2044dac5c6968441be6f534c4139bcf48c5c7e48",
+          "url": "https://github.com/django/django/commit/2044dac5c6968441be6f534c4139bcf48c5c7e48"
+        },
+        {
+          "repository": "django/django",
+          "revision": "800828887a0509ad1162d6d407e94d8de7eafc60",
+          "url": "https://github.com/django/django/commit/800828887a0509ad1162d6d407e94d8de7eafc60"
+        }
+      ],
+      "locations": [
+        {
+          "role": "vul_func",
+          "location_index": 0,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "bdb92db",
+          "start_line": 1037,
+          "end_line": 1045,
+          "snippet_sha256": "0851c11e86afff8ebb69d25379c195657da01d56fc860c07323f6edbbf842b6b",
+          "localization_count": 1
+        },
+        {
+          "role": "vul_func",
+          "location_index": 1,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "bdb92db",
+          "start_line": 2075,
+          "end_line": 2105,
+          "snippet_sha256": "27daa04c0cdadec6fd9df3991d65c34e34365b5374ff9fb0d1ea0f5ac7877f02",
+          "localization_count": 1
+        },
+        {
+          "role": "fix_func",
+          "location_index": 0,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "2044dac",
+          "start_line": 51,
+          "end_line": 51,
+          "snippet_sha256": "5aa7bdac7539501f2b3ceb57f227ab980af556f454f40d0abc051bcea83d9946",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 1,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "2044dac",
+          "start_line": 1042,
+          "end_line": 1058,
+          "snippet_sha256": "aba820ffe24aa0b4cd8e0ba930e6acf1dc3fc35701572587a46edacb4b88eaea",
+          "localization_count": 0
+        },
+        {
+          "role": "fix_func",
+          "location_index": 2,
+          "path": "django/db/models/sql/query.py",
+          "requested_revision": "2044dac",
+          "start_line": 2088,
+          "end_line": 2119,
+          "snippet_sha256": "6d9bd4cf10bc7b514a69a295578df0728f5cba77cd6e97a33717ef0d2e66d47f",
+          "localization_count": 0
+        }
+      ],
+      "cwes": [
+        "CWE-89"
+      ],
+      "input_blockers": [],
+      "review_notes": [
+        "multiple_patch_references_require_context_review"
+      ]
+    }
+  ]
+}

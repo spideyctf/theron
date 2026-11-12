@@ -1,0 +1,18 @@
+{
+  "policy": "theron-realworld-metadata-v1",
+  "seed": "theron-realworld-2026-11-12-v1",
+  "prepared_on": "2026-11-12",
+  "starting_commit": "c56c8d59d58abf7a822a6e083837d8a1d3c7add3",
+  "membership_sha256": "875e8e2b4938dfbdb7a6dab6d624f12a2a28d4029741892fefcf260d391c1367",
+  "hash_encoding": "sha256(json.dumps(value, sort_keys=True).encode()); independent of file newlines",
+  "artifact_canonical_sha256": {
+    "github-metadata.json": "49120c66c6b52bb6bfd70b4423074464e01f95ea1658c750f74a5bda4d1ffe36",
+    "inputs.json": "9dd8766a50f32de78e9f65ac3af9cf97f133bd4564531d146d58e930b1980bcf",
+    "manifest.json": "37271a05952b4c4e975975b707ffe825d27d993c34be87ba68a60922046c0bf1",
+    "prior-unit-index.json": "46428a6cd02c722263342c0cc06dfdf10572f95804211bdeb5709dee8694d61f",
+    "queries.json": "80c1817a0294bd4eaaf1042c707bd83733dc80fcdec52c671745b84a00243fd3"
+  },
+  "source_patch_bodies_opened": false,
+  "detector_runs": false,
+  "scorable_cases": 0
+}
