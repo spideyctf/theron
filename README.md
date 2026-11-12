@@ -9,6 +9,8 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 **Status:** a working research prototype with reproducible synthetic results. Findings require review. The strongest measured coverage is command/code injection, SQL injection and deserialization; stored XSS remains a major gap.
 
+**Platform direction:** Theron's broader goal is unified, evidence-driven security analysis across application code, dependencies, secrets, infrastructure, AI pipelines and agents, with correlation and controlled verification added in stages. The [platform contract, coverage matrix and ranked backlog](docs/PLATFORM.md) distinguish implemented capabilities from experimental and planned work. This vision does not expand the current coverage claims below.
+
 ## Latest evaluation: OWASP BenchmarkPython
 
 On **12 November 2026**, we added [OWASP BenchmarkPython](https://github.com/OWASP-Benchmark/BenchmarkPython), pinned to `f1291485808b66e20ddb6b01b10dc71b3df8c8ba`: **1,230 synthetic cases across 14 categories**. Whole upstream template families stay in one split: 737 development, 248 validation and 245 test cases. The detector was frozen at [`a504494`](https://github.com/spideyctf/theron/commit/a504494e35b961770a5c37896a7f115bfe025088) before validation/test; all categories, including unsupported ones, remain scored.

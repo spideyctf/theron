@@ -2,6 +2,12 @@
 
 Assessment date: 12 November 2026. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
 
+## Broader platform direction
+
+The agreed project goal is now a unified, evidence-driven security analysis and verification platform spanning application code, dependencies, secrets, infrastructure, AI pipelines and agents. The [platform contract](PLATFORM.md) defines current/experimental/planned coverage, evidence requirements, the first correlation pilot and the ranked implementation backlog. The present implementation and measurements below cover only part of that target.
+
+Working project/research title: **Theron: A Unified Security Analysis and Verification Platform for AI-Enabled and Agentic Software Systems**. The platform is broad; research claims must identify and measure a specific cross-layer benefit. The existing abstract below describes the completed prototype study and is not yet an abstract for an implemented full-platform contribution.
+
 ## Current assessment
 
 Theron is a functioning research prototype: CLI and local web review, bounded Python analysis, commit-pinned evidence, advisory alias grouping and explicit application/context scopes are implemented. The [earlier evaluation snapshot](evaluation/2026-11-12/README.md) was followed by an [OWASP study](evaluation/owasp-2026-11-12/RESULTS.md), with pinned Bandit/Semgrep baselines, a grouped synthetic split and three ablations. OWASP test recall rose from 3.37% to 15.73%, but validation recall is zero and both baseline tools detect more held-out vulnerable cases. The original PySASTBench tuning recall is now 77.31%. This contrast is central evidence, not something to hide behind the stronger tuning score.
@@ -26,9 +32,9 @@ This is a repair benchmark, so it needs a SAST adapter and label audit first. Au
 
 ## Candidate contribution
 
-Working title: **Theron: Evidence-Aware Static Security Review for Python and AI Applications**.
+The proposed platform contribution is whether combining supported code, configuration, dependency and agent evidence identifies additional actionable risks or improves review decisions compared with the component tools/outputs alone. This is not yet demonstrated. The first planned pilot links an explicitly configured local Python entrypoint to a supported dangerous code flow, preserving unknown runtime exposure and privileges.
 
-The research question should concern whether explicit source/sink evidence, sanitizer contexts and report scopes improve security review under bounded analysis. A combination of SAST, SCA, a dashboard and YAML rules is useful engineering, but integration alone is insufficient evidence of research novelty.
+Source/sink evidence, sanitizer contexts and report scopes remain component research questions within that broader goal. A combination of SAST, SCA, a dashboard and YAML rules is useful engineering, but integration alone is insufficient evidence of research novelty. Novelty and benefit of the correlation method need related-work review and independent evaluation.
 
 Taint analysis, interprocedural flow and source/sink models already exist in [CodeQL](https://codeql.github.com/docs/writing-codeql-queries/about-data-flow-analysis/) and [Pysa](https://pyre-check.org/docs/pysa-basics/). A literature review must establish the specific difference from prior systems. Treat the contribution below as a hypothesis until that review and evaluation are complete.
 
