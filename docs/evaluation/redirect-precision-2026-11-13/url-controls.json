@@ -1,0 +1,11 @@
+{
+  "node": "v22.17.1",
+  "explicit_vectors": 8,
+  "strip_then_root_counterexamples": 1,
+  "prefix_payload_checks": 48,
+  "inputs": "/\\other.invalid/",
+  "rooted": "/\\other.invalid",
+  "rooted_origin": "https://other.invalid",
+  "target_code_executed": false,
+  "network_requests": 0
+}

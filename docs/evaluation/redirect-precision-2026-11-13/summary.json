@@ -1,0 +1,192 @@
+{
+  "date": "2026-11-13",
+  "starting_commit": "e6f71b7d5fcc388907943f428843358c18676faf",
+  "membership_sha256": "875e8e2b4938dfbdb7a6dab6d624f12a2a28d4029741892fefcf260d391c1367",
+  "previous_probe": "../development-2026-11-12/after.json",
+  "source_hashes_unchanged": true,
+  "source_snapshots": 14,
+  "independent_labels": false,
+  "scorable_cases": 0,
+  "reserved_source_opened": false,
+  "new_target_source_downloads": false,
+  "app_started": false,
+  "changed_records": [
+    {
+      "cve_id": "CVE-2020-26215",
+      "role": "vul_func",
+      "before": [
+        {
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "cwe": "CWE-601",
+          "line_number": 862,
+          "confidence": "medium",
+          "maturity": "experimental",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 862
+            },
+            {
+              "role": "sink",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 862
+            }
+          ]
+        },
+        {
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "cwe": "CWE-601",
+          "line_number": 912,
+          "confidence": "medium",
+          "maturity": "experimental",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 911
+            },
+            {
+              "role": "sink",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 912
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "cwe": "CWE-601",
+          "line_number": 862,
+          "confidence": "medium",
+          "maturity": "experimental",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 862
+            },
+            {
+              "role": "sink",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 862
+            }
+          ]
+        },
+        {
+          "rule_id": "PY-REDIRECT-COVERAGE-001",
+          "cwe": null,
+          "line_number": 912,
+          "confidence": "medium",
+          "maturity": "experimental",
+          "evidence_kind": "coverage-notice",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 911
+            },
+            {
+              "role": "sink",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 912
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2020-26215",
+      "role": "fix_func",
+      "before": [
+        {
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "cwe": "CWE-601",
+          "line_number": 867,
+          "confidence": "medium",
+          "maturity": "experimental",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 862
+            },
+            {
+              "role": "sink",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 867
+            }
+          ]
+        },
+        {
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "cwe": "CWE-601",
+          "line_number": 917,
+          "confidence": "medium",
+          "maturity": "experimental",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 916
+            },
+            {
+              "role": "sink",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 917
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "cwe": "CWE-601",
+          "line_number": 867,
+          "confidence": "medium",
+          "maturity": "experimental",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 862
+            },
+            {
+              "role": "sink",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 867
+            }
+          ]
+        },
+        {
+          "rule_id": "PY-REDIRECT-COVERAGE-001",
+          "cwe": null,
+          "line_number": 917,
+          "confidence": "medium",
+          "maturity": "experimental",
+          "evidence_kind": "coverage-notice",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 916
+            },
+            {
+              "role": "sink",
+              "file_path": "notebook/base/handlers.py",
+              "line_number": 917
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "interpretation": "Two query-only candidates became informational unknown-base notices; the vulnerable URI and patched-normalization experimental candidates remain. No new exploitability or accuracy claim."
+}

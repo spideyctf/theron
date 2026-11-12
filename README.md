@@ -17,6 +17,8 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 **Step 3 development checkpoint:** [source review and detector increment](docs/evaluation/development-2026-11-12/README.md) audited seven development cases (14 snapshots; 18 verified function spans). Inherited Tornado request-body analysis adds one tuning-corpus SQL detection. New Tornado/aiohttp redirect candidates remain experimental because they also flag patched normalization code. Default development-probe matches remain 1/7; reserved source stays unopened and independent labels are pending.
 
+**Precision follow-up, 13 November 2026:** [redirect evidence review](docs/evaluation/redirect-precision-2026-11-13/README.md) adds fixed-origin proofs and reclassifies two query-only experimental candidates as explicit unknown-base notices. The remaining patched-normalization candidate stays experimental; offline URL controls do not establish deployed exploitability.
+
 On **12 November 2026**, we added [OWASP BenchmarkPython](https://github.com/OWASP-Benchmark/BenchmarkPython), pinned to `f1291485808b66e20ddb6b01b10dc71b3df8c8ba`: **1,230 synthetic cases across 14 categories**. Whole upstream template families stay in one split: 737 development, 248 validation and 245 test cases. The detector was frozen at [`a504494`](https://github.com/spideyctf/theron/commit/a504494e35b961770a5c37896a7f115bfe025088) before validation/test; all categories, including unsupported ones, remain scored.
 
 | Split | Before: detected / vulnerable | After: detected / vulnerable | After precision | After F1 |
@@ -41,7 +43,7 @@ See the [frozen protocol](docs/evaluation/owasp-2026-11-12/README.md), [complete
 
 ## PySASTBench tuning benchmark
 
-Re-evaluated **12 November 2026** after the Step 3 framework-source changes, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). This increment follows the older frozen OWASP detector; the OWASP numbers above remain historical results for that detector. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
+Re-evaluated **13 November 2026** after the Step 3 framework-source and redirect-precision changes, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). This increment follows the older frozen OWASP detector; the OWASP numbers above remain historical results for that detector. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
 
 | Measure | Result |
 | --- | ---: |
@@ -71,14 +73,14 @@ These are **case-level, label-matched metrics**, not the proportion of individua
 
 CWE-77 has one additional unscorable vulnerable label. A perfect result within a small category does not establish complete coverage. The four matched fixed-case alerts remain counted as false positives: manual review found weak path-prefix guards in three and uploaded data passed to `joblib.load` in one.
 
-| Engineering check, 12 November 2026 | Result |
+| Engineering check, 13 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 325 passed; 1 dependency deprecation warning |
+| Python regression suite | 364 passed; 1 dependency deprecation warning |
 | Frontend tests | 8 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |
 
-Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/development-2026-11-12/pysastbench-regression.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
+Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/redirect-precision-2026-11-13/pysastbench-regression.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
 
 The earlier four-module GitHub self-scan of `ff71cf6` analyzed **76 files in 58.24 seconds**, with **1 application informational notice**, **0 application vulnerability alerts**, **18 context detections** and **151 SBOM components**, including **15 unresolved versions**. This historical, single-run smoke test predates the new flow changes; it is not a current throughput benchmark or proof of security. [Self-scan summary](docs/evaluation/2026-11-12/self-scan-summary.json).
 

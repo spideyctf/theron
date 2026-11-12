@@ -19,6 +19,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.class_name = ""
         self.class_bases = {}
         self.literal_sets = {}
+        self.redirect_facts = {}
         self.function_names = {}
         self.return_sources = []
         self.receiver = None
@@ -218,6 +219,63 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             return (source[0], source[1], frozenset(source[2] if len(source) > 2 else ()) | {context}) + (source[3:4] if len(source) > 3 else ())
         return None
 
+    def _fixed_redirect_origin(self, node):
+        """Prove only that observed input cannot change the destination origin."""
+        if 'sanitizers' in self.disabled_features:
+            return False
+        literal = self._constant(node)
+        if isinstance(literal, str) and re.match(r'^(?:/[A-Za-z0-9_~?#-]|https?://[A-Za-z0-9.-]+(?::[0-9]+)?/)', literal):
+            return True
+        if self.redirect_facts.get(self._key(node)) == ('origin',):
+            return True
+        if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
+            return self._fixed_redirect_origin(node.left)
+        if isinstance(node, ast.JoinedStr) and node.values:
+            return isinstance(node.values[0], ast.Constant) and self._fixed_redirect_origin(node.values[0])
+        if (isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) and node.func.attr == 'join'
+                and len(node.args) == 1 and not node.keywords and isinstance(node.args[0], (ast.List, ast.Tuple))
+                and node.args[0].elts and not any(isinstance(x, ast.Starred) for x in node.args[0].elts)):
+            first = node.args[0].elts[0]
+            if isinstance(self._constant(node.func.value), str) and self._fixed_redirect_origin(first):
+                return True
+        return False
+
+    def _query_only_redirect(self, node):
+        if 'sanitizers' in self.disabled_features:
+            return False
+        if self.redirect_facts.get(self._key(node)) == ('query_only',):
+            return True
+        if (isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) and node.func.attr == 'join'
+                and len(node.args) == 1 and not node.keywords and isinstance(node.args[0], (ast.List, ast.Tuple))
+                and node.args[0].elts and not any(isinstance(x, ast.Starred) for x in node.args[0].elts)):
+            first = node.args[0].elts[0]
+            return (self.redirect_facts.get(self._key(node.func.value)) == ('query_separator', self._key(first))
+                    and not self._source(first))
+        return False
+
+    def _redirect_fact(self, value):
+        if self._fixed_redirect_origin(value):
+            return ('origin',)
+        if self._query_only_redirect(value):
+            return ('query_only',)
+        known = self.redirect_facts.get(self._key(value))
+        if known and known[0] == 'query_separator':
+            return known
+        if (isinstance(value, ast.IfExp) and self._constant(value.body) == '&' and self._constant(value.orelse) == '?'
+                and isinstance(value.test, ast.Compare) and len(value.test.ops) == len(value.test.comparators) == 1
+                and isinstance(value.test.ops[0], ast.In) and self._constant(value.test.left) == '?'):
+            base = value.test.comparators[0]
+            if self._key(base) and not self._source(base):
+                return ('query_separator', self._key(base))
+        return None
+
+    def _set_redirect_fact(self, key, fact=None):
+        for name, existing in list(self.redirect_facts.items()):
+            if name == key or existing == ('query_separator', key):
+                self.redirect_facts.pop(name)
+        if fact:
+            self.redirect_facts[key] = fact
+
     def visit_FunctionDef(self, node):
         old_parameters, self.parameter_bindings = self.parameter_bindings, {}
         try:
@@ -228,6 +286,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
     def _visit_function(self, node, sources=None):
         self.bindings[node.name] = self.function_names.get(id(node), "")
         old_bindings, old_taint, old_literals = self.bindings.copy(), self.taint, self.literal_sets
+        old_redirects, self.redirect_facts = self.redirect_facts, {}
         self.literal_sets = old_literals.copy()
         self.taint = {key: value for key, value in old_taint.items() if "." in key}
         self.taint.update(sources or {})
@@ -308,6 +367,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.bindings.update(members)
         self.taint.update(member_taint)
         self.literal_sets = old_literals
+        self.redirect_facts = old_redirects
         self.flask_route = old_route
         return returned, returned_binding
 
@@ -336,6 +396,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 if isinstance(statement, ast.AnnAssign) and isinstance(statement.target, ast.Name):
                     self.model_fields[node.name, statement.target.id] = ast.unparse(statement.annotation)
         old_bindings, old_taint, old_literals = self.bindings.copy(), self.taint, self.literal_sets
+        old_redirects, self.redirect_facts = self.redirect_facts, {}
         self.literal_sets = old_literals.copy()
         old_class, self.class_name = self.class_name, node.name
         self.taint = {}
@@ -343,9 +404,12 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             self.visit(statement)
         self.bindings, self.taint = old_bindings, old_taint
         self.literal_sets = old_literals
+        self.redirect_facts = old_redirects
         self.class_name = old_class
 
     def _source(self, node):
+        if isinstance(node, ast.NamedExpr):
+            return self._source(node.value)
         resolved = self._name(node)
         if isinstance(node, ast.Attribute):
             field = self.model_fields.get((self._name(node.value), node.attr))
@@ -473,6 +537,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         key = self._key(target)
         if not key:
             return
+        # Attribute/subscript setters may transform values; retain proofs only for local names.
+        self._set_redirect_fact(key, self._redirect_fact(value) if isinstance(target, ast.Name) else None)
         literal = self._constant(value)
         if literal is not None:
             self.literal_sets[key] = ast.Constant(value=literal)
@@ -534,6 +600,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 self.taint.pop(key, None)  # slot values carry the aggregate, including later clean overwrites
 
     def _invoke(self, node, name, receiver=None):
+        # Local calls can change member/global values; prefix proofs do not cross them.
+        self.redirect_facts.clear()
         if "interprocedural" in self.disabled_features:
             return None
         if name not in self.functions or name in self.active_calls or len(self.active_calls) >= 5:
@@ -619,10 +687,15 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.visit(node.value)
         key = self._key(node.target)
         if key:
+            self._set_redirect_fact(key, ('origin',) if isinstance(node.target, ast.Name) and isinstance(node.op, ast.Add) and self._fixed_redirect_origin(node.target) else None)
             combined = self._combine([self._source(node.target), self._source(node.value)])
             self.literal_sets.pop(key, None)
             if combined:
                 self.taint[key] = combined
+
+    def visit_NamedExpr(self, node):
+        self.visit(node.value)
+        self._assign(node.target, node.value)
 
     def visit_With(self, node):
         for item in node.items:
@@ -635,10 +708,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
     visit_AsyncWith = visit_With
 
     def _state(self):
-        return self.bindings.copy(), self.taint.copy(), self.literal_sets.copy()
+        return self.bindings.copy(), self.taint.copy(), self.literal_sets.copy(), self.redirect_facts.copy()
 
     def _restore(self, state):
-        self.bindings, self.taint, self.literal_sets = (part.copy() for part in state)
+        self.bindings, self.taint, self.literal_sets, self.redirect_facts = (part.copy() for part in state)
 
     def _merge_states(self, states):
         """Keep possible taint, but only retain resolutions/allowlists shared by every path."""
@@ -647,12 +720,14 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.bindings = {key: value for key, value in states[0][0].items()
                          if all(state[0].get(key) == value for state in states)}
         self.taint = {}
-        for _, taint, _ in states:
+        for _, taint, _, _ in states:
             for key, value in taint.items():
                 self.taint[key] = self._combine([self.taint.get(key), value])
         self.literal_sets = {key: value for key, value in states[0][2].items()
                              if all(key in state[2] and ast.dump(state[2][key]) == ast.dump(value)
                                     for state in states)}
+        self.redirect_facts = {key:value for key,value in states[0][3].items()
+                               if all(state[3].get(key) == value for state in states)}
 
     def _terminates(self, statement):
         if isinstance(statement, (ast.Return, ast.Raise, ast.Break, ast.Continue)):
@@ -851,6 +926,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         for handler in node.handlers:
             self._restore(handler_entry)
             if handler.name:
+                self._set_redirect_fact(handler.name)
                 self.bindings[handler.name] = ""
                 self.taint.pop(handler.name, None)
                 self.literal_sets.pop(handler.name, None)
@@ -1001,13 +1077,20 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         redirect_values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg == destination_keyword]
         redirect_source = self._combine(self._source(value) for value in redirect_values)
         if (redirect_sink and (not framework_redirect or self.include_experimental) and redirect_source
-                and redirect_source[0] == 'input' and not self._safe_for(redirect_source, 'redirect')):
+                and redirect_source[0] == 'input' and not self._safe_for(redirect_source, 'redirect')
+                and not all(self._fixed_redirect_origin(value) or not self._source(value) for value in redirect_values)):
             source = redirect_source
-            self._add(node, 'PY-SAST-REDIRECT-001', 'External input controls a redirect destination', Severity.MEDIUM, Category.SAST,
-                      f'External input from line {source[1]} reaches a resolved redirect destination without an observed destination boundary.',
-                      'Use fixed local destinations or validate scheme and host against a trusted allowlist.', 'CWE-601',
-                      source_line=source[1], source_file=source[3] if len(source)>3 else None,
-                      experimental=framework_redirect)
+            if all(self._query_only_redirect(value) or not self._source(value) for value in redirect_values):
+                self._add(node, 'PY-REDIRECT-COVERAGE-001', 'Redirect base URL requires context review', Severity.INFO, Category.SAST,
+                          'Observed input is appended as query text to an unresolved base URL. The base scheme and trust are unknown; this does not establish attacker control of a network destination.',
+                          'Resolve the configured base URL and verify its trust and HTTP(S) or local-path scheme before accepting this flow.', None,
+                          source_line=source[1], source_file=source[3] if len(source)>3 else None, experimental=framework_redirect)
+            else:
+                self._add(node, 'PY-SAST-REDIRECT-001', 'External input controls a redirect destination', Severity.MEDIUM, Category.SAST,
+                          f'External input from line {source[1]} reaches a resolved redirect destination without an observed destination boundary.',
+                          'Use fixed local destinations or validate scheme and host against a trusted allowlist.', 'CWE-601',
+                          source_line=source[1], source_file=source[3] if len(source)>3 else None,
+                          experimental=framework_redirect)
         url_values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg == "url"]
         url_source = self._combine(self._source(value) for value in url_values)
         if name in {f"{library}.{method}" for library in ("requests", "httpx") for method in ("get", "post", "put", "patch", "delete", "head", "options")} | {"urllib.request.urlopen"} and url_source and url_source[0] == "input":
@@ -1047,7 +1130,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             description=description, file_path=self.file_path, line_number=node.lineno,
             code_snippet=snippet, recommendation=recommendation, cwe=cwe,
             confidence=confidence or ("medium" if experimental else "high"), rule_id=rule_id,
-            maturity="experimental" if experimental else "stable", evidence_kind="static-flow",
+            maturity="experimental" if experimental else "stable", evidence_kind="coverage-notice" if severity == Severity.INFO else "static-flow",
             trace=([{"role": "source", "file_path": source_file or self.file_path, "line_number": source_line}] if source_line else [])
                   + [{"role": "sink", "file_path": self.file_path, "line_number": node.lineno}]))
 

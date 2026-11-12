@@ -36,6 +36,8 @@ This is a repair benchmark, so it needs a SAST adapter and label audit first. Au
 
 ## Candidate contribution
 
+The [13 November redirect-precision follow-up](evaluation/redirect-precision-2026-11-13/README.md) preserves the same source sample and frozen splits. Two query-only experimental candidates become explicit unknown-base notices; fixed-origin proofs have adversarial original controls and a sanitizer ablation check. A slash/backslash parser counterexample justifies retaining an experimental normalization candidate, without proving runtime reachability or relabelling the patched snapshot. Tuning results remain unchanged. These are engineering/development observations; independent adjudication and application context remain necessary.
+
 The proposed platform contribution is whether combining supported code, configuration, dependency and agent evidence identifies additional actionable risks or improves review decisions compared with the component tools/outputs alone. This is not yet demonstrated. The first planned pilot links an explicitly configured local Python entrypoint to a supported dangerous code flow, preserving unknown runtime exposure and privileges.
 
 Source/sink evidence, sanitizer contexts and report scopes remain component research questions within that broader goal. A combination of SAST, SCA, a dashboard and YAML rules is useful engineering, but integration alone is insufficient evidence of research novelty. Novelty and benefit of the correlation method need related-work review and independent evaluation.

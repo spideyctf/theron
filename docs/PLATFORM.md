@@ -128,6 +128,8 @@ B01 and B02 are deliberately earlier than claims about real-world gains. The res
 
 **B02 engineering checkpoint:** [seven-case development review and bounded increment](evaluation/development-2026-11-12/README.md) delivered. All 18 selected function spans match the pinned metadata. Default inherited Tornado request-body modeling gains one tuning-corpus SQL case; new redirect candidates stay experimental after a patched-code alert. Independent labels, richer source/caller context, the final matching protocol and redirect precision remain open acceptance items. B02's research gate is incomplete; B03 has not started.
 
+**B02 precision follow-up, 13 November 2026:** [fixed-origin and query-context evidence](evaluation/redirect-precision-2026-11-13/README.md) reclassifies two query-only experimental candidates as unknown-base coverage notices. Original URL controls preserve counterexamples to blanket slash sanitization; the patched-normalization candidate stays experimental. The research gate still needs independent human adjudication and broader context.
+
 ## Research acceptance criteria
 
 The paper should test a concrete cross-layer hypothesis under the broad platform goal: whether supported correlation adds correctly identified, actionable risks or helps reviewers make more accurate decisions compared with the component outputs alone. Integration, a dashboard and higher alert counts are not sufficient evidence of that benefit.
