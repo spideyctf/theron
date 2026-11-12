@@ -462,6 +462,13 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if name in {"os.path.abspath", "os.path.realpath", "pathlib.Path.resolve", "pathlib.Path.absolute"}:
                 values = node.args if not isinstance(node.func, ast.Attribute) or not name.startswith("pathlib.") else [node.func.value]
                 return self._mark_safe(self._combine(self._source(value) for value in values), "normalized-path")
+            if name in {'werkzeug.security.safe_join', 'werkzeug.utils.safe_join'}:
+                joined = self._combine(self._source(value) for value in node.args)
+                # The library contains path names under a trusted base; this
+                # says nothing about shell syntax, symlinks or package versions.
+                if node.args and not self._source(node.args[0]) and not node.keywords:
+                    return self._mark_safe(joined, 'path')
+                return joined
             if name in {"argparse.ArgumentParser.parse_args", "argparse.ArgumentParser.parse_known_args", "sys.stdin.read", "sys.stdin.readline"}:
                 return ("input", node.lineno, frozenset({"local-input"}))
             if name in {"os.path.join", "os.path.abspath", "os.path.realpath", "os.path.normpath", "os.fspath", "pathlib.Path", "pathlib.Path.resolve", "pathlib.Path.absolute", "urllib.parse.unquote", "urllib.parse.unquote_plus", "urllib.parse.parse_qs", "json.loads", "json.load", "base64.b64decode", "base64.b64encode", "base64.urlsafe_b64decode", "base64.urlsafe_b64encode", "werkzeug.security.safe_join", "werkzeug.utils.safe_join", "zlib.decompress", "builtins.open", "io.open", "codecs.open"} or (isinstance(node.func, ast.Name) and node.func.id in {"open", "compile", "str", "bytes", "bytearray"} and node.func.id not in self.bindings):

@@ -222,3 +222,17 @@ session[key]='value'
 helper('fixed')
 '''
     assert 'CWE-501' in cwes(code)
+
+
+def test_safe_join_protects_only_paths_under_a_trusted_base():
+    code = '''from flask import request
+from werkzeug.security import safe_join
+import os
+p=safe_join('/srv/files',request.args['path'])
+open(p)
+os.system(p)
+'''
+    assert 'CWE-22' not in cwes(code)
+    assert 'CWE-78' in cwes(code)
+    assert 'CWE-22' in cwes(code.replace("'/srv/files'", "request.args['base']"))
+    assert any(f.cwe == 'CWE-22' for f in analyze_python('service.py',code,disabled_features=['sanitizers']))
