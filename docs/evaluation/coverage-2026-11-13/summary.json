@@ -1,0 +1,2026 @@
+{
+  "implementation_revision": "fbcd818aa6f970e2f6d2595604f200b1596bd975",
+  "python": "3.12.6",
+  "all_owasp_splits_exposed": true,
+  "reserved_real_source_opened": false,
+  "independent_real_labels": 0,
+  "split_manifest_sha256": "6e568a90fd3782f50d3c0b3fda933f6b58d7a9807c8442fe2ae9016e7aa7eddf",
+  "comparison": "Unchanged labelled-file/CWE adapter; exposed tuning regression, not an independent holdout",
+  "splits": {
+    "development": {
+      "before": {
+        "tp": 56,
+        "fn": 223,
+        "fp": 14,
+        "tn": 444,
+        "errors": 0,
+        "precision": 0.8,
+        "recall": 0.2007168458781362,
+        "f1": 0.3209169054441261,
+        "false_positive_rate": 0.03056768558951965
+      },
+      "after": {
+        "tp": 202,
+        "fn": 77,
+        "fp": 9,
+        "tn": 449,
+        "errors": 0,
+        "precision": 0.957345971563981,
+        "recall": 0.7240143369175627,
+        "f1": 0.8244897959183674,
+        "false_positive_rate": 0.019650655021834062
+      },
+      "transitions": {
+        "counts": {
+          "fp->tn": 6,
+          "fn->tp": 146,
+          "tn->fp": 1
+        },
+        "cases": [
+          {
+            "case": "BenchmarkTest00021",
+            "cwe": "CWE-643",
+            "before": "fp",
+            "after": "tn"
+          },
+          {
+            "case": "BenchmarkTest00022",
+            "cwe": "CWE-643",
+            "before": "fp",
+            "after": "tn"
+          },
+          {
+            "case": "BenchmarkTest00054",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00057",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00058",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00059",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00060",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00064",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00065",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00066",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00067",
+            "cwe": "CWE-601",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00101",
+            "cwe": "CWE-643",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00109",
+            "cwe": "CWE-643",
+            "before": "fp",
+            "after": "tn"
+          },
+          {
+            "case": "BenchmarkTest00140",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00141",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00142",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00143",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00187",
+            "cwe": "CWE-79",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00197",
+            "cwe": "CWE-643",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00198",
+            "cwe": "CWE-643",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00214",
+            "cwe": "CWE-643",
+            "before": "fp",
+            "after": "tn"
+          },
+          {
+            "case": "BenchmarkTest00244",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00248",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00249",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00250",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00251",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00272",
+            "cwe": "CWE-79",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00273",
+            "cwe": "CWE-22",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00277",
+            "cwe": "CWE-22",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00278",
+            "cwe": "CWE-79",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00281",
+            "cwe": "CWE-79",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00283",
+            "cwe": "CWE-89",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00284",
+            "cwe": "CWE-89",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00289",
+            "cwe": "CWE-643",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00296",
+            "cwe": "CWE-643",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00297",
+            "cwe": "CWE-643",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00298",
+            "cwe": "CWE-643",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00305",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00306",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00307",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00308",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00309",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00319",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00320",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00321",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00322",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00323",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00326",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00327",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00328",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00329",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00336",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00381",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00382",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00383",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00384",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00385",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00409",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00410",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00412",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00451",
+            "cwe": "CWE-79",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00453",
+            "cwe": "CWE-79",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00454",
+            "cwe": "CWE-89",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00456",
+            "cwe": "CWE-643",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00464",
+            "cwe": "CWE-643",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00473",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00474",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00475",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00476",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00482",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00483",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00484",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00485",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00489",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00494",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00495",
+            "cwe": "CWE-601",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00556",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00557",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00558",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00559",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00560",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00561",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00562",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00563",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00564",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00580",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00581",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00582",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00583",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00585",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00586",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00592",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00593",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00621",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00622",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00623",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00624",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00625",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00626",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00627",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00628",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00641",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00642",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00643",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00646",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00647",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00650",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00651",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00652",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00674",
+            "cwe": "CWE-643",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00684",
+            "cwe": "CWE-643",
+            "before": "fp",
+            "after": "tn"
+          },
+          {
+            "case": "BenchmarkTest00685",
+            "cwe": "CWE-643",
+            "before": "fp",
+            "after": "tn"
+          },
+          {
+            "case": "BenchmarkTest00688",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00689",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00690",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00718",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00719",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00720",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00740",
+            "cwe": "CWE-22",
+            "before": "tn",
+            "after": "fp"
+          },
+          {
+            "case": "BenchmarkTest00749",
+            "cwe": "CWE-22",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00765",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00766",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00767",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00768",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00769",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00770",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00771",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00772",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00773",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00774",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00775",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00808",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00831",
+            "cwe": "CWE-22",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00839",
+            "cwe": "CWE-79",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00841",
+            "cwe": "CWE-79",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00842",
+            "cwe": "CWE-79",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00854",
+            "cwe": "CWE-643",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00859",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00860",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00861",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00862",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00863",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00885",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00886",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00980",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00981",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01085",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01086",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01087",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01088",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01177",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01187",
+            "cwe": "CWE-614",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01214",
+            "cwe": "CWE-22",
+            "before": "fn",
+            "after": "tp"
+          }
+        ]
+      },
+      "baselines": {
+        "bandit": {
+          "summary": {
+            "tp": 85,
+            "fn": 194,
+            "fp": 11,
+            "tn": 447,
+            "errors": 0,
+            "precision": 0.8854166666666666,
+            "recall": 0.3046594982078853,
+            "f1": 0.4533333333333333,
+            "false_positive_rate": 0.024017467248908297
+          },
+          "source": "../step5-2026-11-13/development-bandit.json",
+          "canonical_sha256": "954426b03ae293c08a3609b2bd3bdd7fdcc179bdb3408861fc23331e41d052a3"
+        },
+        "semgrep": {
+          "summary": {
+            "tp": 49,
+            "fn": 230,
+            "fp": 31,
+            "tn": 427,
+            "errors": 0,
+            "precision": 0.6125,
+            "recall": 0.17562724014336917,
+            "f1": 0.27298050139275765,
+            "false_positive_rate": 0.06768558951965066
+          },
+          "source": "../step5-2026-11-13/development-semgrep.json",
+          "canonical_sha256": "5992075e9732ab43e14f8971d5383ea81841c579ada6b5f0a425a74c8fde352c"
+        }
+      },
+      "ablations": {
+        "interprocedural": {
+          "tp": 182,
+          "fn": 97,
+          "fp": 9,
+          "tn": 449,
+          "errors": 0,
+          "precision": 0.9528795811518325,
+          "recall": 0.6523297491039427,
+          "f1": 0.774468085106383,
+          "false_positive_rate": 0.019650655021834062
+        },
+        "local_imports": {
+          "tp": 182,
+          "fn": 97,
+          "fp": 9,
+          "tn": 449,
+          "errors": 0,
+          "precision": 0.9528795811518325,
+          "recall": 0.6523297491039427,
+          "f1": 0.774468085106383,
+          "false_positive_rate": 0.019650655021834062
+        },
+        "sanitizers": {
+          "tp": 202,
+          "fn": 77,
+          "fp": 42,
+          "tn": 416,
+          "errors": 0,
+          "precision": 0.8278688524590164,
+          "recall": 0.7240143369175627,
+          "f1": 0.7724665391969407,
+          "false_positive_rate": 0.09170305676855896
+        }
+      }
+    },
+    "validation": {
+      "before": {
+        "tp": 0,
+        "fn": 84,
+        "fp": 1,
+        "tn": 163,
+        "errors": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.006097560975609756
+      },
+      "after": {
+        "tp": 77,
+        "fn": 7,
+        "fp": 0,
+        "tn": 164,
+        "errors": 0,
+        "precision": 1.0,
+        "recall": 0.9166666666666666,
+        "f1": 0.9565217391304348,
+        "false_positive_rate": 0.0
+      },
+      "transitions": {
+        "counts": {
+          "fn->tp": 77,
+          "fp->tn": 1
+        },
+        "cases": [
+          {
+            "case": "BenchmarkTest00072",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00153",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00205",
+            "cwe": "CWE-611",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00260",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00294",
+            "cwe": "CWE-611",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00338",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00340",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00341",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00460",
+            "cwe": "CWE-611",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00497",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00499",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00501",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00502",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00707",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00708",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00709",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00713",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00714",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00715",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00716",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00725",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00727",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00796",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00805",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00806",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00817",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00873",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00874",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00877",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00887",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00888",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00889",
+            "cwe": "CWE-501",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00945",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00946",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00947",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00948",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00949",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00950",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00951",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00973",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00974",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00975",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00977",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00978",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01040",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01041",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01042",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01043",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01044",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01045",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01046",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01047",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01048",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01049",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01050",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01070",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01077",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01126",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01127",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01128",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01129",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01130",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01131",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01145",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01146",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01147",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01148",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01149",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01175",
+            "cwe": "CWE-643",
+            "before": "fp",
+            "after": "tn"
+          },
+          {
+            "case": "BenchmarkTest01176",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01182",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01185",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01190",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01194",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01197",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01199",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01212",
+            "cwe": "CWE-611",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01227",
+            "cwe": "CWE-328",
+            "before": "fn",
+            "after": "tp"
+          }
+        ]
+      },
+      "baselines": {
+        "bandit": {
+          "summary": {
+            "tp": 59,
+            "fn": 25,
+            "fp": 20,
+            "tn": 144,
+            "errors": 0,
+            "precision": 0.7468354430379747,
+            "recall": 0.7023809523809523,
+            "f1": 0.7239263803680982,
+            "false_positive_rate": 0.12195121951219512
+          },
+          "source": "../step5-2026-11-13/validation-bandit.json",
+          "canonical_sha256": "6ff04479e9105319df0b2b9aa146d9faf4d2443d39edbed36b8a3db18ee12b84"
+        },
+        "semgrep": {
+          "summary": {
+            "tp": 28,
+            "fn": 56,
+            "fp": 20,
+            "tn": 144,
+            "errors": 0,
+            "precision": 0.5833333333333334,
+            "recall": 0.3333333333333333,
+            "f1": 0.42424242424242425,
+            "false_positive_rate": 0.12195121951219512
+          },
+          "source": "../step5-2026-11-13/validation-semgrep.json",
+          "canonical_sha256": "e3533c9404b0745d5fbaef6c6de1800421a4d8d453ac99cc18e356e5deb01ffa"
+        }
+      },
+      "ablations": {
+        "interprocedural": {
+          "tp": 70,
+          "fn": 14,
+          "fp": 0,
+          "tn": 164,
+          "errors": 0,
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091,
+          "false_positive_rate": 0.0
+        },
+        "local_imports": {
+          "tp": 70,
+          "fn": 14,
+          "fp": 0,
+          "tn": 164,
+          "errors": 0,
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091,
+          "false_positive_rate": 0.0
+        },
+        "sanitizers": {
+          "tp": 77,
+          "fn": 7,
+          "fp": 1,
+          "tn": 163,
+          "errors": 0,
+          "precision": 0.9871794871794872,
+          "recall": 0.9166666666666666,
+          "f1": 0.9506172839506173,
+          "false_positive_rate": 0.006097560975609756
+        }
+      }
+    },
+    "test": {
+      "before": {
+        "tp": 14,
+        "fn": 75,
+        "fp": 5,
+        "tn": 151,
+        "errors": 0,
+        "precision": 0.7368421052631579,
+        "recall": 0.15730337078651685,
+        "f1": 0.25925925925925924,
+        "false_positive_rate": 0.03205128205128205
+      },
+      "after": {
+        "tp": 65,
+        "fn": 24,
+        "fp": 6,
+        "tn": 150,
+        "errors": 0,
+        "precision": 0.9154929577464789,
+        "recall": 0.7303370786516854,
+        "f1": 0.8125,
+        "false_positive_rate": 0.038461538461538464
+      },
+      "transitions": {
+        "counts": {
+          "fn->tp": 51,
+          "tn->fp": 1
+        },
+        "cases": [
+          {
+            "case": "BenchmarkTest00025",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00026",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00027",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00028",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00029",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00030",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00031",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00078",
+            "cwe": "CWE-502",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00114",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00115",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00116",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00117",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00164",
+            "cwe": "CWE-502",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00165",
+            "cwe": "CWE-78",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00218",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00219",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00220",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00221",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00222",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00223",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00224",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00225",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00226",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00227",
+            "cwe": "CWE-330",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00265",
+            "cwe": "CWE-90",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00266",
+            "cwe": "CWE-90",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00267",
+            "cwe": "CWE-78",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00268",
+            "cwe": "CWE-78",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00342",
+            "cwe": "CWE-94",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00503",
+            "cwe": "CWE-94",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00505",
+            "cwe": "CWE-90",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00506",
+            "cwe": "CWE-90",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00507",
+            "cwe": "CWE-502",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00510",
+            "cwe": "CWE-502",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00511",
+            "cwe": "CWE-78",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00731",
+            "cwe": "CWE-90",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00733",
+            "cwe": "CWE-90",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00734",
+            "cwe": "CWE-502",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00735",
+            "cwe": "CWE-502",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00820",
+            "cwe": "CWE-94",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00823",
+            "cwe": "CWE-90",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00824",
+            "cwe": "CWE-90",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00825",
+            "cwe": "CWE-502",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00890",
+            "cwe": "CWE-94",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00891",
+            "cwe": "CWE-94",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00892",
+            "cwe": "CWE-94",
+            "before": "tn",
+            "after": "fp"
+          },
+          {
+            "case": "BenchmarkTest00894",
+            "cwe": "CWE-94",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00895",
+            "cwe": "CWE-90",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00898",
+            "cwe": "CWE-502",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest00899",
+            "cwe": "CWE-78",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01191",
+            "cwe": "CWE-78",
+            "before": "fn",
+            "after": "tp"
+          },
+          {
+            "case": "BenchmarkTest01216",
+            "cwe": "CWE-502",
+            "before": "fn",
+            "after": "tp"
+          }
+        ]
+      },
+      "baselines": {
+        "bandit": {
+          "summary": {
+            "tp": 63,
+            "fn": 26,
+            "fp": 47,
+            "tn": 109,
+            "errors": 0,
+            "precision": 0.5727272727272728,
+            "recall": 0.7078651685393258,
+            "f1": 0.6331658291457286,
+            "false_positive_rate": 0.30128205128205127
+          },
+          "source": "../step5-2026-11-13/test-bandit.json",
+          "canonical_sha256": "c2f2ab7558ab29832888637e592b8214e0ad5e9afb0fb01778be47e421a0ac34"
+        },
+        "semgrep": {
+          "summary": {
+            "tp": 31,
+            "fn": 58,
+            "fp": 22,
+            "tn": 134,
+            "errors": 0,
+            "precision": 0.5849056603773585,
+            "recall": 0.34831460674157305,
+            "f1": 0.43661971830985913,
+            "false_positive_rate": 0.14102564102564102
+          },
+          "source": "../step5-2026-11-13/test-semgrep.json",
+          "canonical_sha256": "f9455ef1d844bdbea1c84325d18d47a92c735649eeedfab13702655fad87a9f4"
+        }
+      },
+      "ablations": {
+        "interprocedural": {
+          "tp": 48,
+          "fn": 41,
+          "fp": 5,
+          "tn": 151,
+          "errors": 0,
+          "precision": 0.9056603773584906,
+          "recall": 0.5393258426966292,
+          "f1": 0.676056338028169,
+          "false_positive_rate": 0.03205128205128205
+        },
+        "local_imports": {
+          "tp": 48,
+          "fn": 41,
+          "fp": 5,
+          "tn": 151,
+          "errors": 0,
+          "precision": 0.9056603773584906,
+          "recall": 0.5393258426966292,
+          "f1": 0.676056338028169,
+          "false_positive_rate": 0.03205128205128205
+        },
+        "sanitizers": {
+          "tp": 65,
+          "fn": 24,
+          "fp": 6,
+          "tn": 150,
+          "errors": 0,
+          "precision": 0.9154929577464789,
+          "recall": 0.7303370786516854,
+          "f1": 0.8125,
+          "false_positive_rate": 0.038461538461538464
+        }
+      }
+    }
+  },
+  "pysastbench": {
+    "tp": 93,
+    "fn": 26,
+    "fp": 4,
+    "tn": 116,
+    "errors": 1,
+    "precision": 0.9587628865979382,
+    "recall": 0.7815126050420168,
+    "false_positive_rate": 0.03333333333333333
+  },
+  "real_development_files": 14,
+  "source_hashes": {
+    "scanner/python_analysis.py": "750731231a36982594627f3db4191716c5a08bf45a1b1d9a3eb43af3176e51fd",
+    "scanner/owasp_benchmark.py": "73bb6ff60751471a87ebd6dc326e1e64850aff35fc788cd7b31d982a7bbfebff",
+    "scanner/python_project.py": "a94cdd82e8a0c4447daf937b159a37e7f657e0e60fec8eb5a7358743cf7a3833",
+    "scanner/plugins/sast.py": "5af5ba0752368633b9f781e62784115791d2b53e6dee21d5b18ddf9c84af2c07"
+  },
+  "prior_step5_artifact_index_sha256": "5e709f4b90b6bd1ca1a45b28db93cb16e813a16f72a25b39e03deef80cbe0404",
+  "target_met": true
+}

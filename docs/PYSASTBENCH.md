@@ -1,8 +1,8 @@
 # PySASTBench-backed detection tuning
 
 Reference: [Victor725/PySASTBench](https://github.com/Victor725/PySASTBench),
-commit `3ad04b72c516d0533a5dc9c8042c9808e69e0f40`. Latest evaluation run: 2026-11-12.
-The first rerun reproduced the previous counts. Later OWASP-driven flow changes detected one additional SQL case. See the [earlier snapshot](evaluation/2026-11-12/README.md) and [current raw result](evaluation/owasp-2026-11-12/pysastbench-after.json).
+commit `3ad04b72c516d0533a5dc9c8042c9808e69e0f40`. Latest evaluation run: 2026-11-13, coverage-repair freeze `fbcd818`.
+The Step 3 framework-source increment reached 93 labelled detections; the coverage repair preserves those counts. See the [earlier snapshot](evaluation/2026-11-12/README.md) and [current raw result](evaluation/coverage-2026-11-13/pysastbench.json).
 The synthetic corpus has 120 labelled vulnerable/fixed pairs across six CWE categories.
 The external checkout is ignored and not shipped or redistributed with Theron.
 No benchmark applications, setup scripts, or third-party scanners were executed.
@@ -11,26 +11,26 @@ No benchmark applications, setup scripts, or third-party scanners were executed.
 
 Default SAST rules only, with identical scoring before and after tuning:
 
-| Measure | Initial | Previous tuning | October 9 | Control-flow fixes | Expanded analysis | OWASP flow fixes |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Labelled vulnerable variants detected | 8 | 26 | 28 | 33 | 91 | 92 |
-| Labelled vulnerable variants missed | 111 | 93 | 91 | 86 | 28 | 27 |
-| Fixed variants with matched alerts | 0 | 0 | 0 | 0 | 4 | 4 |
-| Fixed variants without matched alerts | 120 | 120 | 120 | 120 | 116 | 116 |
-| Unscorable vulnerable labels | 1 | 1 | 1 | 1 | 1 | 1 |
-| Recall over scorable vulnerable variants | 6.72% | 21.85% | 23.53% | 27.73% | 76.47% | 77.31% |
+| Measure | Initial | Previous tuning | October 9 | Control-flow fixes | Expanded analysis | OWASP flow fixes | Current |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Labelled vulnerable variants detected | 8 | 26 | 28 | 33 | 91 | 92 | 93 |
+| Labelled vulnerable variants missed | 111 | 93 | 91 | 86 | 28 | 27 | 26 |
+| Fixed variants with matched alerts | 0 | 0 | 0 | 0 | 4 | 4 | 4 |
+| Fixed variants without matched alerts | 120 | 120 | 120 | 120 | 116 | 116 | 116 |
+| Unscorable vulnerable labels | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| Recall over scorable vulnerable variants | 6.72% | 21.85% | 23.53% | 27.73% | 76.47% | 77.31% | 78.15% |
 
 | Labelled CWE | Detected / scorable vulnerable variants | Fixed variants with matched alerts |
 | --- | ---: | ---: |
 | 22: path traversal | 17 / 20 | 3 / 20 |
 | 77: command injection (includes child CWE-78) | 19 / 19 | 0 / 20 |
 | 79: XSS | 2 / 20 | 0 / 20 |
-| 89: SQL injection | 18 / 20 | 0 / 20 |
+| 89: SQL injection | 19 / 20 | 0 / 20 |
 | 94: code injection | 18 / 20 | 0 / 20 |
 | 502: deserialization | 18 / 20 | 1 / 20 |
 
 These are labelled synthetic-case results, **not** a claim of industry certification or real-world accuracy.
-Current label-based precision is 95.83% and false-positive rate is 3.33%. The current JSON includes whole-fixed-file alert counts separately from the label match. These counts are retained rather than hidden; the earlier 91-detection snapshot had seven alerts across six fixed files, three outside the match.
+Current label-based precision is 95.88% and false-positive rate is 3.33%. The current JSON includes whole-fixed-file alert counts separately from the label match. The coverage repair increases whole-fixed-file alerts from eight to seventeen, across fourteen rather than seven files; nine new weak-hash alerts are outside the labelled matches and remain unadjudicated. Unchanged label-matched precision therefore does not mean unchanged review burden. The earlier 91-detection snapshot had seven alerts across six fixed files, three outside the match.
 The four label-matched alerts occur in `22_DS-1`, `22_DS-2`, `22_DS-3`, and `502_DS-8`. Manual inspection found plain `startswith(base)` path checks without a separator boundary in the three path cases, and uploaded model data passed to `joblib.load` in the deserialization case. Those remain meaningful review candidates: a plain string prefix is not path-component containment, and joblib remains pickle based. The evaluator retains the upstream labels and counts all four as false positives; it does not relabel them to inflate precision. Two other fixed files contain unrelated reflected-HTML alerts. See `docs/QUALITY.md` for an independent miniature demonstration of the path-prefix issue and the remaining limits.
 Stored-XSS coverage remains weak: 18 of 20 labelled XSS variants are still missed. There is no general persistent-store or template-context analysis.
 The same corpus was inspected during tuning; it is not an independent held-out validation set.

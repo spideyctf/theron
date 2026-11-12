@@ -1,6 +1,6 @@
 # Research direction and publication readiness
 
-Assessment updated: 13 November 2026, through Step 5's automated engineering evaluation. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
+Assessment updated: 13 November 2026, through the post-Step-5 coverage repair and delivery checkpoint. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
 
 ## Broader platform direction
 
@@ -10,9 +10,11 @@ Working project/research title: **Theron: A Unified Security Analysis and Verifi
 
 ## Current assessment
 
-Theron is a functioning research prototype: CLI/web review, bounded Python analysis, commit-pinned evidence, advisory alias grouping, context scopes and an experimental MCP correlation pilot are implemented. The [Step 5 evaluation](evaluation/step5-2026-11-13/RESULTS.md) freezes implementation `36ee9ee`, repeats exposed synthetic comparisons and records provisional real-code development evidence. Theron's OWASP test recall remains 15.73%, validation recall remains zero, and both pinned baselines detect more vulnerable test cases. PySASTBench tuning recall is 78.15%; this contrast limits any general accuracy claim.
+Theron is a functioning research prototype: CLI/web review, bounded Python analysis, commit-pinned evidence, advisory alias grouping, context scopes and an experimental MCP correlation pilot are implemented. The [coverage repair](evaluation/coverage-2026-11-13/README.md), frozen at `fbcd818`, raises exposed OWASP validation recall from 0% to 91.67% and test recall from 15.73% to 73.03%. Test label-matched precision is 91.55%, with six false-positive cases instead of five. Development recall is 72.40%, with nine false positives instead of fourteen. All 1,230 cases, categories, labels and the scoring adapter remain unchanged. Because prior outcomes and selected source templates informed development, this is an exposed tuning regression, not new held-out evidence or a general superiority claim.
 
-Fresh exact-byte staging corrected an old baseline-input defect. A controlled Semgrep replay reproduced the old development outcome; corrected staging changes seven FN to TP and two TN to FP, while validation/test outcomes stay unchanged. All prior reports remain historical artifacts. Default/feature ablations and nine original correlation controls are published, with no added vulnerability counts or proven reviewer-time benefit. An original control also exposes unsupported safe_join return propagation; no detector fixes were mixed into evaluation.
+The [Step 5 evaluation](evaluation/step5-2026-11-13/RESULTS.md) preserves the earlier `36ee9ee` freeze and provisional real-code development evidence. PySASTBench label-matched tuning recall remains 78.15%; its fixed-file review volume rises from eight to seventeen alerts because of nine new weak-hash alerts outside the labelled targets. These extra alerts are unadjudicated. The repaired analyzer passes 472 Python tests and the existing frontend tests/build.
+
+Fresh exact-byte staging in Step 5 corrected an old baseline-input defect. A controlled Semgrep replay reproduced the old development outcome; corrected staging changes seven FN to TP and two TN to FP, while baseline validation/test outcomes stay unchanged. Those baseline results are reused for the coverage repair because inputs, rules and scoring are unchanged; they were not rerun for this increment. Step 5's safe_join propagation gap is now repaired with path-only boundary handling and cross-grammar controls. Three new full-split ablations show losses of 20/7/17 TP on development/validation/test when helper calls or imports are disabled. These observations still require independent corroboration.
 
 The [independent review packet](evaluation/step5-2026-11-13/INDEPENDENT-REVIEW.md) is prepared, but zero real-code cases or MCP edges have independent adjudication. The nine real validation and nine real test candidates remain closed. Automated evaluation is complete; the publication-level real-code research gate is open.
 

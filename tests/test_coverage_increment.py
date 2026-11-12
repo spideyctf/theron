@@ -3,6 +3,7 @@ import pytest
 
 from scanner.python_analysis import analyze_python
 from scanner.python_project import PythonProject
+from scripts.evaluate_coverage_increment import transitions
 
 
 def cwes(code):
@@ -236,3 +237,14 @@ os.system(p)
     assert 'CWE-78' in cwes(code)
     assert 'CWE-22' in cwes(code.replace("'/srv/files'", "request.args['base']"))
     assert any(f.cwe == 'CWE-22' for f in analyze_python('service.py',code,disabled_features=['sanitizers']))
+
+
+def test_comparison_keeps_regressions_and_rejects_label_changes():
+    old = dict(cases=[dict(case='case',family='group',cwe='CWE-94',vulnerable=False,outcome='tn')])
+    new = dict(cases=[dict(old['cases'][0],outcome='fp')])
+    assert transitions(old,new)['counts'] == {'tn->fp':1}
+    new['cases'][0]['vulnerable'] = True
+    with pytest.raises(ValueError,match='Labels'):
+        transitions(old,new)
+    with pytest.raises(ValueError,match='membership'):
+        transitions(old,dict(cases=[]))

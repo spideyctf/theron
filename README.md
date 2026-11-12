@@ -13,6 +13,20 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 ## Latest evaluation: OWASP BenchmarkPython
 
+**Coverage repair, 13 November 2026:** [reproducible results and failure analysis](docs/evaluation/coverage-2026-11-13/README.md), frozen at `fbcd818`. The **60% recall target is met on both exposed validation/test splits**. These results follow source inspection and tuning; they are not new held-out evidence.
+
+| Exposed split | Previous recall | Current recall | Current precision | Current F1 | Label-matched FP |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Development | 20.07% | **72.40%** (202/279) | 95.73% | 82.45% | 9/458 |
+| Validation | 0.00% | **91.67%** (77/84) | 100.00% | 95.65% | 0/164 |
+| Test | 15.73% | **73.03%** (65/89) | 91.55% | 81.25% | 6/156 |
+
+The increment repairs imported-instance receiver resolution, encoding/wrapper propagation and explicit shell argument handling; adds resolved hash, token-randomness, session-boundary, cookie, SAX and LDAP models; and handles quote exclusions within supported XPath literals. Test false positives rise from five to six; development falls from fourteen to nine. Labels, all 1,230 cases, the scoring adapter and split membership are unchanged. Configuration/boundary findings require contextual review. Independent real-code and MCP-edge validation remains pending.
+
+The unchanged pinned baselines have 70.79% test recall for Bandit and 34.83% for Semgrep. Theron's new result uses those exposed outcomes for development, so this comparison does not establish superiority on unseen projects. See the report for all counts, per-category gaps, ablations and provenance.
+
+### Historical evaluation checkpoints
+
 **Real-world preparation, 12 November 2026:** [Step 2 metadata audit](docs/evaluation/realworld-2026-11-12/README.md) froze 70 Python CVEs across 48 project groups: 26 development, 9 validation, 9 test, and 26 development-only due to prior exposure. All metadata references resolve, but source/patch labels remain unverified: **0 scorable real-world cases and no new accuracy result**.
 
 **Step 3 development checkpoint:** [source review and detector increment](docs/evaluation/development-2026-11-12/README.md) audited seven development cases (14 snapshots; 18 verified function spans). Inherited Tornado request-body analysis adds one tuning-corpus SQL detection. New Tornado/aiohttp redirect candidates remain experimental because they also flag patched normalization code. Default development-probe matches remain 1/7; reserved source stays unopened and independent labels are pending.
@@ -21,7 +35,7 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 **Step 4 correlation pilot:** [MCP configuration-to-code evidence](docs/evaluation/correlation-2026-11-13/README.md) connects supported VS Code Python declarations to existing findings through fingerprints, JSON pointers and source/sink locations. Unsupported/ambiguous declarations retain reasons. Groups appear in all exports and the **MCP links** tab, with no added vulnerability counts or runtime-exposure claims.
 
-**Step 5 evaluation, 13 November 2026:** [fresh comparison and failure analysis](docs/evaluation/step5-2026-11-13/README.md) froze implementation `36ee9ee` and reran both baselines on byte-verified inputs. Theron remains at **0% validation recall and 15.73% test recall** on the already-exposed OWASP splits. A controlled replay confirmed an old staging defect affecting nine Semgrep development outcomes; corrected results and the full history are preserved. Real-code labels remain provisional, and an [independent review worksheet](docs/evaluation/step5-2026-11-13/INDEPENDENT-REVIEW.md) is ready.
+**Step 5 evaluation, 13 November 2026:** [fresh comparison and failure analysis](docs/evaluation/step5-2026-11-13/README.md) froze implementation `36ee9ee` and recorded **0% validation recall and 15.73% test recall** before the coverage repair above. A controlled replay confirmed an old staging defect affecting nine Semgrep development outcomes; corrected results and the full history are preserved. Real-code labels remain provisional, and an [independent review worksheet](docs/evaluation/step5-2026-11-13/INDEPENDENT-REVIEW.md) is ready.
 
 On **12 November 2026**, we added [OWASP BenchmarkPython](https://github.com/OWASP-Benchmark/BenchmarkPython), pinned to `f1291485808b66e20ddb6b01b10dc71b3df8c8ba`: **1,230 synthetic cases across 14 categories**. Whole upstream template families stay in one split: 737 development, 248 validation and 245 test cases. The detector was frozen at [`a504494`](https://github.com/spideyctf/theron/commit/a504494e35b961770a5c37896a7f115bfe025088) before validation/test; all categories, including unsupported ones, remain scored.
 
@@ -31,7 +45,7 @@ On **12 November 2026**, we added [OWASP BenchmarkPython](https://github.com/OWA
 | Validation | 0 / 84 (0.00%) | 0 / 84 (0.00%) | 0.00% | 0.00% |
 | Test | 3 / 89 (3.37%) | 14 / 89 (15.73%) | 73.68% | 25.93% |
 
-The test set has 156 fixed cases; Theron matched five before and after the change. **Validation recall is zero**, exposing unsupported categories and unmodelled flows. This is a harder template/category-shift evaluation than the earlier tuning corpus; the higher tuning recall must not be presented as general accuracy. The original before/after study below belongs to its earlier frozen detector; Step 5 reproduces these default counts as exposed regressions at `36ee9ee`.
+At the historical freeze, Theron matched five of 156 fixed test cases and validation recall was zero. This exposed unsupported categories and unmodelled flows. The original before/after study belongs to its earlier frozen detector; Step 5 reproduces these default counts at `36ee9ee`. Current coverage-repair results appear above.
 
 | Frozen test comparison | TP | FN | FP | TN | Precision | Recall |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -47,7 +61,7 @@ See the [frozen protocol](docs/evaluation/owasp-2026-11-12/README.md), [complete
 
 ## PySASTBench tuning benchmark
 
-Re-evaluated **13 November 2026** after the Step 3 framework-source and redirect-precision changes, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). This increment follows the older frozen OWASP detector; the OWASP numbers above remain historical results for that detector. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
+Re-evaluated **13 November 2026** at coverage-repair freeze `fbcd818`, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). Label-matched counts remain unchanged. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
 
 | Measure | Result |
 | --- | ---: |
@@ -61,10 +75,12 @@ Re-evaluated **13 November 2026** after the Step 3 framework-source and redirect
 | Balanced accuracy | 87.41% |
 | False-positive rate on fixed variants | 3.33% |
 | Unscorable vulnerable variants | 1 |
-| Fixed files with any alert, including unrelated alerts | 7 / 120 |
-| Total alerts across fixed files / outside label match | 8 / 4 |
+| Fixed files with any alert, including unrelated alerts | 14 / 120 |
+| Total alerts across fixed files / outside label match | 17 / 13 |
 
 These are **case-level, label-matched metrics**, not the proportion of individual real-world alerts that are exploitable. The corpus was inspected during tuning; it is not a held-out test set. The evaluator and upstream labels were not changed to improve the score. Benchmark exit code **1** records the unresolved label rather than silently dropping it.
+
+The hash model adds nine alerts outside the labelled CWE/function matches on fixed variants. These are unadjudicated review items, not validated additional vulnerabilities; they increase review volume despite unchanged label-matched precision.
 
 | CWE | Category | TP | FN | FP | TN | Precision | Recall | F1 |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -79,12 +95,12 @@ CWE-77 has one additional unscorable vulnerable label. A perfect result within a
 
 | Engineering check, 13 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 426 passed; 1 dependency deprecation warning |
+| Python regression suite | 472 passed; 1 dependency deprecation warning |
 | Frontend tests | 11 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |
 
-Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/step5-2026-11-13/pysastbench-regression.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
+Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/coverage-2026-11-13/pysastbench.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
 
 The earlier four-module GitHub self-scan of `ff71cf6` analyzed **76 files in 58.24 seconds**, with **1 application informational notice**, **0 application vulnerability alerts**, **18 context detections** and **151 SBOM components**, including **15 unresolved versions**. This historical, single-run smoke test predates the new flow changes; it is not a current throughput benchmark or proof of security. [Self-scan summary](docs/evaluation/2026-11-12/self-scan-summary.json).
 
