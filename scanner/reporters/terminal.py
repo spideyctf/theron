@@ -28,6 +28,12 @@ if not _UNICODE:
 
 
 def print_terminal_report(result: ScanResult):
+    import json
+    if result.correlation_enabled:
+        print('MCP configuration-to-code links (pilot; no added vulnerability counts):')
+        print(json.dumps(dict(groups=result.correlation_groups,resolutions=result.correlation_resolutions),indent=2))
+    else:
+        print('MCP configuration-to-code correlation disabled or unavailable.')
     if result.context_findings:
         print(f"Context evidence: {len(result.context_findings)} detections in tests/examples/docs; excluded from application totals. See JSON or HTML for details.")
     if not _UNICODE:

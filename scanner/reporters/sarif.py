@@ -75,7 +75,9 @@ def generate_sarif_report(result: ScanResult) -> str:
                 }
             },
             "results": results,
-            "properties": {"commit_sha": result.commit_sha, "context_findings": [finding.to_dict() for finding in result.context_findings]},
+            "properties": {"commit_sha": result.commit_sha, "context_findings": [finding.to_dict() for finding in result.context_findings],
+                           'correlation_enabled':result.correlation_enabled, 'correlation_groups':result.correlation_groups,
+                           'correlation_resolutions':result.correlation_resolutions},
         }],
     }
     return json.dumps(sarif, indent=2)

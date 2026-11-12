@@ -9,6 +9,8 @@ def generate_html_report(result: ScanResult) -> str:
     summary = result.summary
     findings_json = json.dumps([f.to_dict() for f in result.findings]).replace("<", "\\u003c")
     context_json = json.dumps([f.to_dict() for f in result.context_findings], indent=2).replace("<", "\\u003c")
+    correlation_json = json.dumps(dict(enabled=result.correlation_enabled,groups=result.correlation_groups,
+                                      resolutions=result.correlation_resolutions),indent=2).replace('<','\\u003c')
     sbom_json = json.dumps(result.sbom, indent=2).replace("<", "\\u003c") if result.sbom else "null"
 
     by_sev = summary["by_severity"]
@@ -94,6 +96,7 @@ def generate_html_report(result: ScanResult) -> str:
         <div class="tab-bar">
             <div class="tab active" onclick="switchTab('findings')">Findings ({summary['total_findings']})</div>
             <div class="tab" onclick="switchTab('sbom')">SBOM</div>
+            <div class="tab" onclick="switchTab('correlation')">MCP links (pilot)</div>
         </div>
         <div id="tab-findings" class="tab-content active">
             <div class="filters">
@@ -107,6 +110,11 @@ def generate_html_report(result: ScanResult) -> str:
             <div id="findings-list"></div>
             <details><summary>Tests, examples and documentation evidence (excluded from application totals)</summary><pre class="sbom-pre" id="context-evidence"></pre></details>
         </div>
+        <div id="tab-correlation" class="tab-content">
+            <h2>MCP configuration-to-code links (pilot)</h2>
+            <p>Static declarations and code evidence only. Runtime reachability, exposure, authentication and privileges remain unknown. Groups do not add vulnerability counts.</p>
+            <pre class="sbom-pre" id="correlation-evidence"></pre>
+        </div>
         <div id="tab-sbom" class="tab-content">
             <h2>Software Bill of Materials (SBOM)</h2>
             <p class="meta">CycloneDX 1.5 format — auto-generated from dependency manifests</p>
@@ -116,6 +124,7 @@ def generate_html_report(result: ScanResult) -> str:
     <script>
         const findings = {findings_json};
         const contextEvidence = {context_json};
+        const correlationEvidence = {correlation_json};
         const sbom = {sbom_json};
         function esc(s) {{ return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : ''; }}
         function renderFindings(filter) {{
@@ -148,6 +157,7 @@ def generate_html_report(result: ScanResult) -> str:
             document.getElementById('tab-' + tabName).classList.add('active');
         }}
         document.getElementById('context-evidence').textContent = JSON.stringify(contextEvidence, null, 2);
+        document.getElementById('correlation-evidence').textContent = JSON.stringify(correlationEvidence, null, 2);
         renderFindings('all');
         document.getElementById('sbom-content').textContent = sbom ? JSON.stringify(sbom, null, 2) : 'No SBOM generated (SCA module not run or no dependencies found)';
     </script>

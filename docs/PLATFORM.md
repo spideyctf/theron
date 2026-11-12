@@ -1,8 +1,8 @@
 # Theron platform contract and implementation roadmap
 
-Status: Step 1 planning checkpoint, 12 November 2026 (Asia/Calcutta).
-Code/evaluation baseline inspected: `4c1bc8c83fcf27c26ac4b3f4ca3fd70a6a6a6e52`.
-This document defines the target and acceptance criteria. It does not add detectors, change report schemas or establish new accuracy results.
+Status: contract declared 12 November 2026; implementation status updated through Step 4 on 13 November 2026 (Asia/Calcutta).
+Original code/evaluation baseline: `4c1bc8c83fcf27c26ac4b3f4ca3fd70a6a6a6e52`.
+This document separates implemented capabilities from research acceptance criteria. Checkpoint reports below retain the evidence and measurement limits.
 
 ## Platform goal
 
@@ -24,7 +24,7 @@ flowchart LR
     B --> C[Existing four scanner plugins]
     C --> D[Normalize and deduplicate findings]
     D --> E[Existing context partition and reports]
-    D -. planned .-> F[Cross-layer correlation pass]
+    D --> F[Experimental MCP correlation pass]
     F -. planned .-> E
     F -. future opt-in .-> G[Controlled verification]
 ```
@@ -46,9 +46,9 @@ Availability and validation are separate: a default check is not automatically i
 | CI/CD and deployment | CI/config artifact profiling and ordinary source analysis | No workflow permission/data-flow model or deployment reachability proof | One supported workflow format and explicit permission/input boundaries | Labelled workflow pairs; distinguish declared configuration from deployment observations |
 | LLM pipelines and model artifacts | Selected provider sources, model-text-to-execution flows and unsafe object-loader sinks | No measured AI-specific accuracy; general RAG, exfiltration and artifact authenticity unmodelled | Independently label execution/loading boundary cases and their safe alternatives | Source-reviewed AI flows; distinguish dangerous use from ordinary prompt/model/package presence |
 | Agents, MCP and tools | Default malformed-config notices; experimental structured/text checks for MCP, instructions and permissions | No verified end-to-end tool/permission/exposure model; missing config auth fields do not prove missing runtime auth | Resolve an explicitly declared local entrypoint and connect supported code evidence | Exact config-to-file positives and unrelated/missing/ambiguous negatives; no commands executed |
-| Cross-layer correlation and prioritization | Findings aggregated/deduplicated; code traces and profile available | No implemented correlation groups, relation evidence or calibrated combined risk | One small deterministic config-to-code pilot described below | Correct/incorrect edge labels, incremental validated findings and an ablation with correlation disabled |
+| Cross-layer correlation and prioritization | Experimental MCP declaration-to-file-to-finding groups, relation evidence and unresolved outcomes | No independent real-code edge accuracy, runtime reachability or calibrated combined risk | Evaluate the bounded pilot described below | Correct/incorrect edge labels, incremental validated findings and an ablation with correlation disabled |
 | Verification | Static evidence only; scanner does not execute collected applications | No runtime reachability or controlled reproducer service | Later support bounded, isolated local verification for selected case types | Reproducer logs, limits, isolation and negative/inconclusive outcomes; a failed reproduction is not proof of safety |
-| Developer workflow | CLI, local single-user web workspace, filters, JSON/HTML/SARIF, SBOM, fingerprints/baselines, CI thresholds | Memory-only web history; no persistent multi-user workflow or measured triage benefit | Expose correlation evidence through the existing report views; persistence when needed | Report round trips and UI/export agreement; reviewer experiment only if claiming review-time benefit |
+| Developer workflow | CLI, local single-user web workspace, filters, JSON/HTML/SARIF, SBOM, fingerprints/baselines, CI thresholds and correlation evidence views | Memory-only web history; no persistent multi-user workflow or measured triage benefit | Evaluate review workflow; persistence when needed | Report round trips and UI/export agreement; reviewer experiment only if claiming review-time benefit |
 | Evaluation and research | Two pinned baseline configurations, synthetic split, ablations and raw results | No independently adjudicated real-world/AI-specific result; synthetic test already exposed | Audit and partition the reserved real-world metadata before source inspection | Project-level separation, declared eligibility/labels, source/flow-level matching, uncertainty and exclusions |
 
 The current four plugin names remain unchanged. New scope does not imply that new modules or command-line flags already exist.
@@ -80,13 +80,13 @@ Important distinctions:
 - `scope` is path-based context, not a verdict that a fixture/example finding is false.
 - Current `trace` entries are source/sink file/line records. They do not yet encode a verified execution graph or per-edge uncertainty.
 
-### Planned additive representation for the pilot
+### Implemented additive representation for the pilot
 
-When Step 4 is implemented, keep the original findings and add correlation groups that reference existing fingerprints **within the repository/commit/report**. Each relationship needs its kind, endpoint references, supporting file/location or structured pointer, observed/inferred/unknown classification, and limitations. Group summaries must retain uncertainty on critical links; combining weak evidence does not make it stronger.
+Step 4 keeps the original findings and adds correlation groups referencing existing fingerprints **within the repository/commit/report**. Relationships retain their kind, endpoint references, supporting locations/pointers and observed/inferred classification; unresolved declarations retain unknown outcomes/reasons. Groups retain limitations and original finding confidence/maturity. Combining weak evidence does not make it stronger.
 
 Do not reuse `status` for reproduction. Any later verification record needs separate outcomes: not run, reproduced, not reproduced or inconclusive, with environment identity and logs. “Not reproduced” does not mean safe.
 
-These fields are a design requirement, not implemented API fields. Before adding them, carry the change through models, normalization, engine and local CLI, JSON/HTML/SARIF/terminal output, web API/frontend types and views, and report tests. Existing JSON consumers must retain access to their current fields. SARIF context properties and application/context distinctions must remain intact. Do not add a new severity total that double-counts a group and its member findings.
+The bounded pilot is implemented through models, post-normalization engine/local CLI integration, JSON/HTML/SARIF/terminal output, web API/frontend types and views, and report tests. Existing JSON fields, SARIF context properties and application/context distinctions remain intact. Groups do not add a severity total or double-count member findings. Broader verification records remain planned.
 
 ## First cross-layer pilot and its boundary
 
@@ -126,11 +126,13 @@ B01 and B02 are deliberately earlier than claims about real-world gains. The res
 
 **B01 complete, 12 November 2026:** [metadata audit and frozen assignments](evaluation/realworld-2026-11-12/README.md): 26 development, 9 validation, 9 test and 26 development-only cases across 48 groups. No metadata blockers remain; source labels, file availability, semantic near-duplicates and licensing review are pending. Zero cases are scorable.
 
-**B02 engineering checkpoint:** [seven-case development review and bounded increment](evaluation/development-2026-11-12/README.md) delivered. All 18 selected function spans match the pinned metadata. Default inherited Tornado request-body modeling gains one tuning-corpus SQL case; new redirect candidates stay experimental after a patched-code alert. Independent labels, richer source/caller context, the final matching protocol and redirect precision remain open acceptance items. B02's research gate is incomplete; B03 has not started.
+**B02 engineering checkpoint:** [seven-case development review and bounded increment](evaluation/development-2026-11-12/README.md) delivered. All 18 selected function spans match the pinned metadata. Default inherited Tornado request-body modeling gains one tuning-corpus SQL case; new redirect candidates stay experimental after a patched-code alert. Independent labels, richer source/caller context, the final matching protocol and redirect precision remain open acceptance items. B02's research gate is incomplete.
 
 **B02 precision follow-up, 13 November 2026:** [fixed-origin and query-context evidence](evaluation/redirect-precision-2026-11-13/README.md) reclassifies two query-only experimental candidates as unknown-base coverage notices. Original URL controls preserve counterexamples to blanket slash sanitization; the patched-normalization candidate stays experimental. The research gate still needs independent human adjudication and broader context.
 
 ## Research acceptance criteria
+
+**B03 / Step 4 engineering pilot complete, 13 November 2026:** [MCP declaration-to-code checkpoint](evaluation/correlation-2026-11-13/README.md) includes groups, unresolved outcomes, same-input disabled controls and end-to-end export/UI evidence. Supported resolution is deliberately limited to direct Python declarations in the VS Code editor-managed schema. No commands run, no severity boost and no independent real-code accuracy claim. B04 / Step 5 has not started.
 
 The paper should test a concrete cross-layer hypothesis under the broad platform goal: whether supported correlation adds correctly identified, actionable risks or helps reviewers make more accurate decisions compared with the component outputs alone. Integration, a dashboard and higher alert counts are not sufficient evidence of that benefit.
 

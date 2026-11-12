@@ -1,0 +1,144 @@
+{
+  "repo_full_name": "owner/project",
+  "branch": "main",
+  "findings": [
+    {
+      "title": "External input reaches command/code execution",
+      "severity": "CRITICAL",
+      "category": "sast",
+      "module": "sast",
+      "description": "External input from line 1 reaches this execution sink without a recognised boundary.",
+      "file_path": "server.py",
+      "line_number": 1,
+      "code_snippet": "1: exec(input())",
+      "recommendation": "Do not execute untrusted text. Use a fixed operation allowlist and structured arguments.",
+      "cwe": "CWE-94",
+      "confidence": "high",
+      "rule_id": "PY-SAST-EXEC-001",
+      "references": [],
+      "fingerprint": "0d2463b689b807525732d3ee",
+      "maturity": "stable",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "static-flow",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": [
+        {
+          "role": "source",
+          "file_path": "server.py",
+          "line_number": 1
+        },
+        {
+          "role": "sink",
+          "file_path": "server.py",
+          "line_number": 1
+        }
+      ]
+    }
+  ],
+  "files_scanned": 2,
+  "modules_run": [
+    "sast"
+  ],
+  "sbom": null,
+  "scan_duration_seconds": 0.0,
+  "summary": {
+    "repo": "owner/project",
+    "branch": "main",
+    "files_scanned": 2,
+    "total_findings": 1,
+    "context_findings": 0,
+    "vulnerability_findings": 1,
+    "by_severity": {
+      "CRITICAL": 1
+    },
+    "modules_run": [
+      "sast"
+    ],
+    "scan_duration_seconds": 0.0
+  },
+  "project_profile": null,
+  "context_findings": [],
+  "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "correlation_enabled": true,
+  "correlation_groups": [
+    {
+      "id": "mcp-flow-e19f878aeb646c7c96a7d315",
+      "title": "Declared MCP entrypoint contains a supported code flow",
+      "scope": "application",
+      "classification": "inferred",
+      "maturity": "experimental",
+      "finding_fingerprints": [
+        "0d2463b689b807525732d3ee"
+      ],
+      "limitations": [
+        "Workspace binding is inferred from the configuration location, not verified in a running MCP client.",
+        "Code presence and static flow do not establish startup or callback reachability.",
+        "Network exposure, authentication, effective privileges and exploitability remain unknown.",
+        "No declared command or scanned module was executed. Groups do not add vulnerability counts or severity."
+      ],
+      "relationships": [
+        {
+          "kind": "declares_entrypoint",
+          "source": {
+            "kind": "configuration",
+            "file_path": ".vscode/mcp.json",
+            "pointer": "/servers/local"
+          },
+          "target": {
+            "kind": "file",
+            "file_path": "server.py"
+          },
+          "classification": "inferred",
+          "evidence": [
+            {
+              "file_path": ".vscode/mcp.json",
+              "pointer": "/servers/local/args"
+            }
+          ]
+        },
+        {
+          "kind": "entrypoint_contains_flow",
+          "source": {
+            "kind": "file",
+            "file_path": "server.py"
+          },
+          "target": {
+            "kind": "finding",
+            "fingerprint": "0d2463b689b807525732d3ee"
+          },
+          "classification": "observed",
+          "evidence": [
+            {
+              "role": "source",
+              "file_path": "server.py",
+              "line_number": 1
+            },
+            {
+              "role": "sink",
+              "file_path": "server.py",
+              "line_number": 1
+            }
+          ],
+          "confidence": "high",
+          "maturity": "stable"
+        }
+      ]
+    }
+  ],
+  "correlation_resolutions": [
+    {
+      "config_file": ".vscode/mcp.json",
+      "pointer": "/servers/local",
+      "status": "resolved",
+      "reason": "workspace_binding_inferred",
+      "entrypoint": "server.py",
+      "classification": "inferred",
+      "scope": "application",
+      "group_ids": [
+        "mcp-flow-e19f878aeb646c7c96a7d315"
+      ]
+    }
+  ]
+}

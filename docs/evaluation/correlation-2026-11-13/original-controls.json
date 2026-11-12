@@ -1,0 +1,251 @@
+{
+  "date": "2026-11-13",
+  "starting_commit": "0756ce361ab611729ca7f9c06d15cd1c27a906f0",
+  "provenance": "Original assistant-authored controls, not real projects or an independently labelled benchmark",
+  "network_requests": 0,
+  "declared_commands_executed": false,
+  "app_started": false,
+  "reserved_source_opened": false,
+  "cases": [
+    {
+      "name": "direct_python",
+      "expected_groups": 1,
+      "actual_groups": 1,
+      "disabled_groups": 0,
+      "scope": [
+        "application"
+      ],
+      "resolutions": [
+        {
+          "config_file": ".vscode/mcp.json",
+          "pointer": "/servers/local",
+          "status": "resolved",
+          "reason": "workspace_binding_inferred",
+          "entrypoint": "server.py",
+          "classification": "inferred",
+          "scope": "application",
+          "group_ids": [
+            "mcp-flow-e19f878aeb646c7c96a7d315"
+          ]
+        }
+      ],
+      "input_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "c43eb9845f009f07e3fbd907fa8d3b04d8ca825b59636df3310a10af5a984a40"
+      },
+      "application_vulnerability_count": 1,
+      "unchanged_findings_context_and_summary_under_ablation": true
+    },
+    {
+      "name": "safe_entrypoint",
+      "expected_groups": 0,
+      "actual_groups": 0,
+      "disabled_groups": 0,
+      "scope": [],
+      "resolutions": [
+        {
+          "config_file": ".vscode/mcp.json",
+          "pointer": "/servers/local",
+          "status": "resolved",
+          "reason": "no_eligible_flow_evidence_in_entrypoint",
+          "entrypoint": "server.py",
+          "classification": "inferred",
+          "scope": "application",
+          "group_ids": []
+        }
+      ],
+      "input_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "cb31cef8c4de359b3444dbd7f01065e45d9a01273a0370e05c021ee41e6567e2"
+      },
+      "application_vulnerability_count": 0,
+      "unchanged_findings_context_and_summary_under_ablation": true
+    },
+    {
+      "name": "unrelated_unsafe_file",
+      "expected_groups": 0,
+      "actual_groups": 0,
+      "disabled_groups": 0,
+      "scope": [],
+      "resolutions": [
+        {
+          "config_file": ".vscode/mcp.json",
+          "pointer": "/servers/local",
+          "status": "resolved",
+          "reason": "no_eligible_flow_evidence_in_entrypoint",
+          "entrypoint": "server.py",
+          "classification": "inferred",
+          "scope": "application",
+          "group_ids": []
+        }
+      ],
+      "input_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1",
+        "unrelated.py": "c43eb9845f009f07e3fbd907fa8d3b04d8ca825b59636df3310a10af5a984a40"
+      },
+      "application_vulnerability_count": 1,
+      "unchanged_findings_context_and_summary_under_ablation": true
+    },
+    {
+      "name": "missing_target",
+      "expected_groups": 0,
+      "actual_groups": 0,
+      "disabled_groups": 0,
+      "scope": [],
+      "resolutions": [
+        {
+          "config_file": ".vscode/mcp.json",
+          "pointer": "/servers/local",
+          "status": "unresolved",
+          "reason": "target_not_collected_with_exact_case",
+          "entrypoint": "missing.py",
+          "classification": "unknown",
+          "scope": "application",
+          "group_ids": []
+        }
+      ],
+      "input_sha256": {
+        ".vscode/mcp.json": "3e7cd54fa0ae21c058168a28bb197e5f01e52f9fe81c522b3ed64c499f272965",
+        "server.py": "c43eb9845f009f07e3fbd907fa8d3b04d8ca825b59636df3310a10af5a984a40"
+      },
+      "application_vulnerability_count": 1,
+      "unchanged_findings_context_and_summary_under_ablation": true
+    },
+    {
+      "name": "wrapper",
+      "expected_groups": 0,
+      "actual_groups": 0,
+      "disabled_groups": 0,
+      "scope": [],
+      "resolutions": [
+        {
+          "config_file": ".vscode/mcp.json",
+          "pointer": "/servers/local",
+          "status": "unresolved",
+          "reason": "unsupported_interpreter_or_wrapper",
+          "entrypoint": null,
+          "classification": "unknown",
+          "scope": "application",
+          "group_ids": []
+        }
+      ],
+      "input_sha256": {
+        ".vscode/mcp.json": "23492a96975e908178f5bbaffc562bce834e9b4885a81778b6255d414741ee80",
+        "server.py": "c43eb9845f009f07e3fbd907fa8d3b04d8ca825b59636df3310a10af5a984a40"
+      },
+      "application_vulnerability_count": 1,
+      "unchanged_findings_context_and_summary_under_ablation": true
+    },
+    {
+      "name": "ambiguous_cwd",
+      "expected_groups": 0,
+      "actual_groups": 0,
+      "disabled_groups": 0,
+      "scope": [],
+      "resolutions": [
+        {
+          "config_file": ".vscode/mcp.json",
+          "pointer": "/servers/local",
+          "status": "unresolved",
+          "reason": "unresolved_working_directory",
+          "entrypoint": null,
+          "classification": "unknown",
+          "scope": "application",
+          "group_ids": []
+        }
+      ],
+      "input_sha256": {
+        ".vscode/mcp.json": "a48ad94525697af3a2b6d373f7c2719ba3f934221ea62b219a1cda3c8b2914ad",
+        "server.py": "c43eb9845f009f07e3fbd907fa8d3b04d8ca825b59636df3310a10af5a984a40"
+      },
+      "application_vulnerability_count": 1,
+      "unchanged_findings_context_and_summary_under_ablation": true
+    },
+    {
+      "name": "unknown_client",
+      "expected_groups": 0,
+      "actual_groups": 0,
+      "disabled_groups": 0,
+      "scope": [],
+      "resolutions": [
+        {
+          "config_file": ".mcp.json",
+          "pointer": "/mcpServers/local",
+          "status": "unresolved",
+          "reason": "unknown_client_working_directory_or_variable_semantics",
+          "entrypoint": null,
+          "classification": "unknown",
+          "scope": "application",
+          "group_ids": []
+        }
+      ],
+      "input_sha256": {
+        ".mcp.json": "774516f053fbd88e3e4596a0c76a80c950565bb4559bfbeaacf6436f4f52e83b",
+        "server.py": "c43eb9845f009f07e3fbd907fa8d3b04d8ca825b59636df3310a10af5a984a40"
+      },
+      "application_vulnerability_count": 1,
+      "unchanged_findings_context_and_summary_under_ablation": true
+    },
+    {
+      "name": "case_collision",
+      "expected_groups": 0,
+      "actual_groups": 0,
+      "disabled_groups": 0,
+      "scope": [],
+      "resolutions": [
+        {
+          "config_file": ".vscode/mcp.json",
+          "pointer": "/servers/local",
+          "status": "unresolved",
+          "reason": "ambiguous_collected_path",
+          "entrypoint": "server.py",
+          "classification": "unknown",
+          "scope": "application",
+          "group_ids": []
+        }
+      ],
+      "input_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "c43eb9845f009f07e3fbd907fa8d3b04d8ca825b59636df3310a10af5a984a40",
+        "Server.py": "d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1"
+      },
+      "application_vulnerability_count": 1,
+      "unchanged_findings_context_and_summary_under_ablation": true
+    },
+    {
+      "name": "example_context",
+      "expected_groups": 1,
+      "actual_groups": 1,
+      "disabled_groups": 0,
+      "scope": [
+        "example"
+      ],
+      "resolutions": [
+        {
+          "config_file": "examples/demo/.vscode/mcp.json",
+          "pointer": "/servers/local",
+          "status": "resolved",
+          "reason": "workspace_binding_inferred",
+          "entrypoint": "examples/demo/server.py",
+          "classification": "inferred",
+          "scope": "example",
+          "group_ids": [
+            "mcp-flow-73410af663d38a351aadb794"
+          ]
+        }
+      ],
+      "input_sha256": {
+        "examples/demo/.vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1",
+        "examples/demo/server.py": "c43eb9845f009f07e3fbd907fa8d3b04d8ca825b59636df3310a10af5a984a40"
+      },
+      "application_vulnerability_count": 0,
+      "unchanged_findings_context_and_summary_under_ablation": true
+    }
+  ],
+  "limitations": [
+    "No independent real-code link labels or triage-time study.",
+    "Fixture success validates the bounded mechanism only."
+  ]
+}

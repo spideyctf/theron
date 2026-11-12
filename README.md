@@ -19,6 +19,8 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 **Precision follow-up, 13 November 2026:** [redirect evidence review](docs/evaluation/redirect-precision-2026-11-13/README.md) adds fixed-origin proofs and reclassifies two query-only experimental candidates as explicit unknown-base notices. The remaining patched-normalization candidate stays experimental; offline URL controls do not establish deployed exploitability.
 
+**Step 4 correlation pilot:** [MCP configuration-to-code evidence](docs/evaluation/correlation-2026-11-13/README.md) connects supported VS Code Python declarations to existing findings through fingerprints, JSON pointers and source/sink locations. Unsupported/ambiguous declarations retain reasons. Groups appear in all exports and the **MCP links** tab, with no added vulnerability counts or runtime-exposure claims.
+
 On **12 November 2026**, we added [OWASP BenchmarkPython](https://github.com/OWASP-Benchmark/BenchmarkPython), pinned to `f1291485808b66e20ddb6b01b10dc71b3df8c8ba`: **1,230 synthetic cases across 14 categories**. Whole upstream template families stay in one split: 737 development, 248 validation and 245 test cases. The detector was frozen at [`a504494`](https://github.com/spideyctf/theron/commit/a504494e35b961770a5c37896a7f115bfe025088) before validation/test; all categories, including unsupported ones, remain scored.
 
 | Split | Before: detected / vulnerable | After: detected / vulnerable | After precision | After F1 |
@@ -75,8 +77,8 @@ CWE-77 has one additional unscorable vulnerable label. A perfect result within a
 
 | Engineering check, 13 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 364 passed; 1 dependency deprecation warning |
-| Frontend tests | 8 passed |
+| Python regression suite | 417 passed; 1 dependency deprecation warning |
+| Frontend tests | 11 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |
 
@@ -144,6 +146,7 @@ Open **http://127.0.0.1:8000/**. Configure `GITHUB_TOKEN` before starting the ba
 | Tab | Data shown |
 | --- | --- |
 | Findings | Application detections with combined filters, evidence and remediation |
+| MCP links | Experimental declaration-to-code groups, finding references, resolution reasons and uncertainty |
 | Tests / examples | Retained evidence from test, example and documentation paths |
 | Dependencies / SBOM | Supported package inventory, unresolved versions and complete SBOM export |
 | Project profile | Detected languages, frameworks and configuration paths |
@@ -171,7 +174,10 @@ Place `theron.yml` in the local scan root or CLI working directory for GitHub sc
 modules: [ai, sast, sca, agentic]
 exclude: []
 accepted_fingerprints: []
+correlation_enabled: true
 ```
+
+The MCP correlation pilot adds evidence groups, not vulnerability counts. Disable it with `--no-correlation` or `correlation_enabled: false`; API scans also accept `correlation_enabled: false`.
 
 Accepted fingerprints mark findings as existing. Exclusions omit paths before reading/downloading them. The CLI is report-only by default; opt into a failure threshold explicitly:
 

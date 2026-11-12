@@ -155,6 +155,9 @@ class ScanResult:
     project_profile: Optional[dict] = None
     context_findings: List[Finding] = field(default_factory=list)
     commit_sha: Optional[str] = None
+    correlation_enabled: bool = False
+    correlation_groups: List[dict] = field(default_factory=list)
+    correlation_resolutions: List[dict] = field(default_factory=list)
 
     @property
     def summary(self) -> dict:
@@ -187,4 +190,7 @@ class ScanResult:
             "project_profile": self.project_profile,
             "context_findings": [f.to_dict() for f in self.context_findings],
             "commit_sha": self.commit_sha,
+            "correlation_enabled": self.correlation_enabled,
+            "correlation_groups": self.correlation_groups,
+            "correlation_resolutions": self.correlation_resolutions,
         }

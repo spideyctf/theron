@@ -36,6 +36,8 @@ This is a repair benchmark, so it needs a SAST adapter and label audit first. Au
 
 ## Candidate contribution
 
+**Step 4 engineering checkpoint:** [MCP configuration-to-code correlation pilot](evaluation/correlation-2026-11-13/README.md) now provides report-local relationships, unresolved reasons and consistent exports/UI. Nine original controls and same-input disabling preserve all original findings and severity counts. This demonstrates bounded integration only; independently labelled real-code edges, applicable comparisons and measured incremental benefit are still required for research claims.
+
 The [13 November redirect-precision follow-up](evaluation/redirect-precision-2026-11-13/README.md) preserves the same source sample and frozen splits. Two query-only experimental candidates become explicit unknown-base notices; fixed-origin proofs have adversarial original controls and a sanitizer ablation check. A slash/backslash parser counterexample justifies retaining an experimental normalization candidate, without proving runtime reachability or relabelling the patched snapshot. Tuning results remain unchanged. These are engineering/development observations; independent adjudication and application context remain necessary.
 
 The proposed platform contribution is whether combining supported code, configuration, dependency and agent evidence identifies additional actionable risks or improves review decisions compared with the component tools/outputs alone. This is not yet demonstrated. The first planned pilot links an explicitly configured local Python entrypoint to a supported dangerous code flow, preserving unknown runtime exposure and privileges.

@@ -15,15 +15,31 @@ export interface ScanResult {
   modules_run: string[]; sbom: unknown; scan_duration_seconds: number; project_profile: unknown
   context_findings?: Finding[]
   commit_sha?: string | null
+  correlation_enabled?: boolean
+  correlation_groups?: CorrelationGroup[]
+  correlation_resolutions?: CorrelationResolution[]
   summary: { repo: string; branch: string; files_scanned: number; total_findings: number
     by_severity: Partial<Record<Severity, number>>; modules_run: string[]; scan_duration_seconds: number }
+}
+export interface EvidenceLocation { file_path: string; line_number?: number; pointer?: string; role?: string }
+export interface CorrelationEndpoint { kind: string; file_path?: string; pointer?: string; fingerprint?: string }
+export interface CorrelationGroup {
+  id: string; title: string; scope: string; classification: string; maturity: string
+  finding_fingerprints: string[]; limitations: string[]
+  relationships: { kind: string; source: CorrelationEndpoint; target: CorrelationEndpoint; classification: string
+    evidence: EvidenceLocation[]; confidence?: string; maturity?: string }[]
+}
+export interface CorrelationResolution {
+  config_file: string; pointer: string; status: string; reason: string; entrypoint: string | null
+  classification: string; scope: string; group_ids: string[]
 }
 export interface ScanJob {
   id: string; repository: string; branch: string | null; modules: string[]; include_experimental: boolean
   status: 'queued' | 'running' | 'completed' | 'failed'; created_at: string; finished_at: string | null
   error: string | null; result?: ScanResult | null
+  correlation_enabled?: boolean
 }
-export interface ScanInput { repository: string; branch: string | null; modules: string[]; include_experimental: boolean }
+export interface ScanInput { repository: string; branch: string | null; modules: string[]; include_experimental: boolean; correlation_enabled?: boolean }
 export interface Health { status: string; github_token_configured: boolean }
 
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
@@ -42,7 +58,7 @@ export const api = {
     method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(input),
   }),
 }
-export function sourceUrl(result: ScanResult, finding: Finding): string {
+export function sourceUrl(result: ScanResult, finding: Pick<Finding, 'file_path' | 'line_number'>): string {
   const path = finding.file_path.replaceAll('\\', '/').split('/').map(encodeURIComponent).join('/')
   return 'https://github.com/' + result.repo_full_name + '/blob/' + encodeURIComponent(result.commit_sha || result.branch) + '/' + path + (finding.line_number ? '#L' + finding.line_number : '')
 }

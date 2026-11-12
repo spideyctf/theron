@@ -32,6 +32,7 @@ class ScanRequest(BaseModel):
     branch: Optional[str] = Field(default=None, max_length=250)
     modules: List[str] = Field(default_factory=lambda: ["ai", "sast", "sca", "agentic"])
     include_experimental: bool = False
+    correlation_enabled: bool = True
 
 
 def repository_name(value: str) -> str:
@@ -99,7 +100,8 @@ def create_app(scanner_factory=ScanEngine, static_dir=None):
             jobs[scan_id]["status"] = "running"
         engine = None
         try:
-            engine = scanner_factory(token, config={"include_experimental": body.include_experimental})
+            engine = scanner_factory(token, config={"include_experimental": body.include_experimental,
+                                                    'correlation_enabled':body.correlation_enabled})
             owner, repo = body.repository.split("/")
             result = engine.scan_repo(owner, repo, branch=body.branch, modules=body.modules)
             with lock:
@@ -142,6 +144,7 @@ def create_app(scanner_factory=ScanEngine, static_dir=None):
             jobs[scan_id] = {
                 "id": scan_id, "repository": body.repository, "branch": body.branch,
                 "modules": body.modules, "include_experimental": body.include_experimental,
+                'correlation_enabled':body.correlation_enabled,
                 "status": "queued", "created_at": datetime.now(timezone.utc).isoformat(),
                 "finished_at": None, "error": None, "result": None,
             }

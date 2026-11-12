@@ -14,6 +14,7 @@ from scanner.profiler import ProjectProfiler
 from scanner.rule_loader import RuleLoader
 from scanner.plugins import discover_plugins
 from scanner.finding_utils import normalize_findings, coverage_finding, partition_findings
+from scanner.correlation import correlate
 from scanner.config import validate_modules
 from scanner.utils.helpers import should_scan_file, is_excluded
 
@@ -63,7 +64,9 @@ class ScanEngine:
             if is_excluded(path, self.config.get("exclude")):
                 continue
             if should_scan_file(path):
-                if size > MAX_FILE_SIZE:
+                if item.get('mode') == '120000':
+                    coverage.append(coverage_finding(path, 'Repository symlink contents are not analyzed as target code.'))
+                elif size > MAX_FILE_SIZE:
                     coverage.append(coverage_finding(path, "The file exceeds the 500 KB analysis limit."))
                 else:
                     scanable_paths.append(path)
@@ -130,6 +133,7 @@ class ScanEngine:
 
         result.findings = normalize_findings(result.findings, self.config)
         partition_findings(result)
+        correlate(result, files, self.config.get('correlation_enabled', True))
         result.scan_duration_seconds = round(time.time() - start_time, 2)
 
         # Sort findings by severity

@@ -40,6 +40,7 @@ def main():
     parser.add_argument("--rules-dir", help="Custom rules directory (default: bundled rules/)")
     parser.add_argument("--config", help="Path to theron.yml (default: target's theron.yml)")
     parser.add_argument("--include-experimental", action="store_true", help="Enable experimental rules")
+    parser.add_argument('--no-correlation', action='store_true', help='Disable additive MCP-to-code evidence links')
     parser.add_argument("--fail-on", choices=["critical", "high", "medium", "low"],
                         help="Exit 2 when a new finding reaches this severity; default reports only")
 
@@ -73,6 +74,8 @@ def main():
     try:
         config = load_config(os.getcwd(), args.config)
         config["include_experimental"] = args.include_experimental
+        if args.no_correlation:
+            config['correlation_enabled'] = False
         engine = ScanEngine(token, rules_dir=args.rules_dir, config=config)
     except Exception as e:
         print(f"Error initializing scanner: {e}")
@@ -122,6 +125,8 @@ def _run_local_scan(args, module_names):
         print(f"Error loading config: {exc}")
         sys.exit(1)
     config["include_experimental"] = args.include_experimental
+    if args.no_correlation:
+        config['correlation_enabled'] = False
     if module_names is None:
         module_names = config["modules"]
 
@@ -134,14 +139,17 @@ def _run_local_scan(args, module_names):
     files = {}
     coverage = []
     for root, dirs, filenames in os.walk(scan_dir):
-        dirs[:] = [d for d in dirs if d not in DEFAULT_SKIP_DIRS]
+        dirs[:] = [d for d in dirs if d not in DEFAULT_SKIP_DIRS or d == '.vscode']
         for filename in filenames:
-            if should_scan_file(filename):
-                full_path = os.path.join(root, filename)
-                rel_path = os.path.relpath(full_path, scan_dir).replace("\\", "/")
+            full_path = os.path.join(root, filename)
+            rel_path = os.path.relpath(full_path, scan_dir).replace("\\", "/")
+            if should_scan_file(rel_path):
                 if is_excluded(rel_path, config.get("exclude")):
                     continue
                 try:
+                    if os.path.islink(full_path) or not Path(full_path).resolve().is_relative_to(Path(scan_dir).resolve()):
+                        coverage.append(coverage_finding(rel_path, 'Symlink or file outside the scan root was not read.'))
+                        continue
                     if os.path.getsize(full_path) > 500_000:
                         coverage.append(coverage_finding(rel_path, "The file exceeds the 500 KB analysis limit."))
                         continue
@@ -177,6 +185,8 @@ def _run_local_scan(args, module_names):
 
     result.findings = normalize_findings(result.findings, config)
     partition_findings(result)
+    from scanner.correlation import correlate
+    correlate(result, files, config.get('correlation_enabled', True))
     result.scan_duration_seconds = round(time.time() - start, 2)
 
     sev_order = {Severity.CRITICAL: 0, Severity.HIGH: 1, Severity.MEDIUM: 2, Severity.LOW: 3, Severity.INFO: 4}

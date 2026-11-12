@@ -10,6 +10,7 @@ DEFAULT_CONFIG = {
     "modules": ["ai", "sast", "sca", "agentic"],
     "exclude": [],
     "accepted_fingerprints": [],
+    "correlation_enabled": True,
 }
 
 MODULES = {"ai", "sast", "sca", "agentic"}
@@ -42,6 +43,8 @@ def load_config(scan_root: str, config_path: Optional[str] = None) -> Dict[str, 
         if key in loaded:
             config[key] = loaded[key]
     validate_modules(config["modules"])
+    if type(config['correlation_enabled']) is not bool:
+        raise ValueError('correlation_enabled must be a boolean')
     for key in ("exclude", "accepted_fingerprints"):
         if not isinstance(config[key], list) or any(not isinstance(item, str) for item in config[key]):
             raise ValueError(f"{key} must be a list of strings")

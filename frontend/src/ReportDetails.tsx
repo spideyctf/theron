@@ -1,10 +1,40 @@
 import { useState } from 'react'
-import { downloadBlob } from './api'
-import type { ScanJob, ScanResult } from './api'
+import { downloadBlob, sourceUrl } from './api'
+import type { Finding, ScanJob, ScanResult } from './api'
 
 type Component = { name?: string; version?: string; purl?: string; type?: string; 'bom-ref'?: string; properties?: { name: string; value: string }[] }
 type Bom = { bomFormat?: string; specVersion?: string; components?: Component[] }
 const pretty = (value: unknown) => JSON.stringify(value, null, 2)
+
+export function Correlations({ result, onInspect }: { result: ScanResult; onInspect?: (finding: Finding) => void }) {
+  if (result.correlation_enabled === undefined) return <div className="report-empty"><h3>MCP links unavailable</h3><p>This report predates the correlation pilot. A new scan can collect declaration and code evidence.</p></div>
+  if (!result.correlation_enabled) return <div className="report-empty"><h3>MCP links disabled</h3><p>The scan retained the original findings without the correlation pass.</p></div>
+  const groups = result.correlation_groups || []
+  const resolutions = result.correlation_resolutions || []
+  const findings = [...result.findings, ...(result.context_findings || [])]
+  return <div className="report-content"><h3>MCP configuration-to-code links</h3>
+    <p className="report-note">Experimental static associations. Groups reference existing findings and add no vulnerability count or severity. Runtime reachability, network exposure, authentication and privileges remain unknown.</p>
+    <p>{groups.length} groups · {resolutions.length} declarations reviewed</p>
+    {groups.map(group => <section className="correlation-group" key={group.id} aria-label={group.title}>
+      <h4>{group.title}</h4><p>{group.scope} · {group.classification} · {group.maturity}</p><code>{group.id}</code>
+      {group.relationships.map((edge,index) => <div key={index} className="correlation-edge">
+        <strong>{edge.kind.replaceAll('_',' ')} · {edge.classification}</strong>
+        <p>{edge.source.file_path || edge.source.fingerprint}{edge.source.pointer && <code> {edge.source.pointer}</code>} → {edge.target.file_path || edge.target.fingerprint}</p>
+        {edge.confidence && <p>Original finding confidence: {edge.confidence} · maturity: {edge.maturity}</p>}
+        <ul>{edge.evidence.map((location,i) => <li key={i}>{location.role && `${location.role}: `}<a href={sourceUrl(result,{ file_path:location.file_path, line_number:location.line_number || null })} target="_blank" rel="noreferrer">{location.file_path}{location.line_number ? `:${location.line_number}` : ''}</a>{location.pointer && <code> {location.pointer}</code>}</li>)}</ul>
+      </div>)}
+      <h5>Referenced findings</h5><ul>{group.finding_fingerprints.map(fingerprint => {
+        const finding = findings.find(f => f.fingerprint === fingerprint)
+        return <li key={fingerprint}>{finding ? <><a href={sourceUrl(result,finding)} target="_blank" rel="noreferrer">{finding.title} · {finding.file_path}:{finding.line_number}</a>{onInspect && <button className="quiet-button" onClick={() => onInspect(finding)} aria-label={`Inspect original finding: ${finding.title}`}>Inspect finding</button>}</> : 'Referenced finding unavailable'} <code>{fingerprint}</code></li>
+      })}</ul><h5>Limits of this association</h5><ul>{group.limitations.map(limit => <li key={limit}>{limit}</li>)}</ul>
+    </section>)}
+    {!groups.length && <p>No supported declaration-to-dangerous-flow group was established. This does not establish safety.</p>}
+    <h4>Declaration resolution</h4>
+    <div className="table-scroll"><table className="inventory-table"><thead><tr><th>Configuration</th><th>Candidate entrypoint</th><th>Outcome</th></tr></thead><tbody>{resolutions.map((row,i) => <tr key={i}><td>{row.config_file}<small>{row.pointer || 'Root object'} · {row.scope}</small></td><td>{row.entrypoint || 'Unresolved'}</td><td>{row.status} · {row.classification}<small>{row.reason.replaceAll('_',' ')}</small></td></tr>)}</tbody></table></div>
+    {!resolutions.length && <p>No supported MCP configuration filenames were collected.</p>}
+    <details className="raw-data"><summary>Complete correlation evidence</summary><pre>{pretty({groups,resolutions})}</pre></details>
+  </div>
+}
 
 export function Dependencies({ result }: { result: ScanResult }) {
   const [search, setSearch] = useState('')
@@ -43,6 +73,7 @@ export function ScanDetails({ result, job, sample }: { result: ScanResult; job: 
     <div><dt>Tests / examples / documentation</dt><dd>{result.context_findings?.length || 0} contextual detections, excluded from application totals</dd></div>
     <div><dt>Modules completed</dt><dd>{result.modules_run.join(', ') || 'None'}</dd></div><div><dt>Informational notices</dt><dd>{notices.length}</dd></div>
     <div><dt>Report origin</dt><dd>{sample ? 'Illustrative sample data' : 'Live scan'}</dd></div>
+    <div><dt>MCP correlation pilot</dt><dd>{result.correlation_enabled === undefined ? 'Not supplied' : result.correlation_enabled ? 'Enabled' : 'Disabled'}</dd></div>
     {job && <><div><dt>Scan ID</dt><dd><code>{job.id}</code></dd></div><div><dt>Status</dt><dd>{job.status}</dd></div><div><dt>Modules requested</dt><dd>{job.modules.join(', ')}</dd></div><div><dt>Experimental rules</dt><dd>{job.include_experimental ? 'Enabled — review candidates' : 'Disabled'}</dd></div><div><dt>Created at</dt><dd>{job.created_at}</dd></div><div><dt>Finished at</dt><dd>{job.finished_at || 'Not finished'}</dd></div></>}
   </dl><p className="report-note">An empty findings list does not prove a project is secure. Review informational notices for skipped files, unresolved versions and unavailable advisory lookups. History resets when the backend restarts.</p>
     {job && <details className="raw-data"><summary>Complete job metadata</summary><pre>{pretty(Object.fromEntries(Object.entries(job).filter(([key]) => key !== 'result')))}</pre></details>}

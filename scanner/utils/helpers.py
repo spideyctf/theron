@@ -29,6 +29,10 @@ def should_scan_file(file_path: str, skip_dirs: Set[str] = None) -> bool:
         skip_dirs = DEFAULT_SKIP_DIRS
     for skip in skip_dirs:
         if skip in file_path.replace("\\", "/").split("/"):
+            if skip == '.vscode' and file_path.replace('\\','/').endswith('/.vscode/mcp.json'):
+                continue
+            if skip == '.vscode' and file_path.replace('\\','/') == '.vscode/mcp.json':
+                continue
             return False
     basename = file_path.replace("\\", "/").rsplit("/", 1)[-1]
     ext = "." + basename.rsplit(".", 1)[-1] if "." in basename else ""
