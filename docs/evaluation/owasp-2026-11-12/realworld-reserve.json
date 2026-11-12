@@ -1,0 +1,752 @@
+{
+  "dataset": "ByteDance PatchEval-Verified",
+  "revision": "b43285cdde80cc04608d5f1178a330b740c91c2d",
+  "metadata_url": "https://raw.githubusercontent.com/bytedance/PatchEval/b43285cdde80cc04608d5f1178a330b740c91c2d/patcheval/datasets/patcheval_verified.json",
+  "metadata_sha256": "65e873923d738221389ed32408c4f5fa75882ea07609c500761207d013da0f62",
+  "total_cases": 230,
+  "python_cases": 70,
+  "source_bodies_inspected": false,
+  "images_pulled_or_executed": false,
+  "status": "Reserved for future real-world SAST protocol; not evaluated and not a current accuracy claim.",
+  "license": "Repository Apache-2.0; target projects retain their own licenses.",
+  "limitations": [
+    "Designed for vulnerability repair, not a ready-made SAST scorecard.",
+    "Audit fix commits and source locations; fixed functions are not automatically clean negatives.",
+    "Upstream warns reference fixes need not satisfy every strengthened PoC.",
+    "Deduplicate by repository, CVE and code against development corpora before freezing a holdout."
+  ],
+  "cases": [
+    {
+      "cve_id": "CVE-2020-26215",
+      "programming_language": "Python",
+      "repo": "https://github.com/jupyter/notebook",
+      "patch_url": [
+        "https://github.com/jupyter/notebook/commit/3cec4bbe21756de9f0c4bccf18cf61d840314d74"
+      ],
+      "vul_func_sha256": "d0bcc1272e9388da44ea7cfa7e29177ce1c4692fcf115278c9013824da1ebd36",
+      "fix_func_sha256": "1f0a1cffe72f509690cefa019160895f607fddea505d5d0b1ad4ac93c832c758"
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "programming_language": "Python",
+      "repo": "https://github.com/FederatedAI/FATE",
+      "patch_url": [
+        "https://github.com/FederatedAI/FATE/commit/6feccf6d752184a6f9365d56a76fe627983e7139"
+      ],
+      "vul_func_sha256": "12a6f25d1808a63ba8d151cdcb255ab0e12248151ca60bb1a84d11b8f5c64763",
+      "fix_func_sha256": "2b3ba848d48b78b024fb1dd0247506e78fc053948fa8d6f8e1a18866ea240a0e"
+    },
+    {
+      "cve_id": "CVE-2022-31506",
+      "programming_language": "Python",
+      "repo": "https://github.com/cmusatyalab/opendiamond",
+      "patch_url": [
+        "https://github.com/cmusatyalab/opendiamond/commit/398049c187ee644beabab44d6fece82251c1ea56"
+      ],
+      "vul_func_sha256": "4b5bf7e51162097fd99b81223afa5d45685b7e91f288db0568ec8e4031dca675",
+      "fix_func_sha256": "c8f6b7967f7e6c8de1aaf8aa6b638338d89b808aaf7e0c49bc8047167087c29c"
+    },
+    {
+      "cve_id": "CVE-2021-21360",
+      "programming_language": "Python",
+      "repo": "https://github.com/zopefoundation/Products.GenericSetup",
+      "patch_url": [
+        "https://github.com/zopefoundation/Products.GenericSetup/commit/700319512b3615b3871a1f24e096cf66dc488c57"
+      ],
+      "vul_func_sha256": "04ea52999114ef8b9ce498dfaebbb0d42d62cdfc0b3dc2f2bb6ebbac6b5a7d98",
+      "fix_func_sha256": "48d8bedb2f95b5a103e076a733f86d7d7944e6bd11af295e7fa53044a717f25e"
+    },
+    {
+      "cve_id": "CVE-2022-4724",
+      "programming_language": "Python",
+      "repo": "https://github.com/ikus060/rdiffweb",
+      "patch_url": [
+        "https://github.com/ikus060/rdiffweb/commit/c4a19cf67d575c4886171b8efcbf4675d51f3929"
+      ],
+      "vul_func_sha256": "a03b011c6eb00e9f9e56c6f6d36e506ab4c952cc7b6121f95bbca92b00f6edcc",
+      "fix_func_sha256": "e39a9623c3efa6f904faa69f927800d0a7c06fbbf0a886bf54d3ed0aac9afc6c"
+    },
+    {
+      "cve_id": "CVE-2022-28347",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/00b0fc50e1738c7174c495464a5ef069408a4402",
+        "https://github.com/django/django/commit/29a6c98b4c13af82064f993f0acc6e8fafa4d3f5",
+        "https://github.com/django/django/commit/6723a26e59b0b5429a0c5873941e01a2e1bdbb81",
+        "https://github.com/django/django/commit/9e19accb6e0a00ba77d5a95a91675bf18877c72d"
+      ],
+      "vul_func_sha256": "31a92a5b14c45101e6de3234a6d9b7740039f362ca15fc610b2d2f2b267c47cc",
+      "fix_func_sha256": "f110fd816c931cd6aebf1503cc14d1800754dd05d4ed2552f7da0154d22e2fed"
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "programming_language": "Python",
+      "repo": "https://github.com/spotify/luigi",
+      "patch_url": [
+        "https://github.com/spotify/luigi/commit/b5d1b965ead7d9f777a3216369b5baf23ec08999"
+      ],
+      "vul_func_sha256": "f6ac1b2bb7d921264c2537972ca61f0ff0fd13e13996f918fd151c696ad6955b",
+      "fix_func_sha256": "bc71aa488c85809a43b4764b585372e74dbbbbb341a99986453b319f6db9243c"
+    },
+    {
+      "cve_id": "CVE-2022-41672",
+      "programming_language": "Python",
+      "repo": "https://github.com/apache/airflow",
+      "patch_url": [
+        "https://github.com/apache/airflow/commit/12bfb571a895a28a58d3189b0fc10cfc1b89e24c"
+      ],
+      "vul_func_sha256": "da22b28664f30f339ba8f6540d4e2d328185bec86aa6705fe5167f59d529af72",
+      "fix_func_sha256": "7f5ca37692238a261ccc791eba24b44dc0c77851a718c844c79cd8318fc1bbd6"
+    },
+    {
+      "cve_id": "CVE-2021-23727",
+      "programming_language": "Python",
+      "repo": "https://github.com/celery/celery",
+      "patch_url": [
+        "https://github.com/celery/celery/commit/1f7ad7e6df1e02039b6ab9eec617d283598cad6b"
+      ],
+      "vul_func_sha256": "efb61cc044e7eba6f145735994261f4bc720ff2d4fbdb804eb17ecd42befecab",
+      "fix_func_sha256": "38a5dcf167c9726765158d9c011ca1ef220fcd02737a6fa869670eca34d58583"
+    },
+    {
+      "cve_id": "CVE-2018-14574",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/d6eaee092709aad477a9894598496c6deec532ff",
+        "https://github.com/django/django/commit/c4e5ff7fdb5fce447675e90291fd33fddd052b3c",
+        "https://github.com/django/django/commit/6fffc3c6d420e44f4029d5643f38d00a39b08525"
+      ],
+      "vul_func_sha256": "a266d4cc373f06c6b386ebf6fdc0efe4aaf0d814932e31134b0737ea1f5e14d3",
+      "fix_func_sha256": "fdef1eee4fd4f231e06a3a68b561f0f1a2301a7805e6b0c479c1f0d8db5f90b3"
+    },
+    {
+      "cve_id": "CVE-2021-3281",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/52e409ed17287e9aabda847b6afe58be2fa9f86a",
+        "https://github.com/django/django/commit/05413afa8c18cdb978fcdf470e09f7a12b234a23",
+        "https://github.com/django/django/commit/02e6592835b4559909aa3aaaf67988fef435f624",
+        "https://github.com/django/django/commit/21e7622dec1f8612c85c2fc37fe8efbfd3311e37"
+      ],
+      "vul_func_sha256": "c042c2ae067d7f5310e78a6fe37ba08b99eaad1e5067b5fda80ddeab0ea9c305",
+      "fix_func_sha256": "399c1095af02f1c4996d7eb72f1b4ff9326b3a745c2fee270242c176405af3b5"
+    },
+    {
+      "cve_id": "CVE-2019-10856",
+      "programming_language": "Python",
+      "repo": "https://github.com/jupyter/notebook",
+      "patch_url": [
+        "https://github.com/jupyter/notebook/commit/979e0bd15e794ceb00cc63737fcd5fd9addc4a99"
+      ],
+      "vul_func_sha256": "3aba6153f30923a22ebf96ea6af472ab9593823f86baa78a1aadb7ddde75411d",
+      "fix_func_sha256": "02a1c3226616d773bf5fae736718a42b17ef4215a66637646959d08d2f446978"
+    },
+    {
+      "cve_id": "CVE-2015-1326",
+      "programming_language": "Python",
+      "repo": "https://github.com/martinpitt/python-dbusmock",
+      "patch_url": [
+        "https://github.com/martinpitt/python-dbusmock/commit/4e7d0df9093"
+      ],
+      "vul_func_sha256": "4d6df652085f24a3abc8b6d2753a3f5905748b2258039f96e7992d55a33d1c8f",
+      "fix_func_sha256": "1a15caa4c230e35c81a12a30b7b896f3365bc993785b229244dc11b817f3a0b3"
+    },
+    {
+      "cve_id": "CVE-2024-39330",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/9f4f63e9ebb7bf6cb9547ee4e2526b9b96703270",
+        "https://github.com/django/django/commit/2b00edc0151a660d1eb86da4059904a0fc4e095e"
+      ],
+      "vul_func_sha256": "c56e828fe84d99d1e474d9cc19b09c4622a0a0d6906dbe9f99339903fcc71e1a",
+      "fix_func_sha256": "7a52086625dd06c82317045eae8210f7302409613de488ada6773a5374ac7cc6"
+    },
+    {
+      "cve_id": "CVE-2022-21712",
+      "programming_language": "Python",
+      "repo": "https://github.com/twisted/twisted",
+      "patch_url": [
+        "https://github.com/twisted/twisted/commit/af8fe78542a6f2bf2235ccee8158d9c88d31e8e2"
+      ],
+      "vul_func_sha256": "ffdff934c6a363090e0a48727f1f0327e07a95b5c92c205c7c8bbcf505aa25fb",
+      "fix_func_sha256": "13cf064de8a83b71e69c47403528f32bc9094146c76a921ec120bfd32ad99024"
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "programming_language": "Python",
+      "repo": "https://github.com/NYUCCL/psiTurk",
+      "patch_url": [
+        "https://github.com/NYUCCL/psiTurk/commit/47787e15cecd66f2aa87687bf852ae0194a4335f"
+      ],
+      "vul_func_sha256": "e922ac8fc531fa90dcde753e23e07c9cbfefcdcf0c56a678e9bd9d2e837f3e1e",
+      "fix_func_sha256": "f783e497d3099edf3d6b1b38bfb58a41506bc81d561d912e0d1a23a1ff0eacea"
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "programming_language": "Python",
+      "repo": "https://github.com/thinkst/opencanary",
+      "patch_url": [
+        "https://github.com/thinkst/opencanary/commit/2c11575b1a3dd8b0df26a879ba856c0aa350c049"
+      ],
+      "vul_func_sha256": "3c30f8da03962cfac16364016bcb22a4f2c75f1b7f576357c3e57db3105ecb6b",
+      "fix_func_sha256": "1d00624eff208b6acfc981b37778653fa780724d075049abf583fccfa57ea440"
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "programming_language": "Python",
+      "repo": "https://github.com/encode/starlette",
+      "patch_url": [
+        "https://github.com/encode/starlette/commit/1797de464124b090f10cf570441e8292936d63e3"
+      ],
+      "vul_func_sha256": "e741d67d0f80f0e91e4db32f198849948567ffe32aacd16e3fa035e27a5b1482",
+      "fix_func_sha256": "3c2f8ecfd10da613e2c64792f5a3483adfbbd0e26bcc16f61e5166c46296fd5c"
+    },
+    {
+      "cve_id": "CVE-2021-33203",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/20c67a0693c4ede2b09af02574823485e82e4c8f",
+        "https://github.com/django/django/commit/dfaba12cda060b8b292ae1d271b44bf810b1c5b9",
+        "https://github.com/django/django/commit/053cc9534d174dc89daba36724ed2dcb36755b90"
+      ],
+      "vul_func_sha256": "1302baaa4e14da4f946f431261ac8625f6b8e8613f16020fdd62b08c9ebfc252",
+      "fix_func_sha256": "6ac2a1193c6ce4b7216fad89b38f5128e4e22ab81fffbdb164b33f9b376fba7e"
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "programming_language": "Python",
+      "repo": "https://github.com/Pylons/waitress",
+      "patch_url": [
+        "https://github.com/Pylons/waitress/commit/11d9e138125ad46e951027184b13242a3c1de017"
+      ],
+      "vul_func_sha256": "02a3c343c55a85ca64ccaf4268c9cab709206d3be5e4a63fdbf346f5e61e8a2b",
+      "fix_func_sha256": "e1f8086e5dbba90382a2f3b4cf655624622a65d2ffde679826e930be70819439"
+    },
+    {
+      "cve_id": "CVE-2023-41040",
+      "programming_language": "Python",
+      "repo": "https://github.com/gitpython-developers/GitPython",
+      "patch_url": [
+        "https://github.com/gitpython-developers/GitPython/commit/74e55ee4544867e1bd976b7df5a45869ee397b0b",
+        "https://github.com/gitpython-developers/GitPython/commit/e98f57b81f792f0f5e18d33ee658ae395f9aa3c4"
+      ],
+      "vul_func_sha256": "01c96ecb4bcd0428b5234695102aa45683fe03395e21b7d2ec73c206ef79d045",
+      "fix_func_sha256": "5e50357c5c35468aeb90fa21909997223d1c0c2ec0815e274421b3f2ac2e6750"
+    },
+    {
+      "cve_id": "CVE-2021-45452",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/e1592e0f26302e79856cc7f2218ae848ae19b0f6",
+        "https://github.com/django/django/commit/4cb35b384ceef52123fc66411a73c36a706825e1",
+        "https://github.com/django/django/commit/8d2f7cff76200cbd2337b2cf1707e383eb1fb54b"
+      ],
+      "vul_func_sha256": "468098b9d92d66d53723830334a34394950a291bf1cd2df4a6a281a70831b57c",
+      "fix_func_sha256": "f885c1f79bea9123934c21ea3021ad31ec1bf8bd3a91661c8827ed4900990851"
+    },
+    {
+      "cve_id": "CVE-2023-41039",
+      "programming_language": "Python",
+      "repo": "https://github.com/zopefoundation/RestrictedPython",
+      "patch_url": [
+        "https://github.com/zopefoundation/RestrictedPython/commit/4134aedcff17c977da7717693ed89ce56d54c120"
+      ],
+      "vul_func_sha256": "977c261c08778d90ee061dfbb737dc6e0c3849cf3c9b79537ea0e27f881d04dd",
+      "fix_func_sha256": "7bf7ed45ac53ea72155f7bfd932e68e9fba6ffd27651ac87a8d7b6b55ad2b2df"
+    },
+    {
+      "cve_id": "CVE-2021-31542",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/04ac1624bdc2fa737188401757cf95ced122d26d",
+        "https://github.com/django/django/commit/25d84d64122c15050a0ee739e859f22ddab5ac48",
+        "https://github.com/django/django/commit/c98f446c188596d4ba6de71d1b77b4a6c5c2a007"
+      ],
+      "vul_func_sha256": "789a4f7956dc2b313028a6ccd10dc5e838a7bbe15cd2333c5c2a191545ea0fe1",
+      "fix_func_sha256": "878c82899efa08bf7737563021a72d4ba37635c387941dc00ce65f69fdbf7991"
+    },
+    {
+      "cve_id": "CVE-2021-39163",
+      "programming_language": "Python",
+      "repo": "https://github.com/matrix-org/synapse",
+      "patch_url": [
+        "https://github.com/matrix-org/synapse/commit/cb35df940a"
+      ],
+      "vul_func_sha256": "5817dad95ae94d596644cab9cc26851bacbf89aa3833bd1b755c597e2c63f144",
+      "fix_func_sha256": "13cb3f5348fa446b2724d146c4bff6a302914f6e1ba1f0071225e84c4981746a"
+    },
+    {
+      "cve_id": "CVE-2023-34457",
+      "programming_language": "Python",
+      "repo": "https://github.com/MechanicalSoup/MechanicalSoup",
+      "patch_url": [
+        "https://github.com/MechanicalSoup/MechanicalSoup/commit/d57c4a269bba3b9a0c5bfa20292955b849006d9e"
+      ],
+      "vul_func_sha256": "3af5479c1c72e762463649420255eab413217819de51fa4ec790273666a9b7b4",
+      "fix_func_sha256": "3ec3c14f1bdb32036c4e99969e8269bae04130de1a25694f41eb59029010a48b"
+    },
+    {
+      "cve_id": "CVE-2018-18074",
+      "programming_language": "Python",
+      "repo": "https://github.com/requests/requests",
+      "patch_url": [
+        "https://github.com/requests/requests/commit/c45d7c49ea75133e52ab22a8e9e13173938e36ff"
+      ],
+      "vul_func_sha256": "778fa8c41f845a2de13315ce5e4132da431069cf960cb5a1c6e2af8015084146",
+      "fix_func_sha256": "4f232280b97e1a3c2faecab50a86cf2e4ca7f9a7d8c5ffdb38c2014ef52a6862"
+    },
+    {
+      "cve_id": "CVE-2022-21683",
+      "programming_language": "Python",
+      "repo": "https://github.com/wagtail/wagtail",
+      "patch_url": [
+        "https://github.com/wagtail/wagtail/commit/5fe901e5d86ed02dbbb63039a897582951266afd"
+      ],
+      "vul_func_sha256": "d4c6a484648b0dad22d4860f18d15885a2308f44eb5f49530bac102d885af2a0",
+      "fix_func_sha256": "a00f1c55e02c2c17b7ed215fe1f2f37b0260f70118abcc44e6f09610fb0aa151"
+    },
+    {
+      "cve_id": "CVE-2024-3848",
+      "programming_language": "Python",
+      "repo": "https://github.com/mlflow/mlflow",
+      "patch_url": [
+        "https://github.com/mlflow/mlflow/commit/f8d51e21523238280ebcfdb378612afd7844eca8"
+      ],
+      "vul_func_sha256": "48fa7c976602c39895763b33382b43613ee367bb5230efa030bc4f7cf30f5a67",
+      "fix_func_sha256": "188b27688187429e9b6c726df1eb662ca59b9fcd1d9dff27ae54af54e374e8de"
+    },
+    {
+      "cve_id": "CVE-2015-8213",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/316bc3fc9437c5960c24baceb93c73f1939711e4"
+      ],
+      "vul_func_sha256": "397d2d07e2bdcff40bc556f4186c6e3a148103bdfac54fd94fa091bd650919da",
+      "fix_func_sha256": "19b0dcc3e8e6109f866622c54b0d705b9baca22a99edb5068229e0690a13a7cb"
+    },
+    {
+      "cve_id": "CVE-2018-7753",
+      "programming_language": "Python",
+      "repo": "https://github.com/mozilla/bleach",
+      "patch_url": [
+        "https://github.com/mozilla/bleach/commit/c5df5789ec3471a31311f42c2d19fc2cf21b35ef"
+      ],
+      "vul_func_sha256": "42bcdea4b24567b38136359fcf74b61261618a7f365b68e0f4d8a7e818e48564",
+      "fix_func_sha256": "e8c8b9e323dc7b3e695419bf5d0f1f22ae2fb2aa832fadc47d61caff6d41fad8"
+    },
+    {
+      "cve_id": "CVE-2023-32303",
+      "programming_language": "Python",
+      "repo": "https://github.com/planetlabs/planet-client-python",
+      "patch_url": [
+        "https://github.com/planetlabs/planet-client-python/commit/d71415a83119c5e89d7b80d5f940d162376ee3b7"
+      ],
+      "vul_func_sha256": "0db3ee3c4119a7bc7c9aae7bcf53b4e3e683b9027603ad1e94ceed007d7e1a53",
+      "fix_func_sha256": "33264d73fde7931ad51d9e0b1a0ff364f85e0c935cf4c1f428df3415e0f39596"
+    },
+    {
+      "cve_id": "CVE-2024-23334",
+      "programming_language": "Python",
+      "repo": "https://github.com/aio-libs/aiohttp",
+      "patch_url": [
+        "https://github.com/aio-libs/aiohttp/commit/1c335944d6a8b1298baf179b7c0b3069f10c514b"
+      ],
+      "vul_func_sha256": "91549118933419b9074ccc9ecac8a41b6af9fbe9b8f518b3691a15ff3059d78d",
+      "fix_func_sha256": "649f68a3c4fe1895c6abc9333740f0250bed9d8c7e9cc3e8f81a6a0953539ad2"
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "programming_language": "Python",
+      "repo": "https://github.com/gaizhenbiao/chuanhuchatgpt",
+      "patch_url": [
+        "https://github.com/gaizhenbiao/chuanhuchatgpt/commit/720c23d755a4a955dcb0a54e8c200a2247a27f8b"
+      ],
+      "vul_func_sha256": "85c3d345c64868430eb8c85c1ad83839ccbf6974326b12ce283d6606dbe7f635",
+      "fix_func_sha256": "b61f8630d20531d912931c6b91441e34fba2f11378a1279672a24fb4e7f8c721"
+    },
+    {
+      "cve_id": "CVE-2021-41125",
+      "programming_language": "Python",
+      "repo": "https://github.com/scrapy/scrapy",
+      "patch_url": [
+        "https://github.com/scrapy/scrapy/commit/b01d69a1bf48060daec8f751368622352d8b85a6"
+      ],
+      "vul_func_sha256": "f7ed71f36cc2ac5de5ff7f4bc067291155b07124cf7c2628f897de5f326010a5",
+      "fix_func_sha256": "524670b01da40d4ba7a13dcc5387575a577591cd9022a861cace42455a93e0a5"
+    },
+    {
+      "cve_id": "CVE-2022-29217",
+      "programming_language": "Python",
+      "repo": "https://github.com/jpadilla/pyjwt",
+      "patch_url": [
+        "https://github.com/jpadilla/pyjwt/commit/9c528670c455b8d948aff95ed50e22940d1ad3fc"
+      ],
+      "vul_func_sha256": "a25c41af32d9e7d01a19f55581d625349b775ee1da2fbb45950b7f50652ee294",
+      "fix_func_sha256": "e55e730f70d3435c64f731d06ff3b05c558856da3a284e94d45d0a69a840d220"
+    },
+    {
+      "cve_id": "CVE-2024-39877",
+      "programming_language": "Python",
+      "repo": "https://github.com/apache/airflow",
+      "patch_url": [
+        "https://github.com/apache/airflow/commit/8159f6e24704f5e0e3b3217cf79ecf5083dce531"
+      ],
+      "vul_func_sha256": "c141b63b29f95d6c3d751f8c2f18b0b99dfd6668fbd9f7df1d9562785b9b68e0",
+      "fix_func_sha256": "dd3da7d280edbb4a51ea322044f542b6f687edd222a222f35720446844cee375"
+    },
+    {
+      "cve_id": "CVE-2022-3298",
+      "programming_language": "Python",
+      "repo": "https://github.com/ikus060/rdiffweb",
+      "patch_url": [
+        "https://github.com/ikus060/rdiffweb/commit/626cca1b75b6c587afd4241a9692e8929b1921a5"
+      ],
+      "vul_func_sha256": "5e7c5efad49f680062d2df914dae51199daadb9194f6001dc68f812357771ad9",
+      "fix_func_sha256": "2d6f91180586bf49ac9a6a40dfb9dfe8dc89557fbc6e25b11353e5bdde5522af"
+    },
+    {
+      "cve_id": "CVE-2023-34233",
+      "programming_language": "Python",
+      "repo": "https://github.com/snowflakedb/snowflake-connector-python",
+      "patch_url": [
+        "https://github.com/snowflakedb/snowflake-connector-python/commit/1cdbd3b1403c5ef520d7f4d9614fe35165e101ac"
+      ],
+      "vul_func_sha256": "929fa6a4907d9655dfc6bd4df3de28ddbf577e32d384ebeb6e508a4df83c00bc",
+      "fix_func_sha256": "33d235ed61b378bb5403c143be2a925325b132fe8f5e731f7b50d80dc8a084bd"
+    },
+    {
+      "cve_id": "CVE-2023-39631",
+      "programming_language": "Python",
+      "repo": "https://github.com/pydata/numexpr",
+      "patch_url": [
+        "https://github.com/pydata/numexpr/commit/4b2d89cf14e75030d27629925b9998e1e91d23c7"
+      ],
+      "vul_func_sha256": "691e3c5e89a5f3a9a86baa56cd4f99aba5d658da77229c464e1c1a0d1fd05029",
+      "fix_func_sha256": "145b2a2e1e297e68d1b2d6b5ba09b6d3f3ea9fe0da41cfbca41b41aa72518fc8"
+    },
+    {
+      "cve_id": "CVE-2017-7233",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/8339277518c7d8ec280070a780915304654e3b66",
+        "https://github.com/django/django/commit/254326cb3682389f55f886804d2c43f7b9f23e4f",
+        "https://github.com/django/django/commit/f824655bc2c50b19d2f202d7640785caabc82787"
+      ],
+      "vul_func_sha256": "1d1ae01bfc4a99e484123cc676cf263c5468c49f8e298237cdd3798947636f06",
+      "fix_func_sha256": "b32d7486379d6fc5a5cb01a59c4b45698ac61574aaf0f085d31050487795a211"
+    },
+    {
+      "cve_id": "CVE-2019-7539",
+      "programming_language": "Python",
+      "repo": "https://github.com/adi928/ipycache",
+      "patch_url": [
+        "https://github.com/adi928/ipycache/commit/9cc7cb891ff169b3e8a6f5e84afd8238f566ad8e",
+        "https://github.com/adi928/ipycache/commit/c73a726744c90cc2cb200b159edbaf5deddcb753"
+      ],
+      "vul_func_sha256": "e4a7fdb4b80b9456192b01e9b3f9892f3833a50963d2e356bc716b182ff311f1",
+      "fix_func_sha256": "1bb093d42e4298481efbf95632f4e938900daa0b46116544bbe12bd6181d05fc"
+    },
+    {
+      "cve_id": "CVE-2022-39286",
+      "programming_language": "Python",
+      "repo": "https://github.com/jupyter/jupyter_core",
+      "patch_url": [
+        "https://github.com/jupyter/jupyter_core/commit/1118c8ce01800cb689d51f655f5ccef19516e283"
+      ],
+      "vul_func_sha256": "b585892f1d866a1d43dd89b54c8bdb480ea9ebe5b5f04e29a47b4c4f69102033",
+      "fix_func_sha256": "d4522f0832dbc58be9e17aac803bae992288283c375d85bf34521950daae6da3"
+    },
+    {
+      "cve_id": "CVE-2025-43859",
+      "programming_language": "Python",
+      "repo": "https://github.com/python-hyper/h11",
+      "patch_url": [
+        "https://github.com/python-hyper/h11/commit/114803a29ce50116dc47951c690ad4892b1a36ed"
+      ],
+      "vul_func_sha256": "11e0ac5fba8f4dd6db65538c21e7a35140e8aef3a9847c484ef998880b24d5a3",
+      "fix_func_sha256": "d1d4ae57b840b7a902dbaccb5206e7895d864f344f39b52ada7026167d84fc1c"
+    },
+    {
+      "cve_id": "CVE-2023-45809",
+      "programming_language": "Python",
+      "repo": "https://github.com/wagtail/wagtail",
+      "patch_url": [
+        "https://github.com/wagtail/wagtail/commit/bc96aed6ac53f998b2f4c4bf97e2d4f5fe337e5b"
+      ],
+      "vul_func_sha256": "dec9236dd7d68c5146f6e599685d771cfc5da3565ac3fca7c62db8b51bbd58e4",
+      "fix_func_sha256": "334c6ba13bdeb67ee688d53a4b0932b619078c997cb1b5dfdc441096c345f21f"
+    },
+    {
+      "cve_id": "CVE-2021-3583",
+      "programming_language": "Python",
+      "repo": "https://github.com/ansible/ansible",
+      "patch_url": [
+        "https://github.com/ansible/ansible/commit/8aa850e3573e48c9a2f12aef84e8a3a6f5ba4847",
+        "https://github.com/ansible/ansible/commit/03aff644cc1c00e1f7551195c68fbd0d13a39e6e",
+        "https://github.com/ansible/ansible/commit/8b17e5b9229ffaecfe10a4881bc3f87dd2c184e1"
+      ],
+      "vul_func_sha256": "47df9ac40d64188c2f034dd6ccb078d11ef8344945dfa9847ba0aeb7cb06f875",
+      "fix_func_sha256": "fae4070f75fa3e3564425b1d8f2a98984c52d0cffb7bc2185679693b48298c8e"
+    },
+    {
+      "cve_id": "CVE-2020-10691",
+      "programming_language": "Python",
+      "repo": "https://github.com/ansible/ansible",
+      "patch_url": [
+        "https://github.com/ansible/ansible/commit/b2551bb6943eec078066aa3a923e0bb3ed85abe8"
+      ],
+      "vul_func_sha256": "10e9ffe1066289883262d0684b05f8d771878aa4e76aba1832eff0e67ee9b20b",
+      "fix_func_sha256": "44b7d09113a4118bf99bdb4bf072ad45434789e8d17282d11755f28285a4cab8"
+    },
+    {
+      "cve_id": "CVE-2023-33977",
+      "programming_language": "Python",
+      "repo": "https://github.com/kiwitcms/Kiwi",
+      "patch_url": [
+        "https://github.com/kiwitcms/Kiwi/commit/d789f4b51025de4f8c747c037d02e1b0da80b034"
+      ],
+      "vul_func_sha256": "990f864e121dd9efaeec9446b37d2bb4d47d8794b79cd689d15e3e5796bd24d6",
+      "fix_func_sha256": "bbbf9ad651908a71ec34899e5ef517ad400a7a06f0ea465ffb3a8000e78d7c74"
+    },
+    {
+      "cve_id": "CVE-2023-30172",
+      "programming_language": "Python",
+      "repo": "https://github.com/mlflow/mlflow",
+      "patch_url": [
+        "https://github.com/mlflow/mlflow/commit/ac4b697bb0bb8a331944dca63f4235b4bf602ab8"
+      ],
+      "vul_func_sha256": "29fcbd3e634db52ce9a967a405ae356af3f34d620541712be52a719602a28c3d",
+      "fix_func_sha256": "19d06bb5ca38f4bdfd8fcc35a40b9f7ab212f11c2672a8789c59284ee140789f"
+    },
+    {
+      "cve_id": "CVE-2024-0243",
+      "programming_language": "Python",
+      "repo": "https://github.com/langchain-ai/langchain",
+      "patch_url": [
+        "https://github.com/langchain-ai/langchain/commit/bf0b3cc0b5ade1fb95a5b1b6fa260e99064c2e22"
+      ],
+      "vul_func_sha256": "1dcffae1526d29c75a700beeff1c7cc6670e1379426d7499c3d6338f8ca65f01",
+      "fix_func_sha256": "3abcd9758d1761656d71f177ca4692025e47870e7a6c66098da282ab3340b90d"
+    },
+    {
+      "cve_id": "CVE-2023-6831",
+      "programming_language": "Python",
+      "repo": "https://github.com/mlflow/mlflow",
+      "patch_url": [
+        "https://github.com/mlflow/mlflow/commit/1da75dfcecd4d169e34809ade55748384e8af6c1"
+      ],
+      "vul_func_sha256": "1d4f2e5cb441eca13f168955de15957af7b8686f959d71a123f13f4760ddb209",
+      "fix_func_sha256": "a7bb66e1a8ea0bfcec49a84f91d3d55e20b00a0ccd69390c494360730100aff3"
+    },
+    {
+      "cve_id": "CVE-2021-21354",
+      "programming_language": "Python",
+      "repo": "https://github.com/mozilla/PollBot",
+      "patch_url": [
+        "https://github.com/mozilla/PollBot/commit/6db74a4fcbff258c7cdf51a6ff0724fc10c485e5"
+      ],
+      "vul_func_sha256": "8e0b171b4981244e84f38fe2881662024320fc94298d2af0b536506c2a9cbae8",
+      "fix_func_sha256": "d076796c8f148ba968e9ed76e559899eec0b5e1c022fa30a0481179f0da54df6"
+    },
+    {
+      "cve_id": "CVE-2023-40267",
+      "programming_language": "Python",
+      "repo": "https://github.com/gitpython-developers/GitPython",
+      "patch_url": [
+        "https://github.com/gitpython-developers/GitPython/commit/ca965ecc81853bca7675261729143f54e5bf4cdd"
+      ],
+      "vul_func_sha256": "ca81c25656522c779e2b187c70f704e986a335b35fabe879a2f6d34dce7086c5",
+      "fix_func_sha256": "b724ee58b6777f70d6f2837a3d63271b57544fd5dce0a7659c07a5270c648804"
+    },
+    {
+      "cve_id": "CVE-2021-35042",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/0bd57a879a0d54920bb9038a732645fb917040e9",
+        "https://github.com/django/django/commit/dae83a24519d6f284c74414e0b81d64d9b5a0db4",
+        "https://github.com/django/django/commit/a34a5f724c5d5adb2109374ba3989ebb7b11f81f"
+      ],
+      "vul_func_sha256": "9c94d2e8307c812afe89e03e50ab446f360f9665814bb6490b509b45026b68c7",
+      "fix_func_sha256": "a93e35edc988996da3f42b574339f9d8c3894d13d6f95e9b9ae1cd53af6c1030"
+    },
+    {
+      "cve_id": "CVE-2017-0360",
+      "programming_language": "Python",
+      "repo": "https://github.com/tryton/trytond",
+      "patch_url": [
+        "https://github.com/tryton/trytond/commit/a67a7f03c30277515f530cad5950056171ed5bd1",
+        "https://github.com/tryton/trytond/commit/30e978593733385db3144f8c583eeb4679575cf0"
+      ],
+      "vul_func_sha256": "4c5e0676d41d22a06d2890cf82490b9a0fb320d9230491e167bdf365bfc6050b",
+      "fix_func_sha256": "91c6411f719caef38e92d353d601416521676b5efc887eb19ed678525df6ab16"
+    },
+    {
+      "cve_id": "CVE-2022-24065",
+      "programming_language": "Python",
+      "repo": "https://github.com/cookiecutter/cookiecutter",
+      "patch_url": [
+        "https://github.com/cookiecutter/cookiecutter/commit/fdffddb31fd2b46344dfa317531ff155e7999f77"
+      ],
+      "vul_func_sha256": "44d322c99e1ef4ebf85cab390c326b960d0957dc53acdc4d9eab9a0a80fe64a2",
+      "fix_func_sha256": "ea04aa9cd3ebf50347f1a5c8ebecbd3fd6835feb204539fb03dd2852586800d8"
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "programming_language": "Python",
+      "repo": "https://github.com/spotipy-dev/spotipy",
+      "patch_url": [
+        "https://github.com/spotipy-dev/spotipy/commit/1ca453f6ef87a2a9e9876f52b6cb38d13532ccf2"
+      ],
+      "vul_func_sha256": "26b1c7a1cd8105210fe53ffeda194f60dcfa4dd563366e074cd418d78cb5dee4",
+      "fix_func_sha256": "12ab5faf2c951ebb8c280115ca7795bdc52fba739ff4809697da6e454794d3ec"
+    },
+    {
+      "cve_id": "CVE-2022-0577",
+      "programming_language": "Python",
+      "repo": "https://github.com/scrapy/scrapy",
+      "patch_url": [
+        "https://github.com/scrapy/scrapy/commit/8ce01b3b76d4634f55067d6cfdf632ec70ba304a"
+      ],
+      "vul_func_sha256": "734deb551329b407dd30515d8297e8586487b4f8ce3bf5ea8b6aaed464bb4e76",
+      "fix_func_sha256": "a2bc172db71e0af718c0cb35a46e06fed7160c6053e2304b76333c99e1c3fe13"
+    },
+    {
+      "cve_id": "CVE-2023-49736",
+      "programming_language": "Python",
+      "repo": "https://github.com/apache/superset",
+      "patch_url": [
+        "https://github.com/apache/superset/commit/1d403dab9822a8cee6108669c53e53fad881c751",
+        "https://github.com/apache/superset/commit/34101594e284ab3acce692f41aff7759ccb4bf1d"
+      ],
+      "vul_func_sha256": "7e11ead3cd22355b43d6f1943b4aa3e07bee40e0a1aafa81488126aa29db3def",
+      "fix_func_sha256": "86490400176257c4b141b8db13545eef0d9b2662fece34a6cb8bd4cd418f6b86"
+    },
+    {
+      "cve_id": "CVE-2025-23042",
+      "programming_language": "Python",
+      "repo": "https://github.com/gradio-app/gradio",
+      "patch_url": [
+        "https://github.com/gradio-app/gradio/commit/6b63fdec441b5c9bf910f910a2505d8defbb6bf8"
+      ],
+      "vul_func_sha256": "5071612cea8e1fc65032c722b348cc273a414b67da3ebb2afbf828039acd6348",
+      "fix_func_sha256": "e3a94468ab025fbfc09bc69a1e1e949c2ebb46f6d6e1554931cbe066aac59728"
+    },
+    {
+      "cve_id": "CVE-2021-3987",
+      "programming_language": "Python",
+      "repo": "https://github.com/janeczku/calibre-web",
+      "patch_url": [
+        "https://github.com/janeczku/calibre-web/commit/bcdc97641447965af486964537f3821f47b28874"
+      ],
+      "vul_func_sha256": "22ae8289c9cba8c26b7d035cbe13102cd75c554f922a32d5d4d0ce5016e6ccd3",
+      "fix_func_sha256": "4ccd56d959436ce7f88dbf7aca1f2af74136b7a9591d8cfeef41af17f35ab400"
+    },
+    {
+      "cve_id": "CVE-2024-3571",
+      "programming_language": "Python",
+      "repo": "https://github.com/langchain-ai/langchain",
+      "patch_url": [
+        "https://github.com/langchain-ai/langchain/commit/aad3d8bd47d7f5598156ff2bdcc8f736f24a7412"
+      ],
+      "vul_func_sha256": "ac29403d830620e356d5f9048041a76820660d842a53aeaea5a5bae752167d56",
+      "fix_func_sha256": "79257ea8f94aacd3247ec5dc9e818af7cbc373c26fbe6babf0987cd40f493acc"
+    },
+    {
+      "cve_id": "CVE-2024-42005",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/f4af67b9b41e0f4c117a8741da3abbd1c869ab28",
+        "https://github.com/django/django/commit/32ebcbf2e1fe3e5ba79a6554a167efce81f7422d"
+      ],
+      "vul_func_sha256": "eb3c2a2aafd112dad59f22813418fed9f15e2a5b58dfcc4e7d03dbbbbb51ee86",
+      "fix_func_sha256": "af01d00f22258c8f8d64182894e066755245849db503b771c80ae410a079f461"
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "programming_language": "Python",
+      "repo": "https://github.com/oauthlib/oauthlib",
+      "patch_url": [
+        "https://github.com/oauthlib/oauthlib/commit/2e40b412c844ecc4673c3fa3f72181f228bdbacd"
+      ],
+      "vul_func_sha256": "f73e6e8a93338290f9ff8656c144a55e685bb8224cd12e00eff51e855b929d0a",
+      "fix_func_sha256": "f07bdf6523db1718dc212779b1a861fb20a7a1816ba532ab35d8b1678f902632"
+    },
+    {
+      "cve_id": "CVE-2020-15278",
+      "programming_language": "Python",
+      "repo": "https://github.com/Cog-Creators/Red-DiscordBot",
+      "patch_url": [
+        "https://github.com/Cog-Creators/Red-DiscordBot/commit/726bfd38adfdfaef760412a68e01447b470f438b"
+      ],
+      "vul_func_sha256": "c375954606ae087c324559ef9cae752d7237387eaeb13acf3a420882faa7bec0",
+      "fix_func_sha256": "7135da968a26a32ecc394fc1a33129a7458cd1f7c657899beea8cfae890e4425"
+    },
+    {
+      "cve_id": "CVE-2022-21699",
+      "programming_language": "Python",
+      "repo": "https://github.com/ipython/ipython",
+      "patch_url": [
+        "https://github.com/ipython/ipython/commit/46a51ed69cdf41b4333943d9ceeb945c4ede5668",
+        "https://github.com/ipython/ipython/commit/5fa1e409d2dc126c456510c16ece18e08b524e5b",
+        "https://github.com/ipython/ipython/commit/a06ca837273271b4acb82c29be97c0b6d12a30ea",
+        "https://github.com/ipython/ipython/commit/67ca2b3aa9039438e6f80e3fccca556f26100b4d"
+      ],
+      "vul_func_sha256": "22c67ac6c5eaec04c309ff9f041d09482ecdfbb5a4e4aa5ba18994162eab109f",
+      "fix_func_sha256": "f7e5e767eaf24984f532e76aabe3b116f3d89f8a0e6d5e198d869c44cf4cb5d1"
+    },
+    {
+      "cve_id": "CVE-2023-26145",
+      "programming_language": "Python",
+      "repo": "https://github.com/dgilland/pydash",
+      "patch_url": [
+        "https://github.com/dgilland/pydash/commit/6ff0831ad285fff937cafd2a853f20cc9ae92021"
+      ],
+      "vul_func_sha256": "b59cbdc95c6061357171509193efc1d6f1b646d7abf7052fada395f7708f2727",
+      "fix_func_sha256": "65aed83c76af90cb671c83374ab2a86c5addaacdca920694c955c79b6b1eba5e"
+    },
+    {
+      "cve_id": "CVE-2024-49750",
+      "programming_language": "Python",
+      "repo": "https://github.com/snowflakedb/snowflake-connector-python",
+      "patch_url": [
+        "https://github.com/snowflakedb/snowflake-connector-python/commit/dbc9284a3c0382c131b971b35e8d6ab93c46f37a"
+      ],
+      "vul_func_sha256": "e9ace76f7679034c2cd88a9d16343c9647fe36b9a454bcdcd2f0ec8320317aa5",
+      "fix_func_sha256": "1f0bd9e2aafe18d65c0cb5d99f761d5aaa40b2c39b8044fdc4be4c0b191a3fee"
+    },
+    {
+      "cve_id": "CVE-2023-39660",
+      "programming_language": "Python",
+      "repo": "https://github.com/gventuri/pandas-ai",
+      "patch_url": [
+        "https://github.com/gventuri/pandas-ai/commit/3aac79be8fc1d18b53d66a566adddbbdd2b38ad5"
+      ],
+      "vul_func_sha256": "6b3ac5889a20e84a3af7607689a392998add104f373f1524bbdb07eeb44ef9f2",
+      "fix_func_sha256": "f4e2d9ea81351596f8eb5d9d0a04ce283c48b51e8ee07c8ab34dd1e6bd669b01"
+    },
+    {
+      "cve_id": "CVE-2022-28346",
+      "programming_language": "Python",
+      "repo": "https://github.com/django/django",
+      "patch_url": [
+        "https://github.com/django/django/commit/93cae5cb2f9a4ef1514cf1a41f714fef08005200",
+        "https://github.com/django/django/commit/2c09e68ec911919360d5f8502cefc312f9e03c5d",
+        "https://github.com/django/django/commit/2044dac5c6968441be6f534c4139bcf48c5c7e48",
+        "https://github.com/django/django/commit/800828887a0509ad1162d6d407e94d8de7eafc60"
+      ],
+      "vul_func_sha256": "4e8c151eacffa2ab406d7087d04861010f8ed1be99de4cbceae420828b766752",
+      "fix_func_sha256": "62c57284ac0e4bc836dddffe58ced4417aa0c4e13889e111cc681216517bb9fb"
+    }
+  ]
+}

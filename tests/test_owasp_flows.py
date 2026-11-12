@@ -118,3 +118,22 @@ def test_bandit_error_is_not_a_true_negative(tmp_path):
     result=evaluate(tmp_path, manifest, 'development', bandit_json=raw)
     assert result['summary']['errors']==1
     assert result['summary']['tn']==0
+
+
+@pytest.mark.parametrize('rule,cwes,expected', [
+    ('generic-code-rule', ['CWE-20: input', 'CWE-94: code'], 'tp'),
+    ('insecure-hash-md5', ['CWE-327: crypto'], 'tp'),
+    ('insecure-cipher', ['CWE-327: crypto'], 'fn'),
+])
+def test_semgrep_metadata_and_scoped_hash_mapping(tmp_path, rule, cwes, expected):
+    (tmp_path/'testcode').mkdir()
+    (tmp_path/'helpers').mkdir()
+    cwe='94' if rule=='generic-code-rule' else '328'
+    (tmp_path/'expectedresults-0.1.csv').write_text(f'BenchmarkTest00001,category,true,{cwe}\n')
+    (tmp_path/'testcode/BenchmarkTest00001.py').write_text('# /benchmark/group/BenchmarkTest00001\npass')
+    manifest=prepare(tmp_path)
+    raw=tmp_path/'semgrep.json'
+    raw.write_text(json.dumps({'results':[{'path':'stage/testcode/BenchmarkTest00001.py', 'check_id':rule,
+                                          'start':{'line':2},'extra':{'metadata':{'cwe':cwes}}}], 'errors':[]}))
+    result=evaluate(tmp_path,manifest,'development',semgrep_json=raw)
+    assert result['cases'][0]['outcome']==expected

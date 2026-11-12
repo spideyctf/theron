@@ -171,11 +171,35 @@ def rates(s):
                 false_positive_rate=fp/(fp+tn) if fp+tn else None)
 
 
-def evaluate(root, manifest, split, ablation=None, bandit_json=None):
+def evaluate(root, manifest, split, ablation=None, bandit_json=None, semgrep_json=None):
     files, cases = load_files(root, manifest, split)
     start = time.perf_counter()
     errors, notices = [], []
-    if bandit_json:
+    if bandit_json and semgrep_json:
+        raise ValueError('Choose one external baseline report')
+    if semgrep_json:
+        raw = json.loads(Path(semgrep_json).read_text(encoding='utf-8-sig'))
+        alerts = []
+        for finding in raw['results']:
+            match = re.search(r'(testcode|helpers)/[^/]+\.py$', finding['path'].replace('\\', '/'))
+            if not match:
+                continue
+            metadata = finding.get('extra', {}).get('metadata', {})
+            cwes = set(re.findall(r'CWE-\d+', json.dumps(metadata.get('cwe', []))))
+            # The same weak-hash category normalization used for Bandit, scoped
+            # to hashing rule IDs instead of treating every CWE-327 cipher as a hash.
+            if 'CWE-327' in cwes and re.search(r'(insecure|weak).*(hash|md5|sha1)', finding['check_id'], re.I):
+                cwes.add('CWE-328')
+            alerts.append(dict(file_path=match.group(), line_number=finding['start']['line'],
+                               cwes=sorted(cwes), cwe=next(iter(sorted(cwes)), None), rule_id=finding['check_id']))
+        for error in raw.get('errors', []):
+            path = error.get('path') or ''
+            if path:
+                errors.append(path.replace('\\', '/').rsplit('/', 1)[-1])
+            notices.append({'type': str(error.get('type', 'unknown')), 'file_path': path,
+                            'level': str(error.get('level', 'unknown'))})
+        engine = 'semgrep'
+    elif bandit_json:
         raw = json.loads(Path(bandit_json).read_text(encoding='utf-8-sig'))
         alerts = []
         for finding in raw['results']:
@@ -203,7 +227,7 @@ def evaluate(root, manifest, split, ablation=None, bandit_json=None):
         file_alerts = [a for a in alerts if a['file_path'] == case['path']]
         # Exact CWE, plus the documented child used by Bandit's weak-random rule.
         accepted = {case['cwe']} | ({'CWE-338'} if case['cwe'] == 'CWE-330' else set())
-        matched = [a for a in file_alerts if a['cwe'] in accepted]
+        matched = [a for a in file_alerts if accepted.intersection(a.get('cwes', [a['cwe']]))]
         outcome = ('tp' if matched else 'fn') if case['vulnerable'] else ('fp' if matched else 'tn')
         if Path(case['path']).name in errors:
             outcome = 'errors'
@@ -217,11 +241,11 @@ def evaluate(root, manifest, split, ablation=None, bandit_json=None):
                 analyzer_sha256=sha(Path(python_analysis.__file__).read_bytes()),
                 adapter_sha256=sha(Path(__file__).read_bytes()),
                 elapsed_seconds=round(time.perf_counter()-start, 4),
-                timing_scope='JSON scoring only' if bandit_json else 'SAST collection already loaded; analysis and scoring',
+                timing_scope='JSON scoring only' if bandit_json or semgrep_json else 'SAST collection already loaded; analysis and scoring',
                 summary=rates(total), by_cwe={k: rates(v) for k,v in sorted(groups.items())},
                 coverage_notices=notices, total_alerts=len(alerts), cases=outcomes,
                 bandit_rule_mappings=BANDIT_CWES if bandit_json else None,
-                baseline_report_sha256=sha(Path(bandit_json).read_bytes()) if bandit_json else None,
+                baseline_report_sha256=sha(Path(bandit_json or semgrep_json).read_bytes()) if bandit_json or semgrep_json else None,
                 matching='Labelled file + exact CWE; CWE-338 accepted under parent CWE-330. Unmatched alerts retained.',
                 limitations=['Synthetic corpus; not real-world validation or the official OWASP scorecard.',
                              'Normalized AST grouping reduces but cannot eliminate template similarity across splits.',
@@ -238,6 +262,7 @@ def main():
     p.add_argument('--output')
     p.add_argument('--ablation', choices=['interprocedural', 'local_imports', 'sanitizers'])
     p.add_argument('--bandit-json')
+    p.add_argument('--semgrep-json')
     p.add_argument('--stage-dir', help='Write exactly one split plus shared helpers for external static tools, then exit')
     args = p.parse_args()
     if args.prepare:
@@ -259,7 +284,7 @@ def main():
             return
         if not args.output:
             p.error('--output required for evaluation')
-        result = evaluate(args.dataset, manifest, args.split, args.ablation, args.bandit_json)
+        result = evaluate(args.dataset, manifest, args.split, args.ablation, args.bandit_json, args.semgrep_json)
         Path(args.output).write_text(json.dumps(result, indent=2)+'\n', encoding='utf-8')
         print(json.dumps({'engine':result['engine'], 'split':args.split, 'summary':result['summary']}, indent=2))
 

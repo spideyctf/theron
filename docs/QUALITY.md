@@ -34,6 +34,10 @@ The benchmark scoring, labels and denominator are unchanged. Fixed-file alerts a
 
 ## Remaining gaps
 
+The [OWASP study](evaluation/owasp-2026-11-12/RESULTS.md) now provides a frozen template/category-shift evaluation, a pinned baseline and controlled ablations. It exposes much lower coverage than the synthetic tuning score. Source changes were limited to development cases; validation/test were evaluated after the detector freeze. These remain synthetic results, not independent real-world evidence.
+
+New flow support includes literal dictionary/list slots, selected append/pop operations, bounded literal conditions, `match`, selected `ConfigParser` values, Flask HTML returns, XPath expressions and redirects. Flask app-factory registration inferred from route syntax and resolved Flask APIs is medium confidence and explicitly disclosed in evidence. Generic `.xpath()` or `.redirect()` methods are not assumed to be library sinks. Host and scheme allowlists are recognized together for selected redirect guards. Arbitrary validators, dynamic collection keys/indexes, complex mutation, aliases and custom escaping implementations remain incomplete. Metadata-only file existence checks are not treated as default file-read vulnerabilities.
+
 - Persistent/stored XSS, template inheritance, context-specific HTML/JS/URL escaping and general database-to-template flows.
 - General dynamic dispatch, monkeypatching, reflection, arbitrary decorators and dependency injection, aliasing across multiple mutable instances, and dynamic imports.
 - Whole-program control-flow proofs, loop fixed points, general exception reachability and runtime authentication/authorization.

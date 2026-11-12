@@ -8,6 +8,8 @@ Upstream code is GPL-3.0. The external checkout, staged tool inputs and raw repo
 
 The [PySASTBench real-world CVE archive](https://zenodo.org/records/17936545) is a separate candidate: the published ZIP is about 6.2 GB, and its visible rights field does not supply a clear license. It was not downloaded/evaluated in this study. Verify licensing and inspect vulnerable/fixed commit metadata before including it in a paper. These OWASP results must not be substituted for real-world evidence.
 
+We also reserved metadata for 70 Python cases from [ByteDance PatchEval-Verified](https://github.com/bytedance/PatchEval), revision `b43285cdde80cc04608d5f1178a330b740c91c2d`. Function bodies were hashed without inspection, and no images or exploits were run. [Reserve metadata](realworld-reserve.json). This repair corpus needs a source/sink and fix-label audit before SAST scoring; there is no current Theron result on it.
+
 ## Fixed split and exposure
 
 Protocol: `theron-owasp-v3`. See [split.json](split.json) for the seed, all source/support/label hashes and assignments.
@@ -31,6 +33,10 @@ Bandit **1.9.4** is installed in a separate ignored virtual environment. Scan ex
 Our adapter matches a labelled file and CWE; this is **not the official OWASP scorecard** and is not alert-level precision. Bandit rules whose own CWE is broader are mapped by documented semantics: B102/B307 to code injection (94), B303/B324 to weak hashes (328), B311 to weak randomness (330), and B313–B320 XML parser call checks to XXE (611). These mappings were fixed before validation/test. See [Bandit call checks](https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html) and [hashlib checks](https://bandit.readthedocs.io/en/latest/plugins/b324_hashlib.html). Broad XML checks can alert on safe parses too; retain those false positives rather than claiming precise XXE verification.
 
 Unmatched alerts and parser/coverage errors are retained. A baseline parsing failure is an error, not a true negative. A same-CWE alert elsewhere in the file can still match the label, so manual source/sink adjudication is needed before making exploit-level claims. There are no source-line labels in this CSV.
+
+The second baseline is **Semgrep Community Edition 1.185.0**, with the entire `python/` directory from `semgrep/semgrep-rules` revision `a5ad1714f00c9f7fde980cab0ea1d6dc6d414fd2`: 378 configured rules, 371 applicable/run rules. It runs in WSL Linux against exactly the same case/helper bytes, with local configuration, metrics/version checks disabled, `--no-git-ignore`, `--no-rewrite-rule-ids`, `--timeout 10` and two jobs. All metadata CWEs are considered. Insecure/weak hashing rule IDs with general CWE-327 also match the weak-hash category CWE-328; other ciphers do not. The mapping was specified before consuming Semgrep results.
+
+Semgrep's separately downloaded rules remain under their [upstream rules license](https://semgrep.dev/legal/rules-license/). They are used only as a local evaluation baseline, not bundled, served, incorporated into Theron or copied into its detectors. Raw baseline reports containing corpus snippets remain ignored; only derived outcomes/hashes and environment pins are published. Detector code was frozen before downloading these rules.
 
 ## Ablations fixed before held-out evaluation
 
@@ -65,6 +71,28 @@ python -m scanner.owasp_benchmark --dataset .benchmark-cache/BenchmarkPython --m
 
 Use `.benchmark-cache/bandit-venv/bin/python` on Linux/macOS. Replace `interprocedural` with `local_imports` or `sanitizers` for the other ablations. Reuse the committed split instead of regenerating it after seeing outcomes. Do not execute corpus setup/run scripts.
 
+For the Semgrep baseline, use Linux/WSL, install `semgrep==1.185.0` in an isolated environment and clone the pinned rules revision separately:
+
+```bash
+git clone https://github.com/semgrep/semgrep-rules.git .benchmark-cache/semgrep-rules
+git -C .benchmark-cache/semgrep-rules checkout a5ad1714f00c9f7fde980cab0ea1d6dc6d414fd2
+semgrep scan --config .benchmark-cache/semgrep-rules/python --metrics=off --disable-version-check --no-git-ignore --no-rewrite-rule-ids --timeout 10 --jobs 2 --json --output .benchmark-cache/semgrep-test.json .benchmark-cache/bandit-test
+python -m scanner.owasp_benchmark --dataset .benchmark-cache/BenchmarkPython --manifest docs/evaluation/owasp-2026-11-12/split.json --split test --semgrep-json .benchmark-cache/semgrep-test.json --output .benchmark-cache/test-semgrep.json
+python scripts/summarize_owasp.py
+```
+
+The baseline environments are recorded in `bandit-environment.txt` and `semgrep-environment.txt`. Native Linux temporary copies were used to avoid WSL/Windows filesystem overhead; input contents and complete scanned-file counts were checked. The before snapshot is archived from commit `34f6ab0` and scanned using the same new adapter with that snapshot's own scanner/rules imports; its source hash is recorded. Evaluation timing fields cover different stages and are not a runtime ranking.
+
+To reconstruct that baseline without replacing your working tree, archive the trusted historical implementation and use the snapshot helper:
+
+```powershell
+git archive --format=tar --output=.benchmark-cache/before.tar 34f6ab0 scanner rules
+python -c "import tarfile; tarfile.open('.benchmark-cache/before.tar').extractall('.benchmark-cache/before', filter='data')"
+python scripts/evaluate_owasp_snapshot.py --snapshot-root .benchmark-cache/before --revision 34f6ab09075c02b5fd4debb3e3c355fdae78adb1 --dataset .benchmark-cache/BenchmarkPython --manifest docs/evaluation/owasp-2026-11-12/split.json --split test --output .benchmark-cache/test-before.json
+```
+
+Use Python 3.12 for these commands. The helper imports a trusted Theron implementation, never benchmark application modules. It does not automatically fetch or execute historical third-party software.
+
 ## Publication limits
 
-This is an initial comparative study against one baseline, on a synthetic corpus with shared helpers and few coarse groups. Semgrep/CodeQL/Pysa comparisons, independent real-world/AI-specific holdouts, independent label adjudication, statistical uncertainty and a reviewer study remain outstanding. Docker's Linux engine was not running in this Windows environment; no Semgrep container result is claimed. Single-run timings are descriptive and not a controlled performance comparison.
+This is an initial comparative study against two pinned baseline configurations, on a synthetic corpus with shared helpers and few coarse groups. CodeQL/Pysa comparisons, independent real-world/AI-specific holdouts, independent label adjudication and a reviewer study remain outstanding. Descriptive template-cluster bootstrap intervals are included in `summary.json`, with only six test clusters and explicit undefined resample counts. No significance or superiority claim is made. Docker was not running; Semgrep ran in the existing WSL environment instead. Single-run timings are not a controlled performance comparison. See [all results](RESULTS.md); validation/test are now exposed and cannot become fresh holdouts again after tuning to their outcomes.

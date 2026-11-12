@@ -1,0 +1,601 @@
+{
+  "dataset_revision": "f1291485808b66e20ddb6b01b10dc71b3df8c8ba",
+  "protocol": "theron-owasp-v3",
+  "split_sha256": "80f0d795ecd457dc70a43140c210f5ab3372959282dcef3ef9efce6529d0c39d",
+  "results": {
+    "development-before": {
+      "summary": {
+        "tp": 5,
+        "fn": 274,
+        "fp": 7,
+        "tn": 451,
+        "errors": 0,
+        "precision": 0.4166666666666667,
+        "recall": 0.017921146953405017,
+        "f1": 0.03436426116838488,
+        "false_positive_rate": 0.015283842794759825
+      },
+      "artifact_sha256": "dff8b211ad66bcabc9049165764d7315baf12686024e053f38c845b00d3692d1",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 12,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": 0.3333333333333333,
+            "upper": 0.5,
+            "undefined_resamples": 57
+          },
+          "recall": {
+            "lower": 0.0,
+            "upper": 0.04247104247104247,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.0,
+            "upper": 0.07734806629834254,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "development-after": {
+      "summary": {
+        "tp": 56,
+        "fn": 223,
+        "fp": 14,
+        "tn": 444,
+        "errors": 0,
+        "precision": 0.8,
+        "recall": 0.2007168458781362,
+        "f1": 0.3209169054441261,
+        "false_positive_rate": 0.03056768558951965
+      },
+      "artifact_sha256": "365d43ee4b1e5adae6c06e9dd513596880cbb105b596ee162bec79ca9f41df9d",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 12,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": 0.7142857142857143,
+            "upper": 0.9230769230769231,
+            "undefined_resamples": 0
+          },
+          "recall": {
+            "lower": 0.08992805755395683,
+            "upper": 0.31316725978647686,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.16447368421052633,
+            "upper": 0.4524421593830334,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "development-bandit": {
+      "summary": {
+        "tp": 85,
+        "fn": 194,
+        "fp": 11,
+        "tn": 447,
+        "errors": 0,
+        "precision": 0.8854166666666666,
+        "recall": 0.3046594982078853,
+        "f1": 0.4533333333333333,
+        "false_positive_rate": 0.024017467248908297
+      },
+      "artifact_sha256": "20f97940de155f42c6f7b8b2a7f5e0a92a68f9256f9d01f5b13811e05024453f",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 12,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": 0.5074626865671642,
+            "upper": 1.0,
+            "undefined_resamples": 14
+          },
+          "recall": {
+            "lower": 0.059748427672955975,
+            "upper": 0.5866261398176292,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.11176470588235295,
+            "upper": 0.7174887892376681,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "development-semgrep": {
+      "summary": {
+        "tp": 42,
+        "fn": 237,
+        "fp": 29,
+        "tn": 429,
+        "errors": 0,
+        "precision": 0.5915492957746479,
+        "recall": 0.15053763440860216,
+        "f1": 0.24,
+        "false_positive_rate": 0.06331877729257641
+      },
+      "artifact_sha256": "4df6776c858c4f3c995b79d76212ebc8ec4421e1da5fee45f9cd70bd95244e54",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 12,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": 0.0,
+            "upper": 0.9857142857142858,
+            "undefined_resamples": 16
+          },
+          "recall": {
+            "lower": 0.0,
+            "upper": 0.34868421052631576,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.0,
+            "upper": 0.45454545454545453,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "validation-before": {
+      "summary": {
+        "tp": 0,
+        "fn": 84,
+        "fp": 0,
+        "tn": 164,
+        "errors": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "artifact_sha256": "5c3957e277a75f2cf151483c458e36cb804883b899399087703dbb5d5bfb5a82",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 6,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": null,
+            "upper": null,
+            "undefined_resamples": 2000
+          },
+          "recall": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "validation-after": {
+      "summary": {
+        "tp": 0,
+        "fn": 84,
+        "fp": 1,
+        "tn": 163,
+        "errors": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.006097560975609756
+      },
+      "artifact_sha256": "d3f0f413a212b2689b5d22f3cfbafe4c079c610d557f32b693faa04c9c97a299",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 6,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "undefined_resamples": 654
+          },
+          "recall": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "validation-bandit": {
+      "summary": {
+        "tp": 59,
+        "fn": 25,
+        "fp": 20,
+        "tn": 144,
+        "errors": 0,
+        "precision": 0.7468354430379747,
+        "recall": 0.7023809523809523,
+        "f1": 0.7239263803680982,
+        "false_positive_rate": 0.12195121951219512
+      },
+      "artifact_sha256": "55ed639982959c90fe7d778c6267e871fadb1434bf55ea4cae230fe394bb2d03",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 6,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": 0.3103448275862069,
+            "upper": 1.0,
+            "undefined_resamples": 3
+          },
+          "recall": {
+            "lower": 0.18181818181818182,
+            "upper": 0.9859154929577465,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.2564102564102564,
+            "upper": 0.9565217391304348,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "validation-semgrep": {
+      "summary": {
+        "tp": 28,
+        "fn": 56,
+        "fp": 20,
+        "tn": 144,
+        "errors": 0,
+        "precision": 0.5833333333333334,
+        "recall": 0.3333333333333333,
+        "f1": 0.42424242424242425,
+        "false_positive_rate": 0.12195121951219512
+      },
+      "artifact_sha256": "4b091d661a0a37ca0ab4b21a817316ceb9251ca77fd060eab72c3fa5aa33ee5c",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 6,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": 0.2857142857142857,
+            "upper": 1.0,
+            "undefined_resamples": 176
+          },
+          "recall": {
+            "lower": 0.0,
+            "upper": 0.7272727272727273,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.0,
+            "upper": 0.7142857142857143,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "test-before": {
+      "summary": {
+        "tp": 3,
+        "fn": 86,
+        "fp": 5,
+        "tn": 151,
+        "errors": 0,
+        "precision": 0.375,
+        "recall": 0.033707865168539325,
+        "f1": 0.061855670103092786,
+        "false_positive_rate": 0.03205128205128205
+      },
+      "artifact_sha256": "969f66a0852a8961c1eeeeaaf876a386bc62529c3edc7573c5a2efb5e5866014",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 6,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": 0.0,
+            "upper": 1.0,
+            "undefined_resamples": 34
+          },
+          "recall": {
+            "lower": 0.0,
+            "upper": 0.07368421052631578,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.0,
+            "upper": 0.125,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "test-after": {
+      "summary": {
+        "tp": 14,
+        "fn": 75,
+        "fp": 5,
+        "tn": 151,
+        "errors": 0,
+        "precision": 0.7368421052631579,
+        "recall": 0.15730337078651685,
+        "f1": 0.25925925925925924,
+        "false_positive_rate": 0.03205128205128205
+      },
+      "artifact_sha256": "20253282b140be5c1d0fd93294b4533cdd0947c4d7ff3692a5a28d6890a1565d",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 6,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": 0.6296296296296297,
+            "upper": 1.0,
+            "undefined_resamples": 3
+          },
+          "recall": {
+            "lower": 0.03225806451612903,
+            "upper": 0.3111111111111111,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.0625,
+            "upper": 0.4266666666666667,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "test-bandit": {
+      "summary": {
+        "tp": 63,
+        "fn": 26,
+        "fp": 47,
+        "tn": 109,
+        "errors": 0,
+        "precision": 0.5727272727272728,
+        "recall": 0.7078651685393258,
+        "f1": 0.6331658291457286,
+        "false_positive_rate": 0.30128205128205127
+      },
+      "artifact_sha256": "711efeb694e3fabf14472f9e85e4ca879566fe19490dd81a3492897da744ea6a",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 6,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": 0.40782122905027934,
+            "upper": 0.9014084507042254,
+            "undefined_resamples": 5
+          },
+          "recall": {
+            "lower": 0.3409090909090909,
+            "upper": 0.9382716049382716,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.416,
+            "upper": 0.8066298342541437,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "test-semgrep": {
+      "summary": {
+        "tp": 31,
+        "fn": 58,
+        "fp": 22,
+        "tn": 134,
+        "errors": 0,
+        "precision": 0.5849056603773585,
+        "recall": 0.34831460674157305,
+        "f1": 0.43661971830985913,
+        "false_positive_rate": 0.14102564102564102
+      },
+      "artifact_sha256": "9eb5ada2d2c54514b4afac0ae716a50e29b872f05181f79ae76d05a0e8ff3697",
+      "cluster_bootstrap": {
+        "method": "Percentile bootstrap of upstream template-family clusters",
+        "seed": 20261112,
+        "resamples": 2000,
+        "clusters": 6,
+        "level": 0.95,
+        "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+        "intervals": {
+          "precision": {
+            "lower": 0.0,
+            "upper": 0.65,
+            "undefined_resamples": 38
+          },
+          "recall": {
+            "lower": 0.0,
+            "upper": 0.7894736842105263,
+            "undefined_resamples": 0
+          },
+          "f1": {
+            "lower": 0.0,
+            "upper": 0.6842105263157895,
+            "undefined_resamples": 0
+          }
+        }
+      }
+    },
+    "development-without-interprocedural": {
+      "summary": {
+        "tp": 54,
+        "fn": 225,
+        "fp": 14,
+        "tn": 444,
+        "errors": 0,
+        "precision": 0.7941176470588235,
+        "recall": 0.1935483870967742,
+        "f1": 0.3112391930835735,
+        "false_positive_rate": 0.03056768558951965
+      },
+      "artifact_sha256": "1fc272552a5fd51630601560ebbc72531058b7a450ef4d2d5606d4bff2287372"
+    },
+    "development-without-local_imports": {
+      "summary": {
+        "tp": 54,
+        "fn": 225,
+        "fp": 14,
+        "tn": 444,
+        "errors": 0,
+        "precision": 0.7941176470588235,
+        "recall": 0.1935483870967742,
+        "f1": 0.3112391930835735,
+        "false_positive_rate": 0.03056768558951965
+      },
+      "artifact_sha256": "fd7e8ddc8f21d02145602e36c140b89f1e648571c915f8f0a477fa4763e98372"
+    },
+    "development-without-sanitizers": {
+      "summary": {
+        "tp": 56,
+        "fn": 223,
+        "fp": 22,
+        "tn": 436,
+        "errors": 0,
+        "precision": 0.717948717948718,
+        "recall": 0.2007168458781362,
+        "f1": 0.3137254901960784,
+        "false_positive_rate": 0.048034934497816595
+      },
+      "artifact_sha256": "e75d897fdadf0ebddb8112d602476e9fbdd253254915f2bc1749c8c830538289"
+    },
+    "validation-without-interprocedural": {
+      "summary": {
+        "tp": 0,
+        "fn": 84,
+        "fp": 1,
+        "tn": 163,
+        "errors": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.006097560975609756
+      },
+      "artifact_sha256": "1ed2c2a703a7e50700e95ba6691283dcb0c70c434fc453c7503661a6730c4a29"
+    },
+    "validation-without-local_imports": {
+      "summary": {
+        "tp": 0,
+        "fn": 84,
+        "fp": 1,
+        "tn": 163,
+        "errors": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.006097560975609756
+      },
+      "artifact_sha256": "e7a6bc1adea9ee83ee170b0730754913e3cd9dde258c041fc9db0a1957c5be22"
+    },
+    "validation-without-sanitizers": {
+      "summary": {
+        "tp": 0,
+        "fn": 84,
+        "fp": 1,
+        "tn": 163,
+        "errors": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.006097560975609756
+      },
+      "artifact_sha256": "04bf86a4bab963a9f15bebc6690c254f68d3f8359784d9f470118c454df650ef"
+    },
+    "test-without-interprocedural": {
+      "summary": {
+        "tp": 14,
+        "fn": 75,
+        "fp": 5,
+        "tn": 151,
+        "errors": 0,
+        "precision": 0.7368421052631579,
+        "recall": 0.15730337078651685,
+        "f1": 0.25925925925925924,
+        "false_positive_rate": 0.03205128205128205
+      },
+      "artifact_sha256": "ebbda3dbcf79f47e44c17862a6ffa659a01d72012bb05e5c97b6a42aab607e4e"
+    },
+    "test-without-local_imports": {
+      "summary": {
+        "tp": 14,
+        "fn": 75,
+        "fp": 5,
+        "tn": 151,
+        "errors": 0,
+        "precision": 0.7368421052631579,
+        "recall": 0.15730337078651685,
+        "f1": 0.25925925925925924,
+        "false_positive_rate": 0.03205128205128205
+      },
+      "artifact_sha256": "276fa847cb91e9c8f317cf36542a1c4447857097b7b115d93210c28199581e9d"
+    },
+    "test-without-sanitizers": {
+      "summary": {
+        "tp": 14,
+        "fn": 75,
+        "fp": 5,
+        "tn": 151,
+        "errors": 0,
+        "precision": 0.7368421052631579,
+        "recall": 0.15730337078651685,
+        "f1": 0.25925925925925924,
+        "false_positive_rate": 0.03205128205128205
+      },
+      "artifact_sha256": "9617e86fff2ce15eb2abbc36d606210591a6de86e46f7941c5a28110dd4b2d1c"
+    }
+  }
+}

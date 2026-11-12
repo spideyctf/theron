@@ -4,9 +4,25 @@ Assessment date: 12 November 2026. This is a study proposal with a preliminary a
 
 ## Current assessment
 
-Theron is a functioning research prototype: CLI and local web review, bounded Python analysis, commit-pinned evidence, advisory alias grouping and explicit application/context scopes are implemented. The [evaluation snapshot](evaluation/2026-11-12/README.md) reproduces 76.47% recall, 95.79% case-level precision and 85.05% F1 on a synthetic tuning corpus. Regression tests pass. These justify reporting an engineering artifact and preliminary evaluation.
+Theron is a functioning research prototype: CLI and local web review, bounded Python analysis, commit-pinned evidence, advisory alias grouping and explicit application/context scopes are implemented. The [earlier evaluation snapshot](evaluation/2026-11-12/README.md) was followed by an [OWASP study](evaluation/owasp-2026-11-12/RESULTS.md), with pinned Bandit/Semgrep baselines, a grouped synthetic split and three ablations. OWASP test recall rose from 3.37% to 15.73%, but validation recall is zero and both baseline tools detect more held-out vulnerable cases. The original PySASTBench tuning recall is now 77.31%. This contrast is central evidence, not something to hide behind the stronger tuning score.
 
-They do not yet justify a competitive accuracy or industry-readiness claim. There is no held-out evaluation, same-protocol comparison with other scanners, measured triage benefit or systematic real-world alert adjudication. XSS recall is 10%. The benchmark does not measure AI-specific checks or dependency accuracy.
+These results do not justify an overall competitive-accuracy or industry-readiness claim. A synthetic template/category-shift holdout and same-protocol baselines now exist; independent real-world/AI-specific evaluation, measured triage benefit and systematic alert adjudication remain missing. XSS recall on the original tuning benchmark is still 10%. Neither synthetic benchmark measures AI-specific checks or dependency accuracy.
+
+## Progress on the three priorities
+
+| Priority | Completed in this iteration | Next requirement |
+| --- | --- | --- |
+| Fair baseline comparisons | Bandit 1.9.4 and Semgrep CE 1.185.0, pinned Python rule revision, same input splits, explicit CWE mappings, all categories and errors retained | Add independent adjudication and compare on real projects; broader tool/config sensitivity |
+| Untouched evaluation | Detector frozen before 248 validation and 245 test cases; template groups kept together; exposure history disclosed | The results are now exposed. Use a new real-world/AI-specific holdout for future generalization claims |
+| Ablations | Three feature switches, independent regression tests, all split outcomes and cluster bootstrap summaries published | Test mechanisms on a corpus with relevant flows; neutral held-out ablations do not prove benefit |
+
+The test split has only six coarse template groups and shared helpers, so it is not a substitute for a project-level real-world study. No detector changes followed its unblinding.
+
+## Reserved real-world target
+
+The [ByteDance PatchEval-Verified repository](https://github.com/bytedance/PatchEval) is a promising next source. We pinned revision `b43285cdde80cc04608d5f1178a330b740c91c2d` and reserved metadata for **70 Python cases** out of 230 entries. See [realworld-reserve.json](evaluation/owasp-2026-11-12/realworld-reserve.json). Function bodies were hashed programmatically but not inspected; no images or exploits were run. The repository has an Apache-2.0 license; upstream target projects retain their own terms.
+
+This is a repair benchmark, so it needs a SAST adapter and label audit first. Audit patch URLs, identify vulnerable/fixed snapshots and labelled sinks, deduplicate by project/CVE/code against development data, then freeze a project-separated final split before inspecting held-out source. The upstream documentation warns that reference patches may not satisfy every strengthened PoC; do not automatically label every fixed function clean. This reserve has no Theron accuracy result yet. Pulling every Docker image is unnecessary for the planned static-first assessment.
 
 ## Candidate contribution
 
@@ -46,7 +62,7 @@ Bandit is a useful pattern-check baseline, not a direct substitute for a general
 
 ## Preliminary abstract
 
-Static security tools can impose review costs when source evidence, dependency matches and demonstration code are presented with the same certainty. We present Theron, a local security review prototype for Python and AI application repositories. Theron combines bounded AST-based flow propagation, context-specific sanitizer handling and repository-local import analysis with dependency advisory matching and explicit report scopes. It preserves source/sink locations, advisory identities and contextual detections for inspection. On 119 scorable vulnerable variants and 120 fixed variants from the PySASTBench synthetic corpus, the current implementation detects 91 vulnerable variants and reports four label-matched fixed-case alerts, yielding 76.47% recall and 95.79% case-level precision. One additional vulnerable label is unresolved. These results come from a corpus inspected during development and do not establish held-out generalization. Stored XSS remains a major limitation. Independent baseline comparisons and reviewer studies are needed to evaluate the proposed detection and review benefits.
+Static security tools can impose review costs when source evidence, dependency matches and demonstration code are presented with the same certainty. We present Theron, a local security review prototype combining bounded Python flow analysis, context-specific sanitizer handling and explicit report scopes. After changes developed on an OWASP BenchmarkPython development split, a frozen detector identified 14 of 89 vulnerable test cases and matched five of 156 fixed cases, compared with three vulnerable detections and five fixed-case matches before the changes. Pinned Bandit and Semgrep configurations detected more vulnerable test cases, while Theron had fewer fixed-case matches. Validation recall was zero. On the previously inspected PySASTBench tuning corpus, recall was 77.31%, demonstrating a substantial gap between the tuning score and the broader synthetic evaluation. Three controlled ablations were neutral on the held-out splits. The study reports limitations, failure modes and reproducible artifacts; real-world/AI-specific holdouts and measured reviewer benefits remain future work.
 
 This abstract is accurate for the current snapshot, but a submission should replace preliminary gaps with completed experiments where relevant. Do not state superiority, novelty or user benefit as established facts.
 

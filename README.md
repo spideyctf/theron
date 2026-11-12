@@ -9,24 +9,48 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 **Status:** a working research prototype with reproducible synthetic results. Findings require review. The strongest measured coverage is command/code injection, SQL injection and deserialization; stored XSS remains a major gap.
 
-## Verified metrics
+## Latest evaluation: OWASP BenchmarkPython
 
-Re-evaluated **12 November 2026**, using scanner commit [`ff71cf6`](https://github.com/spideyctf/theron/commit/ff71cf657d0597cddfacf072749972af3f88c13a), default SAST rules and the pinned [PySASTBench](https://github.com/Victor725/PySASTBench) synthetic corpus. It contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
+On **12 November 2026**, we added [OWASP BenchmarkPython](https://github.com/OWASP-Benchmark/BenchmarkPython), pinned to `f1291485808b66e20ddb6b01b10dc71b3df8c8ba`: **1,230 synthetic cases across 14 categories**. Whole upstream template families stay in one split: 737 development, 248 validation and 245 test cases. The detector was frozen at [`a504494`](https://github.com/spideyctf/theron/commit/a504494e35b961770a5c37896a7f115bfe025088) before validation/test; all categories, including unsupported ones, remain scored.
+
+| Split | Before: detected / vulnerable | After: detected / vulnerable | After precision | After F1 |
+| --- | ---: | ---: | ---: | ---: |
+| Development | 5 / 279 (1.79%) | 56 / 279 (20.07%) | 80.00% | 32.09% |
+| Validation | 0 / 84 (0.00%) | 0 / 84 (0.00%) | 0.00% | 0.00% |
+| Test | 3 / 89 (3.37%) | 14 / 89 (15.73%) | 73.68% | 25.93% |
+
+The test set has 156 fixed cases; Theron matched five before and after the change. **Validation recall is zero**, exposing unsupported categories and unmodelled flows. This is a harder template/category-shift evaluation than the earlier tuning corpus, and shows why its 77% recall must not be presented as general accuracy.
+
+| Frozen test comparison | TP | FN | FP | TN | Precision | Recall |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Theron | 14 | 75 | 5 | 151 | 73.68% | 15.73% |
+| Bandit 1.9.4 | 63 | 26 | 47 | 109 | 57.27% | 70.79% |
+| Semgrep CE 1.185.0, pinned Python rules | 31 | 58 | 22 | 134 | 58.49% | 34.83% |
+
+Both baselines detect more vulnerable test cases. Theron has fewer fixed-case matches at lower coverage; this does not establish superiority. These are file/CWE case metrics from our adapter, not individual-alert exploit precision or the official OWASP scorecard. Both corpora are synthetic, with shared helpers and residual similarity risks.
+
+Three ablations are included: helper calls, local imports and context-specific sanitizer flags. They are neutral on validation/test. On development, disabling helper calls or imports loses two detections; disabling sanitizer flags adds eight false-positive cases. No held-out benefit is attributed to those features without supporting evidence.
+
+See the [frozen protocol](docs/evaluation/owasp-2026-11-12/README.md), [complete results](docs/evaluation/owasp-2026-11-12/RESULTS.md), [machine-readable summary and cluster intervals](docs/evaluation/owasp-2026-11-12/summary.json), and [research plan](docs/RESEARCH.md). The reported test set is now exposed; future tuning against it needs a new untouched final evaluation.
+
+## PySASTBench tuning benchmark
+
+Re-evaluated **12 November 2026** after the OWASP-driven flow changes, using the frozen detector above, default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). It contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
 
 | Measure | Result |
 | --- | ---: |
-| True positives / false negatives | 91 / 28 |
+| True positives / false negatives | 92 / 27 |
 | Label-matched false positives / true negatives | 4 / 116 |
-| Recall | **76.47%** |
-| Precision | **95.79%** |
-| F1 | **85.05%** |
-| Accuracy over 239 scored variants | 86.61% |
+| Recall | **77.31%** |
+| Precision | **95.83%** |
+| F1 | **85.58%** |
+| Accuracy over 239 scored variants | 87.03% |
 | Specificity | 96.67% |
-| Balanced accuracy | 86.57% |
+| Balanced accuracy | 86.99% |
 | False-positive rate on fixed variants | 3.33% |
 | Unscorable vulnerable variants | 1 |
-| Fixed files with any alert, including unrelated alerts | 6 / 120 |
-| Total alerts across fixed files / outside label match | 7 / 3 |
+| Fixed files with any alert, including unrelated alerts | 7 / 120 |
+| Total alerts across fixed files / outside label match | 8 / 4 |
 
 These are **case-level, label-matched metrics**, not the proportion of individual real-world alerts that are exploitable. The corpus was inspected during tuning; it is not a held-out test set. The evaluator and upstream labels were not changed to improve the score. Benchmark exit code **1** records the unresolved label rather than silently dropping it.
 
@@ -35,7 +59,7 @@ These are **case-level, label-matched metrics**, not the proportion of individua
 | 22 | Path traversal | 17 | 3 | 3 | 17 | 85.00% | 85.00% | 85.00% |
 | 77 | Command injection, including CWE-78 | 19 | 0 | 0 | 20 | 100.00% | 100.00% | 100.00% |
 | 79 | XSS | 2 | 18 | 0 | 20 | 100.00% | **10.00%** | 18.18% |
-| 89 | SQL injection | 17 | 3 | 0 | 20 | 100.00% | 85.00% | 91.89% |
+| 89 | SQL injection | 18 | 2 | 0 | 20 | 100.00% | 90.00% | 94.74% |
 | 94 | Code injection | 18 | 2 | 0 | 20 | 100.00% | 90.00% | 94.74% |
 | 502 | Unsafe deserialization | 18 | 2 | 1 | 19 | 94.74% | 90.00% | 92.31% |
 
@@ -43,25 +67,25 @@ CWE-77 has one additional unscorable vulnerable label. A perfect result within a
 
 | Engineering check, 12 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 237 passed; 1 dependency deprecation warning |
+| Python regression suite | 273 passed; 1 dependency deprecation warning |
 | Frontend tests | 8 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |
 
-Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [evaluation data and formulas](docs/evaluation/2026-11-12/README.md), [raw benchmark results](docs/evaluation/2026-11-12/benchmark.json), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
+Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/owasp-2026-11-12/pysastbench-after.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
 
-A fresh four-module GitHub self-scan of the same commit analyzed **76 files in 58.24 seconds**, with **1 application informational notice**, **0 application vulnerability alerts**, **18 context detections** and **151 SBOM components**, including **15 unresolved versions**. This is one network-dependent smoke test, not a throughput benchmark or proof that Theron is vulnerability-free. [Self-scan summary](docs/evaluation/2026-11-12/self-scan-summary.json).
+The earlier four-module GitHub self-scan of `ff71cf6` analyzed **76 files in 58.24 seconds**, with **1 application informational notice**, **0 application vulnerability alerts**, **18 context detections** and **151 SBOM components**, including **15 unresolved versions**. This historical, single-run smoke test predates the new flow changes; it is not a current throughput benchmark or proof of security. [Self-scan summary](docs/evaluation/2026-11-12/self-scan-summary.json).
 
 ## What Theron checks
 
 | Module | Default coverage | Additional opt-in review candidates |
 | --- | --- | --- |
-| `sast` | Supported Python input flows into command/code execution, unsafe deserialization, paths, SQL statements, outbound URLs and explicit reflected HTML responses | Broader Python and JS/TS regex patterns |
+| `sast` | Supported Python input flows into command/code execution, unsafe deserialization, paths, SQL/XPath statements, redirects, outbound URLs and selected HTML responses/Flask returns | Broader Python and JS/TS regex patterns |
 | `ai` | Recognized provider credential patterns and model-text-to-execution flows; credential matches are explicitly unverified | Prompt/instruction patterns, deployment settings, generic credentials and exfiltration hints |
 | `sca` | Exact-version OSV advisory matches, grouped aliases, unresolved-version notices and CycloneDX 1.5 inventory | AI/ML package review hints |
 | `agentic` | Structured configuration parsing notices | MCP, instructions, tool descriptions and permission patterns |
 
-Python analysis follows selected framework/CLI/socket sources, nested helpers, returns, simple instance state and repository-local imports. Source/sink traces show the observed flow. Sanitizers apply to the relevant context: HTML escaping does not sanitize shell commands, and a safe filename does not make deserialization safe. Scanned modules are parsed as text and never imported or executed.
+Python analysis follows selected framework/CLI/socket sources, literal-key containers, selected list mutations, `ConfigParser` set/get values, nested helpers, returns, simple instance state and repository-local imports. Literal comparisons and selected `match` branches are resolved without executing code. Source/sink traces show the observed flow. Sanitizers apply to the relevant context: HTML escaping does not sanitize shell commands, and a safe filename does not make deserialization safe. Flask factory registration inferred from a route decorator and Flask APIs is explicitly medium confidence. Scanned modules are parsed as text and never imported or executed.
 
 Passing input to an LLM, installing an AI package or naming a variable `secret` does not by itself establish a default vulnerability. JS/TS checks do not have Python-equivalent semantic analysis. Enable broader candidates with `--include-experimental` and validate them individually.
 
@@ -191,7 +215,7 @@ Skip cloning if the checkout already exists. The benchmark parses corpus code wi
 
 ## Research status and known gaps
 
-The current evidence supports an evaluated prototype, not an industry-grade or state-of-the-art claim. The benchmark measures Python SAST only; it does not validate AI-specific detection accuracy, agentic checks, SCA precision, SBOM completeness or real-world exploitability. Comparative baselines, independent held-out evaluation and a user study have not been completed. ROC-AUC/PR-AUC are not reported because there is no ranked threshold sweep.
+The current evidence supports an evaluated prototype, not an industry-grade or state-of-the-art claim. These benchmarks measure Python SAST only; they do not validate AI-specific detection accuracy, agentic checks, SCA precision, SBOM completeness or real-world exploitability. A grouped synthetic holdout, pinned baseline comparison and three ablations are now available; real-world/AI-specific holdouts, independent adjudication and a user study remain outstanding. ROC-AUC/PR-AUC are not reported because there is no ranked threshold sweep.
 
 Major gaps include persistent/store-to-template XSS, complex mutable aliasing, dynamic dispatch/imports, third-party internals, unsupported frameworks/lockfiles, and runtime authorization or reachability. Loop handling is bounded rather than a general fixed-point analysis.
 

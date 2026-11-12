@@ -1,0 +1,2939 @@
+{
+  "dataset": "PySASTBench synthetic",
+  "dataset_revision": "3ad04b72c516d0533a5dc9c8042c9808e69e0f40",
+  "manifest_sha256": "bea20625b0aae93d9d844835e4b745898ff7cc6d98fd576df772480b56dc9fae",
+  "experimental": false,
+  "label_matching": "CWE/function span; removed or renamed fixed targets use whole-file CWE matching; CWE-78 matches CWE-77",
+  "summary": {
+    "tp": 92,
+    "fn": 27,
+    "fp": 4,
+    "tn": 116,
+    "errors": 1,
+    "precision": 0.9583333333333334,
+    "recall": 0.773109243697479,
+    "false_positive_rate": 0.03333333333333333
+  },
+  "by_cwe": {
+    "22": {
+      "tp": 17,
+      "fn": 3,
+      "fp": 3,
+      "tn": 17,
+      "errors": 0,
+      "precision": 0.85,
+      "recall": 0.85,
+      "false_positive_rate": 0.15
+    },
+    "77": {
+      "tp": 19,
+      "fn": 0,
+      "fp": 0,
+      "tn": 20,
+      "errors": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0
+    },
+    "79": {
+      "tp": 2,
+      "fn": 18,
+      "fp": 0,
+      "tn": 20,
+      "errors": 0,
+      "precision": 1.0,
+      "recall": 0.1,
+      "false_positive_rate": 0.0
+    },
+    "89": {
+      "tp": 18,
+      "fn": 2,
+      "fp": 0,
+      "tn": 20,
+      "errors": 0,
+      "precision": 1.0,
+      "recall": 0.9,
+      "false_positive_rate": 0.0
+    },
+    "94": {
+      "tp": 18,
+      "fn": 2,
+      "fp": 0,
+      "tn": 20,
+      "errors": 0,
+      "precision": 1.0,
+      "recall": 0.9,
+      "false_positive_rate": 0.0
+    },
+    "502": {
+      "tp": 18,
+      "fn": 2,
+      "fp": 1,
+      "tn": 19,
+      "errors": 0,
+      "precision": 0.9473684210526315,
+      "recall": 0.9,
+      "false_positive_rate": 0.05
+    }
+  },
+  "fixed_file_alerts": {
+    "files_with_any_alert": 7,
+    "total_alerts": 8,
+    "outside_label_match": 4
+  },
+  "cases": [
+    {
+      "case": "22_DS-1",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "FileServerHandler.serve_file",
+      "source_sha256": "690f4527f550fc68571b72e83d4c725f60b2d19d43c1c74b92b8d1fbd93263b2",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-1",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "FileServerHandler.serve_file",
+      "source_sha256": "320faa4c0857c9baca5c1aaa3943b046186b5f53fd8b64e6c0cbaa517535a469",
+      "outcome": "fp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-2",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "download_image",
+      "source_sha256": "55b3153f5cbd84d5d884c960f6b8537870c8dc4238a537264bd32ad13b529eee",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-2",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "download_image",
+      "source_sha256": "be49c9ffaa3895d244ba0b99221dbb5d3095022fe81514109b8978a996969577",
+      "outcome": "fp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-3",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "ConfigManager.load_config",
+      "source_sha256": "11da3e0a84c361a397c047e329fc57b46f802be5418e9bc75dab6f024957d504",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "22_DS-3",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "ConfigManager.load_config",
+      "source_sha256": "2706d14b57a4bfa2f9263d3a1a7b7219873cd463c7d6773d65c54763e1b82066",
+      "outcome": "fp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "22_DS-4",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "DocumentManager.get_document",
+      "source_sha256": "0f1ca92296019b0fe704e4e5ae931b1a227d6747f1c9060a72d1e74c31a4b13e",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 1,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "22_DS-4",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "DocumentManager.get_document",
+      "source_sha256": "92d74c19d19a5bfad5ece137297691e4dcbf961aa2d541b80e291c9ec1df291b",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-5",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "generate_thumbnail",
+      "source_sha256": "07cdc0e2b743f258c8d121bd51b5190d510263ac5361e066efc462e3e488e5e7",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "22_DS-5",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "generate_thumbnail",
+      "source_sha256": "69399521fe29139b360579aac304eabc6f86adf3d10d0fea6811a046d1ab2704",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-6",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "BackupManager.restore_backup",
+      "source_sha256": "6cd57bcbeceef0dac4c127a42f1630d30e479d4df996317fad67ca9cb8387be1",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "22_DS-6",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "BackupManager.restore_backup",
+      "source_sha256": "2a3ff3090ecbfa07699b086ef3f5d488b6fd836df1618086459dee7951ef9df9",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-7",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "LogManager.get_log_file",
+      "source_sha256": "9ed7ca706791ba0f41233d1cb7f8feccf7e83f1316db376a295f72f034366efd",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 3,
+      "unrelated_alerts": 2
+    },
+    {
+      "case": "22_DS-7",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "LogManager.get_log_file",
+      "source_sha256": "dcebb48ef358fea8bcf5bf6de13cd2c1e48a030c417693654117206b30456685",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-8",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "ReportGenerator.load_template",
+      "source_sha256": "be499f7f4c6ac84fc71047bc97c0d3e018cf6965f2e182acb215855d76d8791d",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 5,
+      "unrelated_alerts": 4
+    },
+    {
+      "case": "22_DS-8",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "ReportGenerator.load_template",
+      "source_sha256": "e72e168adf1fe1af9c55a7855859f199501651eb5c38110043be6bf8725b48ee",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-9",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "DocumentArchiver.archive_document",
+      "source_sha256": "1ddcf3498c14b92823cab8fca617b77ad1d0ea135a15807a35ace7020eb34f4d",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 1,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "22_DS-9",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "DocumentArchiver.archive_document",
+      "source_sha256": "9740836419100240dee3f4c13eb8dc0ad547487c23f40e8baa94ff456421a4ea",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-10",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "TemplateRenderer.render_template",
+      "source_sha256": "b86881fcfe9d117ef3c3ecdc40510ae73499fd44912249f0f3a2338372b1b394",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-10",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "TemplateRenderer.render_template",
+      "source_sha256": "b3751b84b06bc6751f337645e9b8b036e15346f7a44eee43da7ac0c2e70b3068",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-11",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "FileServerHandler.serve_file",
+      "source_sha256": "728ce5a85ea7e85955adb9043e83b0c2e0f1d5c58413d7e013a0d744db0b0391",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-11",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "FileServerHandler.serve_file",
+      "source_sha256": "44ca7785ab16c451b4bb77c189203d9e594712fdd1c18349a64f2c3462194aa3",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-12",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "get_image",
+      "source_sha256": "2ac13850538d5c84b4473fcfc8cd9dfcffa11a23bacf1e11dcf59e0308f1b566",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-12",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "get_image",
+      "source_sha256": "62bf2c7ff802a9e751c07e62e99555235bda475d02fd26230c8ec9a820ce3376",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-13",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "download_document",
+      "source_sha256": "1911ddce69b880b183572766ba8f888a8dd3ca3acbc9eeab0bb14ea0543df68c",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-13",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "download_document",
+      "source_sha256": "c0ab9382f3ef508e7fab7ff33b3c12b33f08cb52cc2cce4bec4d095ab10d1ef5",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-14",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "restore_config",
+      "source_sha256": "58c04a1ca1480cf994afc6e903274aac66456f156247478ddabac5c9668c3cce",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "22_DS-14",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "restore_config",
+      "source_sha256": "f72e5cc4010343627797c73d7448c9d2dbf1f87b3a6016a08da3a4bc79b69e5b",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-15",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "download_report",
+      "source_sha256": "22c56560e42ff2707ed1e0ed612decf74cfc78c339362c3f247a8e1fdc161f6b",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 4,
+      "unrelated_alerts": 3
+    },
+    {
+      "case": "22_DS-15",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "download_report",
+      "source_sha256": "827d86e2dd525000d32fa0633957725bfe9716d38d593413993798395b2740e4",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-16",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "download_log",
+      "source_sha256": "deb12a8a11a45d41ee3a8c2d9e4d8ef254ef5d6b085f577df53c06b76a7d382f",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "22_DS-16",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "download_log",
+      "source_sha256": "d0015144916bf0c501edff59bb06ecd3f315507716301c8787ec0f4c269bfb23",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-17",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "ConfigManager.load_config",
+      "source_sha256": "8a42b6070a388942886998648cc43134eb8406a7ef6f5ed09c6d8e621de233f2",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 3,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "22_DS-17",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "ConfigManager.load_config",
+      "source_sha256": "a5e6c35465ed640cc8886f53829a35c24e388e13a82d31933e3902a7cca2bd6f",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-18",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "stream_media",
+      "source_sha256": "10b1c2831b7e12147048b389994abca8ab74a4d3fd181b2e613166b777995f5f",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-18",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "stream_media",
+      "source_sha256": "34f35eff34aae4cc99a1a3c344d8f07cbab50a3a99a81623b9ada2df0bc6071e",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-19",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "extract_archive",
+      "source_sha256": "472baa320979e08a98bdcd884a09759eec07c2e35e07a2cabd006cf60b5c23b1",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 3,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "22_DS-19",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "extract_archive",
+      "source_sha256": "c98c3d506134f3465162e386bb818dceff525858997ec1406ed226e69a99b662",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "22_DS-20",
+      "cwe": "22",
+      "variant": "vul",
+      "target": "serve_theme_asset",
+      "source_sha256": "a67e2209f708feb8b022179e993d20ed84de73fdb335add1e8d7bee24e8b6275",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-PATH-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "22_DS-20",
+      "cwe": "22",
+      "variant": "fix",
+      "target": "serve_theme_asset",
+      "source_sha256": "3087396d900cf1d2e8dfe6e6b1c5c487dbc9366b894055466a46dfb56bbadae2",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-1",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "FileManager.search_files",
+      "source_sha256": "f1fdfd266a7a2aaa8ef84e425aa64544e86c30aab7fd1b5ce8a54bace442daea",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-1",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "FileManager.search_files",
+      "source_sha256": "d5610752b9992e3518b9cee2d08cad55450b07d4246fdb8b65f56d16f3737162",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-2",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "NetworkDiagnostics.trace_route",
+      "source_sha256": "44e00766344aca2b072c2107b393b3187e06f5bcfd5c218d10e2d4fcdbbcb8a3",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "77_DS-2",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "NetworkDiagnostics.trace_route",
+      "source_sha256": "d0f430ec1a52ac157b480efbfd4eeb418bbefe1bf14a9df1dd34514952198950",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-3",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "LogAnalyzer.search_logs",
+      "source_sha256": "89cc6dc1073bc6ba8a9c35acc2fc2609357a81071be2cb7cce65185e467dad6b",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-3",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "LogAnalyzer.search_logs",
+      "source_sha256": "388c23b10feb50a06d39bb3bc724755c6d5f0c3b15d340f96552c28ee1b0092e",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-4",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "DatabaseManager.create_backup",
+      "source_sha256": "6fb546091c86fff255b0b1fcb633d1fabdc900a00109bea56ab0e9610514d380",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "77_DS-4",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "DatabaseManager.create_backup",
+      "source_sha256": "7220671b37aecf76f587cbe0d7965a8c1f80fe1da0fe7a2943e8d4b942545776",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-5",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "SystemMonitor.check_process",
+      "source_sha256": "db9ce234e69054914ddf6cf9240dbff09952c4015b5f628cfebd8635eee59366",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-5",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "SystemMonitor.check_process",
+      "source_sha256": "5ed97787e6b06aafc15781f08a7c5c0c3825151cbedea746c2e10c9590d36111",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-6",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "WebhookTester.test_curl_request",
+      "source_sha256": "7a1e935f399c0df79f7ba2c1f67f7ace1c10dc224d10e4eff4bed2646fe3523a",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-6",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "WebhookTester.test_curl_request",
+      "source_sha256": "ab3a65c2ee9b5047e27eb4041519f408be4018f99b193341bde8c5fc31f2887b",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-7",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "DocumentConverter.convert_file",
+      "source_sha256": "8dee1355befe9c307872ce721d5dd84a369d59e0ede18b085e9cd191fdb1939b",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-7",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "DocumentConverter.convert_file",
+      "source_sha256": "3f420c7ad1cc45b32f88fe1ec16e5cb06c40d424dd4a743b060f12c27245c94b",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-8",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "VideoProcessor.process_video",
+      "source_sha256": "f1b69aed1ac34ce9240fa969405c2dce6c1ee1b781605cd62bc259cc3ec4c698",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 3,
+      "unrelated_alerts": 2
+    },
+    {
+      "case": "77_DS-8",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "VideoProcessor.process_video",
+      "source_sha256": "db9fd9acdb70b65d54eb1c29f55318b46fa4e774927c7f0f95d471f3624f7908",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-9",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "DNSTool.custom_query",
+      "source_sha256": "37204e008b9a6e268a404964e226234b30e3df4d4436cf5442aba71d7cebf4fe",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-9",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "DNSTool.custom_query",
+      "source_sha256": "c90b6a3501234fe8882894821eccdc9a275745c14c40a81db6d5eec3d207aa91",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-10",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "NetworkConfigurator.configure_kernel_param",
+      "source_sha256": "31eddbe3a490f7a436811500461c92a5f5db942432b3571ed8735a7f6ea52515",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-10",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "NetworkConfigurator.configure_kernel_param",
+      "source_sha256": "aef8f17b33c3ffb2fc6c142548d8d6035f130e5b78198d51fc22dc1193529a27",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-11",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "FileCompressor.compress_file",
+      "source_sha256": "ca400172556f93036b302ed2a389a2292a62a0996065e502b3a4e8da8d791dff",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-11",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "FileCompressor.compress_file",
+      "source_sha256": "bfe27a2e8c9f18dc80014c752e586aaf4b71837c0e2f553a4348135a4ceb0b9e",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-12",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "ImageProcessor.apply_filter",
+      "source_sha256": "198bd9707c8d8c49517177c15fa9f1d26160c5656f96d345f87f5b5a763f66d8",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-12",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "ImageProcessor.apply_filter",
+      "source_sha256": "110f2d523596524f3e9b7e75b0759648fc5de7cd0a93206a02172724911564e9",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-13",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "DatabaseBackupTool.create_backup",
+      "source_sha256": "92efb0d46015b8c5e3c4154f62ab7ea5922a707fc161c01ebd34a599e58fd1d4",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-13",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "DatabaseBackupTool.create_backup",
+      "source_sha256": "daa2f2f2f09f01717aadd7fa9355af98471ee6357e8cb6ae56a0225c643796a0",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-14",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "NetworkDiagnosticTool.run_diagnotstic",
+      "source_sha256": "746a52720d39fe86bbead2b537ddf0cf8a3badffe759ec1e8ee4bf89cf9a2c40",
+      "outcome": "error",
+      "error": "Labelled function not found"
+    },
+    {
+      "case": "77_DS-14",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "NetworkDiagnosticTool.run_diagnotstic",
+      "source_sha256": "14aed2822394af925402024d1ebe32dad31c65abef1c83fc3bcf652b9ac209d8",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-15",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "DocumentConverter.convert_document",
+      "source_sha256": "cb448580663c6cbbb303b60d4ab6f7ef33413e4e385cbc2d87d6a8267ac54aa4",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-15",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "DocumentConverter.convert_document",
+      "source_sha256": "ac06db61ced5749be583a923e7911c2f5d7fd13b4ee2874c1146771ad26808a2",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-16",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "SystemMonitor.execute_system_check",
+      "source_sha256": "5bbadfbc698f3b12618a1a085397a0bb828de68094265968f945b70b0291ce63",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-16",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "SystemMonitor.execute_system_check",
+      "source_sha256": "2f58698ab437d796a499f5610107bdf541810313c8d08aacd2b028c6442d4e7a",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-17",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "WebsiteScreenshot.capture_website",
+      "source_sha256": "9fcb5f537ae4af09463c628ce1bce6a6721265a90b43eda322ba77a8ab855b79",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-17",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "WebsiteScreenshot.capture_website",
+      "source_sha256": "fd09c14b128e428a076a2f30880b832801ab20ce58461cde59b174ed54203d87",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-18",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "VideoProcessor.process_video",
+      "source_sha256": "e99a23f77197644cf11245e685e72c06f82bf8391383b88dbb56c1343c177063",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 4,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-18",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "VideoProcessor.process_video",
+      "source_sha256": "c8f5c699535b076261b6d761c5bc257ba1dddf9cf86ce748e39b735b52279060",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-19",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "DNSLookupTool.perform_lookup",
+      "source_sha256": "812c96972b95aa3b6542908f1541698ee68c2919bd42fb09e13c5abe3daa2c95",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-19",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "DNSLookupTool.perform_lookup",
+      "source_sha256": "49c92edadcd64376d323c53b2020e3d09955bf0635dd7493d760840292f2c11b",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-20",
+      "cwe": "77",
+      "variant": "vul",
+      "target": "SystemInfoTool.get_system_info",
+      "source_sha256": "b8f39c87c77c56b53ee4ad79227987b318fe0bf9f5e9bb0791fdda916876a2dd",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "77_DS-20",
+      "cwe": "77",
+      "variant": "fix",
+      "target": "SystemInfoTool.get_system_info",
+      "source_sha256": "aec9fd461f819cd505f103bd568fb47ab25d4421342456c7a7e328dc182d8275",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-1",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "index",
+      "source_sha256": "01bb9e8a80722d04a4a511b0bbab6140470b182521fda63e7747a8782d9931dc",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-1",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "index",
+      "source_sha256": "5713ddcff55b98381a09ebacdf2e7e9f6880ff363163be0073948d02a9f0b65a",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-2",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "ProfileView.get",
+      "source_sha256": "19f7daef58175efc941d553cbdee2c5b421961b5a9c786d048edddc4495cefa2",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 1,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "79_DS-2",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "ProfileView.get",
+      "source_sha256": "323e11b0ee0067f1ed243e23c991029628a2011de8d3db7aa8400baefc800235",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-3",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "read_notes",
+      "source_sha256": "9a4b2a9a7923cb9c8a20b6a223d45461d82d608f5fc8cb319d3d67b1a8980b04",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-3",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "read_notes",
+      "source_sha256": "62518ffc5126a1db65ea1d8ac22e22e49556753845987740bd1bbd86cd789f8b",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-4",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "view_notifications_view",
+      "source_sha256": "dd889bcccb7e8f4fbf74e7f8763933ca696188a14eb0ac083441cde126e0556f",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-4",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "view_notifications_view",
+      "source_sha256": "aea9b1853068b9ffad987336fd060eb6881fbf54a0f8920f6f21df509c6272e5",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-5",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "FeedbackApp.view",
+      "source_sha256": "139e68a05552b96e0c0a26898be2b4f80bf999002dc8349f89a7f84fa577f5be",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-5",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "FeedbackApp.view",
+      "source_sha256": "ac2bbc755e199c86c2df097bf39e7a33bd7187eca4ada47659a47015ad9b7ec7",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-6",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "create_post",
+      "source_sha256": "75770bee00a86a35ae1ce0d2a13f749e5fc6d7a4a002e2c17eb78a79f8faed07",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-6",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "create_post",
+      "source_sha256": "0c5e15b0ea8451c9a8e2a04593bdc25642f595a42abaae2c8e9fa01c3d7fd91a",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-7",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "ChatHandler.get",
+      "source_sha256": "d41d2ec3d0d71d1ffd1c7b5672165f0e81d02686184904566bce06a03e98e862",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-7",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "ChatHandler.get",
+      "source_sha256": "27c79ac93b64a84814e343204aec57e135566493b4b0c5552373b4e96d68773b",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-8",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "view_page",
+      "source_sha256": "a3fa8ae080d79726a98689b00da58c9fbf0ef07e317470daffcd16e2250736c9",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-8",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "view_page",
+      "source_sha256": "c194600ec44b4b375ec8bc8831295606eeb841e0dfe7e6da818e75e068a6ff9c",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-9",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "dashboard",
+      "source_sha256": "1d2054d2b1f31a8703dd1e3b701680e38dfe4e49cae72895ddd299751b1b9eb6",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-9",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "dashboard",
+      "source_sha256": "25e276584c9bc776a73a975612d8c606806ba08c300fd5cd1a9c2ec6746381b7",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 1,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "79_DS-10",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "ReportResource.on_get",
+      "source_sha256": "a1757e9f9830426eabd384d698ceeb0c1dd0132cbd33e929928dbc373f26e0bb",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-10",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "ReportResource.on_get",
+      "source_sha256": "970b3f2971b275a5a6e9761384158fe419f6d0a429a27828bf903acf0c20d979",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-11",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "view_post",
+      "source_sha256": "373b113d372db4633f5f8603f20de755b59d54af6aec3802f60c9e4f9d2cc32b",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-11",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "view_post",
+      "source_sha256": "0d83ff7a9cbe0b8f28db7aef005332f321bf8d48be584b26a3eb78ec912defa1",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-12",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "SearchView.get",
+      "source_sha256": "58dfb390029532d9b260ff00a2c5cfc8ee3cb9d28e27af4da650438ffc94de2c",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-XSS-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-12",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "SearchView.get",
+      "source_sha256": "5985357f26dc19d15a7bdf288de441ba58fe0895ba9f63ab18986dec4a191eda",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-13",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "profile",
+      "source_sha256": "239c9a7efcad78d26f36a7be63720eda25905a20f1c8b32efd49c9be15f740b9",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-13",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "profile",
+      "source_sha256": "c07022457d6e58f77f87e812696fe4900b55ed716178d1ea7b06a2519a698944",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-14",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "view_file",
+      "source_sha256": "4e4d98f8c5e4a99594779d76ecf61952545167247c3e3af03e78982099500285",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-14",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "view_file",
+      "source_sha256": "a6a45a49500dbc3f02ea8df35c55ebb886adbc3c60ff35be3e462a26d0a62113",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-15",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "login_view",
+      "source_sha256": "1bba56616fd0a21380539e153be4b752ba07bdd7945901363351bafd76b8b249",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-15",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "login_view",
+      "source_sha256": "7263ceff671798106b48ccc23956ca6322b2ca72b6804fa2e284e36b51bedc63",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-16",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "GetNotificationsHandler.get",
+      "source_sha256": "db7d011c9d2dbe6aa28d1a65e9cd63caa6e1cdb4958183cf92560904b70e6a41",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-16",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "GetNotificationsHandler.get",
+      "source_sha256": "b8084a31c6e59a5f1b2ae8c342277897aa64ebb8c643fa955cfd1017297face7",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-17",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "Root.index",
+      "source_sha256": "cef1592a52bebae6edc8856d625e776f229d513e21717fa58c5d0988fdb82b4f",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-17",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "Root.index",
+      "source_sha256": "d7aa966383c1dff84040b98bc489ca58b89b3131f7c21d5bbc15a974496c6802",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-18",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "view_post",
+      "source_sha256": "83e47719db3bc68750690ffce228a6df877099045f85ca2e220f2a3724ace816",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-18",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "view_post",
+      "source_sha256": "9257a55f62dec6fb8cc803fcf55cf2d176cb7fd1732ff5ec45807877482853fe",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-19",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "view_profile",
+      "source_sha256": "549b9ec9a41624e249d4743c591fae27ce2bc35a9fde9a7ea896da3904400417",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-XSS-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "79_DS-19",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "view_profile",
+      "source_sha256": "1b71ce01771f0fbd8f03c24b06bc7a9209409e3a1fc63a568cb4f359f34b5017",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-20",
+      "cwe": "79",
+      "variant": "vul",
+      "target": "SearchResource.on_get",
+      "source_sha256": "a3cf36b4e4921d093c937197924884c960b1463e6f5f4f1ebc6e481d20c6dd2a",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "79_DS-20",
+      "cwe": "79",
+      "variant": "fix",
+      "target": "SearchResource.on_get",
+      "source_sha256": "9a5ddabd61a99c5e207eca50ca7ee8b49a0cf3b30bb95d9f5fafe1b6510c9c13",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-1",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_product",
+      "source_sha256": "fe3c3d0e29f12ac15869325ada6c0f292b6c127daf0055842ae2c18147a7e7d3",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-1",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_product",
+      "source_sha256": "e8693d286ee142322f10d71cdd4699c00130bcdf71fe5c1af0292daec486e261",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-2",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "get_employee_by_filter",
+      "source_sha256": "65cc648c0089cd6a42f58d0e8df8c2e055a1a68040b070c8911a54f0cb917a94",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-2",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "get_employee_by_filter",
+      "source_sha256": "d74e37dd9bb47ce49341b9b4f61bd36d81aa888585e66bef4917e7ce1e5332f7",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-3",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_products",
+      "source_sha256": "9ad571971182536649123e9f468310194b0c1a97efd31cc449c42f1c1d6333f0",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-3",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_products",
+      "source_sha256": "b931c781d7ed66fe484d261e63b998f93a026ea5dbfcfe076bd4166fdaf37732",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-4",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_cases",
+      "source_sha256": "4401b76b80055bfd9c626c4d35ad99bd59b7e0bccb01eb4b36044f940da34c9a",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-4",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_cases",
+      "source_sha256": "4a078a1ca5573216b5dfe7eec3469cf06964e688dc2ea1b3ee30b88326b312af",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-5",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "get_user_posts",
+      "source_sha256": "7b5583219da060cd2df60cbd00ace5192710ab1af197e71741f66d9a3c0e8968",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-5",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "get_user_posts",
+      "source_sha256": "f72c050a0bb17c8cc837667b11c5a1ebc2d70e3747a32b1193037814a59fde64",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-6",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "AccountHandler.get",
+      "source_sha256": "f7fdf9e89034cf86d1e68a573ee16a17ac4908474918a67413f3e73c3781df09",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-6",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "AccountHandler.get",
+      "source_sha256": "46a9d75acf6bcd003364f3ed62aa1655ac5bfceec5d4baabfcd1bde09940aabd",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-7",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_rooms",
+      "source_sha256": "3d6a60e9e24aa6c42a658f7f5e0a74e1e4062d5c2d6457ca3d9ce7484a4b0aee",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-7",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_rooms",
+      "source_sha256": "59af8e8b9148e66fbe6221dced298b64d3fc41eff811997a4a0fc50b70c75439",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-8",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "LibrarySystem.search_books",
+      "source_sha256": "042d553a07639cb69e5f514ca71eded6ba063f9ff6aed098ed9aa40a74d85412",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-8",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "LibrarySystem.search_books",
+      "source_sha256": "ab94c2fce36bd3d86ca203b93172a45f9fd4e0d2b6ab096fe7a978d4e5bb6531",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-9",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_patient_records",
+      "source_sha256": "3eff207401023c0b5325decd8ab03ebf6b2054e3a3619ddf6a22685dcfb052c0",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-9",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_patient_records",
+      "source_sha256": "d3154fdd8cc71d6a3e599963555da6739758e25e91107a129db241d9fae6f604",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-10",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_tickets",
+      "source_sha256": "9c6b04c346132e7427155d9345178dca469c247ae5ba90117e0aed2f78e15f5d",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-10",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_tickets",
+      "source_sha256": "94a7f903be461cb74b2a1b692adac41a59b0b822d2679f578400ad04efa07a02",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-11",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_books",
+      "source_sha256": "6a29d7d88430fec3382111d31807964fb27c2ddec54a9467ef926b1458a565f3",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "89_DS-11",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_books",
+      "source_sha256": "283f2d6dd5674fa293d7d061a2f9810fcc8b095dddeecf5d4b63090585db27c9",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-12",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_books",
+      "source_sha256": "860c7ebbfb6f12a605b047cdb4a3036b9d5b9c28376d8ab7ba989c3b6ada1c3e",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "89_DS-12",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_books",
+      "source_sha256": "2ddd0dfb56bf4383df0f203890e5cc2ea6d88f947c208c1c4740445098057be4",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-13",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_employees",
+      "source_sha256": "abffade6375d244a24aaa4d4cb878aa0777b180afd11cbba07e7fb0e9f6f60d9",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-13",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_employees",
+      "source_sha256": "2d46fb7231c5a1b9a0976cb3c642688abfde121c6b5654abebe8fe023e18b655",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-14",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_users",
+      "source_sha256": "0e9b506b295b2392834eb2b30a73ce0ebc63df0d85416e26c561173e97053ba8",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "89_DS-14",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_users",
+      "source_sha256": "a5be958180d7aef4cc710b21f705f57e14df6f6442db275628c966ff06b6b82f",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-15",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_products",
+      "source_sha256": "23abe7991d7606e710652a6ff62c5de4912d573e8448ff36250706ea396188af",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-15",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_products",
+      "source_sha256": "10feb2e7acdc15d55813028d748527905bdd5b88be4d1c0866e14d7796d3fa38",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-16",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_users_view",
+      "source_sha256": "0a0d9e9014113f3623f0412a45783f1e2e22f7a972930b357422005629a8dc48",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-16",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_users_view",
+      "source_sha256": "9fab7a8cbb0cf8b73a4d5c0c36868833e7bbeb83a7a11f2e8dc3cf263a9d09b9",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-17",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_products",
+      "source_sha256": "65c29b86fc1c9964d6fb6686af3416e5275ee8c18cf4ace01230b3f36dda77e7",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-17",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_products",
+      "source_sha256": "b7bcdfd1a357bf082d811d14843a659dad35a2ff8978210a6cfd3c9005494305",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-18",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "LoginHandler.post",
+      "source_sha256": "5fc6bdc28d5e83acc5b6bb38a7337122fdac170cf249930b09d4532b76dc3840",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-18",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "LoginHandler.post",
+      "source_sha256": "ce1f60f4656ba74a09813f56f819be889eb256aa7e9c3cadce35d234b52d7001",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-19",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "search_comments",
+      "source_sha256": "cb7fc0a104c5eb35fc339d75ccb3879ecf7ca13644cf84b30e85009354d7e187",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-19",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "search_comments",
+      "source_sha256": "49639b765c5b55a33e25e65437e8e6e0ab239aafbfe418f7a32960a301b4de9f",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-20",
+      "cwe": "89",
+      "variant": "vul",
+      "target": "ReportSystem.generate_report",
+      "source_sha256": "11eebd77e12fc6d30751d860ba1c83257bb19a9466de6fefded6288958ebc30c",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-SQL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "89_DS-20",
+      "cwe": "89",
+      "variant": "fix",
+      "target": "ReportSystem.generate_report",
+      "source_sha256": "75cf4c8bbb6a362bed142273062abfd3bdd93faaa1bccc664b2efa685f70cc5f",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-1",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "add_item",
+      "source_sha256": "52d3e37f56d0a04edf334c0e0122d60d7b418b286d65f93a30bf529b59b13b45",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-1",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "add_item",
+      "source_sha256": "1dd59a023cf176a89f934e52c1a2dd4d2c13fef360aae5dca2a9640298ed0c75",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-2",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "vulnerable_filter",
+      "source_sha256": "062448c2f013c5c9ea49a155262d10a4c506c2e3724af936d415e4ee251eed16",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-2",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "vulnerable_filter",
+      "source_sha256": "27f9c35a04924bb8293fcd1b450293157a96187519b4df9014606b61b778e992",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-3",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "TemplateHandler.post.vulnerable_render",
+      "source_sha256": "388bfb147afed1286e9385238732a49603a9bcac137e4b086896f5b57cf33465",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-3",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "TemplateHandler.post.vulnerable_render",
+      "source_sha256": "cd06522913523bc24e91690712b5f67becf95bdee58e706a0981350892c97068",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-4",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "PricingEngine.vulnerable_calculate",
+      "source_sha256": "8d8607910716cfdfa9a4bbb71183c9b0277a09e736266f0a5e8b93cfc0ec4688",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-4",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "PricingEngine.vulnerable_calculate",
+      "source_sha256": "a742cded5ecfa33db5a175bee85bdc776e61575573aa4cc31346d0f6d5acc25e",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-5",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "ReportGenerator.vulnerable_generate_report",
+      "source_sha256": "fd7948ea374357ab94892a41287cc08910eb547920afe4e6bd0b37dd2906f90a",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-5",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "ReportGenerator.vulnerable_generate_report",
+      "source_sha256": "cd703da061272e435d487ef289ad6ed85cb831e53223cea9a47f0bd9e696a784",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-6",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "ConfigManager.vulnerable_apply_config",
+      "source_sha256": "f079e1f1b65e691fc1451481ec01709df4b04c03405f3a452054798ed99a12d3",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "94_DS-6",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "ConfigManager.vulnerable_apply_config",
+      "source_sha256": "3cdc14dfaaaba60f022b7b0cacddaa75fe5c101775664841ac87726a495cbb7e",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 1,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "94_DS-7",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "WorkflowEngine.vulnerable_execute_step",
+      "source_sha256": "7a49fcf50b23d35dacea8276c9532b597b12d2a17a9cef10e810bab95e4997de",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-7",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "WorkflowEngine.vulnerable_execute_step",
+      "source_sha256": "e9b38978726fed2fc24f4ae30b2d902b0da44d18c91461a4be2838c69dc81b0e",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-8",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "ResponseProcessor.vulnerable_process_response",
+      "source_sha256": "f281f62091e815cdcc409107b38e8ccb5793b5dadd6904cec0185f0c3bcc2e44",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-8",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "ResponseProcessor.vulnerable_process_response",
+      "source_sha256": "882ec921d330ff06d02fc0cb537c162b46ab3048b311f20e8dad9f526d2ab2eb",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-9",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "RuleEngine.vulnerable_evaluate_rule",
+      "source_sha256": "241844522021e876e76a49f4b5e1d69301003d8dd4e2301fda30c4a92cac6f24",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-9",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "RuleEngine.vulnerable_evaluate_rule",
+      "source_sha256": "9436cae42f3e1bd57c7fab9edde7975a9707e4b76d3e3e54274f43b4c8406272",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-10",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "DataTransformer.vulnerable_transform",
+      "source_sha256": "d22bd2112d313fe32b45bc9d99db43815dbd3eb711ecaf404732c9a1e4c635ef",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-10",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "DataTransformer.vulnerable_transform",
+      "source_sha256": "ab7b7d4d707b8139750662490c83b48a7e375052acde1c0b725846723ff692cb",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-11",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "InventoryManager.process_custom_command",
+      "source_sha256": "b1d3de2a9a55416dd6c7fac19a4fa8e2dd246648bc6a65f8305394f83ffff518",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-11",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "InventoryManager.process_custom_command",
+      "source_sha256": "dedeb1c8bad664fcf364939e72996bf38d978cef90271d14ba6ca5a7c6ca91be",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-12",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "admin_actions",
+      "source_sha256": "f234db89024f31c36f8ca3698e968d52f43dd185a7ee632a9c871a33830ac344",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-12",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "admin_actions",
+      "source_sha256": "0973e031f7c550aa184117d8597a4348e147bdd33b7ed72d6082c5115b264602",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-13",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "dynamic_filter",
+      "source_sha256": "ffbc5b1a0189dafd968c50446fd28852ddd879f24730ed86db0e31e39942a642",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 3,
+      "unrelated_alerts": 2
+    },
+    {
+      "case": "94_DS-13",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "dynamic_filter",
+      "source_sha256": "435da384358fdc0b37bcbbb9f7cf7a5dc3940c80b6820f423787872ae8a9535d",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-14",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "execute_operation",
+      "source_sha256": "268ba0691a80257b148c0ed6323eeded8ce4f29b1abfb78bd76fe7d4d16e4a12",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "94_DS-14",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "execute_operation",
+      "source_sha256": "896e011a445eb87bcccd7f35e7b664674570e9a33f4c2b5a986dd2ad94ef2589",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-15",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "verify_token",
+      "source_sha256": "7f77d1505d909a804540cbc0e137b3668d4a3b78da6ee75efe910a6f1a06d7c3",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "94_DS-15",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "verify_token",
+      "source_sha256": "eeb5d329f2646ba9637689eb7ba8bb411a4eda8f0f0583c0c95bf33ee029455b",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 1,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "94_DS-16",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "DynamicTemplateRenderer._compile_template",
+      "source_sha256": "ce900db861926a3b03aa3a838b60148fbb42c27838f1458bf006642797b16d78",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 2,
+      "unrelated_alerts": 2
+    },
+    {
+      "case": "94_DS-16",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "DynamicTemplateRenderer._compile_template",
+      "source_sha256": "9eb2cc9615dd64de6a46adea7a1448ccc00f1a357e2ca2735575d50bec484fce",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-17",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "evaluate_math",
+      "source_sha256": "efeeb735260c2cc72a4233abbec955ec84ace96db271546cecfb11d9cef395f6",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-17",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "evaluate_math",
+      "source_sha256": "4c93eadcd35536cca198bdadc798804fc4af9c14693f1529d6a5f39aa1f8f10f",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-18",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "calculate_endpoint",
+      "source_sha256": "d71882d74765fdeb93ddc19e0dcdd61a1c36f98856901dbab5aee51a5ccc97a9",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 3,
+      "unrelated_alerts": 2
+    },
+    {
+      "case": "94_DS-18",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "calculate_endpoint",
+      "source_sha256": "55cdb00a9d6cda3bd54375fa60d79ac94df69679da8db3f2d74797d5cd98c902",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-19",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "evaluate_expression",
+      "source_sha256": "52a1c0fba5922791939b5ce8b4a7ba6f200d6d445ea5d1ea6c42dfc8a70dbc7a",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-19",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "evaluate_expression",
+      "source_sha256": "45a49cf6963100a04bddfaad047afa6667e964e3feb00efea007d9a8bf71e11b",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "94_DS-20",
+      "cwe": "94",
+      "variant": "vul",
+      "target": "direct_validate",
+      "source_sha256": "8a7b36f24583bfa2694c83e41387ece62dd16a93e0356110f243f5cb219b4877",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-SAST-EXEC-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "94_DS-20",
+      "cwe": "94",
+      "variant": "fix",
+      "target": "direct_validate",
+      "source_sha256": "de88996d01a617fa1f8bbe3c7471563312e9908ee1659780e52acf81da6d96d1",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-1",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "AnalyticsConfig.load_from_pickle",
+      "source_sha256": "990f00369ca6bf637cd3f2a38f46b681535a053ae685d2fd76d75987c45aeb69",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-1",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "AnalyticsConfig.load_from_pickle",
+      "source_sha256": "619baaab39f750e7d7495c422a0c5dcb19bb36c20d5198e9bcfde5c1bf45c199",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-2",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "update_config",
+      "source_sha256": "92be52d58ed6ece1bb30f9d4f647374a2bd0fbf931caeb311d09fe950b569873",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-2",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "update_config",
+      "source_sha256": "0bcb20f36df74e4d44c0f237403914d28ab5ab3cee2435de65e944f48d178bde",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-3",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "DeviceConfigManager.store_config",
+      "source_sha256": "5cc3bfe5a702eeb556d20bd6ca6dd53f0f4c897889a5c0d2db6787a3edc7231c",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-3",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "DeviceConfigManager.store_config",
+      "source_sha256": "8f1d66c4308419811e3f47d51dbcdd8fe2e3810865e27976c73ea9734a110835",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-4",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "TaskWorker._execute_task",
+      "source_sha256": "88c64a7567b6a1984dfd10d39b94f63b1e74ab08f034b8cbd3a9ab78560003fb",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 1,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "502_DS-4",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "TaskWorker._execute_task",
+      "source_sha256": "5bcd15a8e5ba1fe7fff599c995f3e42008db84e1ec2bc978fe61771cfbb3901b",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-5",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "FileProcessor.load_processing_plugin",
+      "source_sha256": "5f09b4f380a0c337033fa0a0e76f2c1a3d909260ef507640aa50bf18847b6131",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "502_DS-5",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "FileProcessor.load_processing_plugin",
+      "source_sha256": "382cba9eee87f6df94ce9fae5848b07ccbeae8314ac4e328e904b6218b19b342",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-6",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "TransactionProcessor.load_validation_rules",
+      "source_sha256": "3bf386a0a185e7631380273a69ff1f4876b8743f87764a42949b7e4cca20426f",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-6",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "TransactionProcessor.load_validation_rules",
+      "source_sha256": "36876f52ddcd060c9ad374e316ca2ce8d81583a12c1f0c022b5027d0da41c7e0",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-7",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "DataAnalyzer.load_analysis_module",
+      "source_sha256": "bd28fc4c2ed4f673903a7f4b10c73447a49579511f7d04fab1372449cb137b1b",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-7",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "DataAnalyzer.load_analysis_module",
+      "source_sha256": "27b01228979a752502bae11a8e3c4f003e3497c489967c5e59296f6bd7d45120",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-8",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "ModelServer.load_model",
+      "source_sha256": "3ad13fb75087676a8aedae72d14e2a083feebf717cd5a0bd5ed37f1ab8e7ffea",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-8",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "ModelServer.load_model",
+      "source_sha256": "f37d2d9fcb48e7408eb065f4063b449cb3f716436929958e716c6fa4542cd2ec",
+      "outcome": "fp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-9",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "CacheNode.store_data",
+      "source_sha256": "a70cee7e0ae00ce3ba9eb00024996bce51f0a5ce77b4391eb382b017bcee8167",
+      "outcome": "fn",
+      "matched_rules": [],
+      "total_alerts": 1,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "502_DS-9",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "CacheNode.store_data",
+      "source_sha256": "731984ac935bc1018778066769533c7fc97894628dddc634d18d881ba9d5efef",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-10",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "IoTDeviceManager.process_firmware_update",
+      "source_sha256": "98c91342acfbf37036000afbfd22907ab9a0f43c94b99add65b0a18a2c53b9ba",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-10",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "IoTDeviceManager.process_firmware_update",
+      "source_sha256": "ce0c5d8c082fcc1aa4344f8103f7c528d116e1ee9c1df5bc132c60afd5a45e8d",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-11",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "AnalyticsService.load_config_from_file",
+      "source_sha256": "365d2842cd90a2979af61ef18139f21b06d9a12925abbe59f8b5f1e150f40792",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-11",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "AnalyticsService.load_config_from_file",
+      "source_sha256": "a5e616b967f3a43a614b0fa5b349941782a2c8201c58301fa75d8704236c6c39",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-12",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "DocumentProcessor.load_serialized_document",
+      "source_sha256": "c924e4e5714546757e85a6ccf063390aa71b2914830856393a1303fbdcfb0345",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-12",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "DocumentProcessor.load_serialized_document",
+      "source_sha256": "baeb4107b24c3760650d6a57cf2f5a1372e6aa8ea373c005bfb9102a2d1aa397",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-13",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "NetworkManager._process_remote_config",
+      "source_sha256": "35a810eee79fba12d929bc121534bda8054ebe10a6b35fa079a7330169b045d5",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-13",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "NetworkManager._process_remote_config",
+      "source_sha256": "ad7985603fd13ce7b1253f045f0c2758b1728a2e2520642d579c744983cd537b",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-14",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "TaskWorker._handle_client",
+      "source_sha256": "80cb8a8e4ffe49d9b18926a17923cdf94c59d445901d01180cdbffff74e9da85",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-14",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "TaskWorker._handle_client",
+      "source_sha256": "f2f8468d53b2e44b336d096f6187cbf5f06edbfb9c8eb96d30bcb9c560b8a7d6",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-15",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "CacheNode._handle_connection",
+      "source_sha256": "b8806da558ba32b50a64ec4e758fb0a84f33df79138fa77acf8ad2f525f12c0d",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "502_DS-15",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "CacheNode._handle_connection",
+      "source_sha256": "1fc5072cb4c7369dd41c51d838d3e0576a25be38795e93c483645594a0530d08",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-16",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "PluginManager._load_compiled_plugin",
+      "source_sha256": "08ccef3be1510959077abeb7a7143f2304f2b9bd0fac92084af66ebe9848de57",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-16",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "PluginManager._load_compiled_plugin",
+      "source_sha256": "f235441d2fc5231d9ffe9b502ac95a210c90074875c5b510acd6c707fa97c160",
+      "fixed_target_scope": "whole file: labelled function removed or renamed",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-17",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "TransactionProcessor.load_transaction_batch",
+      "source_sha256": "288c3a67605374215ca24124dad23290ce0b65383f645dc96a086a6faa069a86",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-17",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "TransactionProcessor.load_transaction_batch",
+      "source_sha256": "22057cb3b0ef910f8b2aa91632de785d7d55afe84e22e2dc3b91818e1b4f9be8",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-18",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "MedicalRecordSystem.import_records",
+      "source_sha256": "9e17098efc855d1240392c5bb54404e03af83326878fc248b93e0b738beda210",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 1,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-18",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "MedicalRecordSystem.import_records",
+      "source_sha256": "05541f0ecf85aee498691a2e0bbd9f18f1990328941d23d84263f84cb62c6182",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-19",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "GameSaveManager.load_game",
+      "source_sha256": "4b27f300cd47e83499d520813c686681b0fe083c19b3e3e82c65cc21cbde5c52",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "502_DS-19",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "GameSaveManager.load_game",
+      "source_sha256": "6b1da13e5fa689d781be11a52f4cb6633230be4bb78ac18e94b25ed31d128a47",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    },
+    {
+      "case": "502_DS-20",
+      "cwe": "502",
+      "variant": "vul",
+      "target": "HomeAutomationHub.import_device_config",
+      "source_sha256": "a1293ffde68cacb5f15c3ff23368fc2cc66f33159fa7db1c62bccb97432cf4d3",
+      "outcome": "tp",
+      "matched_rules": [
+        "PY-AI-MODEL-001"
+      ],
+      "total_alerts": 2,
+      "unrelated_alerts": 1
+    },
+    {
+      "case": "502_DS-20",
+      "cwe": "502",
+      "variant": "fix",
+      "target": "HomeAutomationHub.import_device_config",
+      "source_sha256": "3642abbd0e7b7a42f0dbc4044479049b51e43010cc27417d031374bd1e8b6c7c",
+      "outcome": "tn",
+      "matched_rules": [],
+      "total_alerts": 0,
+      "unrelated_alerts": 0
+    }
+  ],
+  "limitations": [
+    "Synthetic labels are accepted as supplied, not independently verified.",
+    "Fixed variants may contain unrelated issues; matching is limited to the labelled CWE/function.",
+    "Informational notices do not count as vulnerability alerts.",
+    "No real-world CVEs, AI flows, SCA, or SBOM accuracy are evaluated here."
+  ]
+}
