@@ -211,3 +211,14 @@ elementpath.select(None,query)
 
 def test_random_prefix_does_not_hide_external_command_input():
     assert 'CWE-78' in cwes('from flask import request\nimport os,random\nos.system(str(random.random())+request.args["cmd"])')
+
+
+def test_dynamic_session_key_does_not_pollute_call_state():
+    code = '''from flask import request,session
+def helper(x):
+ return x
+key=request.args['key']
+session[key]='value'
+helper('fixed')
+'''
+    assert 'CWE-501' in cwes(code)

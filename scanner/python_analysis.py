@@ -551,7 +551,22 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                     self.taint.pop(item.id, None)
             return
         key = self._key(target)
-        if not key and not isinstance(target, ast.Subscript):
+        source = self._source(value) if value is not None else None
+        if isinstance(target, ast.Subscript):
+            owner = self._name(target.value)
+            key_source = self._source(target.slice)
+            if owner in {'flask.session', 'quart.session', 'django.http.HttpRequest.session'}:
+                incoming = self._combine([source, key_source])
+                if incoming and incoming[0] == 'input':
+                    self._add(target, 'PY-SAST-SESSION-001', 'External input crosses a session storage boundary',
+                              Severity.MEDIUM, Category.SAST,
+                              'A request-controlled key or value is stored in session state. Verify validation and authorization before treating it as trusted identity or privilege data.',
+                              'Validate the value against server-side records and allowlist session keys before storing trusted state.',
+                              'CWE-501', source_line=incoming[1], confidence='medium')
+            if source and source[0] == 'weak-random' and (self._key(target.value) in self.auth_stores
+                    or owner in {'flask.session', 'quart.session'}):
+                self._weak_random_sink(target, source)
+        if not key:
             return
         # Attribute/subscript setters may transform values; retain proofs only for local names.
         self._set_redirect_fact(key, self._redirect_fact(value) if isinstance(target, ast.Name) else None)
@@ -575,23 +590,6 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             self.literal_sets[key] = value
         else:
             self.literal_sets.pop(key, None)
-        source = self._source(value) if value is not None else None
-        if isinstance(target, ast.Subscript):
-            owner = self._name(target.value)
-            key_source = self._source(target.slice)
-            if owner in {'flask.session', 'quart.session', 'django.http.HttpRequest.session'}:
-                incoming = self._combine([source, key_source])
-                if incoming and incoming[0] == 'input':
-                    self._add(target, 'PY-SAST-SESSION-001', 'External input crosses a session storage boundary',
-                              Severity.MEDIUM, Category.SAST,
-                              'A request-controlled key or value is stored in session state. Verify validation and authorization before treating it as trusted identity or privilege data.',
-                              'Validate the value against server-side records and allowlist session keys before storing trusted state.',
-                              'CWE-501', source_line=incoming[1], confidence='medium')
-            if source and source[0] == 'weak-random' and (self._key(target.value) in self.auth_stores
-                    or owner in {'flask.session', 'quart.session'}):
-                self._weak_random_sink(target, source)
-        if not key:
-            return
         if source:
             self.taint[key] = source
         else:
