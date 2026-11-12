@@ -6,7 +6,12 @@ from scanner.models import Category, Finding, Severity
 
 
 class PythonAIAnalyzer(ast.NodeVisitor):
-    def __init__(self, file_path, content, module="ai", include_experimental=False, project=None):
+    def __init__(self, file_path, content, module="ai", include_experimental=False, project=None, disabled_features=()):
+        self.disabled_features = frozenset(disabled_features)
+        if not self.disabled_features <= {"local_imports", "interprocedural", "sanitizers"}:
+            raise ValueError("Unknown analysis ablation")
+        if "local_imports" in self.disabled_features:
+            project = None
         self.file_path, self.content = file_path, content
         self.module, self.include_experimental = module, include_experimental
         self.findings, self.bindings, self.taint = [], {}, {}
@@ -23,6 +28,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.call_count = 0
         self.call_cache = {}
         self.model_fields = {}
+        self.flask_route = 0
         self.project = project
         if project:
             self.functions.update(project.functions)
@@ -75,6 +81,14 @@ class PythonAIAnalyzer(ast.NodeVisitor):
     def _name(self, node):
         if isinstance(node, ast.Call):
             constructor = self._name(node.func)
+            returns = {'sqlite3.connect': 'sqlite3.Connection', 'sqlite3.Connection.cursor': 'sqlite3.Cursor',
+                       'django.db.connection.cursor': 'sqlite3.Cursor', 'flask.make_response': 'flask.Response',
+                       'lxml.etree.fromstring': 'lxml.etree._Element', 'lxml.etree.XML': 'lxml.etree._Element',
+                       'lxml.etree.parse': 'lxml.etree._ElementTree'}
+            if constructor in returns:
+                return returns[constructor]
+            if constructor in self.classes:
+                return constructor
             if constructor in {"pathlib.Path", "socket.socket", "requests.Session", "httpx.Client", "httpx.AsyncClient"}:
                 return constructor
             return self.call_bindings.get(id(node), "")
@@ -98,6 +112,59 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if isinstance(node, ast.Attribute):
             root = self._name(node.value)
             return f"{root}.{node.attr}" if root else None
+        if isinstance(node, ast.Subscript):
+            root = self._key(node.value)
+            index = self._constant(node.slice)
+            if root and isinstance(index, (str, int)):
+                return f"{root}[{index!r}]"
+        return None
+
+    def _constant(self, node):
+        """Resolve a small literal expression without eval or executing source code."""
+        if isinstance(node, ast.Constant) and isinstance(node.value, (str, int, bool)):
+            return node.value
+        if isinstance(node, ast.Name):
+            value = self.literal_sets.get(node.id)
+            return value.value if isinstance(value, ast.Constant) else None
+        if isinstance(node, ast.Subscript):
+            value, index = self._constant(node.value), self._constant(node.slice)
+            if isinstance(value, str) and isinstance(index, int) and -len(value) <= index < len(value):
+                return value[index]
+        if isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.Not):
+            value = self._constant(node.operand)
+            return not value if value is not None else None
+        if isinstance(node, ast.BinOp):
+            left, right = self._constant(node.left), self._constant(node.right)
+            if isinstance(left, int) and isinstance(right, int) and max(abs(left), abs(right)) <= 1_000_000:
+                if isinstance(node.op, ast.Add):
+                    return left + right
+                if isinstance(node.op, ast.Sub):
+                    return left - right
+                if isinstance(node.op, ast.Mult):
+                    return left * right
+            if isinstance(left, str) and isinstance(right, str) and len(left)+len(right) <= 4096 and isinstance(node.op, ast.Add):
+                return left + right
+        if isinstance(node, ast.Compare) and len(node.ops) == len(node.comparators) == 1:
+            left, right = self._constant(node.left), self._constant(node.comparators[0])
+            if left is not None and right is not None:
+                if isinstance(node.ops[0], ast.Eq):
+                    return left == right
+                if isinstance(node.ops[0], ast.NotEq):
+                    return left != right
+                if isinstance(left, int) and isinstance(right, int):
+                    if isinstance(node.ops[0], ast.Gt):
+                        return left > right
+                    if isinstance(node.ops[0], ast.GtE):
+                        return left >= right
+                    if isinstance(node.ops[0], ast.Lt):
+                        return left < right
+                    if isinstance(node.ops[0], ast.LtE):
+                        return left <= right
+                if isinstance(left, str) and isinstance(right, str):
+                    if isinstance(node.ops[0], ast.In):
+                        return left in right
+                    if isinstance(node.ops[0], ast.NotIn):
+                        return left not in right
         return None
 
     @staticmethod
@@ -116,6 +183,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         return bool(source and len(source) > 2 and context in source[2])
 
     def _mark_safe(self, source, context):
+        if "sanitizers" in self.disabled_features:
+            return source
         if source:
             return (source[0], source[1], frozenset(source[2] if len(source) > 2 else ()) | {context}) + (source[3:4] if len(source) > 3 else ())
         return None
@@ -135,6 +204,14 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.taint.update(sources or {})
         decorators = [decorator.func if isinstance(decorator, ast.Call) else decorator for decorator in node.decorator_list]
         resolved_decorators = {self._name(decorator) for decorator in decorators}
+        old_route = self.flask_route
+        self.flask_route = int(any(name in {'flask.Flask.route', 'flask.Blueprint.route', 'quart.Quart.route'} for name in resolved_decorators))
+        if not self.flask_route and any(value.startswith('flask.') for value in self.bindings.values()):
+            # Application factories often receive an unannotated app. Preserve this
+            # framework inference explicitly at medium confidence, not as proven registration.
+            if any(isinstance(d, ast.Attribute) and d.attr == 'route' and isinstance(d.value, ast.Name)
+                   and d.value.id in self.bindings and not self.bindings[d.value.id] for d in decorators):
+                self.flask_route = 2
         web_route = any(name.startswith(("fastapi.FastAPI.", "fastapi.APIRouter.", "flask.Flask.", "flask.Blueprint.", "bottle.route", "quart.Quart.", "sanic.Sanic.", "aiohttp.web.RouteTableDef.")) for name in resolved_decorators)
         pyramid_route = "pyramid.view.view_config" in resolved_decorators
         cherry_route = "cherrypy.expose" in resolved_decorators
@@ -144,6 +221,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 route_parameters.update(re.findall(r"(?:<(?:(?:path|string):)?|\{)([A-Za-z_]\w*)(?:>|\})", decorator.args[0].value))
         for arg in node.args.posonlyargs + node.args.args + node.args.kwonlyargs:
             self.literal_sets.pop(arg.arg, None)
+            for slot in list(self.bindings):
+                if slot.startswith(arg.arg + '['):
+                    self.bindings.pop(slot, None)
             annotation = self._name(arg.annotation)
             known_types = {"fastapi.Request", "starlette.requests.Request", "django.http.HttpRequest", "sanic.request.Request", "aiohttp.web.Request", "falcon.Request", "sqlite3.Connection", "sqlite3.Cursor"}
             self.bindings[arg.arg] = self.parameter_bindings.get(arg.arg, annotation if annotation in known_types else "")
@@ -185,8 +265,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         old_returns, self.return_sources = self.return_sources, []
         old_return_bindings, self.return_bindings = self.return_bindings, []
         self._visit_block(node.body)
-        returned = next((source for source in self.return_sources if source), None)
-        returned_binding = next((name for name in self.return_bindings if name), "")
+        returned = self._combine(self.return_sources)
+        return_types = set(self.return_bindings)
+        returned_binding = next(iter(return_types)) if len(return_types) == 1 else ""
         self.return_sources = old_returns
         self.return_bindings = old_return_bindings
         members = {key: value for key, value in self.bindings.items() if "." in key}
@@ -198,12 +279,23 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.bindings.update(members)
         self.taint.update(member_taint)
         self.literal_sets = old_literals
+        self.flask_route = old_route
         return returned, returned_binding
 
     def visit_Return(self, node):
         if node.value:
             self.visit(node.value)
-            self.return_sources.append(self._source(node.value))
+            source = self._source(node.value)
+            if (self.flask_route and source and source[0] == 'input' and not self._safe_for(source, 'html')
+                    and not isinstance(node.value, (ast.Dict, ast.List, ast.Tuple))
+                    and self._name(node.value) not in {'builtins.dict', 'builtins.list'}):
+                inference = ' Registration is inferred from a route decorator and resolved Flask APIs; verify the factory registration.' if self.flask_route == 2 else ''
+                self._add(node, 'PY-SAST-XSS-001', 'External input reaches a Flask HTML return', Severity.HIGH,
+                          Category.SAST, f'External input from line {source[1]} reaches a route return without recognised HTML escaping.' + inference,
+                          'Use autoescaping templates or HTML escaping; use jsonify or an explicit non-HTML response for data.',
+                          'CWE-79', source_line=source[1], source_file=source[3] if len(source)>3 else None,
+                          confidence='medium' if self.flask_route == 2 else 'high')
+            self.return_sources.append(source)
             self.return_bindings.append(self._name(node.value))
 
     visit_AsyncFunctionDef = visit_FunctionDef
@@ -233,6 +325,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         key = self._key(node)
         if key in self.taint:
             return self.taint[key]
+        if isinstance(node, ast.Subscript) and key in self.bindings:
+            return None  # observed literal-key slot was overwritten with a clean value
         if isinstance(node, ast.Attribute):
             owner = self._name(node.value)
             if ("http.server.BaseHTTPRequestHandler" in self.class_bases.get(owner, set())
@@ -240,6 +334,19 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return ("input", node.lineno)
         if isinstance(node, ast.Call):
             name = self._name(node.func)
+            if name in {'flask.make_response', 'quart.make_response'} and len(node.args) == 1 and not node.keywords:
+                body = node.args[0]
+                if isinstance(body, ast.Tuple) and body.elts:
+                    body = body.elts[0]  # status and response headers are not HTML body input
+                return None if isinstance(body, (ast.Dict, ast.List)) else self._source(body)
+            if isinstance(node.func, ast.Attribute) and node.func.attr == 'get' and node.args and self._name(node.func.value) == 'builtins.dict':
+                slot = self._key(ast.Subscript(value=node.func.value, slice=node.args[0], ctx=ast.Load()))
+                if slot in self.bindings:
+                    return self.taint.get(slot)
+            if isinstance(node.func, ast.Attribute) and self._name(node.func.value).startswith('configparser.ConfigParser@') and node.func.attr == 'get' and len(node.args) >= 2:
+                section, option = (self._constant(value) for value in node.args[:2])
+                if isinstance(section, str) and isinstance(option, str):
+                    return self.taint.get(f'{self._name(node.func.value)}[{(section, option)!r}]')
             sanitizer = {"html.escape": "html", "markupsafe.escape": "html", "django.utils.html.escape": "html", "django.utils.html.conditional_escape": "html", "bleach.clean": "html", "werkzeug.utils.secure_filename": "path", "shlex.quote": "shell"}.get(name)
             if sanitizer and node.args and (name != "bleach.clean" or len(node.args) == 1 and not node.keywords):
                 # Escaping one grammar never removes taint for another sink type.
@@ -249,7 +356,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return self._mark_safe(self._combine(self._source(value) for value in values), "normalized-path")
             if name in {"argparse.ArgumentParser.parse_args", "argparse.ArgumentParser.parse_known_args", "sys.stdin.read", "sys.stdin.readline"}:
                 return ("input", node.lineno, frozenset({"local-input"}))
-            if name in {"os.path.join", "os.path.abspath", "os.path.realpath", "os.path.normpath", "os.fspath", "pathlib.Path", "pathlib.Path.resolve", "pathlib.Path.absolute", "urllib.parse.unquote", "urllib.parse.unquote_plus", "urllib.parse.parse_qs", "json.loads", "json.load", "base64.b64decode", "zlib.decompress", "builtins.open", "io.open"} or (isinstance(node.func, ast.Name) and node.func.id == "open" and "open" not in self.bindings):
+            if name in {"os.path.join", "os.path.abspath", "os.path.realpath", "os.path.normpath", "os.fspath", "pathlib.Path", "pathlib.Path.resolve", "pathlib.Path.absolute", "urllib.parse.unquote", "urllib.parse.unquote_plus", "urllib.parse.parse_qs", "json.loads", "json.load", "base64.b64decode", "zlib.decompress", "builtins.open", "io.open", "codecs.open"} or (isinstance(node.func, ast.Name) and node.func.id in {"open", "compile", "str", "bytes", "bytearray"} and node.func.id not in self.bindings):
                 return self._combine(self._source(value) for value in node.args)
             if name in self.functions:
                 return self._invoke(node, name)
@@ -264,7 +371,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if isinstance(node.func, ast.Name) and node.func.id == "input" and "input" not in self.bindings:
                 return ("input", node.lineno, frozenset({"local-input"}))
             if name in {f"{root}.{method}" for root in ("flask.request", "bottle.request", "quart.request", "fastapi.Request", "starlette.requests.Request", "django.http.HttpRequest", "pyramid.request.Request", "sanic.request.Request", "aiohttp.web.Request", "falcon.Request")
-                        for method in ("get_json", "json", "args.get", "args.getlist", "form.get", "forms.get", "query.get", "query_params.get", "headers.get", "cookies.get", "GET.get", "POST.get", "GET.getlist", "POST.getlist", "COOKIES.get")}:
+                        for method in ("get_json", "get_data", "json", "args.get", "args.getlist", "form.get", "form.getlist", "forms.get", "values.get", "values.getlist", "query.get", "query_params.get", "headers.get", "cookies.get", "GET.get", "POST.get", "GET.getlist", "POST.getlist", "COOKIES.get")}:
                 if any(kw.arg == "type" and isinstance(kw.value, ast.Name) and kw.value.id in {"int", "float"}
                        and kw.value.id not in self.bindings for kw in node.keywords):
                     return None
@@ -282,10 +389,18 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if resolved == "sys.argv":
             return ("input", node.lineno, frozenset({"local-input"}))
         if resolved in {f"{root}.{attribute}" for root in ("flask.request", "bottle.request", "quart.request", "fastapi.Request", "starlette.requests.Request", "django.http.HttpRequest", "pyramid.request.Request", "sanic.request.Request", "aiohttp.web.Request", "falcon.Request")
-                               for attribute in ("args", "form", "forms", "query", "query_params", "json", "data", "headers", "cookies", "files", "GET", "POST", "body", "COOKIES", "FILES", "params", "matchdict", "stream", "media")}:
+                               for attribute in ("args", "form", "forms", "values", "query", "query_params", "json", "data", "headers", "cookies", "files", "GET", "POST", "body", "COOKIES", "FILES", "params", "matchdict", "stream", "media")}:
             return ("input", node.lineno)
         if isinstance(node, ast.Name):
-            return self.taint.get(node.id)
+            source = self.taint.get(node.id)
+            if self.bindings.get(node.id) in {'builtins.dict', 'builtins.list'}:
+                return self._combine([source] + [value for key, value in self.taint.items() if key.startswith(node.id + '[')])
+            return source
+        if isinstance(node, ast.IfExp):
+            constant = self._constant(node.test)
+            if constant is not None:
+                return self._source(node.body if constant else node.orelse)
+            return self._combine([self._source(node.body), self._source(node.orelse)])
         if isinstance(node, ast.Subscript):
             return self._source(node.value)
         if isinstance(node, ast.Attribute):
@@ -313,7 +428,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         key = self._key(target)
         if not key:
             return
-        if isinstance(value, (ast.Set, ast.List, ast.Tuple)) and all(isinstance(item, ast.Constant) and isinstance(item.value, str) for item in value.elts):
+        literal = self._constant(value)
+        if literal is not None:
+            self.literal_sets[key] = ast.Constant(value=literal)
+        elif isinstance(value, (ast.List, ast.Tuple)) or isinstance(value, ast.Set) and all(isinstance(item, ast.Constant) and isinstance(item.value, str) for item in value.elts):
             self.literal_sets[key] = value
         else:
             self.literal_sets.pop(key, None)
@@ -323,6 +441,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         else:
             self.taint.pop(key, None)
         name = self._name(value)
+        if isinstance(value, (ast.Dict, ast.List)):
+            name = 'builtins.dict' if isinstance(value, ast.Dict) else 'builtins.list'
         if isinstance(value, ast.BinOp) and isinstance(value.op, ast.Div) and self._name(value.left) == "pathlib.Path":
             name = "pathlib.Path"
         if isinstance(value, ast.Call):
@@ -347,8 +467,30 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if isinstance(value, ast.Await) and isinstance(value.value, ast.Call) and self._name(value.value.func) == "asyncpg.connect":
             name = "asyncpg.Connection"
         self.bindings[key] = name
+        if isinstance(value, ast.Call) and self._name(value.func) == 'configparser.ConfigParser':
+            self.bindings[key] = f'configparser.ConfigParser@{value.lineno}:{value.col_offset}'
+        if isinstance(value, ast.Call) and self._name(value.func) in {'urllib.parse.urlparse', 'urllib.parse.urlsplit'}:
+            self.literal_sets[key] = value
+        if isinstance(target, ast.Name):
+            for slot in list(self.bindings):
+                if slot.startswith(key + '['):
+                    self.bindings.pop(slot, None)
+                    self.taint.pop(slot, None)
+            entries = []
+            if isinstance(value, ast.Dict):
+                entries = list(zip(value.keys, value.values))
+            elif isinstance(value, (ast.List, ast.Tuple)):
+                entries = [(ast.Constant(value=i), v) for i, v in enumerate(value.elts)]
+            for index, item in entries:
+                if index is not None and isinstance(self._constant(index), (str, int)):
+                    slot = ast.Subscript(value=target, slice=index, ctx=ast.Store())
+                    self._assign(slot, item)
+            if isinstance(value, (ast.List, ast.Tuple)) or isinstance(value, ast.Dict) and all(k is not None for k in value.keys):
+                self.taint.pop(key, None)  # slot values carry the aggregate, including later clean overwrites
 
     def _invoke(self, node, name, receiver=None):
+        if "interprocedural" in self.disabled_features:
+            return None
         if name not in self.functions or name in self.active_calls or len(self.active_calls) >= 5:
             return None
         function = self.functions[name]
@@ -430,8 +572,12 @@ class PythonAIAnalyzer(ast.NodeVisitor):
 
     def visit_AugAssign(self, node):
         self.visit(node.value)
-        if isinstance(node.target, ast.Name) and node.target.id not in self.taint:
-            self._assign(node.target, node.value)
+        key = self._key(node.target)
+        if key:
+            combined = self._combine([self._source(node.target), self._source(node.value)])
+            self.literal_sets.pop(key, None)
+            if combined:
+                self.taint[key] = combined
 
     def visit_With(self, node):
         for item in node.items:
@@ -483,14 +629,21 @@ class PythonAIAnalyzer(ast.NodeVisitor):
 
     def visit_If(self, node):
         self.visit(node.test)
+        constant = self._constant(node.test)
+        if constant is not None:
+            self._visit_block(node.body if constant else node.orelse)
+            return
         initial = self._state()
         allowed = self._literal_allowlist(node.test)
         boundary, positive = self._path_boundary(node.test)
+        redirect_boundary, redirect_positive = self._redirect_boundary(node.test)
         states = []
         if allowed and isinstance(node.test.ops[0], ast.In):
             self.taint.pop(allowed, None)
         if boundary and positive and self.taint.get(boundary):
             self.taint[boundary] = self._mark_safe(self.taint.get(boundary), "path")
+        if redirect_boundary and redirect_positive:
+            self.taint[redirect_boundary] = self._mark_safe(self.taint.get(redirect_boundary), 'redirect')
         if self._visit_block(node.body):
             states.append(self._state())
         self._restore(initial)
@@ -498,8 +651,69 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             self.taint.pop(allowed, None)
         if boundary and not positive and self.taint.get(boundary):
             self.taint[boundary] = self._mark_safe(self.taint.get(boundary), "path")
+        if redirect_boundary and not redirect_positive:
+            self.taint[redirect_boundary] = self._mark_safe(self.taint.get(redirect_boundary), 'redirect')
         if self._visit_block(node.orelse):
             states.append(self._state())
+        self._merge_states(states)
+
+    def _redirect_boundary(self, test):
+        if not isinstance(test, ast.BoolOp) or len(test.values) != 2:
+            return None, False
+        positive = isinstance(test.op, ast.And)
+        owner, fields = None, set()
+        for part in test.values:
+            if not isinstance(part, ast.Compare) or len(part.ops) != 1 or len(part.comparators) != 1:
+                return None, False
+            attr, expected = part.left, part.comparators[0]
+            if not isinstance(attr, ast.Attribute) or not isinstance(attr.value, ast.Name):
+                return None, False
+            if owner is not None and owner != attr.value.id:
+                return None, False
+            owner = attr.value.id
+            if isinstance(expected, ast.Name):
+                expected = self.literal_sets.get(expected.id)
+            if attr.attr in {'netloc', 'hostname'}:
+                valid = (isinstance(expected, (ast.List, ast.Set, ast.Tuple)) and bool(expected.elts)
+                         and all(isinstance(x, ast.Constant) and isinstance(x.value, str) and x.value for x in expected.elts)
+                         and isinstance(part.ops[0], ast.In if positive else ast.NotIn))
+            elif attr.attr == 'scheme':
+                valid = (isinstance(expected, ast.Constant) and expected.value in {'http', 'https'}
+                         and isinstance(part.ops[0], ast.Eq if positive else ast.NotEq))
+            else:
+                valid = False
+            if not valid:
+                return None, False
+            fields.add('host' if attr.attr in {'netloc', 'hostname'} else attr.attr)
+        parsed = self.literal_sets.get(owner)
+        if fields == {'host', 'scheme'} and isinstance(parsed, ast.Call) and parsed.args and self._name(parsed.func) in {'urllib.parse.urlparse', 'urllib.parse.urlsplit'}:
+            return self._key(parsed.args[0]), positive
+        return None, False
+
+    def visit_Match(self, node):
+        self.visit(node.subject)
+        initial = self._state()
+        subject = self._constant(node.subject)
+        states = []
+        exhaustive = False
+        for case in node.cases:
+            patterns = case.pattern.patterns if isinstance(case.pattern, ast.MatchOr) else [case.pattern]
+            wildcard = any(isinstance(p, ast.MatchAs) and p.pattern is None for p in patterns)
+            known = all(isinstance(p, ast.MatchValue) and self._constant(p.value) is not None for p in patterns)
+            if subject is not None and known and all(self._constant(p.value) != subject for p in patterns):
+                continue
+            self._restore(initial)
+            if case.guard is not None and self._constant(case.guard) is False:
+                continue
+            if isinstance(case.pattern, ast.MatchAs) and case.pattern.name:
+                self._assign(ast.Name(id=case.pattern.name, ctx=ast.Store()), node.subject)
+            if self._visit_block(case.body):
+                states.append(self._state())
+            if case.guard is None and (wildcard or subject is not None and known):
+                exhaustive = True
+                break
+        if not exhaustive:
+            states.append(initial)
         self._merge_states(states)
 
     def _path_boundary(self, test):
@@ -634,6 +848,50 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         }
 
     def visit_Call(self, node):
+        if isinstance(node.func, ast.Attribute) and self._name(node.func.value) == 'builtins.list' and node.func.attr in {'append', 'extend', 'insert', 'pop'}:
+            key = self._key(node.func.value)
+            known = self.literal_sets.get(key)
+            if isinstance(known, ast.List) and node.func.attr in {'append', 'pop'}:
+                size = len(known.elts)
+                if node.func.attr == 'append' and len(node.args) == 1:
+                    self._assign(ast.Subscript(value=node.func.value, slice=ast.Constant(value=size), ctx=ast.Store()), node.args[0])
+                    self.literal_sets[key] = ast.List(elts=list(known.elts) + [node.args[0]], ctx=ast.Load())
+                elif node.func.attr == 'pop' and len(node.args) <= 1:
+                    index = self._constant(node.args[0]) if node.args else size - 1
+                    if isinstance(index, int) and -size <= index < size:
+                        index %= size
+                        values = [self.taint.get(f'{key}[{i}]') for i in range(size)]
+                        values.pop(index)
+                        for i in range(size):
+                            self.bindings.pop(f'{key}[{i}]', None)
+                            self.taint.pop(f'{key}[{i}]', None)
+                        for i, source in enumerate(values):
+                            self.bindings[f'{key}[{i}]'] = ''
+                            if source:
+                                self.taint[f'{key}[{i}]'] = source
+                        elts = list(known.elts)
+                        elts.pop(index)
+                        self.literal_sets[key] = ast.List(elts=elts, ctx=ast.Load())
+                    else:
+                        self.literal_sets.pop(key, None)
+                self.generic_visit(node)
+                return
+            source = self._combine([self._source(node.func.value)] + [self._source(value) for value in node.args])
+            for slot in list(self.bindings):
+                if slot.startswith(key + '['):
+                    self.bindings.pop(slot, None)
+                    self.taint.pop(slot, None)
+            if source:
+                self.taint[key] = source
+        if isinstance(node.func, ast.Attribute) and self._name(node.func.value).startswith('configparser.ConfigParser@') and node.func.attr == 'set' and len(node.args) >= 3:
+            section, option = (self._constant(value) for value in node.args[:2])
+            if isinstance(section, str) and isinstance(option, str):
+                key = f'{self._name(node.func.value)}[{(section, option)!r}]'
+                source = self._source(node.args[2])
+                if source:
+                    self.taint[key] = source
+                else:
+                    self.taint.pop(key, None)
         if self._name(node.func) == "threading.Thread":
             target = next((kw.value for kw in node.keywords if kw.arg == "target"), None)
             arguments = next((kw.value for kw in node.keywords if kw.arg == "args"), None)
@@ -675,13 +933,23 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                       "CWE-89", source_line=source[1], source_file=source[3] if len(source) > 3 else None)
         path_values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg in {"file", "filename", "path", "path_or_file", "name"}]
         path_source = self._combine(self._source(value) for value in path_values)
-        path_sink = builtin == "open" or name in {"builtins.open", "io.open", "flask.send_file", "quart.send_file", "PIL.Image.open", "tarfile.open", "zipfile.ZipFile"}
-        if name in {"pathlib.Path.open", "pathlib.Path.read_text", "pathlib.Path.read_bytes", "pathlib.Path.write_text", "pathlib.Path.write_bytes"} and isinstance(node.func, ast.Attribute):
+        path_sink = builtin == "open" or name in {"builtins.open", "io.open", "codecs.open", "flask.send_file", "quart.send_file", "PIL.Image.open", "tarfile.open", "zipfile.ZipFile"}
+        if name in {f'pathlib.Path.{method}' for method in ('open', 'read_text', 'read_bytes', 'write_text', 'write_bytes')} and isinstance(node.func, ast.Attribute):
             path_sink, path_source = True, self._source(node.func.value)
         if path_sink and path_source and path_source[0] == "input" and not self._safe_for(path_source, "path") and not self._safe_for(path_source, "local-input"):
             self._add(node, "PY-SAST-PATH-001", "External input controls a filesystem path", Severity.HIGH,
                       Category.SAST, f"External input from line {path_source[1]} reaches a file operation without an observed path boundary.",
                       "Resolve the candidate and trusted root, reject paths outside that root using path-component containment, and avoid following untrusted symlinks.", "CWE-22", source_line=path_source[1], source_file=path_source[3] if len(path_source) > 3 else None)
+        if name in {'lxml.etree.XPath', 'lxml.etree.ETXPath', 'lxml.etree._Element.xpath', 'lxml.etree._ElementTree.xpath'} and source and source[0] == 'input':
+            self._add(node, 'PY-SAST-XPATH-001', 'External input controls an XPath expression', Severity.HIGH, Category.SAST,
+                      f'External input from line {source[1]} reaches the expression argument of a resolved XPath API.',
+                      'Keep XPath expressions fixed and bind user values through XPath variables.', 'CWE-643',
+                      source_line=source[1], source_file=source[3] if len(source)>3 else None)
+        if name in {'flask.redirect', 'quart.redirect', 'django.shortcuts.redirect', 'starlette.responses.RedirectResponse', 'fastapi.responses.RedirectResponse'} and source and source[0] == 'input' and not self._safe_for(source, 'redirect'):
+            self._add(node, 'PY-SAST-REDIRECT-001', 'External input controls a redirect destination', Severity.MEDIUM, Category.SAST,
+                      f'External input from line {source[1]} reaches a resolved redirect destination without an observed destination boundary.',
+                      'Use fixed local destinations or validate scheme and host against a trusted allowlist.', 'CWE-601',
+                      source_line=source[1], source_file=source[3] if len(source)>3 else None)
         url_values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg == "url"]
         url_source = self._combine(self._source(value) for value in url_values)
         if name in {f"{library}.{method}" for library in ("requests", "httpx") for method in ("get", "post", "put", "patch", "delete", "head", "options")} | {"urllib.request.urlopen"} and url_source and url_source[0] == "input":
@@ -710,7 +978,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             self._invoke(node, name)
         self.generic_visit(node)
 
-    def _add(self, node, rule_id, title, severity, category, description, recommendation, cwe, experimental=False, source_line=None, source_file=None):
+    def _add(self, node, rule_id, title, severity, category, description, recommendation, cwe, experimental=False, source_line=None, source_file=None, confidence=None):
         from scanner.utils.helpers import redact_secrets
         lines = self.content.splitlines()
         indices = set(range(node.lineno - 1, min(len(lines), node.end_lineno)))
@@ -720,11 +988,11 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.findings.append(Finding(title=title, severity=severity, category=category, module=self.module,
             description=description, file_path=self.file_path, line_number=node.lineno,
             code_snippet=snippet, recommendation=recommendation, cwe=cwe,
-            confidence="medium" if experimental else "high", rule_id=rule_id,
+            confidence=confidence or ("medium" if experimental else "high"), rule_id=rule_id,
             maturity="experimental" if experimental else "stable", evidence_kind="static-flow",
             trace=([{"role": "source", "file_path": source_file or self.file_path, "line_number": source_line}] if source_line else [])
                   + [{"role": "sink", "file_path": self.file_path, "line_number": node.lineno}]))
 
 
-def analyze_python(file_path, content, module="ai", include_experimental=False, project=None):
-    return PythonAIAnalyzer(file_path, content, module, include_experimental, project).run()
+def analyze_python(file_path, content, module="ai", include_experimental=False, project=None, disabled_features=()):
+    return PythonAIAnalyzer(file_path, content, module, include_experimental, project, disabled_features).run()

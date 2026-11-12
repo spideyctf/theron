@@ -41,7 +41,8 @@ class SASTScanner(Scanner):
 
         for file_path, content in context.files.items():
             if file_path.endswith(".py") and not any(skip in file_path.replace("\\", "/").split("/") for skip in self.SKIP_DIRS):
-                findings.extend(analyze_python(file_path, content, module=self.name, project=project))
+                findings.extend(analyze_python(file_path, content, module=self.name, project=project,
+                                               disabled_features=context.config.get("analysis_disabled_features", ())))
 
         for rule_set in rule_sets:
             # Determine which files to scan based on language/extension scope
