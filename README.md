@@ -21,6 +21,8 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 **Step 4 correlation pilot:** [MCP configuration-to-code evidence](docs/evaluation/correlation-2026-11-13/README.md) connects supported VS Code Python declarations to existing findings through fingerprints, JSON pointers and source/sink locations. Unsupported/ambiguous declarations retain reasons. Groups appear in all exports and the **MCP links** tab, with no added vulnerability counts or runtime-exposure claims.
 
+**Step 5 evaluation, 13 November 2026:** [fresh comparison and failure analysis](docs/evaluation/step5-2026-11-13/README.md) froze implementation `36ee9ee` and reran both baselines on byte-verified inputs. Theron remains at **0% validation recall and 15.73% test recall** on the already-exposed OWASP splits. A controlled replay confirmed an old staging defect affecting nine Semgrep development outcomes; corrected results and the full history are preserved. Real-code labels remain provisional, and an [independent review worksheet](docs/evaluation/step5-2026-11-13/INDEPENDENT-REVIEW.md) is ready.
+
 On **12 November 2026**, we added [OWASP BenchmarkPython](https://github.com/OWASP-Benchmark/BenchmarkPython), pinned to `f1291485808b66e20ddb6b01b10dc71b3df8c8ba`: **1,230 synthetic cases across 14 categories**. Whole upstream template families stay in one split: 737 development, 248 validation and 245 test cases. The detector was frozen at [`a504494`](https://github.com/spideyctf/theron/commit/a504494e35b961770a5c37896a7f115bfe025088) before validation/test; all categories, including unsupported ones, remain scored.
 
 | Split | Before: detected / vulnerable | After: detected / vulnerable | After precision | After F1 |
@@ -29,7 +31,7 @@ On **12 November 2026**, we added [OWASP BenchmarkPython](https://github.com/OWA
 | Validation | 0 / 84 (0.00%) | 0 / 84 (0.00%) | 0.00% | 0.00% |
 | Test | 3 / 89 (3.37%) | 14 / 89 (15.73%) | 73.68% | 25.93% |
 
-The test set has 156 fixed cases; Theron matched five before and after the change. **Validation recall is zero**, exposing unsupported categories and unmodelled flows. This is a harder template/category-shift evaluation than the earlier tuning corpus, and shows why its 77% recall must not be presented as general accuracy.
+The test set has 156 fixed cases; Theron matched five before and after the change. **Validation recall is zero**, exposing unsupported categories and unmodelled flows. This is a harder template/category-shift evaluation than the earlier tuning corpus; the higher tuning recall must not be presented as general accuracy. The original before/after study below belongs to its earlier frozen detector; Step 5 reproduces these default counts as exposed regressions at `36ee9ee`.
 
 | Frozen test comparison | TP | FN | FP | TN | Precision | Recall |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -77,12 +79,12 @@ CWE-77 has one additional unscorable vulnerable label. A perfect result within a
 
 | Engineering check, 13 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 417 passed; 1 dependency deprecation warning |
+| Python regression suite | 426 passed; 1 dependency deprecation warning |
 | Frontend tests | 11 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |
 
-Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/redirect-precision-2026-11-13/pysastbench-regression.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
+Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/step5-2026-11-13/pysastbench-regression.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
 
 The earlier four-module GitHub self-scan of `ff71cf6` analyzed **76 files in 58.24 seconds**, with **1 application informational notice**, **0 application vulnerability alerts**, **18 context detections** and **151 SBOM components**, including **15 unresolved versions**. This historical, single-run smoke test predates the new flow changes; it is not a current throughput benchmark or proof of security. [Self-scan summary](docs/evaluation/2026-11-12/self-scan-summary.json).
 

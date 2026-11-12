@@ -132,7 +132,9 @@ B01 and B02 are deliberately earlier than claims about real-world gains. The res
 
 ## Research acceptance criteria
 
-**B03 / Step 4 engineering pilot complete, 13 November 2026:** [MCP declaration-to-code checkpoint](evaluation/correlation-2026-11-13/README.md) includes groups, unresolved outcomes, same-input disabled controls and end-to-end export/UI evidence. Supported resolution is deliberately limited to direct Python declarations in the VS Code editor-managed schema. No commands run, no severity boost and no independent real-code accuracy claim. B04 / Step 5 has not started.
+**B03 / Step 4 engineering pilot complete, 13 November 2026:** [MCP declaration-to-code checkpoint](evaluation/correlation-2026-11-13/README.md) includes groups, unresolved outcomes, same-input disabled controls and end-to-end export/UI evidence. Supported resolution is deliberately limited to direct Python declarations in the VS Code editor-managed schema. No commands run, no severity boost and no independent real-code accuracy claim.
+
+**B04 / Step 5 automated evaluation complete, 13 November 2026:** [frozen comparison and failure analysis](evaluation/step5-2026-11-13/README.md) includes fresh byte-verified baselines, exposed synthetic regressions, real development probes, ablations, correlation-pass costs and an independent-review packet. Validation recall stays zero; independent real-code/edge adjudication and reviewer benefit remain unmeasured. A controlled replay documents the baseline staging correction. The detector remains frozen; supported wrapper propagation (including safe_join into non-path sinks) is a recorded B02 follow-up, not silently fixed during evaluation. B05 / Step 6 has not started.
 
 The paper should test a concrete cross-layer hypothesis under the broad platform goal: whether supported correlation adds correctly identified, actionable risks or helps reviewers make more accurate decisions compared with the component outputs alone. Integration, a dashboard and higher alert counts are not sufficient evidence of that benefit.
 

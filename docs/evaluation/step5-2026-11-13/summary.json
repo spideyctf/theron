@@ -1,0 +1,1402 @@
+{
+  "date": "2026-11-13",
+  "frozen_implementation": "36ee9eef341b561cb79f8f1c2edfbd9c7533187f",
+  "synthetic": {
+    "development": {
+      "theron": {
+        "summary": {
+          "tp": 56,
+          "fn": 223,
+          "fp": 14,
+          "tn": 444,
+          "errors": 0,
+          "precision": 0.8,
+          "recall": 0.2007168458781362,
+          "f1": 0.3209169054441261,
+          "false_positive_rate": 0.03056768558951965
+        },
+        "total_alerts": 170,
+        "notices": 0,
+        "cluster_intervals": {
+          "method": "Percentile bootstrap of upstream template-family clusters",
+          "seed": 20261112,
+          "resamples": 2000,
+          "clusters": 12,
+          "level": 0.95,
+          "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+          "intervals": {
+            "precision": {
+              "lower": 0.7142857142857143,
+              "upper": 0.9230769230769231,
+              "undefined_resamples": 0
+            },
+            "recall": {
+              "lower": 0.08992805755395683,
+              "upper": 0.31316725978647686,
+              "undefined_resamples": 0
+            },
+            "f1": {
+              "lower": 0.16447368421052633,
+              "upper": 0.4524421593830334,
+              "undefined_resamples": 0
+            }
+          }
+        }
+      },
+      "bandit": {
+        "summary": {
+          "tp": 85,
+          "fn": 194,
+          "fp": 11,
+          "tn": 447,
+          "errors": 0,
+          "precision": 0.8854166666666666,
+          "recall": 0.3046594982078853,
+          "f1": 0.4533333333333333,
+          "false_positive_rate": 0.024017467248908297
+        },
+        "total_alerts": 197,
+        "notices": 0,
+        "cluster_intervals": {
+          "method": "Percentile bootstrap of upstream template-family clusters",
+          "seed": 20261112,
+          "resamples": 2000,
+          "clusters": 12,
+          "level": 0.95,
+          "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+          "intervals": {
+            "precision": {
+              "lower": 0.5074626865671642,
+              "upper": 1.0,
+              "undefined_resamples": 14
+            },
+            "recall": {
+              "lower": 0.059748427672955975,
+              "upper": 0.5866261398176292,
+              "undefined_resamples": 0
+            },
+            "f1": {
+              "lower": 0.11176470588235295,
+              "upper": 0.7174887892376681,
+              "undefined_resamples": 0
+            }
+          }
+        }
+      },
+      "semgrep": {
+        "summary": {
+          "tp": 49,
+          "fn": 230,
+          "fp": 31,
+          "tn": 427,
+          "errors": 0,
+          "precision": 0.6125,
+          "recall": 0.17562724014336917,
+          "f1": 0.27298050139275765,
+          "false_positive_rate": 0.06768558951965066
+        },
+        "total_alerts": 2062,
+        "notices": 0,
+        "cluster_intervals": {
+          "method": "Percentile bootstrap of upstream template-family clusters",
+          "seed": 20261112,
+          "resamples": 2000,
+          "clusters": 12,
+          "level": 0.95,
+          "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+          "intervals": {
+            "precision": {
+              "lower": 0.18518518518518517,
+              "upper": 0.9333333333333333,
+              "undefined_resamples": 0
+            },
+            "recall": {
+              "lower": 0.019157088122605363,
+              "upper": 0.3800738007380074,
+              "undefined_resamples": 0
+            },
+            "f1": {
+              "lower": 0.03424657534246575,
+              "upper": 0.4810810810810811,
+              "undefined_resamples": 0
+            }
+          }
+        }
+      }
+    },
+    "validation": {
+      "theron": {
+        "summary": {
+          "tp": 0,
+          "fn": 84,
+          "fp": 1,
+          "tn": 163,
+          "errors": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_positive_rate": 0.006097560975609756
+        },
+        "total_alerts": 29,
+        "notices": 0,
+        "cluster_intervals": {
+          "method": "Percentile bootstrap of upstream template-family clusters",
+          "seed": 20261112,
+          "resamples": 2000,
+          "clusters": 6,
+          "level": 0.95,
+          "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+          "intervals": {
+            "precision": {
+              "lower": 0.0,
+              "upper": 0.0,
+              "undefined_resamples": 654
+            },
+            "recall": {
+              "lower": 0.0,
+              "upper": 0.0,
+              "undefined_resamples": 0
+            },
+            "f1": {
+              "lower": 0.0,
+              "upper": 0.0,
+              "undefined_resamples": 0
+            }
+          }
+        }
+      },
+      "bandit": {
+        "summary": {
+          "tp": 59,
+          "fn": 25,
+          "fp": 20,
+          "tn": 144,
+          "errors": 0,
+          "precision": 0.7468354430379747,
+          "recall": 0.7023809523809523,
+          "f1": 0.7239263803680982,
+          "false_positive_rate": 0.12195121951219512
+        },
+        "total_alerts": 182,
+        "notices": 0,
+        "cluster_intervals": {
+          "method": "Percentile bootstrap of upstream template-family clusters",
+          "seed": 20261112,
+          "resamples": 2000,
+          "clusters": 6,
+          "level": 0.95,
+          "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+          "intervals": {
+            "precision": {
+              "lower": 0.3103448275862069,
+              "upper": 1.0,
+              "undefined_resamples": 3
+            },
+            "recall": {
+              "lower": 0.18181818181818182,
+              "upper": 0.9859154929577465,
+              "undefined_resamples": 0
+            },
+            "f1": {
+              "lower": 0.2564102564102564,
+              "upper": 0.9565217391304348,
+              "undefined_resamples": 0
+            }
+          }
+        }
+      },
+      "semgrep": {
+        "summary": {
+          "tp": 28,
+          "fn": 56,
+          "fp": 20,
+          "tn": 144,
+          "errors": 0,
+          "precision": 0.5833333333333334,
+          "recall": 0.3333333333333333,
+          "f1": 0.42424242424242425,
+          "false_positive_rate": 0.12195121951219512
+        },
+        "total_alerts": 721,
+        "notices": 0,
+        "cluster_intervals": {
+          "method": "Percentile bootstrap of upstream template-family clusters",
+          "seed": 20261112,
+          "resamples": 2000,
+          "clusters": 6,
+          "level": 0.95,
+          "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+          "intervals": {
+            "precision": {
+              "lower": 0.2857142857142857,
+              "upper": 1.0,
+              "undefined_resamples": 176
+            },
+            "recall": {
+              "lower": 0.0,
+              "upper": 0.7272727272727273,
+              "undefined_resamples": 0
+            },
+            "f1": {
+              "lower": 0.0,
+              "upper": 0.7142857142857143,
+              "undefined_resamples": 0
+            }
+          }
+        }
+      }
+    },
+    "test": {
+      "theron": {
+        "summary": {
+          "tp": 14,
+          "fn": 75,
+          "fp": 5,
+          "tn": 151,
+          "errors": 0,
+          "precision": 0.7368421052631579,
+          "recall": 0.15730337078651685,
+          "f1": 0.25925925925925924,
+          "false_positive_rate": 0.03205128205128205
+        },
+        "total_alerts": 40,
+        "notices": 0,
+        "cluster_intervals": {
+          "method": "Percentile bootstrap of upstream template-family clusters",
+          "seed": 20261112,
+          "resamples": 2000,
+          "clusters": 6,
+          "level": 0.95,
+          "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+          "intervals": {
+            "precision": {
+              "lower": 0.6296296296296297,
+              "upper": 1.0,
+              "undefined_resamples": 3
+            },
+            "recall": {
+              "lower": 0.03225806451612903,
+              "upper": 0.3111111111111111,
+              "undefined_resamples": 0
+            },
+            "f1": {
+              "lower": 0.0625,
+              "upper": 0.4266666666666667,
+              "undefined_resamples": 0
+            }
+          }
+        }
+      },
+      "bandit": {
+        "summary": {
+          "tp": 63,
+          "fn": 26,
+          "fp": 47,
+          "tn": 109,
+          "errors": 0,
+          "precision": 0.5727272727272728,
+          "recall": 0.7078651685393258,
+          "f1": 0.6331658291457286,
+          "false_positive_rate": 0.30128205128205127
+        },
+        "total_alerts": 163,
+        "notices": 0,
+        "cluster_intervals": {
+          "method": "Percentile bootstrap of upstream template-family clusters",
+          "seed": 20261112,
+          "resamples": 2000,
+          "clusters": 6,
+          "level": 0.95,
+          "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+          "intervals": {
+            "precision": {
+              "lower": 0.40782122905027934,
+              "upper": 0.9014084507042254,
+              "undefined_resamples": 5
+            },
+            "recall": {
+              "lower": 0.3409090909090909,
+              "upper": 0.9382716049382716,
+              "undefined_resamples": 0
+            },
+            "f1": {
+              "lower": 0.416,
+              "upper": 0.8066298342541437,
+              "undefined_resamples": 0
+            }
+          }
+        }
+      },
+      "semgrep": {
+        "summary": {
+          "tp": 31,
+          "fn": 58,
+          "fp": 22,
+          "tn": 134,
+          "errors": 0,
+          "precision": 0.5849056603773585,
+          "recall": 0.34831460674157305,
+          "f1": 0.43661971830985913,
+          "false_positive_rate": 0.14102564102564102
+        },
+        "total_alerts": 726,
+        "notices": 0,
+        "cluster_intervals": {
+          "method": "Percentile bootstrap of upstream template-family clusters",
+          "seed": 20261112,
+          "resamples": 2000,
+          "clusters": 6,
+          "level": 0.95,
+          "note": "Few template groups and shared helpers limit independence; intervals are descriptive, not real-world confidence guarantees.",
+          "intervals": {
+            "precision": {
+              "lower": 0.0,
+              "upper": 0.65,
+              "undefined_resamples": 38
+            },
+            "recall": {
+              "lower": 0.0,
+              "upper": 0.7894736842105263,
+              "undefined_resamples": 0
+            },
+            "f1": {
+              "lower": 0.0,
+              "upper": 0.6842105263157895,
+              "undefined_resamples": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "synthetic_ablations": {
+    "development": {
+      "interprocedural": {
+        "tp": 54,
+        "fn": 225,
+        "fp": 14,
+        "tn": 444,
+        "errors": 0,
+        "precision": 0.7941176470588235,
+        "recall": 0.1935483870967742,
+        "f1": 0.3112391930835735,
+        "false_positive_rate": 0.03056768558951965
+      },
+      "local_imports": {
+        "tp": 54,
+        "fn": 225,
+        "fp": 14,
+        "tn": 444,
+        "errors": 0,
+        "precision": 0.7941176470588235,
+        "recall": 0.1935483870967742,
+        "f1": 0.3112391930835735,
+        "false_positive_rate": 0.03056768558951965
+      },
+      "sanitizers": {
+        "tp": 56,
+        "fn": 223,
+        "fp": 22,
+        "tn": 436,
+        "errors": 0,
+        "precision": 0.717948717948718,
+        "recall": 0.2007168458781362,
+        "f1": 0.3137254901960784,
+        "false_positive_rate": 0.048034934497816595
+      }
+    },
+    "validation": {
+      "interprocedural": {
+        "tp": 0,
+        "fn": 84,
+        "fp": 1,
+        "tn": 163,
+        "errors": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.006097560975609756
+      },
+      "local_imports": {
+        "tp": 0,
+        "fn": 84,
+        "fp": 1,
+        "tn": 163,
+        "errors": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.006097560975609756
+      },
+      "sanitizers": {
+        "tp": 0,
+        "fn": 84,
+        "fp": 1,
+        "tn": 163,
+        "errors": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.006097560975609756
+      }
+    },
+    "test": {
+      "interprocedural": {
+        "tp": 14,
+        "fn": 75,
+        "fp": 5,
+        "tn": 151,
+        "errors": 0,
+        "precision": 0.7368421052631579,
+        "recall": 0.15730337078651685,
+        "f1": 0.25925925925925924,
+        "false_positive_rate": 0.03205128205128205
+      },
+      "local_imports": {
+        "tp": 14,
+        "fn": 75,
+        "fp": 5,
+        "tn": 151,
+        "errors": 0,
+        "precision": 0.7368421052631579,
+        "recall": 0.15730337078651685,
+        "f1": 0.25925925925925924,
+        "false_positive_rate": 0.03205128205128205
+      },
+      "sanitizers": {
+        "tp": 14,
+        "fn": 75,
+        "fp": 5,
+        "tn": 151,
+        "errors": 0,
+        "precision": 0.7368421052631579,
+        "recall": 0.15730337078651685,
+        "f1": 0.25925925925925924,
+        "false_positive_rate": 0.03205128205128205
+      }
+    }
+  },
+  "historical_case_comparison": {
+    "development": {
+      "theron": {
+        "case_outcomes_unchanged": true,
+        "changed_cases": [],
+        "previous_summary": {
+          "tp": 56,
+          "fn": 223,
+          "fp": 14,
+          "tn": 444,
+          "errors": 0,
+          "precision": 0.8,
+          "recall": 0.2007168458781362,
+          "f1": 0.3209169054441261,
+          "false_positive_rate": 0.03056768558951965
+        },
+        "current_summary": {
+          "tp": 56,
+          "fn": 223,
+          "fp": 14,
+          "tn": 444,
+          "errors": 0,
+          "precision": 0.8,
+          "recall": 0.2007168458781362,
+          "f1": 0.3209169054441261,
+          "false_positive_rate": 0.03056768558951965
+        }
+      },
+      "bandit": {
+        "case_outcomes_unchanged": true,
+        "changed_cases": [],
+        "previous_summary": {
+          "tp": 85,
+          "fn": 194,
+          "fp": 11,
+          "tn": 447,
+          "errors": 0,
+          "precision": 0.8854166666666666,
+          "recall": 0.3046594982078853,
+          "f1": 0.4533333333333333,
+          "false_positive_rate": 0.024017467248908297
+        },
+        "current_summary": {
+          "tp": 85,
+          "fn": 194,
+          "fp": 11,
+          "tn": 447,
+          "errors": 0,
+          "precision": 0.8854166666666666,
+          "recall": 0.3046594982078853,
+          "f1": 0.4533333333333333,
+          "false_positive_rate": 0.024017467248908297
+        }
+      },
+      "semgrep": {
+        "case_outcomes_unchanged": false,
+        "changed_cases": [
+          {
+            "case": "BenchmarkTest00099",
+            "previous": "fn",
+            "current": "tp"
+          },
+          {
+            "case": "BenchmarkTest00283",
+            "previous": "fn",
+            "current": "tp"
+          },
+          {
+            "case": "BenchmarkTest00284",
+            "previous": "fn",
+            "current": "tp"
+          },
+          {
+            "case": "BenchmarkTest00454",
+            "previous": "fn",
+            "current": "tp"
+          },
+          {
+            "case": "BenchmarkTest00455",
+            "previous": "fn",
+            "current": "tp"
+          },
+          {
+            "case": "BenchmarkTest01179",
+            "previous": "fn",
+            "current": "tp"
+          },
+          {
+            "case": "BenchmarkTest01180",
+            "previous": "tn",
+            "current": "fp"
+          },
+          {
+            "case": "BenchmarkTest01196",
+            "previous": "fn",
+            "current": "tp"
+          },
+          {
+            "case": "BenchmarkTest01202",
+            "previous": "tn",
+            "current": "fp"
+          }
+        ],
+        "previous_summary": {
+          "tp": 42,
+          "fn": 237,
+          "fp": 29,
+          "tn": 429,
+          "errors": 0,
+          "precision": 0.5915492957746479,
+          "recall": 0.15053763440860216,
+          "f1": 0.24,
+          "false_positive_rate": 0.06331877729257641
+        },
+        "current_summary": {
+          "tp": 49,
+          "fn": 230,
+          "fp": 31,
+          "tn": 427,
+          "errors": 0,
+          "precision": 0.6125,
+          "recall": 0.17562724014336917,
+          "f1": 0.27298050139275765,
+          "false_positive_rate": 0.06768558951965066
+        }
+      }
+    },
+    "validation": {
+      "theron": {
+        "case_outcomes_unchanged": true,
+        "changed_cases": [],
+        "previous_summary": {
+          "tp": 0,
+          "fn": 84,
+          "fp": 1,
+          "tn": 163,
+          "errors": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_positive_rate": 0.006097560975609756
+        },
+        "current_summary": {
+          "tp": 0,
+          "fn": 84,
+          "fp": 1,
+          "tn": 163,
+          "errors": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_positive_rate": 0.006097560975609756
+        }
+      },
+      "bandit": {
+        "case_outcomes_unchanged": true,
+        "changed_cases": [],
+        "previous_summary": {
+          "tp": 59,
+          "fn": 25,
+          "fp": 20,
+          "tn": 144,
+          "errors": 0,
+          "precision": 0.7468354430379747,
+          "recall": 0.7023809523809523,
+          "f1": 0.7239263803680982,
+          "false_positive_rate": 0.12195121951219512
+        },
+        "current_summary": {
+          "tp": 59,
+          "fn": 25,
+          "fp": 20,
+          "tn": 144,
+          "errors": 0,
+          "precision": 0.7468354430379747,
+          "recall": 0.7023809523809523,
+          "f1": 0.7239263803680982,
+          "false_positive_rate": 0.12195121951219512
+        }
+      },
+      "semgrep": {
+        "case_outcomes_unchanged": true,
+        "changed_cases": [],
+        "previous_summary": {
+          "tp": 28,
+          "fn": 56,
+          "fp": 20,
+          "tn": 144,
+          "errors": 0,
+          "precision": 0.5833333333333334,
+          "recall": 0.3333333333333333,
+          "f1": 0.42424242424242425,
+          "false_positive_rate": 0.12195121951219512
+        },
+        "current_summary": {
+          "tp": 28,
+          "fn": 56,
+          "fp": 20,
+          "tn": 144,
+          "errors": 0,
+          "precision": 0.5833333333333334,
+          "recall": 0.3333333333333333,
+          "f1": 0.42424242424242425,
+          "false_positive_rate": 0.12195121951219512
+        }
+      }
+    },
+    "test": {
+      "theron": {
+        "case_outcomes_unchanged": true,
+        "changed_cases": [],
+        "previous_summary": {
+          "tp": 14,
+          "fn": 75,
+          "fp": 5,
+          "tn": 151,
+          "errors": 0,
+          "precision": 0.7368421052631579,
+          "recall": 0.15730337078651685,
+          "f1": 0.25925925925925924,
+          "false_positive_rate": 0.03205128205128205
+        },
+        "current_summary": {
+          "tp": 14,
+          "fn": 75,
+          "fp": 5,
+          "tn": 151,
+          "errors": 0,
+          "precision": 0.7368421052631579,
+          "recall": 0.15730337078651685,
+          "f1": 0.25925925925925924,
+          "false_positive_rate": 0.03205128205128205
+        }
+      },
+      "bandit": {
+        "case_outcomes_unchanged": true,
+        "changed_cases": [],
+        "previous_summary": {
+          "tp": 63,
+          "fn": 26,
+          "fp": 47,
+          "tn": 109,
+          "errors": 0,
+          "precision": 0.5727272727272728,
+          "recall": 0.7078651685393258,
+          "f1": 0.6331658291457286,
+          "false_positive_rate": 0.30128205128205127
+        },
+        "current_summary": {
+          "tp": 63,
+          "fn": 26,
+          "fp": 47,
+          "tn": 109,
+          "errors": 0,
+          "precision": 0.5727272727272728,
+          "recall": 0.7078651685393258,
+          "f1": 0.6331658291457286,
+          "false_positive_rate": 0.30128205128205127
+        }
+      },
+      "semgrep": {
+        "case_outcomes_unchanged": true,
+        "changed_cases": [],
+        "previous_summary": {
+          "tp": 31,
+          "fn": 58,
+          "fp": 22,
+          "tn": 134,
+          "errors": 0,
+          "precision": 0.5849056603773585,
+          "recall": 0.34831460674157305,
+          "f1": 0.43661971830985913,
+          "false_positive_rate": 0.14102564102564102
+        },
+        "current_summary": {
+          "tp": 31,
+          "fn": 58,
+          "fp": 22,
+          "tn": 134,
+          "errors": 0,
+          "precision": 0.5849056603773585,
+          "recall": 0.34831460674157305,
+          "f1": 0.43661971830985913,
+          "false_positive_rate": 0.14102564102564102
+        }
+      }
+    }
+  },
+  "real_development": {
+    "independent_labels": false,
+    "scorable_cases": 0,
+    "records": [
+      {
+        "cve_id": "CVE-2019-10856",
+        "role": "vul_func",
+        "path": "notebook/auth/login.py",
+        "proposed_sink_line": 63,
+        "upstream_cwes": [
+          "CWE-601"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": false,
+            "alerts": 0,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": false,
+            "alerts": 0,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2019-10856",
+        "role": "fix_func",
+        "path": "notebook/auth/login.py",
+        "proposed_sink_line": 66,
+        "upstream_cwes": [
+          "CWE-601"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": false,
+            "alerts": 0,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": false,
+            "alerts": 0,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2020-10691",
+        "role": "vul_func",
+        "path": "lib/ansible/galaxy/collection.py",
+        "proposed_sink_line": null,
+        "upstream_cwes": [
+          "CWE-22",
+          "CWE-73"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": null,
+            "alerts": 0,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": null,
+            "alerts": 1,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2020-10691",
+        "role": "fix_func",
+        "path": "lib/ansible/galaxy/collection.py",
+        "proposed_sink_line": null,
+        "upstream_cwes": [
+          "CWE-22",
+          "CWE-73"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": null,
+            "alerts": 0,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": null,
+            "alerts": 1,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2020-26215",
+        "role": "vul_func",
+        "path": "notebook/base/handlers.py",
+        "proposed_sink_line": 862,
+        "upstream_cwes": [
+          "CWE-601"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": true,
+            "alerts": 1,
+            "notices": 1
+          },
+          "bandit": {
+            "target_candidate": false,
+            "alerts": 1,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": false,
+            "alerts": 2,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2020-26215",
+        "role": "fix_func",
+        "path": "notebook/base/handlers.py",
+        "proposed_sink_line": 867,
+        "upstream_cwes": [
+          "CWE-601"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": true,
+            "alerts": 1,
+            "notices": 1
+          },
+          "bandit": {
+            "target_candidate": false,
+            "alerts": 1,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": false,
+            "alerts": 2,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2021-21354",
+        "role": "vul_func",
+        "path": "pollbot/middlewares.py",
+        "proposed_sink_line": 64,
+        "upstream_cwes": [
+          "CWE-601"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": false,
+            "alerts": 0,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": false,
+            "alerts": 0,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2021-21354",
+        "role": "fix_func",
+        "path": "pollbot/middlewares.py",
+        "proposed_sink_line": 64,
+        "upstream_cwes": [
+          "CWE-601"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": false,
+            "alerts": 0,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": false,
+            "alerts": 0,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2022-31506",
+        "role": "vul_func",
+        "path": "opendiamond/dataretriever/diamond_store.py",
+        "proposed_sink_line": 137,
+        "upstream_cwes": [
+          "CWE-22",
+          "CWE-73"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": true,
+            "alerts": 1,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": true,
+            "alerts": 1,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": false,
+            "alerts": 1,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": false,
+            "alerts": 3,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2022-31506",
+        "role": "fix_func",
+        "path": "opendiamond/dataretriever/diamond_store.py",
+        "proposed_sink_line": 138,
+        "upstream_cwes": [
+          "CWE-22",
+          "CWE-73"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": false,
+            "alerts": 0,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": false,
+            "alerts": 1,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": false,
+            "alerts": 3,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2024-0243",
+        "role": "vul_func",
+        "path": "libs/core/langchain_core/utils/html.py",
+        "proposed_sink_line": null,
+        "upstream_cwes": [
+          "CWE-918"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": null,
+            "alerts": 0,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": null,
+            "alerts": 0,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2024-0243",
+        "role": "fix_func",
+        "path": "libs/core/langchain_core/utils/html.py",
+        "proposed_sink_line": null,
+        "upstream_cwes": [
+          "CWE-918"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": null,
+            "alerts": 0,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": null,
+            "alerts": 0,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2024-3571",
+        "role": "vul_func",
+        "path": "libs/langchain/langchain/storage/file_system.py",
+        "proposed_sink_line": null,
+        "upstream_cwes": [
+          "CWE-22",
+          "CWE-73"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": null,
+            "alerts": 0,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": null,
+            "alerts": 0,
+            "errors": 0
+          }
+        }
+      },
+      {
+        "cve_id": "CVE-2024-3571",
+        "role": "fix_func",
+        "path": "libs/langchain/langchain/storage/file_system.py",
+        "proposed_sink_line": null,
+        "upstream_cwes": [
+          "CWE-22",
+          "CWE-73"
+        ],
+        "independent_label_status": "pending",
+        "outcomes": {
+          "theron_default": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "theron_experimental": {
+            "target_candidate": null,
+            "alerts": 0,
+            "notices": 0
+          },
+          "bandit": {
+            "target_candidate": null,
+            "alerts": 0,
+            "errors": 0
+          },
+          "semgrep": {
+            "target_candidate": null,
+            "alerts": 0,
+            "errors": 0
+          }
+        }
+      }
+    ],
+    "ablations": {
+      "interprocedural": {
+        "default": {
+          "vul_func": 0,
+          "fix_func": 0
+        },
+        "experimental": {
+          "vul_func": 1,
+          "fix_func": 1
+        }
+      },
+      "local_imports": {
+        "default": {
+          "vul_func": 1,
+          "fix_func": 0
+        },
+        "experimental": {
+          "vul_func": 2,
+          "fix_func": 1
+        }
+      },
+      "sanitizers": {
+        "default": {
+          "vul_func": 1,
+          "fix_func": 0
+        },
+        "experimental": {
+          "vul_func": 2,
+          "fix_func": 1
+        }
+      }
+    },
+    "limitation": "Strict CWE + previously proposed sink line; three pairs lack matching context. All seven pairs remain listed, and no validated accuracy denominator exists."
+  },
+  "correlation": {
+    "original_controls": 9,
+    "independent_real_edges": 0,
+    "counts_unchanged": true,
+    "enabled_median_ms_range": [
+      0.02555,
+      0.12375
+    ]
+  },
+  "independent_real_scorable_cases": 0,
+  "reserved_source_opened": false,
+  "staging_diagnostic": {
+    "files": 742,
+    "raw_byte_differences": 742,
+    "newline_normalized_equivalent": true,
+    "normalization": "CRCRLF and CRLF to LF for diagnostic only; scan inputs remain unchanged",
+    "old_stage_replay_summary": {
+      "tp": 42,
+      "fn": 237,
+      "fp": 29,
+      "tn": 429,
+      "errors": 0,
+      "precision": 0.5915492957746479,
+      "recall": 0.15053763440860216,
+      "f1": 0.24,
+      "false_positive_rate": 0.06331877729257641
+    },
+    "exact_byte_stage_summary": {
+      "tp": 49,
+      "fn": 230,
+      "fp": 31,
+      "tn": 427,
+      "errors": 0,
+      "precision": 0.6125,
+      "recall": 0.17562724014336917,
+      "f1": 0.27298050139275765,
+      "false_positive_rate": 0.06768558951965066
+    },
+    "original_published_summary": {
+      "tp": 42,
+      "fn": 237,
+      "fp": 29,
+      "tn": 429,
+      "errors": 0,
+      "precision": 0.5915492957746479,
+      "recall": 0.15053763440860216,
+      "f1": 0.24,
+      "false_positive_rate": 0.06331877729257641
+    },
+    "old_stage_replay_matches_original_case_outcomes": true,
+    "changed_case_outcomes": [
+      {
+        "case": "BenchmarkTest00099",
+        "old": "fn",
+        "current": "tp"
+      },
+      {
+        "case": "BenchmarkTest00283",
+        "old": "fn",
+        "current": "tp"
+      },
+      {
+        "case": "BenchmarkTest00284",
+        "old": "fn",
+        "current": "tp"
+      },
+      {
+        "case": "BenchmarkTest00454",
+        "old": "fn",
+        "current": "tp"
+      },
+      {
+        "case": "BenchmarkTest00455",
+        "old": "fn",
+        "current": "tp"
+      },
+      {
+        "case": "BenchmarkTest01179",
+        "old": "fn",
+        "current": "tp"
+      },
+      {
+        "case": "BenchmarkTest01180",
+        "old": "tn",
+        "current": "fp"
+      },
+      {
+        "case": "BenchmarkTest01196",
+        "old": "fn",
+        "current": "tp"
+      },
+      {
+        "case": "BenchmarkTest01202",
+        "old": "tn",
+        "current": "fp"
+      }
+    ],
+    "raw_replay_report_sha256": "98b50659d3fe95ba43d264c907c293f717e7ff04c77d6cdc0c8aee9d9e9574aa",
+    "interpretation": "Same Semgrep version/rule configuration replay on old-stage bytes reproduces the old development outcomes; exact-byte staging corrects the input provenance. No detector/label/split change.",
+    "same_path_controlled_replay": {
+      "old": {
+        "summary": {
+          "tp": 42,
+          "fn": 237,
+          "fp": 29,
+          "tn": 429,
+          "errors": 0,
+          "precision": 0.5915492957746479,
+          "recall": 0.15053763440860216,
+          "f1": 0.24,
+          "false_positive_rate": 0.06331877729257641
+        },
+        "raw_report_sha256": "6d488c22288db1972d051ed07e4cbe558f126d0b2c04534779f3c7ac2745350b"
+      },
+      "new": {
+        "summary": {
+          "tp": 49,
+          "fn": 230,
+          "fp": 31,
+          "tn": 427,
+          "errors": 0,
+          "precision": 0.6125,
+          "recall": 0.17562724014336917,
+          "f1": 0.27298050139275765,
+          "false_positive_rate": 0.06768558951965066
+        },
+        "raw_report_sha256": "6d5da72a860b5059772f5ceaabe71770950862f1eec6c2d2e09edb11e6c9f256"
+      }
+    },
+    "diagnostic_target_path_identical": true,
+    "primary_stages_modified": false
+  },
+  "tuning_regression": {
+    "tp": 93,
+    "fn": 26,
+    "fp": 4,
+    "tn": 116,
+    "errors": 1,
+    "precision": 0.9587628865979382,
+    "recall": 0.7815126050420168,
+    "false_positive_rate": 0.03333333333333333
+  }
+}

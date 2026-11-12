@@ -1,0 +1,89 @@
+{
+  "instructions": "Keep separate until initial independent annotations are recorded; upstream roles are not independently validated verdicts.",
+  "subjects": [
+    {
+      "subject": "R-8f4771857a",
+      "cve_id": "CVE-2019-10856",
+      "upstream_role": "vul_func",
+      "path": "notebook/auth/login.py"
+    },
+    {
+      "subject": "R-1c0f7ade04",
+      "cve_id": "CVE-2019-10856",
+      "upstream_role": "fix_func",
+      "path": "notebook/auth/login.py"
+    },
+    {
+      "subject": "R-41855fa531",
+      "cve_id": "CVE-2020-10691",
+      "upstream_role": "vul_func",
+      "path": "lib/ansible/galaxy/collection.py"
+    },
+    {
+      "subject": "R-619d6b6a1a",
+      "cve_id": "CVE-2020-10691",
+      "upstream_role": "fix_func",
+      "path": "lib/ansible/galaxy/collection.py"
+    },
+    {
+      "subject": "R-faabad787e",
+      "cve_id": "CVE-2020-26215",
+      "upstream_role": "vul_func",
+      "path": "notebook/base/handlers.py"
+    },
+    {
+      "subject": "R-f5c931eaa0",
+      "cve_id": "CVE-2020-26215",
+      "upstream_role": "fix_func",
+      "path": "notebook/base/handlers.py"
+    },
+    {
+      "subject": "R-61d74905c9",
+      "cve_id": "CVE-2021-21354",
+      "upstream_role": "vul_func",
+      "path": "pollbot/middlewares.py"
+    },
+    {
+      "subject": "R-198f9216c0",
+      "cve_id": "CVE-2021-21354",
+      "upstream_role": "fix_func",
+      "path": "pollbot/middlewares.py"
+    },
+    {
+      "subject": "R-ddb4660f61",
+      "cve_id": "CVE-2022-31506",
+      "upstream_role": "vul_func",
+      "path": "opendiamond/dataretriever/diamond_store.py"
+    },
+    {
+      "subject": "R-a8cff1068d",
+      "cve_id": "CVE-2022-31506",
+      "upstream_role": "fix_func",
+      "path": "opendiamond/dataretriever/diamond_store.py"
+    },
+    {
+      "subject": "R-f63d97192d",
+      "cve_id": "CVE-2024-0243",
+      "upstream_role": "vul_func",
+      "path": "libs/core/langchain_core/utils/html.py"
+    },
+    {
+      "subject": "R-d4c925893f",
+      "cve_id": "CVE-2024-0243",
+      "upstream_role": "fix_func",
+      "path": "libs/core/langchain_core/utils/html.py"
+    },
+    {
+      "subject": "R-5ebc411ca6",
+      "cve_id": "CVE-2024-3571",
+      "upstream_role": "vul_func",
+      "path": "libs/langchain/langchain/storage/file_system.py"
+    },
+    {
+      "subject": "R-cf63693299",
+      "cve_id": "CVE-2024-3571",
+      "upstream_role": "fix_func",
+      "path": "libs/langchain/langchain/storage/file_system.py"
+    }
+  ]
+}

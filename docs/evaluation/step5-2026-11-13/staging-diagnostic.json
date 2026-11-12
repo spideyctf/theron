@@ -1,0 +1,121 @@
+{
+  "files": 742,
+  "raw_byte_differences": 742,
+  "newline_normalized_equivalent": true,
+  "normalization": "CRCRLF and CRLF to LF for diagnostic only; scan inputs remain unchanged",
+  "old_stage_replay_summary": {
+    "tp": 42,
+    "fn": 237,
+    "fp": 29,
+    "tn": 429,
+    "errors": 0,
+    "precision": 0.5915492957746479,
+    "recall": 0.15053763440860216,
+    "f1": 0.24,
+    "false_positive_rate": 0.06331877729257641
+  },
+  "exact_byte_stage_summary": {
+    "tp": 49,
+    "fn": 230,
+    "fp": 31,
+    "tn": 427,
+    "errors": 0,
+    "precision": 0.6125,
+    "recall": 0.17562724014336917,
+    "f1": 0.27298050139275765,
+    "false_positive_rate": 0.06768558951965066
+  },
+  "original_published_summary": {
+    "tp": 42,
+    "fn": 237,
+    "fp": 29,
+    "tn": 429,
+    "errors": 0,
+    "precision": 0.5915492957746479,
+    "recall": 0.15053763440860216,
+    "f1": 0.24,
+    "false_positive_rate": 0.06331877729257641
+  },
+  "old_stage_replay_matches_original_case_outcomes": true,
+  "changed_case_outcomes": [
+    {
+      "case": "BenchmarkTest00099",
+      "old": "fn",
+      "current": "tp"
+    },
+    {
+      "case": "BenchmarkTest00283",
+      "old": "fn",
+      "current": "tp"
+    },
+    {
+      "case": "BenchmarkTest00284",
+      "old": "fn",
+      "current": "tp"
+    },
+    {
+      "case": "BenchmarkTest00454",
+      "old": "fn",
+      "current": "tp"
+    },
+    {
+      "case": "BenchmarkTest00455",
+      "old": "fn",
+      "current": "tp"
+    },
+    {
+      "case": "BenchmarkTest01179",
+      "old": "fn",
+      "current": "tp"
+    },
+    {
+      "case": "BenchmarkTest01180",
+      "old": "tn",
+      "current": "fp"
+    },
+    {
+      "case": "BenchmarkTest01196",
+      "old": "fn",
+      "current": "tp"
+    },
+    {
+      "case": "BenchmarkTest01202",
+      "old": "tn",
+      "current": "fp"
+    }
+  ],
+  "raw_replay_report_sha256": "98b50659d3fe95ba43d264c907c293f717e7ff04c77d6cdc0c8aee9d9e9574aa",
+  "interpretation": "Same Semgrep version/rule configuration replay on old-stage bytes reproduces the old development outcomes; exact-byte staging corrects the input provenance. No detector/label/split change.",
+  "same_path_controlled_replay": {
+    "old": {
+      "summary": {
+        "tp": 42,
+        "fn": 237,
+        "fp": 29,
+        "tn": 429,
+        "errors": 0,
+        "precision": 0.5915492957746479,
+        "recall": 0.15053763440860216,
+        "f1": 0.24,
+        "false_positive_rate": 0.06331877729257641
+      },
+      "raw_report_sha256": "6d488c22288db1972d051ed07e4cbe558f126d0b2c04534779f3c7ac2745350b"
+    },
+    "new": {
+      "summary": {
+        "tp": 49,
+        "fn": 230,
+        "fp": 31,
+        "tn": 427,
+        "errors": 0,
+        "precision": 0.6125,
+        "recall": 0.17562724014336917,
+        "f1": 0.27298050139275765,
+        "false_positive_rate": 0.06768558951965066
+      },
+      "raw_report_sha256": "6d5da72a860b5059772f5ceaabe71770950862f1eec6c2d2e09edb11e6c9f256"
+    }
+  },
+  "diagnostic_target_path_identical": true,
+  "primary_stages_modified": false
+}

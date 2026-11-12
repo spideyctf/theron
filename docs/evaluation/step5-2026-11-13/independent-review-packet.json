@@ -1,0 +1,368 @@
+{
+  "status": "Awaiting independent human review",
+  "blinding": "Tool outputs and assistant judgements omitted; not a double-blind study",
+  "instructions": [
+    "Review source statically; do not run target setup/scripts/exploits.",
+    "Record dangerous, safe_for_specific_flow, or unknown. Missing caller/guard context requires unknown, not an invented label.",
+    "Identify source, sink, CWE and matching unit with evidence before consulting the key or tool reports.",
+    "Upstream patches and role labels do not automatically establish a clean negative."
+  ],
+  "subjects": [
+    {
+      "subject": "R-198f9216c0",
+      "source_url": "https://github.com/mozilla/pollbot/blob/6db74a4fcbff258c7cdf51a6ff0724fc10c485e5/pollbot/middlewares.py",
+      "declared_function_spans": [
+        {
+          "start_line": 61,
+          "end_line": 69,
+          "snippet_sha256": "41c9e0204f9fb16d8a1315947ac9bb441886b1b22b26840b8e631f23ff11a2ba"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-1c0f7ade04",
+      "source_url": "https://github.com/jupyter/notebook/blob/979e0bd15e794ceb00cc63737fcd5fd9addc4a99/notebook/auth/login.py",
+      "declared_function_spans": [
+        {
+          "start_line": 33,
+          "end_line": 66,
+          "snippet_sha256": "43e003e7b6c4cfa42bd0c5095b7e1583c114636d29f8145b4b5620bc1a1aa04b"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-41855fa531",
+      "source_url": "https://github.com/ansible/ansible/blob/cef6296735a0baebcd2f25d967c7bdb770ed6b08/lib/ansible/galaxy/collection.py",
+      "declared_function_spans": [
+        {
+          "start_line": 148,
+          "end_line": 188,
+          "snippet_sha256": "db85f3c1243dc489c4bf076dffd59046cc23c6dc7c72e1f94fd4697ec3018f26"
+        },
+        {
+          "start_line": 903,
+          "end_line": 942,
+          "snippet_sha256": "1aa7cd734f43153382e79a18407544e42a82438d3a73c5c81f60d34691da39db"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-5ebc411ca6",
+      "source_url": "https://github.com/langchain-ai/langchain/blob/501cc8311d54a5140cbc5a49d657bc7d70a6f6ab/libs/langchain/langchain/storage/file_system.py",
+      "declared_function_spans": [
+        {
+          "start_line": 38,
+          "end_line": 45,
+          "snippet_sha256": "c0b5f9987fed88faa28d8129c69ba5c844a2ccb19ef18381f36ad644fee98b29"
+        },
+        {
+          "start_line": 47,
+          "end_line": 58,
+          "snippet_sha256": "3e684ada757fd31cb8fada64b0f7f72be30655baaf9b42cc8bcda64d69065776"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-619d6b6a1a",
+      "source_url": "https://github.com/ansible/ansible/blob/b2551bb6943eec078066aa3a923e0bb3ed85abe8/lib/ansible/galaxy/collection.py",
+      "declared_function_spans": [
+        {
+          "start_line": 148,
+          "end_line": 198,
+          "snippet_sha256": "eff8ae743c39dc7df903b7d7b5038e08e9d414ecc92daa1dad5103858ba6c86c"
+        },
+        {
+          "start_line": 913,
+          "end_line": 956,
+          "snippet_sha256": "acf53c6dd64c69e7f75425ddd54bd27514a5fd3bfda8af94647a56f41520f5cc"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-61d74905c9",
+      "source_url": "https://github.com/mozilla/pollbot/blob/78539afa363b200ef004f40531665826f234eab3/pollbot/middlewares.py",
+      "declared_function_spans": [
+        {
+          "start_line": 61,
+          "end_line": 69,
+          "snippet_sha256": "1d2d75f8906f8949bd19b6f455028f8ac21b47cdedda628c270ae2ad85542cbe"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-8f4771857a",
+      "source_url": "https://github.com/jupyter/notebook/blob/16cf97cf3cc7bd3bacf939ecd86f2c1cc6944935/notebook/auth/login.py",
+      "declared_function_spans": [
+        {
+          "start_line": 33,
+          "end_line": 63,
+          "snippet_sha256": "d05fe67ec09f5549417a7710332bef5b288f41143541f1eccc0166baed78a87c"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-a8cff1068d",
+      "source_url": "https://github.com/cmusatyalab/opendiamond/blob/398049c187ee644beabab44d6fece82251c1ea56/opendiamond/dataretriever/diamond_store.py",
+      "declared_function_spans": [
+        {
+          "start_line": 123,
+          "end_line": 124,
+          "snippet_sha256": "66a62a0fd0b60a2107c12ffaa6779148c39fae1e34b32e9c9116db95015b5c64"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-cf63693299",
+      "source_url": "https://github.com/langchain-ai/langchain/blob/aad3d8bd47d7f5598156ff2bdcc8f736f24a7412/libs/langchain/langchain/storage/file_system.py",
+      "declared_function_spans": [
+        {
+          "start_line": 39,
+          "end_line": 46,
+          "snippet_sha256": "a2454d27b8c67b20e766362be3f23297591be676fda0d21378b73e8969b8438a"
+        },
+        {
+          "start_line": 48,
+          "end_line": 67,
+          "snippet_sha256": "2c8368e0d8f20a4b724528894d2034e77b54e0848d8b94cf7cf389a740cde5bf"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-d4c925893f",
+      "source_url": "https://github.com/langchain-ai/langchain/blob/bf0b3cc0b5ade1fb95a5b1b6fa260e99064c2e22/libs/core/langchain_core/utils/html.py",
+      "declared_function_spans": [
+        {
+          "start_line": 47,
+          "end_line": 103,
+          "snippet_sha256": "cca8d5b48ee7df3ff13154dbaca5309404d6bcbd8f73a1b7a8f21b6062fdebfe"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-ddb4660f61",
+      "source_url": "https://github.com/cmusatyalab/opendiamond/blob/d2f20ffff793f88335f2c0244679d7193295abe2/opendiamond/dataretriever/diamond_store.py",
+      "declared_function_spans": [
+        {
+          "start_line": 122,
+          "end_line": 123,
+          "snippet_sha256": "38cc0b9f1eedd6e09760786528ee6bbcfcfef898f0d5a2f8f086546ab29c05c3"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-f5c931eaa0",
+      "source_url": "https://github.com/jupyter/notebook/blob/3cec4bbe21756de9f0c4bccf18cf61d840314d74/notebook/base/handlers.py",
+      "declared_function_spans": [
+        {
+          "start_line": 861,
+          "end_line": 867,
+          "snippet_sha256": "a8407ab485562c02570681fdf473b40e7c1e3b388478f3a2aed0826c67d1e3db"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-f63d97192d",
+      "source_url": "https://github.com/langchain-ai/langchain/blob/817b84de9e2cd9f2e16a11004caea6fa53aefed8/libs/core/langchain_core/utils/html.py",
+      "declared_function_spans": [
+        {
+          "start_line": 47,
+          "end_line": 89,
+          "snippet_sha256": "01ab5b6d07a6eec430e1922ac10f2d65d5606e1e35abdcd3a7ed8558d6c5f9ef"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    },
+    {
+      "subject": "R-faabad787e",
+      "source_url": "https://github.com/jupyter/notebook/blob/d8308e13803ba1c6e92f129381e615af6c6e00d3/notebook/base/handlers.py",
+      "declared_function_spans": [
+        {
+          "start_line": 861,
+          "end_line": 863,
+          "snippet_sha256": "6f06ea169ce31d387981273c2bdd2c7123fba5d98063bcbe9f593aa4ce8db3ad"
+        }
+      ],
+      "review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "judgement": null,
+      "cwe": null,
+      "untrusted_source": null,
+      "dangerous_sink": null,
+      "guard_assessment": null,
+      "required_context": null,
+      "proposed_matching_unit": null,
+      "rationale": null,
+      "reviewer_relationship_to_detector_development": null,
+      "tool_outputs_or_patch_labels_seen": null
+    }
+  ]
+}

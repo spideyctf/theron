@@ -1,0 +1,2577 @@
+{
+  "protocol": "theron-owasp-v3",
+  "split": "validation",
+  "engine": "theron",
+  "ablation": null,
+  "dataset_revision": "f1291485808b66e20ddb6b01b10dc71b3df8c8ba",
+  "scanner_revision": "36ee9eef341b561cb79f8f1c2edfbd9c7533187f",
+  "analyzer_sha256": "95747498c9fd8d509f820b54431a44f0bd3b22be3c95a3640d31609541cc105a",
+  "adapter_sha256": "73bb6ff60751471a87ebd6dc326e1e64850aff35fc788cd7b31d982a7bbfebff",
+  "elapsed_seconds": 2.1114,
+  "timing_scope": "SAST collection already loaded; analysis and scoring",
+  "summary": {
+    "tp": 0,
+    "fn": 84,
+    "fp": 1,
+    "tn": 163,
+    "errors": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "false_positive_rate": 0.006097560975609756
+  },
+  "by_cwe": {
+    "CWE-328": {
+      "tp": 0,
+      "fn": 29,
+      "fp": 0,
+      "tn": 42,
+      "errors": 0,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positive_rate": 0.0
+    },
+    "CWE-330": {
+      "tp": 0,
+      "fn": 28,
+      "fp": 0,
+      "tn": 58,
+      "errors": 0,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positive_rate": 0.0
+    },
+    "CWE-501": {
+      "tp": 0,
+      "fn": 18,
+      "fp": 0,
+      "tn": 19,
+      "errors": 0,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positive_rate": 0.0
+    },
+    "CWE-611": {
+      "tp": 0,
+      "fn": 8,
+      "fp": 0,
+      "tn": 20,
+      "errors": 0,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positive_rate": 0.0
+    },
+    "CWE-643": {
+      "tp": 0,
+      "fn": 1,
+      "fp": 1,
+      "tn": 24,
+      "errors": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positive_rate": 0.04
+    }
+  },
+  "coverage_notices": [],
+  "total_alerts": 29,
+  "cases": [
+    {
+      "case": "BenchmarkTest00017",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00070",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00071",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00072",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00152",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00153",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00154",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00155",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00204",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00205",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00206",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00260",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00261",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00262",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00291",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00292",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00293",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00294",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00338",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00339",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00340",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00341",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00421",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00459",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00460",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00461",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00462",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00497",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00498",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00499",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00500",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00501",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00502",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00538",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00539",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00540",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00541",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00648",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00649",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00656",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00678",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00679",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00707",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00708",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00709",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00710",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00711",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00712",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00713",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00714",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00715",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00716",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00717",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00725",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00726",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00727",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00759",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00796",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00797",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00798",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00799",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00800",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00801",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00802",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00803",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00804",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00805",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00806",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00807",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00817",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest00850",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00851",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00873",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00874",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00875",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00876",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00877",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00878",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00879",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00880",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00881",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00882",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00887",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00888",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00889",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00930",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00931",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00945",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00946",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00947",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00948",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00949",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00950",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00951",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00952",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00953",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00954",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00955",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00956",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00957",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00958",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00959",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00960",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00961",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00962",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00963",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00964",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00965",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00966",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00967",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00968",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00969",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00970",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00971",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00972",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00973",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00974",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00975",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00976",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00977",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00978",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00979",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00984",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest00985",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01024",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01025",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01031",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01032",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01033",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01034",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01035",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01036",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01037",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01038",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01039",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01040",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01041",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01042",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01043",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01044",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01045",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01046",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01047",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01048",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01049",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01050",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01051",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01052",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01053",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01054",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01055",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01056",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01057",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01058",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01059",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01060",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01061",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01062",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01063",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01064",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01065",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01066",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01067",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01068",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01069",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01070",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01071",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01072",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01073",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01074",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01075",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01076",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01077",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01078",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01079",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01080",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01081",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01092",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01093",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01094",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01116",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01117",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01118",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01119",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01120",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01121",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01122",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01123",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01124",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01125",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01126",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01127",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01128",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01129",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01130",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01131",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01132",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01133",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01134",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01135",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01136",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01137",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01138",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01139",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01140",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01141",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01142",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01143",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01144",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01145",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01146",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01147",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01148",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01149",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01150",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01151",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01152",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01153",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01154",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01161",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01162",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01163",
+      "cwe": "CWE-501",
+      "family": "6eac7893ade29d688ac1b41332519d1f1585da5a18444ede002b23674966d3ca",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01175",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "fp",
+      "matched_rules": [
+        "PY-SAST-XPATH-001"
+      ],
+      "file_alerts": 2,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest01176",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01182",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest01184",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01185",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01186",
+      "cwe": "CWE-330",
+      "family": "5c169573b96392bebe58069bccefe046c0a1fdafaafa5e4706310022fe99940a",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01189",
+      "cwe": "CWE-330",
+      "family": "b36bc9fb59ff10f44a5e518d021ba2cd1ac7799b2cf75ce47efa7fe217175015",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01190",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01194",
+      "cwe": "CWE-330",
+      "family": "b36bc9fb59ff10f44a5e518d021ba2cd1ac7799b2cf75ce47efa7fe217175015",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01195",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest01197",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest01198",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01199",
+      "cwe": "CWE-330",
+      "family": "b36bc9fb59ff10f44a5e518d021ba2cd1ac7799b2cf75ce47efa7fe217175015",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01201",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01204",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01205",
+      "cwe": "CWE-330",
+      "family": "b36bc9fb59ff10f44a5e518d021ba2cd1ac7799b2cf75ce47efa7fe217175015",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01206",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest01211",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest01212",
+      "cwe": "CWE-611",
+      "family": "69cc53689d4b54f3c004e26054a98f287e2c629341ac9d168c979072f03fff43",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 1,
+      "unmatched_alerts": 1
+    },
+    {
+      "case": "BenchmarkTest01215",
+      "cwe": "CWE-330",
+      "family": "b36bc9fb59ff10f44a5e518d021ba2cd1ac7799b2cf75ce47efa7fe217175015",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01217",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01218",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01219",
+      "cwe": "CWE-330",
+      "family": "b36bc9fb59ff10f44a5e518d021ba2cd1ac7799b2cf75ce47efa7fe217175015",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01225",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01226",
+      "cwe": "CWE-643",
+      "family": "be8e334e8bdc118585a7cb27992f244b80a8dffc50a124a6cb46f07c216a7582",
+      "vulnerable": false,
+      "outcome": "tn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    },
+    {
+      "case": "BenchmarkTest01227",
+      "cwe": "CWE-328",
+      "family": "9b7d6d044d72c450ac45e3b1483eeeced7f858486a171820efa75ff926c46063",
+      "vulnerable": true,
+      "outcome": "fn",
+      "matched_rules": [],
+      "file_alerts": 0,
+      "unmatched_alerts": 0
+    }
+  ],
+  "bandit_rule_mappings": null,
+  "baseline_report_sha256": null,
+  "matching": "Labelled file + exact CWE; CWE-338 accepted under parent CWE-330. Unmatched alerts retained.",
+  "limitations": [
+    "Synthetic corpus; not real-world validation or the official OWASP scorecard.",
+    "Normalized AST grouping reduces but cannot eliminate template similarity across splits.",
+    "File/CWE matching can count an unrelated defect with the same CWE; manual adjudication remains needed.",
+    "All labelled categories included, including unsupported categories; not alert-level precision."
+  ],
+  "frozen_implementation": "36ee9eef341b561cb79f8f1c2edfbd9c7533187f",
+  "exposure": "Previously exposed synthetic regression; not a fresh holdout"
+}

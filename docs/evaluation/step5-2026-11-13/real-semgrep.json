@@ -1,0 +1,129 @@
+{
+  "engine": "semgrep",
+  "covered_files": 14,
+  "alerts": [
+    {
+      "path": "CVE-2020-10691/fix_func/lib/ansible/galaxy/collection.py",
+      "rule_id": "arbitrary-sleep",
+      "cwes": [],
+      "line_number": 510,
+      "end_line_number": 510,
+      "severity": "ERROR",
+      "confidence": null
+    },
+    {
+      "path": "CVE-2020-10691/vul_func/lib/ansible/galaxy/collection.py",
+      "rule_id": "arbitrary-sleep",
+      "cwes": [],
+      "line_number": 500,
+      "end_line_number": 500,
+      "severity": "ERROR",
+      "confidence": null
+    },
+    {
+      "path": "CVE-2020-26215/fix_func/notebook/base/handlers.py",
+      "rule_id": "is-function-without-parentheses",
+      "cwes": [],
+      "line_number": 485,
+      "end_line_number": 485,
+      "severity": "WARNING",
+      "confidence": null
+    },
+    {
+      "path": "CVE-2020-26215/fix_func/notebook/base/handlers.py",
+      "rule_id": "direct-use-of-jinja2",
+      "cwes": [
+        "CWE-79"
+      ],
+      "line_number": 512,
+      "end_line_number": 512,
+      "severity": "WARNING",
+      "confidence": "LOW"
+    },
+    {
+      "path": "CVE-2020-26215/vul_func/notebook/base/handlers.py",
+      "rule_id": "is-function-without-parentheses",
+      "cwes": [],
+      "line_number": 485,
+      "end_line_number": 485,
+      "severity": "WARNING",
+      "confidence": null
+    },
+    {
+      "path": "CVE-2020-26215/vul_func/notebook/base/handlers.py",
+      "rule_id": "direct-use-of-jinja2",
+      "cwes": [
+        "CWE-79"
+      ],
+      "line_number": 512,
+      "end_line_number": 512,
+      "severity": "WARNING",
+      "confidence": "LOW"
+    },
+    {
+      "path": "CVE-2022-31506/fix_func/opendiamond/dataretriever/diamond_store.py",
+      "rule_id": "use-defused-xml",
+      "cwes": [
+        "CWE-611"
+      ],
+      "line_number": 15,
+      "end_line_number": 15,
+      "severity": "ERROR",
+      "confidence": "LOW"
+    },
+    {
+      "path": "CVE-2022-31506/fix_func/opendiamond/dataretriever/diamond_store.py",
+      "rule_id": "unspecified-open-encoding",
+      "cwes": [],
+      "line_number": 49,
+      "end_line_number": 49,
+      "severity": "WARNING",
+      "confidence": null
+    },
+    {
+      "path": "CVE-2022-31506/fix_func/opendiamond/dataretriever/diamond_store.py",
+      "rule_id": "unspecified-open-encoding",
+      "cwes": [],
+      "line_number": 55,
+      "end_line_number": 55,
+      "severity": "WARNING",
+      "confidence": null
+    },
+    {
+      "path": "CVE-2022-31506/vul_func/opendiamond/dataretriever/diamond_store.py",
+      "rule_id": "use-defused-xml",
+      "cwes": [
+        "CWE-611"
+      ],
+      "line_number": 15,
+      "end_line_number": 15,
+      "severity": "ERROR",
+      "confidence": "LOW"
+    },
+    {
+      "path": "CVE-2022-31506/vul_func/opendiamond/dataretriever/diamond_store.py",
+      "rule_id": "unspecified-open-encoding",
+      "cwes": [],
+      "line_number": 48,
+      "end_line_number": 48,
+      "severity": "WARNING",
+      "confidence": null
+    },
+    {
+      "path": "CVE-2022-31506/vul_func/opendiamond/dataretriever/diamond_store.py",
+      "rule_id": "unspecified-open-encoding",
+      "cwes": [],
+      "line_number": 54,
+      "end_line_number": 54,
+      "severity": "WARNING",
+      "confidence": null
+    }
+  ],
+  "errors": [],
+  "raw_report_sha256": "0de445096a3daa85b3e00661d40a9bc48589f7a6e2a99c1b5e70f1f79818eea2",
+  "independent_labels": false,
+  "scorable_cases": 0,
+  "frozen_implementation": "36ee9eef341b561cb79f8f1c2edfbd9c7533187f",
+  "baseline_provenance": "Fresh exact-byte staged run",
+  "baseline_version": "1.185.0"
+}

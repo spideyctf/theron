@@ -1,0 +1,763 @@
+{
+  "frozen_implementation": "36ee9eef341b561cb79f8f1c2edfbd9c7533187f",
+  "independent_labels": false,
+  "scorable_cases": 0,
+  "variants": {
+    "interprocedural": [
+      {
+        "cve_id": "CVE-2019-10856",
+        "role": "vul_func",
+        "path": "notebook/auth/login.py",
+        "source_sha256": "aad71a919e10526d62b808db5b912b75d4e06de10ae2b4c98ea263f55fb92883",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2019-10856",
+        "role": "fix_func",
+        "path": "notebook/auth/login.py",
+        "source_sha256": "0541debba070d6a047403a8ca027f26b28b229d8ab7d7a311482dfbd8fd4b55a",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2020-10691",
+        "role": "vul_func",
+        "path": "lib/ansible/galaxy/collection.py",
+        "source_sha256": "a401965dc8e97e951c93f2fa88603530a64561c14b63c937ad98620376d3d823",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2020-10691",
+        "role": "fix_func",
+        "path": "lib/ansible/galaxy/collection.py",
+        "source_sha256": "64774a8986141e3f4f9e4c9e6fba7f6f5b0ceb34ad30020b4d00a76e276a2036",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2020-26215",
+        "role": "vul_func",
+        "path": "notebook/base/handlers.py",
+        "source_sha256": "6eaf171fb4d58cf2185b060f980cbc22f3040cb3e7af6afd5f07865142a6a829",
+        "modes": {
+          "default": [],
+          "experimental": [
+            {
+              "rule_id": "PY-SAST-REDIRECT-001",
+              "cwe": "CWE-601",
+              "line_number": 862,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 862
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 862
+                }
+              ]
+            },
+            {
+              "rule_id": "PY-REDIRECT-COVERAGE-001",
+              "cwe": null,
+              "line_number": 912,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "coverage-notice",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 911
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 912
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "cve_id": "CVE-2020-26215",
+        "role": "fix_func",
+        "path": "notebook/base/handlers.py",
+        "source_sha256": "99511b9eafbb82f6b87a7e59b300981b6898c8da4bbd22ea5d0eda947e65d514",
+        "modes": {
+          "default": [],
+          "experimental": [
+            {
+              "rule_id": "PY-SAST-REDIRECT-001",
+              "cwe": "CWE-601",
+              "line_number": 867,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 862
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 867
+                }
+              ]
+            },
+            {
+              "rule_id": "PY-REDIRECT-COVERAGE-001",
+              "cwe": null,
+              "line_number": 917,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "coverage-notice",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 916
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 917
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "cve_id": "CVE-2021-21354",
+        "role": "vul_func",
+        "path": "pollbot/middlewares.py",
+        "source_sha256": "a42187f38b3ec190742305ccfc6bfc8fbacf5425368d1d2ab67e0b0f744e3f83",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2021-21354",
+        "role": "fix_func",
+        "path": "pollbot/middlewares.py",
+        "source_sha256": "68aa1c08959d29c7ff01e76ffe0320b3f36b113795ed4cc42030ab63193cea54",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2022-31506",
+        "role": "vul_func",
+        "path": "opendiamond/dataretriever/diamond_store.py",
+        "source_sha256": "6ae4db9be5e6d428de69efa05a318e0fa0ac8fab4a8b841ec5aca6ca9cc8363f",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2022-31506",
+        "role": "fix_func",
+        "path": "opendiamond/dataretriever/diamond_store.py",
+        "source_sha256": "5cb25c3e4907b6458cba3d0844376d601f13a5269849a4e4ea73194a2d2d17cf",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-0243",
+        "role": "vul_func",
+        "path": "libs/core/langchain_core/utils/html.py",
+        "source_sha256": "67cd1855fae765655f1bda66b61b72d32d966eb292252435367f13dcbbfae35e",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-0243",
+        "role": "fix_func",
+        "path": "libs/core/langchain_core/utils/html.py",
+        "source_sha256": "b7a9afb2f3901970a82c8b17b0dd6c7f7da8614e3123e133aee2b2955ac93ad1",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-3571",
+        "role": "vul_func",
+        "path": "libs/langchain/langchain/storage/file_system.py",
+        "source_sha256": "714dc25eb3a9f4478c90d2743782a642b0458da1dd2fd551e34a2a92e0db4c41",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-3571",
+        "role": "fix_func",
+        "path": "libs/langchain/langchain/storage/file_system.py",
+        "source_sha256": "56ce22364385f118cd26485cad330d3a3d15f7b14fda63bba90448e0d074f214",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      }
+    ],
+    "local_imports": [
+      {
+        "cve_id": "CVE-2019-10856",
+        "role": "vul_func",
+        "path": "notebook/auth/login.py",
+        "source_sha256": "aad71a919e10526d62b808db5b912b75d4e06de10ae2b4c98ea263f55fb92883",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2019-10856",
+        "role": "fix_func",
+        "path": "notebook/auth/login.py",
+        "source_sha256": "0541debba070d6a047403a8ca027f26b28b229d8ab7d7a311482dfbd8fd4b55a",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2020-10691",
+        "role": "vul_func",
+        "path": "lib/ansible/galaxy/collection.py",
+        "source_sha256": "a401965dc8e97e951c93f2fa88603530a64561c14b63c937ad98620376d3d823",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2020-10691",
+        "role": "fix_func",
+        "path": "lib/ansible/galaxy/collection.py",
+        "source_sha256": "64774a8986141e3f4f9e4c9e6fba7f6f5b0ceb34ad30020b4d00a76e276a2036",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2020-26215",
+        "role": "vul_func",
+        "path": "notebook/base/handlers.py",
+        "source_sha256": "6eaf171fb4d58cf2185b060f980cbc22f3040cb3e7af6afd5f07865142a6a829",
+        "modes": {
+          "default": [],
+          "experimental": [
+            {
+              "rule_id": "PY-SAST-REDIRECT-001",
+              "cwe": "CWE-601",
+              "line_number": 862,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 862
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 862
+                }
+              ]
+            },
+            {
+              "rule_id": "PY-REDIRECT-COVERAGE-001",
+              "cwe": null,
+              "line_number": 912,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "coverage-notice",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 911
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 912
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "cve_id": "CVE-2020-26215",
+        "role": "fix_func",
+        "path": "notebook/base/handlers.py",
+        "source_sha256": "99511b9eafbb82f6b87a7e59b300981b6898c8da4bbd22ea5d0eda947e65d514",
+        "modes": {
+          "default": [],
+          "experimental": [
+            {
+              "rule_id": "PY-SAST-REDIRECT-001",
+              "cwe": "CWE-601",
+              "line_number": 867,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 862
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 867
+                }
+              ]
+            },
+            {
+              "rule_id": "PY-REDIRECT-COVERAGE-001",
+              "cwe": null,
+              "line_number": 917,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "coverage-notice",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 916
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 917
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "cve_id": "CVE-2021-21354",
+        "role": "vul_func",
+        "path": "pollbot/middlewares.py",
+        "source_sha256": "a42187f38b3ec190742305ccfc6bfc8fbacf5425368d1d2ab67e0b0f744e3f83",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2021-21354",
+        "role": "fix_func",
+        "path": "pollbot/middlewares.py",
+        "source_sha256": "68aa1c08959d29c7ff01e76ffe0320b3f36b113795ed4cc42030ab63193cea54",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2022-31506",
+        "role": "vul_func",
+        "path": "opendiamond/dataretriever/diamond_store.py",
+        "source_sha256": "6ae4db9be5e6d428de69efa05a318e0fa0ac8fab4a8b841ec5aca6ca9cc8363f",
+        "modes": {
+          "default": [
+            {
+              "rule_id": "PY-SAST-PATH-001",
+              "cwe": "CWE-22",
+              "line_number": 137,
+              "maturity": "stable",
+              "confidence": "high",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "opendiamond/dataretriever/diamond_store.py",
+                  "line_number": 131
+                },
+                {
+                  "role": "sink",
+                  "file_path": "opendiamond/dataretriever/diamond_store.py",
+                  "line_number": 137
+                }
+              ]
+            }
+          ],
+          "experimental": [
+            {
+              "rule_id": "PY-SAST-PATH-001",
+              "cwe": "CWE-22",
+              "line_number": 137,
+              "maturity": "stable",
+              "confidence": "high",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "opendiamond/dataretriever/diamond_store.py",
+                  "line_number": 131
+                },
+                {
+                  "role": "sink",
+                  "file_path": "opendiamond/dataretriever/diamond_store.py",
+                  "line_number": 137
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "cve_id": "CVE-2022-31506",
+        "role": "fix_func",
+        "path": "opendiamond/dataretriever/diamond_store.py",
+        "source_sha256": "5cb25c3e4907b6458cba3d0844376d601f13a5269849a4e4ea73194a2d2d17cf",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-0243",
+        "role": "vul_func",
+        "path": "libs/core/langchain_core/utils/html.py",
+        "source_sha256": "67cd1855fae765655f1bda66b61b72d32d966eb292252435367f13dcbbfae35e",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-0243",
+        "role": "fix_func",
+        "path": "libs/core/langchain_core/utils/html.py",
+        "source_sha256": "b7a9afb2f3901970a82c8b17b0dd6c7f7da8614e3123e133aee2b2955ac93ad1",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-3571",
+        "role": "vul_func",
+        "path": "libs/langchain/langchain/storage/file_system.py",
+        "source_sha256": "714dc25eb3a9f4478c90d2743782a642b0458da1dd2fd551e34a2a92e0db4c41",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-3571",
+        "role": "fix_func",
+        "path": "libs/langchain/langchain/storage/file_system.py",
+        "source_sha256": "56ce22364385f118cd26485cad330d3a3d15f7b14fda63bba90448e0d074f214",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      }
+    ],
+    "sanitizers": [
+      {
+        "cve_id": "CVE-2019-10856",
+        "role": "vul_func",
+        "path": "notebook/auth/login.py",
+        "source_sha256": "aad71a919e10526d62b808db5b912b75d4e06de10ae2b4c98ea263f55fb92883",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2019-10856",
+        "role": "fix_func",
+        "path": "notebook/auth/login.py",
+        "source_sha256": "0541debba070d6a047403a8ca027f26b28b229d8ab7d7a311482dfbd8fd4b55a",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2020-10691",
+        "role": "vul_func",
+        "path": "lib/ansible/galaxy/collection.py",
+        "source_sha256": "a401965dc8e97e951c93f2fa88603530a64561c14b63c937ad98620376d3d823",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2020-10691",
+        "role": "fix_func",
+        "path": "lib/ansible/galaxy/collection.py",
+        "source_sha256": "64774a8986141e3f4f9e4c9e6fba7f6f5b0ceb34ad30020b4d00a76e276a2036",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2020-26215",
+        "role": "vul_func",
+        "path": "notebook/base/handlers.py",
+        "source_sha256": "6eaf171fb4d58cf2185b060f980cbc22f3040cb3e7af6afd5f07865142a6a829",
+        "modes": {
+          "default": [],
+          "experimental": [
+            {
+              "rule_id": "PY-SAST-REDIRECT-001",
+              "cwe": "CWE-601",
+              "line_number": 862,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 862
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 862
+                }
+              ]
+            },
+            {
+              "rule_id": "PY-SAST-REDIRECT-001",
+              "cwe": "CWE-601",
+              "line_number": 912,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 911
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 912
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "cve_id": "CVE-2020-26215",
+        "role": "fix_func",
+        "path": "notebook/base/handlers.py",
+        "source_sha256": "99511b9eafbb82f6b87a7e59b300981b6898c8da4bbd22ea5d0eda947e65d514",
+        "modes": {
+          "default": [],
+          "experimental": [
+            {
+              "rule_id": "PY-SAST-REDIRECT-001",
+              "cwe": "CWE-601",
+              "line_number": 867,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 862
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 867
+                }
+              ]
+            },
+            {
+              "rule_id": "PY-SAST-REDIRECT-001",
+              "cwe": "CWE-601",
+              "line_number": 917,
+              "maturity": "experimental",
+              "confidence": "medium",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 916
+                },
+                {
+                  "role": "sink",
+                  "file_path": "notebook/base/handlers.py",
+                  "line_number": 917
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "cve_id": "CVE-2021-21354",
+        "role": "vul_func",
+        "path": "pollbot/middlewares.py",
+        "source_sha256": "a42187f38b3ec190742305ccfc6bfc8fbacf5425368d1d2ab67e0b0f744e3f83",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2021-21354",
+        "role": "fix_func",
+        "path": "pollbot/middlewares.py",
+        "source_sha256": "68aa1c08959d29c7ff01e76ffe0320b3f36b113795ed4cc42030ab63193cea54",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2022-31506",
+        "role": "vul_func",
+        "path": "opendiamond/dataretriever/diamond_store.py",
+        "source_sha256": "6ae4db9be5e6d428de69efa05a318e0fa0ac8fab4a8b841ec5aca6ca9cc8363f",
+        "modes": {
+          "default": [
+            {
+              "rule_id": "PY-SAST-PATH-001",
+              "cwe": "CWE-22",
+              "line_number": 137,
+              "maturity": "stable",
+              "confidence": "high",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "opendiamond/dataretriever/diamond_store.py",
+                  "line_number": 131
+                },
+                {
+                  "role": "sink",
+                  "file_path": "opendiamond/dataretriever/diamond_store.py",
+                  "line_number": 137
+                }
+              ]
+            }
+          ],
+          "experimental": [
+            {
+              "rule_id": "PY-SAST-PATH-001",
+              "cwe": "CWE-22",
+              "line_number": 137,
+              "maturity": "stable",
+              "confidence": "high",
+              "evidence_kind": "static-flow",
+              "trace": [
+                {
+                  "role": "source",
+                  "file_path": "opendiamond/dataretriever/diamond_store.py",
+                  "line_number": 131
+                },
+                {
+                  "role": "sink",
+                  "file_path": "opendiamond/dataretriever/diamond_store.py",
+                  "line_number": 137
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "cve_id": "CVE-2022-31506",
+        "role": "fix_func",
+        "path": "opendiamond/dataretriever/diamond_store.py",
+        "source_sha256": "5cb25c3e4907b6458cba3d0844376d601f13a5269849a4e4ea73194a2d2d17cf",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-0243",
+        "role": "vul_func",
+        "path": "libs/core/langchain_core/utils/html.py",
+        "source_sha256": "67cd1855fae765655f1bda66b61b72d32d966eb292252435367f13dcbbfae35e",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-0243",
+        "role": "fix_func",
+        "path": "libs/core/langchain_core/utils/html.py",
+        "source_sha256": "b7a9afb2f3901970a82c8b17b0dd6c7f7da8614e3123e133aee2b2955ac93ad1",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-3571",
+        "role": "vul_func",
+        "path": "libs/langchain/langchain/storage/file_system.py",
+        "source_sha256": "714dc25eb3a9f4478c90d2743782a642b0458da1dd2fd551e34a2a92e0db4c41",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      },
+      {
+        "cve_id": "CVE-2024-3571",
+        "role": "fix_func",
+        "path": "libs/langchain/langchain/storage/file_system.py",
+        "source_sha256": "56ce22364385f118cd26485cad330d3a3d15f7b14fda63bba90448e0d074f214",
+        "modes": {
+          "default": [],
+          "experimental": []
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "frozen_implementation": "36ee9eef341b561cb79f8f1c2edfbd9c7533187f",
+  "provenance": "Original assistant-authored static fixture; not a real-code adjudicated label",
+  "code": "from flask import request\nfrom werkzeug.security import safe_join\nimport os\nos.system(safe_join(\"/srv\",request.args[\"cmd\"]))",
+  "expected_review_candidate": {
+    "cwe": "CWE-78",
+    "sink_line": 4,
+    "rationale": "A path-boundary helper does not quote shell metacharacters; untrusted filename text remains shell-relevant."
+  },
+  "observed": {
+    "default": [],
+    "without_sanitizers": []
+  },
+  "analysis": "The wrapper return is unsupported, so taint disappears before os.system. Neutral sanitizer ablation does not establish correct safe_join handling.",
+  "target_executed": false,
+  "detector_changed": false,
+  "next_action": "After this evaluation, model supported wrapper propagation with vulnerable and context-specific safe controls, then freeze/re-evaluate a new implementation."
+}

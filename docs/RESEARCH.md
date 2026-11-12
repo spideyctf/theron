@@ -1,6 +1,6 @@
 # Research direction and publication readiness
 
-Assessment date: 12 November 2026. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
+Assessment updated: 13 November 2026, through Step 5's automated engineering evaluation. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
 
 ## Broader platform direction
 
@@ -10,7 +10,11 @@ Working project/research title: **Theron: A Unified Security Analysis and Verifi
 
 ## Current assessment
 
-Theron is a functioning research prototype: CLI and local web review, bounded Python analysis, commit-pinned evidence, advisory alias grouping and explicit application/context scopes are implemented. The [earlier evaluation snapshot](evaluation/2026-11-12/README.md) was followed by an [OWASP study](evaluation/owasp-2026-11-12/RESULTS.md), with pinned Bandit/Semgrep baselines, a grouped synthetic split and three ablations. OWASP test recall rose from 3.37% to 15.73%, but validation recall is zero and both baseline tools detect more held-out vulnerable cases. The original PySASTBench tuning recall is now 77.31%. This contrast is central evidence, not something to hide behind the stronger tuning score.
+Theron is a functioning research prototype: CLI/web review, bounded Python analysis, commit-pinned evidence, advisory alias grouping, context scopes and an experimental MCP correlation pilot are implemented. The [Step 5 evaluation](evaluation/step5-2026-11-13/RESULTS.md) freezes implementation `36ee9ee`, repeats exposed synthetic comparisons and records provisional real-code development evidence. Theron's OWASP test recall remains 15.73%, validation recall remains zero, and both pinned baselines detect more vulnerable test cases. PySASTBench tuning recall is 78.15%; this contrast limits any general accuracy claim.
+
+Fresh exact-byte staging corrected an old baseline-input defect. A controlled Semgrep replay reproduced the old development outcome; corrected staging changes seven FN to TP and two TN to FP, while validation/test outcomes stay unchanged. All prior reports remain historical artifacts. Default/feature ablations and nine original correlation controls are published, with no added vulnerability counts or proven reviewer-time benefit. An original control also exposes unsupported safe_join return propagation; no detector fixes were mixed into evaluation.
+
+The [independent review packet](evaluation/step5-2026-11-13/INDEPENDENT-REVIEW.md) is prepared, but zero real-code cases or MCP edges have independent adjudication. The nine real validation and nine real test candidates remain closed. Automated evaluation is complete; the publication-level real-code research gate is open.
 
 These results do not justify an overall competitive-accuracy or industry-readiness claim. A synthetic template/category-shift holdout and same-protocol baselines now exist; independent real-world/AI-specific evaluation, measured triage benefit and systematic alert adjudication remain missing. XSS recall on the original tuning benchmark is still 10%. Neither synthetic benchmark measures AI-specific checks or dependency accuracy.
 

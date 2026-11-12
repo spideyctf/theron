@@ -1,0 +1,57 @@
+{
+  "engine": "bandit",
+  "covered_files": 14,
+  "alerts": [
+    {
+      "path": "CVE-2020-26215/fix_func/notebook/base/handlers.py",
+      "rule_id": "B110",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 562,
+      "end_line_number": 563,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2020-26215/vul_func/notebook/base/handlers.py",
+      "rule_id": "B110",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 562,
+      "end_line_number": 563,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2022-31506/fix_func/opendiamond/dataretriever/diamond_store.py",
+      "rule_id": "B406",
+      "cwes": [
+        "CWE-20"
+      ],
+      "line_number": 15,
+      "end_line_number": 15,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2022-31506/vul_func/opendiamond/dataretriever/diamond_store.py",
+      "rule_id": "B406",
+      "cwes": [
+        "CWE-20"
+      ],
+      "line_number": 15,
+      "end_line_number": 15,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    }
+  ],
+  "errors": [],
+  "raw_report_sha256": "d07cec5ffeef1524cf58d7d4a5afe00c3ef85fad1554be98a0f5b79e8e4023d2",
+  "independent_labels": false,
+  "scorable_cases": 0,
+  "frozen_implementation": "36ee9eef341b561cb79f8f1c2edfbd9c7533187f",
+  "baseline_provenance": "Fresh exact-byte staged run",
+  "baseline_version": "1.9.4"
+}
