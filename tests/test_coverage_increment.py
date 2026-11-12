@@ -248,3 +248,13 @@ def test_comparison_keeps_regressions_and_rejects_label_changes():
         transitions(old,new)
     with pytest.raises(ValueError,match='membership'):
         transitions(old,dict(cases=[]))
+
+
+def test_unresolved_stores_are_not_assumed_to_be_the_same_token_store():
+    code = '''from flask import request
+import random
+if request.cookies.get('cohort') == lookup()['value']:
+ pass
+other()['value']=random.random()
+'''
+    assert not cwes(code)

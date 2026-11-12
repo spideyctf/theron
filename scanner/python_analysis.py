@@ -860,7 +860,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 if (isinstance(cookie, ast.Call) and self._name(cookie.func) in
                         {'flask.request.cookies.get', 'quart.request.cookies.get', 'django.http.HttpRequest.COOKIES.get'}
                         and isinstance(stored, ast.Subscript)):
-                    self.auth_stores.add(self._key(stored.value))
+                    store = self._key(stored.value)
+                    if store:
+                        self.auth_stores.add(store)
         self.generic_visit(node)
 
     def _weak_random_sink(self, node, source):
