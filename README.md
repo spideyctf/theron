@@ -13,7 +13,7 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 ## Latest evaluation: OWASP BenchmarkPython
 
-**Coverage repair, 13 November 2026:** [reproducible results and failure analysis](docs/evaluation/coverage-2026-11-13/README.md), frozen at `fbcd818`. The **60% recall target is met on both exposed validation/test splits**. These results follow source inspection and tuning; they are not new held-out evidence.
+**Coverage repair, 13 November 2026:** [reproducible results and failure analysis](docs/evaluation/coverage-2026-11-13/README.md), frozen at `82db608`. The **60% recall target is met on both exposed validation/test splits**. These results follow source inspection and tuning; they are not new held-out evidence.
 
 | Exposed split | Previous recall | Current recall | Current precision | Current F1 | Label-matched FP |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -61,7 +61,7 @@ See the [frozen protocol](docs/evaluation/owasp-2026-11-12/README.md), [complete
 
 ## PySASTBench tuning benchmark
 
-Re-evaluated **13 November 2026** at coverage-repair freeze `fbcd818`, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). Label-matched counts remain unchanged. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
+Re-evaluated **13 November 2026** at coverage-repair freeze `82db608`, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). Label-matched counts remain unchanged. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
 
 | Measure | Result |
 | --- | ---: |
@@ -95,7 +95,7 @@ CWE-77 has one additional unscorable vulnerable label. A perfect result within a
 
 | Engineering check, 13 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 472 passed; 1 dependency deprecation warning |
+| Python regression suite | 473 passed; 1 dependency deprecation warning |
 | Frontend tests | 11 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |

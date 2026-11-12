@@ -13,7 +13,7 @@ from scanner.realworld_audit import check_freeze
 from scripts.probe_realworld_development import probe
 
 
-FREEZE = 'fbcd818aa6f970e2f6d2595604f200b1596bd975'
+FREEZE = '82db6083b37690da0fb77717dd19688474a239dd'
 ROOT = Path(__file__).resolve().parents[1]
 
 

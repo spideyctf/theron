@@ -1,6 +1,6 @@
 # Coverage repair and Step 6 delivery
 
-The requested 60% recall milestone is met on both exposed OWASP validation and test splits. Implementation freeze: `fbcd818aa6f970e2f6d2595604f200b1596bd975`. This follow-up changes the detector, not the labels, splits, scoring adapter or denominator. All 1,230 cases and 14 categories remain included.
+The requested 60% recall milestone is met on both exposed OWASP validation and test splits. Implementation freeze: `82db6083b37690da0fb77717dd19688474a239dd`. This follow-up changes the detector, not the labels, splits, scoring adapter or denominator. All 1,230 cases and 14 categories remain included.
 
 **These are exposed synthetic tuning regressions.** Prior outcomes and selected source templates, including validation/test templates, informed development. No unseen-project superiority, industry-grade accuracy or publication readiness is established. Reserved real-code validation/test source remains closed and independent real-code/edge adjudication remains pending.
 
@@ -74,7 +74,7 @@ PySASTBench XSS recall remains 10%. Independent real-code and AI-specific evalua
 
 The first full run at `1293b37` completed development but crashed during validation because a dynamic session key placed `None` in internal literal-state keys. This was an operational failure, not a zero-error result or a true negative. Commit `1dfcb62` fixes that state handling with an original regression and completed all splits: 202/77/65 TP.
 
-A subsequent precision check of the already-exposed real development sample found that propagating safe_join uniformly also flagged its patched path flow. Commit `fbcd818` adds its path-only boundary, trusted-base and cross-grammar controls. All final defaults, nine ablations, PySASTBench and fourteen real development probes were rerun at that final freeze. OWASP counts remained unchanged. This sequence and post-outcome correction mean the increment must be treated as tuning, even though the final implementation is pinned.
+A subsequent precision check of the already-exposed real development sample found that propagating safe_join uniformly also flagged its patched path flow. Commit `fbcd818` adds its path-only boundary, trusted-base and cross-grammar controls. A final original negative control then found that two unresolved store expressions could be incorrectly equated. Commit `82db608` requires a resolved storage key before making that connection. All final defaults, nine ablations, PySASTBench and fourteen real development probes were rerun at this final freeze. OWASP counts remained unchanged. This sequence and post-outcome correction mean the increment must be treated as tuning, even though the final implementation is pinned.
 
 ## Reproduction and engineering checks
 
@@ -90,6 +90,6 @@ npm run build
 
 The evaluator accepts `--dataset`, `--pysastbench`, `--real-cache` and `--output`. It rejects detector/rule changes against the freeze, checks reserve metadata, verifies corpus hashes through the unchanged adapter, retains errors and case transitions, and writes canonical JSON artifact hashes. The underlying PySASTBench CLI returns exit 1 for its unresolved label; the combined evaluator retains that error in its output rather than dropping the case.
 
-Local checks: **472 Python tests passed**, with one existing dependency deprecation warning; **11 frontend tests passed**, and the TypeScript/production build passed. The app was not started and live UI behavior was not manually rechecked. Earlier end-to-end export/UI controls remain in the regression suite. Step 6 delivers this reproducible checkpoint and updated README/quality/research documents; it does not close the independent research gate.
+Local checks: **473 Python tests passed**, with one existing dependency deprecation warning; **11 frontend tests passed**, and the TypeScript/production build passed. The app was not started and live UI behavior was not manually rechecked. Earlier end-to-end export/UI controls remain in the regression suite. Step 6 delivers this reproducible checkpoint and updated README/quality/research documents; it does not close the independent research gate.
 
 Model references: [Python hash security flag](https://docs.python.org/3/library/hashlib.html), [random security considerations](https://docs.python.org/3/library/random.html), [SAX defaults and entity feature](https://docs.python.org/3/library/xml.sax.html), [LDAP filter escaping](https://ldap3.readthedocs.io/en/latest/searches.html), [Werkzeug path-name boundary](https://werkzeug.palletsprojects.com/en/stable/utils/), [Flask cookie security](https://flask.palletsprojects.com/en/stable/web-security/).

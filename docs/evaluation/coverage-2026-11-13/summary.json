@@ -1,5 +1,5 @@
 {
-  "implementation_revision": "fbcd818aa6f970e2f6d2595604f200b1596bd975",
+  "implementation_revision": "82db6083b37690da0fb77717dd19688474a239dd",
   "python": "3.12.6",
   "all_owasp_splits_exposed": true,
   "reserved_real_source_opened": false,
@@ -2016,7 +2016,7 @@
   },
   "real_development_files": 14,
   "source_hashes": {
-    "scanner/python_analysis.py": "750731231a36982594627f3db4191716c5a08bf45a1b1d9a3eb43af3176e51fd",
+    "scanner/python_analysis.py": "08f1c6d060949c118d4bdb68c3c9feefe5613f1c4d2f7392e6065fd8d1bb3948",
     "scanner/owasp_benchmark.py": "73bb6ff60751471a87ebd6dc326e1e64850aff35fc788cd7b31d982a7bbfebff",
     "scanner/python_project.py": "a94cdd82e8a0c4447daf937b159a37e7f657e0e60fec8eb5a7358743cf7a3833",
     "scanner/plugins/sast.py": "5af5ba0752368633b9f781e62784115791d2b53e6dee21d5b18ddf9c84af2c07"

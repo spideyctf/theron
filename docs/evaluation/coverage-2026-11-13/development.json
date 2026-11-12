@@ -4,10 +4,10 @@
   "engine": "theron",
   "ablation": null,
   "dataset_revision": "f1291485808b66e20ddb6b01b10dc71b3df8c8ba",
-  "scanner_revision": "fbcd818aa6f970e2f6d2595604f200b1596bd975",
-  "analyzer_sha256": "5093e84b01a8e53a659caf4af3df34e55abcdbca48e39dfd0e94f96cfafb63fe",
+  "scanner_revision": "82db6083b37690da0fb77717dd19688474a239dd",
+  "analyzer_sha256": "3ebab269773fc551cf21f5b49aab0c213d51585086a10545c11e4207eb2b8ac1",
   "adapter_sha256": "73bb6ff60751471a87ebd6dc326e1e64850aff35fc788cd7b31d982a7bbfebff",
-  "elapsed_seconds": 5.5225,
+  "elapsed_seconds": 5.5645,
   "timing_scope": "SAST collection already loaded; analysis and scoring",
   "summary": {
     "tp": 202,
