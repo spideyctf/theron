@@ -1,0 +1,34 @@
+{
+  "evaluated_on": "2026-11-12",
+  "scanner_commit": "ff71cf657d0597cddfacf072749972af3f88c13a",
+  "scanned_commit": "ff71cf657d0597cddfacf072749972af3f88c13a",
+  "collection": "GitHub API, exact commit",
+  "summary": {
+    "repo": "spideyctf/theron",
+    "branch": "ff71cf657d0597cddfacf072749972af3f88c13a",
+    "files_scanned": 76,
+    "total_findings": 1,
+    "context_findings": 18,
+    "vulnerability_findings": 0,
+    "by_severity": {
+      "INFO": 1
+    },
+    "modules_run": [
+      "agentic",
+      "ai",
+      "sast",
+      "sca"
+    ],
+    "scan_duration_seconds": 58.24
+  },
+  "sbom_components": 151,
+  "unresolved_components": 15,
+  "application_notice_titles": [
+    "Unresolved dependency versions"
+  ],
+  "context_by_scope": {
+    "example": 15,
+    "test": 3
+  },
+  "note": "Single network-dependent self-scan, not a performance or security-completeness benchmark."
+}
