@@ -30,6 +30,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.call_cache = {}
         self.model_fields = {}
         self.flask_route = 0
+        self.auth_stores = set()
         self.project = project
         if project:
             self.functions.update(project.functions)
@@ -113,6 +114,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                        'django.db.connection.cursor': 'sqlite3.Cursor', 'flask.make_response': 'flask.Response',
                        'lxml.etree.fromstring': 'lxml.etree._Element', 'lxml.etree.XML': 'lxml.etree._Element',
                        'lxml.etree.parse': 'lxml.etree._ElementTree'}
+            returns.update({'xml.sax.make_parser': 'xml.sax.XMLReader',
+                            'random.Random': 'random.Random', 'random.SystemRandom': 'random.SystemRandom',
+                            'ldap3.Connection': 'ldap3.Connection'})
             if constructor in returns:
                 return returns[constructor]
             if constructor in self.classes:
@@ -202,7 +206,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         sources = [source for source in sources if source]
         if not sources:
             return None
-        selected = min(sources, key=lambda source: (source[0] == "model-response", len(source[2]) if len(source) > 2 else 0))
+        selected = min(sources, key=lambda source: (
+            {'input': 0, 'model': 0, 'weak-random': 1, 'xml-external': 2, 'model-response': 3}.get(source[0], 0),
+            len(source[2]) if len(source) > 2 else 0))
         safe = set(sources[0][2] if len(sources[0]) > 2 else ())
         for source in sources[1:]:
             safe.intersection_update(source[2] if len(source) > 2 else ())
@@ -293,6 +299,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         decorators = [decorator.func if isinstance(decorator, ast.Call) else decorator for decorator in node.decorator_list]
         resolved_decorators = {self._name(decorator) for decorator in decorators}
         old_route = self.flask_route
+        old_auth_stores, self.auth_stores = self.auth_stores, set()
         self.flask_route = int(any(name in {'flask.Flask.route', 'flask.Blueprint.route', 'quart.Quart.route'} for name in resolved_decorators))
         if not self.flask_route and any(value.startswith('flask.') for value in self.bindings.values()):
             # Application factories often receive an unannotated app. Preserve this
@@ -369,6 +376,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.literal_sets = old_literals
         self.redirect_facts = old_redirects
         self.flask_route = old_route
+        self.auth_stores = old_auth_stores
         return returned, returned_binding
 
     def visit_Return(self, node):
@@ -430,6 +438,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return ("input", node.lineno)
         if isinstance(node, ast.Call):
             name = self._name(node.func)
+            if name in {f'{root}.{method}' for root in ('random', 'random.Random')
+                        for method in ('random', 'randint', 'randrange', 'choice', 'choices', 'getrandbits',
+                                       'randbytes', 'uniform', 'normalvariate', 'gauss')}:
+                return ('weak-random', node.lineno)
             if name in {'flask.make_response', 'quart.make_response'} and len(node.args) == 1 and not node.keywords:
                 body = node.args[0]
                 if isinstance(body, ast.Tuple) and body.elts:
@@ -443,7 +455,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 section, option = (self._constant(value) for value in node.args[:2])
                 if isinstance(section, str) and isinstance(option, str):
                     return self.taint.get(f'{self._name(node.func.value)}[{(section, option)!r}]')
-            sanitizer = {"html.escape": "html", "markupsafe.escape": "html", "django.utils.html.escape": "html", "django.utils.html.conditional_escape": "html", "bleach.clean": "html", "werkzeug.utils.secure_filename": "path", "shlex.quote": "shell"}.get(name)
+            sanitizer = {"html.escape": "html", "markupsafe.escape": "html", "django.utils.html.escape": "html", "django.utils.html.conditional_escape": "html", "bleach.clean": "html", "werkzeug.utils.secure_filename": "path", "shlex.quote": "shell", 'ldap3.utils.conv.escape_filter_chars': 'ldap-filter', 'ldap.filter.escape_filter_chars': 'ldap-filter'}.get(name)
             if sanitizer and node.args and (name != "bleach.clean" or len(node.args) == 1 and not node.keywords):
                 # Escaping one grammar never removes taint for another sink type.
                 return self._mark_safe(self._source(node.args[0]), sanitizer)
@@ -452,7 +464,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return self._mark_safe(self._combine(self._source(value) for value in values), "normalized-path")
             if name in {"argparse.ArgumentParser.parse_args", "argparse.ArgumentParser.parse_known_args", "sys.stdin.read", "sys.stdin.readline"}:
                 return ("input", node.lineno, frozenset({"local-input"}))
-            if name in {"os.path.join", "os.path.abspath", "os.path.realpath", "os.path.normpath", "os.fspath", "pathlib.Path", "pathlib.Path.resolve", "pathlib.Path.absolute", "urllib.parse.unquote", "urllib.parse.unquote_plus", "urllib.parse.parse_qs", "json.loads", "json.load", "base64.b64decode", "zlib.decompress", "builtins.open", "io.open", "codecs.open"} or (isinstance(node.func, ast.Name) and node.func.id in {"open", "compile", "str", "bytes", "bytearray"} and node.func.id not in self.bindings):
+            if name in {"os.path.join", "os.path.abspath", "os.path.realpath", "os.path.normpath", "os.fspath", "pathlib.Path", "pathlib.Path.resolve", "pathlib.Path.absolute", "urllib.parse.unquote", "urllib.parse.unquote_plus", "urllib.parse.parse_qs", "json.loads", "json.load", "base64.b64decode", "base64.b64encode", "base64.urlsafe_b64decode", "base64.urlsafe_b64encode", "werkzeug.security.safe_join", "werkzeug.utils.safe_join", "zlib.decompress", "builtins.open", "io.open", "codecs.open"} or (isinstance(node.func, ast.Name) and node.func.id in {"open", "compile", "str", "bytes", "bytearray"} and node.func.id not in self.bindings):
                 return self._combine(self._source(value) for value in node.args)
             if name in self.functions:
                 return self._invoke(node, name)
@@ -475,6 +487,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if isinstance(node.func, ast.Attribute) and node.func.attr in {"get", "read", "strip", "lstrip", "rstrip", "lower", "upper", "decode", "encode", "replace", "split", "partition", "rpartition", "format"}:
                 source = self._source(node.func.value)
                 if source:
+                    if node.func.attr == 'replace' and len(node.args) == 2 and not node.keywords:
+                        removed, inserted = (self._constant(arg) for arg in node.args)
+                        if removed in {"'", '"'} and isinstance(inserted, str) and removed not in inserted:
+                            return self._mark_safe(source, 'excludes-' + removed)
                     return source
                 if node.func.attr == "format":
                     return next((self._source(value) for value in node.args + [kw.value for kw in node.keywords] if self._source(value)), None)
@@ -535,18 +551,47 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                     self.taint.pop(item.id, None)
             return
         key = self._key(target)
-        if not key:
+        if not key and not isinstance(target, ast.Subscript):
             return
         # Attribute/subscript setters may transform values; retain proofs only for local names.
         self._set_redirect_fact(key, self._redirect_fact(value) if isinstance(target, ast.Name) else None)
         literal = self._constant(value)
         if literal is not None:
             self.literal_sets[key] = ast.Constant(value=literal)
+        elif isinstance(value, (ast.JoinedStr, ast.BinOp)):
+            # Capture interpolation facts now; later reassignments cannot sanitize
+            # a query string that was already constructed.
+            pieces = []
+            for part in self._xpath_parts(value):
+                if isinstance(part, ast.Constant):
+                    pieces.append(part)
+                    continue
+                part_source = self._source(part)
+                if part_source and isinstance(part, ast.FormattedValue):
+                    part_source = (part_source[0], part_source[1], frozenset()) + part_source[3:4]
+                pieces.append(ast.Constant(value=part_source))
+            self.literal_sets[key] = ast.JoinedStr(values=pieces)
         elif isinstance(value, (ast.List, ast.Tuple)) or isinstance(value, ast.Set) and all(isinstance(item, ast.Constant) and isinstance(item.value, str) for item in value.elts):
             self.literal_sets[key] = value
         else:
             self.literal_sets.pop(key, None)
         source = self._source(value) if value is not None else None
+        if isinstance(target, ast.Subscript):
+            owner = self._name(target.value)
+            key_source = self._source(target.slice)
+            if owner in {'flask.session', 'quart.session', 'django.http.HttpRequest.session'}:
+                incoming = self._combine([source, key_source])
+                if incoming and incoming[0] == 'input':
+                    self._add(target, 'PY-SAST-SESSION-001', 'External input crosses a session storage boundary',
+                              Severity.MEDIUM, Category.SAST,
+                              'A request-controlled key or value is stored in session state. Verify validation and authorization before treating it as trusted identity or privilege data.',
+                              'Validate the value against server-side records and allowlist session keys before storing trusted state.',
+                              'CWE-501', source_line=incoming[1], confidence='medium')
+            if source and source[0] == 'weak-random' and (self._key(target.value) in self.auth_stores
+                    or owner in {'flask.session', 'quart.session'}):
+                self._weak_random_sink(target, source)
+        if not key:
+            return
         if source:
             self.taint[key] = source
         else:
@@ -566,6 +611,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             name = {"sqlite3.connect": "sqlite3.Connection", "sqlite3.Connection.cursor": "sqlite3.Cursor", "django.db.connection.cursor": "sqlite3.Cursor", "argparse.ArgumentParser.add_subparsers": "argparse.Subparsers", "argparse.Subparsers.add_parser": "argparse.ArgumentParser"}.get(constructor, name)
             if constructor in {"pathlib.Path.resolve", "pathlib.Path.absolute", "pathlib.Path.joinpath"}:
                 name = "pathlib.Path"
+            if constructor == 'xml.sax.make_parser':
+                name = f'xml.sax.XMLReader@{value.lineno}:{value.col_offset}'
             factory = self.functions.get(constructor)
             if factory and len(factory.body) == 1 and isinstance(factory.body[0], ast.Return):
                 returned = factory.body[0].value
@@ -627,6 +674,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         sources = {key: source if len(source) > 3 else (source[0], source[1], frozenset(source[2] if len(source) > 2 else ()), self.file_path)
                    for key, source in sources.items()}
         bindings = {key: resolved for key, value in arguments if (resolved := self._name(value))}
+        call_receiver = receiver or (self._name(node.func.value) if isinstance(node.func, ast.Attribute) else self.receiver)
         cache_key = (id(node), name, receiver, tuple(self.active_calls), tuple(sources.items()),
                      tuple(sorted(self.bindings.items())), tuple(sorted(self.taint.items())),
                      tuple((key, ast.dump(value)) for key, value in sorted(self.literal_sets.items())))
@@ -652,7 +700,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 self.bindings.update({key: value for key, value in old_globals.items() if "." in key})
         parent = name.rsplit(".", 1)[0] if "." in name else ""
         self.class_name = parent if parent in self.classes else old_class
-        self.receiver = receiver or (self._name(node.func.value) if isinstance(node.func, ast.Attribute) else old_receiver)
+        self.receiver = call_receiver
         self.parameter_bindings = bindings
         self.active_calls.append(name)
         self.call_count += 1
@@ -726,6 +774,17 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.literal_sets = {key: value for key, value in states[0][2].items()
                              if all(key in state[2] and ast.dump(state[2][key]) == ast.dump(value)
                                     for state in states)}
+        # Preserve equal-length list alternatives so later appends retain slots.
+        for key, value in states[0][2].items():
+            alternatives = [state[2].get(key) for state in states]
+            if key not in self.literal_sets and isinstance(value, ast.List) and all(
+                    isinstance(other, ast.List) and len(other.elts) == len(value.elts) for other in alternatives):
+                items = list(value.elts)
+                for other in alternatives[1:]:
+                    items = [left if ast.dump(left) == ast.dump(right) else
+                             ast.IfExp(test=ast.Name(id='__analysis_branch__', ctx=ast.Load()), body=left, orelse=right)
+                             for left, right in zip(items, other.elts)]
+                self.literal_sets[key] = ast.List(elts=items, ctx=ast.Load())
         self.redirect_facts = {key:value for key,value in states[0][3].items()
                                if all(state[3].get(key) == value for state in states)}
 
@@ -754,10 +813,18 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             self._visit_block(node.body if constant else node.orelse)
             return
         initial = self._state()
+        quote_guard = None
+        if (isinstance(node.test, ast.Compare) and len(node.test.ops) == 1
+                and isinstance(node.test.ops[0], (ast.In, ast.NotIn))
+                and self._constant(node.test.left) in {"'", '"'}):
+            quote_guard = self._key(node.test.comparators[0]), 'excludes-' + self._constant(node.test.left)
         allowed = self._literal_allowlist(node.test)
         boundary, positive = self._path_boundary(node.test)
         redirect_boundary, redirect_positive = self._redirect_boundary(node.test)
         states = []
+        if quote_guard and isinstance(node.test.ops[0], ast.NotIn):
+            key, context = quote_guard
+            self.taint[key] = self._mark_safe(self.taint.get(key), context)
         if allowed and isinstance(node.test.ops[0], ast.In):
             self.taint.pop(allowed, None)
         if boundary and positive and self.taint.get(boundary):
@@ -767,6 +834,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if self._visit_block(node.body):
             states.append(self._state())
         self._restore(initial)
+        if quote_guard and isinstance(node.test.ops[0], ast.In):
+            key, context = quote_guard
+            self.taint[key] = self._mark_safe(self.taint.get(key), context)
         if allowed and isinstance(node.test.ops[0], ast.NotIn):
             self.taint.pop(allowed, None)
         if boundary and not positive and self.taint.get(boundary):
@@ -776,6 +846,67 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if self._visit_block(node.orelse):
             states.append(self._state())
         self._merge_states(states)
+
+    def visit_Compare(self, node):
+        # A cookie compared with server-side storage identifies a token store;
+        # arbitrary dictionaries and simulation randomness are not security sinks.
+        if len(node.ops) == 1 and isinstance(node.ops[0], (ast.Eq, ast.NotEq)):
+            for cookie, stored in ((node.left, node.comparators[0]), (node.comparators[0], node.left)):
+                if (isinstance(cookie, ast.Call) and self._name(cookie.func) in
+                        {'flask.request.cookies.get', 'quart.request.cookies.get', 'django.http.HttpRequest.COOKIES.get'}
+                        and isinstance(stored, ast.Subscript)):
+                    self.auth_stores.add(self._key(stored.value))
+        self.generic_visit(node)
+
+    def _weak_random_sink(self, node, source):
+        self._add(node, 'PY-SAST-RANDOM-001', 'Predictable randomness reaches session/token storage',
+                  Severity.HIGH, Category.SAST,
+                  f'Non-cryptographic randomness from line {source[1]} reaches session state or a store compared with a request cookie.',
+                  'Generate security tokens with secrets.token_urlsafe or an equivalent cryptographic generator.',
+                  'CWE-338', source_line=source[1], confidence='medium')
+
+    def _xpath_parts(self, value, depth=0):
+        if depth > 5:
+            return [value]
+        if isinstance(value, ast.Name) and value.id in self.literal_sets:
+            return self._xpath_parts(self.literal_sets[value.id], depth + 1)
+        if isinstance(value, ast.JoinedStr):
+            return [part for child in value.values for part in self._xpath_parts(child, depth + 1)]
+        if isinstance(value, ast.FormattedValue) and value.conversion == -1 and value.format_spec is None:
+            return [value.value]
+        if isinstance(value, ast.BinOp) and isinstance(value.op, ast.Add):
+            return self._xpath_parts(value.left, depth + 1) + self._xpath_parts(value.right, depth + 1)
+        return [value]
+
+    def _xpath_source(self, expression):
+        """Quote exclusion protects only substitution inside that XPath literal."""
+        quote, unsafe = None, []
+        for value in self._xpath_parts(expression):
+            if isinstance(value, ast.Constant) and isinstance(value.value, str):
+                for char in value.value:
+                    if char in {"'", '"'} and (quote is None or char == quote):
+                        quote = None if quote else char
+            else:
+                source = value.value if isinstance(value, ast.Constant) and isinstance(value.value, tuple) else self._source(value)
+                if source and not (quote and not isinstance(value, ast.FormattedValue) and self._safe_for(source, 'excludes-' + quote)):
+                    unsafe.append(source)
+        return self._combine(unsafe)
+
+    def _explicit_shell_source(self, arguments):
+        values = self.literal_sets.get(arguments.id) if isinstance(arguments, ast.Name) else arguments
+        if not isinstance(values, (ast.List, ast.Tuple)) or len(values.elts) < 3:
+            return None
+        def choices(value):
+            if isinstance(value, ast.IfExp):
+                return choices(value.body) | choices(value.orelse)
+            literal = self._constant(value)
+            return {literal if isinstance(literal, str) else None}
+        executables, options = choices(values.elts[0]), choices(values.elts[1])
+        shells = {'sh', 'bash', 'dash', 'zsh', '/bin/sh', '/bin/bash', '/bin/dash', 'cmd', 'cmd.exe', 'powershell', 'powershell.exe', 'pwsh'}
+        if not executables <= shells or not options <= {'-c', '/c', '-Command', '-command'}:
+            return None
+        command = ast.Subscript(value=arguments, slice=ast.Constant(value=2), ctx=ast.Load()) if isinstance(arguments, ast.Name) else values.elts[2]
+        return self._source(command)
 
     def _redirect_boundary(self, test):
         if not isinstance(test, ast.BoolOp) or len(test.values) != 2:
@@ -1022,6 +1153,33 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if isinstance(node.func, ast.Attribute) and isinstance(node.func.value, ast.Name) and node.func.attr in {"append", "extend", "insert", "add", "update", "clear", "remove", "pop"}:
             self.literal_sets.pop(node.func.value.id, None)
         name = self._name(node.func)
+        if name in {'hashlib.md5', 'hashlib.sha1', 'hashlib.new'}:
+            algorithm = (self._constant(node.args[0]) if node.args else
+                         next((self._constant(k.value) for k in node.keywords if k.arg == 'name'), None)) if name == 'hashlib.new' else name.rsplit('.', 1)[1]
+            non_security = any(k.arg == 'usedforsecurity' and self._constant(k.value) is False for k in node.keywords)
+            if isinstance(algorithm, str) and algorithm.lower().replace('-', '') in {'md5', 'sha1'} and not non_security:
+                self._add(node, 'PY-SAST-HASH-001', 'Weak hash algorithm selected', Severity.MEDIUM, Category.SAST,
+                          f'A resolved hashlib call selects {algorithm} without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.',
+                          'Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.',
+                          'CWE-328', confidence='medium', evidence_kind='static-configuration')
+        if isinstance(node.func, ast.Attribute) and self._name(node.func.value).startswith('xml.sax.XMLReader@'):
+            parser_key = self._name(node.func.value) + '.external_entities'
+            if node.func.attr == 'setFeature' and len(node.args) == 2:
+                feature = self._name(node.args[0])
+                if feature == 'xml.sax.handler.feature_external_ges' or self._constant(node.args[0]) == 'http://xml.org/sax/features/external-general-entities':
+                    enabled = self._constant(node.args[1])
+                    if enabled is True or enabled == 1:
+                        self.taint[parser_key] = ('xml-external', node.lineno)
+                    elif enabled is False or enabled == 0:
+                        self.taint.pop(parser_key, None)
+        if name in {'xml.dom.minidom.parse', 'xml.dom.minidom.parseString'}:
+            parser = node.args[1] if len(node.args) > 1 else next((k.value for k in node.keywords if k.arg == 'parser'), None)
+            xml_value = node.args[0] if node.args else next((k.value for k in node.keywords if k.arg in {'string', 'file'}), None)
+            xml_source = self._source(xml_value)
+            if xml_source and xml_source[0] == 'input' and self.taint.get(self._name(parser) + '.external_entities'):
+                self._add(node, 'PY-SAST-XXE-001', 'External XML reaches an entity-enabled SAX parser', Severity.HIGH, Category.SAST,
+                          'Request-controlled XML is parsed with an observed SAX parser whose external general entities feature is enabled.',
+                          'Disable external entities or use defusedxml for untrusted XML.', 'CWE-611', source_line=xml_source[1])
         builtin = node.func.id if isinstance(node.func, ast.Name) and node.func.id not in self.bindings else ""
         values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg in {"source", "object", "command", "args", "s", "data", "file"}]
         source = next((self._source(value) for value in values if self._source(value)), None)
@@ -1029,7 +1187,38 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         shell_sink = name in {"os.system", "os.popen"} or (
             name in {"subprocess.run", "subprocess.call", "subprocess.Popen", "subprocess.check_call", "subprocess.check_output"}
             and any(kw.arg == "shell" and isinstance(kw.value, ast.Constant) and kw.value.value is True for kw in node.keywords))
-        if source and source[0] != "model-response" and (code_sink or (shell_sink and not self._safe_for(source, "shell"))):
+        if name in {'subprocess.run', 'subprocess.call', 'subprocess.Popen', 'subprocess.check_call', 'subprocess.check_output'}:
+            arguments = node.args[0] if node.args else next((k.value for k in node.keywords if k.arg == 'args'), None)
+            shell_source = self._explicit_shell_source(arguments)
+            if shell_source:
+                shell_sink, source = True, shell_source
+        if name in {'elementpath.select', 'elementpath.iter_select', 'elementpath.Selector'}:
+            expression = (node.args[0] if node.args else None) if name == 'elementpath.Selector' else (node.args[1] if len(node.args) > 1 else None)
+            expression = next((k.value for k in node.keywords if k.arg == 'path'), expression)
+            xpath_source = self._xpath_source(expression)
+            if xpath_source and xpath_source[0] == 'input':
+                self._add(node, 'PY-SAST-XPATH-001', 'External input controls an XPath expression', Severity.HIGH, Category.SAST,
+                          'Request-controlled data reaches the XPath expression argument of a resolved elementpath API.',
+                          'Use a fixed expression and pass variable values separately.', 'CWE-643', source_line=xpath_source[1])
+        if name == 'ldap3.Connection.search':
+            expression = node.args[1] if len(node.args) > 1 else next((k.value for k in node.keywords if k.arg == 'search_filter'), None)
+            ldap_source = self._source(expression)
+            if ldap_source and ldap_source[0] == 'input' and not self._safe_for(ldap_source, 'ldap-filter'):
+                self._add(node, 'PY-SAST-LDAP-001', 'External input controls an LDAP search filter', Severity.HIGH, Category.SAST,
+                          'Request-controlled data reaches a resolved LDAP connection search filter without recognized filter escaping.',
+                          'Escape substituted values with ldap3.utils.conv.escape_filter_chars and keep filter syntax fixed.',
+                          'CWE-90', source_line=ldap_source[1])
+        if name in {'flask.Response.set_cookie', 'quart.Response.set_cookie'}:
+            secure = next((self._constant(k.value) for k in node.keywords if k.arg == 'secure'), None)
+            if secure is False:
+                self._add(node, 'PY-SAST-COOKIE-001', 'Cookie explicitly disables HTTPS-only transport', Severity.MEDIUM, Category.SAST,
+                          'A resolved response cookie setter explicitly uses secure=False. The cookie may be sent over HTTP; deployment context determines exposure.',
+                          'Use secure=True for cookies served over HTTPS.', 'CWE-614', confidence='medium', evidence_kind='static-configuration')
+            cookie_value = node.args[1] if len(node.args) > 1 else next((k.value for k in node.keywords if k.arg == 'value'), None)
+            random_source = self._source(cookie_value)
+            if random_source and random_source[0] == 'weak-random':
+                self._weak_random_sink(node, random_source)
+        if source and source[0] in {"input", "model"} and (code_sink or (shell_sink and not self._safe_for(source, "shell"))):
             model = source[0] == "model"
             self._add(node, "PY-AI-EXEC-001" if model else "PY-SAST-EXEC-001",
                       "LLM output reaches code execution" if model else "External input reaches command/code execution",
@@ -1061,7 +1250,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             self._add(node, "PY-SAST-PATH-001", "External input controls a filesystem path", Severity.HIGH,
                       Category.SAST, f"External input from line {path_source[1]} reaches a file operation without an observed path boundary.",
                       "Resolve the candidate and trusted root, reject paths outside that root using path-component containment, and avoid following untrusted symlinks.", "CWE-22", source_line=path_source[1], source_file=path_source[3] if len(path_source) > 3 else None)
-        if name in {'lxml.etree.XPath', 'lxml.etree.ETXPath', 'lxml.etree._Element.xpath', 'lxml.etree._ElementTree.xpath'} and source and source[0] == 'input':
+        xpath_apis = {'lxml.etree.XPath', 'lxml.etree.ETXPath', 'lxml.etree._Element.xpath', 'lxml.etree._ElementTree.xpath'}
+        xpath_source = self._xpath_source(node.args[0]) if name in xpath_apis and node.args else None
+        if xpath_source and xpath_source[0] == 'input':
+            source = xpath_source
             self._add(node, 'PY-SAST-XPATH-001', 'External input controls an XPath expression', Severity.HIGH, Category.SAST,
                       f'External input from line {source[1]} reaches the expression argument of a resolved XPath API.',
                       'Keep XPath expressions fixed and bind user values through XPath variables.', 'CWE-643',
@@ -1119,7 +1311,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             self._invoke(node, name)
         self.generic_visit(node)
 
-    def _add(self, node, rule_id, title, severity, category, description, recommendation, cwe, experimental=False, source_line=None, source_file=None, confidence=None):
+    def _add(self, node, rule_id, title, severity, category, description, recommendation, cwe, experimental=False, source_line=None, source_file=None, confidence=None, evidence_kind='static-flow'):
         from scanner.utils.helpers import redact_secrets
         lines = self.content.splitlines()
         indices = set(range(node.lineno - 1, min(len(lines), node.end_lineno)))
@@ -1130,7 +1322,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             description=description, file_path=self.file_path, line_number=node.lineno,
             code_snippet=snippet, recommendation=recommendation, cwe=cwe,
             confidence=confidence or ("medium" if experimental else "high"), rule_id=rule_id,
-            maturity="experimental" if experimental else "stable", evidence_kind="coverage-notice" if severity == Severity.INFO else "static-flow",
+            maturity="experimental" if experimental else "stable", evidence_kind="coverage-notice" if severity == Severity.INFO else evidence_kind,
             trace=([{"role": "source", "file_path": source_file or self.file_path, "line_number": source_line}] if source_line else [])
                   + [{"role": "sink", "file_path": self.file_path, "line_number": node.lineno}]))
 
