@@ -15,6 +15,8 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 **Real-world preparation, 12 November 2026:** [Step 2 metadata audit](docs/evaluation/realworld-2026-11-12/README.md) froze 70 Python CVEs across 48 project groups: 26 development, 9 validation, 9 test, and 26 development-only due to prior exposure. All metadata references resolve, but source/patch labels remain unverified: **0 scorable real-world cases and no new accuracy result**.
 
+**Step 3 development checkpoint:** [source review and detector increment](docs/evaluation/development-2026-11-12/README.md) audited seven development cases (14 snapshots; 18 verified function spans). Inherited Tornado request-body analysis adds one tuning-corpus SQL detection. New Tornado/aiohttp redirect candidates remain experimental because they also flag patched normalization code. Default development-probe matches remain 1/7; reserved source stays unopened and independent labels are pending.
+
 On **12 November 2026**, we added [OWASP BenchmarkPython](https://github.com/OWASP-Benchmark/BenchmarkPython), pinned to `f1291485808b66e20ddb6b01b10dc71b3df8c8ba`: **1,230 synthetic cases across 14 categories**. Whole upstream template families stay in one split: 737 development, 248 validation and 245 test cases. The detector was frozen at [`a504494`](https://github.com/spideyctf/theron/commit/a504494e35b961770a5c37896a7f115bfe025088) before validation/test; all categories, including unsupported ones, remain scored.
 
 | Split | Before: detected / vulnerable | After: detected / vulnerable | After precision | After F1 |
@@ -39,18 +41,18 @@ See the [frozen protocol](docs/evaluation/owasp-2026-11-12/README.md), [complete
 
 ## PySASTBench tuning benchmark
 
-Re-evaluated **12 November 2026** after the OWASP-driven flow changes, using the frozen detector above, default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). It contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
+Re-evaluated **12 November 2026** after the Step 3 framework-source changes, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). This increment follows the older frozen OWASP detector; the OWASP numbers above remain historical results for that detector. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
 
 | Measure | Result |
 | --- | ---: |
-| True positives / false negatives | 92 / 27 |
+| True positives / false negatives | 93 / 26 |
 | Label-matched false positives / true negatives | 4 / 116 |
-| Recall | **77.31%** |
-| Precision | **95.83%** |
-| F1 | **85.58%** |
-| Accuracy over 239 scored variants | 87.03% |
+| Recall | **78.15%** |
+| Precision | **95.88%** |
+| F1 | **86.11%** |
+| Accuracy over 239 scored variants | 87.45% |
 | Specificity | 96.67% |
-| Balanced accuracy | 86.99% |
+| Balanced accuracy | 87.41% |
 | False-positive rate on fixed variants | 3.33% |
 | Unscorable vulnerable variants | 1 |
 | Fixed files with any alert, including unrelated alerts | 7 / 120 |
@@ -63,7 +65,7 @@ These are **case-level, label-matched metrics**, not the proportion of individua
 | 22 | Path traversal | 17 | 3 | 3 | 17 | 85.00% | 85.00% | 85.00% |
 | 77 | Command injection, including CWE-78 | 19 | 0 | 0 | 20 | 100.00% | 100.00% | 100.00% |
 | 79 | XSS | 2 | 18 | 0 | 20 | 100.00% | **10.00%** | 18.18% |
-| 89 | SQL injection | 18 | 2 | 0 | 20 | 100.00% | 90.00% | 94.74% |
+| 89 | SQL injection | 19 | 1 | 0 | 20 | 100.00% | 95.00% | 97.44% |
 | 94 | Code injection | 18 | 2 | 0 | 20 | 100.00% | 90.00% | 94.74% |
 | 502 | Unsafe deserialization | 18 | 2 | 1 | 19 | 94.74% | 90.00% | 92.31% |
 
@@ -71,12 +73,12 @@ CWE-77 has one additional unscorable vulnerable label. A perfect result within a
 
 | Engineering check, 12 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 288 passed; 1 dependency deprecation warning |
+| Python regression suite | 325 passed; 1 dependency deprecation warning |
 | Frontend tests | 8 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |
 
-Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/owasp-2026-11-12/pysastbench-after.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
+Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/development-2026-11-12/pysastbench-regression.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
 
 The earlier four-module GitHub self-scan of `ff71cf6` analyzed **76 files in 58.24 seconds**, with **1 application informational notice**, **0 application vulnerability alerts**, **18 context detections** and **151 SBOM components**, including **15 unresolved versions**. This historical, single-run smoke test predates the new flow changes; it is not a current throughput benchmark or proof of security. [Self-scan summary](docs/evaluation/2026-11-12/self-scan-summary.json).
 
@@ -84,7 +86,7 @@ The earlier four-module GitHub self-scan of `ff71cf6` analyzed **76 files in 58.
 
 | Module | Default coverage | Additional opt-in review candidates |
 | --- | --- | --- |
-| `sast` | Supported Python input flows into command/code execution, unsafe deserialization, paths, SQL/XPath statements, redirects, outbound URLs and selected HTML responses/Flask returns | Broader Python and JS/TS regex patterns |
+| `sast` | Supported Python input flows into command/code execution, unsafe deserialization, paths, SQL/XPath statements, redirects, outbound URLs and selected HTML responses/Flask returns | Tornado/aiohttp redirect candidates; broader Python and JS/TS regex patterns |
 | `ai` | Recognized provider credential patterns and model-text-to-execution flows; credential matches are explicitly unverified | Prompt/instruction patterns, deployment settings, generic credentials and exfiltration hints |
 | `sca` | Exact-version OSV advisory matches, grouped aliases, unresolved-version notices and CycloneDX 1.5 inventory | AI/ML package review hints |
 | `agentic` | Structured configuration parsing notices | MCP, instructions, tool descriptions and permission patterns |

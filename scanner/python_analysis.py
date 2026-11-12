@@ -78,6 +78,33 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         for alias in node.names:
             self.bindings[alias.asname or alias.name] = f"{module}.{alias.name}" if module else alias.name
 
+    def _inherits(self, name, base):
+        pending, seen = [name.split('@', 1)[0]], set()
+        while pending:
+            current = pending.pop()
+            if current == base:
+                return True
+            if current not in seen:
+                seen.add(current)
+                pending.extend(self.class_bases.get(current, ()))
+        return False
+
+    def _tornado_method(self, node, methods):
+        if not isinstance(node, ast.Attribute) or node.attr not in methods:
+            return False
+        owner = self._name(node.value)
+        if self._name(node) != owner + '.' + node.attr or not self._inherits(owner, 'tornado.web.RequestHandler'):
+            return False
+        pending, seen = [owner.split('@', 1)[0]], set()
+        while pending:
+            current = pending.pop()
+            if f'{current}.{node.attr}' in self.functions:
+                return False  # A local override is not the framework implementation.
+            if current not in seen:
+                seen.add(current)
+                pending.extend(self.class_bases.get(current, ()))
+        return True
+
     def _name(self, node):
         if isinstance(node, ast.Call):
             constructor = self._name(node.func)
@@ -99,6 +126,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             key = f"{root}.{node.attr}" if root else ""
             if key in self.bindings:
                 return self.bindings[key]
+            if node.attr == 'request' and self._inherits(root, 'tornado.web.RequestHandler'):
+                return 'tornado.httputil.HTTPServerRequest'
             cls = root.split("@", 1)[0]
             fallback = f"{cls}.{node.attr}" if root else ""
             if fallback in self.bindings:
@@ -332,6 +361,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if ("http.server.BaseHTTPRequestHandler" in self.class_bases.get(owner, set())
                     and node.attr in {"path", "rfile", "headers"}):
                 return ("input", node.lineno)
+            if ((owner == 'tornado.httputil.HTTPServerRequest' and node.attr in {'uri', 'path', 'query', 'body', 'arguments', 'headers'})
+                    or (owner == 'aiohttp.web.Request' and node.attr in {'path', 'path_qs', 'raw_path', 'query_string', 'rel_url', 'url'})):
+                return ("input", node.lineno)
         if isinstance(node, ast.Call):
             name = self._name(node.func)
             if name in {'flask.make_response', 'quart.make_response'} and len(node.args) == 1 and not node.keywords:
@@ -364,9 +396,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return self._combine(self._source(value) for value in [node.func.value] + node.args)
             if name == "socket.socket.recv":
                 return ("input", node.lineno)
-            if (isinstance(node.func, ast.Attribute)
-                    and "tornado.web.RequestHandler" in self.class_bases.get(self._name(node.func.value), set())
-                    and node.func.attr in {"get_argument", "get_query_argument", "get_body_argument"}):
+            if self._tornado_method(node.func, {'get_argument', 'get_query_argument', 'get_body_argument'}):
                 return ("input", node.lineno)
             if isinstance(node.func, ast.Name) and node.func.id == "input" and "input" not in self.bindings:
                 return ("input", node.lineno, frozenset({"local-input"}))
@@ -378,7 +408,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return ("input", node.lineno)
             if name == "json.loads" or (isinstance(node.func, ast.Name) and node.func.id == "str" and "str" not in self.bindings):
                 return self._source(node.args[0]) if node.args else None
-            if isinstance(node.func, ast.Attribute) and node.func.attr in {"get", "read", "strip", "lstrip", "rstrip", "lower", "upper", "decode", "encode", "replace", "split", "format"}:
+            if isinstance(node.func, ast.Attribute) and node.func.attr in {"get", "read", "strip", "lstrip", "rstrip", "lower", "upper", "decode", "encode", "replace", "split", "partition", "rpartition", "format"}:
                 source = self._source(node.func.value)
                 if source:
                     return source
@@ -417,6 +447,21 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         return None
 
     def _assign(self, target, value):
+        if (isinstance(target, (ast.Tuple, ast.List)) and isinstance(value, ast.Call)
+                and isinstance(value.func, ast.Attribute) and value.func.attr in {'partition', 'rpartition'}):
+            # shortcut: fields retain possible string taint; exact substring values are not modeled.
+            source = self._source(value)
+            for index, item in enumerate(target.elts):
+                literal_delimiter = (len(target.elts) == 3 and index == 1 and value.args
+                                     and isinstance(value.args[0], ast.Constant)
+                                     and isinstance(value.args[0].value, (str, bytes))
+                                     and not any(isinstance(part, ast.Starred) for part in target.elts))
+                item = item.value if isinstance(item, ast.Starred) else item
+                self._assign(item, None)
+                key = self._key(item)
+                if key and source and not literal_delimiter:
+                    self.taint[key] = source
+            return
         if isinstance(target, (ast.Tuple, ast.List)) and isinstance(value, ast.Call) and self._name(value.func) == "socket.socket.accept":
             if target.elts and isinstance(target.elts[0], ast.Name):
                 self.bindings[target.elts[0].id] = "socket.socket"
@@ -945,11 +990,24 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                       f'External input from line {source[1]} reaches the expression argument of a resolved XPath API.',
                       'Keep XPath expressions fixed and bind user values through XPath variables.', 'CWE-643',
                       source_line=source[1], source_file=source[3] if len(source)>3 else None)
-        if name in {'flask.redirect', 'quart.redirect', 'django.shortcuts.redirect', 'starlette.responses.RedirectResponse', 'fastapi.responses.RedirectResponse'} and source and source[0] == 'input' and not self._safe_for(source, 'redirect'):
+        redirect_sink = name in {'flask.redirect', 'quart.redirect', 'django.shortcuts.redirect', 'starlette.responses.RedirectResponse', 'fastapi.responses.RedirectResponse',
+                                 'aiohttp.web.HTTPMovedPermanently', 'aiohttp.web.HTTPFound', 'aiohttp.web.HTTPSeeOther',
+                                 'aiohttp.web.HTTPTemporaryRedirect', 'aiohttp.web.HTTPPermanentRedirect'}
+        if self._tornado_method(node.func, {'redirect'}):
+            redirect_sink = True
+        framework_redirect = name.startswith('aiohttp.web.HTTP') or self._tornado_method(node.func, {'redirect'})
+        destination_keyword = ('to' if name == 'django.shortcuts.redirect' else
+                               'location' if name in {'flask.redirect', 'quart.redirect'} or name.startswith('aiohttp.web.HTTP') else 'url')
+        redirect_values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg == destination_keyword]
+        redirect_source = self._combine(self._source(value) for value in redirect_values)
+        if (redirect_sink and (not framework_redirect or self.include_experimental) and redirect_source
+                and redirect_source[0] == 'input' and not self._safe_for(redirect_source, 'redirect')):
+            source = redirect_source
             self._add(node, 'PY-SAST-REDIRECT-001', 'External input controls a redirect destination', Severity.MEDIUM, Category.SAST,
                       f'External input from line {source[1]} reaches a resolved redirect destination without an observed destination boundary.',
                       'Use fixed local destinations or validate scheme and host against a trusted allowlist.', 'CWE-601',
-                      source_line=source[1], source_file=source[3] if len(source)>3 else None)
+                      source_line=source[1], source_file=source[3] if len(source)>3 else None,
+                      experimental=framework_redirect)
         url_values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg == "url"]
         url_source = self._combine(self._source(value) for value in url_values)
         if name in {f"{library}.{method}" for library in ("requests", "httpx") for method in ("get", "post", "put", "patch", "delete", "head", "options")} | {"urllib.request.urlopen"} and url_source and url_source[0] == "input":

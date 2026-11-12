@@ -124,7 +124,9 @@ Use original local fixtures first and independently reviewed eligible developmen
 
 B01 and B02 are deliberately earlier than claims about real-world gains. The reserved corpus has 70 CVEs across 48 repositories, with patch references for all entries; these metadata facts do not establish that all 70 are eligible, correctly labelled or within scope.
 
-**B01 complete, 12 November 2026:** [metadata audit and frozen assignments](evaluation/realworld-2026-11-12/README.md): 26 development, 9 validation, 9 test and 26 development-only cases across 48 groups. No metadata blockers remain; source labels, file availability, semantic near-duplicates and licensing review are pending. Zero cases are scorable. B02 has not started.
+**B01 complete, 12 November 2026:** [metadata audit and frozen assignments](evaluation/realworld-2026-11-12/README.md): 26 development, 9 validation, 9 test and 26 development-only cases across 48 groups. No metadata blockers remain; source labels, file availability, semantic near-duplicates and licensing review are pending. Zero cases are scorable.
+
+**B02 engineering checkpoint:** [seven-case development review and bounded increment](evaluation/development-2026-11-12/README.md) delivered. All 18 selected function spans match the pinned metadata. Default inherited Tornado request-body modeling gains one tuning-corpus SQL case; new redirect candidates stay experimental after a patched-code alert. Independent labels, richer source/caller context, the final matching protocol and redirect precision remain open acceptance items. B02's research gate is incomplete; B03 has not started.
 
 ## Research acceptance criteria
 

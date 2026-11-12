@@ -1,0 +1,302 @@
+{
+  "date": "2026-11-12",
+  "starting_commit": "487e207d3582656a99c0e30b2f318edfba01f075",
+  "membership_sha256": "875e8e2b4938dfbdb7a6dab6d624f12a2a28d4029741892fefcf260d391c1367",
+  "selection_rule": "All development cases tagged CWE-601, CWE-22 or CWE-918; selected before source inspection or baseline runs",
+  "independent_labels": false,
+  "scorable_cases": 0,
+  "source_snapshots": 14,
+  "declared_function_locations_verified": 18,
+  "reserved_source_opened": false,
+  "source_execution": false,
+  "images_or_exploits_run": false,
+  "caveat": "Source snapshots scanned individually as full files; no application imports or synthetic caller harnesses added. Review drafts do not provide an independently labelled denominator.",
+  "unrelated_alerts": [
+    {
+      "cve_id": "CVE-2020-26215",
+      "role": "vul_func",
+      "line": 912,
+      "meaning": "Configured redirect destination with appended query; outside labelled function, unadjudicated"
+    },
+    {
+      "cve_id": "CVE-2020-26215",
+      "role": "fix_func",
+      "line": 917,
+      "meaning": "Same configured redirect code; outside labelled function, unadjudicated"
+    }
+  ],
+  "cases": [
+    {
+      "cve_id": "CVE-2019-10856",
+      "repository": "jupyter/notebook",
+      "partition": "development",
+      "adjudication": "assistant source/patch review draft; independent reviewer pending",
+      "root_cause": "URL parsing/origin boundary bypass in login redirect",
+      "probe_interpretation": "Imported IPythonHandler hierarchy and cross-function branch semantics are not resolved in this isolated file; both revisions missed.",
+      "target_sink_lines": {
+        "vul_func": 63,
+        "fix_func": 66
+      },
+      "patch_urls": [
+        "https://github.com/jupyter/notebook/commit/979e0bd15e794ceb00cc63737fcd5fd9addc4a99"
+      ],
+      "source_locations": [
+        {
+          "role": "vul_func",
+          "path": "notebook/auth/login.py",
+          "revision": "16cf97cf3cc7bd3bacf939ecd86f2c1cc6944935",
+          "start_line": 33,
+          "end_line": 63,
+          "snippet_sha256": "d05fe67ec09f5549417a7710332bef5b288f41143541f1eccc0166baed78a87c",
+          "declared_span_hash_verified": true
+        },
+        {
+          "role": "fix_func",
+          "path": "notebook/auth/login.py",
+          "revision": "979e0bd15e794ceb00cc63737fcd5fd9addc4a99",
+          "start_line": 33,
+          "end_line": 66,
+          "snippet_sha256": "43e003e7b6c4cfa42bd0c5095b7e1583c114636d29f8145b4b5620bc1a1aa04b",
+          "declared_span_hash_verified": true
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2020-10691",
+      "repository": "ansible/ansible",
+      "partition": "development",
+      "adjudication": "assistant source/patch review draft; independent reviewer pending",
+      "root_cause": "Archive-controlled manifest filename joined into extraction destination",
+      "probe_interpretation": "Archive stream/manifest taint and multi-helper writes are unsupported in this probe; both revisions missed.",
+      "target_sink_lines": {},
+      "patch_urls": [
+        "https://github.com/ansible/ansible/commit/b2551bb6943eec078066aa3a923e0bb3ed85abe8"
+      ],
+      "source_locations": [
+        {
+          "role": "vul_func",
+          "path": "lib/ansible/galaxy/collection.py",
+          "revision": "cef6296735a0baebcd2f25d967c7bdb770ed6b08",
+          "start_line": 148,
+          "end_line": 188,
+          "snippet_sha256": "db85f3c1243dc489c4bf076dffd59046cc23c6dc7c72e1f94fd4697ec3018f26",
+          "declared_span_hash_verified": true
+        },
+        {
+          "role": "vul_func",
+          "path": "lib/ansible/galaxy/collection.py",
+          "revision": "cef6296735a0baebcd2f25d967c7bdb770ed6b08",
+          "start_line": 903,
+          "end_line": 942,
+          "snippet_sha256": "1aa7cd734f43153382e79a18407544e42a82438d3a73c5c81f60d34691da39db",
+          "declared_span_hash_verified": true
+        },
+        {
+          "role": "fix_func",
+          "path": "lib/ansible/galaxy/collection.py",
+          "revision": "b2551bb6943eec078066aa3a923e0bb3ed85abe8",
+          "start_line": 148,
+          "end_line": 198,
+          "snippet_sha256": "eff8ae743c39dc7df903b7d7b5038e08e9d414ecc92daa1dad5103858ba6c86c",
+          "declared_span_hash_verified": true
+        },
+        {
+          "role": "fix_func",
+          "path": "lib/ansible/galaxy/collection.py",
+          "revision": "b2551bb6943eec078066aa3a923e0bb3ed85abe8",
+          "start_line": 913,
+          "end_line": 956,
+          "snippet_sha256": "acf53c6dd64c69e7f75425ddd54bd27514a5fd3bfda8af94647a56f41520f5cc",
+          "declared_span_hash_verified": true
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2020-26215",
+      "repository": "jupyter/notebook",
+      "partition": "development",
+      "adjudication": "assistant source/patch review draft; independent reviewer pending",
+      "root_cause": "Request URI with repeated leading slashes reaches Tornado redirect",
+      "probe_interpretation": "New experimental model matches vulnerable line 862, also patched line 867. Patched slash normalization remains an unresolved precision failure; no fixed-case-clean claim.",
+      "target_sink_lines": {
+        "vul_func": 862,
+        "fix_func": 867
+      },
+      "patch_urls": [
+        "https://github.com/jupyter/notebook/commit/3cec4bbe21756de9f0c4bccf18cf61d840314d74"
+      ],
+      "source_locations": [
+        {
+          "role": "vul_func",
+          "path": "notebook/base/handlers.py",
+          "revision": "d8308e13803ba1c6e92f129381e615af6c6e00d3",
+          "start_line": 861,
+          "end_line": 863,
+          "snippet_sha256": "6f06ea169ce31d387981273c2bdd2c7123fba5d98063bcbe9f593aa4ce8db3ad",
+          "declared_span_hash_verified": true
+        },
+        {
+          "role": "fix_func",
+          "path": "notebook/base/handlers.py",
+          "revision": "3cec4bbe21756de9f0c4bccf18cf61d840314d74",
+          "start_line": 861,
+          "end_line": 867,
+          "snippet_sha256": "a8407ab485562c02570681fdf473b40e7c1e3b388478f3a2aed0826c67d1e3db",
+          "declared_span_hash_verified": true
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2021-21354",
+      "repository": "mozilla/pollbot",
+      "partition": "development",
+      "adjudication": "assistant source/patch review draft; independent reviewer pending",
+      "root_cause": "Request path retains authority-like leading slashes in aiohttp redirect",
+      "probe_interpretation": "The unannotated middleware callback parameter is not resolved as aiohttp.Request; both revisions missed. Do not infer attacker control from the parameter name alone.",
+      "target_sink_lines": {
+        "vul_func": 64,
+        "fix_func": 64
+      },
+      "patch_urls": [
+        "https://github.com/mozilla/PollBot/commit/6db74a4fcbff258c7cdf51a6ff0724fc10c485e5"
+      ],
+      "source_locations": [
+        {
+          "role": "vul_func",
+          "path": "pollbot/middlewares.py",
+          "revision": "78539afa363b200ef004f40531665826f234eab3",
+          "start_line": 61,
+          "end_line": 69,
+          "snippet_sha256": "1d2d75f8906f8949bd19b6f455028f8ac21b47cdedda628c270ae2ad85542cbe",
+          "declared_span_hash_verified": true
+        },
+        {
+          "role": "fix_func",
+          "path": "pollbot/middlewares.py",
+          "revision": "6db74a4fcbff258c7cdf51a6ff0724fc10c485e5",
+          "start_line": 61,
+          "end_line": 69,
+          "snippet_sha256": "41c9e0204f9fb16d8a1315947ac9bb441886b1b22b26840b8e631f23ff11a2ba",
+          "declared_span_hash_verified": true
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2022-31506",
+      "repository": "cmusatyalab/opendiamond",
+      "partition": "development",
+      "adjudication": "assistant source/patch review draft; independent reviewer pending",
+      "root_cause": "Flask path parameter reaches send_file through path-join helper",
+      "probe_interpretation": "Whole-file caller context already detects the vulnerable sink at line 137; patched safe_join removes that match. Upstream labelled helper span alone omits the sink.",
+      "target_sink_lines": {
+        "vul_func": 137,
+        "fix_func": 138
+      },
+      "patch_urls": [
+        "https://github.com/cmusatyalab/opendiamond/commit/398049c187ee644beabab44d6fece82251c1ea56"
+      ],
+      "source_locations": [
+        {
+          "role": "vul_func",
+          "path": "opendiamond/dataretriever/diamond_store.py",
+          "revision": "d2f20ffff793f88335f2c0244679d7193295abe2",
+          "start_line": 122,
+          "end_line": 123,
+          "snippet_sha256": "38cc0b9f1eedd6e09760786528ee6bbcfcfef898f0d5a2f8f086546ab29c05c3",
+          "declared_span_hash_verified": true
+        },
+        {
+          "role": "fix_func",
+          "path": "opendiamond/dataretriever/diamond_store.py",
+          "revision": "398049c187ee644beabab44d6fece82251c1ea56",
+          "start_line": 123,
+          "end_line": 124,
+          "snippet_sha256": "66a62a0fd0b60a2107c12ffaa6779148c39fae1e34b32e9c9116db95015b5c64",
+          "declared_span_hash_verified": true
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2024-0243",
+      "repository": "langchain-ai/langchain",
+      "partition": "development",
+      "adjudication": "assistant source/patch review draft; independent reviewer pending",
+      "root_cause": "String prefix permits sibling URL authority in recursive-loader helper",
+      "probe_interpretation": "Scanned helper only returns links; no outbound request or application trust boundary appears here. Caller context is required; both revisions missed.",
+      "target_sink_lines": {},
+      "patch_urls": [
+        "https://github.com/langchain-ai/langchain/commit/bf0b3cc0b5ade1fb95a5b1b6fa260e99064c2e22"
+      ],
+      "source_locations": [
+        {
+          "role": "vul_func",
+          "path": "libs/core/langchain_core/utils/html.py",
+          "revision": "817b84de9e2cd9f2e16a11004caea6fa53aefed8",
+          "start_line": 47,
+          "end_line": 89,
+          "snippet_sha256": "01ab5b6d07a6eec430e1922ac10f2d65d5606e1e35abdcd3a7ed8558d6c5f9ef",
+          "declared_span_hash_verified": true
+        },
+        {
+          "role": "fix_func",
+          "path": "libs/core/langchain_core/utils/html.py",
+          "revision": "bf0b3cc0b5ade1fb95a5b1b6fa260e99064c2e22",
+          "start_line": 47,
+          "end_line": 103,
+          "snippet_sha256": "cca8d5b48ee7df3ff13154dbaca5309404d6bcbd8f73a1b7a8f21b6062fdebfe",
+          "declared_span_hash_verified": true
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2024-3571",
+      "repository": "langchain-ai/langchain",
+      "partition": "development",
+      "adjudication": "assistant source/patch review draft; independent reviewer pending",
+      "root_cause": "File-store key permits absolute/traversing path outside configured root",
+      "probe_interpretation": "Public library keys and methods are not automatically untrusted sources; application caller context is missing, and class/collection flows remain incomplete. Both revisions missed.",
+      "target_sink_lines": {},
+      "patch_urls": [
+        "https://github.com/langchain-ai/langchain/commit/aad3d8bd47d7f5598156ff2bdcc8f736f24a7412"
+      ],
+      "source_locations": [
+        {
+          "role": "vul_func",
+          "path": "libs/langchain/langchain/storage/file_system.py",
+          "revision": "501cc8311d54a5140cbc5a49d657bc7d70a6f6ab",
+          "start_line": 38,
+          "end_line": 45,
+          "snippet_sha256": "c0b5f9987fed88faa28d8129c69ba5c844a2ccb19ef18381f36ad644fee98b29",
+          "declared_span_hash_verified": true
+        },
+        {
+          "role": "vul_func",
+          "path": "libs/langchain/langchain/storage/file_system.py",
+          "revision": "501cc8311d54a5140cbc5a49d657bc7d70a6f6ab",
+          "start_line": 47,
+          "end_line": 58,
+          "snippet_sha256": "3e684ada757fd31cb8fada64b0f7f72be30655baaf9b42cc8bcda64d69065776",
+          "declared_span_hash_verified": true
+        },
+        {
+          "role": "fix_func",
+          "path": "libs/langchain/langchain/storage/file_system.py",
+          "revision": "aad3d8bd47d7f5598156ff2bdcc8f736f24a7412",
+          "start_line": 39,
+          "end_line": 46,
+          "snippet_sha256": "a2454d27b8c67b20e766362be3f23297591be676fda0d21378b73e8969b8438a",
+          "declared_span_hash_verified": true
+        },
+        {
+          "role": "fix_func",
+          "path": "libs/langchain/langchain/storage/file_system.py",
+          "revision": "aad3d8bd47d7f5598156ff2bdcc8f736f24a7412",
+          "start_line": 48,
+          "end_line": 67,
+          "snippet_sha256": "2c8368e0d8f20a4b724528894d2034e77b54e0848d8b94cf7cf389a740cde5bf",
+          "declared_span_hash_verified": true
+        }
+      ]
+    }
+  ]
+}
