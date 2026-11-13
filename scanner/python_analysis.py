@@ -826,6 +826,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         allowed = self._literal_allowlist(node.test)
         boundary, positive = self._path_boundary(node.test)
         redirect_boundary, redirect_positive = self._redirect_boundary(node.test)
+        literal_boundary = self._python_literal_boundary(node.test)
         states = []
         if quote_guard and isinstance(node.test.ops[0], ast.NotIn):
             key, context = quote_guard
@@ -839,6 +840,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if self._visit_block(node.body):
             states.append(self._state())
         self._restore(initial)
+        if literal_boundary:
+            self.redirect_facts[literal_boundary] = ('python_literal',)
         if quote_guard and isinstance(node.test.ops[0], ast.In):
             key, context = quote_guard
             self.taint[key] = self._mark_safe(self.taint.get(key), context)
@@ -864,6 +867,34 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                     if store:
                         self.auth_stores.add(store)
         self.generic_visit(node)
+
+    def _python_literal_boundary(self, test):
+        """Recognize a rejected string literal delimiter/interior check only."""
+        if not isinstance(test, ast.BoolOp) or not isinstance(test.op, ast.Or) or len(test.values) != 3:
+            return None
+        checks, key, delimiter = set(), None, None
+        for clause in test.values:
+            if (isinstance(clause, ast.UnaryOp) and isinstance(clause.op, ast.Not)
+                    and isinstance(clause.operand, ast.Call)):
+                call = clause.operand
+                if (not isinstance(call.func, ast.Attribute) or call.func.attr not in {'startswith', 'endswith'}
+                        or len(call.args) != 1 or call.keywords or not isinstance(call.func.value, ast.Name)):
+                    return None
+                candidate, quote, kind = call.func.value.id, self._constant(call.args[0]), call.func.attr
+            elif (isinstance(clause, ast.Compare) and len(clause.ops) == 1
+                    and isinstance(clause.ops[0], ast.In) and isinstance(clause.comparators[0], ast.Subscript)):
+                interior = clause.comparators[0]
+                expected = ast.Slice(lower=ast.Constant(value=1), upper=ast.UnaryOp(op=ast.USub(), operand=ast.Constant(value=1)))
+                if not isinstance(interior.value, ast.Name) or ast.dump(interior.slice) != ast.dump(expected):
+                    return None
+                candidate, quote, kind = interior.value.id, self._constant(clause.left), 'interior'
+            else:
+                return None
+            if quote not in {"'", '"'} or key not in {None, candidate} or delimiter not in {None, quote}:
+                return None
+            key, delimiter = candidate, quote
+            checks.add(kind)
+        return key if checks == {'startswith', 'endswith', 'interior'} else None
 
     def _weak_random_sink(self, node, source):
         self._add(node, 'PY-SAST-RANDOM-001', 'Predictable randomness reaches session/token storage',
@@ -1165,10 +1196,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                          next((self._constant(k.value) for k in node.keywords if k.arg == 'name'), None)) if name == 'hashlib.new' else name.rsplit('.', 1)[1]
             non_security = any(k.arg == 'usedforsecurity' and self._constant(k.value) is False for k in node.keywords)
             if isinstance(algorithm, str) and algorithm.lower().replace('-', '') in {'md5', 'sha1'} and not non_security:
-                self._add(node, 'PY-SAST-HASH-001', 'Weak hash algorithm selected', Severity.MEDIUM, Category.SAST,
+                self._add(node, 'PY-SAST-HASH-001', 'Weak hash selected; security use unverified', Severity.MEDIUM, Category.SAST,
                           f'A resolved hashlib call selects {algorithm} without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.',
                           'Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.',
-                          'CWE-328', confidence='medium', evidence_kind='static-configuration')
+                          'CWE-328', confidence='medium', evidence_kind='static-configuration', maturity='advisory')
         if isinstance(node.func, ast.Attribute) and self._name(node.func.value).startswith('xml.sax.XMLReader@'):
             parser_key = self._name(node.func.value) + '.external_entities'
             if node.func.attr == 'setFeature' and len(node.args) == 2:
@@ -1225,7 +1256,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             random_source = self._source(cookie_value)
             if random_source and random_source[0] == 'weak-random':
                 self._weak_random_sink(node, random_source)
-        if source and source[0] in {"input", "model"} and (code_sink or (shell_sink and not self._safe_for(source, "shell"))):
+        literal_code = (bool(values) and isinstance(values[0], ast.Name)
+                        and self.redirect_facts.get(values[0].id) == ('python_literal',)
+                        and 'sanitizers' not in self.disabled_features)
+        if source and source[0] in {"input", "model"} and ((code_sink and not literal_code) or (shell_sink and not self._safe_for(source, "shell"))):
             model = source[0] == "model"
             self._add(node, "PY-AI-EXEC-001" if model else "PY-SAST-EXEC-001",
                       "LLM output reaches code execution" if model else "External input reaches command/code execution",
@@ -1318,7 +1352,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             self._invoke(node, name)
         self.generic_visit(node)
 
-    def _add(self, node, rule_id, title, severity, category, description, recommendation, cwe, experimental=False, source_line=None, source_file=None, confidence=None, evidence_kind='static-flow'):
+    def _add(self, node, rule_id, title, severity, category, description, recommendation, cwe, experimental=False, source_line=None, source_file=None, confidence=None, evidence_kind='static-flow', maturity=None):
         from scanner.utils.helpers import redact_secrets
         lines = self.content.splitlines()
         indices = set(range(node.lineno - 1, min(len(lines), node.end_lineno)))
@@ -1329,7 +1363,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             description=description, file_path=self.file_path, line_number=node.lineno,
             code_snippet=snippet, recommendation=recommendation, cwe=cwe,
             confidence=confidence or ("medium" if experimental else "high"), rule_id=rule_id,
-            maturity="experimental" if experimental else "stable", evidence_kind="coverage-notice" if severity == Severity.INFO else evidence_kind,
+            maturity=maturity or ("experimental" if experimental else "stable"), evidence_kind="coverage-notice" if severity == Severity.INFO else evidence_kind,
             trace=([{"role": "source", "file_path": source_file or self.file_path, "line_number": source_line}] if source_line else [])
                   + [{"role": "sink", "file_path": self.file_path, "line_number": node.lineno}]))
 
