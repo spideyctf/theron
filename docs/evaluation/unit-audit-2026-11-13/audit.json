@@ -1,0 +1,279 @@
+{
+  "independent_labels": false,
+  "source_guided_development": true,
+  "final_test_source_opened": false,
+  "cases": [
+    {
+      "cve_id": "CVE-2021-4315",
+      "repository": "nyuccl/psiturk",
+      "upstream_cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "review_type": "Developer/assistant source audit; not independent adjudication",
+      "original_metadata_unchanged": true,
+      "locations": [
+        {
+          "role": "vul_func",
+          "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "path": "psiturk/experiment.py",
+          "start_line": 287,
+          "end_line": 391,
+          "snippet_sha256": "abda5e7010054d75aa8e30b831cf5b6ab9f527f0852b7afbcf71f0fe767c9dd5"
+        },
+        {
+          "role": "vul_func",
+          "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "path": "psiturk/experiment.py",
+          "start_line": 396,
+          "end_line": 415,
+          "snippet_sha256": "6762602226da0a9abbbe907a827f77c6382923ad51eff51e20958633d71a66b9"
+        },
+        {
+          "role": "vul_func",
+          "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "path": "psiturk/experiment.py",
+          "start_line": 734,
+          "end_line": 747,
+          "snippet_sha256": "0666264f86f54b55a67bc0dc14afae34a7dfaaafe6d634cc411bb380bbf79dc2"
+        },
+        {
+          "role": "fix_func",
+          "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "path": "psiturk/experiment.py",
+          "start_line": 287,
+          "end_line": 392,
+          "snippet_sha256": "e3fb64fac631c9677bc6cdb1eff7388c5c0e04841dea3e3efde4d66a824b6a1a"
+        },
+        {
+          "role": "fix_func",
+          "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "path": "psiturk/experiment.py",
+          "start_line": 397,
+          "end_line": 417,
+          "snippet_sha256": "dcd9de0d07a3a765a758d5db6a7b28cec0e73ca35a64e63fe82be7cd44d49735"
+        },
+        {
+          "role": "fix_func",
+          "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "path": "psiturk/experiment.py",
+          "start_line": 736,
+          "end_line": 749,
+          "snippet_sha256": "e5a7b5a3f01bb0e31ba7631746dfce0a24dc501bfdf6df47ab876cffb4030b31"
+        }
+      ],
+      "issue": "Request data interpolated into template source before rendering",
+      "semantic_cwe": "CWE-1336",
+      "unit_status": "Provisional developer-labelled template-source units",
+      "primary_reference": "https://github.com/NYUCCL/psiTurk/commit/47787e15cecd66f2aa87687bf852ae0194a4335f",
+      "units": [
+        {
+          "role": "vul_func",
+          "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "path": "psiturk/experiment.py",
+          "sink_line": 384,
+          "cwe": "CWE-1336",
+          "expected": "unsafe_template_source",
+          "source_sha256": "6099f0f4caa76f3cfe52b5a5873827874bd07c3e0a022c472b7062342af1e6a4",
+          "rationale": "Request mode is concatenated by insert_mode into the template source",
+          "runtime_exploitation_verified": false
+        },
+        {
+          "role": "vul_func",
+          "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+          "path": "psiturk/experiment.py",
+          "sink_line": 410,
+          "cwe": "CWE-1336",
+          "expected": "unsafe_template_source",
+          "source_sha256": "6099f0f4caa76f3cfe52b5a5873827874bd07c3e0a022c472b7062342af1e6a4",
+          "rationale": "Request mode is concatenated by insert_mode into the template source",
+          "runtime_exploitation_verified": false
+        },
+        {
+          "role": "fix_func",
+          "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "path": "psiturk/experiment.py",
+          "sink_line": 384,
+          "cwe": "CWE-1336",
+          "expected": "safe_for_this_template_source_flow",
+          "source_sha256": "7849fc8d260f542c4f34809a9521bd1ba02cd4a302d5b1a3f18c2c46b7803444",
+          "rationale": "Mode is passed as a template context variable, not concatenated into template source",
+          "runtime_exploitation_verified": false
+        },
+        {
+          "role": "fix_func",
+          "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+          "path": "psiturk/experiment.py",
+          "sink_line": 411,
+          "cwe": "CWE-1336",
+          "expected": "safe_for_this_template_source_flow",
+          "source_sha256": "7849fc8d260f542c4f34809a9521bd1ba02cd4a302d5b1a3f18c2c46b7803444",
+          "rationale": "Mode is passed as a template context variable, not concatenated into template source",
+          "runtime_exploitation_verified": false
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "repository": "oauthlib/oauthlib",
+      "upstream_cwes": [
+        "CWE-601"
+      ],
+      "review_type": "Developer/assistant source audit; not independent adjudication",
+      "original_metadata_unchanged": true,
+      "locations": [
+        {
+          "role": "vul_func",
+          "revision": "b4bdd09c56aa5dedb475529e75ce73c092ca0898",
+          "path": "oauthlib/uri_validate.py",
+          "start_line": 68,
+          "end_line": 69,
+          "snippet_sha256": "35c42c5bac866e0be1d66d7a7fd2a9d13af1e7fca2774f773156b7a3d6afcd53"
+        },
+        {
+          "role": "fix_func",
+          "revision": "2e40b412c844ecc4673c3fa3f72181f228bdbacd",
+          "path": "oauthlib/uri_validate.py",
+          "start_line": 69,
+          "end_line": 69,
+          "snippet_sha256": "ef7de8af9aea39d677dab49d470d700dca383a4062dd88821c71657bc2b4d67a"
+        }
+      ],
+      "issue": "Nested IPv6 regex validation / denial of service",
+      "unit_status": "Not an open-redirect detection unit; unsupported regex-performance category",
+      "semantic_cwe": "CWE-1333 (proposed semantic category)",
+      "primary_reference": "https://github.com/oauthlib/oauthlib/security/advisories/GHSA-3pgj-pg6c-r5p7",
+      "rationale": "The changed module constant is a regex, not a redirect destination sink. Original CWE-601 metadata is retained but not used as adjudicated SAST truth."
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "repository": "encode/starlette",
+      "upstream_cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "review_type": "Developer/assistant source audit; not independent adjudication",
+      "original_metadata_unchanged": true,
+      "locations": [
+        {
+          "role": "vul_func",
+          "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+          "path": "starlette/staticfiles.py",
+          "start_line": 162,
+          "end_line": 180,
+          "snippet_sha256": "2b71e01afb49547ffb45a8bbb2c12e447b1aaf0d4ee4113c08badd4e6193e807"
+        },
+        {
+          "role": "fix_func",
+          "revision": "1797de464124b090f10cf570441e8292936d63e3",
+          "path": "starlette/staticfiles.py",
+          "start_line": 162,
+          "end_line": 180,
+          "snippet_sha256": "1809d5b612076cc117639eaddaf3681510ddb61d09b988c79ebe926f943fdd1e"
+        }
+      ],
+      "issue": "Character-prefix containment used before file serving",
+      "unit_status": "Flow candidate; framework/callback/member-state context unresolved",
+      "semantic_cwe": "CWE-22",
+      "primary_reference": "https://github.com/advisories/GHSA-v5gw-mw7f-84px",
+      "source_lines": [
+        111
+      ],
+      "guard_lines": [
+        172
+      ],
+      "sink_lines": [
+        192
+      ],
+      "rationale": "Patch span is lookup_path, while FileResponse is outside it. ASGI Scope fields, anyio callback and tuple/member propagation require explicit modeling; added package source alone does not model these operations."
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "upstream_cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "review_type": "Developer/assistant source audit; not independent adjudication",
+      "original_metadata_unchanged": true,
+      "locations": [
+        {
+          "role": "vul_func",
+          "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+          "path": "luigi/contrib/lsf_runner.py",
+          "start_line": 47,
+          "end_line": 62,
+          "snippet_sha256": "5c70f5199c41c7cc6990516987161ba42bb018cbebc275526c0a70e3577555a5"
+        },
+        {
+          "role": "vul_func",
+          "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+          "path": "luigi/contrib/sge_runner.py",
+          "start_line": 59,
+          "end_line": 74,
+          "snippet_sha256": "a3f7c5efc6faead36cf22623e0c4a2118938bd58ceeff551a532bfce178e9ace"
+        },
+        {
+          "role": "fix_func",
+          "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+          "path": "luigi/contrib/lsf_runner.py",
+          "start_line": 31,
+          "end_line": 31,
+          "snippet_sha256": "52b623020e2c01feddd220b9196530830b7e9314ca19e2eabeb8e5c73381d62b"
+        },
+        {
+          "role": "fix_func",
+          "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+          "path": "luigi/contrib/lsf_runner.py",
+          "start_line": 47,
+          "end_line": 60,
+          "snippet_sha256": "562cdaf97f81b8b835f374cb3412677ca2b3e2ddcf09e85b8102ffe290baf4d8"
+        },
+        {
+          "role": "fix_func",
+          "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+          "path": "luigi/contrib/sge_runner.py",
+          "start_line": 39,
+          "end_line": 39,
+          "snippet_sha256": "52b623020e2c01feddd220b9196530830b7e9314ca19e2eabeb8e5c73381d62b"
+        },
+        {
+          "role": "fix_func",
+          "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+          "path": "luigi/contrib/sge_runner.py",
+          "start_line": 59,
+          "end_line": 72,
+          "snippet_sha256": "031690c028d06a0108b2e2c2d2de93a0fc7ccb461c3ba4452ec401e213dbb541"
+        },
+        {
+          "role": "fix_func",
+          "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+          "path": "luigi/safe_extractor.py",
+          "start_line": 1,
+          "end_line": 97,
+          "snippet_sha256": "41dfaeec683b604c1ac2611fc0f979dcff934294ce1180a4f7e3afeeb89b3999"
+        }
+      ],
+      "issue": "Archive members extracted without a robust path containment proof",
+      "unit_status": "Vulnerable extraction candidates; patched negative is not accepted automatically",
+      "semantic_cwe": "CWE-22",
+      "primary_reference": "https://github.com/spotify/luigi/issues/3301",
+      "vulnerable_sink_lines": {
+        "luigi/contrib/lsf_runner.py": 57,
+        "luigi/contrib/sge_runner.py": 69
+      },
+      "patched_helper": "luigi/safe_extractor.py",
+      "patched_guard_line": 77,
+      "patched_sink_line": 97,
+      "patched_guard_counterexample": {
+        "original_inert_fixture": true,
+        "base": "/srv/work",
+        "candidate": "/srv/work-archive/file",
+        "character_prefix_accepts": true,
+        "component_containment": false
+      },
+      "rationale": "Patched helper checks commonprefix before extractall. A sibling directory shares the character prefix; this mathematical counterexample does not execute archive extraction or prove deployed exploitability."
+    }
+  ]
+}

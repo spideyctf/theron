@@ -1221,6 +1221,14 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         builtin = node.func.id if isinstance(node.func, ast.Name) and node.func.id not in self.bindings else ""
         values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg in {"source", "object", "command", "args", "s", "data", "file"}]
         source = next((self._source(value) for value in values if self._source(value)), None)
+        if name in {'flask.render_template_string', 'quart.render_template_string'}:
+            template = node.args[0] if node.args else next((kw.value for kw in node.keywords if kw.arg == 'source'), None)
+            template_source = self._source(template)
+            if template_source and template_source[0] in {'input','model'}:
+                self._add(node, 'PY-SAST-SSTI-001', 'Untrusted text controls server-side template source', Severity.HIGH, Category.SAST,
+                          f'Untrusted text from line {template_source[1]} reaches the source argument of a resolved template-string renderer. Context-variable values are not treated as template source.',
+                          'Keep template source trusted and pass untrusted values through template context variables. HTML escaping does not neutralize template syntax.',
+                          'CWE-1336', source_line=template_source[1], source_file=template_source[3] if len(template_source)>3 else None)
         code_sink = builtin in {"eval", "exec"}
         shell_sink = name in {"os.system", "os.popen"} or (
             name in {"subprocess.run", "subprocess.call", "subprocess.Popen", "subprocess.check_call", "subprocess.check_output"}

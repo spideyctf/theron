@@ -1,0 +1,46 @@
+{
+  "partition": "exposed validation/development",
+  "final_test_source_opened": false,
+  "records": [
+    {
+      "cve_id": "CVE-2023-29159",
+      "repository": "encode/starlette",
+      "role": "vul_func",
+      "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+      "path": "starlette/responses.py",
+      "connector_error": "InvalidInputException: GitHub path did not return readable file content: encode/starlette/starlette/responses.py",
+      "source_url": "https://raw.githubusercontent.com/encode/starlette/24c1fac62a80bb153c6548145334fc643991e35a/starlette/responses.py",
+      "source_sha256": "ae4ff1a1e034021bebf4fc8752b53706803f559cd5ecf85341939391b064324e"
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "repository": "encode/starlette",
+      "role": "vul_func",
+      "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+      "path": "starlette/types.py",
+      "connector_error": "InvalidInputException: GitHub path did not return readable file content: encode/starlette/starlette/types.py",
+      "source_url": "https://raw.githubusercontent.com/encode/starlette/24c1fac62a80bb153c6548145334fc643991e35a/starlette/types.py",
+      "source_sha256": "d6b0c5ffd49344c6b1e2a1b571b2fc618c89c7ce7f23225e7c60a8ed0d52bfd3"
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "repository": "encode/starlette",
+      "role": "fix_func",
+      "revision": "1797de464124b090f10cf570441e8292936d63e3",
+      "path": "starlette/responses.py",
+      "connector_error": "InvalidInputException: GitHub path did not return readable file content: encode/starlette/starlette/responses.py",
+      "source_url": "https://raw.githubusercontent.com/encode/starlette/1797de464124b090f10cf570441e8292936d63e3/starlette/responses.py",
+      "source_sha256": "ae4ff1a1e034021bebf4fc8752b53706803f559cd5ecf85341939391b064324e"
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "repository": "encode/starlette",
+      "role": "fix_func",
+      "revision": "1797de464124b090f10cf570441e8292936d63e3",
+      "path": "starlette/types.py",
+      "connector_error": "InvalidInputException: GitHub path did not return readable file content: encode/starlette/starlette/types.py",
+      "source_url": "https://raw.githubusercontent.com/encode/starlette/1797de464124b090f10cf570441e8292936d63e3/starlette/types.py",
+      "source_sha256": "d6b0c5ffd49344c6b1e2a1b571b2fc618c89c7ce7f23225e7c60a8ed0d52bfd3"
+    }
+  ]
+}
