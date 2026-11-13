@@ -13,6 +13,8 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 ## Latest evaluation: OWASP BenchmarkPython
 
+**Real-code comparison, 13 November 2026:** [matched baselines and available-file context](docs/evaluation/real-comparison-2026-11-13/README.md) test all 28 pinned validation files. Theron emits two weak-hash advisories, Bandit 74 alerts and Semgrep 90; none match a vulnerable reference span under the declared CWE/location rule. These totals are not confirmed vulnerabilities or real-world accuracy. Grouping available files adds no detections, and two original label/hash errors remain. Final real test source stays closed.
+
 **Precision and research repair, 13 November 2026:** [current results and real validation limitations](docs/evaluation/research-repair-2026-11-13/README.md), frozen at `bb9fb30`, removes all six exposed test false positives without losing any of the 65 vulnerable matches. Weak-hash selection is explicitly advisory, with security use unverified. The first frozen real validation probe finds no reference-span matches; 26 snapshots verify successfully and two fail their upstream function hashes. These adverse results limit any generalization claim. The final real test set remains closed.
 
 **Coverage repair, 13 November 2026:** [reproducible results and failure analysis](docs/evaluation/coverage-2026-11-13/README.md), frozen at `82db608`. The **60% recall target is met on both exposed validation/test splits**. These results follow source inspection and tuning; they are not new held-out evidence.
@@ -97,7 +99,7 @@ CWE-77 has one additional unscorable vulnerable label. A perfect result within a
 
 | Engineering check, 13 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 494 passed; 1 dependency deprecation warning |
+| Python regression suite | 498 passed; 1 dependency deprecation warning |
 | Frontend tests | 11 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |

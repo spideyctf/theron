@@ -1,0 +1,29 @@
+[
+  {
+    "cve_id": "CVE-2024-5823",
+    "role": "vul_func",
+    "path": "modules/utils.py",
+    "declared_start": 744,
+    "declared_end": 760,
+    "exact_hash_relocated_matches": [],
+    "original_error_retained": true
+  },
+  {
+    "cve_id": "CVE-2024-5823",
+    "role": "fix_func",
+    "path": "modules/utils.py",
+    "declared_start": 744,
+    "declared_end": 762,
+    "exact_hash_relocated_matches": [],
+    "original_error_retained": true
+  },
+  {
+    "cve_id": "CVE-2024-5823",
+    "role": "fix_func",
+    "path": "modules/utils.py",
+    "declared_start": 30,
+    "declared_end": 30,
+    "exact_hash_relocated_matches": [],
+    "original_error_retained": true
+  }
+]

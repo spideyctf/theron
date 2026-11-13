@@ -1,0 +1,25 @@
+{
+  "implementation_revision": "bb9fb3092011aec3c5de0af4b28dea9fdc2b4715",
+  "bandit_version_output": "__main__.py 1.9.4\n  python version = 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]\n",
+  "semgrep_version": "1.185.0",
+  "semgrep_rules_revision": "a5ad1714f00c9f7fde980cab0ea1d6dc6d414fd2",
+  "native_verification": {
+    "verified_files": 365,
+    "source_files": 28,
+    "all_bytes_identical": true
+  },
+  "bandit_flags": [
+    "all default tests/severities/confidences",
+    "--ignore-nosec",
+    "--exit-zero"
+  ],
+  "semgrep_flags": [
+    "--metrics=off",
+    "--disable-version-check",
+    "--no-git-ignore",
+    "--no-rewrite-rule-ids",
+    "--timeout 10",
+    "--jobs 2"
+  ],
+  "timing_limitation": "Windows Bandit/Theron and native WSL Semgrep; no speed ranking."
+}

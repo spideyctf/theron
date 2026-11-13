@@ -1,0 +1,3889 @@
+[
+  {
+    "cve_id": "CVE-2019-16789",
+    "role": "vul_func",
+    "revision": "f11093a6b3240fc26830b6111e826128af7771c3",
+    "files": 2,
+    "imports": [
+      {
+        "file": "waitress/parser.py",
+        "line": 19,
+        "module": "re",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 20,
+        "module": "io",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 20,
+        "module": "io.BytesIO",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 22,
+        "module": "waitress.buffers",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 22,
+        "module": "waitress.buffers.OverflowableBuffer",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 23,
+        "module": "waitress.compat",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 23,
+        "module": "waitress.compat.tostr",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 23,
+        "module": "waitress.compat.unquote_bytes_to_wsgi",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 23,
+        "module": "waitress.compat.urlparse",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 24,
+        "module": "waitress.receiver",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 24,
+        "module": "waitress.receiver.ChunkedReceiver",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 24,
+        "module": "waitress.receiver.FixedStreamReceiver",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities",
+        "target": "waitress/utilities.py",
+        "available": true
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities.BadRequest",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities.RequestEntityTooLarge",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities.RequestHeaderFieldsTooLarge",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities.ServerNotImplemented",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities.find_double_newline",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 17,
+        "module": "calendar",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 18,
+        "module": "errno",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 19,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 20,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 21,
+        "module": "re",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 22,
+        "module": "stat",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 23,
+        "module": "time",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 1,
+    "unresolved_import_candidates": 24,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2019-16789",
+    "role": "fix_func",
+    "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+    "files": 3,
+    "imports": [
+      {
+        "file": "waitress/parser.py",
+        "line": 19,
+        "module": "re",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 20,
+        "module": "io",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 20,
+        "module": "io.BytesIO",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 22,
+        "module": "waitress.buffers",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 22,
+        "module": "waitress.buffers.OverflowableBuffer",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 23,
+        "module": "waitress.compat",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 23,
+        "module": "waitress.compat.tostr",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 23,
+        "module": "waitress.compat.unquote_bytes_to_wsgi",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 23,
+        "module": "waitress.compat.urlparse",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 24,
+        "module": "waitress.receiver",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 24,
+        "module": "waitress.receiver.ChunkedReceiver",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 24,
+        "module": "waitress.receiver.FixedStreamReceiver",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities",
+        "target": "waitress/utilities.py",
+        "available": true
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities.BadRequest",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities.RequestEntityTooLarge",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities.RequestHeaderFieldsTooLarge",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities.ServerNotImplemented",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 25,
+        "module": "waitress.utilities.find_double_newline",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 32,
+        "module": "waitress.rfc7230",
+        "target": "waitress/rfc7230.py",
+        "available": true
+      },
+      {
+        "file": "waitress/parser.py",
+        "line": 32,
+        "module": "waitress.rfc7230.HEADER_FIELD",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 17,
+        "module": "calendar",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 18,
+        "module": "errno",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 19,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 20,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 21,
+        "module": "re",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 22,
+        "module": "stat",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 23,
+        "module": "time",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 25,
+        "module": "waitress.rfc7230",
+        "target": "waitress/rfc7230.py",
+        "available": true
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 25,
+        "module": "waitress.rfc7230.OBS_TEXT",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/utilities.py",
+        "line": 25,
+        "module": "waitress.rfc7230.VCHAR",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/rfc7230.py",
+        "line": 6,
+        "module": "re",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/rfc7230.py",
+        "line": 8,
+        "module": "waitress.compat",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "waitress/rfc7230.py",
+        "line": 8,
+        "module": "waitress.compat.tobytes",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 3,
+    "unresolved_import_candidates": 30,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2020-25459",
+    "role": "vul_func",
+    "revision": "67708d5d327e736d80e2f6726968cf02a926310e",
+    "files": 1,
+    "imports": [
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 28,
+        "module": "copy",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 29,
+        "module": "functools",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 31,
+        "module": "arch.api",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 31,
+        "module": "arch.api.session",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 32,
+        "module": "arch.api.utils",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 32,
+        "module": "arch.api.utils.log_utils",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 33,
+        "module": "federatedml.feature.fate_element_type",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 33,
+        "module": "federatedml.feature.fate_element_type.NoneType",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 34,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_meta_pb2",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 34,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_meta_pb2.CriterionMeta",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 35,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_meta_pb2",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 35,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_meta_pb2.DecisionTreeModelMeta",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 36,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_param_pb2",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 36,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_param_pb2.DecisionTreeModelParam",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 37,
+        "module": "federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfer_variable",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 37,
+        "module": "federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfer_variable.HeteroDecisionTreeTransferVariable",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 39,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 39,
+        "module": "federatedml.tree.DecisionTree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 40,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 40,
+        "module": "federatedml.tree.FeatureHistogram",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 41,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 41,
+        "module": "federatedml.tree.Node",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 42,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 42,
+        "module": "federatedml.tree.Splitter",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 43,
+        "module": "federatedml.util",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 43,
+        "module": "federatedml.util.consts",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 44,
+        "module": "federatedml.util.io_check",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 44,
+        "module": "federatedml.util.io_check.assert_io_num_rows_equal",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 28,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2020-25459",
+    "role": "fix_func",
+    "revision": "6feccf6d752184a6f9365d56a76fe627983e7139",
+    "files": 2,
+    "imports": [
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 28,
+        "module": "copy",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 29,
+        "module": "functools",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 31,
+        "module": "arch.api",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 31,
+        "module": "arch.api.session",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 32,
+        "module": "arch.api.utils",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 32,
+        "module": "arch.api.utils.log_utils",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 33,
+        "module": "federatedml.feature.fate_element_type",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 33,
+        "module": "federatedml.feature.fate_element_type.NoneType",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 34,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_meta_pb2",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 34,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_meta_pb2.CriterionMeta",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 35,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_meta_pb2",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 35,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_meta_pb2.DecisionTreeModelMeta",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 36,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_param_pb2",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 36,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_param_pb2.DecisionTreeModelParam",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 37,
+        "module": "federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfer_variable",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 37,
+        "module": "federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfer_variable.HeteroDecisionTreeTransferVariable",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 39,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 39,
+        "module": "federatedml.tree.DecisionTree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 40,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 40,
+        "module": "federatedml.tree.FeatureHistogram",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 41,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 41,
+        "module": "federatedml.tree.Node",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 42,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 42,
+        "module": "federatedml.tree.Splitter",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 43,
+        "module": "federatedml.util",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 43,
+        "module": "federatedml.util.consts",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 44,
+        "module": "federatedml.util.io_check",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "line": 44,
+        "module": "federatedml.util.io_check.assert_io_num_rows_equal",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 28,
+        "module": "arch.api.utils",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 28,
+        "module": "arch.api.utils.log_utils",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 29,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_meta_pb2",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 29,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_meta_pb2.DecisionTreeModelMeta",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 30,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_param_pb2",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 30,
+        "module": "federatedml.protobuf.generated.boosting_tree_model_param_pb2.DecisionTreeModelParam",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 31,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 31,
+        "module": "federatedml.tree.DecisionTree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 32,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 32,
+        "module": "federatedml.tree.Splitter",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 33,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 33,
+        "module": "federatedml.tree.SplitInfo",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 34,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 34,
+        "module": "federatedml.tree.FeatureHistogram",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 35,
+        "module": "federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfer_variable",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 35,
+        "module": "federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfer_variable.HeteroDecisionTreeTransferVariable",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 37,
+        "module": "federatedml.util",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 37,
+        "module": "federatedml.util.consts",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 38,
+        "module": "federatedml.tree",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 38,
+        "module": "federatedml.tree.Node",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 39,
+        "module": "federatedml.feature.fate_element_type",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 39,
+        "module": "federatedml.feature.fate_element_type.NoneType",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 40,
+        "module": "arch.api.utils.splitable",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 40,
+        "module": "arch.api.utils.splitable.segment_transfer_enabled",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+        "line": 41,
+        "module": "functools",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 53,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2021-4315",
+    "role": "vul_func",
+    "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+    "files": 1,
+    "imports": [
+      {
+        "file": "psiturk/experiment.py",
+        "line": 3,
+        "module": "__future__",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 3,
+        "module": "__future__.generator_stop",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 4,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 5,
+        "module": "sys",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 6,
+        "module": "datetime",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 7,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 8,
+        "module": "random",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 8,
+        "module": "random.choice",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 9,
+        "module": "user_agents",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 10,
+        "module": "requests",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 11,
+        "module": "re",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 12,
+        "module": "json",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 13,
+        "module": "jinja2",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 13,
+        "module": "jinja2.TemplateNotFound",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 14,
+        "module": "collections",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 14,
+        "module": "collections.Counter",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.Flask",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.render_template",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.render_template_string",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.request",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.jsonify",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.send_from_directory",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 23,
+        "module": "psiturk.db",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 23,
+        "module": "psiturk.db.db_session",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 23,
+        "module": "psiturk.db.init_db",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 24,
+        "module": "psiturk.models",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 24,
+        "module": "psiturk.models.Participant",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 25,
+        "module": "sqlalchemy",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 25,
+        "module": "sqlalchemy.or_",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 25,
+        "module": "sqlalchemy.exc",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 27,
+        "module": "psiturk.psiturk_statuses",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 27,
+        "module": "psiturk.psiturk_statuses.*",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 28,
+        "module": "psiturk.psiturk_config",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 28,
+        "module": "psiturk.psiturk_config.PsiturkConfig",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 29,
+        "module": "psiturk.experiment_errors",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 29,
+        "module": "psiturk.experiment_errors.ExperimentError",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 29,
+        "module": "psiturk.experiment_errors.ExperimentApiError",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 30,
+        "module": "psiturk.user_utils",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 30,
+        "module": "psiturk.user_utils.nocache",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 98,
+        "module": "apscheduler.jobstores.sqlalchemy",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 98,
+        "module": "apscheduler.jobstores.sqlalchemy.SQLAlchemyJobStore",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 99,
+        "module": "pytz",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 99,
+        "module": "pytz.utc",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 101,
+        "module": "psiturk.db",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 101,
+        "module": "psiturk.db.engine",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 78,
+        "module": "custom",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 78,
+        "module": "custom.custom_code",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 106,
+        "module": "apscheduler.schedulers.gevent",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 106,
+        "module": "apscheduler.schedulers.gevent.GeventScheduler",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 108,
+        "module": "apscheduler.schedulers.background",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 108,
+        "module": "apscheduler.schedulers.background.BackgroundScheduler",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 126,
+        "module": "psiturk.dashboard",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 126,
+        "module": "psiturk.dashboard.dashboard",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 126,
+        "module": "psiturk.dashboard.init_app",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 130,
+        "module": "psiturk.api",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 130,
+        "module": "psiturk.api.api_blueprint",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 224,
+        "module": "custom",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 224,
+        "module": "custom.custom_get_condition",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 90,
+        "module": "custom",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 90,
+        "module": "custom.init_app",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 61,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2021-4315",
+    "role": "fix_func",
+    "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+    "files": 1,
+    "imports": [
+      {
+        "file": "psiturk/experiment.py",
+        "line": 3,
+        "module": "__future__",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 3,
+        "module": "__future__.generator_stop",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 4,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 5,
+        "module": "sys",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 6,
+        "module": "datetime",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 7,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 8,
+        "module": "random",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 8,
+        "module": "random.choice",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 9,
+        "module": "user_agents",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 10,
+        "module": "requests",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 11,
+        "module": "re",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 12,
+        "module": "json",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 13,
+        "module": "jinja2",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 13,
+        "module": "jinja2.TemplateNotFound",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 14,
+        "module": "collections",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 14,
+        "module": "collections.Counter",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.Flask",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.render_template",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.render_template_string",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.request",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.jsonify",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 18,
+        "module": "flask.send_from_directory",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 23,
+        "module": "psiturk.db",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 23,
+        "module": "psiturk.db.db_session",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 23,
+        "module": "psiturk.db.init_db",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 24,
+        "module": "psiturk.models",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 24,
+        "module": "psiturk.models.Participant",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 25,
+        "module": "sqlalchemy",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 25,
+        "module": "sqlalchemy.or_",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 25,
+        "module": "sqlalchemy.exc",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 27,
+        "module": "psiturk.psiturk_statuses",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 27,
+        "module": "psiturk.psiturk_statuses.*",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 28,
+        "module": "psiturk.psiturk_config",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 28,
+        "module": "psiturk.psiturk_config.PsiturkConfig",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 29,
+        "module": "psiturk.experiment_errors",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 29,
+        "module": "psiturk.experiment_errors.ExperimentError",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 29,
+        "module": "psiturk.experiment_errors.ExperimentApiError",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 30,
+        "module": "psiturk.user_utils",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 30,
+        "module": "psiturk.user_utils.nocache",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 98,
+        "module": "apscheduler.jobstores.sqlalchemy",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 98,
+        "module": "apscheduler.jobstores.sqlalchemy.SQLAlchemyJobStore",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 99,
+        "module": "pytz",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 99,
+        "module": "pytz.utc",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 101,
+        "module": "psiturk.db",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 101,
+        "module": "psiturk.db.engine",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 78,
+        "module": "custom",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 78,
+        "module": "custom.custom_code",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 106,
+        "module": "apscheduler.schedulers.gevent",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 106,
+        "module": "apscheduler.schedulers.gevent.GeventScheduler",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 108,
+        "module": "apscheduler.schedulers.background",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 108,
+        "module": "apscheduler.schedulers.background.BackgroundScheduler",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 126,
+        "module": "psiturk.dashboard",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 126,
+        "module": "psiturk.dashboard.dashboard",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 126,
+        "module": "psiturk.dashboard.init_app",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 130,
+        "module": "psiturk.api",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 130,
+        "module": "psiturk.api.api_blueprint",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 224,
+        "module": "custom",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 224,
+        "module": "custom.custom_get_condition",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 90,
+        "module": "custom",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "psiturk/experiment.py",
+        "line": 90,
+        "module": "custom.init_app",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 61,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2022-36087",
+    "role": "vul_func",
+    "revision": "b4bdd09c56aa5dedb475529e75ce73c092ca0898",
+    "files": 1,
+    "imports": [
+      {
+        "file": "oauthlib/uri_validate.py",
+        "line": 11,
+        "module": "re",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 1,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2022-36087",
+    "role": "fix_func",
+    "revision": "2e40b412c844ecc4673c3fa3f72181f228bdbacd",
+    "files": 1,
+    "imports": [
+      {
+        "file": "oauthlib/uri_validate.py",
+        "line": 11,
+        "module": "re",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 1,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2023-29159",
+    "role": "vul_func",
+    "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+    "files": 1,
+    "imports": [
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 1,
+        "module": "importlib.util",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 2,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 3,
+        "module": "stat",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 4,
+        "module": "typing",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 5,
+        "module": "email.utils",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 5,
+        "module": "email.utils.parsedate",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 7,
+        "module": "anyio",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 9,
+        "module": "starlette.datastructures",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 9,
+        "module": "starlette.datastructures.URL",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 9,
+        "module": "starlette.datastructures.Headers",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 10,
+        "module": "starlette.exceptions",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 10,
+        "module": "starlette.exceptions.HTTPException",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 11,
+        "module": "starlette.responses",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 11,
+        "module": "starlette.responses.FileResponse",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 11,
+        "module": "starlette.responses.RedirectResponse",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 11,
+        "module": "starlette.responses.Response",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 12,
+        "module": "starlette.types",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 12,
+        "module": "starlette.types.Receive",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 12,
+        "module": "starlette.types.Scope",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 12,
+        "module": "starlette.types.Send",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 20,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2023-29159",
+    "role": "fix_func",
+    "revision": "1797de464124b090f10cf570441e8292936d63e3",
+    "files": 1,
+    "imports": [
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 1,
+        "module": "importlib.util",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 2,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 3,
+        "module": "stat",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 4,
+        "module": "typing",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 5,
+        "module": "email.utils",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 5,
+        "module": "email.utils.parsedate",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 7,
+        "module": "anyio",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 9,
+        "module": "starlette.datastructures",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 9,
+        "module": "starlette.datastructures.URL",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 9,
+        "module": "starlette.datastructures.Headers",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 10,
+        "module": "starlette.exceptions",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 10,
+        "module": "starlette.exceptions.HTTPException",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 11,
+        "module": "starlette.responses",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 11,
+        "module": "starlette.responses.FileResponse",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 11,
+        "module": "starlette.responses.RedirectResponse",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 11,
+        "module": "starlette.responses.Response",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 12,
+        "module": "starlette.types",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 12,
+        "module": "starlette.types.Receive",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 12,
+        "module": "starlette.types.Scope",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "starlette/staticfiles.py",
+        "line": 12,
+        "module": "starlette.types.Send",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 20,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2024-21542",
+    "role": "vul_func",
+    "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+    "files": 2,
+    "imports": [
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 21,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 22,
+        "module": "sys",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 30,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 31,
+        "module": "tarfile",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 27,
+        "module": "dill",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 29,
+        "module": "pickle",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/sge_runner.py",
+        "line": 35,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/sge_runner.py",
+        "line": 36,
+        "module": "sys",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/sge_runner.py",
+        "line": 37,
+        "module": "pickle",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/sge_runner.py",
+        "line": 38,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/sge_runner.py",
+        "line": 39,
+        "module": "tarfile",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 11,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2024-21542",
+    "role": "fix_func",
+    "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+    "files": 3,
+    "imports": [
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 21,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 22,
+        "module": "sys",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 30,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 31,
+        "module": "luigi.safe_extractor",
+        "target": "luigi/safe_extractor.py",
+        "available": true
+      },
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 31,
+        "module": "luigi.safe_extractor.SafeExtractor",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 27,
+        "module": "dill",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/lsf_runner.py",
+        "line": 29,
+        "module": "pickle",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/sge_runner.py",
+        "line": 35,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/sge_runner.py",
+        "line": 36,
+        "module": "sys",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/sge_runner.py",
+        "line": 37,
+        "module": "pickle",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/sge_runner.py",
+        "line": 38,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/contrib/sge_runner.py",
+        "line": 39,
+        "module": "luigi.safe_extractor",
+        "target": "luigi/safe_extractor.py",
+        "available": true
+      },
+      {
+        "file": "luigi/contrib/sge_runner.py",
+        "line": 39,
+        "module": "luigi.safe_extractor.SafeExtractor",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/safe_extractor.py",
+        "line": 34,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "luigi/safe_extractor.py",
+        "line": 35,
+        "module": "tarfile",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 2,
+    "unresolved_import_candidates": 13,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2024-48911",
+    "role": "vul_func",
+    "revision": "d3956bc602f95d2bec55eebc96d5e3a2cb35bf47",
+    "files": 2,
+    "imports": [
+      {
+        "file": "opencanary/config.py",
+        "line": 1,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 2,
+        "module": "sys",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 3,
+        "module": "json",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 4,
+        "module": "itertools",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 5,
+        "module": "string",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 6,
+        "module": "subprocess",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 7,
+        "module": "shutil",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 8,
+        "module": "re",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 9,
+        "module": "os.path",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 9,
+        "module": "os.path.expanduser",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 10,
+        "module": "pkg_resources",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 10,
+        "module": "pkg_resources.resource_filename",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 11,
+        "module": "pathlib",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 11,
+        "module": "pathlib.Path",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 1,
+        "module": "opencanary.modules",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 1,
+        "module": "opencanary.modules.CanaryService",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 2,
+        "module": "opencanary.modules",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 2,
+        "module": "opencanary.modules.FileSystemWatcher",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 3,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 4,
+        "module": "shutil",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 5,
+        "module": "subprocess",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 21,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2024-48911",
+    "role": "fix_func",
+    "revision": "2c11575b1a3dd8b0df26a879ba856c0aa350c049",
+    "files": 2,
+    "imports": [
+      {
+        "file": "opencanary/config.py",
+        "line": 1,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 2,
+        "module": "sys",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 3,
+        "module": "json",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 4,
+        "module": "itertools",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 5,
+        "module": "string",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 6,
+        "module": "shutil",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 7,
+        "module": "re",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 8,
+        "module": "os.path",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 8,
+        "module": "os.path.expanduser",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 9,
+        "module": "pkg_resources",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 9,
+        "module": "pkg_resources.resource_filename",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 10,
+        "module": "pathlib",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 10,
+        "module": "pathlib.Path",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 11,
+        "module": "opencanary",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/config.py",
+        "line": 11,
+        "module": "opencanary.safe_exec",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 1,
+        "module": "opencanary.modules",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 1,
+        "module": "opencanary.modules.CanaryService",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 2,
+        "module": "opencanary.modules",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 2,
+        "module": "opencanary.modules.FileSystemWatcher",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 3,
+        "module": "opencanary",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 3,
+        "module": "opencanary.safe_exec",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 4,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "opencanary/modules/portscan.py",
+        "line": 5,
+        "module": "shutil",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 23,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2024-5823",
+    "role": "vul_func",
+    "revision": "ffea5e9419ed517e8b80208567f4f70404047cbe",
+    "files": 1,
+    "imports": [
+      {
+        "file": "modules/utils.py",
+        "line": 2,
+        "module": "__future__",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 2,
+        "module": "__future__.annotations",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.TYPE_CHECKING",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.Any",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.Callable",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.Dict",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.List",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.Tuple",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.Type",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 4,
+        "module": "enum",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 4,
+        "module": "enum.Enum",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 5,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 6,
+        "module": "commentjson",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 7,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 8,
+        "module": "datetime",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 9,
+        "module": "csv",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 10,
+        "module": "threading",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 11,
+        "module": "requests",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 12,
+        "module": "hmac",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 13,
+        "module": "html",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 14,
+        "module": "hashlib",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 16,
+        "module": "gradio",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 17,
+        "module": "regex",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 18,
+        "module": "getpass",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 19,
+        "module": "pypinyin",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 19,
+        "module": "pypinyin.lazy_pinyin",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 20,
+        "module": "tiktoken",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 21,
+        "module": "markdown",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 21,
+        "module": "markdown.markdown",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 22,
+        "module": "pygments",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 22,
+        "module": "pygments.highlight",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 23,
+        "module": "pygments.lexers",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 23,
+        "module": "pygments.lexers.get_lexer_by_name",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 24,
+        "module": "pygments.formatters",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 24,
+        "module": "pygments.formatters.HtmlFormatter",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 25,
+        "module": "pandas",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 26,
+        "module": "colorama",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 28,
+        "module": "modules.presets",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 28,
+        "module": "modules.presets.*",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 29,
+        "module": "modules",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 29,
+        "module": "modules.shared",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 30,
+        "module": "modules.config",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 30,
+        "module": "modules.config.retrieve_proxy",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 30,
+        "module": "modules.config.hide_history_when_not_logged_in",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 33,
+        "module": "typing",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 33,
+        "module": "typing.TypedDict",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 34,
+        "module": "modules.models.base_model",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 34,
+        "module": "modules.models.base_model.BaseLLMModel",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 745,
+        "module": "modules.repo",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 745,
+        "module": "modules.repo.background_update",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 1476,
+        "module": "sys",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 1482,
+        "module": "modules.webui",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 1482,
+        "module": "modules.webui.get_html",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 54,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2024-5823",
+    "role": "fix_func",
+    "revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+    "files": 2,
+    "imports": [
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 2,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 8,
+        "module": "modules.models.models",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 8,
+        "module": "modules.models.models.get_model",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 9,
+        "module": "modules.train_func",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 9,
+        "module": "modules.train_func.*",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 10,
+        "module": "modules.repo",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 10,
+        "module": "modules.repo.*",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 11,
+        "module": "modules.webui",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 11,
+        "module": "modules.webui.*",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 12,
+        "module": "modules.overwrites",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 12,
+        "module": "modules.overwrites.patch_gradio",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 13,
+        "module": "modules.presets",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 13,
+        "module": "modules.presets.*",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 14,
+        "module": "modules.utils",
+        "target": "modules/utils.py",
+        "available": true
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 14,
+        "module": "modules.utils.*",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 15,
+        "module": "modules.config",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 15,
+        "module": "modules.config.*",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 16,
+        "module": "modules",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 16,
+        "module": "modules.config",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 17,
+        "module": "gradio",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "ChuanhuChatbot.py",
+        "line": 18,
+        "module": "colorama",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 2,
+        "module": "__future__",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 2,
+        "module": "__future__.annotations",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.TYPE_CHECKING",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.Any",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.Callable",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.Dict",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.List",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.Tuple",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 3,
+        "module": "typing.Type",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 4,
+        "module": "enum",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 4,
+        "module": "enum.Enum",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 5,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 6,
+        "module": "commentjson",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 7,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 8,
+        "module": "datetime",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 9,
+        "module": "csv",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 10,
+        "module": "threading",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 11,
+        "module": "requests",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 12,
+        "module": "hmac",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 13,
+        "module": "html",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 14,
+        "module": "hashlib",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 16,
+        "module": "gradio",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 17,
+        "module": "regex",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 18,
+        "module": "getpass",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 19,
+        "module": "pypinyin",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 19,
+        "module": "pypinyin.lazy_pinyin",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 20,
+        "module": "tiktoken",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 21,
+        "module": "markdown",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 21,
+        "module": "markdown.markdown",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 22,
+        "module": "pygments",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 22,
+        "module": "pygments.highlight",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 23,
+        "module": "pygments.lexers",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 23,
+        "module": "pygments.lexers.get_lexer_by_name",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 24,
+        "module": "pygments.formatters",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 24,
+        "module": "pygments.formatters.HtmlFormatter",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 25,
+        "module": "pandas",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 26,
+        "module": "colorama",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 28,
+        "module": "modules.presets",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 28,
+        "module": "modules.presets.*",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 29,
+        "module": "modules",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 29,
+        "module": "modules.shared",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 30,
+        "module": "modules.config",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 30,
+        "module": "modules.config.retrieve_proxy",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 30,
+        "module": "modules.config.hide_history_when_not_logged_in",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 30,
+        "module": "modules.config.admin_list",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 33,
+        "module": "typing",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 33,
+        "module": "typing.TypedDict",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 34,
+        "module": "modules.models.base_model",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 34,
+        "module": "modules.models.base_model.BaseLLMModel",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 747,
+        "module": "modules.repo",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 747,
+        "module": "modules.repo.background_update",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 1478,
+        "module": "sys",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 1484,
+        "module": "modules.webui",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "modules/utils.py",
+        "line": 1484,
+        "module": "modules.webui.get_html",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 1,
+    "unresolved_import_candidates": 75,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2025-27154",
+    "role": "vul_func",
+    "revision": "668158f0558d486082c0dc672a6ac39ba05ced6a",
+    "files": 1,
+    "imports": [
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 10,
+        "module": "errno",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 11,
+        "module": "json",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 12,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 13,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 15,
+        "module": "redis",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 15,
+        "module": "redis.RedisError",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 17,
+        "module": "spotipy.util",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 17,
+        "module": "spotipy.util.CLIENT_CREDS_ENV_VARS",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 229,
+        "module": "pymemcache",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 229,
+        "module": "pymemcache.MemcacheError",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 238,
+        "module": "pymemcache",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 238,
+        "module": "pymemcache.MemcacheError",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 12,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  },
+  {
+    "cve_id": "CVE-2025-27154",
+    "role": "fix_func",
+    "revision": "1ca453f6ef87a2a9e9876f52b6cb38d13532ccf2",
+    "files": 1,
+    "imports": [
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 10,
+        "module": "errno",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 11,
+        "module": "json",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 12,
+        "module": "logging",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 13,
+        "module": "os",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 15,
+        "module": "redis",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 15,
+        "module": "redis.RedisError",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 17,
+        "module": "spotipy.util",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 17,
+        "module": "spotipy.util.CLIENT_CREDS_ENV_VARS",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 233,
+        "module": "pymemcache",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 233,
+        "module": "pymemcache.MemcacheError",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 242,
+        "module": "pymemcache",
+        "target": null,
+        "available": false
+      },
+      {
+        "file": "spotipy/cache_handler.py",
+        "line": 242,
+        "module": "pymemcache.MemcacheError",
+        "target": null,
+        "available": false
+      }
+    ],
+    "available_imports": 0,
+    "unresolved_import_candidates": 12,
+    "limitation": "Import candidates include standard/external libraries and imported symbols; unresolved does not mean a missing local module."
+  }
+]

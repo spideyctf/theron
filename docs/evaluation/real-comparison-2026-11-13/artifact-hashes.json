@@ -1,0 +1,14 @@
+{
+  "encoding": "SHA-256 of json.dumps(value,sort_keys=True).encode(); independent of checkout line endings",
+  "artifacts": {
+    "bandit.json": "28e87c2d5463a5c6f8ed82d073361ce65ec9f349a8b7db5283267de845e4dec4",
+    "context-inventory.json": "51e1e5671b1f61d7ed348723a352210577011d61d6fef32df2577ff6e9404799",
+    "environment.json": "a7cfa0422da76c6fec60d12491f2fd123ae85355db41b6eb614326c0bceca84f",
+    "hash-diagnostic.json": "e35100346132674817c51bfac6212b676b476e924059cf0a80668e5087e9dfab",
+    "input-provenance.json": "52ff6c9c42a982f96f70c886ae07caf36ac87485e41d7e2f0263c4cf6222c492",
+    "semgrep.json": "8c2d98b80a90eab875cd62019e8de4a2217f4e6dcaac3237d567601586461a5c",
+    "summary.json": "fac7f352903ba2f4f85dabab51c5974536ff45de52a7327a875bdd44de646db5",
+    "theron-grouped.json": "1c608c47b9e3ed0fa7c4b815c45ac8bad19662ce8a73110e9cba62fa0b9b7f79",
+    "theron-isolated.json": "3e4fd9406b480adf7d41a7e42ce7506c73055f4c593371bd762a76b5a4b39f06"
+  }
+}

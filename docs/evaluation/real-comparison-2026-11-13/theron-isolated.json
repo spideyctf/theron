@@ -1,0 +1,245 @@
+{
+  "engine": "theron-isolated",
+  "covered_files": 28,
+  "alerts": [
+    {
+      "path": "CVE-2024-5823/vul_func/ffea5e9419ed517e8b80208567f4f70404047cbe/modules/utils.py",
+      "rule_id": "PY-SAST-HASH-001",
+      "cwes": [
+        "CWE-328"
+      ],
+      "line_number": 915,
+      "severity": "MEDIUM",
+      "confidence": "medium",
+      "maturity": "advisory",
+      "evidence_kind": "static-configuration",
+      "trace": [
+        {
+          "role": "sink",
+          "file_path": "modules/utils.py",
+          "line_number": 915
+        }
+      ]
+    },
+    {
+      "path": "CVE-2024-5823/fix_func/720c23d755a4a955dcb0a54e8c200a2247a27f8b/modules/utils.py",
+      "rule_id": "PY-SAST-HASH-001",
+      "cwes": [
+        "CWE-328"
+      ],
+      "line_number": 917,
+      "severity": "MEDIUM",
+      "confidence": "medium",
+      "maturity": "advisory",
+      "evidence_kind": "static-configuration",
+      "trace": [
+        {
+          "role": "sink",
+          "file_path": "modules/utils.py",
+          "line_number": 917
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "reference_outcomes": [
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "vul_func",
+      "revision": "f11093a6b3240fc26830b6111e826128af7771c3",
+      "path": "waitress/parser.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "vul_func",
+      "revision": "f11093a6b3240fc26830b6111e826128af7771c3",
+      "path": "waitress/utilities.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/parser.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/utilities.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/rfc7230.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "role": "vul_func",
+      "revision": "67708d5d327e736d80e2f6726968cf02a926310e",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "role": "fix_func",
+      "revision": "6feccf6d752184a6f9365d56a76fe627983e7139",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "role": "fix_func",
+      "revision": "6feccf6d752184a6f9365d56a76fe627983e7139",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "role": "vul_func",
+      "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+      "path": "psiturk/experiment.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "role": "fix_func",
+      "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+      "path": "psiturk/experiment.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "role": "vul_func",
+      "revision": "b4bdd09c56aa5dedb475529e75ce73c092ca0898",
+      "path": "oauthlib/uri_validate.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "role": "fix_func",
+      "revision": "2e40b412c844ecc4673c3fa3f72181f228bdbacd",
+      "path": "oauthlib/uri_validate.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "vul_func",
+      "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+      "path": "starlette/staticfiles.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "fix_func",
+      "revision": "1797de464124b090f10cf570441e8292936d63e3",
+      "path": "starlette/staticfiles.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "vul_func",
+      "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+      "path": "luigi/contrib/lsf_runner.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "vul_func",
+      "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+      "path": "luigi/contrib/sge_runner.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/contrib/lsf_runner.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/contrib/sge_runner.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/safe_extractor.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "role": "vul_func",
+      "revision": "d3956bc602f95d2bec55eebc96d5e3a2cb35bf47",
+      "path": "opencanary/config.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "role": "vul_func",
+      "revision": "d3956bc602f95d2bec55eebc96d5e3a2cb35bf47",
+      "path": "opencanary/modules/portscan.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "role": "fix_func",
+      "revision": "2c11575b1a3dd8b0df26a879ba856c0aa350c049",
+      "path": "opencanary/config.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "role": "fix_func",
+      "revision": "2c11575b1a3dd8b0df26a879ba856c0aa350c049",
+      "path": "opencanary/modules/portscan.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "role": "vul_func",
+      "revision": "ffea5e9419ed517e8b80208567f4f70404047cbe",
+      "path": "modules/utils.py",
+      "label_error": "ValueError: Declared function hash differs",
+      "reference_matches": null
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "role": "fix_func",
+      "revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+      "path": "ChuanhuChatbot.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "role": "fix_func",
+      "revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+      "path": "modules/utils.py",
+      "label_error": "ValueError: Declared function hash differs",
+      "reference_matches": null
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "role": "vul_func",
+      "revision": "668158f0558d486082c0dc672a6ac39ba05ced6a",
+      "path": "spotipy/cache_handler.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "role": "fix_func",
+      "revision": "1ca453f6ef87a2a9e9876f52b6cb38d13532ccf2",
+      "path": "spotipy/cache_handler.py",
+      "reference_matches": []
+    }
+  ]
+}

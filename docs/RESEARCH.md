@@ -1,6 +1,6 @@
 # Research direction and publication readiness
 
-Assessment updated: 13 November 2026, through the precision repair and first frozen real-code validation probes. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
+Assessment updated: 13 November 2026, through the precision repair and matched real-code validation comparison. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
 
 ## Broader platform direction
 
@@ -9,6 +9,8 @@ The agreed project goal is now a unified, evidence-driven security analysis and 
 Working project/research title: **Theron: A Unified Security Analysis and Verification Platform for AI-Enabled and Agentic Software Systems**. The platform is broad; research claims must identify and measure a specific cross-layer benefit. The existing abstract below describes the completed prototype study and is not yet an abstract for an implemented full-platform contribution.
 
 ## Current assessment
+
+The [matched real-code comparison](evaluation/real-comparison-2026-11-13/README.md) now runs the same 28 pinned files through Theron, Bandit 1.9.4 and Semgrep 1.185.0. Native input/rule byte hashes are verified. Theron produces two unverified hash advisories, Bandit 74 alerts and Semgrep 90. No engine matches a vulnerable reference span under the unchanged CWE/start-line rule. Bandit matches one patched reference case; that is not automatically a false positive. Available-file grouping (18 separate CVE/role/revision groups, seven available import candidates) adds no Theron detections. This is not complete repository analysis or an adjudicated real-world accuracy comparison.
 
 The [research repair checkpoint](evaluation/research-repair-2026-11-13/README.md), frozen at `bb9fb30`, recognizes the complete unchanged-value Python string-literal guard responsible for all six exposed test false positives. OWASP test recall remains 73.03% (65/89), with zero label-matched false positives and 100% case precision. Validation remains 91.67% recall. Hash-selection findings are explicitly advisory; nine additional PySASTBench alerts remain visible and their security impact is unverified. These are tuning results, not real-world performance.
 
@@ -131,4 +133,4 @@ The [ICSE 2027 tool demonstration call](https://conf.researchr.org/track/icse-20
 - Artifact/data licenses, any participant approval and release permissions are resolved.
 - The selected venue's current scope, formatting, anonymity and submission rules are checked.
 
-Pinned synthetic baseline experiments exist and remain published. No real-validation baseline comparison, participant study, independent label review, publication, external adoption or acceptance is claimed.
+Pinned synthetic baseline experiments exist and remain published. The matched real-validation baseline probes are now published, but no validated real-world accuracy, participant study, independent label review, publication, external adoption or acceptance is claimed.

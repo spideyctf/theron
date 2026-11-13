@@ -1,0 +1,1037 @@
+{
+  "engine": "bandit",
+  "covered_files": 28,
+  "alerts": [
+    {
+      "path": "CVE-2020-25459/fix_func/6feccf6d752184a6f9365d56a76fe627983e7139/federatedml/tree/hetero/hetero_decision_tree_host.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 203,
+      "end_line_number": 203,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2020-25459/fix_func/6feccf6d752184a6f9365d56a76fe627983e7139/federatedml/tree/hetero/hetero_decision_tree_host.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 206,
+      "end_line_number": 206,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2021-4315/fix_func/47787e15cecd66f2aa87687bf852ae0194a4335f/psiturk/experiment.py",
+      "rule_id": "B311",
+      "cwes": [
+        "CWE-330"
+      ],
+      "line_number": 217,
+      "end_line_number": 217,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2021-4315/fix_func/47787e15cecd66f2aa87687bf852ae0194a4335f/psiturk/experiment.py",
+      "rule_id": "B201",
+      "cwes": [
+        "CWE-94"
+      ],
+      "line_number": 770,
+      "end_line_number": 770,
+      "severity": "HIGH",
+      "confidence": "MEDIUM"
+    },
+    {
+      "path": "CVE-2021-4315/vul_func/231d566ea3a76534a507dd68840524952c10d5d9/psiturk/experiment.py",
+      "rule_id": "B311",
+      "cwes": [
+        "CWE-330"
+      ],
+      "line_number": 217,
+      "end_line_number": 217,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2021-4315/vul_func/231d566ea3a76534a507dd68840524952c10d5d9/psiturk/experiment.py",
+      "rule_id": "B201",
+      "cwes": [
+        "CWE-94"
+      ],
+      "line_number": 768,
+      "end_line_number": 768,
+      "severity": "HIGH",
+      "confidence": "MEDIUM"
+    },
+    {
+      "path": "CVE-2023-29159/fix_func/1797de464124b090f10cf570441e8292936d63e3/starlette/staticfiles.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 80,
+      "end_line_number": 80,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2023-29159/fix_func/1797de464124b090f10cf570441e8292936d63e3/starlette/staticfiles.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 81,
+      "end_line_number": 81,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2023-29159/fix_func/1797de464124b090f10cf570441e8292936d63e3/starlette/staticfiles.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 85,
+      "end_line_number": 87,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2023-29159/fix_func/1797de464124b090f10cf570441e8292936d63e3/starlette/staticfiles.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 96,
+      "end_line_number": 96,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2023-29159/vul_func/24c1fac62a80bb153c6548145334fc643991e35a/starlette/staticfiles.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 80,
+      "end_line_number": 80,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2023-29159/vul_func/24c1fac62a80bb153c6548145334fc643991e35a/starlette/staticfiles.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 81,
+      "end_line_number": 81,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2023-29159/vul_func/24c1fac62a80bb153c6548145334fc643991e35a/starlette/staticfiles.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 85,
+      "end_line_number": 87,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2023-29159/vul_func/24c1fac62a80bb153c6548145334fc643991e35a/starlette/staticfiles.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 96,
+      "end_line_number": 96,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/fix_func/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/contrib/lsf_runner.py",
+      "rule_id": "B403",
+      "cwes": [
+        "CWE-502"
+      ],
+      "line_number": 27,
+      "end_line_number": 27,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/fix_func/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/contrib/lsf_runner.py",
+      "rule_id": "B403",
+      "cwes": [
+        "CWE-502"
+      ],
+      "line_number": 29,
+      "end_line_number": 29,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/fix_func/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/contrib/lsf_runner.py",
+      "rule_id": "B301",
+      "cwes": [
+        "CWE-502"
+      ],
+      "line_number": 41,
+      "end_line_number": 41,
+      "severity": "MEDIUM",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/fix_func/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/contrib/lsf_runner.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 70,
+      "end_line_number": 70,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/fix_func/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/contrib/sge_runner.py",
+      "rule_id": "B403",
+      "cwes": [
+        "CWE-502"
+      ],
+      "line_number": 37,
+      "end_line_number": 37,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/fix_func/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/contrib/sge_runner.py",
+      "rule_id": "B301",
+      "cwes": [
+        "CWE-502"
+      ],
+      "line_number": 53,
+      "end_line_number": 53,
+      "severity": "MEDIUM",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/fix_func/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/contrib/sge_runner.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 83,
+      "end_line_number": 83,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/fix_func/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/safe_extractor.py",
+      "rule_id": "B202",
+      "cwes": [
+        "CWE-22"
+      ],
+      "line_number": 97,
+      "end_line_number": 97,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/vul_func/c9a0d2074be5bc03008485aeeef90678f1567231/luigi/contrib/lsf_runner.py",
+      "rule_id": "B403",
+      "cwes": [
+        "CWE-502"
+      ],
+      "line_number": 27,
+      "end_line_number": 27,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/vul_func/c9a0d2074be5bc03008485aeeef90678f1567231/luigi/contrib/lsf_runner.py",
+      "rule_id": "B403",
+      "cwes": [
+        "CWE-502"
+      ],
+      "line_number": 29,
+      "end_line_number": 29,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/vul_func/c9a0d2074be5bc03008485aeeef90678f1567231/luigi/contrib/lsf_runner.py",
+      "rule_id": "B301",
+      "cwes": [
+        "CWE-502"
+      ],
+      "line_number": 41,
+      "end_line_number": 41,
+      "severity": "MEDIUM",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/vul_func/c9a0d2074be5bc03008485aeeef90678f1567231/luigi/contrib/lsf_runner.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 72,
+      "end_line_number": 72,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/vul_func/c9a0d2074be5bc03008485aeeef90678f1567231/luigi/contrib/sge_runner.py",
+      "rule_id": "B403",
+      "cwes": [
+        "CWE-502"
+      ],
+      "line_number": 37,
+      "end_line_number": 37,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/vul_func/c9a0d2074be5bc03008485aeeef90678f1567231/luigi/contrib/sge_runner.py",
+      "rule_id": "B301",
+      "cwes": [
+        "CWE-502"
+      ],
+      "line_number": 53,
+      "end_line_number": 53,
+      "severity": "MEDIUM",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-21542/vul_func/c9a0d2074be5bc03008485aeeef90678f1567231/luigi/contrib/sge_runner.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 85,
+      "end_line_number": 85,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/config.py",
+      "rule_id": "B108",
+      "cwes": [
+        "CWE-377"
+      ],
+      "line_number": 80,
+      "end_line_number": 80,
+      "severity": "MEDIUM",
+      "confidence": "MEDIUM"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 121,
+      "end_line_number": 125,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 126,
+      "end_line_number": 130,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 134,
+      "end_line_number": 138,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 139,
+      "end_line_number": 143,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 146,
+      "end_line_number": 150,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 151,
+      "end_line_number": 155,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 158,
+      "end_line_number": 162,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 163,
+      "end_line_number": 167,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 170,
+      "end_line_number": 174,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 175,
+      "end_line_number": 179,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 182,
+      "end_line_number": 186,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/fix_func/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 187,
+      "end_line_number": 191,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/config.py",
+      "rule_id": "B404",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 6,
+      "end_line_number": 6,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/config.py",
+      "rule_id": "B602",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 76,
+      "end_line_number": 77,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B404",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 5,
+      "end_line_number": 5,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B607",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 71,
+      "end_line_number": 71,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B603",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 71,
+      "end_line_number": 71,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 121,
+      "end_line_number": 125,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 126,
+      "end_line_number": 130,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 134,
+      "end_line_number": 138,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 139,
+      "end_line_number": 143,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 146,
+      "end_line_number": 150,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 151,
+      "end_line_number": 155,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 158,
+      "end_line_number": 162,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 163,
+      "end_line_number": 167,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 170,
+      "end_line_number": 174,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 175,
+      "end_line_number": 179,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 182,
+      "end_line_number": 186,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-48911/vul_func/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py",
+      "rule_id": "B605",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 187,
+      "end_line_number": 191,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/fix_func/720c23d755a4a955dcb0a54e8c200a2247a27f8b/ChuanhuChatbot.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 36,
+      "end_line_number": 36,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/fix_func/720c23d755a4a955dcb0a54e8c200a2247a27f8b/modules/utils.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 453,
+      "end_line_number": 453,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/fix_func/720c23d755a4a955dcb0a54e8c200a2247a27f8b/modules/utils.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 517,
+      "end_line_number": 517,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/fix_func/720c23d755a4a955dcb0a54e8c200a2247a27f8b/modules/utils.py",
+      "rule_id": "B110",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 883,
+      "end_line_number": 884,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/fix_func/720c23d755a4a955dcb0a54e8c200a2247a27f8b/modules/utils.py",
+      "rule_id": "B324",
+      "cwes": [
+        "CWE-328"
+      ],
+      "line_number": 917,
+      "end_line_number": 917,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/fix_func/720c23d755a4a955dcb0a54e8c200a2247a27f8b/modules/utils.py",
+      "rule_id": "B606",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 1480,
+      "end_line_number": 1480,
+      "severity": "LOW",
+      "confidence": "MEDIUM"
+    },
+    {
+      "path": "CVE-2024-5823/fix_func/720c23d755a4a955dcb0a54e8c200a2247a27f8b/modules/utils.py",
+      "rule_id": "B110",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 1495,
+      "end_line_number": 1496,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/fix_func/720c23d755a4a955dcb0a54e8c200a2247a27f8b/modules/utils.py",
+      "rule_id": "B110",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 1515,
+      "end_line_number": 1516,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/vul_func/ffea5e9419ed517e8b80208567f4f70404047cbe/modules/utils.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 453,
+      "end_line_number": 453,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/vul_func/ffea5e9419ed517e8b80208567f4f70404047cbe/modules/utils.py",
+      "rule_id": "B101",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 517,
+      "end_line_number": 517,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/vul_func/ffea5e9419ed517e8b80208567f4f70404047cbe/modules/utils.py",
+      "rule_id": "B110",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 881,
+      "end_line_number": 882,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/vul_func/ffea5e9419ed517e8b80208567f4f70404047cbe/modules/utils.py",
+      "rule_id": "B324",
+      "cwes": [
+        "CWE-328"
+      ],
+      "line_number": 915,
+      "end_line_number": 915,
+      "severity": "HIGH",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/vul_func/ffea5e9419ed517e8b80208567f4f70404047cbe/modules/utils.py",
+      "rule_id": "B606",
+      "cwes": [
+        "CWE-78"
+      ],
+      "line_number": 1478,
+      "end_line_number": 1478,
+      "severity": "LOW",
+      "confidence": "MEDIUM"
+    },
+    {
+      "path": "CVE-2024-5823/vul_func/ffea5e9419ed517e8b80208567f4f70404047cbe/modules/utils.py",
+      "rule_id": "B110",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 1493,
+      "end_line_number": 1494,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    },
+    {
+      "path": "CVE-2024-5823/vul_func/ffea5e9419ed517e8b80208567f4f70404047cbe/modules/utils.py",
+      "rule_id": "B110",
+      "cwes": [
+        "CWE-703"
+      ],
+      "line_number": 1513,
+      "end_line_number": 1514,
+      "severity": "LOW",
+      "confidence": "HIGH"
+    }
+  ],
+  "errors": [],
+  "version": "1.9.4",
+  "raw_report_sha256": "31f51307bb770def3269d81d7d51816a57a95ab4701d5ef969ff47507c5a0e8d",
+  "reference_outcomes": [
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "vul_func",
+      "revision": "f11093a6b3240fc26830b6111e826128af7771c3",
+      "path": "waitress/parser.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "vul_func",
+      "revision": "f11093a6b3240fc26830b6111e826128af7771c3",
+      "path": "waitress/utilities.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/parser.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/utilities.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/rfc7230.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "role": "vul_func",
+      "revision": "67708d5d327e736d80e2f6726968cf02a926310e",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "role": "fix_func",
+      "revision": "6feccf6d752184a6f9365d56a76fe627983e7139",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "role": "fix_func",
+      "revision": "6feccf6d752184a6f9365d56a76fe627983e7139",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "role": "vul_func",
+      "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+      "path": "psiturk/experiment.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "role": "fix_func",
+      "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+      "path": "psiturk/experiment.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "role": "vul_func",
+      "revision": "b4bdd09c56aa5dedb475529e75ce73c092ca0898",
+      "path": "oauthlib/uri_validate.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "role": "fix_func",
+      "revision": "2e40b412c844ecc4673c3fa3f72181f228bdbacd",
+      "path": "oauthlib/uri_validate.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "vul_func",
+      "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+      "path": "starlette/staticfiles.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "fix_func",
+      "revision": "1797de464124b090f10cf570441e8292936d63e3",
+      "path": "starlette/staticfiles.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "vul_func",
+      "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+      "path": "luigi/contrib/lsf_runner.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "vul_func",
+      "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+      "path": "luigi/contrib/sge_runner.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/contrib/lsf_runner.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/contrib/sge_runner.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/safe_extractor.py",
+      "reference_matches": [
+        {
+          "path": "CVE-2024-21542/fix_func/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/safe_extractor.py",
+          "rule_id": "B202",
+          "cwes": [
+            "CWE-22"
+          ],
+          "line_number": 97,
+          "end_line_number": 97,
+          "severity": "HIGH",
+          "confidence": "HIGH",
+          "cwe": "CWE-22",
+          "evidence_kind": "static-baseline"
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "role": "vul_func",
+      "revision": "d3956bc602f95d2bec55eebc96d5e3a2cb35bf47",
+      "path": "opencanary/config.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "role": "vul_func",
+      "revision": "d3956bc602f95d2bec55eebc96d5e3a2cb35bf47",
+      "path": "opencanary/modules/portscan.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "role": "fix_func",
+      "revision": "2c11575b1a3dd8b0df26a879ba856c0aa350c049",
+      "path": "opencanary/config.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "role": "fix_func",
+      "revision": "2c11575b1a3dd8b0df26a879ba856c0aa350c049",
+      "path": "opencanary/modules/portscan.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "role": "vul_func",
+      "revision": "ffea5e9419ed517e8b80208567f4f70404047cbe",
+      "path": "modules/utils.py",
+      "label_error": "ValueError: Declared function hash differs",
+      "reference_matches": null
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "role": "fix_func",
+      "revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+      "path": "ChuanhuChatbot.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "role": "fix_func",
+      "revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+      "path": "modules/utils.py",
+      "label_error": "ValueError: Declared function hash differs",
+      "reference_matches": null
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "role": "vul_func",
+      "revision": "668158f0558d486082c0dc672a6ac39ba05ced6a",
+      "path": "spotipy/cache_handler.py",
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "role": "fix_func",
+      "revision": "1ca453f6ef87a2a9e9876f52b6cb38d13532ccf2",
+      "path": "spotipy/cache_handler.py",
+      "reference_matches": []
+    }
+  ]
+}

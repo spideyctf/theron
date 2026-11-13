@@ -1,0 +1,42 @@
+{
+  "implementation_revision": "bb9fb3092011aec3c5de0af4b28dea9fdc2b4715",
+  "cases": 9,
+  "snapshots": 28,
+  "original_label_errors": 2,
+  "independent_labels": false,
+  "final_test_source_opened": false,
+  "tools": {
+    "theron-isolated": {
+      "covered_files": 28,
+      "alerts": 2,
+      "scanner_errors": 0,
+      "vulnerable_reference_match_cases": [],
+      "fixed_reference_match_cases": []
+    },
+    "theron-grouped": {
+      "covered_files": 28,
+      "alerts": 2,
+      "scanner_errors": 0,
+      "vulnerable_reference_match_cases": [],
+      "fixed_reference_match_cases": []
+    },
+    "bandit": {
+      "covered_files": 28,
+      "alerts": 74,
+      "scanner_errors": 0,
+      "vulnerable_reference_match_cases": [],
+      "fixed_reference_match_cases": [
+        "CVE-2024-21542"
+      ]
+    },
+    "semgrep": {
+      "covered_files": 28,
+      "alerts": 90,
+      "scanner_errors": 0,
+      "vulnerable_reference_match_cases": [],
+      "fixed_reference_match_cases": []
+    }
+  },
+  "context_groups": 18,
+  "available_import_candidates": 7
+}
