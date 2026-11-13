@@ -1,0 +1,19 @@
+{
+  "analysis_entrypoints": [
+    {
+      "file": "celery/backends/base.py",
+      "function": "Backend.exception_to_python",
+      "parameter": "exc",
+      "reason": "Application/backend contract: serialized failure records may be controlled by a task/backend writer; caller reachability and backend permissions are unverified."
+    },
+    {
+      "file": "mechanicalsoup/browser.py",
+      "function": "Browser.get_request_kwargs",
+      "parameter": "form",
+      "type": "bs4.element.Tag",
+      "reason": "Application/browser contract: this form may originate in remote HTML; caller reachability and server control are unverified."
+    }
+  ],
+  "author_side_models": true,
+  "independently_validated": false
+}

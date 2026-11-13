@@ -5,9 +5,30 @@ import App from './App'
 import { api } from './api'
 import type { ScanJob, ScanResult } from './api'
 import backendReport from '../../tests/fixtures/flow-delivery-report.json'
+import libraryReport from '../../tests/fixtures/library-boundary-report.json'
 import { readFileSync } from 'node:fs'
 
 const generatedHtml = readFileSync('../tests/fixtures/flow-delivery-report.html', 'utf8')
+
+it('shows configured trust assumptions as advisory and retains only observed MCP associations', async () => {
+  const user = userEvent.setup()
+  const report = libraryReport as ScanResult
+  const job: ScanJob = { id:'library-delivery',repository:report.repo_full_name,branch:'main',modules:['sast'],include_experimental:false,
+    status:'completed',created_at:'2026-11-14T00:00:00Z',finished_at:null,error:null,result:report }
+  vi.spyOn(api,'health').mockResolvedValue({ status:'ok',github_token_configured:true })
+  vi.spyOn(api,'list').mockResolvedValue([job])
+  vi.spyOn(api,'get').mockResolvedValue(job)
+  render(<App />)
+  await user.click(await screen.findByRole('button',{ name:/project.*completed/ }))
+  const findings = screen.getAllByRole('button',{name:'Untrusted selection controls an invoked module attribute'})
+  await user.click(findings[0])
+  expect(screen.getByText(/Conditional on configured entrypoint trust boundary/)).toBeInTheDocument()
+  expect(screen.getAllByText('advisory').length).toBeGreaterThan(0)
+  expect(screen.getByText(/configured-flow · Scope: application/)).toBeInTheDocument()
+  await user.keyboard('{Escape}')
+  await user.click(screen.getByRole('tab',{name:/MCP links/}))
+  expect(screen.getAllByRole('link',{name:/Untrusted selection controls an invoked module attribute/})).toHaveLength(1)
+})
 
 it('displays ASGI and archive flows, their traces and the runtime review notice', async () => {
   const user = userEvent.setup()

@@ -6,7 +6,12 @@ from scanner.models import Category, Finding, Severity
 
 
 class PythonAIAnalyzer(ast.NodeVisitor):
-    def __init__(self, file_path, content, module="ai", include_experimental=False, project=None, disabled_features=()):
+    def __init__(self, file_path, content, module="ai", include_experimental=False, project=None, disabled_features=(), entrypoints=()):
+        from scanner.config import validate_entrypoints
+        self.entrypoints = validate_entrypoints(list(entrypoints))
+        self.configured_origins = {}
+        self.matched_entrypoints = set()
+        self.imported_modules = set()
         self.disabled_features = frozenset(disabled_features)
         if not self.disabled_features <= {"local_imports", "interprocedural", "sanitizers"}:
             raise ValueError("Unknown analysis ablation")
@@ -57,6 +62,12 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                         index(node.body, name + ".")
             index(tree.body)
             self.visit(tree)
+            for entry in self.entrypoints:
+                if entry['file']==self.file_path and (entry['function'],entry['parameter']) not in self.matched_entrypoints:
+                    self.findings.append(Finding(title='Configured entrypoint could not be resolved',severity=Severity.INFO,
+                        category=Category.SAST,module='coverage',file_path=self.file_path,rule_id='PY-ENTRYPOINT-001',
+                        description=f"No matching parameter for {entry['function']}.{entry['parameter']}; configured coverage is incomplete.",
+                        evidence_kind='coverage-notice'))
             if self.call_count >= 1500:
                 self.findings.append(Finding(
                     title="Python call-analysis budget reached", severity=Severity.INFO,
@@ -77,6 +88,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
     def visit_Import(self, node):
         for alias in node.names:
             self.bindings[alias.asname or alias.name.split(".")[0]] = alias.name if alias.asname else alias.name.split(".")[0]
+            self.imported_modules.add(alias.name if alias.asname else alias.name.split('.')[0])
 
     def visit_ImportFrom(self, node):
         module = self.project.import_module(self.file_path, node.module, node.level) if self.project else node.module
@@ -125,6 +137,12 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             returns.update({'xml.sax.make_parser': 'xml.sax.XMLReader',
                             'random.Random': 'random.Random', 'random.SystemRandom': 'random.SystemRandom',
                             'ldap3.Connection': 'ldap3.Connection'})
+            for root in ['requests','requests.Session','httpx','httpx.Client','httpx.AsyncClient']:
+                returns.update({root+'.'+method: ('requests.Response' if root.startswith('requests') else 'httpx.Response')
+                                for method in ['get','post','put','patch','delete','head','options','request']})
+            returns['bs4.BeautifulSoup'] = 'bs4.element.Tag'
+            returns.update({'bs4.element.Tag.'+method: 'bs4.element.Tag' for method in ['find','select_one']})
+            returns.update({'bs4.element.Tag.'+method: 'bs4.element.ResultSet' for method in ['find_all','select']})
             if constructor in returns:
                 return returns[constructor]
             if constructor in self.classes:
@@ -220,6 +238,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         safe = set(sources[0][2] if len(sources[0]) > 2 else ())
         for source in sources[1:]:
             safe.intersection_update(source[2] if len(source) > 2 else ())
+        # Possible reflective targets survive joins; safety proofs still require every path.
+        safe.update(flag for source in sources if len(source)>2 for flag in source[2]
+                    if flag in {'reflective-object','reflective-callable'})
         return (selected[0], selected[1], frozenset(safe)) + (selected[3:4] if len(selected) > 3 else ())
 
     @staticmethod
@@ -304,6 +325,16 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.literal_sets = old_literals.copy()
         self.taint = {key: value for key, value in old_taint.items() if "." in key}
         self.taint.update(sources or {})
+        function = self.function_names.get(id(node), node.name)
+        if self.project:
+            function = function.removeprefix(self.project.module_name(self.file_path)+'.')
+        for entry in self.entrypoints:
+            if entry['file'] == self.file_path and entry['function'] == function:
+                parameters = node.args.posonlyargs + node.args.args + node.args.kwonlyargs
+                if entry['parameter'] in {p.arg for p in parameters}:
+                    self.matched_entrypoints.add((entry['function'],entry['parameter']))
+                    self.taint[entry['parameter']] = ('input',node.lineno,frozenset(),self.file_path)
+                    self.configured_origins.setdefault((self.file_path,node.lineno),set()).add(entry['reason'])
         decorators = [decorator.func if isinstance(decorator, ast.Call) else decorator for decorator in node.decorator_list]
         resolved_decorators = {self._name(decorator) for decorator in decorators}
         old_route = self.flask_route
@@ -364,6 +395,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if isinstance(item, ast.Name) and isinstance(item.ctx, ast.Store):
                 self.bindings[item.id] = ""
                 self.literal_sets.pop(item.id, None)
+        for entry in self.entrypoints:
+            if entry['file'] == self.file_path and entry['function'] == function and entry.get('type'):
+                if entry['parameter'] in self.taint:
+                    self.bindings[entry['parameter']] = entry['type']
         # Parameter names alone are not evidence of attacker control.
         old_returns, self.return_sources = self.return_sources, []
         old_return_bindings, self.return_bindings = self.return_bindings, []
@@ -454,10 +489,17 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             return self.taint[key]
         if isinstance(node, ast.Subscript) and key in self.bindings:
             return None  # observed literal-key slot was overwritten with a clean value
+        if isinstance(node, ast.Subscript) and self._name(node.value) == 'sys.modules':
+            return self._mark_safe(self._source(node.slice), 'reflective-object')
         if (isinstance(node, ast.Subscript) and self._name(node.value) == 'starlette.types.Scope'
                 and self._constant(node.slice) in {'path', 'raw_path', 'query_string', 'headers'}):
             return ('input', node.lineno)
         if isinstance(node, ast.Attribute):
+            parent_source = self._source(node.value)
+            if parent_source and parent_source[0] == 'remote-response':
+                return ('input',parent_source[1],frozenset(),*(parent_source[3:4])) if node.attr in {'text','content'} else None
+            if self._safe_for(parent_source,'reflective-object'):
+                return self._mark_safe(parent_source,'reflective-callable')
             owner = self._name(node.value)
             if ("http.server.BaseHTTPRequestHandler" in self.class_bases.get(owner, set())
                     and node.attr in {"path", "rfile", "headers"}):
@@ -467,6 +509,33 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return ("input", node.lineno)
         if isinstance(node, ast.Call):
             name = self._name(node.func)
+            if self._name(node) in {'requests.Response','httpx.Response'}:
+                return ('remote-response',node.lineno,frozenset(),self.file_path)
+            if name in {'requests.Response.json','httpx.Response.json'} and isinstance(node.func,ast.Attribute):
+                response = self._source(node.func.value)
+                if response and response[0]=='remote-response':
+                    return ('input',response[1],frozenset(),*(response[3:4]))
+            if name == 'bs4.BeautifulSoup':
+                return self._source(node.args[0]) if node.args else None
+            if name in {'kombu.utils.encoding.from_utf8','kombu.utils.encoding.bytes_to_str','kombu.utils.encoding.ensure_bytes'}:
+                return self._source(node.args[0]) if node.args else None
+            if name in {'bs4.element.Tag.'+method for method in ['find','find_all','select','select_one','get_text']}:
+                return self._source(node.func.value)
+            if name in {'importlib.import_module','builtins.__import__'} or (isinstance(node.func,ast.Name) and node.func.id=='__import__' and '__import__' not in self.bindings):
+                return self._mark_safe(self._source(node.args[0]),'reflective-object') if node.args else None
+            if name == 'builtins.getattr' or (isinstance(node.func,ast.Name) and node.func.id=='getattr' and 'getattr' not in self.bindings):
+                if len(node.args)>=2:
+                    owner, selector = node.args[:2]
+                    owner_source = self._source(owner)
+                    if (self._name(owner) in self.imported_modules or self._safe_for(owner_source,'reflective-object')
+                            or self._safe_for(owner_source,'reflective-callable')
+                            or isinstance(owner,ast.Subscript) and self._name(owner.value)=='sys.modules'
+                            or isinstance(owner,ast.Call) and self._name(owner.func)=='importlib.import_module'):
+                        return self._mark_safe(self._combine([owner_source,self._source(selector)]),'reflective-callable')
+            if (isinstance(node.func,ast.Name) and node.func.id in {'str','bytes','bytearray'} and node.func.id not in self.bindings):
+                source = self._combine(self._source(v) for v in node.args)
+                if source:
+                    return source[:2]+(frozenset(source[2] if len(source)>2 else ())-{'reflective-object','reflective-callable'},)+source[3:4]
             if name in {'tarfile.open','tarfile.TarFile','tarfile.TarFile.open'}:
                 fileobj = next((kw.value for kw in node.keywords if kw.arg == 'fileobj'), None)
                 return self._source(fileobj)
@@ -635,7 +704,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                               Severity.MEDIUM, Category.SAST,
                               'A request-controlled key or value is stored in session state. Verify validation and authorization before treating it as trusted identity or privilege data.',
                               'Validate the value against server-side records and allowlist session keys before storing trusted state.',
-                              'CWE-501', source_line=incoming[1], confidence='medium')
+                              'CWE-501', source_line=incoming[1], source_file=incoming[3] if len(incoming)>3 else None, confidence='medium')
             if source and source[0] == 'weak-random' and (self._key(target.value) in self.auth_stores
                     or owner in {'flask.session', 'quart.session'}):
                 self._weak_random_sink(target, source)
@@ -942,7 +1011,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         boundary, positive = self._path_boundary(node.test)
         redirect_boundary, redirect_positive = self._redirect_boundary(node.test)
         literal_boundary = self._python_literal_boundary(node.test)
+        exception_key, exception_positive = self._exception_class_boundary(node.test)
         states = []
+        if exception_key and exception_positive:
+            self.taint[exception_key] = self._mark_safe(self.taint.get(exception_key),'exception-class')
         if quote_guard and isinstance(node.test.ops[0], ast.NotIn):
             key, context = quote_guard
             self.taint[key] = self._mark_safe(self.taint.get(key), context)
@@ -955,6 +1027,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if self._visit_block(node.body):
             states.append(self._state())
         self._restore(initial)
+        if exception_key and not exception_positive:
+            self.taint[exception_key] = self._mark_safe(self.taint.get(exception_key),'exception-class')
         if literal_boundary:
             self.redirect_facts[literal_boundary] = ('python_literal',)
         if quote_guard and isinstance(node.test.ops[0], ast.In):
@@ -1016,7 +1090,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                   Severity.HIGH, Category.SAST,
                   f'Non-cryptographic randomness from line {source[1]} reaches session state or a store compared with a request cookie.',
                   'Generate security tokens with secrets.token_urlsafe or an equivalent cryptographic generator.',
-                  'CWE-338', source_line=source[1], confidence='medium')
+                  'CWE-338', source_line=source[1], source_file=source[3] if len(source)>3 else None, confidence='medium')
 
     def _xpath_parts(self, value, depth=0):
         if depth > 5:
@@ -1060,6 +1134,33 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             return None
         command = ast.Subscript(value=arguments, slice=ast.Constant(value=2), ctx=ast.Load()) if isinstance(arguments, ast.Name) else values.elts[2]
         return self._source(command)
+
+    def _exception_class_boundary(self, test):
+        """Recognize a narrow exception-class constraint, not arbitrary type guards."""
+        if 'sanitizers' in self.disabled_features:
+            return None,False
+        if isinstance(test,ast.UnaryOp) and isinstance(test.op,ast.Not):
+            key,positive=self._exception_class_boundary(test.operand)
+            return key,not positive
+        if isinstance(test,ast.Call) and len(test.args)==2 and not test.keywords:
+            if (isinstance(test.func,ast.Name) and test.func.id=='issubclass' and 'issubclass' not in self.bindings
+                    and isinstance(test.args[1],ast.Name) and test.args[1].id in {'BaseException','Exception'}
+                    and test.args[1].id not in self.bindings):
+                return self._key(test.args[0]),True
+        if isinstance(test,ast.BoolOp) and len(test.values)==2:
+            positive=isinstance(test.op,ast.And)
+            for constraint,type_check in [test.values,list(reversed(test.values))]:
+                key,direction=self._exception_class_boundary(constraint)
+                if not key or direction!=positive:
+                    continue
+                if not positive and isinstance(type_check,ast.UnaryOp) and isinstance(type_check.op,ast.Not):
+                    type_check=type_check.operand
+                if (isinstance(type_check,ast.Call) and len(type_check.args)==2 and not type_check.keywords
+                        and isinstance(type_check.func,ast.Name) and type_check.func.id=='isinstance' and 'isinstance' not in self.bindings
+                        and self._key(type_check.args[0])==key and isinstance(type_check.args[1],ast.Name)
+                        and type_check.args[1].id=='type' and 'type' not in self.bindings):
+                    return key,positive
+        return None,False
 
     def _redirect_boundary(self, test):
         if not isinstance(test, ast.BoolOp) or len(test.values) != 2:
@@ -1225,6 +1326,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.visit(node.iter)
         initial = self._state()
         self._assign(node.target, node.iter)
+        if self._name(node.iter)=='bs4.element.ResultSet' and self._key(node.target):
+            self.bindings[self._key(node.target)]='bs4.element.Tag'
         self._visit_block(node.body)
         self._merge_states([initial, self._state()])
         before_else = self._state()
@@ -1253,6 +1356,14 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         }
 
     def visit_Call(self, node):
+        target_source = self._source(node.func)
+        if (target_source and target_source[0] in {'input','model'} and self._safe_for(target_source,'reflective-callable')
+                and not self._safe_for(target_source,'exception-class')):
+            self._add(node,'PY-SAST-DYNAMIC-CALL-001','Untrusted selection controls an invoked module attribute',
+                      Severity.HIGH,Category.SAST,
+                      'Observed untrusted data selects a module or attribute that is subsequently invoked. Allowed targets and runtime permissions determine the impact; this is not a confirmed exploit.',
+                      'Use a fixed dispatch allowlist. For exception reconstruction, constrain the target to an intended exception class before instantiation.',
+                      'CWE-94',source_line=target_source[1],source_file=target_source[3] if len(target_source)>3 else None)
         self._check_archive_extraction(node)
         forwarded = self._forwarded_call(node)
         if forwarded is not None:
@@ -1341,7 +1452,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if xml_source and xml_source[0] == 'input' and self.taint.get(self._name(parser) + '.external_entities'):
                 self._add(node, 'PY-SAST-XXE-001', 'External XML reaches an entity-enabled SAX parser', Severity.HIGH, Category.SAST,
                           'Request-controlled XML is parsed with an observed SAX parser whose external general entities feature is enabled.',
-                          'Disable external entities or use defusedxml for untrusted XML.', 'CWE-611', source_line=xml_source[1])
+                          'Disable external entities or use defusedxml for untrusted XML.', 'CWE-611', source_line=xml_source[1], source_file=xml_source[3] if len(xml_source)>3 else None)
         builtin = node.func.id if isinstance(node.func, ast.Name) and node.func.id not in self.bindings else ""
         values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg in {"source", "object", "command", "args", "s", "data", "file"}]
         source = next((self._source(value) for value in values if self._source(value)), None)
@@ -1369,7 +1480,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if xpath_source and xpath_source[0] == 'input':
                 self._add(node, 'PY-SAST-XPATH-001', 'External input controls an XPath expression', Severity.HIGH, Category.SAST,
                           'Request-controlled data reaches the XPath expression argument of a resolved elementpath API.',
-                          'Use a fixed expression and pass variable values separately.', 'CWE-643', source_line=xpath_source[1])
+                          'Use a fixed expression and pass variable values separately.', 'CWE-643', source_line=xpath_source[1], source_file=xpath_source[3] if len(xpath_source)>3 else None)
         if name == 'ldap3.Connection.search':
             expression = node.args[1] if len(node.args) > 1 else next((k.value for k in node.keywords if k.arg == 'search_filter'), None)
             ldap_source = self._source(expression)
@@ -1377,7 +1488,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 self._add(node, 'PY-SAST-LDAP-001', 'External input controls an LDAP search filter', Severity.HIGH, Category.SAST,
                           'Request-controlled data reaches a resolved LDAP connection search filter without recognized filter escaping.',
                           'Escape substituted values with ldap3.utils.conv.escape_filter_chars and keep filter syntax fixed.',
-                          'CWE-90', source_line=ldap_source[1])
+                          'CWE-90', source_line=ldap_source[1], source_file=ldap_source[3] if len(ldap_source)>3 else None)
         if name in {'flask.Response.set_cookie', 'quart.Response.set_cookie'}:
             secure = next((self._constant(k.value) for k in node.keywords if k.arg == 'secure'), None)
             if secure is False:
@@ -1491,6 +1602,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if source_line and (source_file is None or source_file == self.file_path) and source_line <= len(lines):
             indices.add(source_line - 1)
         snippet = redact_secrets("\n".join(f"{i + 1}: {lines[i]}" for i in sorted(indices)))
+        assumptions = self.configured_origins.get((source_file or self.file_path,source_line))
+        if assumptions and severity!=Severity.INFO:
+            description += ' Conditional on configured entrypoint trust boundary: ' + redact_secrets('; '.join(sorted(assumptions))) + '. Caller reachability is not established by this scan.'
+            evidence_kind,maturity,confidence='configured-flow','advisory','medium'
         self.findings.append(Finding(title=title, severity=severity, category=category, module=self.module,
             description=description, file_path=self.file_path, line_number=node.lineno,
             code_snippet=snippet, recommendation=recommendation, cwe=cwe,
@@ -1500,5 +1615,5 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                   + [{"role": "sink", "file_path": self.file_path, "line_number": node.lineno}]))
 
 
-def analyze_python(file_path, content, module="ai", include_experimental=False, project=None, disabled_features=()):
-    return PythonAIAnalyzer(file_path, content, module, include_experimental, project, disabled_features).run()
+def analyze_python(file_path, content, module="ai", include_experimental=False, project=None, disabled_features=(), entrypoints=()):
+    return PythonAIAnalyzer(file_path, content, module, include_experimental, project, disabled_features, entrypoints).run()

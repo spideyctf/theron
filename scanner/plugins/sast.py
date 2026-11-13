@@ -38,12 +38,20 @@ class SASTScanner(Scanner):
         rule_sets = context.rule_loader.load("sast")
         profile = context.project_profile
         project = PythonProject(context.files)
+        from scanner.config import validate_entrypoints
+        for entry in validate_entrypoints(context.config.get('analysis_entrypoints', [])):
+            if entry['file'] not in context.files:
+                findings.append(Finding(title='Configured entrypoint file is unavailable',severity=Severity.INFO,
+                    category=Category.SAST,module='coverage',file_path=entry['file'],rule_id='PY-ENTRYPOINT-001',
+                    description='The configured Python entrypoint file was not collected; configured coverage is incomplete.',
+                    evidence_kind='coverage-notice'))
 
         for file_path, content in context.files.items():
             if file_path.endswith(".py") and not any(skip in file_path.replace("\\", "/").split("/") for skip in self.SKIP_DIRS):
                 findings.extend(analyze_python(file_path, content, module=self.name, project=project,
                                                include_experimental=self.include_experimental,
-                                               disabled_features=context.config.get("analysis_disabled_features", ())))
+                                               disabled_features=context.config.get("analysis_disabled_features", ()),
+                                               entrypoints=context.config.get('analysis_entrypoints', [])))
 
         for rule_set in rule_sets:
             # Determine which files to scan based on language/extension scope
