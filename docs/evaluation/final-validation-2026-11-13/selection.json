@@ -1,0 +1,18 @@
+{
+  "implementation_revision": "4c166e0b179e1ff10a3a432e2bd439765b601a81",
+  "membership_sha256": "875e8e2b4938dfbdb7a6dab6d624f12a2a28d4029741892fefcf260d391c1367",
+  "case_ids": [
+    "CVE-2020-15278",
+    "CVE-2021-21360",
+    "CVE-2021-23727",
+    "CVE-2021-39163",
+    "CVE-2022-29217",
+    "CVE-2023-32303",
+    "CVE-2023-34457",
+    "CVE-2023-49736",
+    "CVE-2025-43859"
+  ],
+  "case_count": 9,
+  "partition": "test",
+  "source_opened_at_protocol_commit": false
+}
