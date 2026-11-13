@@ -935,7 +935,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         quote_guard = None
         if (isinstance(node.test, ast.Compare) and len(node.test.ops) == 1
                 and isinstance(node.test.ops[0], (ast.In, ast.NotIn))
-                and self._constant(node.test.left) in {"'", '"'}):
+                and self._constant(node.test.left) in {"'", '"'}
+                and self._key(node.test.comparators[0])):
             quote_guard = self._key(node.test.comparators[0]), 'excludes-' + self._constant(node.test.left)
         allowed = self._literal_allowlist(node.test)
         boundary, positive = self._path_boundary(node.test)
