@@ -1,0 +1,12 @@
+{
+  "initial_freeze": "f1831348df10b12036c629ba76b67511f60baf72",
+  "final_freeze": "634573431544a3ef16da99df5fcad35360372971",
+  "reason": "The sanitizer ablation unexpectedly removed reflection provenance; source facts now use unconditional tagging, while class-boundary safety remains ablatable.",
+  "initial_ablation_preserved": "initial-freeze-no-sanitizers.json",
+  "new_holdout": false,
+  "ablation_repair_freeze": "aa8293ef5c245c0f4b06e5cd56feceb285ee7f58",
+  "operational_followup": "Initial f183 working-tree three-module selfscan exceeded 120 seconds. Attribute prefixes were recursively revisited and fixed API tables rebuilt per expression; those costs are removed. Recheck on a pinned snapshot; do not compare different inputs as a speedup ratio.",
+  "analysis_and_offline_smoke_freeze": "a5fa583ff76883d35a91ab2aac5cc2bf5f4e21e6",
+  "final_freeze_reason": "A same-named function in an imported file must not falsely resolve a missing local model parameter; resolution keys now include the source file. Full regression and final replays follow.",
+  "api_delivery_freeze": "7816f4d9d7a5bba1ea65897f8b87274ca186af97"
+}

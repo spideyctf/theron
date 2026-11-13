@@ -1,0 +1,74 @@
+{
+  "summary": {
+    "repo": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\library-flows-2026-11-14\\fixed-self-target",
+    "branch": "local",
+    "files_scanned": 273,
+    "total_findings": 3,
+    "context_findings": 12,
+    "vulnerability_findings": 0,
+    "by_severity": {
+      "INFO": 3
+    },
+    "modules_run": [
+      "agentic",
+      "ai",
+      "sast"
+    ],
+    "scan_duration_seconds": 105.47
+  },
+  "files_scanned": 273,
+  "modules_run": [
+    "agentic",
+    "ai",
+    "sast"
+  ],
+  "application_findings": [
+    {
+      "rule_id": "PY-TUPLE-001",
+      "file_path": "scanner/cli.py",
+      "line_number": 88,
+      "maturity": "advisory",
+      "evidence_kind": "coverage-notice",
+      "scope": "application"
+    },
+    {
+      "rule_id": "PY-TUPLE-001",
+      "file_path": "scanner/engine.py",
+      "line_number": 166,
+      "maturity": "advisory",
+      "evidence_kind": "coverage-notice",
+      "scope": "application"
+    },
+    {
+      "rule_id": "PY-BUDGET-001",
+      "file_path": "scanner/python_analysis.py",
+      "line_number": null,
+      "maturity": "stable",
+      "evidence_kind": "coverage-notice",
+      "scope": "application"
+    }
+  ],
+  "context_findings": 12,
+  "status": "completed",
+  "implementation_revision": "a5fa583ff76883d35a91ab2aac5cc2bf5f4e21e6",
+  "target_revision": "4c166e0b179e1ff10a3a432e2bd439765b601a81",
+  "selected_files": 275,
+  "wall_seconds": 109.94240870000067,
+  "limit_seconds": 120,
+  "network_required": false,
+  "target_code_executed": false,
+  "interpretation": "One offline CLI smoke with SAST/AI/agentic; SCA/network excluded. Not a throughput ranking or accuracy result.",
+  "context_coverage_notices": [
+    {
+      "rule_id": "SCAN-COVERAGE-001",
+      "file_path": "docs/evaluation/owasp-2026-11-12/split.json",
+      "reason": "File exceeds the 500000-byte local collection limit"
+    },
+    {
+      "rule_id": "SCAN-COVERAGE-001",
+      "file_path": "docs/evaluation/realworld-2026-11-12/prior-unit-index.json",
+      "reason": "File exceeds the 500000-byte local collection limit"
+    }
+  ],
+  "api_delivery_added_after_smoke": "7816f4d; analysis and CLI unchanged"
+}

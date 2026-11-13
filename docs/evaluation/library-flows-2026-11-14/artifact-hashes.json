@@ -1,0 +1,26 @@
+{
+  "algorithm": "sha256",
+  "representation": "UTF-8 with LF-normalized line endings",
+  "files": {
+    "configured-no-sanitizers.json": "885c2a41c2b18a75c19c319a0940f4fe36c4e94e8b8b73bb3a498ed07b524ea4",
+    "configured.json": "09ba75e48e5e9b5881ec0141977e55902f7f11aae5f2a8313f431d4131a188bf",
+    "default.json": "f71ef5be835eb3a8c702ec44498b0ef9854115da6c46f5c10b64d53df1a785fc",
+    "development.json": "2c812757173272c607839d7b0f2e4e19fb0a3bdf90db758ac3e656bf9e62eeec",
+    "entrypoint-models.json": "48ed37e34f386ce80984840f34a7e32034ca90eb22731fb2d654eb76bc6c4e99",
+    "freeze-history.json": "8bb5b20fde84daac9cc3e8eb14aa4e184483553d4e43637760f7f1bd54a5096e",
+    "initial-freeze-no-sanitizers.json": "4ad124c1b77c44e3f8820f9eafeaea7bd9fe289889597cc300b645432dcef599",
+    "initial-workingtree-timeout.json": "f357f03e0d3d83769d0f6d94ac0df57ab93e6699bd3886ba4ac123e7dd91f187",
+    "intermediate-offline-selfscan.json": "8f77ef431cb187e29972087b23969cb9314a545fddd06179052b61e696054d8b",
+    "offline-self-inputs.json": "02d68b5984eb449876c21858aa8a8a194bcca9d18f67b31046a9368d0885c5a3",
+    "offline-selfscan.json": "aaf80c3862658325158828c940aeefaff6d00be2324b1df0a2036791c0ebed17",
+    "original-delivery-fixture.html": "67916cb80bafbe880966ca3643bd2e974607948f124d39e5f43cddb1c67e0ba7",
+    "original-delivery-fixture.json": "849e411dd566c2ef60c5e26114775ce9433b4131aacd29eb93460067c14c1ea9",
+    "original-delivery-fixture.sarif": "e2a91a2b072d10534760496e1a4b54da02af2009a16fcc4c4d9a0815f4480aa8",
+    "PROTOCOL.md": "ebb056ee32c034dbcafa1fde073e83fb0963e8a3320b15b1b5a3fe59545cc855",
+    "pysastbench.json": "65479788a5cd9dbaa70ff2241ad960d88e18c3bbf748a772aca0956366d85870",
+    "README.md": "10a98ea6d0555d57bfcc904afd19eefc0e2c31aefeaca0fbf70f3d2154a68358",
+    "summary.json": "8c718bc8565fd4d0f7cb79094b12c03f4da195457d8aca40181e2b5f148b2c66",
+    "test.json": "52b5e2e95464c57928b812321db429bbd55e0c17befbf7e63b406f60ba8afb79",
+    "validation.json": "b95b40cf9047ac3f278d6ca9078216d24c8a28434e14019a5e2cc667ef3d9036"
+  }
+}

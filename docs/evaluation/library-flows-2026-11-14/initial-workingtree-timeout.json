@@ -1,0 +1,14 @@
+{
+  "implementation_revision": "f1831348df10b12036c629ba76b67511f60baf72",
+  "target": "working tree with uncommitted evaluation outputs",
+  "modules": [
+    "sast",
+    "ai",
+    "agentic"
+  ],
+  "limit_seconds": 120,
+  "status": "timeout",
+  "exception": "subprocess.TimeoutExpired",
+  "target_code_executed": false,
+  "interpretation": "Captured first working-tree smoke failure. No completed output or reliable scan timing was produced; source inventory was not retained."
+}

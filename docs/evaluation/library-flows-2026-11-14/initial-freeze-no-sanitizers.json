@@ -1,0 +1,723 @@
+{
+  "implementation_revision": "f1831348df10b12036c629ba76b67511f60baf72",
+  "source_guided_development": true,
+  "new_holdout": false,
+  "independent_labels": false,
+  "original_function_hash_checks": 38,
+  "matching": "Original upstream CWE/function spans unchanged; configured advisory findings are not confirmed real-world detections.",
+  "records": [
+    {
+      "cve_id": "CVE-2020-15278",
+      "repository": "cog-creators/red-discordbot",
+      "role": "vul_func",
+      "revision": "21f9a6f0b6614ce350d0643b36df9f38885e01e8",
+      "path": "redbot/cogs/mod/kickban.py",
+      "url": "https://github.com/Cog-Creators/Red-DiscordBot/blob/21f9a6f0b6614ce350d0643b36df9f38885e01e8/redbot/cogs/mod/kickban.py",
+      "source_sha256": "e597b3d84eee9a02218260afe04275ce14b706d4a2d514dee6479d3c93d3ff09",
+      "github_blob_sha": "88b9e0537fac91dd1938aae0b8911a4e45c904c2",
+      "bytes": 34172,
+      "units": [
+        {
+          "start_line": 369,
+          "end_line": 514,
+          "expected_sha256": "e42adac874f4df1c2c346edfcd473453826d4a437ddeef6ca121311ad1cf6b40",
+          "actual_sha256": "e42adac874f4df1c2c346edfcd473453826d4a437ddeef6ca121311ad1cf6b40"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2020-15278",
+      "repository": "cog-creators/red-discordbot",
+      "role": "fix_func",
+      "revision": "726bfd38adfdfaef760412a68e01447b470f438b",
+      "path": "redbot/cogs/mod/kickban.py",
+      "url": "https://github.com/Cog-Creators/Red-DiscordBot/blob/726bfd38adfdfaef760412a68e01447b470f438b/redbot/cogs/mod/kickban.py",
+      "source_sha256": "36c5921794d5f338593971ed812d64766944026b664c2809486099a988d5257b",
+      "github_blob_sha": "56370a47882d907cd322e63b34d2eda59e2086b1",
+      "bytes": 34668,
+      "units": [
+        {
+          "start_line": 369,
+          "end_line": 527,
+          "expected_sha256": "d2c3d5df59280ab47dee49f85e44a3fedf9be0a28bda13b876e31ce951441a68",
+          "actual_sha256": "d2c3d5df59280ab47dee49f85e44a3fedf9be0a28bda13b876e31ce951441a68"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2021-21360",
+      "repository": "zopefoundation/products.genericsetup",
+      "role": "vul_func",
+      "revision": "835c1ac23e18b7b6f8b7facd5caebe0e997d3500",
+      "path": "src/Products/GenericSetup/context.py",
+      "url": "https://github.com/zopefoundation/Products.GenericSetup/blob/835c1ac23e18b7b6f8b7facd5caebe0e997d3500/src/Products/GenericSetup/context.py",
+      "source_sha256": "54688f33befeccf88474e5e3851c66d53ad58ea41c65514cd6905d128142276c",
+      "github_blob_sha": "1c8ba1dc20fc7935618c8cbf656a1bcfbdf92b28",
+      "bytes": 20078,
+      "units": [
+        {
+          "start_line": 482,
+          "end_line": 501,
+          "expected_sha256": "9bdbf2194fa57d81cd54298a1ae15cfd5e0d0243eb83c779a151ee1a1a3c43e1",
+          "actual_sha256": "9bdbf2194fa57d81cd54298a1ae15cfd5e0d0243eb83c779a151ee1a1a3c43e1"
+        },
+        {
+          "start_line": 547,
+          "end_line": 565,
+          "expected_sha256": "ff7457c7329d539f8f2b3e56194939b8b1f7861f7cb30b7e86dddf04e05fd2e4",
+          "actual_sha256": "ff7457c7329d539f8f2b3e56194939b8b1f7861f7cb30b7e86dddf04e05fd2e4"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2021-21360",
+      "repository": "zopefoundation/products.genericsetup",
+      "role": "fix_func",
+      "revision": "700319512b3615b3871a1f24e096cf66dc488c57",
+      "path": "src/Products/GenericSetup/context.py",
+      "url": "https://github.com/zopefoundation/Products.GenericSetup/blob/700319512b3615b3871a1f24e096cf66dc488c57/src/Products/GenericSetup/context.py",
+      "source_sha256": "f53a0056fdb3eeee16653030f295b64169a05b4dd75080d17050a673fa951011",
+      "github_blob_sha": "9977929a3d3dacc96a87232e445429a5ca8198db",
+      "bytes": 20481,
+      "units": [
+        {
+          "start_line": 483,
+          "end_line": 506,
+          "expected_sha256": "a7e6ea34c2f92a66aed029f3d87856b4ca6505fb27d33ff086e874175e046bb8",
+          "actual_sha256": "a7e6ea34c2f92a66aed029f3d87856b4ca6505fb27d33ff086e874175e046bb8"
+        },
+        {
+          "start_line": 552,
+          "end_line": 572,
+          "expected_sha256": "0c6a9a129987fac9fe8ff14640f5ca12a7c1d1ba3ee3e611ce87c4cb95141fd0",
+          "actual_sha256": "0c6a9a129987fac9fe8ff14640f5ca12a7c1d1ba3ee3e611ce87c4cb95141fd0"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2021-23727",
+      "repository": "celery/celery",
+      "role": "vul_func",
+      "revision": "2d8dbc2a8087bbb60590465031ebd5138b8eb359",
+      "path": "celery/backends/base.py",
+      "url": "https://github.com/celery/celery/blob/2d8dbc2a8087bbb60590465031ebd5138b8eb359/celery/backends/base.py",
+      "source_sha256": "3e44e36a48179f1f556e35dc8d5b2e784c258fa2885cee085d34b63507f0bc0f",
+      "github_blob_sha": "ffbd1d0307c929988a44eacdd73185a3f6728c24",
+      "bytes": 41080,
+      "units": [
+        {
+          "start_line": 339,
+          "end_line": 369,
+          "expected_sha256": "8960001fa6782a834464c72cd6a5e393f4a7d56ec1f3f6571d97e625fb7e5d80",
+          "actual_sha256": "8960001fa6782a834464c72cd6a5e393f4a7d56ec1f3f6571d97e625fb7e5d80"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2021-23727",
+      "repository": "celery/celery",
+      "role": "fix_func",
+      "revision": "1f7ad7e6df1e02039b6ab9eec617d283598cad6b",
+      "path": "celery/backends/base.py",
+      "url": "https://github.com/celery/celery/blob/1f7ad7e6df1e02039b6ab9eec617d283598cad6b/celery/backends/base.py",
+      "source_sha256": "8398787e48203bc68a3a0c964756d5e684d23925d08406f7bc5e91008d854ce3",
+      "github_blob_sha": "094cbf869219a08d2312397179ca9462ac679d20",
+      "bytes": 42706,
+      "units": [
+        {
+          "start_line": 340,
+          "end_line": 409,
+          "expected_sha256": "b4925d06f9d93d93e5d0f6c9948d3b1a704282f1de7f8e2a0cdde054960b266e",
+          "actual_sha256": "b4925d06f9d93d93e5d0f6c9948d3b1a704282f1de7f8e2a0cdde054960b266e"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2021-39163",
+      "repository": "matrix-org/synapse",
+      "role": "vul_func",
+      "revision": "52c7a51cfc568ed61d800df99dcca25dc3b5fe3e",
+      "path": "synapse/groups/groups_server.py",
+      "url": "https://github.com/matrix-org/synapse/blob/52c7a51cfc568ed61d800df99dcca25dc3b5fe3e/synapse/groups/groups_server.py",
+      "source_sha256": "3ce3412d69c52bf22e20c20292b4198bb00c2742858789a3c6a50d4c1eda1866",
+      "github_blob_sha": "3dc55ab861a50d3d2dbb523d741364ecf8c483d1",
+      "bytes": 35068,
+      "units": [
+        {
+          "start_line": 321,
+          "end_line": 357,
+          "expected_sha256": "dc50755cadf25142e0f4e238c9f500d6ac486d7392128cf966cc90aa3fd0a4ad",
+          "actual_sha256": "dc50755cadf25142e0f4e238c9f500d6ac486d7392128cf966cc90aa3fd0a4ad"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2021-39163",
+      "repository": "matrix-org/synapse",
+      "role": "fix_func",
+      "revision": "cb35df940a828bc40b96daed997b5ad4c7842fd3",
+      "path": "synapse/groups/groups_server.py",
+      "url": "https://github.com/matrix-org/synapse/blob/cb35df940a828bc40b96daed997b5ad4c7842fd3/synapse/groups/groups_server.py",
+      "source_sha256": "6255ecddf15291bc99582afb20f2e73a09159eabadb040f026dbfa7830b712a8",
+      "github_blob_sha": "d6b75ac27f153058e51191dea96b4eae033555f5",
+      "bytes": 35786,
+      "units": [
+        {
+          "start_line": 321,
+          "end_line": 371,
+          "expected_sha256": "2dac360b03e71914e5d0ef58c894ca6bbc2af0dfe7744ded02354e3d293b16d9",
+          "actual_sha256": "2dac360b03e71914e5d0ef58c894ca6bbc2af0dfe7744ded02354e3d293b16d9"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2022-29217",
+      "repository": "jpadilla/pyjwt",
+      "role": "vul_func",
+      "revision": "24b29adfebcb4f057a3cef5aaf35653bc0c1c8cc",
+      "path": "jwt/algorithms.py",
+      "url": "https://github.com/jpadilla/pyjwt/blob/24b29adfebcb4f057a3cef5aaf35653bc0c1c8cc/jwt/algorithms.py",
+      "source_sha256": "c9e8948582e58998172687e072784b757fe8ed67aa90c1eca8182b37702f1cb0",
+      "github_blob_sha": "739df808f00e5bb3d2e9474117e99b05479be90e",
+      "bytes": 22388,
+      "units": [
+        {
+          "start_line": 183,
+          "end_line": 199,
+          "expected_sha256": "4e2318015eb605a1d79e07f2c71ef284e570f271ac29964f6f200ae9813a3030",
+          "actual_sha256": "4e2318015eb605a1d79e07f2c71ef284e570f271ac29964f6f200ae9813a3030"
+        },
+        {
+          "start_line": 553,
+          "end_line": 573,
+          "expected_sha256": "8c9febdc28aa3419d8e31c3a8116c08ab1a17557f66483e3a692720bdbeec883",
+          "actual_sha256": "8c9febdc28aa3419d8e31c3a8116c08ab1a17557f66483e3a692720bdbeec883"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2022-29217",
+      "repository": "jpadilla/pyjwt",
+      "role": "fix_func",
+      "revision": "9c528670c455b8d948aff95ed50e22940d1ad3fc",
+      "path": "jwt/algorithms.py",
+      "url": "https://github.com/jpadilla/pyjwt/blob/9c528670c455b8d948aff95ed50e22940d1ad3fc/jwt/algorithms.py",
+      "source_sha256": "e1cf03fe47b4379ca48ba8b4ef30b3893ef4df04957fb09489b424a803d3012f",
+      "github_blob_sha": "46a1a532e75af58fd596c5e3124068206188c66b",
+      "bytes": 22392,
+      "units": [
+        {
+          "start_line": 185,
+          "end_line": 194,
+          "expected_sha256": "38509aafe54a5e4d6029fabd76fd4f5e25bf4ff4085603d0ea06293396b69eaa",
+          "actual_sha256": "38509aafe54a5e4d6029fabd76fd4f5e25bf4ff4085603d0ea06293396b69eaa"
+        },
+        {
+          "start_line": 548,
+          "end_line": 570,
+          "expected_sha256": "9cd78a94bb99e68772d71655b6b5398327102a48b5f4ac7e700d9d9bb4e82b10",
+          "actual_sha256": "9cd78a94bb99e68772d71655b6b5398327102a48b5f4ac7e700d9d9bb4e82b10"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2022-29217",
+      "repository": "jpadilla/pyjwt",
+      "role": "fix_func",
+      "revision": "9c528670c455b8d948aff95ed50e22940d1ad3fc",
+      "path": "jwt/utils.py",
+      "url": "https://github.com/jpadilla/pyjwt/blob/9c528670c455b8d948aff95ed50e22940d1ad3fc/jwt/utils.py",
+      "source_sha256": "d03019f4703a16b196dbc88a717a79eea1b2191f89630600060165f1be11cd27",
+      "github_blob_sha": "8ab73b42d32f0e8f4f6b85756e8f0261aaf60418",
+      "bytes": 3993,
+      "units": [
+        {
+          "start_line": 101,
+          "end_line": 130,
+          "expected_sha256": "e04c86b561f027de131d9c6f515f278340c0655ea9eb9f0aa9e14fdc5d8d4f6a",
+          "actual_sha256": "e04c86b561f027de131d9c6f515f278340c0655ea9eb9f0aa9e14fdc5d8d4f6a"
+        },
+        {
+          "start_line": 133,
+          "end_line": 147,
+          "expected_sha256": "504b258458ac37d7848d4d50ee4e9260383023e52fe148b06a84717b74a52a19",
+          "actual_sha256": "504b258458ac37d7848d4d50ee4e9260383023e52fe148b06a84717b74a52a19"
+        },
+        {
+          "start_line": 150,
+          "end_line": 160,
+          "expected_sha256": "1cdaa782506d350c88e1376417e830ac41b107f9d0739ac2753a83a846f4da9d",
+          "actual_sha256": "1cdaa782506d350c88e1376417e830ac41b107f9d0739ac2753a83a846f4da9d"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-32303",
+      "repository": "planetlabs/planet-client-python",
+      "role": "vul_func",
+      "revision": "9783607b2d79496f912f2da9ec60084fa43438ed",
+      "path": "planet/auth.py",
+      "url": "https://github.com/planetlabs/planet-client-python/blob/9783607b2d79496f912f2da9ec60084fa43438ed/planet/auth.py",
+      "source_sha256": "7de61901a4826b5ceb937577ea824459ab726da684999a0b85ee249922978b81",
+      "github_blob_sha": "e50f1afc64815c88bdaba223c85f2a535ad964ab",
+      "bytes": 7489,
+      "units": [
+        {
+          "start_line": 229,
+          "end_line": 230,
+          "expected_sha256": "14b1e72692b11e77915c4614d6dbfbeb4d3aeed1a9fe5f78b8c7922f1942f476",
+          "actual_sha256": "14b1e72692b11e77915c4614d6dbfbeb4d3aeed1a9fe5f78b8c7922f1942f476"
+        },
+        {
+          "start_line": 241,
+          "end_line": 244,
+          "expected_sha256": "4f591e0441fa2649bbf8324946d00fee0028cbed8de8eee7942cbc3f527e8514",
+          "actual_sha256": "4f591e0441fa2649bbf8324946d00fee0028cbed8de8eee7942cbc3f527e8514"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-32303",
+      "repository": "planetlabs/planet-client-python",
+      "role": "fix_func",
+      "revision": "d71415a83119c5e89d7b80d5f940d162376ee3b7",
+      "path": "planet/auth.py",
+      "url": "https://github.com/planetlabs/planet-client-python/blob/d71415a83119c5e89d7b80d5f940d162376ee3b7/planet/auth.py",
+      "source_sha256": "1bc0e3b5acac48bdfa4839e3632535ce69d28e46405a2b51935252251fc59acd",
+      "github_blob_sha": "d43e84f3cd4b1beb730495923cb2b03c0696203d",
+      "bytes": 8625,
+      "units": [
+        {
+          "start_line": 230,
+          "end_line": 238,
+          "expected_sha256": "ff0630caea0ffd5ff5bcc7426aa0aaf72cfee1de2887cd63fe68242ccf584c09",
+          "actual_sha256": "ff0630caea0ffd5ff5bcc7426aa0aaf72cfee1de2887cd63fe68242ccf584c09"
+        },
+        {
+          "start_line": 249,
+          "end_line": 256,
+          "expected_sha256": "a5d24350f8fd9b0eee228a70c89a32bb053e1c858530eefdc99dc5c27672f6fb",
+          "actual_sha256": "a5d24350f8fd9b0eee228a70c89a32bb053e1c858530eefdc99dc5c27672f6fb"
+        },
+        {
+          "start_line": 264,
+          "end_line": 276,
+          "expected_sha256": "f11c95fef9a6b82cda446c7e558df5c548ef81cfd92bd6ac44677c6df34d6418",
+          "actual_sha256": "f11c95fef9a6b82cda446c7e558df5c548ef81cfd92bd6ac44677c6df34d6418"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-34457",
+      "repository": "mechanicalsoup/mechanicalsoup",
+      "role": "vul_func",
+      "revision": "b9c8a0c48e44d70b9128a8e0befa3a50df0e4b58",
+      "path": "mechanicalsoup/browser.py",
+      "url": "https://github.com/MechanicalSoup/MechanicalSoup/blob/b9c8a0c48e44d70b9128a8e0befa3a50df0e4b58/mechanicalsoup/browser.py",
+      "source_sha256": "0af4342227f6f1a8b4d08e1afa2f019a6a4b81b05b29d90180ede8f02109eb99",
+      "github_blob_sha": "285f8bb9ca0e25f747534d38416a354e77fd4e7b",
+      "bytes": 14822,
+      "units": [
+        {
+          "start_line": 187,
+          "end_line": 293,
+          "expected_sha256": "ed846a078880e976252dca854ad2c8a4180e8af6e995ea7466f228c964876f25",
+          "actual_sha256": "ed846a078880e976252dca854ad2c8a4180e8af6e995ea7466f228c964876f25"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [
+        {
+          "file_path": "mechanicalsoup/browser.py",
+          "line_number": 234,
+          "rule_id": "PY-SAST-PATH-001",
+          "cwe": "CWE-22",
+          "severity": "HIGH",
+          "confidence": "medium",
+          "maturity": "advisory",
+          "evidence_kind": "configured-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "mechanicalsoup/browser.py",
+              "line_number": 188
+            },
+            {
+              "role": "sink",
+              "file_path": "mechanicalsoup/browser.py",
+              "line_number": 234
+            }
+          ],
+          "fingerprint": "62b6c355bba54fe84584d53a",
+          "description": "External input from line 188 reaches a file operation without an observed path boundary. Conditional on configured entrypoint trust boundary: Application/browser contract: this form may originate in remote HTML; caller reachability and server control are unverified.. Caller reachability is not established by this scan."
+        }
+      ],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-34457",
+      "repository": "mechanicalsoup/mechanicalsoup",
+      "role": "vul_func",
+      "revision": "b9c8a0c48e44d70b9128a8e0befa3a50df0e4b58",
+      "path": "mechanicalsoup/form.py",
+      "url": "https://github.com/MechanicalSoup/MechanicalSoup/blob/b9c8a0c48e44d70b9128a8e0befa3a50df0e4b58/mechanicalsoup/form.py",
+      "source_sha256": "5815d8b13cacfe2cf18050b74907b753cf151d67aa66c4458760e46a7007b060",
+      "github_blob_sha": "a67195c789272c2582818da1b4013154702d6e06",
+      "bytes": 15664,
+      "units": [
+        {
+          "start_line": 242,
+          "end_line": 281,
+          "expected_sha256": "04b17b3c1eae11750ca9d4f4da60facfe732a55932a46a13b4495d9c2ef2ada4",
+          "actual_sha256": "04b17b3c1eae11750ca9d4f4da60facfe732a55932a46a13b4495d9c2ef2ada4"
+        },
+        {
+          "start_line": 283,
+          "end_line": 304,
+          "expected_sha256": "44222db50fdd477ee1b2a4b0cd49cbab19568f6042c7fa963be384e3c177fc54",
+          "actual_sha256": "44222db50fdd477ee1b2a4b0cd49cbab19568f6042c7fa963be384e3c177fc54"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-34457",
+      "repository": "mechanicalsoup/mechanicalsoup",
+      "role": "fix_func",
+      "revision": "d57c4a269bba3b9a0c5bfa20292955b849006d9e",
+      "path": "mechanicalsoup/browser.py",
+      "url": "https://github.com/MechanicalSoup/MechanicalSoup/blob/d57c4a269bba3b9a0c5bfa20292955b849006d9e/mechanicalsoup/browser.py",
+      "source_sha256": "57dfab69639c9144a0c91ce939cd67fb21e9a01be07a8ee4c9c9c6a0a8ce181e",
+      "github_blob_sha": "dda98d97d146664f1f7f7c6fd1e030cb7d752fc7",
+      "bytes": 14987,
+      "units": [
+        {
+          "start_line": 188,
+          "end_line": 296,
+          "expected_sha256": "4f477cf4cbcd3c5ccedef6755c997e6e2c3a855337253dd0420ef174e93039cc",
+          "actual_sha256": "4f477cf4cbcd3c5ccedef6755c997e6e2c3a855337253dd0420ef174e93039cc"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-34457",
+      "repository": "mechanicalsoup/mechanicalsoup",
+      "role": "fix_func",
+      "revision": "d57c4a269bba3b9a0c5bfa20292955b849006d9e",
+      "path": "mechanicalsoup/form.py",
+      "url": "https://github.com/MechanicalSoup/MechanicalSoup/blob/d57c4a269bba3b9a0c5bfa20292955b849006d9e/mechanicalsoup/form.py",
+      "source_sha256": "5b34fb148def3ccd3c7cefb1af784d1be161055190950389a38341ac4c749c3f",
+      "github_blob_sha": "42b69498ab9fa9c1d601f557eaed14da77dd3b7a",
+      "bytes": 16470,
+      "units": [
+        {
+          "start_line": 244,
+          "end_line": 283,
+          "expected_sha256": "dbc078463ff6dc86d850d5bd29d50ca1d10a6d2066ead249c9907d9d08eed266",
+          "actual_sha256": "dbc078463ff6dc86d850d5bd29d50ca1d10a6d2066ead249c9907d9d08eed266"
+        },
+        {
+          "start_line": 285,
+          "end_line": 307,
+          "expected_sha256": "ad8587457e0dccfabf2623d73bf4c9d44f7968b204240c37e6c4dc802feeab7b",
+          "actual_sha256": "ad8587457e0dccfabf2623d73bf4c9d44f7968b204240c37e6c4dc802feeab7b"
+        },
+        {
+          "start_line": 390,
+          "end_line": 402,
+          "expected_sha256": "76449c28fbf77be5e49f07baff3fa9ebea204c6dca8247006d75ad380f90214f",
+          "actual_sha256": "76449c28fbf77be5e49f07baff3fa9ebea204c6dca8247006d75ad380f90214f"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-34457",
+      "repository": "mechanicalsoup/mechanicalsoup",
+      "role": "fix_func",
+      "revision": "d57c4a269bba3b9a0c5bfa20292955b849006d9e",
+      "path": "mechanicalsoup/utils.py",
+      "url": "https://github.com/MechanicalSoup/MechanicalSoup/blob/d57c4a269bba3b9a0c5bfa20292955b849006d9e/mechanicalsoup/utils.py",
+      "source_sha256": "1eb4d3c44e78482f62a0113c69b0bf87ee08097d5e2e551509cd5abfeb3a573c",
+      "github_blob_sha": "18bef219a0a2b2fc7856768fcb1edf1f830d5be8",
+      "bytes": 707,
+      "units": [
+        {
+          "start_line": 19,
+          "end_line": 23,
+          "expected_sha256": "c0f1dbbef0c9392e5d8bc214c5b97e4c7f4adfed7cab5c9531241ee9282751a8",
+          "actual_sha256": "c0f1dbbef0c9392e5d8bc214c5b97e4c7f4adfed7cab5c9531241ee9282751a8"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-49736",
+      "repository": "apache/superset",
+      "role": "vul_func",
+      "revision": "2f468900c87c6d384d928815cf85e572215b81c5",
+      "path": "superset/jinja_context.py",
+      "url": "https://github.com/apache/superset/blob/2f468900c87c6d384d928815cf85e572215b81c5/superset/jinja_context.py",
+      "source_sha256": "8ce2d455648c4d88f5b58e0bc9c77305e9a841b111df41f2d31aad28ffc94c1b",
+      "github_blob_sha": "4bb0b91a4e3db57377a83533b3bc271a3faaeba7",
+      "bytes": 23125,
+      "units": [
+        {
+          "start_line": 400,
+          "end_line": 416,
+          "expected_sha256": "ae99d9e373c431e63d13e75b1eb4867b7145e42244bc5da9c55172fc506bbeff",
+          "actual_sha256": "ae99d9e373c431e63d13e75b1eb4867b7145e42244bc5da9c55172fc506bbeff"
+        },
+        {
+          "start_line": 427,
+          "end_line": 452,
+          "expected_sha256": "12c469d772efac5f929d17697043e3211094e19030641f7f63eac2f5715671f7",
+          "actual_sha256": "12c469d772efac5f929d17697043e3211094e19030641f7f63eac2f5715671f7"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2023-49736",
+      "repository": "apache/superset",
+      "role": "fix_func",
+      "revision": "1d403dab9822a8cee6108669c53e53fad881c751",
+      "path": "superset/jinja_context.py",
+      "url": "https://github.com/apache/superset/blob/1d403dab9822a8cee6108669c53e53fad881c751/superset/jinja_context.py",
+      "source_sha256": "9d3f49b0e2eeb8a2224967a5e750ff08e8a2d68822571f017ab3f4bd2f65458a",
+      "github_blob_sha": "a736b9278ec186dad49e4ac967d53fbfb9819845",
+      "bytes": 23847,
+      "units": [
+        {
+          "start_line": 401,
+          "end_line": 433,
+          "expected_sha256": "04a092eaafebb9d5a20bf8f6a4174225bf0e2058fa95e120dee7fe8e9d71acf4",
+          "actual_sha256": "04a092eaafebb9d5a20bf8f6a4174225bf0e2058fa95e120dee7fe8e9d71acf4"
+        },
+        {
+          "start_line": 444,
+          "end_line": 469,
+          "expected_sha256": "52c837f61755f6f0a17e170b9116761888962164051c68c6c2b77f82104941ce",
+          "actual_sha256": "52c837f61755f6f0a17e170b9116761888962164051c68c6c2b77f82104941ce"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2025-43859",
+      "repository": "python-hyper/h11",
+      "role": "vul_func",
+      "revision": "9462006f6ce4941661888228cbd4ac1ea80689b0",
+      "path": "h11/_readers.py",
+      "url": "https://github.com/python-hyper/h11/blob/9462006f6ce4941661888228cbd4ac1ea80689b0/h11/_readers.py",
+      "source_sha256": "11b49e7748f3c155220f59ce3c07947151381657f7c179317dbf1cd3af8e4c13",
+      "github_blob_sha": "08a9574da4a89d82dfb71b3087b14c8644102dd6",
+      "bytes": 8383,
+      "units": [
+        {
+          "start_line": 149,
+          "end_line": 155,
+          "expected_sha256": "1a7a32a0cc2e48165f4877704e9a762acaa0c962d7dc2088e391b1f27458760f",
+          "actual_sha256": "1a7a32a0cc2e48165f4877704e9a762acaa0c962d7dc2088e391b1f27458760f"
+        },
+        {
+          "start_line": 157,
+          "end_line": 201,
+          "expected_sha256": "acdaab4b51177e7bcefe4f9d2477c9589bdf8c91477d74a42e26a6e0e755e7bd",
+          "actual_sha256": "acdaab4b51177e7bcefe4f9d2477c9589bdf8c91477d74a42e26a6e0e755e7bd"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    },
+    {
+      "cve_id": "CVE-2025-43859",
+      "repository": "python-hyper/h11",
+      "role": "fix_func",
+      "revision": "114803a29ce50116dc47951c690ad4892b1a36ed",
+      "path": "h11/_readers.py",
+      "url": "https://github.com/python-hyper/h11/blob/114803a29ce50116dc47951c690ad4892b1a36ed/h11/_readers.py",
+      "source_sha256": "4f21f8bf9d0de98dcabd5dcfd2b72969eae9a9b2b9b1bf7c80eac58fdc1a2729",
+      "github_blob_sha": "1348565a62c3f3e5fb67497f986cda7e3cd3f680",
+      "bytes": 8588,
+      "units": [
+        {
+          "start_line": 149,
+          "end_line": 154,
+          "expected_sha256": "71f6c16eba52e955066035d5994bed31094d35682ae9f936276f5dd44b3665ee",
+          "actual_sha256": "71f6c16eba52e955066035d5994bed31094d35682ae9f936276f5dd44b3665ee"
+        },
+        {
+          "start_line": 156,
+          "end_line": 204,
+          "expected_sha256": "03582f5bc36c898c78e3979f456b19a9fd308476113f17d963d312c4e38af5ee",
+          "actual_sha256": "03582f5bc36c898c78e3979f456b19a9fd308476113f17d963d312c4e38af5ee"
+        }
+      ],
+      "function_hashes_match": true,
+      "alerts": [],
+      "scanner_errors": [],
+      "reference_matches": []
+    }
+  ],
+  "semantic_developer_units": [
+    {
+      "cve_id": "CVE-2021-23727",
+      "role": "vul_func",
+      "path": "celery/backends/base.py",
+      "rule_id": "PY-SAST-DYNAMIC-CALL-001",
+      "alerts": [],
+      "interpretation": "Provisional author/assistant mechanism unit, conditional on explicit library contract; separate from original CWE matching."
+    },
+    {
+      "cve_id": "CVE-2021-23727",
+      "role": "fix_func",
+      "path": "celery/backends/base.py",
+      "rule_id": "PY-SAST-DYNAMIC-CALL-001",
+      "alerts": [],
+      "interpretation": "Provisional author/assistant mechanism unit, conditional on explicit library contract; separate from original CWE matching."
+    },
+    {
+      "cve_id": "CVE-2023-34457",
+      "role": "vul_func",
+      "path": "mechanicalsoup/browser.py",
+      "rule_id": "PY-SAST-PATH-001",
+      "alerts": [
+        {
+          "file_path": "mechanicalsoup/browser.py",
+          "line_number": 234,
+          "rule_id": "PY-SAST-PATH-001",
+          "cwe": "CWE-22",
+          "severity": "HIGH",
+          "confidence": "medium",
+          "maturity": "advisory",
+          "evidence_kind": "configured-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "mechanicalsoup/browser.py",
+              "line_number": 188
+            },
+            {
+              "role": "sink",
+              "file_path": "mechanicalsoup/browser.py",
+              "line_number": 234
+            }
+          ],
+          "fingerprint": "62b6c355bba54fe84584d53a",
+          "description": "External input from line 188 reaches a file operation without an observed path boundary. Conditional on configured entrypoint trust boundary: Application/browser contract: this form may originate in remote HTML; caller reachability and server control are unverified.. Caller reachability is not established by this scan."
+        }
+      ],
+      "interpretation": "Provisional author/assistant mechanism unit, conditional on explicit library contract; separate from original CWE matching."
+    },
+    {
+      "cve_id": "CVE-2023-34457",
+      "role": "fix_func",
+      "path": "mechanicalsoup/browser.py",
+      "rule_id": "PY-SAST-PATH-001",
+      "alerts": [],
+      "interpretation": "Provisional author/assistant mechanism unit, conditional on explicit library contract; separate from original CWE matching."
+    }
+  ],
+  "summary": {
+    "snapshots": 22,
+    "scanner_errors": 0,
+    "input_errors": 0,
+    "label_errors": 0,
+    "whole_file_alerts": 1,
+    "vulnerable": {
+      "total_cases": 9,
+      "hash_verified_cases": 9,
+      "reference_match_cases": [],
+      "reference_match_count": 0,
+      "no_reference_match_count": 9,
+      "excluded_error_cases": []
+    },
+    "patched": {
+      "total_cases": 9,
+      "hash_verified_cases": 9,
+      "reference_match_cases": [],
+      "reference_match_count": 0,
+      "no_reference_match_count": 9,
+      "excluded_error_cases": []
+    },
+    "semantic_unsafe_cases_with_conditional_evidence": [
+      "CVE-2023-34457"
+    ],
+    "semantic_patched_cases_with_conditional_evidence": []
+  }
+}

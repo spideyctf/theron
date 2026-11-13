@@ -1,0 +1,178 @@
+{
+  "repo_full_name": "owner/project",
+  "branch": "main",
+  "findings": [
+    {
+      "title": "Untrusted selection controls an invoked module attribute",
+      "severity": "HIGH",
+      "category": "sast",
+      "module": "sast",
+      "description": "Observed untrusted data selects a module or attribute that is subsequently invoked. Allowed targets and runtime permissions determine the impact; this is not a confirmed exploit. Conditional on configured entrypoint trust boundary: Caller supplies an untrusted operation record. Caller reachability is not established by this scan.",
+      "file_path": "server.py",
+      "line_number": 5,
+      "code_snippet": "3: def convert(record):\n5:     return operation(record['argument'])",
+      "recommendation": "Use a fixed dispatch allowlist. For exception reconstruction, constrain the target to an intended exception class before instantiation.",
+      "cwe": "CWE-94",
+      "confidence": "medium",
+      "rule_id": "PY-SAST-DYNAMIC-CALL-001",
+      "references": [],
+      "fingerprint": "c8d3b0560f6ba7932353b6a6",
+      "maturity": "advisory",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "configured-flow",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": [
+        {
+          "role": "source",
+          "file_path": "server.py",
+          "line_number": 3
+        },
+        {
+          "role": "sink",
+          "file_path": "server.py",
+          "line_number": 5
+        }
+      ]
+    },
+    {
+      "title": "Untrusted selection controls an invoked module attribute",
+      "severity": "HIGH",
+      "category": "sast",
+      "module": "sast",
+      "description": "Observed untrusted data selects a module or attribute that is subsequently invoked. Allowed targets and runtime permissions determine the impact; this is not a confirmed exploit.",
+      "file_path": "server.py",
+      "line_number": 8,
+      "code_snippet": "7:     operation=getattr(os,request.args['operation'])\n8:     return operation(request.args['argument'])",
+      "recommendation": "Use a fixed dispatch allowlist. For exception reconstruction, constrain the target to an intended exception class before instantiation.",
+      "cwe": "CWE-94",
+      "confidence": "high",
+      "rule_id": "PY-SAST-DYNAMIC-CALL-001",
+      "references": [],
+      "fingerprint": "13fbe0e9c49c9ad254658525",
+      "maturity": "stable",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "static-flow",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": [
+        {
+          "role": "source",
+          "file_path": "server.py",
+          "line_number": 7
+        },
+        {
+          "role": "sink",
+          "file_path": "server.py",
+          "line_number": 8
+        }
+      ]
+    }
+  ],
+  "files_scanned": 2,
+  "modules_run": [
+    "sast"
+  ],
+  "sbom": null,
+  "scan_duration_seconds": 0.0,
+  "summary": {
+    "repo": "owner/project",
+    "branch": "main",
+    "files_scanned": 2,
+    "total_findings": 2,
+    "context_findings": 0,
+    "vulnerability_findings": 2,
+    "by_severity": {
+      "HIGH": 2
+    },
+    "modules_run": [
+      "sast"
+    ],
+    "scan_duration_seconds": 0.0
+  },
+  "project_profile": null,
+  "context_findings": [],
+  "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "correlation_enabled": true,
+  "correlation_groups": [
+    {
+      "id": "mcp-flow-1c8a3d076e9258b025b703f5",
+      "title": "Declared MCP entrypoint contains a supported code flow",
+      "scope": "application",
+      "classification": "inferred",
+      "maturity": "experimental",
+      "finding_fingerprints": [
+        "13fbe0e9c49c9ad254658525"
+      ],
+      "limitations": [
+        "Workspace binding is inferred from the configuration location, not verified in a running MCP client.",
+        "Code presence and static flow do not establish startup or callback reachability.",
+        "Network exposure, authentication, effective privileges and exploitability remain unknown.",
+        "No declared command or scanned module was executed. Groups do not add vulnerability counts or severity."
+      ],
+      "relationships": [
+        {
+          "kind": "declares_entrypoint",
+          "source": {
+            "kind": "configuration",
+            "file_path": ".vscode/mcp.json",
+            "pointer": "/servers/local"
+          },
+          "target": {
+            "kind": "file",
+            "file_path": "server.py"
+          },
+          "classification": "inferred",
+          "evidence": [
+            {
+              "file_path": ".vscode/mcp.json",
+              "pointer": "/servers/local/args"
+            }
+          ]
+        },
+        {
+          "kind": "entrypoint_contains_flow",
+          "source": {
+            "kind": "file",
+            "file_path": "server.py"
+          },
+          "target": {
+            "kind": "finding",
+            "fingerprint": "13fbe0e9c49c9ad254658525"
+          },
+          "classification": "observed",
+          "evidence": [
+            {
+              "role": "source",
+              "file_path": "server.py",
+              "line_number": 7
+            },
+            {
+              "role": "sink",
+              "file_path": "server.py",
+              "line_number": 8
+            }
+          ],
+          "confidence": "high",
+          "maturity": "stable"
+        }
+      ]
+    }
+  ],
+  "correlation_resolutions": [
+    {
+      "config_file": ".vscode/mcp.json",
+      "pointer": "/servers/local",
+      "status": "resolved",
+      "reason": "workspace_binding_inferred",
+      "entrypoint": "server.py",
+      "classification": "inferred",
+      "scope": "application",
+      "group_ids": [
+        "mcp-flow-1c8a3d076e9258b025b703f5"
+      ]
+    }
+  ]
+}

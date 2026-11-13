@@ -39,7 +39,8 @@ export interface ScanJob {
   error: string | null; result?: ScanResult | null
   correlation_enabled?: boolean
 }
-export interface ScanInput { repository: string; branch: string | null; modules: string[]; include_experimental: boolean; correlation_enabled?: boolean }
+export interface AnalysisEntrypoint { file: string; function: string; parameter: string; reason: string; type?: 'bs4.element.Tag' }
+export interface ScanInput { repository: string; branch: string | null; modules: string[]; include_experimental: boolean; correlation_enabled?: boolean; analysis_entrypoints?: AnalysisEntrypoint[] }
 export interface Health { status: string; github_token_configured: boolean }
 
 async function request<T>(path: string, options?: RequestInit): Promise<T> {

@@ -11,6 +11,12 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 **Platform direction:** Theron's broader goal is unified, evidence-driven security analysis across application code, dependencies, secrets, infrastructure, AI pipelines and agents, with correlation and controlled verification added in stages. The [platform contract, coverage matrix and ranked backlog](docs/PLATFORM.md) distinguish implemented capabilities from experimental and planned work. This vision does not expand the current coverage claims below.
 
+## Latest development: library-boundary flows
+
+**14 November 2026:** [results, configuration and limits](docs/evaluation/library-flows-2026-11-14/README.md). Theron now tracks externally selected module-attribute invocation and known HTTP/HTML content flowing into dangerous operations. Explicit library trust-boundary models work through CLI configuration and the local API; findings retain their assumptions, traces and advisory classification through reports and frontend details.
+
+On exposed code, two declared boundaries produce three conditional findings across the Celery and MechanicalSoup unsafe mechanisms, while their corresponding patched paths stay quiet. Original CWE/span matching counts **1/9 configured cases; unconfigured results remain 0/9**. MechanicalSoup's different semantic CWE stays separate. This is source-guided development, not improved held-out accuracy. All 1,470 synthetic outcomes/alert counts are unchanged. **605 Python tests and 14 frontend tests pass**, and a pinned 273-file offline three-module smoke completes with coverage notices retained. Broad policy/crypto/protocol gaps and independent review remain open.
+
 ## Final real-code and operational evaluation
 
 **13 November 2026:** [frozen results and limitations](docs/evaluation/final-validation-2026-11-13/README.md). The untouched-source final probe matched **0/9 vulnerable reference cases**, with all 22 pinned snapshots and 38 function hashes verified and no scanner/input errors. Grouping available files added no matches. Matched Bandit/Semgrep runs also had zero reference matches, with 10/12 whole-file alerts. This CWE/function-span proxy is not independently adjudicated whole-project accuracy. All nine CVEs have external records, but a second human alert/label review has not occurred. Final source is now exposed; future tuning needs a new holdout.
@@ -75,7 +81,7 @@ See the [frozen protocol](docs/evaluation/owasp-2026-11-12/README.md), [complete
 
 ## PySASTBench tuning benchmark
 
-Re-evaluated **13 November 2026** at flow/delivery freeze `d8fc598`, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). Label-matched counts remain unchanged. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
+Re-evaluated **14 November 2026** at library-flow freeze `6345734`, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). Label-matched counts remain unchanged. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
 
 | Measure | Result |
 | --- | ---: |
@@ -107,14 +113,14 @@ The hash model adds nine alerts outside the labelled CWE/function matches on fix
 
 CWE-77 has one additional unscorable vulnerable label. A perfect result within a small category does not establish complete coverage. The four matched fixed-case alerts remain counted as false positives: manual review found weak path-prefix guards in three and uploaded data passed to `joblib.load` in one.
 
-| Engineering check, 13 November 2026 | Result |
+| Engineering check, 14 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 558 passed; 1 dependency deprecation warning |
-| Frontend tests | 13 passed |
+| Python regression suite | 605 passed; 1 dependency deprecation warning |
+| Frontend tests | 14 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |
 
-Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/flow-completion-2026-11-13/pysastbench.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
+Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/library-flows-2026-11-14/pysastbench.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
 
 The earlier four-module GitHub self-scan of `ff71cf6` analyzed **76 files in 58.24 seconds**, with **1 application informational notice**, **0 application vulnerability alerts**, **18 context detections** and **151 SBOM components**, including **15 unresolved versions**. This historical, single-run smoke test predates the new flow changes; it is not a current throughput benchmark or proof of security. [Self-scan summary](docs/evaluation/2026-11-12/self-scan-summary.json).
 

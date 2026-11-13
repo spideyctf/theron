@@ -1,0 +1,175 @@
+{
+  "implementation_revision": "634573431544a3ef16da99df5fcad35360372971",
+  "source_guided_development": true,
+  "new_heldout_accuracy": false,
+  "independent_human_adjudication": false,
+  "original_final_result_preserved": "4c166e0: 0/9 reference cases",
+  "original_source_snapshots": 22,
+  "original_function_hash_checks": 38,
+  "real_development": {
+    "default": {
+      "snapshots": 22,
+      "scanner_errors": 0,
+      "input_errors": 0,
+      "label_errors": 0,
+      "whole_file_alerts": 0,
+      "vulnerable": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [],
+        "reference_match_count": 0,
+        "no_reference_match_count": 9,
+        "excluded_error_cases": []
+      },
+      "patched": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [],
+        "reference_match_count": 0,
+        "no_reference_match_count": 9,
+        "excluded_error_cases": []
+      },
+      "semantic_unsafe_cases_with_conditional_evidence": [],
+      "semantic_patched_cases_with_conditional_evidence": []
+    },
+    "configured": {
+      "snapshots": 22,
+      "scanner_errors": 0,
+      "input_errors": 0,
+      "label_errors": 0,
+      "whole_file_alerts": 3,
+      "vulnerable": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [
+          "CVE-2021-23727"
+        ],
+        "reference_match_count": 1,
+        "no_reference_match_count": 8,
+        "excluded_error_cases": []
+      },
+      "patched": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [],
+        "reference_match_count": 0,
+        "no_reference_match_count": 9,
+        "excluded_error_cases": []
+      },
+      "semantic_unsafe_cases_with_conditional_evidence": [
+        "CVE-2021-23727",
+        "CVE-2023-34457"
+      ],
+      "semantic_patched_cases_with_conditional_evidence": []
+    },
+    "configured-no-sanitizers": {
+      "snapshots": 22,
+      "scanner_errors": 0,
+      "input_errors": 0,
+      "label_errors": 0,
+      "whole_file_alerts": 5,
+      "vulnerable": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [
+          "CVE-2021-23727"
+        ],
+        "reference_match_count": 1,
+        "no_reference_match_count": 8,
+        "excluded_error_cases": []
+      },
+      "patched": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [
+          "CVE-2021-23727"
+        ],
+        "reference_match_count": 1,
+        "no_reference_match_count": 8,
+        "excluded_error_cases": []
+      },
+      "semantic_unsafe_cases_with_conditional_evidence": [
+        "CVE-2021-23727",
+        "CVE-2023-34457"
+      ],
+      "semantic_patched_cases_with_conditional_evidence": [
+        "CVE-2021-23727"
+      ]
+    }
+  },
+  "synthetic": {
+    "development": {
+      "summary": {
+        "tp": 202,
+        "fn": 77,
+        "fp": 9,
+        "tn": 449,
+        "errors": 0,
+        "precision": 0.957345971563981,
+        "recall": 0.7240143369175627,
+        "f1": 0.8244897959183674,
+        "false_positive_rate": 0.019650655021834062
+      },
+      "case_outcomes_and_alert_counts_unchanged": true
+    },
+    "validation": {
+      "summary": {
+        "tp": 77,
+        "fn": 7,
+        "fp": 0,
+        "tn": 164,
+        "errors": 0,
+        "precision": 1.0,
+        "recall": 0.9166666666666666,
+        "f1": 0.9565217391304348,
+        "false_positive_rate": 0.0
+      },
+      "case_outcomes_and_alert_counts_unchanged": true
+    },
+    "test": {
+      "summary": {
+        "tp": 65,
+        "fn": 24,
+        "fp": 0,
+        "tn": 156,
+        "errors": 0,
+        "precision": 1.0,
+        "recall": 0.7303370786516854,
+        "f1": 0.8441558441558441,
+        "false_positive_rate": 0.0
+      },
+      "case_outcomes_and_alert_counts_unchanged": true
+    },
+    "pysastbench": {
+      "summary": {
+        "tp": 93,
+        "fn": 26,
+        "fp": 4,
+        "tn": 116,
+        "errors": 1,
+        "precision": 0.9587628865979382,
+        "recall": 0.7815126050420168,
+        "false_positive_rate": 0.03333333333333333
+      },
+      "case_outcomes_and_alert_counts_unchanged": true,
+      "fixed_file_alerts": {
+        "files_with_any_alert": 14,
+        "total_alerts": 17,
+        "outside_label_match": 13
+      }
+    }
+  },
+  "original_delivery_fixture": true,
+  "not_a_live_scan": true,
+  "observed_flows_only_in_mcp_associations": true,
+  "checks": {
+    "python_passed": 605,
+    "frontend_passed": 14,
+    "typescript_and_build": "passed",
+    "synthetic_variants_with_unchanged_outcomes": 1470
+  },
+  "remaining_default_reference_matches": 0,
+  "configured_mechanisms_with_evidence": 2,
+  "configured_mechanisms_are_advisory": true,
+  "operational_receipt": "offline-selfscan.json"
+}

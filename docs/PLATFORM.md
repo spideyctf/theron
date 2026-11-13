@@ -180,3 +180,8 @@ The [frozen final evaluation](evaluation/final-validation-2026-11-13/README.md) 
 
 
 **Operational repair after the frozen evaluation:** [verification](evaluation/final-validation-2026-11-13/OPERATIONAL-REPAIR.md). The original 273-file live crash is preserved; a separate guard-state fix at `cfbfb83` passes 558 Python tests and preserves all 1,470 exposed synthetic outcomes. The live rerun completes all four modules in 168.19 seconds, with 151 SBOM components, 15 unresolved versions and three application coverage notices (including analysis-budget exhaustion). This completes a live static transport smoke check, not independent accuracy or production-capacity validation.
+
+
+## Library-flow development checkpoint — 14 November 2026
+
+The [disclosed source-guided increment](evaluation/library-flows-2026-11-14/README.md) adds reflected invocation, known HTTP/HTML content propagation and explicit file/function/parameter boundary models. Configured findings remain advisory `configured-flow` evidence, with reason and caller uncertainty preserved across CLI/API exports and frontend display; they are excluded from observed MCP associations. Untyped parameters are not automatically hostile. Two configured unsafe mechanisms yield three advisories with patched counterparts quiet; original CWE matching counts one configured case while default remains 0/9. This is not independent accuracy. The 1,470 synthetic outcomes remain unchanged; 605 Python and 14 frontend tests pass. Operational failures, subsequent fixes and remaining budget/shape limits are published. Broader policy, crypto, protocol and independent validation requirements remain open.
