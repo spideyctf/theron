@@ -11,6 +11,8 @@ def test_shared_asgi_archive_report_preserves_classifications():
     _,result=build()
     stored=json.loads((Path(__file__).parent/'fixtures/flow-delivery-report.json').read_text())
     assert stored==result.to_dict()
+    from scanner.reporters.html import generate_html_report
+    assert (Path(__file__).parent/'fixtures/flow-delivery-report.html').read_text(encoding='utf-8')==generate_html_report(result)
     assert result.summary['vulnerability_findings']==2
     assert result.summary['total_findings']==3
     assert len(result.correlation_groups)==1

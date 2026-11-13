@@ -5,6 +5,9 @@ import App from './App'
 import { api } from './api'
 import type { ScanJob, ScanResult } from './api'
 import backendReport from '../../tests/fixtures/flow-delivery-report.json'
+import { readFileSync } from 'node:fs'
+
+const generatedHtml = readFileSync('../tests/fixtures/flow-delivery-report.html', 'utf8')
 
 it('displays ASGI and archive flows, their traces and the runtime review notice', async () => {
   const user = userEvent.setup()
@@ -29,4 +32,20 @@ it('displays ASGI and archive flows, their traces and the runtime review notice'
   await user.click(screen.getByRole('tab',{ name:/MCP links/ }))
   expect(screen.getByRole('link',{ name:'Untrusted archive reaches fully-trusted extraction · server.py:15' })).toBeInTheDocument()
   expect(screen.getByRole('link',{ name:'External input controls a filesystem path · server.py:12' })).toBeInTheDocument()
+})
+
+it('renders evidence visibly in the backend-generated standalone HTML export', () => {
+  const reportDocument = document.implementation.createHTMLDocument('Original report fixture')
+  reportDocument.documentElement.innerHTML = generatedHtml
+  const script = reportDocument.querySelector('script')?.textContent
+  expect(script).toBeTruthy()
+  // Execute only our trusted report renderer; scanned fixture source remains JSON/text.
+  new Function('document', script!)(reportDocument)
+  const evidence = reportDocument.querySelectorAll('.finding-evidence')
+  expect(evidence).toHaveLength(3)
+  expect(evidence[0].textContent).toContain('static-flow')
+  expect(evidence[0].textContent).toContain('source: server.py:11')
+  expect(evidence[0].textContent).toContain('sink: server.py:12')
+  expect(evidence[2].textContent).toContain('coverage-notice')
+  expect(evidence[2].textContent).toContain('Maturity: advisory')
 })

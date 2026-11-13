@@ -93,6 +93,7 @@ def generate_html_report(result: ScanResult) -> str:
             <div class="stat-card stat-low"><div class="num">{counts['LOW']}</div><div class="label">Low</div></div>
             <div class="stat-card stat-info"><div class="num">{counts['INFO']}</div><div class="label">Info</div></div>
         </div>
+        <p class="meta">{summary['vulnerability_findings']} non-informational findings; {counts['INFO']} informational review/coverage notices. Static findings require validation.</p>
         <div class="tab-bar">
             <div class="tab active" onclick="switchTab('findings')">Findings ({summary['total_findings']})</div>
             <div class="tab" onclick="switchTab('sbom')">SBOM</div>
@@ -138,8 +139,11 @@ def generate_html_report(result: ScanResult) -> str:
                         <span class="badge badge-category">${{f.category}}</span>
                         <span class="finding-title">${{esc(f.title)}}</span>
                     </div>
-                    <div class="finding-meta">📁 ${{esc(f.file_path)}}:${{f.line_number || 'N/A'}} &nbsp;|&nbsp; 🏷️ ${{f.cwe || 'N/A'}} &nbsp;|&nbsp; 🎯 ${{f.confidence}} &nbsp;|&nbsp; 📦 ${{f.module}}</div>
+                    <div class="finding-meta">📁 ${{esc(f.file_path)}}:${{f.line_number || 'N/A'}} &nbsp;|&nbsp; 🏷️ ${{esc(f.cwe || 'N/A')}} &nbsp;|&nbsp; 🎯 ${{esc(f.confidence)}} &nbsp;|&nbsp; 📦 ${{esc(f.module)}}</div>
                     <div class="finding-desc">${{esc(f.description)}}</div>
+                    <div class="finding-evidence"><strong>Evidence classification:</strong> ${{esc(f.evidence_kind || 'unspecified')}} · Scope: ${{esc(f.scope || 'application')}} · Maturity: ${{esc(f.maturity || 'unspecified')}}
+                    ${{Array.isArray(f.trace) && f.trace.length ? `<ol>${{f.trace.map(step => `<li>${{esc(step.role)}}: <code>${{esc(step.file_path)}}:${{esc(step.line_number)}}</code></li>`).join('')}}</ol>` : '<p>No source-to-sink trace supplied.</p>'}}
+                    ${{f.fingerprint ? `<div>Fingerprint: <code>${{esc(f.fingerprint)}}</code></div>` : ''}}</div>
                     ${{f.recommendation ? `<div class="finding-rec">💡 <strong>Recommendation:</strong> ${{esc(f.recommendation)}}</div>` : ''}}
                     ${{f.code_snippet ? `<div class="code-block">${{esc(f.code_snippet)}}</div>` : ''}}
                 </div>
