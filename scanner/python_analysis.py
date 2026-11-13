@@ -26,6 +26,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.parameter_bindings = {}
         self.return_bindings = []
         self.call_bindings = {}
+        self.call_slots = {}
+        self.return_slot_values = []
+        self.forwarded_calls = {}
         self.call_count = 0
         self.call_cache = {}
         self.model_fields = {}
@@ -110,6 +113,11 @@ class PythonAIAnalyzer(ast.NodeVisitor):
     def _name(self, node):
         if isinstance(node, ast.Call):
             constructor = self._name(node.func)
+            if constructor in {'tarfile.open','tarfile.TarFile','tarfile.TarFile.open'}:
+                return f'tarfile.TarFile@{node.lineno}:{node.col_offset}'
+            if (isinstance(node.func, ast.Name) and node.func.id == 'staticmethod' and 'staticmethod' not in self.bindings
+                    and len(node.args) == 1 and not node.keywords):
+                return self._name(node.args[0])
             returns = {'sqlite3.connect': 'sqlite3.Connection', 'sqlite3.Connection.cursor': 'sqlite3.Cursor',
                        'django.db.connection.cursor': 'sqlite3.Cursor', 'flask.make_response': 'flask.Response',
                        'lxml.etree.fromstring': 'lxml.etree._Element', 'lxml.etree.XML': 'lxml.etree._Element',
@@ -320,7 +328,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 if slot.startswith(arg.arg + '['):
                     self.bindings.pop(slot, None)
             annotation = self._name(arg.annotation)
-            known_types = {"fastapi.Request", "starlette.requests.Request", "django.http.HttpRequest", "sanic.request.Request", "aiohttp.web.Request", "falcon.Request", "sqlite3.Connection", "sqlite3.Cursor"}
+            known_types = {"fastapi.Request", "starlette.requests.Request", "starlette.types.Scope", "django.http.HttpRequest", "sanic.request.Request", "aiohttp.web.Request", "falcon.Request", "sqlite3.Connection", "sqlite3.Cursor"}
             self.bindings[arg.arg] = self.parameter_bindings.get(arg.arg, annotation if annotation in known_types else "")
             if arg.arg == "self" and self.class_name:
                 self.bindings[arg.arg] = self.receiver or self.class_name
@@ -359,10 +367,21 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         # Parameter names alone are not evidence of attacker control.
         old_returns, self.return_sources = self.return_sources, []
         old_return_bindings, self.return_bindings = self.return_bindings, []
+        old_slots, self.return_slot_values = self.return_slot_values, []
         self._visit_block(node.body)
         returned = self._combine(self.return_sources)
         return_types = set(self.return_bindings)
         returned_binding = next(iter(return_types)) if len(return_types) == 1 else ""
+        slots = None
+        if self.return_slot_values and all(row is not None for row in self.return_slot_values):
+            width = len(self.return_slot_values[0])
+            if all(len(row) == width for row in self.return_slot_values):
+                slots = []
+                for i in range(width):
+                    sources = [row[i][0] for row in self.return_slot_values]
+                    types = {row[i][1] for row in self.return_slot_values}
+                    slots.append((self._combine(sources), next(iter(types)) if len(types) == 1 else ''))
+        self.return_slot_values = old_slots
         self.return_sources = old_returns
         self.return_bindings = old_return_bindings
         members = {key: value for key, value in self.bindings.items() if "." in key}
@@ -377,7 +396,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.redirect_facts = old_redirects
         self.flask_route = old_route
         self.auth_stores = old_auth_stores
-        return returned, returned_binding
+        return returned, returned_binding, slots
 
     def visit_Return(self, node):
         if node.value:
@@ -394,6 +413,13 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                           confidence='medium' if self.flask_route == 2 else 'high')
             self.return_sources.append(source)
             self.return_bindings.append(self._name(node.value))
+            if isinstance(node.value, (ast.Tuple, ast.List)) and not any(isinstance(v, ast.Starred) for v in node.value.elts):
+                self.return_slot_values.append([(self._source(v), self._name(v)) for v in node.value.elts])
+            else:
+                call = node.value.value if isinstance(node.value, ast.Await) else node.value
+                self.return_slot_values.append(self.call_slots.get(id(call)) if isinstance(call, ast.Call) else None)
+        else:
+            self.return_slot_values.append(None)
 
     visit_AsyncFunctionDef = visit_FunctionDef
 
@@ -428,6 +454,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             return self.taint[key]
         if isinstance(node, ast.Subscript) and key in self.bindings:
             return None  # observed literal-key slot was overwritten with a clean value
+        if (isinstance(node, ast.Subscript) and self._name(node.value) == 'starlette.types.Scope'
+                and self._constant(node.slice) in {'path', 'raw_path', 'query_string', 'headers'}):
+            return ('input', node.lineno)
         if isinstance(node, ast.Attribute):
             owner = self._name(node.value)
             if ("http.server.BaseHTTPRequestHandler" in self.class_bases.get(owner, set())
@@ -438,6 +467,20 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return ("input", node.lineno)
         if isinstance(node, ast.Call):
             name = self._name(node.func)
+            if name in {'tarfile.open','tarfile.TarFile','tarfile.TarFile.open'}:
+                fileobj = next((kw.value for kw in node.keywords if kw.arg == 'fileobj'), None)
+                return self._source(fileobj)
+            if name == 'io.BytesIO':
+                return self._combine(self._source(v) for v in node.args)
+            forwarded = self._forwarded_call(node)
+            if forwarded is not None:
+                result = self._source(forwarded)
+                self.call_bindings[id(node)] = self.call_bindings.get(id(forwarded), '')
+                self.call_slots[id(node)] = self.call_slots.get(id(forwarded))
+                return result
+            if (name == 'starlette.types.Scope.get' and node.args
+                    and self._constant(node.args[0]) in {'path', 'raw_path', 'query_string', 'headers'}):
+                return ('input', node.lineno)
             if name in {f'{root}.{method}' for root in ('random', 'random.Random')
                         for method in ('random', 'randint', 'randrange', 'choice', 'choices', 'getrandbits',
                                        'randbytes', 'uniform', 'normalvariate', 'gauss')}:
@@ -528,7 +571,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return self._mark_safe(source, "path")
             return source
         # shortcut: propagate transparent expressions only, expand with framework-specific tests.
-        if isinstance(node, (ast.Attribute, ast.Subscript, ast.BinOp, ast.BoolOp, ast.JoinedStr, ast.FormattedValue,
+        if isinstance(node, (ast.Attribute, ast.Subscript, ast.BinOp, ast.BoolOp, ast.JoinedStr, ast.FormattedValue, ast.Starred,
                              ast.List, ast.Tuple, ast.Dict, ast.Await)):
             return self._combine(self._source(child) for child in ast.iter_child_nodes(node))
         return None
@@ -556,6 +599,29 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 if isinstance(item, ast.Name):
                     self.bindings[item.id] = ""
                     self.taint.pop(item.id, None)
+            return
+        if isinstance(target, (ast.Tuple, ast.List)) and not any(isinstance(v, ast.Starred) for v in target.elts):
+            slots = None
+            if isinstance(value, (ast.Tuple, ast.List)) and not any(isinstance(v, ast.Starred) for v in value.elts):
+                slots = [(self._source(v), self._name(v)) for v in value.elts]
+            else:
+                call = value.value if isinstance(value, ast.Await) else value
+                if isinstance(call, ast.Call):
+                    self._source(call)
+                    slots = self.call_slots.get(id(call))
+            if slots is not None and len(slots) == len(target.elts):
+                for item, (source, binding) in zip(target.elts, slots):
+                    self._assign(item, None)
+                    key = self._key(item)
+                    if key:
+                        self.bindings[key] = binding
+                        if source:
+                            self.taint[key] = source
+            elif self._source(value):
+                self._add(target, 'PY-TUPLE-001', 'Tuple result mapping is unresolved', Severity.INFO, Category.SAST,
+                          'A tainted expression reaches unpacking, but supported return-slot/arity information is unavailable. Downstream coverage is incomplete; no position is guessed.',
+                          'Review the return shape and callers, or use explicit assignments supported by the analyzer.', None,
+                          confidence='medium', maturity='advisory')
             return
         key = self._key(target)
         source = self._source(value) if value is not None else None
@@ -611,7 +677,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             name = self.call_bindings.get(id(value), name)
             if constructor in {"openai.OpenAI", "openai.AsyncOpenAI", "anthropic.Anthropic", "anthropic.AsyncAnthropic"}:
                 name = constructor
-            if constructor in self.classes or constructor in {"fastapi.FastAPI", "fastapi.APIRouter", "flask.Flask", "flask.Blueprint", "quart.Quart", "sanic.Sanic", "aiohttp.web.RouteTableDef", "socket.socket", "argparse.ArgumentParser", "pathlib.Path", "jinja2.Environment", "zipfile.ZipFile", "tarfile.open"}:
+            if constructor in self.classes or constructor in {"fastapi.FastAPI", "fastapi.APIRouter", "flask.Flask", "flask.Blueprint", "quart.Quart", "sanic.Sanic", "aiohttp.web.RouteTableDef", "socket.socket", "argparse.ArgumentParser", "pathlib.Path", "jinja2.Environment", "zipfile.ZipFile"}:
                 name = constructor
             name = {"sqlite3.connect": "sqlite3.Connection", "sqlite3.Connection.cursor": "sqlite3.Cursor", "django.db.connection.cursor": "sqlite3.Cursor", "argparse.ArgumentParser.add_subparsers": "argparse.Subparsers", "argparse.Subparsers.add_parser": "argparse.ArgumentParser"}.get(constructor, name)
             if constructor in {"pathlib.Path.resolve", "pathlib.Path.absolute", "pathlib.Path.joinpath"}:
@@ -651,9 +717,51 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if isinstance(value, (ast.List, ast.Tuple)) or isinstance(value, ast.Dict) and all(k is not None for k in value.keys):
                 self.taint.pop(key, None)  # slot values carry the aggregate, including later clean overwrites
 
+    def _check_archive_extraction(self, node):
+        if (isinstance(node.func, ast.Attribute) and node.func.attr in {'extract','extractall'}
+                and self._name(node.func.value).split('@',1)[0] == 'tarfile.TarFile'):
+            explicit = next((kw.value for kw in node.keywords if kw.arg == 'filter'), None)
+            unknown_kwargs = any(kw.arg is None for kw in node.keywords)
+            if explicit is None or isinstance(explicit, ast.Constant) and explicit.value is None:
+                policy = self._name(ast.Attribute(value=node.func.value, attr='extraction_filter', ctx=ast.Load()))
+                data_filter = policy == 'tarfile.data_filter'
+                fully_trusted = policy == 'tarfile.fully_trusted_filter'
+            else:
+                data_filter = self._constant(explicit) == 'data' or self._name(explicit) == 'tarfile.data_filter'
+                fully_trusted = self._constant(explicit) == 'fully_trusted' or self._name(explicit) == 'tarfile.fully_trusted_filter'
+            if not data_filter or unknown_kwargs:
+                archive_source = self._source(node.func.value)
+                if fully_trusted and not unknown_kwargs:
+                    observed = archive_source and archive_source[0] == 'input'
+                    self._add(node, 'PY-SAST-ARCHIVE-001', 'Untrusted archive reaches fully-trusted extraction' if observed else 'Archive extraction explicitly trusts member metadata',
+                              Severity.HIGH if observed else Severity.MEDIUM, Category.SAST,
+                              'The resolved extractor explicitly uses fully_trusted filtering. ' + ('An observed external file object reaches the archive reader.' if observed else 'Archive trust is unverified; review whether member names and links are controlled externally.'),
+                              'Use the data extraction filter and an isolated destination; also bound archive size and resource use.', 'CWE-22',
+                              source_line=archive_source[1] if observed else None,
+                              source_file=archive_source[3] if observed and len(archive_source)>3 else None,
+                              confidence='high' if observed else 'medium', maturity='stable' if observed else 'advisory',
+                              evidence_kind='static-flow' if observed else 'static-configuration')
+                else:
+                    self._add(node, 'PY-SAST-ARCHIVE-REVIEW-001', 'Archive extraction filter needs runtime/context review', Severity.INFO, Category.SAST,
+                              'No unambiguous data filter is observed. Python 3.14+ changed the default to data; older runtimes, custom filters, member guards and archive trust need review. This is not a confirmed path-traversal finding.',
+                              'Specify filter="data" where supported, confirm the target Python version, and review link handling and resource limits.', None,
+                              confidence='medium', maturity='advisory')
+
+    def _forwarded_call(self, node):
+        name = self._name(node.func)
+        if name not in {'anyio.to_thread.run_sync', 'asyncio.to_thread'} or not node.args:
+            return None
+        if name == 'anyio.to_thread.run_sync' and any(kw.arg not in {'abandon_on_cancel', 'cancellable', 'limiter'} for kw in node.keywords):
+            return None
+        if id(node) not in self.forwarded_calls:
+            self.forwarded_calls[id(node)] = ast.copy_location(ast.Call(func=node.args[0], args=node.args[1:],
+                keywords=node.keywords if name == 'asyncio.to_thread' else []), node)
+        return self.forwarded_calls[id(node)]
+
     def _invoke(self, node, name, receiver=None):
         # Local calls can change member/global values; prefix proofs do not cross them.
         self.redirect_facts.clear()
+        self.call_slots.pop(id(node), None)
         if "interprocedural" in self.disabled_features:
             return None
         if name not in self.functions or name in self.active_calls or len(self.active_calls) >= 5:
@@ -684,8 +792,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                      tuple(sorted(self.bindings.items())), tuple(sorted(self.taint.items())),
                      tuple((key, ast.dump(value)) for key, value in sorted(self.literal_sets.items())))
         if cache_key in self.call_cache:
-            source, binding, members, member_taint = self.call_cache[cache_key]
+            source, binding, members, member_taint, slots = self.call_cache[cache_key]
             self.call_bindings[id(node)] = binding
+            self.call_slots[id(node)] = slots
             self.bindings.update(members)
             for key in list(self.taint):
                 if "." in key:
@@ -710,13 +819,16 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.active_calls.append(name)
         self.call_count += 1
         try:
-            source, binding = self._visit_function(function, sources)
+            source, binding, slots = self._visit_function(function, sources)
             if source and len(source) < 4:
                 source = source[0], source[1], frozenset(source[2] if len(source) > 2 else ()), self.file_path
             self.call_bindings[id(node)] = binding
+            if slots is not None:
+                slots = [(s if not s or len(s) > 3 else (s[0],s[1],frozenset(s[2] if len(s)>2 else ()),self.file_path), b) for s,b in slots]
+            self.call_slots[id(node)] = slots
             self.call_cache[cache_key] = (source, binding,
                                           {key: value for key, value in self.bindings.items() if "." in key},
-                                          {key: value for key, value in self.taint.items() if "." in key})
+                                          {key: value for key, value in self.taint.items() if "." in key}, slots)
             return source
         finally:
             self.active_calls.pop()
@@ -1138,6 +1250,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         }
 
     def visit_Call(self, node):
+        self._check_archive_extraction(node)
+        forwarded = self._forwarded_call(node)
+        if forwarded is not None:
+            self.visit(forwarded)
         if isinstance(node.func, ast.Attribute) and self._name(node.func.value) == 'builtins.list' and node.func.attr in {'append', 'extend', 'insert', 'pop'}:
             key = self._key(node.func.value)
             known = self.literal_sets.get(key)
@@ -1292,7 +1408,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                       "CWE-89", source_line=source[1], source_file=source[3] if len(source) > 3 else None)
         path_values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg in {"file", "filename", "path", "path_or_file", "name"}]
         path_source = self._combine(self._source(value) for value in path_values)
-        path_sink = builtin == "open" or name in {"builtins.open", "io.open", "codecs.open", "flask.send_file", "quart.send_file", "PIL.Image.open", "tarfile.open", "zipfile.ZipFile"}
+        path_sink = builtin == "open" or name in {"builtins.open", "io.open", "codecs.open", "flask.send_file", "quart.send_file", "starlette.responses.FileResponse", "fastapi.responses.FileResponse", "PIL.Image.open", "tarfile.open", "zipfile.ZipFile"}
         if name in {f'pathlib.Path.{method}' for method in ('open', 'read_text', 'read_bytes', 'write_text', 'write_bytes')} and isinstance(node.func, ast.Attribute):
             path_sink, path_source = True, self._source(node.func.value)
         if path_sink and path_source and path_source[0] == "input" and not self._safe_for(path_source, "path") and not self._safe_for(path_source, "local-input"):

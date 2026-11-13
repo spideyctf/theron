@@ -11,7 +11,7 @@ from scanner.finding_utils import finding_scope
 CONFIG_NAMES = {'mcp.json', '.mcp.json', 'mcp_config.json', 'mcp_servers.json',
                 'claude_desktop_config.json', 'claude_code_config.json', 'mcp-config.json'}
 FLOW_RULES = {'PY-SAST-EXEC-001', 'PY-AI-EXEC-001', 'PY-AI-MODEL-001', 'PY-SAST-SQL-001',
-              'PY-SAST-PATH-001', 'PY-SAST-XPATH-001', 'PY-SAST-REDIRECT-001', 'PY-SAST-SSRF-001', 'PY-SAST-XSS-001', 'PY-SAST-SSTI-001'}
+              'PY-SAST-PATH-001', 'PY-SAST-XPATH-001', 'PY-SAST-REDIRECT-001', 'PY-SAST-SSRF-001', 'PY-SAST-XSS-001', 'PY-SAST-SSTI-001', 'PY-SAST-ARCHIVE-001'}
 LIMITATIONS = [
     'Workspace binding is inferred from the configuration location, not verified in a running MCP client.',
     'Code presence and static flow do not establish startup or callback reachability.',
