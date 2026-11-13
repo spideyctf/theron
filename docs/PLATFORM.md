@@ -167,3 +167,8 @@ References: [current results](evaluation/owasp-2026-11-12/RESULTS.md), [reserved
 6. **Delivery:** B05, using GitHub account `spideyctf` for any push.
 
 Step 1 is complete when these planning documents are linked, their current-capability claims match the inspected code, and planning is clearly separated from implementation. Step 1 does not inspect reserved source, change detector behavior, create new accuracy results or begin Step 2 automatically.
+
+
+## ASGI/archive delivery checkpoint — 13 November 2026
+
+The [bounded flow completion](evaluation/flow-completion-2026-11-13/README.md), frozen at `d8fc598`, supersedes the earlier unresolved Starlette flow observation: typed ASGI fields, supported synchronous worker callbacks and fixed-arity tuple slots now reach the file-response sink. Three exposed developer flows across two CVEs match; three patched units stay quiet. Unknown tuple shapes and async worker callbacks retain coverage notices rather than guessed flows. Archive data filters are recognized; missing/custom/default filters need runtime/context review, and filename taint alone does not establish archive-byte control. Stronger file-object plus explicit fully-trusted filtering supports a static finding. Local collection, correlation, API JSON/SARIF downloads, CLI JSON/HTML/SARIF exports and frontend evidence display are tested with original inert fixtures. HTML visibly displays trace and classification. This bounded completion does not validate the full platform, independent real-world accuracy or publication readiness; all research gates above remain applicable.

@@ -1,0 +1,313 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Theron",
+          "version": "1.0.0",
+          "informationUri": "https://github.com/spideyctf/theron",
+          "rules": [
+            {
+              "id": "PY-SAST-PATH-001",
+              "name": "sast",
+              "shortDescription": {
+                "text": "External input controls a filesystem path"
+              },
+              "fullDescription": {
+                "text": "External input from line 11 reaches a file operation without an observed path boundary."
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/22.html",
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "PY-SAST-ARCHIVE-001",
+              "name": "sast",
+              "shortDescription": {
+                "text": "Untrusted archive reaches fully-trusted extraction"
+              },
+              "fullDescription": {
+                "text": "The resolved extractor explicitly uses fully_trusted filtering. An observed external file object reaches the archive reader."
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/22.html",
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "PY-SAST-ARCHIVE-REVIEW-001",
+              "name": "sast",
+              "shortDescription": {
+                "text": "Archive extraction filter needs runtime/context review"
+              },
+              "fullDescription": {
+                "text": "No unambiguous data filter is observed. Python 3.14+ changed the default to data; older runtimes, custom filters, member guards and archive trust need review. This is not a confirmed path-traversal finding."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "PY-SAST-PATH-001",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "External input from line 11 reaches a file operation without an observed path boundary."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "server.py"
+                },
+                "region": {
+                  "startLine": 12
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "sast",
+            "module": "sast",
+            "confidence": "high",
+            "recommendation": "Resolve the candidate and trusted root, reject paths outside that root using path-component containment, and avoid following untrusted symlinks.",
+            "fingerprint": "2bf5fbc665fa4c86356dd5ed",
+            "maturity": "stable",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "static-flow",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "server.py",
+                "line_number": 11
+              },
+              {
+                "role": "sink",
+                "file_path": "server.py",
+                "line_number": 12
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "2bf5fbc665fa4c86356dd5ed"
+          }
+        },
+        {
+          "ruleId": "PY-SAST-ARCHIVE-001",
+          "ruleIndex": 1,
+          "level": "error",
+          "message": {
+            "text": "The resolved extractor explicitly uses fully_trusted filtering. An observed external file object reaches the archive reader."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "server.py"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "sast",
+            "module": "sast",
+            "confidence": "high",
+            "recommendation": "Use the data extraction filter and an isolated destination; also bound archive size and resource use.",
+            "fingerprint": "98272c28e42fdaca1c78c751",
+            "maturity": "stable",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "static-flow",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "server.py",
+                "line_number": 14
+              },
+              {
+                "role": "sink",
+                "file_path": "server.py",
+                "line_number": 15
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "98272c28e42fdaca1c78c751"
+          }
+        },
+        {
+          "ruleId": "PY-SAST-ARCHIVE-REVIEW-001",
+          "ruleIndex": 2,
+          "level": "none",
+          "message": {
+            "text": "No unambiguous data filter is observed. Python 3.14+ changed the default to data; older runtimes, custom filters, member guards and archive trust need review. This is not a confirmed path-traversal finding."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "server.py"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "INFO",
+            "category": "sast",
+            "module": "sast",
+            "confidence": "medium",
+            "recommendation": "Specify filter=\"data\" where supported, confirm the target Python version, and review link handling and resource limits.",
+            "fingerprint": "e82c2b631c7f5f6c3e412061",
+            "maturity": "advisory",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "coverage-notice",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "sink",
+                "file_path": "server.py",
+                "line_number": 18
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "e82c2b631c7f5f6c3e412061"
+          }
+        }
+      ],
+      "properties": {
+        "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "context_findings": [],
+        "correlation_enabled": true,
+        "correlation_groups": [
+          {
+            "id": "mcp-flow-c89dd73d9113eacba1bc2744",
+            "title": "Declared MCP entrypoint contains a supported code flow",
+            "scope": "application",
+            "classification": "inferred",
+            "maturity": "experimental",
+            "finding_fingerprints": [
+              "2bf5fbc665fa4c86356dd5ed",
+              "98272c28e42fdaca1c78c751"
+            ],
+            "limitations": [
+              "Workspace binding is inferred from the configuration location, not verified in a running MCP client.",
+              "Code presence and static flow do not establish startup or callback reachability.",
+              "Network exposure, authentication, effective privileges and exploitability remain unknown.",
+              "No declared command or scanned module was executed. Groups do not add vulnerability counts or severity."
+            ],
+            "relationships": [
+              {
+                "kind": "declares_entrypoint",
+                "source": {
+                  "kind": "configuration",
+                  "file_path": ".vscode/mcp.json",
+                  "pointer": "/servers/local"
+                },
+                "target": {
+                  "kind": "file",
+                  "file_path": "server.py"
+                },
+                "classification": "inferred",
+                "evidence": [
+                  {
+                    "file_path": ".vscode/mcp.json",
+                    "pointer": "/servers/local/args"
+                  }
+                ]
+              },
+              {
+                "kind": "entrypoint_contains_flow",
+                "source": {
+                  "kind": "file",
+                  "file_path": "server.py"
+                },
+                "target": {
+                  "kind": "finding",
+                  "fingerprint": "2bf5fbc665fa4c86356dd5ed"
+                },
+                "classification": "observed",
+                "evidence": [
+                  {
+                    "role": "source",
+                    "file_path": "server.py",
+                    "line_number": 11
+                  },
+                  {
+                    "role": "sink",
+                    "file_path": "server.py",
+                    "line_number": 12
+                  }
+                ],
+                "confidence": "high",
+                "maturity": "stable"
+              },
+              {
+                "kind": "entrypoint_contains_flow",
+                "source": {
+                  "kind": "file",
+                  "file_path": "server.py"
+                },
+                "target": {
+                  "kind": "finding",
+                  "fingerprint": "98272c28e42fdaca1c78c751"
+                },
+                "classification": "observed",
+                "evidence": [
+                  {
+                    "role": "source",
+                    "file_path": "server.py",
+                    "line_number": 14
+                  },
+                  {
+                    "role": "sink",
+                    "file_path": "server.py",
+                    "line_number": 15
+                  }
+                ],
+                "confidence": "high",
+                "maturity": "stable"
+              }
+            ]
+          }
+        ],
+        "correlation_resolutions": [
+          {
+            "config_file": ".vscode/mcp.json",
+            "pointer": "/servers/local",
+            "status": "resolved",
+            "reason": "workspace_binding_inferred",
+            "entrypoint": "server.py",
+            "classification": "inferred",
+            "scope": "application",
+            "group_ids": [
+              "mcp-flow-c89dd73d9113eacba1bc2744"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

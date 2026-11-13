@@ -1,0 +1,65 @@
+{
+  "implementation_revision": "d8fc59850ff1c261c29cdf53b53ec90c3571f5fb",
+  "source_guided_development": true,
+  "independent_labels": false,
+  "final_real_test_source_opened": false,
+  "developer_units": {
+    "unsafe": 3,
+    "unsafe_matched": 3,
+    "patched": 3,
+    "patched_matched": 0,
+    "cves": 2
+  },
+  "synthetic": {
+    "development": {
+      "tp": 202,
+      "fn": 77,
+      "fp": 9,
+      "tn": 449,
+      "errors": 0,
+      "precision": 0.957345971563981,
+      "recall": 0.7240143369175627,
+      "f1": 0.8244897959183674,
+      "false_positive_rate": 0.019650655021834062
+    },
+    "validation": {
+      "tp": 77,
+      "fn": 7,
+      "fp": 0,
+      "tn": 164,
+      "errors": 0,
+      "precision": 1.0,
+      "recall": 0.9166666666666666,
+      "f1": 0.9565217391304348,
+      "false_positive_rate": 0.0
+    },
+    "test": {
+      "tp": 65,
+      "fn": 24,
+      "fp": 0,
+      "tn": 156,
+      "errors": 0,
+      "precision": 1.0,
+      "recall": 0.7303370786516854,
+      "f1": 0.8441558441558441,
+      "false_positive_rate": 0.0
+    },
+    "pysastbench": {
+      "tp": 93,
+      "fn": 26,
+      "fp": 4,
+      "tn": 116,
+      "errors": 1,
+      "precision": 0.9587628865979382,
+      "recall": 0.7815126050420168,
+      "false_positive_rate": 0.03333333333333333
+    }
+  },
+  "checks": {
+    "python_passed": 552,
+    "frontend_passed": 13,
+    "typescript_and_production_build": "passed",
+    "live_application_launched": false
+  },
+  "original_real_label_errors": 2
+}

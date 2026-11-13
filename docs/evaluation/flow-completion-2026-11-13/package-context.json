@@ -1,0 +1,48 @@
+{
+  "implementation_revision": "d8fc59850ff1c261c29cdf53b53ec90c3571f5fb",
+  "records": [
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "vul_func",
+      "files": [
+        "starlette/staticfiles.py",
+        "starlette/responses.py",
+        "starlette/types.py"
+      ],
+      "alerts": [
+        {
+          "file_path": "starlette/staticfiles.py",
+          "line_number": 192,
+          "cwe": "CWE-22",
+          "rule_id": "PY-SAST-PATH-001",
+          "maturity": "stable",
+          "confidence": "high",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "starlette/staticfiles.py",
+              "line_number": 111
+            },
+            {
+              "role": "sink",
+              "file_path": "starlette/staticfiles.py",
+              "line_number": 192
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "fix_func",
+      "files": [
+        "starlette/staticfiles.py",
+        "starlette/responses.py",
+        "starlette/types.py"
+      ],
+      "alerts": []
+    }
+  ],
+  "final_test_source_opened": false
+}

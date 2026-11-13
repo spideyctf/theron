@@ -1,0 +1,21 @@
+{
+  "algorithm": "sha256",
+  "representation": "UTF-8 text with LF line endings (universal newline normalization)",
+  "files": {
+    "delivery-check.json": "b8458bd3e68b9328e6747db49a0375bd7a4098cc3b0cc6085bee6fd86fd2cc74",
+    "developer-units.json": "6815a90fcfea02dee2215ebccb603d593cd94d4368a9f1cd804a8e03fb013261",
+    "development.json": "0f4f97616aebb445d4750950185c7368d2724abca8b02fa7740f5c065db8c519",
+    "freeze-history.json": "39a9fb1b3b947717d0e3d015151b6eb7fc044d04768086664b510493fca71e40",
+    "original-delivery-fixture.html": "283de8dd296afe95e9848c21ace9bc8799adcb1f3d354e268c6bb71fa033db46",
+    "original-delivery-fixture.json": "32c12795d9f41aa94775977e61a273c8ff2a9115cd008ad3a289eca0643d20e8",
+    "original-delivery-fixture.sarif": "a2284fbf329875c9f04e50922156847ef585618f91f927dc0690446e007c708f",
+    "package-context.json": "3e8230e6f9d72f15087004af48513803caad7e96083282d9344f13c65c9ecc0d",
+    "PROTOCOL.md": "85c2f2a9894590b8cef8a849adc25571bb473d0e356237a055f30afff795c1f2",
+    "pysastbench.json": "65479788a5cd9dbaa70ff2241ad960d88e18c3bbf748a772aca0956366d85870",
+    "README.md": "695bffc3c7b24ee96f71f6e369e318559e2497201ec7a201c48a6171ebbede12",
+    "real-development.json": "5c3d19eeb2838a878f02244abee12ed4814a846042ede80e1d70babd825a2782",
+    "summary.json": "125f79d5f4b9b8e28a392cde89892089d21f43feaa06f381e344be1119502f39",
+    "test.json": "942b649bc917ff62dbddbc43e1c69d7c2633dfb25ad0c8963cf8955e9a1ec7f3",
+    "validation.json": "0caf559aecd18c8ed6d6a6a0cfdc99f2a9c4ed576cbf54fd3ff19083f197699d"
+  }
+}

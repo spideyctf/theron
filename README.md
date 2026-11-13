@@ -13,7 +13,7 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 ## Latest evaluation: OWASP BenchmarkPython
 
-**Matching-unit audit and real-code gain, 13 November 2026:** [audit and template-source increment](docs/evaluation/unit-audit-2026-11-13/README.md), frozen at `54110a4`, detects two developer-audited template-injection flows in the exposed psiTurk CVE, with corresponding patched flows quiet. Four case audits distinguish real sink units from coarse patch/CWE metadata. Four additional pinned Starlette package files do not improve detection; its ASGI/callback flow remains a gap. Synthetic scores below stay unchanged. These are source-guided development observations, not unseen real-world accuracy. Final real test source remains closed.
+**End-to-end flow increment, 13 November 2026:** [results, limits and reproduction](docs/evaluation/flow-completion-2026-11-13/README.md), frozen at `d8fc598`, closes the supported typed-ASGI/callback/tuple path into file responses and adds archive-filter evidence with runtime uncertainty. Three developer-audited unsafe flows across the exposed psiTurk and Starlette CVEs match; all three corresponding patched flows stay quiet. Local collection, correlation, API/downloads, JSON/HTML/SARIF exports and frontend evidence display are covered by original-fixture tests. HTML now visibly displays traces and evidence classification. Synthetic metrics remain unchanged. These are source-guided development observations, not independent real-world accuracy; final real test source remains closed.
 
 **Real-code comparison, 13 November 2026:** [matched baselines and available-file context](docs/evaluation/real-comparison-2026-11-13/README.md) test all 28 pinned validation files. Theron emits two weak-hash advisories, Bandit 74 alerts and Semgrep 90; none match a vulnerable reference span under the declared CWE/location rule. These totals are not confirmed vulnerabilities or real-world accuracy. Grouping available files adds no detections, and two original label/hash errors remain. Final real test source stays closed.
 
@@ -67,7 +67,7 @@ See the [frozen protocol](docs/evaluation/owasp-2026-11-12/README.md), [complete
 
 ## PySASTBench tuning benchmark
 
-Re-evaluated **13 November 2026** at template-source freeze `54110a4`, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). Label-matched counts remain unchanged. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
+Re-evaluated **13 November 2026** at flow/delivery freeze `d8fc598`, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). Label-matched counts remain unchanged. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
 
 | Measure | Result |
 | --- | ---: |
@@ -101,12 +101,12 @@ CWE-77 has one additional unscorable vulnerable label. A perfect result within a
 
 | Engineering check, 13 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 513 passed; 1 dependency deprecation warning |
-| Frontend tests | 11 passed |
+| Python regression suite | 552 passed; 1 dependency deprecation warning |
+| Frontend tests | 13 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |
 
-Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/unit-audit-2026-11-13/pysastbench.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
+Test counts measure regression checks, not detection accuracy. The badge links to current CI. See [current raw PySASTBench output](docs/evaluation/flow-completion-2026-11-13/pysastbench.json), [earlier snapshot and formulas](docs/evaluation/2026-11-12/README.md), [scoring and history](docs/PYSASTBENCH.md), and [quality limits](docs/QUALITY.md).
 
 The earlier four-module GitHub self-scan of `ff71cf6` analyzed **76 files in 58.24 seconds**, with **1 application informational notice**, **0 application vulnerability alerts**, **18 context detections** and **151 SBOM components**, including **15 unresolved versions**. This historical, single-run smoke test predates the new flow changes; it is not a current throughput benchmark or proof of security. [Self-scan summary](docs/evaluation/2026-11-12/self-scan-summary.json).
 

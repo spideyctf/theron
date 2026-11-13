@@ -1,0 +1,626 @@
+{
+  "implementation_revision": "d8fc59850ff1c261c29cdf53b53ec90c3571f5fb",
+  "independent_labels": false,
+  "source_guided_development": true,
+  "final_test_source_opened": false,
+  "original_label_errors_retained": 2,
+  "records": [
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "vul_func",
+      "revision": "f11093a6b3240fc26830b6111e826128af7771c3",
+      "files": [
+        "waitress/parser.py",
+        "waitress/utilities.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "files": [
+        "waitress/parser.py",
+        "waitress/utilities.py",
+        "waitress/rfc7230.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "role": "vul_func",
+      "revision": "67708d5d327e736d80e2f6726968cf02a926310e",
+      "files": [
+        "federatedml/tree/hetero/hetero_decision_tree_guest.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "role": "fix_func",
+      "revision": "6feccf6d752184a6f9365d56a76fe627983e7139",
+      "files": [
+        "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+        "federatedml/tree/hetero/hetero_decision_tree_host.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "role": "vul_func",
+      "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+      "files": [
+        "psiturk/experiment.py"
+      ],
+      "alerts": [
+        {
+          "file_path": "psiturk/experiment.py",
+          "line_number": 384,
+          "cwe": "CWE-1336",
+          "rule_id": "PY-SAST-SSTI-001",
+          "maturity": "stable",
+          "confidence": "high",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 328
+            },
+            {
+              "role": "sink",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 384
+            }
+          ]
+        },
+        {
+          "file_path": "psiturk/experiment.py",
+          "line_number": 410,
+          "cwe": "CWE-1336",
+          "rule_id": "PY-SAST-SSTI-001",
+          "maturity": "stable",
+          "confidence": "high",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 406
+            },
+            {
+              "role": "sink",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 410
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "role": "fix_func",
+      "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+      "files": [
+        "psiturk/experiment.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "role": "vul_func",
+      "revision": "b4bdd09c56aa5dedb475529e75ce73c092ca0898",
+      "files": [
+        "oauthlib/uri_validate.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "role": "fix_func",
+      "revision": "2e40b412c844ecc4673c3fa3f72181f228bdbacd",
+      "files": [
+        "oauthlib/uri_validate.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "vul_func",
+      "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+      "files": [
+        "starlette/staticfiles.py"
+      ],
+      "alerts": [
+        {
+          "file_path": "starlette/staticfiles.py",
+          "line_number": 192,
+          "cwe": "CWE-22",
+          "rule_id": "PY-SAST-PATH-001",
+          "maturity": "stable",
+          "confidence": "high",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "starlette/staticfiles.py",
+              "line_number": 111
+            },
+            {
+              "role": "sink",
+              "file_path": "starlette/staticfiles.py",
+              "line_number": 192
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "fix_func",
+      "revision": "1797de464124b090f10cf570441e8292936d63e3",
+      "files": [
+        "starlette/staticfiles.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "vul_func",
+      "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+      "files": [
+        "luigi/contrib/lsf_runner.py",
+        "luigi/contrib/sge_runner.py"
+      ],
+      "alerts": [
+        {
+          "file_path": "luigi/contrib/lsf_runner.py",
+          "line_number": 57,
+          "cwe": null,
+          "rule_id": "PY-SAST-ARCHIVE-REVIEW-001",
+          "maturity": "advisory",
+          "confidence": "medium",
+          "evidence_kind": "coverage-notice",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "luigi/contrib/lsf_runner.py",
+              "line_number": 57
+            }
+          ]
+        },
+        {
+          "file_path": "luigi/contrib/sge_runner.py",
+          "line_number": 69,
+          "cwe": null,
+          "rule_id": "PY-SAST-ARCHIVE-REVIEW-001",
+          "maturity": "advisory",
+          "confidence": "medium",
+          "evidence_kind": "coverage-notice",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "luigi/contrib/sge_runner.py",
+              "line_number": 69
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "files": [
+        "luigi/contrib/lsf_runner.py",
+        "luigi/contrib/sge_runner.py",
+        "luigi/safe_extractor.py"
+      ],
+      "alerts": [
+        {
+          "file_path": "luigi/safe_extractor.py",
+          "line_number": 97,
+          "cwe": null,
+          "rule_id": "PY-SAST-ARCHIVE-REVIEW-001",
+          "maturity": "advisory",
+          "confidence": "medium",
+          "evidence_kind": "coverage-notice",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "luigi/safe_extractor.py",
+              "line_number": 97
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "role": "vul_func",
+      "revision": "d3956bc602f95d2bec55eebc96d5e3a2cb35bf47",
+      "files": [
+        "opencanary/config.py",
+        "opencanary/modules/portscan.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "role": "fix_func",
+      "revision": "2c11575b1a3dd8b0df26a879ba856c0aa350c049",
+      "files": [
+        "opencanary/config.py",
+        "opencanary/modules/portscan.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "role": "vul_func",
+      "revision": "ffea5e9419ed517e8b80208567f4f70404047cbe",
+      "files": [
+        "modules/utils.py"
+      ],
+      "alerts": [
+        {
+          "file_path": "modules/utils.py",
+          "line_number": 915,
+          "cwe": "CWE-328",
+          "rule_id": "PY-SAST-HASH-001",
+          "maturity": "advisory",
+          "confidence": "medium",
+          "evidence_kind": "static-configuration",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "modules/utils.py",
+              "line_number": 915
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "role": "fix_func",
+      "revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+      "files": [
+        "ChuanhuChatbot.py",
+        "modules/utils.py"
+      ],
+      "alerts": [
+        {
+          "file_path": "modules/utils.py",
+          "line_number": 917,
+          "cwe": "CWE-328",
+          "rule_id": "PY-SAST-HASH-001",
+          "maturity": "advisory",
+          "confidence": "medium",
+          "evidence_kind": "static-configuration",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "modules/utils.py",
+              "line_number": 917
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "role": "vul_func",
+      "revision": "668158f0558d486082c0dc672a6ac39ba05ced6a",
+      "files": [
+        "spotipy/cache_handler.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "role": "fix_func",
+      "revision": "1ca453f6ef87a2a9e9876f52b6cb38d13532ccf2",
+      "files": [
+        "spotipy/cache_handler.py"
+      ],
+      "alerts": []
+    }
+  ],
+  "unit_outcomes": [
+    {
+      "unit": {
+        "role": "vul_func",
+        "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+        "path": "psiturk/experiment.py",
+        "sink_line": 384,
+        "cwe": "CWE-1336",
+        "expected": "unsafe_template_source",
+        "source_sha256": "6099f0f4caa76f3cfe52b5a5873827874bd07c3e0a022c472b7062342af1e6a4",
+        "rationale": "Request mode is concatenated by insert_mode into the template source",
+        "runtime_exploitation_verified": false,
+        "cve_id": "CVE-2021-4315"
+      },
+      "matched_alerts": [
+        {
+          "file_path": "psiturk/experiment.py",
+          "line_number": 384,
+          "cwe": "CWE-1336",
+          "rule_id": "PY-SAST-SSTI-001",
+          "maturity": "stable",
+          "confidence": "high",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 328
+            },
+            {
+              "role": "sink",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 384
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit": {
+        "role": "vul_func",
+        "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+        "path": "psiturk/experiment.py",
+        "sink_line": 410,
+        "cwe": "CWE-1336",
+        "expected": "unsafe_template_source",
+        "source_sha256": "6099f0f4caa76f3cfe52b5a5873827874bd07c3e0a022c472b7062342af1e6a4",
+        "rationale": "Request mode is concatenated by insert_mode into the template source",
+        "runtime_exploitation_verified": false,
+        "cve_id": "CVE-2021-4315"
+      },
+      "matched_alerts": [
+        {
+          "file_path": "psiturk/experiment.py",
+          "line_number": 410,
+          "cwe": "CWE-1336",
+          "rule_id": "PY-SAST-SSTI-001",
+          "maturity": "stable",
+          "confidence": "high",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 406
+            },
+            {
+              "role": "sink",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 410
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit": {
+        "role": "fix_func",
+        "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+        "path": "psiturk/experiment.py",
+        "sink_line": 384,
+        "cwe": "CWE-1336",
+        "expected": "safe_for_this_template_source_flow",
+        "source_sha256": "7849fc8d260f542c4f34809a9521bd1ba02cd4a302d5b1a3f18c2c46b7803444",
+        "rationale": "Mode is passed as a template context variable, not concatenated into template source",
+        "runtime_exploitation_verified": false,
+        "cve_id": "CVE-2021-4315"
+      },
+      "matched_alerts": []
+    },
+    {
+      "unit": {
+        "role": "fix_func",
+        "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+        "path": "psiturk/experiment.py",
+        "sink_line": 411,
+        "cwe": "CWE-1336",
+        "expected": "safe_for_this_template_source_flow",
+        "source_sha256": "7849fc8d260f542c4f34809a9521bd1ba02cd4a302d5b1a3f18c2c46b7803444",
+        "rationale": "Mode is passed as a template context variable, not concatenated into template source",
+        "runtime_exploitation_verified": false,
+        "cve_id": "CVE-2021-4315"
+      },
+      "matched_alerts": []
+    },
+    {
+      "unit": {
+        "cve_id": "CVE-2023-29159",
+        "role": "vul_func",
+        "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+        "path": "starlette/staticfiles.py",
+        "source_sha256": "8c59da75accc2f80f437847dec9aab5a3adf40d0221322a9a69d9a4aa37377ff",
+        "sink_line": 192,
+        "source_line": 111,
+        "cwe": "CWE-22",
+        "expected": "unsafe_path_flow",
+        "label_status": "Provisional developer source/sink unit; not independently adjudicated"
+      },
+      "matched_alerts": [
+        {
+          "file_path": "starlette/staticfiles.py",
+          "line_number": 192,
+          "cwe": "CWE-22",
+          "rule_id": "PY-SAST-PATH-001",
+          "maturity": "stable",
+          "confidence": "high",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "starlette/staticfiles.py",
+              "line_number": 111
+            },
+            {
+              "role": "sink",
+              "file_path": "starlette/staticfiles.py",
+              "line_number": 192
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit": {
+        "cve_id": "CVE-2023-29159",
+        "role": "fix_func",
+        "revision": "1797de464124b090f10cf570441e8292936d63e3",
+        "path": "starlette/staticfiles.py",
+        "source_sha256": "388a4936861b10fb97ac3fd50ead04616fd0beb2ad3df1694b9f0be52e76fe9f",
+        "sink_line": 192,
+        "source_line": 111,
+        "cwe": "CWE-22",
+        "expected": "safe_for_this_lexical_path_boundary",
+        "label_status": "Provisional developer source/sink unit; not independently adjudicated"
+      },
+      "matched_alerts": []
+    }
+  ],
+  "ablations": [
+    {
+      "cve_id": "CVE-2021-4315",
+      "role": "vul_func",
+      "disabled": "interprocedural",
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "role": "vul_func",
+      "disabled": "sanitizers",
+      "alerts": [
+        {
+          "file_path": "psiturk/experiment.py",
+          "line_number": 384,
+          "cwe": "CWE-1336",
+          "rule_id": "PY-SAST-SSTI-001",
+          "maturity": "stable",
+          "confidence": "high",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 328
+            },
+            {
+              "role": "sink",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 384
+            }
+          ]
+        },
+        {
+          "file_path": "psiturk/experiment.py",
+          "line_number": 410,
+          "cwe": "CWE-1336",
+          "rule_id": "PY-SAST-SSTI-001",
+          "maturity": "stable",
+          "confidence": "high",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 406
+            },
+            {
+              "role": "sink",
+              "file_path": "psiturk/experiment.py",
+              "line_number": 410
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "role": "fix_func",
+      "disabled": "interprocedural",
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "role": "fix_func",
+      "disabled": "sanitizers",
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "vul_func",
+      "disabled": "interprocedural",
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "vul_func",
+      "disabled": "sanitizers",
+      "alerts": [
+        {
+          "file_path": "starlette/staticfiles.py",
+          "line_number": 192,
+          "cwe": "CWE-22",
+          "rule_id": "PY-SAST-PATH-001",
+          "maturity": "stable",
+          "confidence": "high",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "starlette/staticfiles.py",
+              "line_number": 111
+            },
+            {
+              "role": "sink",
+              "file_path": "starlette/staticfiles.py",
+              "line_number": 192
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "fix_func",
+      "disabled": "interprocedural",
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "fix_func",
+      "disabled": "sanitizers",
+      "alerts": [
+        {
+          "file_path": "starlette/staticfiles.py",
+          "line_number": 192,
+          "cwe": "CWE-22",
+          "rule_id": "PY-SAST-PATH-001",
+          "maturity": "stable",
+          "confidence": "high",
+          "evidence_kind": "static-flow",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "starlette/staticfiles.py",
+              "line_number": 111
+            },
+            {
+              "role": "sink",
+              "file_path": "starlette/staticfiles.py",
+              "line_number": 192
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "interpretation": "Normalized developer probes, not a new independent holdout or real-world accuracy denominator. Archive notices are not confirmed vulnerabilities."
+}

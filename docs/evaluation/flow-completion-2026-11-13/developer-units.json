@@ -1,0 +1,78 @@
+{
+  "independent_labels": false,
+  "source_guided_development": true,
+  "units": [
+    {
+      "role": "vul_func",
+      "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+      "path": "psiturk/experiment.py",
+      "sink_line": 384,
+      "cwe": "CWE-1336",
+      "expected": "unsafe_template_source",
+      "source_sha256": "6099f0f4caa76f3cfe52b5a5873827874bd07c3e0a022c472b7062342af1e6a4",
+      "rationale": "Request mode is concatenated by insert_mode into the template source",
+      "runtime_exploitation_verified": false,
+      "cve_id": "CVE-2021-4315"
+    },
+    {
+      "role": "vul_func",
+      "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+      "path": "psiturk/experiment.py",
+      "sink_line": 410,
+      "cwe": "CWE-1336",
+      "expected": "unsafe_template_source",
+      "source_sha256": "6099f0f4caa76f3cfe52b5a5873827874bd07c3e0a022c472b7062342af1e6a4",
+      "rationale": "Request mode is concatenated by insert_mode into the template source",
+      "runtime_exploitation_verified": false,
+      "cve_id": "CVE-2021-4315"
+    },
+    {
+      "role": "fix_func",
+      "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+      "path": "psiturk/experiment.py",
+      "sink_line": 384,
+      "cwe": "CWE-1336",
+      "expected": "safe_for_this_template_source_flow",
+      "source_sha256": "7849fc8d260f542c4f34809a9521bd1ba02cd4a302d5b1a3f18c2c46b7803444",
+      "rationale": "Mode is passed as a template context variable, not concatenated into template source",
+      "runtime_exploitation_verified": false,
+      "cve_id": "CVE-2021-4315"
+    },
+    {
+      "role": "fix_func",
+      "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+      "path": "psiturk/experiment.py",
+      "sink_line": 411,
+      "cwe": "CWE-1336",
+      "expected": "safe_for_this_template_source_flow",
+      "source_sha256": "7849fc8d260f542c4f34809a9521bd1ba02cd4a302d5b1a3f18c2c46b7803444",
+      "rationale": "Mode is passed as a template context variable, not concatenated into template source",
+      "runtime_exploitation_verified": false,
+      "cve_id": "CVE-2021-4315"
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "vul_func",
+      "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+      "path": "starlette/staticfiles.py",
+      "source_sha256": "8c59da75accc2f80f437847dec9aab5a3adf40d0221322a9a69d9a4aa37377ff",
+      "sink_line": 192,
+      "source_line": 111,
+      "cwe": "CWE-22",
+      "expected": "unsafe_path_flow",
+      "label_status": "Provisional developer source/sink unit; not independently adjudicated"
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "fix_func",
+      "revision": "1797de464124b090f10cf570441e8292936d63e3",
+      "path": "starlette/staticfiles.py",
+      "source_sha256": "388a4936861b10fb97ac3fd50ead04616fd0beb2ad3df1694b9f0be52e76fe9f",
+      "sink_line": 192,
+      "source_line": 111,
+      "cwe": "CWE-22",
+      "expected": "safe_for_this_lexical_path_boundary",
+      "label_status": "Provisional developer source/sink unit; not independently adjudicated"
+    }
+  ]
+}
