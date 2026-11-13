@@ -1,0 +1,24 @@
+{
+  "implementation_revision": "4c166e0b179e1ff10a3a432e2bd439765b601a81",
+  "target_revision": "4c166e0b179e1ff10a3a432e2bd439765b601a81",
+  "target": "spideyctf/theron",
+  "all_modules_requested": [
+    "ai",
+    "sast",
+    "sca",
+    "agentic"
+  ],
+  "status": "failed",
+  "failure_phase": "sast",
+  "files_selected": 273,
+  "files_fetched": 273,
+  "error_type": "TypeError",
+  "error_message": "argument of type 'NoneType' is not iterable",
+  "error_location": "scanner/python_analysis.py:388",
+  "cause_observed": "A non-string key reached the member-taint dictionary filter.",
+  "provenance": "Captured terminal output from first live operational smoke run; harness did not retain network receipts on failure.",
+  "engine_completed": false,
+  "network_metadata_available": false,
+  "target_code_executed": false,
+  "live_application_started": false
+}

@@ -7,9 +7,15 @@
 
 Theron combines bounded Python flow analysis, AI-specific checks, dependency advisory matching and a local review workspace. Scan a directory or GitHub repository, inspect the evidence, and export terminal, JSON, HTML or SARIF reports and a CycloneDX SBOM.
 
-**Status:** a working research prototype with reproducible synthetic results. Findings require review. The strongest measured coverage is command/code injection, SQL injection and deserialization; stored XSS remains a major gap.
+**Status:** a working research prototype with reproducible synthetic results and major real-code coverage gaps. Findings require review. The strongest measured coverage is command/code injection, SQL injection and deserialization; stored XSS remains a major gap.
 
 **Platform direction:** Theron's broader goal is unified, evidence-driven security analysis across application code, dependencies, secrets, infrastructure, AI pipelines and agents, with correlation and controlled verification added in stages. The [platform contract, coverage matrix and ranked backlog](docs/PLATFORM.md) distinguish implemented capabilities from experimental and planned work. This vision does not expand the current coverage claims below.
+
+## Final real-code and operational evaluation
+
+**13 November 2026:** [frozen results and limitations](docs/evaluation/final-validation-2026-11-13/README.md). The untouched-source final probe matched **0/9 vulnerable reference cases**, with all 22 pinned snapshots and 38 function hashes verified and no scanner/input errors. Grouping available files added no matches. Matched Bandit/Semgrep runs also had zero reference matches, with 10/12 whole-file alerts. This CWE/function-span proxy is not independently adjudicated whole-project accuracy. All nine CVEs have external records, but a second human alert/label review has not occurred. Final source is now exposed; future tuning needs a new holdout.
+
+Bounded offline operational checks passed at 25/100/250 files (median 0.83/1.29/2.22 seconds, three repeats); API queue overflow, injected failure, error redaction, downloads and recovery passed. These measurements do not establish production capacity. Synthetic metrics below remain exposed tuning evidence and do not override the adverse real-code result.
 
 ## Latest evaluation: OWASP BenchmarkPython
 
@@ -101,7 +107,7 @@ CWE-77 has one additional unscorable vulnerable label. A perfect result within a
 
 | Engineering check, 13 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 552 passed; 1 dependency deprecation warning |
+| Python regression suite | 556 passed; 1 dependency deprecation warning |
 | Frontend tests | 13 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |
@@ -262,3 +268,6 @@ See the [research plan](docs/RESEARCH.md) for proposed experiments and publicati
 ## License
 
 [MIT](LICENSE). Benchmark data and third-party tools retain their own licenses and attribution requirements.
+
+
+**Live operational blocker at the frozen detector:** the all-module self-scan fetched 273 files but crashed in SAST on an unresolved guard expression. [Preserved failure](docs/evaluation/final-validation-2026-11-13/live-selfscan-failure.json). Bounded tests do not establish live scan reliability; this failure requires a separate operational fix.

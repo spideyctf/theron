@@ -1,0 +1,190 @@
+{
+  "implementation_revision": "4c166e0b179e1ff10a3a432e2bd439765b601a81",
+  "detector_changed_after_test_exposure": false,
+  "final_test_cases": 9,
+  "source_snapshots": 22,
+  "function_hash_checks": 38,
+  "input_or_label_errors": 0,
+  "external_cve_records": 9,
+  "external_cwe_overlap_cases": 7,
+  "external_patch_reference_overlap_cases": 7,
+  "independent_human_adjudication": false,
+  "alert_level_real_world_precision": null,
+  "final_test_source_now_exposed": true,
+  "tools": {
+    "theron-isolated": {
+      "snapshots": 22,
+      "scanner_errors": 0,
+      "input_errors": 0,
+      "label_errors": 0,
+      "whole_file_alerts": 0,
+      "vulnerable": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [],
+        "reference_match_count": 0,
+        "no_reference_match_count": 9,
+        "excluded_error_cases": []
+      },
+      "patched": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [],
+        "reference_match_count": 0,
+        "no_reference_match_count": 9,
+        "excluded_error_cases": []
+      }
+    },
+    "theron-grouped": {
+      "snapshots": 22,
+      "scanner_errors": 0,
+      "input_errors": 0,
+      "label_errors": 0,
+      "whole_file_alerts": 0,
+      "vulnerable": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [],
+        "reference_match_count": 0,
+        "no_reference_match_count": 9,
+        "excluded_error_cases": []
+      },
+      "patched": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [],
+        "reference_match_count": 0,
+        "no_reference_match_count": 9,
+        "excluded_error_cases": []
+      }
+    },
+    "bandit": {
+      "snapshots": 22,
+      "scanner_errors": 0,
+      "input_errors": 0,
+      "label_errors": 0,
+      "whole_file_alerts": 10,
+      "vulnerable": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [],
+        "reference_match_count": 0,
+        "no_reference_match_count": 9,
+        "excluded_error_cases": []
+      },
+      "patched": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [],
+        "reference_match_count": 0,
+        "no_reference_match_count": 9,
+        "excluded_error_cases": []
+      }
+    },
+    "semgrep": {
+      "snapshots": 22,
+      "scanner_errors": 0,
+      "input_errors": 0,
+      "label_errors": 0,
+      "whole_file_alerts": 12,
+      "vulnerable": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [],
+        "reference_match_count": 0,
+        "no_reference_match_count": 9,
+        "excluded_error_cases": []
+      },
+      "patched": {
+        "total_cases": 9,
+        "hash_verified_cases": 9,
+        "reference_match_cases": [],
+        "reference_match_count": 0,
+        "no_reference_match_count": 9,
+        "excluded_error_cases": []
+      }
+    }
+  },
+  "operational_summary": [
+    {
+      "count": 25,
+      "successes": 3,
+      "errors": 0,
+      "deterministic_outputs": true,
+      "wall_median_seconds": 0.8344433000020217,
+      "wall_p95_seconds": 0.9139193999981217,
+      "peak_memory_bytes": 35618816
+    },
+    {
+      "count": 100,
+      "successes": 3,
+      "errors": 0,
+      "deterministic_outputs": true,
+      "wall_median_seconds": 1.2881460999997216,
+      "wall_p95_seconds": 1.3135395999997854,
+      "peak_memory_bytes": 40738816
+    },
+    {
+      "count": 250,
+      "successes": 3,
+      "errors": 0,
+      "deterministic_outputs": true,
+      "wall_median_seconds": 2.219207500002085,
+      "wall_p95_seconds": 2.23665169999731,
+      "peak_memory_bytes": 50294784
+    }
+  ],
+  "operational_api_contract": {
+    "accepted_initial_jobs": 10,
+    "overflow_status": 429,
+    "completed_jobs": 9,
+    "failed_jobs": 1,
+    "queue_recovery_accepted": true,
+    "queue_recovery_completed": true,
+    "failure_secret_redacted": true,
+    "downloads_verified": 4,
+    "concurrent_health_requests": 40,
+    "health_median_seconds": 0.008835850001560175,
+    "health_p95_seconds": 0.025158599997666897,
+    "transport": "in-process controlled scanner; no live GitHub or server",
+    "live_application_started": false
+  },
+  "checks": {
+    "python_passed": 556,
+    "frontend_passed": 13,
+    "typescript_and_build": "passed"
+  },
+  "publication_ready": false,
+  "remaining_gates": [
+    "Independent human label/alert adjudication",
+    "Independent verification of correlation edges and reviewer benefit",
+    "Broader AI/agentic/SCA accuracy",
+    "Semantic context and currently unsupported vulnerability categories",
+    "Multiuser/live deployment load testing",
+    "Fresh untouched evaluation after future detector changes"
+  ],
+  "live_all_module_smoke": {
+    "implementation_revision": "4c166e0b179e1ff10a3a432e2bd439765b601a81",
+    "target_revision": "4c166e0b179e1ff10a3a432e2bd439765b601a81",
+    "target": "spideyctf/theron",
+    "all_modules_requested": [
+      "ai",
+      "sast",
+      "sca",
+      "agentic"
+    ],
+    "status": "failed",
+    "failure_phase": "sast",
+    "files_selected": 273,
+    "files_fetched": 273,
+    "error_type": "TypeError",
+    "error_message": "argument of type 'NoneType' is not iterable",
+    "error_location": "scanner/python_analysis.py:388",
+    "cause_observed": "A non-string key reached the member-taint dictionary filter.",
+    "provenance": "Captured terminal output from first live operational smoke run; harness did not retain network receipts on failure.",
+    "engine_completed": false,
+    "network_metadata_available": false,
+    "target_code_executed": false,
+    "live_application_started": false
+  }
+}

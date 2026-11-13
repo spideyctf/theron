@@ -1,0 +1,24 @@
+{
+  "algorithm": "sha256",
+  "representation": "UTF-8 text normalized to LF",
+  "files": {
+    "bandit.json": "279721344b7a89bfe6e41d6e432a38ac344430b60087da9367ae05ff6e41587b",
+    "baseline-environment.json": "e2fd71627d491c4f8ae894822615281b2e09138439214fc22470712e922352bf",
+    "baseline-inputs.json": "e976f7d39541cb1dcc5bab79ef1d9265ab79d86bb3cb1e66448114109b35bd38",
+    "external-cve-records.json": "7bf1a82da2dfdc3e6a7c34810527f4020ae7bd219dfd88e10eb67c5e2f0cd15b",
+    "failure-audit.json": "cad638d4ea2bd0082fe5cb701d60f3264059f196b56da60fabd716c8121e1b09",
+    "independent-review-packet.json": "e45d4222b08b893f7894166c52003e53700ad4711658b59df0440a73ab941c70",
+    "label-corroboration.json": "1ccf87f74ff6696ca4b863f542039ace1a05ecfad350bc0bb667fde3093eb93d",
+    "LIVE-PROTOCOL.md": "f4da78b6705d2875506d757e5f9135c17ac46897161b104e81c74b3a9ba44f44",
+    "live-selfscan-failure.json": "5487f29975c7f37bf9dffe9ac5adbfd31aebac7ea8a4eb5d1c4e3b25c2b91ab6",
+    "operations.json": "3f5c8487fccd384915ecedb7477aa9eb9083c770a8a15e007cb30951c634b562",
+    "PROTOCOL.md": "8541a3986c068e36be1fd669bc336da7bc7405ef3e75338938e9c7482b75ee84",
+    "README.md": "cf60f72ae5f691eba074fa2cebb7763ee1120dc737a3afa777ea103547441078",
+    "selection.json": "766f15367cd761ffaf000300c943178e886a4eeba85be8bfa4f7c12722957a6d",
+    "semgrep.json": "ab1aa5f3bfd4095c3a417e2e7fa4f8fa6eb7f9ac133b64875b48a5f2b2fc26db",
+    "source-exposure.json": "28e869fb4bfdae872caa17a7df36dd505b7fcf1c120e637dcbfdc7a15a0c94c5",
+    "summary.json": "93d0dd89117b6b98ef6065371314d86e8c0f0d959a963987e347ecbd583c5939",
+    "theron-grouped.json": "7f98ebecf7b513e63e1201026ad6e3281951f58595532ffa536c4c5b058ca2f5",
+    "theron-isolated.json": "74dff44ea6cfbb0c8c91e2a148e158ec723bef6cc400771e07f126d44b601f5f"
+  }
+}

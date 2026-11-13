@@ -1,0 +1,482 @@
+{
+  "scope": "Post-result author/assistant static source and vulnerable/fixed diff review; no detector changes or new matching units",
+  "records": [
+    {
+      "cve_id": "CVE-2020-15278",
+      "category": "Authorization and role hierarchy",
+      "author_side_static_review": true,
+      "independent_adjudication": false,
+      "interpretation": "Discord member-cache completeness and ban hierarchy checks require application authorization semantics.",
+      "original_scoring_labels_preserved": true,
+      "units": [
+        {
+          "role": "vul_func",
+          "path": "redbot/cogs/mod/kickban.py",
+          "start_line": 369,
+          "end_line": 514,
+          "function_names": [
+            "massban",
+            "show_results",
+            "remove_processed"
+          ],
+          "source_url": "https://github.com/cog-creators/red-discordbot/blob/21f9a6f0b6614ce350d0643b36df9f38885e01e8/redbot/cogs/mod/kickban.py#L369"
+        },
+        {
+          "role": "fix_func",
+          "path": "redbot/cogs/mod/kickban.py",
+          "start_line": 369,
+          "end_line": 527,
+          "function_names": [
+            "massban",
+            "show_results",
+            "remove_processed"
+          ],
+          "source_url": "https://github.com/cog-creators/red-discordbot/blob/726bfd38adfdfaef760412a68e01447b470f438b/redbot/cogs/mod/kickban.py#L369"
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2021-21360",
+      "category": "Object permission inheritance",
+      "author_side_static_review": true,
+      "independent_adjudication": false,
+      "interpretation": "Zope object creation and View-permission inheritance are not modelled by supported data-flow sinks.",
+      "original_scoring_labels_preserved": true,
+      "units": [
+        {
+          "role": "vul_func",
+          "path": "src/Products/GenericSetup/context.py",
+          "start_line": 482,
+          "end_line": 501,
+          "function_names": [
+            "writeDataFile"
+          ],
+          "source_url": "https://github.com/zopefoundation/products.genericsetup/blob/835c1ac23e18b7b6f8b7facd5caebe0e997d3500/src/Products/GenericSetup/context.py#L482"
+        },
+        {
+          "role": "vul_func",
+          "path": "src/Products/GenericSetup/context.py",
+          "start_line": 547,
+          "end_line": 565,
+          "function_names": [
+            "_ensureSnapshotsFolder"
+          ],
+          "source_url": "https://github.com/zopefoundation/products.genericsetup/blob/835c1ac23e18b7b6f8b7facd5caebe0e997d3500/src/Products/GenericSetup/context.py#L547"
+        },
+        {
+          "role": "fix_func",
+          "path": "src/Products/GenericSetup/context.py",
+          "start_line": 483,
+          "end_line": 506,
+          "function_names": [
+            "writeDataFile"
+          ],
+          "source_url": "https://github.com/zopefoundation/products.genericsetup/blob/700319512b3615b3871a1f24e096cf66dc488c57/src/Products/GenericSetup/context.py#L483"
+        },
+        {
+          "role": "fix_func",
+          "path": "src/Products/GenericSetup/context.py",
+          "start_line": 552,
+          "end_line": 572,
+          "function_names": [
+            "_ensureSnapshotsFolder"
+          ],
+          "source_url": "https://github.com/zopefoundation/products.genericsetup/blob/700319512b3615b3871a1f24e096cf66dc488c57/src/Products/GenericSetup/context.py#L552"
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2021-23727",
+      "category": "Dynamic callable reconstruction",
+      "author_side_static_review": true,
+      "independent_adjudication": false,
+      "interpretation": "Backend exception metadata selects module attributes and invokes the reconstructed callable; supported source/call-target models do not establish this flow.",
+      "original_scoring_labels_preserved": true,
+      "units": [
+        {
+          "role": "vul_func",
+          "path": "celery/backends/base.py",
+          "start_line": 339,
+          "end_line": 369,
+          "function_names": [
+            "exception_to_python"
+          ],
+          "source_url": "https://github.com/celery/celery/blob/2d8dbc2a8087bbb60590465031ebd5138b8eb359/celery/backends/base.py#L339"
+        },
+        {
+          "role": "fix_func",
+          "path": "celery/backends/base.py",
+          "start_line": 340,
+          "end_line": 409,
+          "function_names": [
+            "exception_to_python"
+          ],
+          "source_url": "https://github.com/celery/celery/blob/1f7ad7e6df1e02039b6ab9eec617d283598cad6b/celery/backends/base.py#L340"
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2021-39163",
+      "category": "Authorization and information disclosure",
+      "author_side_static_review": true,
+      "independent_adjudication": false,
+      "interpretation": "Room visibility depends on membership, not only a group-public flag. CNA CWE-200 differs from benchmark CWE-863; neither label is rewritten.",
+      "original_scoring_labels_preserved": true,
+      "units": [
+        {
+          "role": "vul_func",
+          "path": "synapse/groups/groups_server.py",
+          "start_line": 321,
+          "end_line": 357,
+          "function_names": [
+            "get_rooms_in_group"
+          ],
+          "source_url": "https://github.com/matrix-org/synapse/blob/52c7a51cfc568ed61d800df99dcca25dc3b5fe3e/synapse/groups/groups_server.py#L321"
+        },
+        {
+          "role": "fix_func",
+          "path": "synapse/groups/groups_server.py",
+          "start_line": 321,
+          "end_line": 371,
+          "function_names": [
+            "get_rooms_in_group"
+          ],
+          "source_url": "https://github.com/matrix-org/synapse/blob/cb35df940a828bc40b96daed997b5ad4c7842fd3/synapse/groups/groups_server.py#L321"
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2022-29217",
+      "category": "Cryptographic key confusion",
+      "author_side_static_review": true,
+      "independent_adjudication": false,
+      "interpretation": "Security depends on key-format and algorithm compatibility; recognizing a weak hash literal does not cover this mechanism.",
+      "original_scoring_labels_preserved": true,
+      "units": [
+        {
+          "role": "vul_func",
+          "path": "jwt/algorithms.py",
+          "start_line": 183,
+          "end_line": 199,
+          "function_names": [
+            "prepare_key"
+          ],
+          "source_url": "https://github.com/jpadilla/pyjwt/blob/24b29adfebcb4f057a3cef5aaf35653bc0c1c8cc/jwt/algorithms.py#L183"
+        },
+        {
+          "role": "vul_func",
+          "path": "jwt/algorithms.py",
+          "start_line": 553,
+          "end_line": 573,
+          "function_names": [
+            "prepare_key"
+          ],
+          "source_url": "https://github.com/jpadilla/pyjwt/blob/24b29adfebcb4f057a3cef5aaf35653bc0c1c8cc/jwt/algorithms.py#L553"
+        },
+        {
+          "role": "fix_func",
+          "path": "jwt/algorithms.py",
+          "start_line": 185,
+          "end_line": 194,
+          "function_names": [
+            "prepare_key"
+          ],
+          "source_url": "https://github.com/jpadilla/pyjwt/blob/9c528670c455b8d948aff95ed50e22940d1ad3fc/jwt/algorithms.py#L185"
+        },
+        {
+          "role": "fix_func",
+          "path": "jwt/algorithms.py",
+          "start_line": 548,
+          "end_line": 570,
+          "function_names": [
+            "prepare_key"
+          ],
+          "source_url": "https://github.com/jpadilla/pyjwt/blob/9c528670c455b8d948aff95ed50e22940d1ad3fc/jwt/algorithms.py#L548"
+        },
+        {
+          "role": "fix_func",
+          "path": "jwt/utils.py",
+          "start_line": 101,
+          "end_line": 130,
+          "function_names": [],
+          "source_url": "https://github.com/jpadilla/pyjwt/blob/9c528670c455b8d948aff95ed50e22940d1ad3fc/jwt/utils.py#L101"
+        },
+        {
+          "role": "fix_func",
+          "path": "jwt/utils.py",
+          "start_line": 133,
+          "end_line": 147,
+          "function_names": [
+            "is_pem_format"
+          ],
+          "source_url": "https://github.com/jpadilla/pyjwt/blob/9c528670c455b8d948aff95ed50e22940d1ad3fc/jwt/utils.py#L133"
+        },
+        {
+          "role": "fix_func",
+          "path": "jwt/utils.py",
+          "start_line": 150,
+          "end_line": 160,
+          "function_names": [
+            "is_ssh_key"
+          ],
+          "source_url": "https://github.com/jpadilla/pyjwt/blob/9c528670c455b8d948aff95ed50e22940d1ad3fc/jwt/utils.py#L150"
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2023-32303",
+      "category": "Credential-file permissions",
+      "author_side_static_review": true,
+      "independent_adjudication": false,
+      "interpretation": "Creation permissions, existing-file repair and platform umask determine exposure. Constructor spans alone are not an end-to-end credential-exposure oracle.",
+      "original_scoring_labels_preserved": true,
+      "units": [
+        {
+          "role": "vul_func",
+          "path": "planet/auth.py",
+          "start_line": 229,
+          "end_line": 230,
+          "function_names": [
+            "__init__"
+          ],
+          "source_url": "https://github.com/planetlabs/planet-client-python/blob/9783607b2d79496f912f2da9ec60084fa43438ed/planet/auth.py#L229"
+        },
+        {
+          "role": "vul_func",
+          "path": "planet/auth.py",
+          "start_line": 241,
+          "end_line": 244,
+          "function_names": [
+            "_write"
+          ],
+          "source_url": "https://github.com/planetlabs/planet-client-python/blob/9783607b2d79496f912f2da9ec60084fa43438ed/planet/auth.py#L241"
+        },
+        {
+          "role": "fix_func",
+          "path": "planet/auth.py",
+          "start_line": 230,
+          "end_line": 238,
+          "function_names": [
+            "__init__"
+          ],
+          "source_url": "https://github.com/planetlabs/planet-client-python/blob/d71415a83119c5e89d7b80d5f940d162376ee3b7/planet/auth.py#L230"
+        },
+        {
+          "role": "fix_func",
+          "path": "planet/auth.py",
+          "start_line": 249,
+          "end_line": 256,
+          "function_names": [
+            "_write",
+            "opener"
+          ],
+          "source_url": "https://github.com/planetlabs/planet-client-python/blob/d71415a83119c5e89d7b80d5f940d162376ee3b7/planet/auth.py#L249"
+        },
+        {
+          "role": "fix_func",
+          "path": "planet/auth.py",
+          "start_line": 264,
+          "end_line": 276,
+          "function_names": [
+            "_enforce_permissions"
+          ],
+          "source_url": "https://github.com/planetlabs/planet-client-python/blob/d71415a83119c5e89d7b80d5f940d162376ee3b7/planet/auth.py#L264"
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2023-34457",
+      "category": "Remote form to local-file upload",
+      "author_side_static_review": true,
+      "independent_adjudication": false,
+      "interpretation": "Externally supplied form fields reach local file opening and upload; browser DOM sources and multipart/file-object boundaries are not supported here.",
+      "original_scoring_labels_preserved": true,
+      "units": [
+        {
+          "role": "vul_func",
+          "path": "mechanicalsoup/browser.py",
+          "start_line": 187,
+          "end_line": 293,
+          "function_names": [
+            "get_request_kwargs",
+            "__bool__"
+          ],
+          "source_url": "https://github.com/mechanicalsoup/mechanicalsoup/blob/b9c8a0c48e44d70b9128a8e0befa3a50df0e4b58/mechanicalsoup/browser.py#L187"
+        },
+        {
+          "role": "vul_func",
+          "path": "mechanicalsoup/form.py",
+          "start_line": 242,
+          "end_line": 281,
+          "function_names": [
+            "set"
+          ],
+          "source_url": "https://github.com/mechanicalsoup/mechanicalsoup/blob/b9c8a0c48e44d70b9128a8e0befa3a50df0e4b58/mechanicalsoup/form.py#L242"
+        },
+        {
+          "role": "vul_func",
+          "path": "mechanicalsoup/form.py",
+          "start_line": 283,
+          "end_line": 304,
+          "function_names": [
+            "new_control"
+          ],
+          "source_url": "https://github.com/mechanicalsoup/mechanicalsoup/blob/b9c8a0c48e44d70b9128a8e0befa3a50df0e4b58/mechanicalsoup/form.py#L283"
+        },
+        {
+          "role": "fix_func",
+          "path": "mechanicalsoup/browser.py",
+          "start_line": 188,
+          "end_line": 296,
+          "function_names": [
+            "get_request_kwargs",
+            "__bool__"
+          ],
+          "source_url": "https://github.com/mechanicalsoup/mechanicalsoup/blob/d57c4a269bba3b9a0c5bfa20292955b849006d9e/mechanicalsoup/browser.py#L188"
+        },
+        {
+          "role": "fix_func",
+          "path": "mechanicalsoup/form.py",
+          "start_line": 244,
+          "end_line": 283,
+          "function_names": [
+            "set"
+          ],
+          "source_url": "https://github.com/mechanicalsoup/mechanicalsoup/blob/d57c4a269bba3b9a0c5bfa20292955b849006d9e/mechanicalsoup/form.py#L244"
+        },
+        {
+          "role": "fix_func",
+          "path": "mechanicalsoup/form.py",
+          "start_line": 285,
+          "end_line": 307,
+          "function_names": [
+            "new_control"
+          ],
+          "source_url": "https://github.com/mechanicalsoup/mechanicalsoup/blob/d57c4a269bba3b9a0c5bfa20292955b849006d9e/mechanicalsoup/form.py#L285"
+        },
+        {
+          "role": "fix_func",
+          "path": "mechanicalsoup/utils.py",
+          "start_line": 19,
+          "end_line": 23,
+          "function_names": [
+            "is_multipart_file_upload"
+          ],
+          "source_url": "https://github.com/mechanicalsoup/mechanicalsoup/blob/d57c4a269bba3b9a0c5bfa20292955b849006d9e/mechanicalsoup/utils.py#L19"
+        },
+        {
+          "role": "fix_func",
+          "path": "mechanicalsoup/form.py",
+          "start_line": 390,
+          "end_line": 402,
+          "function_names": [
+            "_assert_valid_file_upload"
+          ],
+          "source_url": "https://github.com/mechanicalsoup/mechanicalsoup/blob/d57c4a269bba3b9a0c5bfa20292955b849006d9e/mechanicalsoup/form.py#L390"
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2023-49736",
+      "category": "Dialect-dependent SQL fragment construction",
+      "author_side_static_review": true,
+      "independent_adjudication": false,
+      "interpretation": "The labelled helper produces a SQL fragment without executing it. Correct escaping is dialect dependent; a downstream SQL sink/caller is absent from this probe.",
+      "original_scoring_labels_preserved": true,
+      "units": [
+        {
+          "role": "vul_func",
+          "path": "superset/jinja_context.py",
+          "start_line": 400,
+          "end_line": 416,
+          "function_names": [
+            "where_in",
+            "quote"
+          ],
+          "source_url": "https://github.com/apache/superset/blob/2f468900c87c6d384d928815cf85e572215b81c5/superset/jinja_context.py#L400"
+        },
+        {
+          "role": "vul_func",
+          "path": "superset/jinja_context.py",
+          "start_line": 427,
+          "end_line": 452,
+          "function_names": [
+            "__init__"
+          ],
+          "source_url": "https://github.com/apache/superset/blob/2f468900c87c6d384d928815cf85e572215b81c5/superset/jinja_context.py#L427"
+        },
+        {
+          "role": "fix_func",
+          "path": "superset/jinja_context.py",
+          "start_line": 401,
+          "end_line": 433,
+          "function_names": [
+            "__init__",
+            "__call__"
+          ],
+          "source_url": "https://github.com/apache/superset/blob/1d403dab9822a8cee6108669c53e53fad881c751/superset/jinja_context.py#L401"
+        },
+        {
+          "role": "fix_func",
+          "path": "superset/jinja_context.py",
+          "start_line": 444,
+          "end_line": 469,
+          "function_names": [
+            "__init__"
+          ],
+          "source_url": "https://github.com/apache/superset/blob/1d403dab9822a8cee6108669c53e53fad881c751/superset/jinja_context.py#L444"
+        }
+      ]
+    },
+    {
+      "cve_id": "CVE-2025-43859",
+      "category": "HTTP parser state-machine validation",
+      "author_side_static_review": true,
+      "independent_adjudication": false,
+      "interpretation": "Correct chunk-footer validation across parser state is outside supported taint/sink models; constructor metadata is not itself the malformed-footer sink.",
+      "original_scoring_labels_preserved": true,
+      "units": [
+        {
+          "role": "vul_func",
+          "path": "h11/_readers.py",
+          "start_line": 149,
+          "end_line": 155,
+          "function_names": [
+            "__init__"
+          ],
+          "source_url": "https://github.com/python-hyper/h11/blob/9462006f6ce4941661888228cbd4ac1ea80689b0/h11/_readers.py#L149"
+        },
+        {
+          "role": "vul_func",
+          "path": "h11/_readers.py",
+          "start_line": 157,
+          "end_line": 201,
+          "function_names": [
+            "__call__"
+          ],
+          "source_url": "https://github.com/python-hyper/h11/blob/9462006f6ce4941661888228cbd4ac1ea80689b0/h11/_readers.py#L157"
+        },
+        {
+          "role": "fix_func",
+          "path": "h11/_readers.py",
+          "start_line": 149,
+          "end_line": 154,
+          "function_names": [
+            "__init__"
+          ],
+          "source_url": "https://github.com/python-hyper/h11/blob/114803a29ce50116dc47951c690ad4892b1a36ed/h11/_readers.py#L149"
+        },
+        {
+          "role": "fix_func",
+          "path": "h11/_readers.py",
+          "start_line": 156,
+          "end_line": 204,
+          "function_names": [
+            "__call__"
+          ],
+          "source_url": "https://github.com/python-hyper/h11/blob/114803a29ce50116dc47951c690ad4892b1a36ed/h11/_readers.py#L156"
+        }
+      ]
+    }
+  ]
+}

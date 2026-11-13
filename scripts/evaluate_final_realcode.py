@@ -107,6 +107,31 @@ def compact(f):
         'confidence', 'maturity', 'evidence_kind', 'trace', 'fingerprint']}
 
 
+def fetch_published_inputs():
+    """Reproduce published receipts without needing the original connector session."""
+    import urllib.request
+    declared = {(c['cve_id'], l['role'], l['resolution']['sha'], l['path'])
+                for c in cases() for l in c['locations']}
+    rows = read(OUT/'source-exposure.json')['records']
+    if {(r['cve_id'],r['role'],r['revision'],r['path']) for r in rows} != declared:
+        raise ValueError('Receipt membership differs from original test metadata')
+    for r in rows:
+        if 'error' in r:
+            continue
+        path = checked_path(CACHE/'stage', snapshot_key(r))
+        if path.exists():
+            raw = path.read_bytes()
+        else:
+            url = f"https://raw.githubusercontent.com/{r['repository']}/{r['revision']}/{r['path']}"
+            with urllib.request.urlopen(url, timeout=30) as response:
+                raw = response.read(2_000_001)
+        if len(raw)>2_000_000 or hashlib.sha256(raw).hexdigest()!=r['source_sha256']:
+            raise ValueError('Published source byte hash differs')
+        path.parent.mkdir(parents=True,exist_ok=True)
+        path.write_bytes(raw)
+    print('Published pinned inputs verified:',len(rows),flush=True)
+
+
 def summarize(records):
     result = dict(snapshots=len(records), scanner_errors=sum(len(r.get('scanner_errors', [])) for r in records),
                   input_errors=sum('error' in r for r in records), label_errors=sum('label_error' in r for r in records),
@@ -168,6 +193,6 @@ def evaluate():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=['stage', 'evaluate'])
+    parser.add_argument('action', choices=['stage', 'evaluate', 'fetch'])
     args = parser.parse_args()
-    (stage if args.action == 'stage' else evaluate)()
+    {'stage':stage,'evaluate':evaluate,'fetch':fetch_published_inputs}[args.action]()

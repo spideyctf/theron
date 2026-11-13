@@ -1,6 +1,6 @@
 # Research direction and publication readiness
 
-Assessment updated: 13 November 2026, through the matching-unit audit and template-source development increment. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
+Assessment updated: 13 November 2026, through the frozen final real-code and operational evaluation. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
 
 ## Broader platform direction
 
@@ -9,6 +9,12 @@ The agreed project goal is now a unified, evidence-driven security analysis and 
 Working project/research title: **Theron: A Unified Security Analysis and Verification Platform for AI-Enabled and Agentic Software Systems**. The platform is broad; research claims must identify and measure a specific cross-layer benefit. The existing abstract below describes the completed prototype study and is not yet an abstract for an implemented full-platform contribution.
 
 ## Current assessment
+
+The [final real-code evaluation](evaluation/final-validation-2026-11-13/README.md), frozen at `4c166e0`, matched **0/9 vulnerable reference cases** in both isolated and grouped modes. All 22 snapshots and 38 function hashes verified, with no scanner/input errors. Identical-input Bandit/Semgrep also had zero reference matches, with 10/12 whole-file alerts. This is an adverse CWE/function-span proxy result, not confirmed alert precision or whole-project accuracy. All nine external CVE records were retained, including one CWE disagreement and one missing CNA CWE; independent human adjudication remains absent.
+
+Bounded operational checks now include repeated 25/100/250-file runs, resource measurements, deterministic exports and controlled API overflow/failure/recovery. Median fresh-process wall time was 0.83/1.29/2.22 seconds over three repetitions per size. These checks do not establish deployment capacity or broad module accuracy. The final reserve was source-unopened before the frozen run; its source/results are now exposed. No detector tuning followed. Future changes require fresh held-out evidence. This status supersedes historical reserve-closed statements below.
+
+## Earlier checkpoints (historical)
 
 The [flow/delivery completion](evaluation/flow-completion-2026-11-13/README.md), frozen at `d8fc598`, detects three provisional developer-audited flows across two exposed CVEs (two psiTurk template flows and one Starlette ASGI file-response flow); corresponding patched flows stay quiet. Typed scope fields, synchronous worker callbacks and tuple-slot propagation close the supported Starlette path. Archive defaults remain informational runtime/context review unless stronger source/filter evidence exists. Original-fixture tests cover collection through reports, API and frontend. Synthetic scores are unchanged. These source-guided observations do not establish independent real-world recall, and the final real test reserve stays closed.
 
@@ -35,7 +41,7 @@ These results do not justify an overall competitive-accuracy or industry-readine
 | Priority | Completed in this iteration | Next requirement |
 | --- | --- | --- |
 | Fair baseline comparisons | Bandit 1.9.4 and Semgrep CE 1.185.0, pinned Python rule revision, same input splits, explicit CWE mappings, all categories and errors retained | Add independent adjudication and compare on real projects; broader tool/config sensitivity |
-| Untouched evaluation | Detector frozen before 248 validation and 245 test cases; template groups kept together; exposure history disclosed | The results are now exposed. Use a new real-world/AI-specific holdout for future generalization claims |
+| Untouched evaluation | Detector frozen before 248 validation and 245 test cases; template groups kept together; exposure history disclosed | The results are now exposed. Final real-code first-run results now exist but are adverse and use provisional reference spans; use a fresh independently adjudicated holdout after future tuning |
 | Ablations | Three feature switches, independent regression tests, all split outcomes and cluster bootstrap summaries published | Test mechanisms on a corpus with relevant flows; neutral held-out ablations do not prove benefit |
 
 The test split has only six coarse template groups and shared helpers, so it is not a substitute for a project-level real-world study. Those results remain attached to the frozen detector. The subsequent Step 3 increment below changes framework modeling; the exposed OWASP result does not establish held-out performance for that newer code.
@@ -102,7 +108,7 @@ Bandit is a useful pattern-check baseline, not a direct substitute for a general
 
 ## Preliminary abstract
 
-We present Theron, a repository security-review prototype combining bounded Python flow analysis, context-specific boundaries, dependency evidence and a limited MCP declaration-to-code association. On exposed OWASP BenchmarkPython data, coverage and precision repairs identify 65 of 89 vulnerable test cases with zero label-matched fixed-case alerts; validation recall is 91.67%. These are synthetic tuning results informed by prior outcomes and source inspection. PySASTBench tuning recall is 78.15%, while nine additional weak-hash configuration advisories illustrate review costs outside labelled targets. A frozen first pass over nine real-code validation candidates produces no reference-span matches; two of 28 source snapshots fail upstream function-hash checks and remain errors. A subsequent developer audit distinguishes sink units and semantic categories from repair metadata; source-guided flow increments detect two audited psiTurk flows and one Starlette ASGI flow while their three patched counterparts remain quiet. Package context alone gives no gain; typed callbacks and tuple-slot propagation close the supported Starlette path. Original-fixture delivery tests retain evidence through exports and the review frontend. These development observations and upstream repair roles do not establish real-world accuracy. Reproducible artifacts preserve errors, adverse outcomes and exposure history. Independent accuracy, practical correlation benefit and operational scalability remain unestablished.
+We present Theron, a repository security-review prototype combining bounded Python flow analysis, context-specific boundaries, dependency evidence and a limited MCP declaration-to-code association. On exposed OWASP BenchmarkPython data, coverage and precision repairs identify 65 of 89 vulnerable test cases with zero label-matched fixed-case alerts; validation recall is 91.67%. These are synthetic tuning results informed by prior outcomes and source inspection. PySASTBench tuning recall is 78.15%, while nine additional weak-hash configuration advisories illustrate review costs outside labelled targets. A frozen first pass over nine real-code validation candidates produces no reference-span matches; two of 28 source snapshots fail upstream function-hash checks and remain errors. A subsequent developer audit distinguishes sink units and semantic categories from repair metadata; source-guided flow increments detect two audited psiTurk flows and one Starlette ASGI flow while their three patched counterparts remain quiet. Package context alone gives no gain; typed callbacks and tuple-slot propagation close the supported Starlette path. Original-fixture delivery tests retain evidence through exports and the review frontend. These development observations and upstream repair roles do not establish real-world accuracy. Reproducible artifacts preserve errors, adverse outcomes and exposure history. A subsequent frozen final probe matches none of nine reserved reference cases, despite verified source integrity; matched baselines also produce no reference matches under the same proxy. External CVE records corroborate vulnerability identities but do not independently adjudicate alerts. Bounded subprocess and API operational checks pass. Independent accuracy, practical correlation benefit and deployment scalability remain unestablished.
 
 This abstract describes the current checkpoint and its adverse outcomes. It is a draft, not a claim of publication readiness. Do not state superiority, novelty or user benefit as established facts.
 
@@ -136,3 +142,6 @@ The [ICSE 2027 tool demonstration call](https://conf.researchr.org/track/icse-20
 - The selected venue's current scope, formatting, anonymity and submission rules are checked.
 
 Pinned synthetic baseline experiments exist and remain published. The matched real-validation baseline probes are now published, but no validated real-world accuracy, participant study, independent label review, publication, external adoption or acceptance is claimed.
+
+
+**Live operational blocker at the frozen detector:** the all-module self-scan fetched 273 files but crashed in SAST on an unresolved guard expression. [Preserved failure](evaluation/final-validation-2026-11-13/live-selfscan-failure.json). Bounded tests do not establish live scan reliability; this failure requires a separate operational fix.

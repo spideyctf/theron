@@ -1,0 +1,316 @@
+{
+  "source_revision": "74be3883281f235199e31e1bcbe3421e8d30ec3c",
+  "all_nine_cases_represented": true,
+  "label_origin": "External PatchEval repair metadata plus CVE CNA records; independent of Theron development",
+  "independent_human_adjudication": false,
+  "independent_alert_precision_established": false,
+  "records": [
+    {
+      "cve_id": "CVE-2020-15278",
+      "record_state": "PUBLISHED",
+      "provider": {
+        "dateUpdated": "2020-10-28T16:35:15.000Z",
+        "orgId": "a0819718-46f1-4df5-94e2-005712e83aaa",
+        "shortName": "GitHub_M"
+      },
+      "source_url": "https://github.com/CVEProject/cvelistV5/blob/74be3883281f235199e31e1bcbe3421e8d30ec3c/cves/2020/15xxx/CVE-2020-15278.json",
+      "upstream_cwes": [
+        "CWE-250",
+        "CWE-269",
+        "CWE-285",
+        "CWE-863"
+      ],
+      "cna_cwes": [
+        "CWE-863"
+      ],
+      "cwe_overlap": [
+        "CWE-863"
+      ],
+      "reference_urls": [
+        "https://github.com/Cog-Creators/Red-DiscordBot/security/advisories/GHSA-mp9m-g7qj-6vqr",
+        "https://github.com/Cog-Creators/Red-DiscordBot/commit/726bfd38adfdfaef760412a68e01447b470f438b",
+        "https://github.com/Cog-Creators/Red-DiscordBot/releases/tag/3.4.1"
+      ],
+      "declared_patch_urls": [
+        "https://github.com/Cog-Creators/Red-DiscordBot/commit/726bfd38adfdfaef760412a68e01447b470f438b"
+      ],
+      "patch_url_exact_overlap": [
+        "https://github.com/cog-creators/red-discordbot/commit/726bfd38adfdfaef760412a68e01447b470f438b"
+      ],
+      "cna_title": "Unauthorized privilege escalation in Mod module",
+      "record_sha256": "1d5254907c16d0be63a1edcd516dbd8e6632642eaa0a9f3efa4db3559aa05a02",
+      "function_spans_adjudicated_by_external_reviewer": false,
+      "theron_alerts_independently_reviewed": false
+    },
+    {
+      "cve_id": "CVE-2021-21360",
+      "record_state": "PUBLISHED",
+      "provider": {
+        "dateUpdated": "2021-05-22T17:06:19.000Z",
+        "orgId": "a0819718-46f1-4df5-94e2-005712e83aaa",
+        "shortName": "GitHub_M"
+      },
+      "source_url": "https://github.com/CVEProject/cvelistV5/blob/74be3883281f235199e31e1bcbe3421e8d30ec3c/cves/2021/21xxx/CVE-2021-21360.json",
+      "upstream_cwes": [
+        "CWE-200"
+      ],
+      "cna_cwes": [
+        "CWE-200"
+      ],
+      "cwe_overlap": [
+        "CWE-200"
+      ],
+      "reference_urls": [
+        "https://github.com/zopefoundation/Products.GenericSetup/security/advisories/GHSA-jff3-mwp3-f8cw",
+        "https://pypi.org/project/Products.GenericSetup/",
+        "https://github.com/zopefoundation/Products.GenericSetup/commit/700319512b3615b3871a1f24e096cf66dc488c57",
+        "http://www.openwall.com/lists/oss-security/2021/05/21/1",
+        "http://www.openwall.com/lists/oss-security/2021/05/22/1"
+      ],
+      "declared_patch_urls": [
+        "https://github.com/zopefoundation/Products.GenericSetup/commit/700319512b3615b3871a1f24e096cf66dc488c57"
+      ],
+      "patch_url_exact_overlap": [
+        "https://github.com/zopefoundation/products.genericsetup/commit/700319512b3615b3871a1f24e096cf66dc488c57"
+      ],
+      "cna_title": "Exposure of Sensitive Information to an Unauthorized Actor in Products.GenericSetup",
+      "record_sha256": "2d03398599d6bbd39048252c5b5137517234ebac88cbc9172b3b93d012b92bb7",
+      "function_spans_adjudicated_by_external_reviewer": false,
+      "theron_alerts_independently_reviewed": false
+    },
+    {
+      "cve_id": "CVE-2021-23727",
+      "record_state": "PUBLISHED",
+      "provider": {
+        "dateUpdated": "2022-01-16T03:06:38.000Z",
+        "orgId": "bae035ff-b466-4ff4-94d0-fc9efd9e1730",
+        "shortName": "snyk"
+      },
+      "source_url": "https://github.com/CVEProject/cvelistV5/blob/74be3883281f235199e31e1bcbe3421e8d30ec3c/cves/2021/23xxx/CVE-2021-23727.json",
+      "upstream_cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "cna_cwes": [],
+      "cwe_overlap": [],
+      "reference_urls": [
+        "https://snyk.io/vuln/SNYK-PYTHON-CELERY-2314953",
+        "https://github.com/celery/celery/blob/master/Changelog.rst%23522",
+        "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/SYXRGHWHD2WWMHBWCVD5ULVINPKNY3P5/"
+      ],
+      "declared_patch_urls": [
+        "https://github.com/celery/celery/commit/1f7ad7e6df1e02039b6ab9eec617d283598cad6b"
+      ],
+      "patch_url_exact_overlap": [],
+      "cna_title": "Stored Command Injection",
+      "record_sha256": "1e4129c194b302a9204f53eb7b9bb7640c2b0551fcdaff3719e4b67ec0aae7a7",
+      "function_spans_adjudicated_by_external_reviewer": false,
+      "theron_alerts_independently_reviewed": false
+    },
+    {
+      "cve_id": "CVE-2021-39163",
+      "record_state": "PUBLISHED",
+      "provider": {
+        "dateUpdated": "2021-09-24T22:06:15.000Z",
+        "orgId": "a0819718-46f1-4df5-94e2-005712e83aaa",
+        "shortName": "GitHub_M"
+      },
+      "source_url": "https://github.com/CVEProject/cvelistV5/blob/74be3883281f235199e31e1bcbe3421e8d30ec3c/cves/2021/39xxx/CVE-2021-39163.json",
+      "upstream_cwes": [
+        "CWE-863"
+      ],
+      "cna_cwes": [
+        "CWE-200"
+      ],
+      "cwe_overlap": [],
+      "reference_urls": [
+        "https://github.com/matrix-org/synapse/security/advisories/GHSA-jj53-8fmw-f2w2",
+        "https://github.com/matrix-org/synapse/commit/cb35df940a",
+        "https://github.com/matrix-org/synapse/releases/tag/v1.41.1",
+        "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/PXT7ID7DNBRN2TVTETU3SYQHJKEG6PXN/",
+        "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/2VHDEPCZ22GJFMZCWA2XZAGPOEV72POF/"
+      ],
+      "declared_patch_urls": [
+        "https://github.com/matrix-org/synapse/commit/cb35df940a"
+      ],
+      "patch_url_exact_overlap": [
+        "https://github.com/matrix-org/synapse/commit/cb35df940a"
+      ],
+      "cna_title": "Adding a private/unlisted room to a community exposes room metadata in an unauthorised manner.",
+      "record_sha256": "23fb04d8dae4623c8d194f9c0e5d15d9938aa87d6235b37fd2b2a827d71a5eb5",
+      "function_spans_adjudicated_by_external_reviewer": false,
+      "theron_alerts_independently_reviewed": false
+    },
+    {
+      "cve_id": "CVE-2022-29217",
+      "record_state": "PUBLISHED",
+      "provider": {
+        "dateUpdated": "2022-06-01T05:06:14.000Z",
+        "orgId": "a0819718-46f1-4df5-94e2-005712e83aaa",
+        "shortName": "GitHub_M"
+      },
+      "source_url": "https://github.com/CVEProject/cvelistV5/blob/74be3883281f235199e31e1bcbe3421e8d30ec3c/cves/2022/29xxx/CVE-2022-29217.json",
+      "upstream_cwes": [
+        "CWE-327"
+      ],
+      "cna_cwes": [
+        "CWE-327"
+      ],
+      "cwe_overlap": [
+        "CWE-327"
+      ],
+      "reference_urls": [
+        "https://github.com/jpadilla/pyjwt/security/advisories/GHSA-ffqj-6fqr-9h24",
+        "https://github.com/jpadilla/pyjwt/commit/9c528670c455b8d948aff95ed50e22940d1ad3fc",
+        "https://github.com/jpadilla/pyjwt/releases/tag/2.4.0",
+        "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/6HIYEYZRQEP6QTHT3EHH3RGFYJIHIMAO/",
+        "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/5PK7IQCBVNLYJEFTPHBBPFP72H4WUFNX/"
+      ],
+      "declared_patch_urls": [
+        "https://github.com/jpadilla/pyjwt/commit/9c528670c455b8d948aff95ed50e22940d1ad3fc"
+      ],
+      "patch_url_exact_overlap": [
+        "https://github.com/jpadilla/pyjwt/commit/9c528670c455b8d948aff95ed50e22940d1ad3fc"
+      ],
+      "cna_title": "Key confusion through non-blocklisted public key formats in PyJWT",
+      "record_sha256": "8d56dfc231aaf656564431c0116fbada119a784aa384abc71b7f10643b59570b",
+      "function_spans_adjudicated_by_external_reviewer": false,
+      "theron_alerts_independently_reviewed": false
+    },
+    {
+      "cve_id": "CVE-2023-32303",
+      "record_state": "PUBLISHED",
+      "provider": {
+        "orgId": "a0819718-46f1-4df5-94e2-005712e83aaa",
+        "shortName": "GitHub_M",
+        "dateUpdated": "2023-05-12T20:55:07.601Z"
+      },
+      "source_url": "https://github.com/CVEProject/cvelistV5/blob/74be3883281f235199e31e1bcbe3421e8d30ec3c/cves/2023/32xxx/CVE-2023-32303.json",
+      "upstream_cwes": [
+        "CWE-732"
+      ],
+      "cna_cwes": [
+        "CWE-732"
+      ],
+      "cwe_overlap": [
+        "CWE-732"
+      ],
+      "reference_urls": [
+        "https://github.com/planetlabs/planet-client-python/security/advisories/GHSA-j5fj-rfh6-qj85",
+        "https://github.com/planetlabs/planet-client-python/commit/d71415a83119c5e89d7b80d5f940d162376ee3b7",
+        "https://github.com/planetlabs/planet-client-python/releases/tag/2.0.1"
+      ],
+      "declared_patch_urls": [
+        "https://github.com/planetlabs/planet-client-python/commit/d71415a83119c5e89d7b80d5f940d162376ee3b7"
+      ],
+      "patch_url_exact_overlap": [
+        "https://github.com/planetlabs/planet-client-python/commit/d71415a83119c5e89d7b80d5f940d162376ee3b7"
+      ],
+      "cna_title": "Planet's secret file is created with excessive permissions",
+      "record_sha256": "f52895db8cd9d914928eb987c6c537dd4cb78dad49ff033d5c25172f3beca740",
+      "function_spans_adjudicated_by_external_reviewer": false,
+      "theron_alerts_independently_reviewed": false
+    },
+    {
+      "cve_id": "CVE-2023-34457",
+      "record_state": "PUBLISHED",
+      "provider": {
+        "orgId": "a0819718-46f1-4df5-94e2-005712e83aaa",
+        "shortName": "GitHub_M",
+        "dateUpdated": "2023-08-03T14:06:20.059Z"
+      },
+      "source_url": "https://github.com/CVEProject/cvelistV5/blob/74be3883281f235199e31e1bcbe3421e8d30ec3c/cves/2023/34xxx/CVE-2023-34457.json",
+      "upstream_cwes": [
+        "CWE-20"
+      ],
+      "cna_cwes": [
+        "CWE-20"
+      ],
+      "cwe_overlap": [
+        "CWE-20"
+      ],
+      "reference_urls": [
+        "https://github.com/MechanicalSoup/MechanicalSoup/security/advisories/GHSA-x456-3ccm-m6j4",
+        "https://github.com/MechanicalSoup/MechanicalSoup/commit/d57c4a269bba3b9a0c5bfa20292955b849006d9e",
+        "https://github.com/MechanicalSoup/MechanicalSoup/releases/tag/v1.3.0",
+        "https://security.netapp.com/advisory/ntap-20230803-0005/"
+      ],
+      "declared_patch_urls": [
+        "https://github.com/MechanicalSoup/MechanicalSoup/commit/d57c4a269bba3b9a0c5bfa20292955b849006d9e"
+      ],
+      "patch_url_exact_overlap": [
+        "https://github.com/mechanicalsoup/mechanicalsoup/commit/d57c4a269bba3b9a0c5bfa20292955b849006d9e"
+      ],
+      "cna_title": "MechanicalSoup vulnerable to malicious web server reading arbitrary files on client using file input inside HTML form",
+      "record_sha256": "4e1cc9c2ae1b282eef6e3c027b7fd219ed98fcdb796f2d98b3c1d29a5b15d170",
+      "function_spans_adjudicated_by_external_reviewer": false,
+      "theron_alerts_independently_reviewed": false
+    },
+    {
+      "cve_id": "CVE-2023-49736",
+      "record_state": "PUBLISHED",
+      "provider": {
+        "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+        "shortName": "apache",
+        "dateUpdated": "2023-12-19T09:35:07.189Z"
+      },
+      "source_url": "https://github.com/CVEProject/cvelistV5/blob/74be3883281f235199e31e1bcbe3421e8d30ec3c/cves/2023/49xxx/CVE-2023-49736.json",
+      "upstream_cwes": [
+        "CWE-89"
+      ],
+      "cna_cwes": [
+        "CWE-89"
+      ],
+      "cwe_overlap": [
+        "CWE-89"
+      ],
+      "reference_urls": [
+        "https://lists.apache.org/thread/1kf481bgs3451qcz6hfhobs7xvhp8n1p",
+        "http://www.openwall.com/lists/oss-security/2023/12/19/2"
+      ],
+      "declared_patch_urls": [
+        "https://github.com/apache/superset/commit/1d403dab9822a8cee6108669c53e53fad881c751",
+        "https://github.com/apache/superset/commit/34101594e284ab3acce692f41aff7759ccb4bf1d"
+      ],
+      "patch_url_exact_overlap": [],
+      "cna_title": "Apache Superset: SQL Injection on where_in JINJA macro",
+      "record_sha256": "bbd9b372014919a7919b53289f6aa1c1a5531150e86f86629ca3751092a079f4",
+      "function_spans_adjudicated_by_external_reviewer": false,
+      "theron_alerts_independently_reviewed": false
+    },
+    {
+      "cve_id": "CVE-2025-43859",
+      "record_state": "PUBLISHED",
+      "provider": {
+        "orgId": "a0819718-46f1-4df5-94e2-005712e83aaa",
+        "shortName": "GitHub_M",
+        "dateUpdated": "2025-04-24T18:15:53.328Z"
+      },
+      "source_url": "https://github.com/CVEProject/cvelistV5/blob/74be3883281f235199e31e1bcbe3421e8d30ec3c/cves/2025/43xxx/CVE-2025-43859.json",
+      "upstream_cwes": [
+        "CWE-444"
+      ],
+      "cna_cwes": [
+        "CWE-444"
+      ],
+      "cwe_overlap": [
+        "CWE-444"
+      ],
+      "reference_urls": [
+        "https://github.com/python-hyper/h11/security/advisories/GHSA-vqfr-h8mv-ghfj",
+        "https://github.com/python-hyper/h11/commit/114803a29ce50116dc47951c690ad4892b1a36ed"
+      ],
+      "declared_patch_urls": [
+        "https://github.com/python-hyper/h11/commit/114803a29ce50116dc47951c690ad4892b1a36ed"
+      ],
+      "patch_url_exact_overlap": [
+        "https://github.com/python-hyper/h11/commit/114803a29ce50116dc47951c690ad4892b1a36ed"
+      ],
+      "cna_title": "h11 accepts some malformed Chunked-Encoding bodies",
+      "record_sha256": "3a8e61993fd5aa0f3bd562268ab8e7fc741ad3d8e5367f85d4cc53da85f2856f",
+      "function_spans_adjudicated_by_external_reviewer": false,
+      "theron_alerts_independently_reviewed": false
+    }
+  ]
+}
