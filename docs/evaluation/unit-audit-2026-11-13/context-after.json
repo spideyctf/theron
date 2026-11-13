@@ -1,0 +1,28 @@
+{
+  "implementation_revision": "54110a461b770cc2734585475381a4c99362b1b9",
+  "records": [
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "vul_func",
+      "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+      "files": [
+        "starlette/staticfiles.py",
+        "starlette/responses.py",
+        "starlette/types.py"
+      ],
+      "alerts": []
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "role": "fix_func",
+      "revision": "1797de464124b090f10cf570441e8292936d63e3",
+      "files": [
+        "starlette/staticfiles.py",
+        "starlette/responses.py",
+        "starlette/types.py"
+      ],
+      "alerts": []
+    }
+  ],
+  "final_test_source_opened": false
+}

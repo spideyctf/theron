@@ -1,0 +1,118 @@
+{
+  "bandit": [
+    {
+      "role": "vul_func",
+      "sink_line": 384,
+      "semantic_cwe": "CWE-1336",
+      "same_sink_alerts": [],
+      "reported_cwe_preserved": true,
+      "interpretation": "Location observation only; no baseline CWE silently remapped and no new accuracy claim"
+    },
+    {
+      "role": "vul_func",
+      "sink_line": 410,
+      "semantic_cwe": "CWE-1336",
+      "same_sink_alerts": [],
+      "reported_cwe_preserved": true,
+      "interpretation": "Location observation only; no baseline CWE silently remapped and no new accuracy claim"
+    },
+    {
+      "role": "fix_func",
+      "sink_line": 384,
+      "semantic_cwe": "CWE-1336",
+      "same_sink_alerts": [],
+      "reported_cwe_preserved": true,
+      "interpretation": "Location observation only; no baseline CWE silently remapped and no new accuracy claim"
+    },
+    {
+      "role": "fix_func",
+      "sink_line": 411,
+      "semantic_cwe": "CWE-1336",
+      "same_sink_alerts": [],
+      "reported_cwe_preserved": true,
+      "interpretation": "Location observation only; no baseline CWE silently remapped and no new accuracy claim"
+    }
+  ],
+  "semgrep": [
+    {
+      "role": "vul_func",
+      "sink_line": 384,
+      "semantic_cwe": "CWE-1336",
+      "same_sink_alerts": [
+        {
+          "path": "CVE-2021-4315/vul_func/231d566ea3a76534a507dd68840524952c10d5d9/psiturk/experiment.py",
+          "rule_id": "render-template-string",
+          "cwes": [
+            "CWE-96"
+          ],
+          "line_number": 384,
+          "end_line_number": 389,
+          "severity": "WARNING",
+          "confidence": "LOW"
+        }
+      ],
+      "reported_cwe_preserved": true,
+      "interpretation": "Location observation only; no baseline CWE silently remapped and no new accuracy claim"
+    },
+    {
+      "role": "vul_func",
+      "sink_line": 410,
+      "semantic_cwe": "CWE-1336",
+      "same_sink_alerts": [
+        {
+          "path": "CVE-2021-4315/vul_func/231d566ea3a76534a507dd68840524952c10d5d9/psiturk/experiment.py",
+          "rule_id": "render-template-string",
+          "cwes": [
+            "CWE-96"
+          ],
+          "line_number": 410,
+          "end_line_number": 415,
+          "severity": "WARNING",
+          "confidence": "LOW"
+        }
+      ],
+      "reported_cwe_preserved": true,
+      "interpretation": "Location observation only; no baseline CWE silently remapped and no new accuracy claim"
+    },
+    {
+      "role": "fix_func",
+      "sink_line": 384,
+      "semantic_cwe": "CWE-1336",
+      "same_sink_alerts": [
+        {
+          "path": "CVE-2021-4315/fix_func/47787e15cecd66f2aa87687bf852ae0194a4335f/psiturk/experiment.py",
+          "rule_id": "render-template-string",
+          "cwes": [
+            "CWE-96"
+          ],
+          "line_number": 384,
+          "end_line_number": 390,
+          "severity": "WARNING",
+          "confidence": "LOW"
+        }
+      ],
+      "reported_cwe_preserved": true,
+      "interpretation": "Location observation only; no baseline CWE silently remapped and no new accuracy claim"
+    },
+    {
+      "role": "fix_func",
+      "sink_line": 411,
+      "semantic_cwe": "CWE-1336",
+      "same_sink_alerts": [
+        {
+          "path": "CVE-2021-4315/fix_func/47787e15cecd66f2aa87687bf852ae0194a4335f/psiturk/experiment.py",
+          "rule_id": "render-template-string",
+          "cwes": [
+            "CWE-96"
+          ],
+          "line_number": 411,
+          "end_line_number": 417,
+          "severity": "WARNING",
+          "confidence": "LOW"
+        }
+      ],
+      "reported_cwe_preserved": true,
+      "interpretation": "Location observation only; no baseline CWE silently remapped and no new accuracy claim"
+    }
+  ]
+}

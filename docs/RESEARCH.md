@@ -1,6 +1,6 @@
 # Research direction and publication readiness
 
-Assessment updated: 13 November 2026, through the precision repair and matched real-code validation comparison. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
+Assessment updated: 13 November 2026, through the matching-unit audit and template-source development increment. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
 
 ## Broader platform direction
 
@@ -9,6 +9,8 @@ The agreed project goal is now a unified, evidence-driven security analysis and 
 Working project/research title: **Theron: A Unified Security Analysis and Verification Platform for AI-Enabled and Agentic Software Systems**. The platform is broad; research claims must identify and measure a specific cross-layer benefit. The existing abstract below describes the completed prototype study and is not yet an abstract for an implemented full-platform contribution.
 
 ## Current assessment
+
+The [matching-unit audit](evaluation/unit-audit-2026-11-13/README.md) now distinguishes four cases' sink locations and semantic categories from coarse repair metadata. A general Flask/Quart template-source model, frozen at `54110a4`, detects two developer-audited psiTurk vulnerable flows with the corresponding patched flows quiet; disabling helper analysis removes both matches. This is source-guided development on an exposed CVE, not independent real-world recall. Four added pinned Starlette package files yield no detection gain, identifying unresolved ASGI/callback/tuple semantics. Synthetic scores remain unchanged, and the final test reserve stays closed.
 
 The [matched real-code comparison](evaluation/real-comparison-2026-11-13/README.md) now runs the same 28 pinned files through Theron, Bandit 1.9.4 and Semgrep 1.185.0. Native input/rule byte hashes are verified. Theron produces two unverified hash advisories, Bandit 74 alerts and Semgrep 90. No engine matches a vulnerable reference span under the unchanged CWE/start-line rule. Bandit matches one patched reference case; that is not automatically a false positive. Available-file grouping (18 separate CVE/role/revision groups, seven available import candidates) adds no Theron detections. This is not complete repository analysis or an adjudicated real-world accuracy comparison.
 
@@ -100,7 +102,7 @@ Bandit is a useful pattern-check baseline, not a direct substitute for a general
 
 ## Preliminary abstract
 
-We present Theron, a repository security-review prototype combining bounded Python flow analysis, context-specific boundaries, dependency evidence and a limited MCP declaration-to-code association. On exposed OWASP BenchmarkPython data, coverage and precision repairs identify 65 of 89 vulnerable test cases with zero label-matched fixed-case alerts; validation recall is 91.67%. These are synthetic tuning results informed by prior outcomes and source inspection. PySASTBench tuning recall is 78.15%, while nine additional weak-hash configuration advisories illustrate review costs outside labelled targets. A frozen first pass over nine real-code validation candidates produces no reference-span matches; two of 28 source snapshots fail upstream function-hash checks and remain errors. These isolated-file probes and upstream repair roles do not establish real-world accuracy. Reproducible artifacts preserve errors, adverse outcomes and exposure history. Independent accuracy, practical correlation benefit and operational scalability remain unestablished.
+We present Theron, a repository security-review prototype combining bounded Python flow analysis, context-specific boundaries, dependency evidence and a limited MCP declaration-to-code association. On exposed OWASP BenchmarkPython data, coverage and precision repairs identify 65 of 89 vulnerable test cases with zero label-matched fixed-case alerts; validation recall is 91.67%. These are synthetic tuning results informed by prior outcomes and source inspection. PySASTBench tuning recall is 78.15%, while nine additional weak-hash configuration advisories illustrate review costs outside labelled targets. A frozen first pass over nine real-code validation candidates produces no reference-span matches; two of 28 source snapshots fail upstream function-hash checks and remain errors. A subsequent developer audit distinguishes sink units and semantic categories from repair metadata; a source-guided template-source increment detects two audited psiTurk flows while their patched counterparts remain quiet. Adding four pinned Starlette package files does not improve detection. These development observations and upstream repair roles do not establish real-world accuracy. Reproducible artifacts preserve errors, adverse outcomes and exposure history. Independent accuracy, practical correlation benefit and operational scalability remain unestablished.
 
 This abstract describes the current checkpoint and its adverse outcomes. It is a draft, not a claim of publication readiness. Do not state superiority, novelty or user benefit as established facts.
 

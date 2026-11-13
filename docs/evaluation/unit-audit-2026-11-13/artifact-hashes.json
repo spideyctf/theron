@@ -1,0 +1,16 @@
+{
+  "encoding": "SHA-256 of json.dumps(value,sort_keys=True).encode(); independent of checkout line endings",
+  "artifacts": {
+    "audit.json": "4a68a58cead304fa6fc28254d3faa131ad9ed4de91584ac596673de8af2df0e9",
+    "baseline-unit-observations.json": "795dab468f4b66f7bf81e3b88c6491089ee022dfb24c5dc3146eb72fe4869cd1",
+    "context-after.json": "7ac987c5f2b84d75affe72073bfd4d1cd686de4ba07000b1e26ebe39be67917e",
+    "context-before.json": "ffa9467655d5a085b0190b414759a626b8a689ad55504117bd74fd4899d11f66",
+    "context-exposure.json": "51c1b643ad25a56ab9995f832ceaa473e052ef1c7d089f4c6630528545d178e3",
+    "development.json": "0932bd36c91a59eee416ff10fc403b302eaf8d5824eab51460ebc3809c5a20f1",
+    "pysastbench.json": "2fa1410e9233aa733ec3bcb91e0dfb8dc363446247eda53337fb19c479b192d4",
+    "real-development.json": "2ae4458c7c3bed4f5799d0791366bb0a8cdec209631b82a835ffba28d9a307c6",
+    "summary.json": "0773bcb7923628e0aab05529339d691e909212a3542ef15056244e2042c58c0a",
+    "test.json": "8b9b3ce7a58007dc550badf4aa7dada9c2467b289d4bb4146e59080c50f2facc",
+    "validation.json": "a1f30339d1107a854026d44f6a0b0e2b09ca0cd50a67d9d37087e1daf746f280"
+  }
+}
