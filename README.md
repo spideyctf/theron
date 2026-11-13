@@ -17,6 +17,8 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 Bounded offline operational checks passed at 25/100/250 files (median 0.83/1.29/2.22 seconds, three repeats); API queue overflow, injected failure, error redaction, downloads and recovery passed. These measurements do not establish production capacity. Synthetic metrics below remain exposed tuning evidence and do not override the adverse real-code result.
 
+**Live operational follow-up:** a separately preserved crash was repaired at `cfbfb83`; all four modules then completed a real GitHub/OSV scan of 273 pinned files in 168.19 seconds. Three coverage notices and 15 unresolved SBOM versions remain. [Repair, regression evidence and limits](docs/evaluation/final-validation-2026-11-13/OPERATIONAL-REPAIR.md).
+
 ## Latest evaluation: OWASP BenchmarkPython
 
 **End-to-end flow increment, 13 November 2026:** [results, limits and reproduction](docs/evaluation/flow-completion-2026-11-13/README.md), frozen at `d8fc598`, closes the supported typed-ASGI/callback/tuple path into file responses and adds archive-filter evidence with runtime uncertainty. Three developer-audited unsafe flows across the exposed psiTurk and Starlette CVEs match; all three corresponding patched flows stay quiet. Local collection, correlation, API/downloads, JSON/HTML/SARIF exports and frontend evidence display are covered by original-fixture tests. HTML now visibly displays traces and evidence classification. Synthetic metrics remain unchanged. These are source-guided development observations, not independent real-world accuracy; final real test source remains closed.
@@ -107,7 +109,7 @@ CWE-77 has one additional unscorable vulnerable label. A perfect result within a
 
 | Engineering check, 13 November 2026 | Result |
 | --- | --- |
-| Python regression suite | 556 passed; 1 dependency deprecation warning |
+| Python regression suite | 558 passed; 1 dependency deprecation warning |
 | Frontend tests | 13 passed |
 | TypeScript check and production build | Passed |
 | CI configuration | Ubuntu and Windows; Python 3.12 and Node 22 |
@@ -270,4 +272,4 @@ See the [research plan](docs/RESEARCH.md) for proposed experiments and publicati
 [MIT](LICENSE). Benchmark data and third-party tools retain their own licenses and attribution requirements.
 
 
-**Live operational blocker at the frozen detector:** the all-module self-scan fetched 273 files but crashed in SAST on an unresolved guard expression. [Preserved failure](docs/evaluation/final-validation-2026-11-13/live-selfscan-failure.json). Bounded tests do not establish live scan reliability; this failure requires a separate operational fix.
+**Operational repair after the frozen evaluation:** [verification](docs/evaluation/final-validation-2026-11-13/OPERATIONAL-REPAIR.md). The original 273-file live crash is preserved; a separate guard-state fix at `cfbfb83` passes 558 Python tests and preserves all 1,470 exposed synthetic outcomes. The live rerun completes all four modules in 168.19 seconds, with 151 SBOM components, 15 unresolved versions and three application coverage notices (including analysis-budget exhaustion). This completes a live static transport smoke check, not independent accuracy or production-capacity validation.

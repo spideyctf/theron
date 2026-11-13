@@ -1,0 +1,5 @@
+# Operational crash repair, after frozen outcomes
+
+The frozen evaluation and first live crash were committed as `1043ed4` before changing scanner code. Original controls reproduce the crash for both quote-membership operators on computed expressions. The repair `cfbfb83db97e468035a23c7ad19c0597bb46c317` prevents unresolved operands from becoming taint-state keys; the unsupported expression receives no guessed boundary. Both regression controls retain a real external-input command sink. All 558 Python tests pass.
+
+The next live smoke uses this repaired implementation against the same public target commit `4c166e0b179e1ff10a3a432e2bd439765b601a81`. It is operational verification of a crash fix, not a new untouched-source detection evaluation. Keep the first crash and the nine-case zero-match result attached to the old detector. Record repaired results/failures separately. The harness now retains redacted network/frame metadata on exceptions. No final-test labels, matching units or reserved source are used to tune this repair. Any post-repair replay of the nine cases would be an exposed regression only.

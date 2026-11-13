@@ -1,8 +1,8 @@
 # Final real-code, external-label and operational evaluation
 
-13 November 2026. **The final static probe matches 0/9 vulnerable reference cases. Theron is not publication-ready as a broadly accurate analyzer.** The engineering pipeline works within tested bounds; the broader detection claim fails this test.
+13 November 2026. **The final static probe matches 0/9 vulnerable reference cases. Theron is not publication-ready as a broadly accurate analyzer.** The broader detection claim is unsupported by this test. A later operational crash repair and successful live smoke are documented separately below.
 
-Detector/rules freeze: `4c166e0b179e1ff10a3a432e2bd439765b601a81`. [Selection](selection.json), [pre-exposure protocol](PROTOCOL.md), [summary](summary.json). Protocol commit `d0b186e` precedes all final source retrieval; scoring adapter commit `7a7fb81` precedes outcomes. Its later addition only reproduces published inputs; matching labels/rules were unchanged. `git diff 4c166e0 -- scanner rules` remains empty. No post-result tuning was performed.
+Detector/rules freeze: `4c166e0b179e1ff10a3a432e2bd439765b601a81`. [Selection](selection.json), [pre-exposure protocol](PROTOCOL.md), [summary](summary.json). Protocol commit `d0b186e` precedes all final source retrieval; scoring adapter commit `7a7fb81` precedes outcomes. Its later addition only reproduces published inputs; matching labels/rules were unchanged. The study checkpoint `1043ed4` has no scanner/rule diff from `4c166e0`. Original final outcomes were published before a separate operational crash repair; scoring labels and units were not changed after results.
 
 ## External labels: corroborated, with limits
 
@@ -59,11 +59,11 @@ Regression validation: **556 Python tests, 13 frontend tests, TypeScript and pro
 
 ## Live all-module smoke failure
 
-The [separately declared live smoke](LIVE-PROTOCOL.md) against the same frozen public commit fetched all 273 selected GitHub files, then failed in SAST with `TypeError: argument of type 'NoneType' is not iterable` at `scanner/python_analysis.py:388`. The first harness did not retain network receipts on exception; those measurements are unavailable, not invented. All four modules were requested, but the pipeline did not finish. [Preserved failure](live-selfscan-failure.json). This is a concrete operational blocker beyond the successful bounded tests. Fix it separately, retain this original outcome, and do not rebrand post-fix evaluation on these exposed cases as untouched evidence.
+The [separately declared live smoke](LIVE-PROTOCOL.md) against the same frozen public commit fetched all 273 selected GitHub files, then failed in SAST with `TypeError: argument of type 'NoneType' is not iterable` at `scanner/python_analysis.py:388`. The first harness did not retain network receipts on exception; those measurements are unavailable, not invented. All four modules were requested, but the pipeline did not finish. [Preserved failure](live-selfscan-failure.json). This is a concrete operational blocker beyond the successful bounded tests. The later [operational repair](OPERATIONAL-REPAIR.md) fixes the crash and completes all four modules on the same 273-file target. The original failure and final-test outcomes remain unchanged; the repair does not inherit an untouched-source accuracy claim.
 
 ## Reproduce
 
-From the repository root, with development/web dependencies and pinned synthetic/rule caches installed:
+For the original frozen study, use a separate checkout at `1043ed4` with development/web dependencies and pinned synthetic/rule caches installed. That checkpoint contains the evaluation scripts and unchanged `4c166e0` detector. The latest checkout contains the later operational crash repair, so the original freeze guard intentionally rejects replay there. From the frozen checkout root:
 
 ```powershell
 # Download only published final-test paths and verify published byte hashes.
@@ -81,6 +81,10 @@ npm run build
 Initial acquisition used GitHub connector base64 responses and verified blob hashes. `stage` consumes that ignored acquisition cache; subsequent reproductions use `fetch` with the published immutable receipts instead. `audit_final_evidence stage-baselines` creates the exact Python-rule inventory from the pinned rule checkout. Run Bandit over `.benchmark-cache/final-realcode/stage` with `--ignore-nosec --exit-zero -f json`; run Semgrep natively with the published flags and absolute staged input path. Save their raw outputs in `.benchmark-cache/final-realcode/{bandit,semgrep}.json`. Native SHA-256 inventory must match `baseline-inputs.json` in `native-verification.json`, then `audit_final_evidence baselines` collects results. CVE records are committed so label corroboration is offline/reproducible.
 
 Runtime measurements are expected to vary; detector outcomes, input bytes and labels are the reproducibility targets. [Artifact hashes](artifact-hashes.json) use UTF-8 text normalized to LF for checkout portability.
+
+## Post-evaluation operational repair
+
+[Repair verification](OPERATIONAL-REPAIR.md): the original crash was reproduced by two controls and fixed after preserving the frozen results. All 558 Python tests pass, and all 1,470 exposed synthetic case outcomes/alert counts remain identical. A real GitHub/OSV rerun completed SAST, agentic, AI and SCA on 273 files in 168.19 seconds, with 151 SBOM components and three application coverage notices. Analysis budget and dependency uncertainty remain visible. This operational success is not accuracy or production-capacity evidence.
 
 ## What is complete and what remains
 

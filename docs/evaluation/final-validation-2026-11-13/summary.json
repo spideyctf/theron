@@ -1,6 +1,6 @@
 {
   "implementation_revision": "4c166e0b179e1ff10a3a432e2bd439765b601a81",
-  "detector_changed_after_test_exposure": false,
+  "detector_changed_after_test_exposure": true,
   "final_test_cases": 9,
   "source_snapshots": 22,
   "function_hash_checks": 38,
@@ -186,5 +186,15 @@
     "network_metadata_available": false,
     "target_code_executed": false,
     "live_application_started": false
-  }
+  },
+  "operational_repair_implementation": "cfbfb83db97e468035a23c7ad19c0597bb46c317",
+  "operational_repair_live_completed": true,
+  "operational_repair_application_coverage_notices": 3,
+  "post_repair_checks": {
+    "python_passed": 558,
+    "frontend_passed": 13,
+    "synthetic_variant_outcomes_unchanged": 1470
+  },
+  "original_final_evaluation_detector_changed_during_evaluation": false,
+  "subsequent_change_reason": "Operational crash fix after original final results were committed; no new held-out accuracy claim."
 }
