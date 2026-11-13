@@ -250,6 +250,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
     def _mark_safe(self, source, context):
         if "sanitizers" in self.disabled_features:
             return source
+        return self._tag_source(source,context)
+
+    @staticmethod
+    def _tag_source(source, context):
         if source:
             return (source[0], source[1], frozenset(source[2] if len(source) > 2 else ()) | {context}) + (source[3:4] if len(source) > 3 else ())
         return None
@@ -490,7 +494,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if isinstance(node, ast.Subscript) and key in self.bindings:
             return None  # observed literal-key slot was overwritten with a clean value
         if isinstance(node, ast.Subscript) and self._name(node.value) == 'sys.modules':
-            return self._mark_safe(self._source(node.slice), 'reflective-object')
+            return self._tag_source(self._source(node.slice), 'reflective-object')
         if (isinstance(node, ast.Subscript) and self._name(node.value) == 'starlette.types.Scope'
                 and self._constant(node.slice) in {'path', 'raw_path', 'query_string', 'headers'}):
             return ('input', node.lineno)
@@ -499,7 +503,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if parent_source and parent_source[0] == 'remote-response':
                 return ('input',parent_source[1],frozenset(),*(parent_source[3:4])) if node.attr in {'text','content'} else None
             if self._safe_for(parent_source,'reflective-object'):
-                return self._mark_safe(parent_source,'reflective-callable')
+                return self._tag_source(parent_source,'reflective-callable')
             owner = self._name(node.value)
             if ("http.server.BaseHTTPRequestHandler" in self.class_bases.get(owner, set())
                     and node.attr in {"path", "rfile", "headers"}):
@@ -522,7 +526,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if name in {'bs4.element.Tag.'+method for method in ['find','find_all','select','select_one','get_text']}:
                 return self._source(node.func.value)
             if name in {'importlib.import_module','builtins.__import__'} or (isinstance(node.func,ast.Name) and node.func.id=='__import__' and '__import__' not in self.bindings):
-                return self._mark_safe(self._source(node.args[0]),'reflective-object') if node.args else None
+                return self._tag_source(self._source(node.args[0]),'reflective-object') if node.args else None
             if name == 'builtins.getattr' or (isinstance(node.func,ast.Name) and node.func.id=='getattr' and 'getattr' not in self.bindings):
                 if len(node.args)>=2:
                     owner, selector = node.args[:2]
@@ -531,7 +535,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                             or self._safe_for(owner_source,'reflective-callable')
                             or isinstance(owner,ast.Subscript) and self._name(owner.value)=='sys.modules'
                             or isinstance(owner,ast.Call) and self._name(owner.func)=='importlib.import_module'):
-                        return self._mark_safe(self._combine([owner_source,self._source(selector)]),'reflective-callable')
+                        return self._tag_source(self._combine([owner_source,self._source(selector)]),'reflective-callable')
             if (isinstance(node.func,ast.Name) and node.func.id in {'str','bytes','bytearray'} and node.func.id not in self.bindings):
                 source = self._combine(self._source(v) for v in node.args)
                 if source:

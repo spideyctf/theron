@@ -109,6 +109,12 @@ def test_class_constraint_does_not_survive_reassignment():
     assert dynamic(code)
 
 
+def test_sanitizer_ablation_preserves_reflection_provenance_and_removes_only_class_constraint():
+    code='from flask import request\nimport os\nfn=getattr(os,request.args["name"])\nif not issubclass(fn,BaseException):\n raise ValueError()\nfn("message")'
+    assert not dynamic(code)
+    assert dynamic(code,disabled_features={'sanitizers'})
+
+
 def test_remote_html_attributes_reach_file_paths():
     code='import requests\nfrom bs4 import BeautifulSoup\npage=BeautifulSoup(requests.get("https://example.invalid").text,"html.parser")\nfor tag in page.select("input"):\n open(tag.get("value"),"rb")'
     assert any(f.rule_id=='PY-SAST-PATH-001' for f in analyze_python('app.py',code))
