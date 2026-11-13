@@ -20,6 +20,7 @@ from pydantic import BaseModel, Field
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from scanner.engine import ScanEngine
+from scanner.config import validate_entrypoints
 from scanner.reporters.json_reporter import generate_json_report
 from scanner.reporters.sarif import generate_sarif_report
 
@@ -33,6 +34,7 @@ class ScanRequest(BaseModel):
     modules: List[str] = Field(default_factory=lambda: ["ai", "sast", "sca", "agentic"])
     include_experimental: bool = False
     correlation_enabled: bool = True
+    analysis_entrypoints: List[dict] = Field(default_factory=list,max_length=100)
 
 
 def repository_name(value: str) -> str:
@@ -101,7 +103,8 @@ def create_app(scanner_factory=ScanEngine, static_dir=None):
         engine = None
         try:
             engine = scanner_factory(token, config={"include_experimental": body.include_experimental,
-                                                    'correlation_enabled':body.correlation_enabled})
+                                                    'correlation_enabled':body.correlation_enabled,
+                                                    'analysis_entrypoints':body.analysis_entrypoints})
             owner, repo = body.repository.split("/")
             result = engine.scan_repo(owner, repo, branch=body.branch, modules=body.modules)
             with lock:
@@ -130,6 +133,10 @@ def create_app(scanner_factory=ScanEngine, static_dir=None):
             raise HTTPException(422, str(exc)) from exc
         if not body.modules or len(set(body.modules)) != len(body.modules) or not set(body.modules) <= MODULES:
             raise HTTPException(422, "Select one or more unique modules: ai, sast, sca, agentic.")
+        try:
+            validate_entrypoints(body.analysis_entrypoints)
+        except ValueError as exc:
+            raise HTTPException(422,str(exc)) from exc
         if body.branch is not None:
             body.branch = body.branch.strip() or None
             if body.branch and (any(ord(c) < 32 for c in body.branch) or ".." in body.branch or body.branch.startswith("-")):

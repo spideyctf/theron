@@ -131,6 +131,32 @@ def test_unresolved_attribute_chain_has_bounded_source_traversal(monkeypatch):
     assert calls<100  # A repeated traversal of each prefix previously grew exponentially.
 
 
+def test_api_passes_validated_models_and_returns_conditional_evidence(monkeypatch):
+    from fastapi.testclient import TestClient
+    from scanner.web import create_app
+    from tests.test_web import wait_for
+    from tests.library_delivery_fixture import build, ENTRY
+    calls=[]
+    class Engine:
+        def __init__(self,token,config):
+            calls.append(config)
+        def scan_repo(self,*args,**kwargs):
+            return build()
+    monkeypatch.setenv('GITHUB_TOKEN','original-test-not-a-live-token')
+    with TestClient(create_app(scanner_factory=Engine)) as client:
+        body=dict(repository='owner/project',modules=['sast'],analysis_entrypoints=[ENTRY])
+        start=client.post('/api/scans',json=body)
+        assert start.status_code==202
+        job=wait_for(client,start.json()['id'],'completed')
+        assert calls[0]['analysis_entrypoints']==[ENTRY]
+        assert any(f['evidence_kind']=='configured-flow' for f in job['result']['findings'])
+        for fmt in ['json','sarif']:
+            text=client.get('/api/scans/'+start.json()['id']+'/report?format='+fmt).text
+            assert 'configured-flow' in text and ENTRY['reason'] in text
+        invalid=client.post('/api/scans',json=dict(body,analysis_entrypoints=[dict(ENTRY,file='../server.py')]))
+        assert invalid.status_code==422 and len(calls)==1
+
+
 def test_remote_html_attributes_reach_file_paths():
     code='import requests\nfrom bs4 import BeautifulSoup\npage=BeautifulSoup(requests.get("https://example.invalid").text,"html.parser")\nfor tag in page.select("input"):\n open(tag.get("value"),"rb")'
     assert any(f.rule_id=='PY-SAST-PATH-001' for f in analyze_python('app.py',code))
