@@ -77,7 +77,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             index(tree.body)
             self.visit(tree)
             for entry in self.entrypoints:
-                if entry['file']==self.file_path and (entry['function'],entry['parameter']) not in self.matched_entrypoints:
+                if entry['file']==self.file_path and (entry['file'],entry['function'],entry['parameter']) not in self.matched_entrypoints:
                     self.findings.append(Finding(title='Configured entrypoint could not be resolved',severity=Severity.INFO,
                         category=Category.SAST,module='coverage',file_path=self.file_path,rule_id='PY-ENTRYPOINT-001',
                         description=f"No matching parameter for {entry['function']}.{entry['parameter']}; configured coverage is incomplete.",
@@ -337,7 +337,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if entry['file'] == self.file_path and entry['function'] == function:
                 parameters = node.args.posonlyargs + node.args.args + node.args.kwonlyargs
                 if entry['parameter'] in {p.arg for p in parameters}:
-                    self.matched_entrypoints.add((entry['function'],entry['parameter']))
+                    self.matched_entrypoints.add((entry['file'],entry['function'],entry['parameter']))
                     self.taint[entry['parameter']] = ('input',node.lineno,frozenset(),self.file_path)
                     self.configured_origins.setdefault((self.file_path,node.lineno),set()).add(entry['reason'])
         decorators = [decorator.func if isinstance(decorator, ast.Call) else decorator for decorator in node.decorator_list]

@@ -157,6 +157,15 @@ def test_api_passes_validated_models_and_returns_conditional_evidence(monkeypatc
         assert invalid.status_code==422 and len(calls)==1
 
 
+def test_same_function_name_in_an_import_does_not_resolve_a_missing_local_parameter():
+    from scanner.python_project import PythonProject
+    files={'app.py':'from helper import f as invoke\ndef f(other):\n pass\ninvoke("local")',
+           'helper.py':'def f(data):\n return data'}
+    entries=[dict(file=path,function='f',parameter='data',reason='Explicit application boundary') for path in files]
+    fs=analyze_python('app.py',files['app.py'],project=PythonProject(files),entrypoints=entries)
+    assert any(f.rule_id=='PY-ENTRYPOINT-001' and f.file_path=='app.py' for f in fs)
+
+
 def test_remote_html_attributes_reach_file_paths():
     code='import requests\nfrom bs4 import BeautifulSoup\npage=BeautifulSoup(requests.get("https://example.invalid").text,"html.parser")\nfor tag in page.select("input"):\n open(tag.get("value"),"rb")'
     assert any(f.rule_id=='PY-SAST-PATH-001' for f in analyze_python('app.py',code))
