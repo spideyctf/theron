@@ -4,6 +4,20 @@ import ast
 import re
 from scanner.models import Category, Finding, Severity
 
+CALL_RETURN_TYPES = {
+    'sqlite3.connect':'sqlite3.Connection', 'sqlite3.Connection.cursor':'sqlite3.Cursor',
+    'django.db.connection.cursor':'sqlite3.Cursor', 'flask.make_response':'flask.Response',
+    'lxml.etree.fromstring':'lxml.etree._Element', 'lxml.etree.XML':'lxml.etree._Element',
+    'lxml.etree.parse':'lxml.etree._ElementTree', 'xml.sax.make_parser':'xml.sax.XMLReader',
+    'random.Random':'random.Random', 'random.SystemRandom':'random.SystemRandom', 'ldap3.Connection':'ldap3.Connection',
+    'bs4.BeautifulSoup':'bs4.element.Tag',
+    **{root+'.'+method: 'requests.Response' if root.startswith('requests') else 'httpx.Response'
+       for root in ['requests','requests.Session','httpx','httpx.Client','httpx.AsyncClient']
+       for method in ['get','post','put','patch','delete','head','options','request']},
+    **{'bs4.element.Tag.'+method:'bs4.element.Tag' for method in ['find','select_one']},
+    **{'bs4.element.Tag.'+method:'bs4.element.ResultSet' for method in ['find_all','select']},
+}
+
 
 class PythonAIAnalyzer(ast.NodeVisitor):
     def __init__(self, file_path, content, module="ai", include_experimental=False, project=None, disabled_features=(), entrypoints=()):
@@ -130,21 +144,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if (isinstance(node.func, ast.Name) and node.func.id == 'staticmethod' and 'staticmethod' not in self.bindings
                     and len(node.args) == 1 and not node.keywords):
                 return self._name(node.args[0])
-            returns = {'sqlite3.connect': 'sqlite3.Connection', 'sqlite3.Connection.cursor': 'sqlite3.Cursor',
-                       'django.db.connection.cursor': 'sqlite3.Cursor', 'flask.make_response': 'flask.Response',
-                       'lxml.etree.fromstring': 'lxml.etree._Element', 'lxml.etree.XML': 'lxml.etree._Element',
-                       'lxml.etree.parse': 'lxml.etree._ElementTree'}
-            returns.update({'xml.sax.make_parser': 'xml.sax.XMLReader',
-                            'random.Random': 'random.Random', 'random.SystemRandom': 'random.SystemRandom',
-                            'ldap3.Connection': 'ldap3.Connection'})
-            for root in ['requests','requests.Session','httpx','httpx.Client','httpx.AsyncClient']:
-                returns.update({root+'.'+method: ('requests.Response' if root.startswith('requests') else 'httpx.Response')
-                                for method in ['get','post','put','patch','delete','head','options','request']})
-            returns['bs4.BeautifulSoup'] = 'bs4.element.Tag'
-            returns.update({'bs4.element.Tag.'+method: 'bs4.element.Tag' for method in ['find','select_one']})
-            returns.update({'bs4.element.Tag.'+method: 'bs4.element.ResultSet' for method in ['find_all','select']})
-            if constructor in returns:
-                return returns[constructor]
+            if constructor in CALL_RETURN_TYPES:
+                return CALL_RETURN_TYPES[constructor]
             if constructor in self.classes:
                 return constructor
             if constructor in {"pathlib.Path", "socket.socket", "requests.Session", "httpx.Client", "httpx.AsyncClient"}:
@@ -637,7 +638,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if isinstance(node, ast.Subscript):
             return self._source(node.value)
         if isinstance(node, ast.Attribute):
-            source = self._source(node.value)
+            source = parent_source
             if source and source[0] == "model-response" and node.attr in {"content", "output_text", "text"}:
                 return ("model", source[1])
             if source and node.attr in {"name"} and self._name(node.value).startswith("pathlib.Path"):
@@ -1360,7 +1361,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         }
 
     def visit_Call(self, node):
-        target_source = self._source(node.func)
+        target_source = self.taint.get(self._key(node.func))
+        if not target_source and not self._name(node.func):
+            target_source = self._source(node.func)
         if (target_source and target_source[0] in {'input','model'} and self._safe_for(target_source,'reflective-callable')
                 and not self._safe_for(target_source,'exception-class')):
             self._add(node,'PY-SAST-DYNAMIC-CALL-001','Untrusted selection controls an invoked module attribute',

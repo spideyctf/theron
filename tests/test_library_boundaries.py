@@ -115,6 +115,22 @@ def test_sanitizer_ablation_preserves_reflection_provenance_and_removes_only_cla
     assert dynamic(code,disabled_features={'sanitizers'})
 
 
+def test_unresolved_attribute_chain_has_bounded_source_traversal(monkeypatch):
+    import ast
+    from scanner.python_analysis import PythonAIAnalyzer
+    analyzer=PythonAIAnalyzer('app.py','')
+    original=analyzer._source
+    calls=0
+    def counted(node):
+        nonlocal calls
+        calls+=1
+        return original(node)
+    monkeypatch.setattr(analyzer,'_source',counted)
+    expression=ast.parse('value'+'.attribute'*18,mode='eval').body
+    assert analyzer._source(expression) is None
+    assert calls<100  # A repeated traversal of each prefix previously grew exponentially.
+
+
 def test_remote_html_attributes_reach_file_paths():
     code='import requests\nfrom bs4 import BeautifulSoup\npage=BeautifulSoup(requests.get("https://example.invalid").text,"html.parser")\nfor tag in page.select("input"):\n open(tag.get("value"),"rb")'
     assert any(f.rule_id=='PY-SAST-PATH-001' for f in analyze_python('app.py',code))
