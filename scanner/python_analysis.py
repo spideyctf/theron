@@ -732,7 +732,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if not data_filter or unknown_kwargs:
                 archive_source = self._source(node.func.value)
                 if fully_trusted and not unknown_kwargs:
-                    observed = archive_source and archive_source[0] == 'input'
+                    observed = archive_source and archive_source[0] in {'input','model'}
                     self._add(node, 'PY-SAST-ARCHIVE-001', 'Untrusted archive reaches fully-trusted extraction' if observed else 'Archive extraction explicitly trusts member metadata',
                               Severity.HIGH if observed else Severity.MEDIUM, Category.SAST,
                               'The resolved extractor explicitly uses fully_trusted filtering. ' + ('An observed external file object reaches the archive reader.' if observed else 'Archive trust is unverified; review whether member names and links are controlled externally.'),
@@ -751,6 +751,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         name = self._name(node.func)
         if name not in {'anyio.to_thread.run_sync', 'asyncio.to_thread'} or not node.args:
             return None
+        if isinstance(self.functions.get(self._name(node.args[0])), ast.AsyncFunctionDef):
+            return None  # A thread wrapper returns this coroutine; it does not await it.
         if name == 'anyio.to_thread.run_sync' and any(kw.arg not in {'abandon_on_cancel', 'cancellable', 'limiter'} for kw in node.keywords):
             return None
         if id(node) not in self.forwarded_calls:
@@ -1254,6 +1256,11 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         forwarded = self._forwarded_call(node)
         if forwarded is not None:
             self.visit(forwarded)
+        elif (self._name(node.func) in {'anyio.to_thread.run_sync','asyncio.to_thread'} and node.args
+              and isinstance(self.functions.get(self._name(node.args[0])), ast.AsyncFunctionDef)):
+            self._add(node,'PY-CALLBACK-001','Async callback in a thread wrapper needs review',Severity.INFO,Category.SAST,
+                      'The callback is async. The thread wrapper returns a coroutine rather than awaiting its body; this call is not modelled as synchronous execution.',
+                      'Await the coroutine through an appropriate async call path and review the caller.',None,confidence='medium',maturity='advisory')
         if isinstance(node.func, ast.Attribute) and self._name(node.func.value) == 'builtins.list' and node.func.attr in {'append', 'extend', 'insert', 'pop'}:
             key = self._key(node.func.value)
             known = self.literal_sets.get(key)

@@ -59,3 +59,9 @@ def test_custom_filters_remain_review_items():
 def test_import_alias_and_member_extract():
     fs=archive_findings('from tarfile import open as read_archive\nt=read_archive("a.tar")\nt.extract("member",filter="fully_trusted")')
     assert len(fs)==1 and fs[0].maturity=='advisory'
+
+
+def test_model_output_archive_bytes_remain_untrusted():
+    code='import openai,base64,io,tarfile\nr=openai.responses.create(model="example",input="generate data")\nt=tarfile.open(fileobj=io.BytesIO(base64.b64decode(r.output_text)))\nt.extractall("/srv",filter="fully_trusted")'
+    fs=archive_findings(code)
+    assert len(fs)==1 and fs[0].maturity=='stable' and fs[0].trace[0]['role']=='source'

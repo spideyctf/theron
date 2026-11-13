@@ -121,3 +121,10 @@ def test_transparent_callback_return_keeps_input():
 def test_callback_scheduler_keywords_do_not_become_function_arguments():
     code='import anyio\nfrom starlette.types import Scope\nfrom starlette.responses import FileResponse\ndef fixed():\n return "/srv/fixed",None\nasync def app(scope:Scope):\n p,m=await anyio.to_thread.run_sync(fixed,limiter=scope["path"])\n FileResponse(p)'
     assert not paths(code)
+
+
+def test_async_callback_is_not_mistaken_for_thread_execution():
+    code='import anyio\nfrom starlette.types import Scope\nfrom starlette.responses import FileResponse\nasync def callback(p):\n FileResponse(p)\nasync def app(scope:Scope):\n await anyio.to_thread.run_sync(callback,scope["path"])'
+    fs=analyze_python('app.py',code)
+    assert not any(f.cwe=='CWE-22' for f in fs)
+    assert any(f.rule_id=='PY-CALLBACK-001' for f in fs)
