@@ -1,0 +1,13 @@
+{
+  "encoding": "sha256(json.dumps(value,sort_keys=True).encode()); independent of checkout line endings",
+  "artifacts": {
+    "alert-audit.json": "bf2b6dcbac1f2b8f8453d4a45c74ba06d2ceb91d1f716f290457773f6a23cab9",
+    "development.json": "de76d153929aa78b6af99ce089aae567098737ec26615a75cb4d64c0dbbc629b",
+    "pysastbench.json": "e6999f43e7b9ecb905debdbd35e5f9dbcebb9abc3c2671be64323382eb73fb58",
+    "real-validation.json": "44b76b12e0411239bc685d4aba7fd98d8261b7775bc71b9f5d00834f25b174e6",
+    "summary.json": "4a7f879b04ece9670ea5b4d97d52d0d7ef9e403612d62813a41f776ab88403d2",
+    "test.json": "839b749c81c694b9579aa9a75cf297f74bce36f94653fff35aa5eec4dcce0c63",
+    "validation-exposure.json": "1c996a33fa8811d91afd020086a0b6e199f4a8b223f839049aabb9a51a941840",
+    "validation.json": "2c81fe57fbfcb3f6ad95e104247da19c3912b111f4bedfd8aaf9491ed7ce932e"
+  }
+}

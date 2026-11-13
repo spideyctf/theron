@@ -1,0 +1,290 @@
+{
+  "partition": "validation",
+  "final_test_source_opened": false,
+  "independent_labels": false,
+  "acquisition": "GitHub connector, base64 bytes verified against Git blob SHA-1",
+  "records": [
+    {
+      "cve_id": "CVE-2019-16789",
+      "repository": "pylons/waitress",
+      "role": "vul_func",
+      "revision": "f11093a6b3240fc26830b6111e826128af7771c3",
+      "path": "waitress/parser.py",
+      "source_sha256": "7317e27e255947ad4ae50195e69e422bba8737464cff7329e80d76e7287c79d5",
+      "github_blob_sha": "dd591f2d966917d8f32a5cc924331e7dfa0fbff1",
+      "source_url": "https://github.com/Pylons/waitress/blob/f11093a6b3240fc26830b6111e826128af7771c3/waitress/parser.py"
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "repository": "pylons/waitress",
+      "role": "vul_func",
+      "revision": "f11093a6b3240fc26830b6111e826128af7771c3",
+      "path": "waitress/utilities.py",
+      "source_sha256": "8a5c68bf7b3739913c26efc16782aa965633a1146f00f4bc1afbc15d8831b22a",
+      "github_blob_sha": "03368974b4d4c389870a8ff44d710530f2b8cb55",
+      "source_url": "https://github.com/Pylons/waitress/blob/f11093a6b3240fc26830b6111e826128af7771c3/waitress/utilities.py"
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "repository": "pylons/waitress",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/parser.py",
+      "source_sha256": "b76250d336f76492638e72379d8459b1c6753c59c29d239802bc070b0920cab8",
+      "github_blob_sha": "8b07dd6a96d951cafd5fed0eb9730e338c1b90f7",
+      "source_url": "https://github.com/Pylons/waitress/blob/11d9e138125ad46e951027184b13242a3c1de017/waitress/parser.py"
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "repository": "pylons/waitress",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/utilities.py",
+      "source_sha256": "d8893dd3cdabd14c17d02f032322e0fc5c902a9759518beb74c3ae80a6897bdb",
+      "github_blob_sha": "556bed20a13cf66abf698ec77499bbaac6327a6f",
+      "source_url": "https://github.com/Pylons/waitress/blob/11d9e138125ad46e951027184b13242a3c1de017/waitress/utilities.py"
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "repository": "pylons/waitress",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/rfc7230.py",
+      "source_sha256": "1bbe8344fdcdcb0ab2a53c266f3bbf233e0284fa597a13641fadb5e62323607a",
+      "github_blob_sha": "a9f047c880bfcd4b01bbb5557c454678722a6473",
+      "source_url": "https://github.com/Pylons/waitress/blob/11d9e138125ad46e951027184b13242a3c1de017/waitress/rfc7230.py"
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "repository": "federatedai/fate",
+      "role": "vul_func",
+      "revision": "67708d5d327e736d80e2f6726968cf02a926310e",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+      "source_sha256": "5b22b2b1769f3371b6d0e31b3bd3aae92f4d65071aa4e48310a84a4e1e5f77cf",
+      "github_blob_sha": "1f23ddc532e0a1b8394c1e3bd9927a92d06cba5f",
+      "source_url": "https://github.com/FederatedAI/FATE/blob/67708d5d327e736d80e2f6726968cf02a926310e/federatedml/tree/hetero/hetero_decision_tree_guest.py"
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "repository": "federatedai/fate",
+      "role": "fix_func",
+      "revision": "6feccf6d752184a6f9365d56a76fe627983e7139",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+      "source_sha256": "37aab54941e8b77a00f7e07fc1bd9e572e8c001f959ef29bff0c0cc7f9363c25",
+      "github_blob_sha": "028c74c005715a1252f390e3ab6803e01b673530",
+      "source_url": "https://github.com/FederatedAI/FATE/blob/6feccf6d752184a6f9365d56a76fe627983e7139/federatedml/tree/hetero/hetero_decision_tree_guest.py"
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "repository": "federatedai/fate",
+      "role": "fix_func",
+      "revision": "6feccf6d752184a6f9365d56a76fe627983e7139",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+      "source_sha256": "ce602524fdd3ffc30c9cb1b1faeab619671194270bb9dc350f156291502f3998",
+      "github_blob_sha": "a1ce0146b491a45cd746a6c4df26f3f7fad0db1c",
+      "source_url": "https://github.com/FederatedAI/FATE/blob/6feccf6d752184a6f9365d56a76fe627983e7139/federatedml/tree/hetero/hetero_decision_tree_host.py"
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "repository": "nyuccl/psiturk",
+      "role": "vul_func",
+      "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+      "path": "psiturk/experiment.py",
+      "source_sha256": "6099f0f4caa76f3cfe52b5a5873827874bd07c3e0a022c472b7062342af1e6a4",
+      "github_blob_sha": "a6904f624b7317ae9fe180caace78897cc955b4c",
+      "source_url": "https://github.com/NYUCCL/psiTurk/blob/231d566ea3a76534a507dd68840524952c10d5d9/psiturk/experiment.py"
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "repository": "nyuccl/psiturk",
+      "role": "fix_func",
+      "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+      "path": "psiturk/experiment.py",
+      "source_sha256": "7849fc8d260f542c4f34809a9521bd1ba02cd4a302d5b1a3f18c2c46b7803444",
+      "github_blob_sha": "7ba1c1e7820417979103517f58b6afdf9fc02f01",
+      "source_url": "https://github.com/NYUCCL/psiTurk/blob/47787e15cecd66f2aa87687bf852ae0194a4335f/psiturk/experiment.py"
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "repository": "oauthlib/oauthlib",
+      "role": "vul_func",
+      "revision": "b4bdd09c56aa5dedb475529e75ce73c092ca0898",
+      "path": "oauthlib/uri_validate.py",
+      "source_sha256": "5cb10ed664a85cae63f64600d762719d392d5a1b091f8d263c9f66f2aee30d8c",
+      "github_blob_sha": "8a6d9c27b0c454e13ddae86bc08f0560dc73db85",
+      "source_url": "https://github.com/oauthlib/oauthlib/blob/b4bdd09c56aa5dedb475529e75ce73c092ca0898/oauthlib/uri_validate.py"
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "repository": "oauthlib/oauthlib",
+      "role": "fix_func",
+      "revision": "2e40b412c844ecc4673c3fa3f72181f228bdbacd",
+      "path": "oauthlib/uri_validate.py",
+      "source_sha256": "d4bc0000d839bc18daca92a06c317faabb7fbbbac93e57e0d614eb0fda1a9c45",
+      "github_blob_sha": "a6fe0fb23e05f1ecd34a4fcd6a5cbb17aa091af9",
+      "source_url": "https://github.com/oauthlib/oauthlib/blob/2e40b412c844ecc4673c3fa3f72181f228bdbacd/oauthlib/uri_validate.py"
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "repository": "encode/starlette",
+      "role": "vul_func",
+      "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+      "path": "starlette/staticfiles.py",
+      "prior_acquisition_error": "Error: No file content returned",
+      "source_sha256": "8c59da75accc2f80f437847dec9aab5a3adf40d0221322a9a69d9a4aa37377ff",
+      "source_url": "https://raw.githubusercontent.com/encode/starlette/24c1fac62a80bb153c6548145334fc643991e35a/starlette/staticfiles.py",
+      "acquisition": "immutable raw URL fallback"
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "repository": "encode/starlette",
+      "role": "fix_func",
+      "revision": "1797de464124b090f10cf570441e8292936d63e3",
+      "path": "starlette/staticfiles.py",
+      "prior_acquisition_error": "Error: No file content returned",
+      "source_sha256": "388a4936861b10fb97ac3fd50ead04616fd0beb2ad3df1694b9f0be52e76fe9f",
+      "source_url": "https://raw.githubusercontent.com/encode/starlette/1797de464124b090f10cf570441e8292936d63e3/starlette/staticfiles.py",
+      "acquisition": "immutable raw URL fallback"
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "role": "vul_func",
+      "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+      "path": "luigi/contrib/lsf_runner.py",
+      "source_sha256": "5b2baddbd38a5e9331f4ae1bcda7d5075817aa48c3afe48bbd840a932526dfa4",
+      "github_blob_sha": "5a6c8b569981e31f1e60366f1b8259d1798b77c5",
+      "source_url": "https://github.com/spotify/luigi/blob/c9a0d2074be5bc03008485aeeef90678f1567231/luigi/contrib/lsf_runner.py"
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "role": "vul_func",
+      "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+      "path": "luigi/contrib/sge_runner.py",
+      "source_sha256": "4a51d13f9289e555d1e206edc98a839371b2b137500b85bce0a6c1385b4253bc",
+      "github_blob_sha": "f0621fb475514ae24fdf6b65edf6cda283b7a62a",
+      "source_url": "https://github.com/spotify/luigi/blob/c9a0d2074be5bc03008485aeeef90678f1567231/luigi/contrib/sge_runner.py"
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/contrib/lsf_runner.py",
+      "source_sha256": "5a761cd2eda363862e443d3cf44aac63fd3e21f211c24c768defbb6db1ddffb9",
+      "github_blob_sha": "f483e7bf45d6cb4c65e7234d616cee5014d5dd9a",
+      "source_url": "https://github.com/spotify/luigi/blob/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/contrib/lsf_runner.py"
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/contrib/sge_runner.py",
+      "source_sha256": "acc3c3ab05036f5a8a5ae3ead92f199bdc187f161c3f024a139701929dffedc4",
+      "github_blob_sha": "2600f2d6dc1cb71a01de117a4d529cd63907fe7a",
+      "source_url": "https://github.com/spotify/luigi/blob/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/contrib/sge_runner.py"
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/safe_extractor.py",
+      "source_sha256": "05c0202460dfead8ee39057c18814b38a74cbea03611a8e7dc0fe40e418cf7c8",
+      "github_blob_sha": "f106a14c37ff92534d65f315b1834b869c36c670",
+      "source_url": "https://github.com/spotify/luigi/blob/b5d1b965ead7d9f777a3216369b5baf23ec08999/luigi/safe_extractor.py"
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "repository": "thinkst/opencanary",
+      "role": "vul_func",
+      "revision": "d3956bc602f95d2bec55eebc96d5e3a2cb35bf47",
+      "path": "opencanary/config.py",
+      "source_sha256": "a63ff11dfd343b87e32267367165914983fa7e5bfee92cd42782923ede3c75cf",
+      "github_blob_sha": "4886783c7d85b4b064e0c3388956d2a35727cf04",
+      "source_url": "https://github.com/thinkst/opencanary/blob/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/config.py"
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "repository": "thinkst/opencanary",
+      "role": "vul_func",
+      "revision": "d3956bc602f95d2bec55eebc96d5e3a2cb35bf47",
+      "path": "opencanary/modules/portscan.py",
+      "source_sha256": "9c2f10eec86b87fc8f64c3f21ffae903dd4a2b995bc5549efd23a49038015c00",
+      "github_blob_sha": "730ce68a4d196f4b6a97ee9667a2c0ef194547ae",
+      "source_url": "https://github.com/thinkst/opencanary/blob/d3956bc602f95d2bec55eebc96d5e3a2cb35bf47/opencanary/modules/portscan.py"
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "repository": "thinkst/opencanary",
+      "role": "fix_func",
+      "revision": "2c11575b1a3dd8b0df26a879ba856c0aa350c049",
+      "path": "opencanary/config.py",
+      "source_sha256": "35097fcf912e5d041291521b9a82e442674bab9dfe5af6d2ba2b726684df00e5",
+      "github_blob_sha": "5a621f2a8dea1883ab0644ba6c56b407ae489708",
+      "source_url": "https://github.com/thinkst/opencanary/blob/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/config.py"
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "repository": "thinkst/opencanary",
+      "role": "fix_func",
+      "revision": "2c11575b1a3dd8b0df26a879ba856c0aa350c049",
+      "path": "opencanary/modules/portscan.py",
+      "source_sha256": "62274a3c741571e9fcef628562f7357144f1cdc2a8360302983523743c8112d1",
+      "github_blob_sha": "cb6cb7103790125795e7147ac12ccbb39b2dc365",
+      "source_url": "https://github.com/thinkst/opencanary/blob/2c11575b1a3dd8b0df26a879ba856c0aa350c049/opencanary/modules/portscan.py"
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "repository": "gaizhenbiao/chuanhuchatgpt",
+      "role": "vul_func",
+      "revision": "ffea5e9419ed517e8b80208567f4f70404047cbe",
+      "path": "modules/utils.py",
+      "source_sha256": "17ecec89e0bc66f7d3d49a4fdedb6bcd85b2aad0112cfd9987c67d948060d933",
+      "github_blob_sha": "f2baefada1b5e4387f75153489d72d06630b3814",
+      "source_url": "https://github.com/GaiZhenbiao/ChuanhuChatGPT/blob/ffea5e9419ed517e8b80208567f4f70404047cbe/modules/utils.py"
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "repository": "gaizhenbiao/chuanhuchatgpt",
+      "role": "fix_func",
+      "revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+      "path": "ChuanhuChatbot.py",
+      "source_sha256": "b2302fdd5b334ff98413629635bbe2302c8c94b690f758d8c91c63814f526275",
+      "github_blob_sha": "8ea2abd8b1703caeef0ffe5302deb77f61d25b70",
+      "source_url": "https://github.com/GaiZhenbiao/ChuanhuChatGPT/blob/720c23d755a4a955dcb0a54e8c200a2247a27f8b/ChuanhuChatbot.py"
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "repository": "gaizhenbiao/chuanhuchatgpt",
+      "role": "fix_func",
+      "revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+      "path": "modules/utils.py",
+      "source_sha256": "2129826000136fde676e67d9160b1434d968783b21f50559ef8a6db882d260a8",
+      "github_blob_sha": "e6b12b01b5cecc51c96a8a1f10511631faa03803",
+      "source_url": "https://github.com/GaiZhenbiao/ChuanhuChatGPT/blob/720c23d755a4a955dcb0a54e8c200a2247a27f8b/modules/utils.py"
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "repository": "spotipy-dev/spotipy",
+      "role": "vul_func",
+      "revision": "668158f0558d486082c0dc672a6ac39ba05ced6a",
+      "path": "spotipy/cache_handler.py",
+      "source_sha256": "c16cac07e832f6541156131224f45a0c0a27df4eb007daba8816cf8a67a32542",
+      "github_blob_sha": "936e81b0c376bdb7180f31b866ce9886b43226ab",
+      "source_url": "https://github.com/spotipy-dev/spotipy/blob/668158f0558d486082c0dc672a6ac39ba05ced6a/spotipy/cache_handler.py"
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "repository": "spotipy-dev/spotipy",
+      "role": "fix_func",
+      "revision": "1ca453f6ef87a2a9e9876f52b6cb38d13532ccf2",
+      "path": "spotipy/cache_handler.py",
+      "source_sha256": "cf0c640fa16f0507f2ece2847be6f02e32178b13338a1e948dab47261c745be2",
+      "github_blob_sha": "babfb21c001e758c342eecc552d01288eaf7dcfc",
+      "source_url": "https://github.com/spotipy-dev/spotipy/blob/1ca453f6ef87a2a9e9876f52b6cb38d13532ccf2/spotipy/cache_handler.py"
+    }
+  ]
+}

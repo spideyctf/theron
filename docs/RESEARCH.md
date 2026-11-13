@@ -1,6 +1,6 @@
 # Research direction and publication readiness
 
-Assessment updated: 13 November 2026, through the post-Step-5 coverage repair and delivery checkpoint. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
+Assessment updated: 13 November 2026, through the precision repair and first frozen real-code validation probes. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
 
 ## Broader platform direction
 
@@ -10,13 +10,19 @@ Working project/research title: **Theron: A Unified Security Analysis and Verifi
 
 ## Current assessment
 
+The [research repair checkpoint](evaluation/research-repair-2026-11-13/README.md), frozen at `bb9fb30`, recognizes the complete unchanged-value Python string-literal guard responsible for all six exposed test false positives. OWASP test recall remains 73.03% (65/89), with zero label-matched false positives and 100% case precision. Validation remains 91.67% recall. Hash-selection findings are explicitly advisory; nine additional PySASTBench alerts remain visible and their security impact is unverified. These are tuning results, not real-world performance.
+
+The first real validation exposure includes all nine metadata-assigned cases and 28 pinned source snapshots. Twenty-six snapshots pass 34 function-span hash checks; two ChuanhuChatGPT snapshots fail their declared function hashes and remain errors. There are zero reference-span matches in the successful probes. No real-world recall/precision is claimed from upstream repair roles and isolated-file probes. This adverse result limits generalization claims. No detector changes followed the source exposure; the nine final real test cases remain closed. The source/label audit is developer/assistant work, without independent adjudication.
+
+The following paragraphs preserve the preceding engineering history.
+
 Theron is a functioning research prototype: CLI/web review, bounded Python analysis, commit-pinned evidence, advisory alias grouping, context scopes and an experimental MCP correlation pilot are implemented. The [coverage repair](evaluation/coverage-2026-11-13/README.md), frozen at `82db608`, raises exposed OWASP validation recall from 0% to 91.67% and test recall from 15.73% to 73.03%. Test label-matched precision is 91.55%, with six false-positive cases instead of five. Development recall is 72.40%, with nine false positives instead of fourteen. All 1,230 cases, categories, labels and the scoring adapter remain unchanged. Because prior outcomes and selected source templates informed development, this is an exposed tuning regression, not new held-out evidence or a general superiority claim.
 
 The [Step 5 evaluation](evaluation/step5-2026-11-13/RESULTS.md) preserves the earlier `36ee9ee` freeze and provisional real-code development evidence. PySASTBench label-matched tuning recall remains 78.15%; its fixed-file review volume rises from eight to seventeen alerts because of nine new weak-hash alerts outside the labelled targets. These extra alerts are unadjudicated. The repaired analyzer passes 473 Python tests and the existing frontend tests/build.
 
 Fresh exact-byte staging in Step 5 corrected an old baseline-input defect. A controlled Semgrep replay reproduced the old development outcome; corrected staging changes seven FN to TP and two TN to FP, while baseline validation/test outcomes stay unchanged. Those baseline results are reused for the coverage repair because inputs, rules and scoring are unchanged; they were not rerun for this increment. Step 5's safe_join propagation gap is now repaired with path-only boundary handling and cross-grammar controls. Three new full-split ablations show losses of 20/7/17 TP on development/validation/test when helper calls or imports are disabled. These observations still require independent corroboration.
 
-The [independent review packet](evaluation/step5-2026-11-13/INDEPENDENT-REVIEW.md) is prepared, but zero real-code cases or MCP edges have independent adjudication. The nine real validation and nine real test candidates remain closed. Automated evaluation is complete; the publication-level real-code research gate is open.
+The [independent review packet](evaluation/step5-2026-11-13/INDEPENDENT-REVIEW.md) remains available, but the user has declined external review for this iteration. Zero real-code cases or MCP edges have independent adjudication. The real validation source is now exposed in the frozen probes above; the nine real test cases remain closed. The paper must disclose author/assistant-only review rather than implying independence.
 
 These results do not justify an overall competitive-accuracy or industry-readiness claim. A synthetic template/category-shift holdout and same-protocol baselines now exist; independent real-world/AI-specific evaluation, measured triage benefit and systematic alert adjudication remain missing. XSS recall on the original tuning benchmark is still 10%. Neither synthetic benchmark measures AI-specific checks or dependency accuracy.
 
@@ -58,6 +64,16 @@ Potential contributions to test:
 2. A reporting model that retains fixture/example evidence while separating application scope, uncertain credentials and dependency-version matches.
 3. An empirical study of detection/triage tradeoffs, including failure modes and analysis-budget effects, with reusable evaluation artifacts.
 
+### Related-work boundary and claim repair
+
+| Prior work | Relevant capability | Consequence for Theron's claim |
+| --- | --- | --- |
+| [CodeQL Python data flow](https://codeql.github.com/docs/codeql-language-guides/analyzing-data-flow-in-python/) | Local/global data flow and taint propagation | Bounded interprocedural taint tracking alone is not established novelty |
+| [Pysa](https://pyre-check.org/docs/pysa-basics/) | Modelled Python taint sources and sinks | Adding another source/sink catalogue needs a measured benefit, not just more rules |
+| [VIPER-MCP, arXiv v2](https://arxiv.org/abs/2605.21392) | Describes static alerts resolved to MCP tool handlers and call chains, with dynamic confirmation | Do not claim first MCP-to-code analysis or confirmed exploitability; Theron's declaration-to-file association is more limited |
+
+This is an initial primary-source comparison, not a systematic literature review or an independently reproduced comparison. Theron's current defensible claim is an inspectable, bounded security-review prototype with provenance and explicit unresolved outcomes. A candidate research hypothesis is that declaration provenance improves correct risk attribution while preserving original findings; its real-code edge correctness and reviewer benefit remain unmeasured. Keep the broad platform goal separate from this hypothesis and from completed capabilities.
+
 ## Research questions and experiments
 
 | Question | Proposed experiment | Required outcomes |
@@ -82,9 +98,9 @@ Bandit is a useful pattern-check baseline, not a direct substitute for a general
 
 ## Preliminary abstract
 
-Static security tools can impose review costs when source evidence, dependency matches and demonstration code are presented with the same certainty. We present Theron, a local security review prototype combining bounded Python flow analysis, context-specific sanitizer handling and explicit report scopes. After changes developed on an OWASP BenchmarkPython development split, a frozen detector identified 14 of 89 vulnerable test cases and matched five of 156 fixed cases, compared with three vulnerable detections and five fixed-case matches before the changes. Pinned Bandit and Semgrep configurations detected more vulnerable test cases, while Theron had fewer fixed-case matches. Validation recall was zero. On the previously inspected PySASTBench tuning corpus, recall was 77.31%, demonstrating a substantial gap between the tuning score and the broader synthetic evaluation. Three controlled ablations were neutral on the held-out splits. The study reports limitations, failure modes and reproducible artifacts; real-world/AI-specific holdouts and measured reviewer benefits remain future work.
+We present Theron, a repository security-review prototype combining bounded Python flow analysis, context-specific boundaries, dependency evidence and a limited MCP declaration-to-code association. On exposed OWASP BenchmarkPython data, coverage and precision repairs identify 65 of 89 vulnerable test cases with zero label-matched fixed-case alerts; validation recall is 91.67%. These are synthetic tuning results informed by prior outcomes and source inspection. PySASTBench tuning recall is 78.15%, while nine additional weak-hash configuration advisories illustrate review costs outside labelled targets. A frozen first pass over nine real-code validation candidates produces no reference-span matches; two of 28 source snapshots fail upstream function-hash checks and remain errors. These isolated-file probes and upstream repair roles do not establish real-world accuracy. Reproducible artifacts preserve errors, adverse outcomes and exposure history. Independent accuracy, practical correlation benefit and operational scalability remain unestablished.
 
-This abstract is accurate for the current snapshot, but a submission should replace preliminary gaps with completed experiments where relevant. Do not state superiority, novelty or user benefit as established facts.
+This abstract describes the current checkpoint and its adverse outcomes. It is a draft, not a claim of publication readiness. Do not state superiority, novelty or user benefit as established facts.
 
 ## Paper structure
 
@@ -115,4 +131,4 @@ The [ICSE 2027 tool demonstration call](https://conf.researchr.org/track/icse-20
 - Artifact/data licenses, any participant approval and release permissions are resolved.
 - The selected venue's current scope, formatting, anonymity and submission rules are checked.
 
-No participant study, baseline experiment, independent label review, publication, external adoption or acceptance is claimed by this plan.
+Pinned synthetic baseline experiments exist and remain published. No real-validation baseline comparison, participant study, independent label review, publication, external adoption or acceptance is claimed.

@@ -1,0 +1,700 @@
+{
+  "implementation_revision": "bb9fb3092011aec3c5de0af4b28dea9fdc2b4715",
+  "partition": "validation",
+  "cases": 9,
+  "snapshots": 28,
+  "independent_labels": false,
+  "final_test_source_opened": false,
+  "records": [
+    {
+      "cve_id": "CVE-2019-16789",
+      "repository": "pylons/waitress",
+      "role": "vul_func",
+      "revision": "f11093a6b3240fc26830b6111e826128af7771c3",
+      "path": "waitress/parser.py",
+      "cwes": [
+        "CWE-444"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 190,
+          "end_line": 297,
+          "snippet_sha256": "608d808b51322c663eedadd979613e975db447d966dae6053b98144745f11a3c",
+          "reference_span_matches": []
+        },
+        {
+          "start_line": 348,
+          "end_line": 365,
+          "snippet_sha256": "98a99d48832994961edc63c247f43cd35e8d4ec524c6046d412ea3b7194e6e77",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "7317e27e255947ad4ae50195e69e422bba8737464cff7329e80d76e7287c79d5",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "repository": "pylons/waitress",
+      "role": "vul_func",
+      "revision": "f11093a6b3240fc26830b6111e826128af7771c3",
+      "path": "waitress/utilities.py",
+      "cwes": [
+        "CWE-444"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 211,
+          "end_line": 218,
+          "snippet_sha256": "0838d68f5b07b1bcb78e8b694900279287ade00eb88c9e6147b531b35c87a4c0",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "8a5c68bf7b3739913c26efc16782aa965633a1146f00f4bc1afbc15d8831b22a",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "repository": "pylons/waitress",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/parser.py",
+      "cwes": [
+        "CWE-444"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 190,
+          "end_line": 298,
+          "snippet_sha256": "3f7212f2ecf669401a5af3e16cf7d16186d77f92280ea7b6afa55e712ca26adf",
+          "reference_span_matches": []
+        },
+        {
+          "start_line": 349,
+          "end_line": 376,
+          "snippet_sha256": "540c4ff83d169472ebed6fee4a55469a5a1c262108b4d0aec286b129e879feb6",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "b76250d336f76492638e72379d8459b1c6753c59c29d239802bc070b0920cab8",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "repository": "pylons/waitress",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/utilities.py",
+      "cwes": [
+        "CWE-444"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 222,
+          "end_line": 229,
+          "snippet_sha256": "c0cb390540368623bfc42ab613e94af5e3754c12c4444481bf14e466c5b7583c",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "d8893dd3cdabd14c17d02f032322e0fc5c902a9759518beb74c3ae80a6897bdb",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2019-16789",
+      "repository": "pylons/waitress",
+      "role": "fix_func",
+      "revision": "11d9e138125ad46e951027184b13242a3c1de017",
+      "path": "waitress/rfc7230.py",
+      "cwes": [
+        "CWE-444"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 1,
+          "end_line": 44,
+          "snippet_sha256": "b327b4dee7e8d1224630a8f50a40b55a0f0c53950f4c11579b22645ad983403c",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "1bbe8344fdcdcb0ab2a53c266f3bbf233e0284fa597a13641fadb5e62323607a",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "repository": "federatedai/fate",
+      "role": "vul_func",
+      "revision": "67708d5d327e736d80e2f6726968cf02a926310e",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+      "cwes": [
+        "CWE-668"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 532,
+          "end_line": 544,
+          "snippet_sha256": "db4259e77f9c1e2854b4a80effd3c90a6a0836f10413a30eba49e5e579b1a1ba",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "5b22b2b1769f3371b6d0e31b3bd3aae92f4d65071aa4e48310a84a4e1e5f77cf",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "repository": "federatedai/fate",
+      "role": "fix_func",
+      "revision": "6feccf6d752184a6f9365d56a76fe627983e7139",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_guest.py",
+      "cwes": [
+        "CWE-668"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 544,
+          "end_line": 557,
+          "snippet_sha256": "c2dcc7a439301366c2a5e255ed0149913d8bb8ab881e6c03cbc7a6ca185c4478",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "37aab54941e8b77a00f7e07fc1bd9e572e8c001f959ef29bff0c0cc7f9363c25",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2020-25459",
+      "repository": "federatedai/fate",
+      "role": "fix_func",
+      "revision": "6feccf6d752184a6f9365d56a76fe627983e7139",
+      "path": "federatedml/tree/hetero/hetero_decision_tree_host.py",
+      "cwes": [
+        "CWE-668"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 532,
+          "end_line": 542,
+          "snippet_sha256": "f07b36d9e6f9d5bf33e98e89ed0001dfe320b1cff1022f3d862c856d433d1733",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "ce602524fdd3ffc30c9cb1b1faeab619671194270bb9dc350f156291502f3998",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "repository": "nyuccl/psiturk",
+      "role": "vul_func",
+      "revision": "231d566ea3a76534a507dd68840524952c10d5d9",
+      "path": "psiturk/experiment.py",
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 287,
+          "end_line": 391,
+          "snippet_sha256": "abda5e7010054d75aa8e30b831cf5b6ab9f527f0852b7afbcf71f0fe767c9dd5",
+          "reference_span_matches": []
+        },
+        {
+          "start_line": 396,
+          "end_line": 415,
+          "snippet_sha256": "6762602226da0a9abbbe907a827f77c6382923ad51eff51e20958633d71a66b9",
+          "reference_span_matches": []
+        },
+        {
+          "start_line": 734,
+          "end_line": 747,
+          "snippet_sha256": "0666264f86f54b55a67bc0dc14afae34a7dfaaafe6d634cc411bb380bbf79dc2",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "6099f0f4caa76f3cfe52b5a5873827874bd07c3e0a022c472b7062342af1e6a4",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2021-4315",
+      "repository": "nyuccl/psiturk",
+      "role": "fix_func",
+      "revision": "47787e15cecd66f2aa87687bf852ae0194a4335f",
+      "path": "psiturk/experiment.py",
+      "cwes": [
+        "CWE-77",
+        "CWE-78",
+        "CWE-94"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 287,
+          "end_line": 392,
+          "snippet_sha256": "e3fb64fac631c9677bc6cdb1eff7388c5c0e04841dea3e3efde4d66a824b6a1a",
+          "reference_span_matches": []
+        },
+        {
+          "start_line": 397,
+          "end_line": 417,
+          "snippet_sha256": "dcd9de0d07a3a765a758d5db6a7b28cec0e73ca35a64e63fe82be7cd44d49735",
+          "reference_span_matches": []
+        },
+        {
+          "start_line": 736,
+          "end_line": 749,
+          "snippet_sha256": "e5a7b5a3f01bb0e31ba7631746dfce0a24dc501bfdf6df47ab876cffb4030b31",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "7849fc8d260f542c4f34809a9521bd1ba02cd4a302d5b1a3f18c2c46b7803444",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "repository": "oauthlib/oauthlib",
+      "role": "vul_func",
+      "revision": "b4bdd09c56aa5dedb475529e75ce73c092ca0898",
+      "path": "oauthlib/uri_validate.py",
+      "cwes": [
+        "CWE-601"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 68,
+          "end_line": 69,
+          "snippet_sha256": "35c42c5bac866e0be1d66d7a7fd2a9d13af1e7fca2774f773156b7a3d6afcd53",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "5cb10ed664a85cae63f64600d762719d392d5a1b091f8d263c9f66f2aee30d8c",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2022-36087",
+      "repository": "oauthlib/oauthlib",
+      "role": "fix_func",
+      "revision": "2e40b412c844ecc4673c3fa3f72181f228bdbacd",
+      "path": "oauthlib/uri_validate.py",
+      "cwes": [
+        "CWE-601"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 69,
+          "end_line": 69,
+          "snippet_sha256": "ef7de8af9aea39d677dab49d470d700dca383a4062dd88821c71657bc2b4d67a",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "d4bc0000d839bc18daca92a06c317faabb7fbbbac93e57e0d614eb0fda1a9c45",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "repository": "encode/starlette",
+      "role": "vul_func",
+      "revision": "24c1fac62a80bb153c6548145334fc643991e35a",
+      "path": "starlette/staticfiles.py",
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 162,
+          "end_line": 180,
+          "snippet_sha256": "2b71e01afb49547ffb45a8bbb2c12e447b1aaf0d4ee4113c08badd4e6193e807",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "8c59da75accc2f80f437847dec9aab5a3adf40d0221322a9a69d9a4aa37377ff",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2023-29159",
+      "repository": "encode/starlette",
+      "role": "fix_func",
+      "revision": "1797de464124b090f10cf570441e8292936d63e3",
+      "path": "starlette/staticfiles.py",
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 162,
+          "end_line": 180,
+          "snippet_sha256": "1809d5b612076cc117639eaddaf3681510ddb61d09b988c79ebe926f943fdd1e",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "388a4936861b10fb97ac3fd50ead04616fd0beb2ad3df1694b9f0be52e76fe9f",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "role": "vul_func",
+      "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+      "path": "luigi/contrib/lsf_runner.py",
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 47,
+          "end_line": 62,
+          "snippet_sha256": "5c70f5199c41c7cc6990516987161ba42bb018cbebc275526c0a70e3577555a5",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "5b2baddbd38a5e9331f4ae1bcda7d5075817aa48c3afe48bbd840a932526dfa4",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "role": "vul_func",
+      "revision": "c9a0d2074be5bc03008485aeeef90678f1567231",
+      "path": "luigi/contrib/sge_runner.py",
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 59,
+          "end_line": 74,
+          "snippet_sha256": "a3f7c5efc6faead36cf22623e0c4a2118938bd58ceeff551a532bfce178e9ace",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "4a51d13f9289e555d1e206edc98a839371b2b137500b85bce0a6c1385b4253bc",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/contrib/lsf_runner.py",
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 31,
+          "end_line": 31,
+          "snippet_sha256": "52b623020e2c01feddd220b9196530830b7e9314ca19e2eabeb8e5c73381d62b",
+          "reference_span_matches": []
+        },
+        {
+          "start_line": 47,
+          "end_line": 60,
+          "snippet_sha256": "562cdaf97f81b8b835f374cb3412677ca2b3e2ddcf09e85b8102ffe290baf4d8",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "5a761cd2eda363862e443d3cf44aac63fd3e21f211c24c768defbb6db1ddffb9",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/contrib/sge_runner.py",
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 39,
+          "end_line": 39,
+          "snippet_sha256": "52b623020e2c01feddd220b9196530830b7e9314ca19e2eabeb8e5c73381d62b",
+          "reference_span_matches": []
+        },
+        {
+          "start_line": 59,
+          "end_line": 72,
+          "snippet_sha256": "031690c028d06a0108b2e2c2d2de93a0fc7ccb461c3ba4452ec401e213dbb541",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "acc3c3ab05036f5a8a5ae3ead92f199bdc187f161c3f024a139701929dffedc4",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2024-21542",
+      "repository": "spotify/luigi",
+      "role": "fix_func",
+      "revision": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+      "path": "luigi/safe_extractor.py",
+      "cwes": [
+        "CWE-22",
+        "CWE-73"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 1,
+          "end_line": 97,
+          "snippet_sha256": "41dfaeec683b604c1ac2611fc0f979dcff934294ce1180a4f7e3afeeb89b3999",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "05c0202460dfead8ee39057c18814b38a74cbea03611a8e7dc0fe40e418cf7c8",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "repository": "thinkst/opencanary",
+      "role": "vul_func",
+      "revision": "d3956bc602f95d2bec55eebc96d5e3a2cb35bf47",
+      "path": "opencanary/config.py",
+      "cwes": [
+        "CWE-863"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 52,
+          "end_line": 84,
+          "snippet_sha256": "6e6de3a1209bd9d25e7b6015712de4d76cacf3f67a0330f15ad7046549efeb8c",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "a63ff11dfd343b87e32267367165914983fa7e5bfee92cd42782923ede3c75cf",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "repository": "thinkst/opencanary",
+      "role": "vul_func",
+      "revision": "d3956bc602f95d2bec55eebc96d5e3a2cb35bf47",
+      "path": "opencanary/modules/portscan.py",
+      "cwes": [
+        "CWE-863"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 70,
+          "end_line": 71,
+          "snippet_sha256": "4030823fc869d98e78cf484f464468a7a85048b582cb94dda14552def389d642",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "9c2f10eec86b87fc8f64c3f21ffae903dd4a2b995bc5549efd23a49038015c00",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "repository": "thinkst/opencanary",
+      "role": "fix_func",
+      "revision": "2c11575b1a3dd8b0df26a879ba856c0aa350c049",
+      "path": "opencanary/config.py",
+      "cwes": [
+        "CWE-863"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 52,
+          "end_line": 87,
+          "snippet_sha256": "8cb136138f97dc986ff2ef55835f63e619d838dd382fc3314cbb03886d04c8fe",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "35097fcf912e5d041291521b9a82e442674bab9dfe5af6d2ba2b726684df00e5",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2024-48911",
+      "repository": "thinkst/opencanary",
+      "role": "fix_func",
+      "revision": "2c11575b1a3dd8b0df26a879ba856c0aa350c049",
+      "path": "opencanary/modules/portscan.py",
+      "cwes": [
+        "CWE-863"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 70,
+          "end_line": 71,
+          "snippet_sha256": "e0b44fb9bd5cad44b07da3a71f9f75bc6ae1b55bed6b360ae88c9cb764bcb5b3",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "62274a3c741571e9fcef628562f7357144f1cdc2a8360302983523743c8112d1",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "repository": "gaizhenbiao/chuanhuchatgpt",
+      "role": "vul_func",
+      "revision": "ffea5e9419ed517e8b80208567f4f70404047cbe",
+      "path": "modules/utils.py",
+      "cwes": [
+        "CWE-610"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [],
+      "source_sha256": "17ecec89e0bc66f7d3d49a4fdedb6bcd85b2aad0112cfd9987c67d948060d933",
+      "error": "ValueError: Declared function hash differs"
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "repository": "gaizhenbiao/chuanhuchatgpt",
+      "role": "fix_func",
+      "revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+      "path": "ChuanhuChatbot.py",
+      "cwes": [
+        "CWE-610"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 784,
+          "end_line": 784,
+          "snippet_sha256": "452c01a8f670135a7ea96f61f08c9db446082d17c58eaea555a2df9bb4153782",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "b2302fdd5b334ff98413629635bbe2302c8c94b690f758d8c91c63814f526275",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2024-5823",
+      "repository": "gaizhenbiao/chuanhuchatgpt",
+      "role": "fix_func",
+      "revision": "720c23d755a4a955dcb0a54e8c200a2247a27f8b",
+      "path": "modules/utils.py",
+      "cwes": [
+        "CWE-610"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [],
+      "source_sha256": "2129826000136fde676e67d9160b1434d968783b21f50559ef8a6db882d260a8",
+      "error": "ValueError: Declared function hash differs"
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "repository": "spotipy-dev/spotipy",
+      "role": "vul_func",
+      "revision": "668158f0558d486082c0dc672a6ac39ba05ced6a",
+      "path": "spotipy/cache_handler.py",
+      "cwes": [
+        "CWE-276"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 93,
+          "end_line": 98,
+          "snippet_sha256": "afe336b56433e3e3d2b697c64922fd3bb072e9cb94065dbab20f8a76eda6c975",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "c16cac07e832f6541156131224f45a0c0a27df4eb007daba8816cf8a67a32542",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    },
+    {
+      "cve_id": "CVE-2025-27154",
+      "repository": "spotipy-dev/spotipy",
+      "role": "fix_func",
+      "revision": "1ca453f6ef87a2a9e9876f52b6cb38d13532ccf2",
+      "path": "spotipy/cache_handler.py",
+      "cwes": [
+        "CWE-276"
+      ],
+      "labels": "Upstream reference metadata; not independently adjudicated",
+      "units": [
+        {
+          "start_line": 93,
+          "end_line": 102,
+          "snippet_sha256": "f6cfcfbd8c6b4dd563f5ff5065db7cb43d3cdd2c21b8437eddad32615156fc4b",
+          "reference_span_matches": []
+        }
+      ],
+      "source_sha256": "cf0c640fa16f0507f2ece2847be6f02e32178b13338a1e948dab47261c745be2",
+      "alerts": [],
+      "coverage_notices": 0,
+      "function_hashes_match": true
+    }
+  ],
+  "snapshot_errors": 2,
+  "snapshots_with_coverage_notices": 0,
+  "vulnerable_reference_match_cases": [],
+  "fixed_reference_match_cases": [],
+  "interpretation": "Reference-span observations only. No real-world recall/precision or clean patched-file claims. Full-file static probes lack repository/caller context. No tuning after source exposure in this freeze."
+}

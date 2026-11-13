@@ -1,0 +1,130 @@
+{
+  "review_type": "Developer/assistant source audit; no independent adjudication",
+  "code_false_positives": [
+    {
+      "case": "BenchmarkTest00073",
+      "source_sha256": "0e404b7d765fcffdf2d27cad80b992357ef467e8d1f703d7e04e18546600258a",
+      "before": "fp",
+      "after": "tn",
+      "disposition": "Complete delimiter/interior guard constrains unchanged eval/exec input to a string literal or syntax error. A recognized guard was missing; the upstream label is unchanged."
+    },
+    {
+      "case": "BenchmarkTest00158",
+      "source_sha256": "2d99d2fbf5648911498e28656bb7704191a00a6a6cdb12bce9687c5d1fca3357",
+      "before": "fp",
+      "after": "tn",
+      "disposition": "Complete delimiter/interior guard constrains unchanged eval/exec input to a string literal or syntax error. A recognized guard was missing; the upstream label is unchanged."
+    },
+    {
+      "case": "BenchmarkTest00730",
+      "source_sha256": "9b1524016ddd524a8b22a70a60c812068a5dd3ef469519667ee98ac8f436d471",
+      "before": "fp",
+      "after": "tn",
+      "disposition": "Complete delimiter/interior guard constrains unchanged eval/exec input to a string literal or syntax error. A recognized guard was missing; the upstream label is unchanged."
+    },
+    {
+      "case": "BenchmarkTest00821",
+      "source_sha256": "b96821a5ae3937d684e3500ac8c870afb121978b0e22c38f3415c68a1622a28b",
+      "before": "fp",
+      "after": "tn",
+      "disposition": "Complete delimiter/interior guard constrains unchanged eval/exec input to a string literal or syntax error. A recognized guard was missing; the upstream label is unchanged."
+    },
+    {
+      "case": "BenchmarkTest00822",
+      "source_sha256": "20d67cf213ec52a9ba330eadcff0ee0282408481b1d2b2d77c043b9c26de0031",
+      "before": "fp",
+      "after": "tn",
+      "disposition": "Complete delimiter/interior guard constrains unchanged eval/exec input to a string literal or syntax error. A recognized guard was missing; the upstream label is unchanged."
+    },
+    {
+      "case": "BenchmarkTest00892",
+      "source_sha256": "6f13ab0ee6c0aa245e150071a17f634acac404adc9b74df5535d8d50da8f1be2",
+      "before": "fp",
+      "after": "tn",
+      "disposition": "Complete delimiter/interior guard constrains unchanged eval/exec input to a string literal or syntax error. A recognized guard was missing; the upstream label is unchanged."
+    }
+  ],
+  "hash_advisories": [
+    {
+      "case": "94_DS-16",
+      "line": 35,
+      "source_sha256": "576bfafec690f187362c96564ba385aecd3313be1daf4f27c43c8acb9532670e",
+      "observed_use": "Template cache key",
+      "disposition": "Weak algorithm observed; security-sensitive use and exploitability not established. Preserve as advisory rather than count as a confirmed additional vulnerability.",
+      "maturity": "advisory",
+      "confidence": "medium"
+    },
+    {
+      "case": "502_DS-4",
+      "line": 14,
+      "source_sha256": "bd935b816cc8666ceec1b90bc2a869aa4b5ecdaf6e9c3d01d8a4191ac43a8ab1",
+      "observed_use": "Worker identifier",
+      "disposition": "Weak algorithm observed; security-sensitive use and exploitability not established. Preserve as advisory rather than count as a confirmed additional vulnerability.",
+      "maturity": "advisory",
+      "confidence": "medium"
+    },
+    {
+      "case": "502_DS-5",
+      "line": 56,
+      "source_sha256": "fcd07c006fb499d2fd7e0aefda4f4446880fb50770a36c63c6d8f709e8418fc4",
+      "observed_use": "Plugin content identifier and storage filename",
+      "disposition": "Weak algorithm observed; security-sensitive use and exploitability not established. Preserve as advisory rather than count as a confirmed additional vulnerability.",
+      "maturity": "advisory",
+      "confidence": "medium"
+    },
+    {
+      "case": "502_DS-8",
+      "line": 77,
+      "source_sha256": "27095494d0ff8fabfd131a0d855a1f9dbdfaa46dc4d91c3feaef73d3691e9bc5",
+      "observed_use": "Prediction identifier",
+      "disposition": "Weak algorithm observed; security-sensitive use and exploitability not established. Preserve as advisory rather than count as a confirmed additional vulnerability.",
+      "maturity": "advisory",
+      "confidence": "medium"
+    },
+    {
+      "case": "502_DS-12",
+      "line": 71,
+      "source_sha256": "89743bc750b55acc2ed17f06e228711c80ff93ce06e18e7bbdc6ec1fb03b2872",
+      "observed_use": "Content checksum metadata",
+      "disposition": "Weak algorithm observed; security-sensitive use and exploitability not established. Preserve as advisory rather than count as a confirmed additional vulnerability.",
+      "maturity": "advisory",
+      "confidence": "medium"
+    },
+    {
+      "case": "502_DS-12",
+      "line": 79,
+      "source_sha256": "89743bc750b55acc2ed17f06e228711c80ff93ce06e18e7bbdc6ec1fb03b2872",
+      "observed_use": "Content checksum metadata",
+      "disposition": "Weak algorithm observed; security-sensitive use and exploitability not established. Preserve as advisory rather than count as a confirmed additional vulnerability.",
+      "maturity": "advisory",
+      "confidence": "medium"
+    },
+    {
+      "case": "502_DS-14",
+      "line": 14,
+      "source_sha256": "7ded946aec8db9869cfaeeb954ead854d25663640c7d2ce237002395886646b1",
+      "observed_use": "Worker identifier",
+      "disposition": "Weak algorithm observed; security-sensitive use and exploitability not established. Preserve as advisory rather than count as a confirmed additional vulnerability.",
+      "maturity": "advisory",
+      "confidence": "medium"
+    },
+    {
+      "case": "502_DS-15",
+      "line": 88,
+      "source_sha256": "e103dca6d220f8a12eb2595b362126eb2351fa417585df01559f2be1a8540dab",
+      "observed_use": "Stored-value version metadata",
+      "disposition": "Weak algorithm observed; security-sensitive use and exploitability not established. Preserve as advisory rather than count as a confirmed additional vulnerability.",
+      "maturity": "advisory",
+      "confidence": "medium"
+    },
+    {
+      "case": "502_DS-16",
+      "line": 15,
+      "source_sha256": "12cdb372776ed7d28376c1efbea08f36d69ca834611cc3dd37940813eabc7e43",
+      "observed_use": "Document checksum metadata",
+      "disposition": "Weak algorithm observed; security-sensitive use and exploitability not established. Preserve as advisory rather than count as a confirmed additional vulnerability.",
+      "maturity": "advisory",
+      "confidence": "medium"
+    }
+  ]
+}

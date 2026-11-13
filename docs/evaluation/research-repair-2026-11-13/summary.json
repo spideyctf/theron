@@ -1,0 +1,60 @@
+{
+  "implementation_revision": "bb9fb3092011aec3c5de0af4b28dea9fdc2b4715",
+  "independent_labels": false,
+  "final_real_test_source_opened": false,
+  "synthetic_data_exposed": true,
+  "synthetic": {
+    "development": {
+      "tp": 202,
+      "fn": 77,
+      "fp": 9,
+      "tn": 449,
+      "errors": 0,
+      "precision": 0.957345971563981,
+      "recall": 0.7240143369175627,
+      "f1": 0.8244897959183674,
+      "false_positive_rate": 0.019650655021834062
+    },
+    "validation": {
+      "tp": 77,
+      "fn": 7,
+      "fp": 0,
+      "tn": 164,
+      "errors": 0,
+      "precision": 1.0,
+      "recall": 0.9166666666666666,
+      "f1": 0.9565217391304348,
+      "false_positive_rate": 0.0
+    },
+    "test": {
+      "tp": 65,
+      "fn": 24,
+      "fp": 0,
+      "tn": 156,
+      "errors": 0,
+      "precision": 1.0,
+      "recall": 0.7303370786516854,
+      "f1": 0.8441558441558441,
+      "false_positive_rate": 0.0
+    }
+  },
+  "real_validation": {
+    "implementation_revision": "bb9fb3092011aec3c5de0af4b28dea9fdc2b4715",
+    "partition": "validation",
+    "cases": 9,
+    "snapshots": 28,
+    "independent_labels": false,
+    "final_test_source_opened": false,
+    "snapshot_errors": 2,
+    "snapshots_with_coverage_notices": 0,
+    "vulnerable_reference_match_cases": [],
+    "fixed_reference_match_cases": [],
+    "interpretation": "Reference-span observations only. No real-world recall/precision or clean patched-file claims. Full-file static probes lack repository/caller context. No tuning after source exposure in this freeze."
+  },
+  "python_tests_passed": 494,
+  "source_normalized_utf8_sha256": {
+    "scanner/python_analysis.py": "bac0d2429ccb8a91b0a7fc471ae57f3212e9c6d4b88f90396e6a1339143a1f49",
+    "scanner/owasp_benchmark.py": "73bb6ff60751471a87ebd6dc326e1e64850aff35fc788cd7b31d982a7bbfebff",
+    "scripts/evaluate_real_validation.py": "3ae580241dd21cc2d6ae8cd03b270ad55a83211698ab2d022ab8577af6633435"
+  }
+}

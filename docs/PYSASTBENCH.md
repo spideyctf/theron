@@ -1,8 +1,8 @@
 # PySASTBench-backed detection tuning
 
 Reference: [Victor725/PySASTBench](https://github.com/Victor725/PySASTBench),
-commit `3ad04b72c516d0533a5dc9c8042c9808e69e0f40`. Latest evaluation run: 2026-11-13, coverage-repair freeze `82db608`.
-The Step 3 framework-source increment reached 93 labelled detections; the coverage repair preserves those counts. See the [earlier snapshot](evaluation/2026-11-12/README.md) and [current raw result](evaluation/coverage-2026-11-13/pysastbench.json).
+commit `3ad04b72c516d0533a5dc9c8042c9808e69e0f40`. Latest evaluation run: 2026-11-13, precision-repair freeze `bb9fb30`.
+The Step 3 framework-source increment reached 93 labelled detections; the coverage repair preserves those counts. See the [earlier snapshot](evaluation/2026-11-12/README.md) and [current raw result](evaluation/research-repair-2026-11-13/pysastbench.json).
 The synthetic corpus has 120 labelled vulnerable/fixed pairs across six CWE categories.
 The external checkout is ignored and not shipped or redistributed with Theron.
 No benchmark applications, setup scripts, or third-party scanners were executed.
@@ -30,7 +30,7 @@ Default SAST rules only, with identical scoring before and after tuning:
 | 502: deserialization | 18 / 20 | 1 / 20 |
 
 These are labelled synthetic-case results, **not** a claim of industry certification or real-world accuracy.
-Current label-based precision is 95.88% and false-positive rate is 3.33%. The current JSON includes whole-fixed-file alert counts separately from the label match. The coverage repair increases whole-fixed-file alerts from eight to seventeen, across fourteen rather than seven files; nine new weak-hash alerts are outside the labelled matches and remain unadjudicated. Unchanged label-matched precision therefore does not mean unchanged review burden. The earlier 91-detection snapshot had seven alerts across six fixed files, three outside the match.
+Current label-based precision is 95.88% and false-positive rate is 3.33%. The current JSON includes whole-fixed-file alert counts separately from the label match. The coverage repair increases whole-fixed-file alerts from eight to seventeen, across fourteen rather than seven files; nine weak-hash alerts are outside the labelled matches and now explicitly advisory, with security use unverified. Unchanged label-matched precision therefore does not mean unchanged review burden. The earlier 91-detection snapshot had seven alerts across six fixed files, three outside the match.
 The four label-matched alerts occur in `22_DS-1`, `22_DS-2`, `22_DS-3`, and `502_DS-8`. Manual inspection found plain `startswith(base)` path checks without a separator boundary in the three path cases, and uploaded model data passed to `joblib.load` in the deserialization case. Those remain meaningful review candidates: a plain string prefix is not path-component containment, and joblib remains pickle based. The evaluator retains the upstream labels and counts all four as false positives; it does not relabel them to inflate precision. Two other fixed files contain unrelated reflected-HTML alerts. See `docs/QUALITY.md` for an independent miniature demonstration of the path-prefix issue and the remaining limits.
 Stored-XSS coverage remains weak: 18 of 20 labelled XSS variants are still missed. There is no general persistent-store or template-context analysis.
 The same corpus was inspected during tuning; it is not an independent held-out validation set.

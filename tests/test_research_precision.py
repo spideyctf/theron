@@ -1,10 +1,15 @@
 """Original controls: static analysis and parsing only; no eval/exec calls run."""
 import ast
+import hashlib
+import io
+import sys
 from itertools import product
 
 import pytest
 
 from scanner.python_analysis import analyze_python
+from scripts.evaluate_real_validation import reference_matches
+from scripts import evaluate_real_validation as real_validation
 
 
 GUARD = '''if not value.startswith("'") or not value.endswith("'") or "'" in value[1:-1]:
@@ -71,3 +76,40 @@ def test_hash_selection_is_explicitly_advisory():
     assert result[0].maturity=='advisory'
     assert result[0].evidence_kind=='static-configuration'
     assert 'security use unverified' in result[0].title
+
+
+def test_reference_matching_requires_cwe_span_and_non_notice():
+    f=dict(cwe='CWE-22',line_number=12,evidence_kind='static-flow')
+    assert reference_matches([f],['CWE-22'],10,15)==[f]
+    assert not reference_matches([f],['CWE-94'],10,15)
+    assert not reference_matches([f],['CWE-22'],13,15)
+    assert not reference_matches([dict(f,evidence_kind='coverage-notice')],['CWE-22'],10,15)
+
+
+@pytest.mark.parametrize('mode', ['valid','bad_bytes','final_test','outside_path'])
+def test_validation_fetch_checks_partition_paths_and_bytes(tmp_path,monkeypatch,mode):
+    raw=b'# Original inert source fixture\n'
+    row=dict(cve_id='original',repository='example/original',role='vul_func',revision='a'*40,
+             path='app.py',source_sha256=hashlib.sha256(raw).hexdigest())
+    cases={'original':dict(repository=row['repository'],locations=[dict(path='app.py',role='vul_func',resolution=dict(sha='a'*40))])}
+    if mode=='final_test':
+        row['cve_id']='closed-test'
+    if mode=='outside_path':
+        row['path']='../../outside.py'
+    monkeypatch.setattr(real_validation,'validation_cases',lambda:cases)
+    monkeypatch.setattr(real_validation,'read',lambda path:dict(records=[row]))
+    monkeypatch.setattr(real_validation,'evaluate',lambda cache,exposure:dict(records=[]))
+    requests=[]
+    def download(url,timeout):
+        requests.append(url)
+        return io.BytesIO(b'changed' if mode=='bad_bytes' else raw)
+    monkeypatch.setattr(real_validation.urllib.request,'urlopen',download)
+    monkeypatch.setattr(sys,'argv',['probe','--fetch','--cache',str(tmp_path/'cache'),'--output',str(tmp_path/'result.json')])
+    if mode=='valid':
+        real_validation.main()
+        assert (tmp_path/'cache/original/vul_func'/('a'*40)/'app.py').read_bytes()==raw
+    else:
+        with pytest.raises(ValueError):
+            real_validation.main()
+        if mode in {'final_test','outside_path'}:
+            assert requests==[]
