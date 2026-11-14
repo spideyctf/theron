@@ -685,6 +685,12 @@ class HMACKeyFormats:
                 if len(generator.generators)!=1:continue
                 comp=generator.generators[0];comparison=generator.elt
                 if comp.ifs or not isinstance(comp.target,ast.Name) or not isinstance(comp.iter,ast.Name):continue
+                writers=[n for n in ast.walk(constructor) if isinstance(n,(ast.Assign,ast.AnnAssign)) and n.lineno<guard.lineno
+                    and any(isinstance(t,ast.Name) and t.id==comp.iter.id for t in (n.targets if isinstance(n,ast.Assign) else [n.target]))]
+                if len(writers)!=1 or writers[0] not in constructor.body:continue
+                if 'any' in context.bindings or 'any' in {a.arg for a in constructor.args.args}:continue
+                if any(isinstance(n,(ast.Assign,ast.AnnAssign)) and any(isinstance(t,ast.Name) and t.id=='any'
+                    for t in (n.targets if isinstance(n,ast.Assign) else [n.target])) for n in ast.walk(constructor)):continue
                 if not (isinstance(comparison,ast.Compare) and len(comparison.ops)==1 and isinstance(comparison.ops[0],ast.In)
                         and isinstance(comparison.left,ast.Name) and comparison.left.id==comp.target.id
                         and isinstance(comparison.comparators[0],ast.Name)):continue

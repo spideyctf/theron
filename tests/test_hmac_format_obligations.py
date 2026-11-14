@@ -44,3 +44,8 @@ def test_unknown_additional_guard_retains_only_a_review_notice():
 def test_key_replacement_is_not_assumed_to_preserve_public_input():
     fs=matches(CODE.replace('  self.secret=key','  key=random_secret()\n  self.secret=key'))
     assert fs and all(f.severity.value=='INFO' for f in fs)
+
+
+def test_reassigned_blacklist_and_shadowed_builtin_are_not_resolved_guards():
+    assert not matches(CODE.replace('  if any','  forbidden=complete_type_boundary\n  if any'))
+    assert not matches(CODE.replace('  if any','  any=lambda items: False\n  if any'))
