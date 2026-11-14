@@ -105,7 +105,7 @@ def nearest_manifest(path,files):
     parents=PurePosixPath(path).parent.parts;found=[]
     for candidate in files:
         p=PurePosixPath(candidate)
-        if p.name in {'pyproject.toml','Pipfile','Pipfile.lock'} or p.name.startswith('requirements') and p.suffix=='.txt':
+        if p.name in {'pyproject.toml','Pipfile','Pipfile.lock','uv.lock'} or p.name.startswith('requirements') and p.suffix=='.txt':
             if parents[:len(p.parent.parts)]==p.parent.parts:found.append(p.parent.parts)
     return max(found,key=len) if found else None
 

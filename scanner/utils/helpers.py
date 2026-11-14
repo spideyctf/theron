@@ -19,7 +19,7 @@ SECURITY_RELEVANT_EXTENSIONS = {
 SECURITY_RELEVANT_BASENAMES = {
     "Dockerfile", "docker-compose.yml", "docker-compose.yaml",
     "requirements.txt", "package.json", "pyproject.toml", "go.mod",
-    "Pipfile", "Pipfile.lock", "SKILL.md", "AGENTS.md", "AGENT.md", "CLAUDE.md",
+    "Pipfile", "Pipfile.lock", "uv.lock", "SKILL.md", "AGENTS.md", "AGENT.md", "CLAUDE.md",
     "GUMMIE.md", "INSTRUCTIONS.md",
 }
 

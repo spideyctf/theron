@@ -1,7 +1,7 @@
 import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { expect, it, vi } from 'vitest'
-import { Correlations } from './ReportDetails'
+import { Correlations, Dependencies } from './ReportDetails'
 import App from './App'
 import { api } from './api'
 import type { ScanJob, ScanResult } from './api'
@@ -9,6 +9,28 @@ import backendReport from '../../tests/fixtures/correlation-report.json'
 import toolReport from '../../tests/fixtures/tool-correlation-report.json'
 
 const report = backendReport as ScanResult
+
+it('shows package entrypoint claims and source hashes with runtime limits', () => {
+  const value: ScanResult = {...report, correlation_groups: [], correlation_resolutions: [{
+    config_file: '.mcp.json', pointer: '/mcpServers/demo', status: 'resolved', reason: 'package_entrypoint_inferred',
+    entrypoint: 'server.py', classification: 'inferred', scope: 'application', group_ids: [],
+    package_entrypoint: {basis: 'local_project_script', package: 'demo', command: 'demo', object_reference: 'server:main',
+      callable_file: 'server.py', callable_line: 10, installation_verified: false, startup_verified: false,
+      source_text_sha256: {'pyproject.toml': 'abc123'}},
+  }]}
+  render(<Correlations result={value} />)
+  expect(screen.getByText('Package entrypoint evidence')).toBeInTheDocument()
+  expect(screen.getByText(/installation and startup unverified/)).toBeInTheDocument()
+  expect(within(screen.getByText('Package entrypoint evidence').parentElement!).getByText(/abc123/)).toBeInTheDocument()
+})
+
+it('distinguishes locked inventory versions from verified installation', () => {
+  render(<Dependencies result={{...report, sbom: {components: [{name: 'demo', version: '1.0',
+    properties: [{name: 'source_file', value: 'uv.lock'}, {name: 'theron:version_basis',
+      value: 'locked inventory; installation and environment selection unverified'}]}]}}} />)
+  expect(screen.getByText('locked inventory; installation and environment selection unverified')).toBeInTheDocument()
+  expect(screen.getByText('uv.lock')).toBeInTheDocument()
+})
 
 it('renders tool symbols, dependency attribution and snapshot provenance from the backend fixture', () => {
   const result=toolReport as ScanResult

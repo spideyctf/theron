@@ -26,6 +26,7 @@ from scanner.models import Finding, ScanContext, Severity, Category
 from scanner.plugins.base import Scanner
 from scanner.plugins import register
 from scanner.advisories import group_advisories, group_severity, advisory_severity
+from scanner.python_lock import uv_inventory, canonical
 
 
 @register
@@ -68,9 +69,23 @@ class SCAScanner(Scanner):
     def scan(self, context: ScanContext) -> List[Finding]:
         findings = []
         files = context.files
+        self._lock_files = {p: text for p, text in files.items() if os.path.basename(p) == 'uv.lock'}
         self._osv_cache.clear()
         for source, content in files.items():
             basename = os.path.basename(source)
+            if basename == 'uv.lock':
+                try:
+                    inventory = uv_inventory(content)
+                    reasons = sorted({row['status'] for row in inventory if row['version'] is None})
+                    if reasons:
+                        findings.append(Finding(title='Unresolved uv lock inventory entries', severity=Severity.INFO,
+                            category=Category.SCA, module=self.name, file_path=source, rule_id='SCA-UV-UNRESOLVED-001',
+                            description='Some lock entries cannot be queried as exact PyPI versions: ' + ', '.join(reasons) +
+                                '. No target environment or installed package selection is assumed.', evidence_kind='coverage-notice'))
+                except (ValueError, TypeError) as exc:
+                    findings.append(Finding(title='uv lock inventory could not be parsed', severity=Severity.INFO,
+                        category=Category.SCA, module=self.name, file_path=source, rule_id='SCA-UV-PARSE-001',
+                        description=str(exc), evidence_kind='coverage-notice'))
             if basename in {"package.json", "package-lock.json", "npm-shrinkwrap.json", "Pipfile.lock"} or (tomllib is not None and basename in {"pyproject.toml", "Pipfile"}):
                 try:
                     data = tomllib.loads(content) if basename in {"pyproject.toml", "Pipfile"} else json.loads(content)
@@ -85,6 +100,12 @@ class SCAScanner(Scanner):
 
         # Parse all dependency manifests
         dependencies = self._parse_all_manifests(files)
+        for source, name in self._uv_conflicts:
+            findings.append(Finding(title='Lockfile conflicts with an exact manifest pin', severity=Severity.INFO,
+                category=Category.SCA, module=self.name, file_path=source, rule_id='SCA-UV-CONFLICT-001',
+                description=f'The uv lock entry for {name} disagrees with an exact declaration in the same directory. '
+                    'The conflicting lock entry was not queried as a resolved version; reconcile the lock and manifest.',
+                evidence_kind='coverage-notice'))
 
         if not dependencies:
             findings.append(Finding(
@@ -153,6 +174,10 @@ class SCAScanner(Scanner):
             }
             if exact:
                 component["version"] = exact
+            if os.path.basename(source_file) == 'uv.lock':
+                component['properties'].extend([
+                    {'name': 'theron:version_basis', 'value': 'locked inventory; installation and environment selection unverified'},
+                    {'name': 'theron:source_text_sha256', 'value': hashlib.sha256(files[source_file].encode()).hexdigest()}])
             components.append(component)
 
         return {
@@ -185,11 +210,28 @@ class SCAScanner(Scanner):
                 deps.extend(self._parse_pipfile(content, file_path))
             elif basename in {"package-lock.json", "npm-shrinkwrap.json", "Pipfile.lock"}:
                 deps.extend(self._parse_lock(content, file_path))
+            elif basename == 'uv.lock':
+                try:
+                    deps.extend((row['name'], row['version'], file_path) for row in uv_inventory(content))
+                except (ValueError, TypeError):
+                    pass  # scan() emits an explicit coverage notice; SBOM never fabricates versions.
         locked = {(os.path.dirname(source), self._ecosystem(source), name) for name, version, source in deps
                   if os.path.basename(source) in {"package-lock.json", "npm-shrinkwrap.json", "Pipfile.lock"}}
-        return list(dict.fromkeys((name, version, source) for name, version, source in deps
-                    if os.path.basename(source) in {"package-lock.json", "npm-shrinkwrap.json", "Pipfile.lock"}
-                    or (os.path.dirname(source), self._ecosystem(source), name) not in locked))
+        pins = {}
+        for name, version, source in deps:
+            if os.path.basename(source) != 'uv.lock' and self._ecosystem(source) == 'PyPI' and self._exact_version(version):
+                pins.setdefault((os.path.dirname(source), canonical(name)), set()).add(self._exact_version(version))
+        self._uv_conflicts = []
+        resolved = []
+        for name, version, source in deps:
+            declared = pins.get((os.path.dirname(source), canonical(name)), set())
+            if os.path.basename(source) == 'uv.lock' and version and declared and declared != {version}:
+                self._uv_conflicts.append((source, name))
+                version = None
+            resolved.append((name, version, source))
+        return list(dict.fromkeys((name, version, source) for name, version, source in resolved
+                    if (os.path.basename(source) in {"package-lock.json", "npm-shrinkwrap.json", "Pipfile.lock", 'uv.lock'}
+                    or (os.path.dirname(source), self._ecosystem(source), name) not in locked)))
 
     @staticmethod
     def _ecosystem(source):
@@ -405,7 +447,7 @@ class SCAScanner(Scanner):
                     severity=severity,
                     category=Category.SCA,
                     module=self.name,
-                    description=f"Declared exact {ecosystem} package '{pkg_name}' version {version} in {source_file} matches advisory {vid}: {summary}. Application reachability and exploitability have not been verified." + (" Severity is provisional because no supported severity metadata was supplied." if severity_source == "provisional-unknown" else ""),
+                    description=(f"Exact uv lock inventory {ecosystem}" if os.path.basename(source_file) == 'uv.lock' else f"Declared exact {ecosystem}") + f" package '{pkg_name}' version {version} in {source_file} matches advisory {vid}: {summary}. Application reachability and exploitability have not been verified." + (" Severity is provisional because no supported severity metadata was supplied." if severity_source == "provisional-unknown" else ""),
                     file_path=source_file,
                     recommendation=f"Review and upgrade {pkg_name} to a supported patched version. " +
                         (f"OSV lists fixed-version boundaries: {', '.join(fixes)}. These are not necessarily the latest release or a universally compatible upgrade. " if fixes else "No fixed-version boundary was supplied for this package. ") +
@@ -421,7 +463,11 @@ class SCAScanner(Scanner):
                         provider='OSV',advisory_ids=aliases,cwes=cwes,fixed_versions=fixes,
                         queried_at=datetime.now(timezone.utc).isoformat(),
                         advisory_record_sha256=hashlib.sha256(json.dumps(sorted(members,key=lambda m:m['id']),sort_keys=True,separators=(',',':')).encode()).hexdigest(),
-                        matching='OSV response for a declared exact version; installation and vulnerable-function reachability unverified'),
+                        matching=('OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified'
+                                  if os.path.basename(source_file) == 'uv.lock' else
+                                  'OSV response for a declared exact version; installation and vulnerable-function reachability unverified'),
+                        **(dict(lock_provenance=dict(format='uv.lock', source_text_sha256=hashlib.sha256(self._lock_files[source_file].encode()).hexdigest(),
+                            installation_verified=False, environment_selected=False)) if os.path.basename(source_file) == 'uv.lock' and source_file in getattr(self, '_lock_files', {}) else {})),
                 ))
         return findings
 

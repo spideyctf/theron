@@ -106,7 +106,7 @@ def _dependency_links(target,files,findings):
     manifest_dirs=[]
     for path in files:
         p=PurePosixPath(path);name=p.name
-        if name in {'pyproject.toml','Pipfile','Pipfile.lock'} or name.startswith('requirements') and name.endswith('.txt'):
+        if name in {'pyproject.toml','Pipfile','Pipfile.lock','uv.lock'} or name.startswith('requirements') and name.endswith('.txt'):
             directory=p.parent.parts
             if parents[:len(directory)]==directory:manifest_dirs.append(directory)
     if not manifest_dirs:return []
@@ -170,7 +170,12 @@ def correlate(result, files, enabled=True):
         for name,server in sorted(data[field].items()):
             pointer='/'+field+'/'+name.replace('~','~0').replace('/','~1')
             entrypoint,reason=_resolve(config_path,field,server)
+            launch_evidence=None
+            if entrypoint is None and isinstance(server,dict) and server.get('command') in {'uv','uvx'}:
+                from scanner.package_entrypoints import package_launch
+                entrypoint,reason,launch_evidence=package_launch(config_path,field,server,files)
             row=resolution(pointer,reason)
+            if launch_evidence:row['package_entrypoint']=launch_evidence
             if entrypoint is None:
                 continue
             row['entrypoint']=entrypoint
@@ -219,3 +224,15 @@ def correlate(result, files, enabled=True):
                          target=dict(kind='finding',fingerprint=f.fingerprint),classification='inferred',
                          evidence=[location,dict(role='dependency-declaration',file_path=f.file_path)]) for f,location in dependencies]))
             row['group_ids'].append(group_id)
+    groups_by_id={group['id']:group for group in result.correlation_groups}
+    for row in result.correlation_resolutions:
+        launch=row.get('package_entrypoint')
+        if not launch:continue
+        for group_id in row['group_ids']:
+            group=groups_by_id[group_id]
+            group['limitations'].append('Package entrypoint metadata is a static claim; the declared callable, tool startup and effective installed distribution were not executed or verified.')
+            group['relationships'].insert(0,dict(kind='package_metadata_declares_entrypoint',classification='inferred',basis=launch['basis'],
+                source=dict(kind='configuration',file_path=row['config_file'],pointer=row['pointer']),
+                target=dict(kind='function',file_path=launch['callable_file'],line_number=launch['callable_line'],symbol=launch['object_reference']),
+                evidence=[dict(file_path=p,role='package-entrypoint-evidence') for p in launch['source_text_sha256']],
+                provenance=dict(commit_sha=result.commit_sha,source_text_sha256=launch['source_text_sha256'])))

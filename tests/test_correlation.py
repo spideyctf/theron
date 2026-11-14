@@ -53,7 +53,7 @@ def test_safe_or_unrelated_code_does_not_create_a_group(code,extra):
 
 @pytest.mark.parametrize('server,reason', [
     ({'command':'sh','args':['-c','python server.py']},'unsupported_interpreter_or_wrapper'),
-    ({'command':'uv','args':['run','server.py']},'unsupported_interpreter_or_wrapper'),
+    ({'command':'uv','args':['run','server.py']},'project_entrypoint_metadata_unavailable'),
     ({'command':'python server.py','args':[]},'unsupported_interpreter_or_wrapper'),
     ({'command':'python','args':['-m','server']},'unsupported_python_invocation'),
     ({'command':'python','args':['-c','exec(input())']},'unsupported_python_invocation'),

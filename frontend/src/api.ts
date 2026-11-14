@@ -13,7 +13,8 @@ export interface Finding {
     action: { file_path: string; line_number: number }
     related_locations?: { role: string; file_path: string; line_number: number; matches_returned_object?: boolean; matches_subject?: boolean }[] }
   dependency?: { package: string; version: string; ecosystem: string; manifest: string; provider: string
-    advisory_ids: string[]; cwes: string[]; fixed_versions: string[]; queried_at: string; matching: string }
+    advisory_ids: string[]; cwes: string[]; fixed_versions: string[]; queried_at: string; matching: string
+    lock_provenance?: { format: string; source_text_sha256: string; installation_verified: boolean; environment_selected: boolean } }
 }
 export interface ScanResult {
   repo_full_name: string; branch: string; findings: Finding[]; files_scanned: number
@@ -42,6 +43,9 @@ export interface CorrelationResolution {
   config_file: string; pointer: string; status: string; reason: string; entrypoint: string | null
   classification: string; scope: string; group_ids: string[]
   tool_resolution_notes?: { reason: string; file_path: string; line_number?: number }[]
+  package_entrypoint?: { basis: string; package: string; command: string; object_reference: string
+    callable_file: string; callable_line: number; installation_verified: boolean; startup_verified: boolean
+    source_text_sha256: Record<string,string> }
 }
 export interface ScanJob {
   id: string; repository: string; branch: string | null; modules: string[]; include_experimental: boolean

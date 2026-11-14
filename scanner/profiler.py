@@ -115,7 +115,7 @@ class ProjectProfiler:
         for file_path, content in files.items():
             basename = file_path.rsplit("/", 1)[-1]
             if basename in ("requirements.txt", "package.json", "pyproject.toml",
-                            "go.mod", "Pipfile", "Pipfile.lock", "package-lock.json", "npm-shrinkwrap.json"):
+                            "go.mod", "Pipfile", "Pipfile.lock", "uv.lock", "package-lock.json", "npm-shrinkwrap.json"):
                 profile.dependency_manifests[file_path] = content
 
         # ── AI frameworks ──────────────────────────────────────────────
