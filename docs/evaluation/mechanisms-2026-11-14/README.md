@@ -18,7 +18,7 @@ Strict CNA-CWE/function matching yields **2/5** labelled vulnerable cases (Waitr
 
 ## New ten-project pilot
 
-[Vul4Py](https://github.com/tabudz/vul4py/tree/f80f861012cb7b7cfeca7323be51d33e72eaf8f3) describes paired exploit and functional oracles. Its claim is not a local oracle success. We pinned the 100-row metadata and selected ten distinct repositories by SHA-256 ordering with a fixed seed, excluding repositories in the earlier declared real-code manifests. [Registration](vul4py-registration.json), [protocol](PROTOCOL.md). Selection did not use detector outcomes, mechanism eligibility or target source. Project-disjointness is relative to those manifests; prior model training exposure is unknown.
+[Vul4Py](https://github.com/tabudz/vul4py/tree/f80f861012cb7b7cfeca7323be51d33e72eaf8f3) describes paired exploit and functional oracles. Its claim is not a local oracle success. We pinned the 100-row metadata and selected ten distinct repositories by SHA-256 ordering with a fixed seed, excluding raw repository names in the earlier declared real-code manifests. [Registration](vul4py-registration.json), [protocol](PROTOCOL.md). Selection did not use detector outcomes, mechanism eligibility or target source. A post-run canonical-alias audit found one Requests project overlap with CVE-2018-18074. The original ten cases remain; the fully project-separated subset contains nine cases, seven with CNA CWE labels, and has zero strict matches. [Overlap audit](vul4py/overlap-audit.json). This is a partition failure, not ten fully held-out projects. The selection guard now checks canonical aliases and refuses to replace an existing registration. Prior model training exposure is unknown.
 
 All ten selected cases remain. Changed Python files and their first-parent revisions were retrieved after the freeze; added test files correctly have no vulnerable-parent counterpart. Tests and `tests.py`/`conftest.py` are excluded from application alert totals but retained as oracle/context receipts. [Source plan](vul4py-source-plan.json), [receipts](vul4py-source-receipts.json), [external CNA records](vul4py-cve-records.json).
 
@@ -31,7 +31,7 @@ All ten selected cases remain. Changed Python files and their first-parent revis
 | CVE-2023-30608 | sqlparse | No match; runtime not run |
 | CVE-2025-5120 | smolagents | No match; runtime not run |
 | CVE-2021-28363 | urllib3 | CNA CWE missing; no strict score; runtime not run |
-| CVE-2024-35195 | requests | No match; runtime not run |
+| CVE-2024-35195 | requests | No match; prior-project alias overlap; runtime not run |
 | CVE-2017-16618 | owlmixin | CNA CWE missing; no strict score; runtime not run |
 | CVE-2024-32977 | OctoPrint | No match; unrelated whole-file alerts retained; runtime not run |
 | CVE-2024-34078 | html-sanitizer | No static match; upstream paired test reproduced |

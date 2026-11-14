@@ -8,10 +8,14 @@
     "strict_cna_matches": 2,
     "strict_labelled_cases": 5
   },
-  "fresh_pilot": {
+  "external_pilot": {
     "strict_matches": 0,
     "labelled_cases": 8,
     "unscorable_cases": 2,
+    "prior_project_alias_overlap_cases": 1,
+    "clean_project_subset_cases": 9,
+    "clean_project_subset_labelled_cases": 7,
+    "clean_project_subset_strict_matches": 0,
     "upstream_paired_cases_verified": 1,
     "runtime_not_run": 9
   },

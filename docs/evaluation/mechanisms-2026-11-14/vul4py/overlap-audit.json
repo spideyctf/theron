@@ -1,0 +1,14 @@
+{
+  "records": [
+    {
+      "id": "CVE-2024-35195",
+      "repository": "psf/requests",
+      "previous_case": "CVE-2018-18074",
+      "reason": "Initial selection excluded raw repository names but omitted known canonical aliases"
+    }
+  ],
+  "original_membership_retained": true,
+  "clean_project_subset_cases": 9,
+  "clean_project_subset_cna_labelled_cases": 7,
+  "interpretation": "One project alias overlap invalidates a fully project-disjoint ten-case claim. No case replaced after exposure; future selection guard includes canonical names and aliases."
+}

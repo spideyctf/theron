@@ -3,6 +3,7 @@
   "expected_absent_files": 1,
   "registered_cases_retained": 10,
   "registration_unchanged": true,
+  "prior_project_alias_overlaps": 1,
   "full_alert_equivalence_groups": 32,
   "synthetic_variants_unchanged": 1470,
   "earlier_failures_retained": true,

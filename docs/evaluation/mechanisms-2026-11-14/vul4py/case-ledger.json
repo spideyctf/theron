@@ -3,60 +3,70 @@
     {
       "id": "CVE-2023-32309",
       "repository": "facelessuser/pymdown-extensions",
+      "prior_project_overlap": false,
       "static_status": "no_strict_match",
       "runtime_status": "not_run"
     },
     {
       "id": "CVE-2025-53366",
       "repository": "modelcontextprotocol/python-sdk",
+      "prior_project_overlap": false,
       "static_status": "no_strict_match",
       "runtime_status": "not_run"
     },
     {
       "id": "CVE-2023-30608",
       "repository": "andialbrecht/sqlparse",
+      "prior_project_overlap": false,
       "static_status": "no_strict_match",
       "runtime_status": "not_run"
     },
     {
       "id": "CVE-2025-5120",
       "repository": "huggingface/smolagents",
+      "prior_project_overlap": false,
       "static_status": "no_strict_match",
       "runtime_status": "not_run"
     },
     {
       "id": "CVE-2021-28363",
       "repository": "urllib3/urllib3",
+      "prior_project_overlap": false,
       "static_status": "cna_cwe_missing",
       "runtime_status": "not_run"
     },
     {
       "id": "CVE-2024-35195",
       "repository": "psf/requests",
+      "prior_project_overlap": true,
       "static_status": "no_strict_match",
       "runtime_status": "not_run"
     },
     {
       "id": "CVE-2017-16618",
       "repository": "tadashi-aikawa/owlmixin",
+      "prior_project_overlap": false,
       "static_status": "cna_cwe_missing",
       "runtime_status": "not_run"
     },
     {
       "id": "CVE-2024-32977",
       "repository": "OctoPrint/OctoPrint",
+      "prior_project_overlap": false,
       "static_status": "no_strict_match",
       "runtime_status": "not_run"
     },
     {
       "id": "CVE-2024-34078",
       "repository": "matthiask/html-sanitizer",
+      "prior_project_overlap": false,
       "static_status": "no_strict_match",
       "runtime_status": "upstream_security_and_functional_pair_verified"
     },
     {
       "id": "CVE-2024-55655",
       "repository": "sigstore/sigstore-python",
+      "prior_project_overlap": false,
       "static_status": "no_strict_match",
       "runtime_status": "not_run"
     }

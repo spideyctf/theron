@@ -9,8 +9,13 @@ SEED='theron-external-2026-11-14'
 
 
 def main():
+    if (OUT/'vul4py-registration.json').exists():
+        raise ValueError('Registration already exists. Preserve exposed membership and create a new dated protocol instead of replacing it.')
     prior=read(ROOT/'docs/evaluation/realworld-2026-11-12/manifest.json')['cases']
     exposed={c['repository'].lower() for c in prior}
+    for case in prior:
+        identity=case.get('repository_identity',{})
+        exposed|={v.lower() for v in [identity.get('canonical'),identity.get('root'),*identity.get('aliases',[])] if isinstance(v,str)}
     exposed|={c['repo'].lower() for c in read(ROOT/'docs/evaluation/obligations-2026-11-14/source-plan.json')['cases']}
     metadata=OUT/'vul4py-metadata.csv'
     rows=list(csv.DictReader(metadata.read_text(encoding='utf-8-sig').splitlines()))

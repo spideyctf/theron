@@ -17,6 +17,19 @@ def main():
     assert registered==read(OUT/'vul4py-registration.json')
     assert hashlib.sha256(normalized(OUT/'vul4py-metadata.csv')).hexdigest()==registered['metadata_sha256']
     ids={r['vuln_id'] for r in registered['selected']};assert len(ids)==10
+    aliases={}
+    for case in read(ROOT/'docs/evaluation/realworld-2026-11-12/manifest.json')['cases']:
+        identity=case.get('repository_identity',{})
+        for value in [case['repository'],identity.get('canonical'),identity.get('root'),*identity.get('aliases',[])]:
+            if isinstance(value,str):aliases[value.lower()]=case['cve_id']
+    overlaps=[dict(id=r['vuln_id'],repository=r['repository'],previous_case=aliases[r['repository'].lower()],
+        reason='Initial selection excluded raw repository names but omitted known canonical aliases')
+        for r in registered['selected'] if r['repository'].lower() in aliases]
+    overlap_ids={r['id'] for r in overlaps}
+    assert overlap_ids=={'CVE-2024-35195'}
+    write(OUT/'vul4py/overlap-audit.json',dict(records=overlaps,original_membership_retained=True,
+        clean_project_subset_cases=9,clean_project_subset_cna_labelled_cases=7,
+        interpretation='One project alias overlap invalidates a fully project-disjoint ten-case claim. No case replaced after exposure; future selection guard includes canonical names and aliases.'))
     checks=0;absent=0
     for filename in ['vul4py-source-receipts.json','vul4py-runtime-sources.json']:
         for r in read(OUT/filename)['records']:
@@ -48,18 +61,21 @@ def main():
     smoke=read(OUT/'offline-selfscan.json');assert smoke['status']=='completed' and smoke['wall_seconds']<120
     assert read(OUT/'offline-selfscan-initial.json')['status']=='failed'
     assert read(OUT/'offline-selfscan-import-gate.json')['status']=='failed'
-    cases=[dict(id=r['vuln_id'],repository=r['repository'],static_status='no_strict_match' if r['vuln_id'] not in pilot['summary']['strict_cna_cwe_unscorable_cases'] else 'cna_cwe_missing',
+    cases=[dict(id=r['vuln_id'],repository=r['repository'],prior_project_overlap=r['vuln_id'] in overlap_ids,
+        static_status='no_strict_match' if r['vuln_id'] not in pilot['summary']['strict_cna_cwe_unscorable_cases'] else 'cna_cwe_missing',
         runtime_status='upstream_security_and_functional_pair_verified' if r['vuln_id']=='CVE-2024-34078' else 'not_run') for r in registered['selected']]
     write(OUT/'vul4py/case-ledger.json',dict(records=cases,full_vul4py_acceptance=False,independent_human_review=False))
     write(OUT/'readiness.json',dict(implementation_revision=OPTIMIZATION,research_ready=False,
         engineering='688 Python tests, 15 frontend tests and build passed',
         exposed_development=dict(vulnerable_semantic_candidates=5,cases=6,strict_cna_matches=2,strict_labelled_cases=5),
-        fresh_pilot=dict(strict_matches=0,labelled_cases=8,unscorable_cases=2,upstream_paired_cases_verified=1,runtime_not_run=9),
+        external_pilot=dict(strict_matches=0,labelled_cases=8,unscorable_cases=2,prior_project_alias_overlap_cases=1,
+            clean_project_subset_cases=9,clean_project_subset_labelled_cases=7,clean_project_subset_strict_matches=0,
+            upstream_paired_cases_verified=1,runtime_not_run=9),
         operational_smoke=dict(status='completed',wall_seconds=smoke['wall_seconds'],limit_seconds=120,earlier_timeouts_retained=2),
         unmet=['fresh real-code generalization','complete upstream oracle validation','custom IAM/remaining detection models',
                'independent vulnerability-location/alert validation','measured cross-layer benefit','broader platform coverage and production validation','defensible contribution relative to related work']))
     write(OUT/'evidence-audit.json',dict(source_sha256_and_git_blob_checks=checks,expected_absent_files=absent,
-        registered_cases_retained=10,registration_unchanged=True,full_alert_equivalence_groups=32,
+        registered_cases_retained=10,registration_unchanged=True,prior_project_alias_overlaps=1,full_alert_equivalence_groups=32,
         synthetic_variants_unchanged=1470,earlier_failures_retained=True,independent_human_review=False))
     files={p.relative_to(OUT).as_posix():hashlib.sha256(normalized(p)).hexdigest() for p in sorted(OUT.rglob('*'))
            if p.is_file() and p.name!='artifact-manifest.json'}
