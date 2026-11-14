@@ -40,6 +40,16 @@ def scoped(node):
     for child in ast.iter_child_nodes(node):yield from scoped(child)
 
 
+def terminates(statements):
+    for node in statements:
+        if isinstance(node,(ast.Return,ast.Raise)):return True
+        if isinstance(node,ast.If):
+            if isinstance(node.test,ast.Constant):
+                if terminates(node.body if node.test.value else node.orelse):return True
+            elif node.orelse and terminates(node.body) and terminates(node.orelse):return True
+    return False
+
+
 def calls(statements):
     for node in statements:
         if isinstance(node,(ast.FunctionDef,ast.AsyncFunctionDef,ast.ClassDef)):continue
@@ -48,9 +58,20 @@ def calls(statements):
             if isinstance(node.test,ast.Constant):yield from calls(node.body if node.test.value else node.orelse)
             else:
                 yield from calls(node.body);yield from calls(node.orelse)
+        elif isinstance(node,(ast.For,ast.AsyncFor,ast.While)):
+            expression=node.test if isinstance(node,ast.While) else node.iter
+            yield from (n for n in scoped(expression) if isinstance(n,ast.Call))
+            empty=(isinstance(node,ast.While) and isinstance(expression,ast.Constant) and not expression.value
+                   or isinstance(expression,(ast.List,ast.Tuple,ast.Set)) and not expression.elts)
+            if not empty:yield from calls(node.body)
+            yield from calls(node.orelse)
+        elif isinstance(node,ast.Try):
+            yield from calls(node.body)
+            for handler in node.handlers:yield from calls(handler.body)
+            yield from calls(node.orelse);yield from calls(node.finalbody)
         else:
             yield from (n for n in scoped(node) if isinstance(n,ast.Call))
-        if isinstance(node,(ast.Return,ast.Raise)):break
+        if terminates([node]):break
 
 
 def distribution_claims(files):

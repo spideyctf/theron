@@ -102,6 +102,10 @@ def test_direct_async_handler_and_from_import_alias_are_supported():
     '    if False:\n        return parse(text)\n    return text',
     '    def unused():\n        return parse(text)\n    return text',
     '    parse=custom\n    return parse(text)',
+    '    if enabled:\n        return text\n    else:\n        return text\n    return parse(text)',
+    '    if True:\n        return text\n    return parse(text)',
+    '    while False:\n        parse(text)\n    return text',
+    '    for item in []:\n        parse(text)\n    return text',
 ])
 def test_dead_nested_or_shadowed_helper_is_not_a_dependency_call(body):
     code=CODE[:CODE.index('    exec(input())')]+body+'\n'
