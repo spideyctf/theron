@@ -27,6 +27,9 @@ it('shows all backend required-condition evidence in finding details and HTML', 
     expect(screen.getAllByText(finding.obligation!.required).length).toBeGreaterThan(0)
     expect(screen.getAllByText(finding.obligation!.observed).length).toBeGreaterThan(0)
     for (const assumption of finding.obligation!.assumptions) expect(screen.getByText(assumption)).toBeInTheDocument()
+    for (const location of finding.obligation!.related_locations || []) expect(screen.getAllByText(`${location.file_path}:${location.line_number}`).length).toBeGreaterThan(0)
+    await user.click(screen.getByRole('button',{name:'Copy remediation details'}))
+    expect(await navigator.clipboard.readText()).toContain(finding.obligation!.required)
     await user.keyboard('{Escape}')
   }
   const doc = document.implementation.createHTMLDocument('Obligation evidence')

@@ -1,0 +1,73 @@
+{
+  "summary": {
+    "repo": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\obligation-operations\\fixed-self-target",
+    "branch": "local",
+    "files_scanned": 273,
+    "total_findings": 3,
+    "context_findings": 12,
+    "vulnerability_findings": 0,
+    "by_severity": {
+      "INFO": 3
+    },
+    "modules_run": [
+      "agentic",
+      "ai",
+      "sast"
+    ],
+    "scan_duration_seconds": 108.15
+  },
+  "files_scanned": 273,
+  "modules_run": [
+    "agentic",
+    "ai",
+    "sast"
+  ],
+  "application_findings": [
+    {
+      "rule_id": "PY-TUPLE-001",
+      "file_path": "scanner/cli.py",
+      "line_number": 88,
+      "maturity": "advisory",
+      "evidence_kind": "coverage-notice",
+      "scope": "application"
+    },
+    {
+      "rule_id": "PY-TUPLE-001",
+      "file_path": "scanner/engine.py",
+      "line_number": 166,
+      "maturity": "advisory",
+      "evidence_kind": "coverage-notice",
+      "scope": "application"
+    },
+    {
+      "rule_id": "PY-BUDGET-001",
+      "file_path": "scanner/python_analysis.py",
+      "line_number": null,
+      "maturity": "stable",
+      "evidence_kind": "coverage-notice",
+      "scope": "application"
+    }
+  ],
+  "context_findings": 12,
+  "context_coverage_notices": [
+    {
+      "rule_id": "SCAN-COVERAGE-001",
+      "file_path": "docs/evaluation/owasp-2026-11-12/split.json",
+      "description": "The file exceeds the 500 KB analysis limit. Scan coverage is incomplete for this file."
+    },
+    {
+      "rule_id": "SCAN-COVERAGE-001",
+      "file_path": "docs/evaluation/realworld-2026-11-12/prior-unit-index.json",
+      "description": "The file exceeds the 500 KB analysis limit. Scan coverage is incomplete for this file."
+    }
+  ],
+  "status": "completed",
+  "implementation_revision": "8c10fdbc904ef9323d00134878f5b2c6ed0097d0",
+  "target_revision": "4c166e0b179e1ff10a3a432e2bd439765b601a81",
+  "selected_files": 275,
+  "wall_seconds": 117.75802570000815,
+  "limit_seconds": 120,
+  "network_required": false,
+  "target_code_executed": false,
+  "interpretation": "One offline CLI smoke with SAST/AI/agentic; SCA/network excluded. Not a throughput ranking or accuracy result."
+}

@@ -1,6 +1,6 @@
 # Research direction and publication readiness
 
-Assessment updated: 14 November 2026, through source-guided library-flow improvements. This is a study proposal with a preliminary abstract, not a submitted or peer-reviewed manuscript. No acceptance is guaranteed.
+Assessment updated: 14 November 2026, through bounded authorization/JWT/HTTP obligations and preregistered external probes. Historical proposal material below is retained; this increment creates no paper draft and makes no publication-readiness claim.
 
 ## Broader platform direction
 
@@ -9,6 +9,8 @@ The agreed project goal is now a unified, evidence-driven security analysis and 
 Working project/research title: **Theron: A Unified Security Analysis and Verification Platform for AI-Enabled and Agentic Software Systems**. The platform is broad; research claims must identify and measure a specific cross-layer benefit. The existing abstract below describes the completed prototype study and is not yet an abstract for an implemented full-platform contribution.
 
 ## Current assessment
+
+The [obligation increment](evaluation/obligations-2026-11-14/README.md) froze scanner `8c10fdb` before retrieving six preregistered candidate sources. Automatic analysis produces a candidate in one vulnerable authorization mechanism, none in repaired mechanism units, and misses the other five cases. Crypto internals, signed/returned payload identity, parent-object policy and broader HTTP grammar remain gaps. One upstream test pair and four author-derived adapter pairs distinguish revisions in isolated execution; these outcomes do not count as static detections or independent human labels. CVAT's upstream service-dependent tests remain unrun. All 1,470 exposed synthetic outcomes/alert counts are unchanged; 658 Python and 15 frontend tests pass. Required-check evidence reaches API, exports and frontend. The original 0/9 evaluation below remains intact; all six new sources are now exposed. This completes the bounded engineering increment, **not the broader research acceptance criteria** or a demonstrated platform-wide advantage. The following paragraphs preserve earlier checkpoints.
 
 The [library-flow increment](evaluation/library-flows-2026-11-14/README.md), frozen at `6345734`, repairs reflected-call target tracking and known remote HTTP/HTML content propagation, and adds explicit conditional library models. Two disclosed library boundaries produce three advisory findings across exposed Celery and MechanicalSoup mechanisms while their corresponding patched paths remain quiet. The unchanged original CWE/span rule matches one configured case; the current unconfigured result remains 0/9. MechanicalSoup's CWE-22 flow is separate from upstream CWE-20. These development observations do not establish new held-out accuracy or independent labels. All 1,470 synthetic case outcomes/alert counts remain unchanged. API/export/frontend checks preserve assumptions; the pinned offline smoke retains incomplete-coverage notices. Authorization, permission, crypto and protocol gaps remain unresolved.
 

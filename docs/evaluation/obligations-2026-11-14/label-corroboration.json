@@ -1,0 +1,90 @@
+{
+  "records": [
+    {
+      "id": "CVE-2026-82411",
+      "record_state": "PUBLISHED",
+      "cwes": [
+        "CWE-639"
+      ],
+      "references": [
+        "https://github.com/maykinmedia/open-object/security/advisories/GHSA-55w6-rqp5-j5wx",
+        "https://github.com/maykinmedia/open-object/commit/11c5b85ea5d1d80f940883f01b8b8ea80ccdd47c",
+        "https://github.com/maykinmedia/open-object/commit/27e806eff04c52ebe1e78126c288b63fc0308b52",
+        "https://github.com/maykinmedia/open-object/commit/6154d9c2ed8c162b61f2d42db2de4eda5081347f",
+        "https://github.com/maykinmedia/open-object/commit/ce6b1820619c843748bc5231597aa7fc060d95fe",
+        "https://github.com/maykinmedia/open-object/tree/2.5.1",
+        "https://github.com/maykinmedia/open-object/tree/3.6.2",
+        "https://github.com/maykinmedia/open-object/tree/4.0.2",
+        "https://github.com/maykinmedia/open-object/tree/4.1.1"
+      ],
+      "independent_human_adjudication": false
+    },
+    {
+      "id": "CVE-2026-58373",
+      "record_state": "PUBLISHED",
+      "cwes": [
+        "CWE-862"
+      ],
+      "references": [
+        "https://github.com/cvat-ai/cvat/releases/tag/v2.69.0",
+        "https://github.com/cvat-ai/cvat/pull/10807",
+        "https://github.com/cvat-ai/cvat/commit/27953f19d2265f8b495369f816730a7452db791b",
+        "https://www.vulncheck.com/advisories/cvat-missing-authorization-on-quality-reports-parent-id-filter-leaks-cross-organization-report-existence"
+      ],
+      "independent_human_adjudication": false
+    },
+    {
+      "id": "CVE-2024-33663",
+      "record_state": "PUBLISHED",
+      "cwes": [],
+      "references": [
+        "https://github.com/mpdavis/python-jose/issues/346",
+        "https://www.vicarius.io/vsociety/posts/algorithm-confusion-in-python-jose-cve-2024-33663"
+      ],
+      "independent_human_adjudication": false
+    },
+    {
+      "id": "CVE-2022-39227",
+      "record_state": "PUBLISHED",
+      "cwes": [
+        "CWE-290"
+      ],
+      "references": [
+        "https://github.com/davedoesdev/python-jwt/security/advisories/GHSA-5p8v-58qm-c7fp",
+        "https://github.com/davedoesdev/python-jwt/commit/88ad9e67c53aa5f7c43ec4aa52ed34b7930068c9",
+        "https://github.com/pypa/advisory-database/blob/main/vulns/python-jwt/PYSEC-2022-259.yaml",
+        "https://www.vicarius.io/vsociety/posts/authentication-bypass-in-python-jwt"
+      ],
+      "independent_human_adjudication": false
+    },
+    {
+      "id": "CVE-2022-24761",
+      "record_state": "PUBLISHED",
+      "cwes": [
+        "CWE-444"
+      ],
+      "references": [
+        "https://github.com/Pylons/waitress/security/advisories/GHSA-4f7p-27jc-3c36",
+        "https://github.com/Pylons/waitress/commit/9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+        "https://github.com/Pylons/waitress/releases/tag/v2.1.1",
+        "https://lists.debian.org/debian-lts-announce/2022/05/msg00011.html",
+        "https://www.debian.org/security/2022/dsa-5138"
+      ],
+      "independent_human_adjudication": false
+    },
+    {
+      "id": "CVE-2024-1135",
+      "record_state": "PUBLISHED",
+      "cwes": [
+        "CWE-444"
+      ],
+      "references": [
+        "https://huntr.com/bounties/22158e34-cfd5-41ad-97e0-a780773d96c1",
+        "https://lists.debian.org/debian-lts-announce/2024/06/msg00027.html"
+      ],
+      "independent_human_adjudication": false
+    }
+  ],
+  "metadata_hashes_match_registration": true,
+  "labels": "External CVE records corroborate advisory identity; author-derived function units and Theron alerts lack independent adjudication."
+}

@@ -1,0 +1,796 @@
+{
+  "records": [
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/__init__.py",
+      "source_sha256": "5ee70bb2085ac1231395400067a4e8379a8a67224dbf78a8958620c7cd766b9a",
+      "git_blob_sha": "bbb99da0307e42a90207077f02cee485e8e255c3",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/__init__.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/__main__.py",
+      "source_sha256": "e7658922b60a69db068b41bdde310c09f6815da55096e1f2e170667d32d3fbaa",
+      "git_blob_sha": "9bcd07e59cbb4eabc41561785a0e1ca6a3e2a33e",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/__main__.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/adjustments.py",
+      "source_sha256": "95099605e8734392b2559edf239bb8ad3c9a5cea6e7bed13ff0131ff6dea36a5",
+      "git_blob_sha": "466b5c4a9dae8f1c060a71e1957ec10a963209db",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/adjustments.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/buffers.py",
+      "source_sha256": "54d9da940ca3ad08033c7b4ac109eb6309e39ae0c1e6d3b3eacae2fac2baa76e",
+      "git_blob_sha": "8091ff0e4b9781d720bc0b6b62ef4cd907d74638",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/buffers.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/channel.py",
+      "source_sha256": "c9e0c96717c6f14fa5b70332a78494b24a376a36eeb3041faf1e34edaaa73284",
+      "git_blob_sha": "948b498677284f751f7f0eba8c3f1f9d37cedf97",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/channel.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/compat.py",
+      "source_sha256": "c9eeef06fd122d789c8c9eb600b62b97ceb7314c22b3d3caa9b86c8e20124920",
+      "git_blob_sha": "67543b9cadd17243be50c2e4f04745394aef56d0",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/compat.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/parser.py",
+      "source_sha256": "8d699df133d6e60e3701d73d32247459d3ad1b37f162d30c7c46fd1efadf6434",
+      "git_blob_sha": "a6e4d9822e1e9402f874e918c08f2732bc4f23a9",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/parser.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/proxy_headers.py",
+      "source_sha256": "c9ef66e41c608080552aad591605e33b5282804ee4a4d9cf0b9b1881fc527e7b",
+      "git_blob_sha": "5d6164670ae01691f5ba99154bde484dadf3b6cd",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/proxy_headers.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/receiver.py",
+      "source_sha256": "0758fa8c8b63777a11af9a0c4abb37edcc76cbd7ff27b93e1b3c7ad8a5c6c9ca",
+      "git_blob_sha": "878528087b65a06ab7cdef3de9387cdf304ebab2",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/receiver.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/rfc7230.py",
+      "source_sha256": "d6279c7be8517127b5f725bc4d6cc239df39ba2efd5b1192f502d5e9d43cd1d7",
+      "git_blob_sha": "9b25fbd9a612b94b5fe07232ba0a36e10fb2def2",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/rfc7230.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/runner.py",
+      "source_sha256": "047e6d3f547d46a753baccf6f1e7355ff014448cdbe649f4582f5f7a0330ebd9",
+      "git_blob_sha": "9a5f0e3f6dd660ff1adb3753a8a7eefeb4234781",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/runner.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/server.py",
+      "source_sha256": "013439bd6f111e33683b6b805bcadd245a606674827d22bf09225a5e31c6349f",
+      "git_blob_sha": "55cffe9baf86763f4f0beeb28d9db3c3522a6e4b",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/server.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/task.py",
+      "source_sha256": "9a35ed8ddec9e4d4a64551a7239a4817c90398b1827b8eb3a853396b28ad6a8d",
+      "git_blob_sha": "a003919fa3df951fff77a0dc6f143460a4ffea76",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/task.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/trigger.py",
+      "source_sha256": "feccf4e36d6cbed114df4263d4ff4d5b36dc427c476cff95b2d57c0a2033fdf5",
+      "git_blob_sha": "49b2034607471612203be456f2ffa67ed8ac51a7",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/trigger.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/utilities.py",
+      "source_sha256": "d1898bc687d35c46c38ffcfce02f6d9201180ed858794bdf1a960914fe591a91",
+      "git_blob_sha": "3caaa336f8286497a215d282d2ef3f26b05120d6",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/utilities.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/wasyncore.py",
+      "source_sha256": "34c00ad84634d299ced60b8f9b20067e03acebf990c4ace9c034bae382a78289",
+      "git_blob_sha": "9a68c51716c3ea28aab68682ddf49f70b891de66",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/wasyncore.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/__init__.py",
+      "source_sha256": "5ee70bb2085ac1231395400067a4e8379a8a67224dbf78a8958620c7cd766b9a",
+      "git_blob_sha": "bbb99da0307e42a90207077f02cee485e8e255c3",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/__init__.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/__main__.py",
+      "source_sha256": "e7658922b60a69db068b41bdde310c09f6815da55096e1f2e170667d32d3fbaa",
+      "git_blob_sha": "9bcd07e59cbb4eabc41561785a0e1ca6a3e2a33e",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/__main__.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/adjustments.py",
+      "source_sha256": "95099605e8734392b2559edf239bb8ad3c9a5cea6e7bed13ff0131ff6dea36a5",
+      "git_blob_sha": "466b5c4a9dae8f1c060a71e1957ec10a963209db",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/adjustments.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/buffers.py",
+      "source_sha256": "54d9da940ca3ad08033c7b4ac109eb6309e39ae0c1e6d3b3eacae2fac2baa76e",
+      "git_blob_sha": "8091ff0e4b9781d720bc0b6b62ef4cd907d74638",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/buffers.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/channel.py",
+      "source_sha256": "c9e0c96717c6f14fa5b70332a78494b24a376a36eeb3041faf1e34edaaa73284",
+      "git_blob_sha": "948b498677284f751f7f0eba8c3f1f9d37cedf97",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/channel.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/compat.py",
+      "source_sha256": "c9eeef06fd122d789c8c9eb600b62b97ceb7314c22b3d3caa9b86c8e20124920",
+      "git_blob_sha": "67543b9cadd17243be50c2e4f04745394aef56d0",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/compat.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/parser.py",
+      "source_sha256": "2692a2d4e7d55b538f5d2a040c1ef6fccaac500c24466c97af893b14c76f89e5",
+      "git_blob_sha": "ff16a4028a02b8d0252229da02258fb27b1b2c17",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/parser.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/proxy_headers.py",
+      "source_sha256": "c9ef66e41c608080552aad591605e33b5282804ee4a4d9cf0b9b1881fc527e7b",
+      "git_blob_sha": "5d6164670ae01691f5ba99154bde484dadf3b6cd",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/proxy_headers.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/receiver.py",
+      "source_sha256": "a267165635aaeb5c50dc79848baa753862ecbf645a0329b5d0d43eb2e1c29dc3",
+      "git_blob_sha": "766335521fb48ad700a47e0e29a64545460aa459",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/receiver.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/rfc7230.py",
+      "source_sha256": "0f5fe455e0896b71bebb88c09e26627854cc7b7c6b31abd38d00c46e3f5205fa",
+      "git_blob_sha": "26e6426019361428ce579213714b01290f4c6bf5",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/rfc7230.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/runner.py",
+      "source_sha256": "047e6d3f547d46a753baccf6f1e7355ff014448cdbe649f4582f5f7a0330ebd9",
+      "git_blob_sha": "9a5f0e3f6dd660ff1adb3753a8a7eefeb4234781",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/runner.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/server.py",
+      "source_sha256": "013439bd6f111e33683b6b805bcadd245a606674827d22bf09225a5e31c6349f",
+      "git_blob_sha": "55cffe9baf86763f4f0beeb28d9db3c3522a6e4b",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/server.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/task.py",
+      "source_sha256": "9a35ed8ddec9e4d4a64551a7239a4817c90398b1827b8eb3a853396b28ad6a8d",
+      "git_blob_sha": "a003919fa3df951fff77a0dc6f143460a4ffea76",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/task.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/trigger.py",
+      "source_sha256": "feccf4e36d6cbed114df4263d4ff4d5b36dc427c476cff95b2d57c0a2033fdf5",
+      "git_blob_sha": "49b2034607471612203be456f2ffa67ed8ac51a7",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/trigger.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/utilities.py",
+      "source_sha256": "a4077949bb96e4125baac8ace487d894ab649719ba218c7cd6f38115dea38b81",
+      "git_blob_sha": "6ae474204f0f62fafce13cdfaad7880071aceda9",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/utilities.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/wasyncore.py",
+      "source_sha256": "34c00ad84634d299ced60b8f9b20067e03acebf990c4ace9c034bae382a78289",
+      "git_blob_sha": "9a68c51716c3ea28aab68682ddf49f70b891de66",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/wasyncore.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/__init__.py",
+      "source_sha256": "d1741abbc017430370ced743595afa97b3f25aaf70d2a3754743c672bb0c2063",
+      "git_blob_sha": "054baa73c9a7c89507c630038e73b1165e1f5c99",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/__init__.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/backends/__init__.py",
+      "source_sha256": "c831310e932557a538201824d849a8bfa729436cd07ed144874277c86695d8ba",
+      "git_blob_sha": "e7bba6909b309fe5bb39456bfa2b00b7abfae3e9",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/backends/__init__.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/backends/_asn1.py",
+      "source_sha256": "7adcd6c418e4b7412dd7dfc843dd8f8fad5b01ed270a03cdedb4ef4aecfc5b7b",
+      "git_blob_sha": "af5fa8bcc04a3227cb7a9bfe78f16a4eea6bd444",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/backends/_asn1.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/backends/base.py",
+      "source_sha256": "d24ba9a2c29f8b1011d96dde9cab9876a119a551b9e8e0ce40311d82afe99afb",
+      "git_blob_sha": "b000a5253afae35681aa2013a073e625b71c1628",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/backends/base.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/backends/cryptography_backend.py",
+      "source_sha256": "dbcfbbf7610a5468e3ab69d4a0259d7f23c69285df58de6f1c53bbba8942b688",
+      "git_blob_sha": "abd2426067b86a0ddaeb634d329f7e0defe40bee",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/backends/cryptography_backend.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/backends/ecdsa_backend.py",
+      "source_sha256": "3913917a9229212f43e2ce95b668658b919957d923dc2263dbf32fd0044a1aa1",
+      "git_blob_sha": "756c7ea8ca58815f90340d68fa2d1a0ebdc95c63",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/backends/ecdsa_backend.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/backends/native.py",
+      "source_sha256": "f73ca8ba79a31b5660549624b1e31c0e8b0938120b2d1caefd46f3847ed9675a",
+      "git_blob_sha": "eb3a6ae3f3816a04e0769d52aa034657c2d3cb9a",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/backends/native.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/backends/rsa_backend.py",
+      "source_sha256": "44a202fdba6185ee76b760ff8c420d3bf9e08f9d2dcbdc179efedc54ed4499d1",
+      "git_blob_sha": "4e8ccf1c3c446e8fed10741a5c386581977f6cba",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/backends/rsa_backend.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/constants.py",
+      "source_sha256": "034c87363b1bcbe61539e2a1728374af1a0cf1b6a2d499550ef671f3650265e1",
+      "git_blob_sha": "ab4d74d3d6cd254d93cf3e42363cff334915c543",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/constants.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/exceptions.py",
+      "source_sha256": "2bfb9e141b264f0432484d02534f6232d84e01d3da4d0fc7bf3473f65613d65b",
+      "git_blob_sha": "e8edc3b6a5a8da1d09a2ba504690b4f480a4f416",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/exceptions.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/jwe.py",
+      "source_sha256": "8d204ddda4f60fbc404370fee5c55fffd91979b721008deaa1a7fedf230b6a76",
+      "git_blob_sha": "2c387ff4f1267bc9871a17f4d83290c82feef72f",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/jwe.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/jwk.py",
+      "source_sha256": "dc0d5d5d77e1188310bd3e371010108224a1419baa2e951993fc56bd6edcf5cb",
+      "git_blob_sha": "7afc054756586716bf9efb17e947bbbc75b2a625",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/jwk.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/jws.py",
+      "source_sha256": "aa030344897219b19f00602941fb802f942beba42a6bc698502dea50ef2a33f8",
+      "git_blob_sha": "bfaf6bd03a1f87ebfac88cf013324b1b42769af4",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/jws.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/jwt.py",
+      "source_sha256": "edccd0c4fb1f39abcba58ea32537ad74f37f1500dc6669a4699d90b55ddb54fc",
+      "git_blob_sha": "3f2142e3918e333b44e41fa37cc1a4b19a9be27c",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/jwt.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/utils.py",
+      "source_sha256": "fdda12c919def8eca08d2237233d645934869f05471cc03aff0607392d6b842c",
+      "git_blob_sha": "fcef885111c7761ab372f025f20e5cf7f073c0c6",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/utils.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/__init__.py",
+      "source_sha256": "32acbb647a0e4800070d2ae4685cb17b029fe3b4a97691d9f3f033bbf8baccb8",
+      "git_blob_sha": "10bd7cdf556bbc275917ea56db4d3eac7cc983fe",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/__init__.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/backends/__init__.py",
+      "source_sha256": "c831310e932557a538201824d849a8bfa729436cd07ed144874277c86695d8ba",
+      "git_blob_sha": "e7bba6909b309fe5bb39456bfa2b00b7abfae3e9",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/backends/__init__.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/backends/_asn1.py",
+      "source_sha256": "d82aa7441ecba234eb354e1dd470bd040d96909bf938e33a8329fa07eb55c249",
+      "git_blob_sha": "87e3df1b89eabcfd0c69e2dd099b79471933d2ab",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/backends/_asn1.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/backends/base.py",
+      "source_sha256": "d24ba9a2c29f8b1011d96dde9cab9876a119a551b9e8e0ce40311d82afe99afb",
+      "git_blob_sha": "b000a5253afae35681aa2013a073e625b71c1628",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/backends/base.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/backends/cryptography_backend.py",
+      "source_sha256": "74e2fad4464f60a492a1d353545904b7148f1c6fa042a4426771f301f3185ac1",
+      "git_blob_sha": "1525cf26556d2b4f15d058545937ec229383d75d",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/backends/cryptography_backend.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/backends/ecdsa_backend.py",
+      "source_sha256": "3913917a9229212f43e2ce95b668658b919957d923dc2263dbf32fd0044a1aa1",
+      "git_blob_sha": "756c7ea8ca58815f90340d68fa2d1a0ebdc95c63",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/backends/ecdsa_backend.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/backends/native.py",
+      "source_sha256": "b99b8ff04aa28403ec986771b25332861f831a87b5c972d7981fcffb6cd7c92f",
+      "git_blob_sha": "8cc77dab75d54065affad1cbf75b6d24fc722da6",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/backends/native.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/backends/rsa_backend.py",
+      "source_sha256": "fad89017f1b6bf5e9ae4f2c22e3115c12a1869e072de1f938fa28a9ad62502e6",
+      "git_blob_sha": "8139d69854428274bd827b7ffb43884a226c6ce0",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/backends/rsa_backend.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/constants.py",
+      "source_sha256": "b4f64ba3aa08f267acc455ce0a2ba513ef86700356d55dfbc243b47f5bd5bea6",
+      "git_blob_sha": "58787d4640a4e01a95e67688afa9bbbabf06b008",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/constants.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/exceptions.py",
+      "source_sha256": "2bfb9e141b264f0432484d02534f6232d84e01d3da4d0fc7bf3473f65613d65b",
+      "git_blob_sha": "e8edc3b6a5a8da1d09a2ba504690b4f480a4f416",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/exceptions.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/jwe.py",
+      "source_sha256": "598075179c78835f8cf1911c0806419efa4c4cbf1b9b9b6442417eb25f0b72be",
+      "git_blob_sha": "c1bb52b10ad454abc217464e582e4a55a3e05d11",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/jwe.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/jwk.py",
+      "source_sha256": "dc0d5d5d77e1188310bd3e371010108224a1419baa2e951993fc56bd6edcf5cb",
+      "git_blob_sha": "7afc054756586716bf9efb17e947bbbc75b2a625",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/jwk.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/jws.py",
+      "source_sha256": "3f64805213ba6718e15a4e971c5a6e960a5111f00727f92d020ccf83e389ff7c",
+      "git_blob_sha": "27f6b79a2a26620b6125750bebee3a2110e6edce",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/jws.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/jwt.py",
+      "source_sha256": "60b317ccabae9fe97fe914fa48d402c015e7e632dc3183d0fed3119532c93afd",
+      "git_blob_sha": "80565f562cebbaec812b5860767cbd387a37c19d",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/jwt.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/utils.py",
+      "source_sha256": "c4556c47cab0ae091ecd92906abcb555e8981a7dbd2b2eee21c5f59aa2624d8c",
+      "git_blob_sha": "8cc0f991a9e786142ac0a384e2d7b59c1b860e5a",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/utils.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/__init__.py",
+      "source_sha256": "729f228e741cabe89819a73c4fa9bc85a842f6bbd501ff09a15ee9c93423e9a2",
+      "git_blob_sha": "adf5e89be5e7e4838eee36a41dfbdf2a4ae310aa",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/__init__.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/config.py",
+      "source_sha256": "3c4bdd2b09e564329bef881423059e27e65009ce9d5ec42d05f3590ec06fa140",
+      "git_blob_sha": "84e7619e4ed8fba7ffc329c508b210e928a9308c",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/config.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/errors.py",
+      "source_sha256": "2650c18da83dd203224702c71b7c73109cc33a7b5297588cdf6476efbf94ea3d",
+      "git_blob_sha": "727d336adac9e30171a9d803729a32b997a77cd4",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/errors.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/http/__init__.py",
+      "source_sha256": "6f84c5df1e45d1560e3d339e358c11191d4460705a3cc85944ca0d7ae0f9fa7d",
+      "git_blob_sha": "1da6f3ec1ace87877c2aab6595dcf367c2e81ef6",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/http/__init__.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/http/body.py",
+      "source_sha256": "17ddb91724e8b5f436890f8b4c14268d3b1687d348fc825215d105a75a96504a",
+      "git_blob_sha": "aa1af2cb3c2913757962ef5597f26c27b72969f7",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/http/body.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/http/errors.py",
+      "source_sha256": "b0d8c5da59b89b6ab267d97de7f537dc54713d7a715f38e767262a592fa1c5de",
+      "git_blob_sha": "7839ef05a14608e4db1e8ac93a29899c02a0e781",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/http/errors.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/http/message.py",
+      "source_sha256": "cd0c6595e4e9201bc2eab2969078b249a52bd36cee3b70695f60f2dd841b9b08",
+      "git_blob_sha": "1f93c7145223bbffd048d96fe95a02ec80ff4592",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/http/message.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/http/parser.py",
+      "source_sha256": "e9e3460d430451162acc25ec7edbf76b8858b83fdf06fb6d671389b916dd28d8",
+      "git_blob_sha": "5d689f06a39cdb1ce81b336d09325eb6cb1a5c15",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/http/parser.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/http/unreader.py",
+      "source_sha256": "a5755d7b77cd09420ed852ce489d2236d104a40d26f061fafd1d9297e701f89f",
+      "git_blob_sha": "273bfc311a317d77b6e9aa6116823b29cea70462",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/http/unreader.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/http/wsgi.py",
+      "source_sha256": "6f3b7adb2906d417716e728ecc6cb2193fd5d7863f38b7e6bd63fb6783eca96b",
+      "git_blob_sha": "25715eab7256c9cd70f7d8d0998c6299a3a07684",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/http/wsgi.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/util.py",
+      "source_sha256": "28be0aa5988cb4fd9d95e5695d2ff0af6c22c909031d97920f1d0354602f446c",
+      "git_blob_sha": "751deea71b5f53fa355ccaa685b9742bbdaf4999",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/util.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/__init__.py",
+      "source_sha256": "d009af6ed8c3f73a0950ba3bf1d8bdeee0b957ab81cb32f43d1a50fc1e89519c",
+      "git_blob_sha": "70153f8e6c89bf0dea7992d9b72d1f4e5f175099",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/__init__.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/config.py",
+      "source_sha256": "a94bb60f153f89c3581090ceee09665f3234e3f77f80451680026cd0beae20e8",
+      "git_blob_sha": "144acaecc63fee7c65948db5e2abb068f5da8a3a",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/config.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/errors.py",
+      "source_sha256": "2650c18da83dd203224702c71b7c73109cc33a7b5297588cdf6476efbf94ea3d",
+      "git_blob_sha": "727d336adac9e30171a9d803729a32b997a77cd4",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/errors.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/http/__init__.py",
+      "source_sha256": "6f84c5df1e45d1560e3d339e358c11191d4460705a3cc85944ca0d7ae0f9fa7d",
+      "git_blob_sha": "1da6f3ec1ace87877c2aab6595dcf367c2e81ef6",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/http/__init__.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/http/body.py",
+      "source_sha256": "82d608b3c9518ea573414d7ff96b5c4d746c92b394ce3d310c9fc6922b0fbc21",
+      "git_blob_sha": "78f03214a5d7157af092899e09cefe9d33e635a4",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/http/body.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/http/errors.py",
+      "source_sha256": "3fdbdbf37fd6cd7732bdc716514c053809e5b0ae1270c20448da5dc2eb150101",
+      "git_blob_sha": "340f0473c2513b0a8673ecc33711421a6bbd26fb",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/http/errors.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/http/message.py",
+      "source_sha256": "bd48bdcdd8d6d00b5507f014e021bbc4f01d7a7c8a7db8c53ddd3a1abef27c1c",
+      "git_blob_sha": "88ffa5a25d94dea6d098246c83433470f2f19a40",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/http/message.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/http/parser.py",
+      "source_sha256": "e9e3460d430451162acc25ec7edbf76b8858b83fdf06fb6d671389b916dd28d8",
+      "git_blob_sha": "5d689f06a39cdb1ce81b336d09325eb6cb1a5c15",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/http/parser.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/http/unreader.py",
+      "source_sha256": "a5755d7b77cd09420ed852ce489d2236d104a40d26f061fafd1d9297e701f89f",
+      "git_blob_sha": "273bfc311a317d77b6e9aa6116823b29cea70462",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/http/unreader.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/http/wsgi.py",
+      "source_sha256": "61fddb2634c97c069bf27bc5873edb83f674bad1860ecf687e0487fbd4a4bdfc",
+      "git_blob_sha": "6f3d9b68f21f4582fbca9ce1a8d3a92a1ede9fb0",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/http/wsgi.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/util.py",
+      "source_sha256": "28be0aa5988cb4fd9d95e5695d2ff0af6c22c909031d97920f1d0354602f446c",
+      "git_blob_sha": "751deea71b5f53fa355ccaa685b9742bbdaf4999",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/util.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/workers/__init__.py",
+      "source_sha256": "1affc92572a87e293288f6d101443421721c84ac60b741aefbccbe9d844df6f6",
+      "git_blob_sha": "ae753e1cdd5bd2ed22b8ac7fa8a9349eb0cebfdf",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/workers/__init__.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/workers/__init__.py",
+      "source_sha256": "1affc92572a87e293288f6d101443421721c84ac60b741aefbccbe9d844df6f6",
+      "git_blob_sha": "ae753e1cdd5bd2ed22b8ac7fa8a9349eb0cebfdf",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/workers/__init__.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/reloader.py",
+      "source_sha256": "c203f4e4ebb5cac42855afb1a6f486906fc32dc99dd4a45d18f3e9be12236a8e",
+      "git_blob_sha": "88b540bdb9ebb9c57d8edb1c5242ea86b0def932",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/reloader.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/reloader.py",
+      "source_sha256": "c203f4e4ebb5cac42855afb1a6f486906fc32dc99dd4a45d18f3e9be12236a8e",
+      "git_blob_sha": "88b540bdb9ebb9c57d8edb1c5242ea86b0def932",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/reloader.py"
+    }
+  ]
+}

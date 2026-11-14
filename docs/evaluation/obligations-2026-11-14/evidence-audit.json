@@ -1,0 +1,11 @@
+{
+  "implementation_revision": "8c10fdbc904ef9323d00134878f5b2c6ed0097d0",
+  "metadata_hash_checks": 6,
+  "source_receipt_hash_checks": 131,
+  "mechanism_function_hash_checks_across_modes": 80,
+  "all_six_cases_retained": true,
+  "scanner_freeze_unchanged": true,
+  "baseline_membership_verified": true,
+  "runtime_results_separate_from_static_detection": true,
+  "independent_human_adjudication": false
+}

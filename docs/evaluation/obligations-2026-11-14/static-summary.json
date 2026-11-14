@@ -1,0 +1,56 @@
+{
+  "implementation_revision": "8c10fdbc904ef9323d00134878f5b2c6ed0097d0",
+  "candidates": 6,
+  "modes": {
+    "default": {
+      "vulnerable_cases_with_obligation_candidates": [
+        "CVE-2026-82411"
+      ],
+      "patched_cases_with_obligation_candidates": [],
+      "application_alerts": 3,
+      "scanner_errors": 0,
+      "strict_cna_cwe_vulnerable_match_cases": [],
+      "strict_cna_cwe_patched_match_cases": [],
+      "strict_cna_cwe_unscorable_cases": [
+        "CVE-2024-33663"
+      ]
+    },
+    "no-auth": {
+      "vulnerable_cases_with_obligation_candidates": [],
+      "patched_cases_with_obligation_candidates": [],
+      "application_alerts": 0,
+      "scanner_errors": 0,
+      "strict_cna_cwe_vulnerable_match_cases": [],
+      "strict_cna_cwe_patched_match_cases": [],
+      "strict_cna_cwe_unscorable_cases": [
+        "CVE-2024-33663"
+      ]
+    },
+    "no-crypto": {
+      "vulnerable_cases_with_obligation_candidates": [
+        "CVE-2026-82411"
+      ],
+      "patched_cases_with_obligation_candidates": [],
+      "application_alerts": 3,
+      "scanner_errors": 0,
+      "strict_cna_cwe_vulnerable_match_cases": [],
+      "strict_cna_cwe_patched_match_cases": [],
+      "strict_cna_cwe_unscorable_cases": [
+        "CVE-2024-33663"
+      ]
+    },
+    "no-protocol": {
+      "vulnerable_cases_with_obligation_candidates": [
+        "CVE-2026-82411"
+      ],
+      "patched_cases_with_obligation_candidates": [],
+      "application_alerts": 3,
+      "scanner_errors": 0,
+      "strict_cna_cwe_vulnerable_match_cases": [],
+      "strict_cna_cwe_patched_match_cases": [],
+      "strict_cna_cwe_unscorable_cases": [
+        "CVE-2024-33663"
+      ]
+    }
+  }
+}

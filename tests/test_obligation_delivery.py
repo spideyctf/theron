@@ -38,3 +38,16 @@ def test_html_evidence_is_generated_and_escaped():
     result.findings[0].obligation['required']='<img src=x onerror=alert(1)>'
     html=generate_html_report(result)
     assert '<img src=x onerror=alert(1)>' not in html
+
+
+@pytest.mark.parametrize('fmt',['json','sarif','html'])
+def test_local_cli_preserves_all_three_obligation_families(tmp_path,monkeypatch,fmt):
+    from scanner.cli import main
+    from tests.obligation_delivery_fixture import source_files
+    for path,code in source_files().items():(tmp_path/path).write_text(code)
+    output=tmp_path/('report.'+fmt)
+    monkeypatch.setattr('sys.argv',['ai-sec-scan','--local',str(tmp_path),'--modules','sast','--format',fmt,'--output',str(output)])
+    main()
+    text=output.read_text(encoding='utf-8')
+    for f in build().findings:
+        assert f.rule_id in text and f.obligation['required'] in text

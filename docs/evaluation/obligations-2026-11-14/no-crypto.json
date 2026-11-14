@@ -1,0 +1,510 @@
+{
+  "implementation_revision": "8c10fdbc904ef9323d00134878f5b2c6ed0097d0",
+  "records": [
+    {
+      "id": "CVE-2026-82411",
+      "role": "vulnerable",
+      "files": 2,
+      "units": [
+        {
+          "path": "src/objects/api/v2/views.py",
+          "function": "ObjectViewSet.history_detail",
+          "start_line": 312,
+          "end_line": 317,
+          "snippet_sha256": "e5fa8c784f8562e46041302e4c77fb31a1ee477c37d1c845e9f1b22c3effd29a"
+        }
+      ],
+      "alerts": [
+        {
+          "title": "Declared object permission check is missing on a return path",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/objects/api/v2/views.py",
+          "line_number": 317,
+          "code_snippet": "        return Response(serializer.data)",
+          "recommendation": "Check the same requested object using the declared object-permission policy before exposing it.",
+          "cwe": "CWE-863",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-AUTH-001",
+          "references": [
+            "https://www.django-rest-framework.org/api-guide/permissions/#object-level-permissions"
+          ],
+          "fingerprint": "a5ad12c4a9b0f325602aac8f",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "authorization",
+            "required": "Check the same requested object using the declared object-permission policy before exposing it.",
+            "observed": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object.",
+            "action": {
+              "file_path": "src/objects/api/v2/views.py",
+              "line_number": 317
+            },
+            "assumptions": [
+              "Queryset filtering, alternate checks and deployment reachability may affect actual exposure."
+            ],
+            "related_locations": [
+              {
+                "role": "lookup",
+                "file_path": "src/objects/api/v2/views.py",
+                "line_number": 315
+              },
+              {
+                "role": "policy",
+                "file_path": "src/objects/api/v2/views.py",
+                "line_number": 143
+              }
+            ]
+          }
+        }
+      ],
+      "semantic_unit_candidates": [
+        {
+          "title": "Declared object permission check is missing on a return path",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/objects/api/v2/views.py",
+          "line_number": 317,
+          "code_snippet": "        return Response(serializer.data)",
+          "recommendation": "Check the same requested object using the declared object-permission policy before exposing it.",
+          "cwe": "CWE-863",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-AUTH-001",
+          "references": [
+            "https://www.django-rest-framework.org/api-guide/permissions/#object-level-permissions"
+          ],
+          "fingerprint": "a5ad12c4a9b0f325602aac8f",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "authorization",
+            "required": "Check the same requested object using the declared object-permission policy before exposing it.",
+            "observed": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object.",
+            "action": {
+              "file_path": "src/objects/api/v2/views.py",
+              "line_number": 317
+            },
+            "assumptions": [
+              "Queryset filtering, alternate checks and deployment reachability may affect actual exposure."
+            ],
+            "related_locations": [
+              {
+                "role": "lookup",
+                "file_path": "src/objects/api/v2/views.py",
+                "line_number": 315
+              },
+              {
+                "role": "policy",
+                "file_path": "src/objects/api/v2/views.py",
+                "line_number": 143
+              }
+            ]
+          }
+        }
+      ],
+      "cna_cwes": [
+        "CWE-639"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2026-82411",
+      "role": "fixed",
+      "files": 2,
+      "units": [
+        {
+          "path": "src/objects/api/v2/views.py",
+          "function": "ObjectViewSet.history_detail",
+          "start_line": 312,
+          "end_line": 318,
+          "snippet_sha256": "4466fd11ce1e952ff52e9a8043c3fe0b4c98e740686bc4e194cd8d59b6bb75ea"
+        }
+      ],
+      "alerts": [],
+      "semantic_unit_candidates": [],
+      "cna_cwes": [
+        "CWE-639"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2026-58373",
+      "role": "vulnerable",
+      "files": 2,
+      "units": [
+        {
+          "path": "cvat/apps/quality_control/views.py",
+          "function": "QualityReportViewSet.get_queryset",
+          "start_line": 210,
+          "end_line": 282,
+          "snippet_sha256": "a7bbe704ad25714891e643a8a20f5e630be29c73057b34ed02619fad652a95e7"
+        }
+      ],
+      "alerts": [
+        {
+          "title": "Object permission policy cannot be resolved",
+          "severity": "INFO",
+          "category": "sast",
+          "module": "coverage",
+          "description": "The DRF object lookup/action policy is missing, dynamic or unsupported. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "cvat/apps/quality_control/views.py",
+          "line_number": 427,
+          "code_snippet": "    def data(self, request: ExtendedRequest, pk):\n        report = self.get_object()  # check permissions\n        format_name = QualityReportExportFormat(\n            request.query_params.get(\"format\", default=QualityReportExportFormat.JSON.value)\n        )\n        report_data, content_type = prepare_report_for_downloading(\n            report, host=request.build_absolute_uri(\"/\"), export_format=format_name\n        )\n        return HttpResponse(report_data, content_type=content_type)",
+          "recommendation": "Resolve the effective object-permission policy before classifying this override.",
+          "cwe": null,
+          "confidence": "medium",
+          "rule_id": "PY-OBL-AUTH-001-REVIEW",
+          "references": [
+            "https://www.django-rest-framework.org/api-guide/permissions/#object-level-permissions"
+          ],
+          "fingerprint": "66e37c5540eb848d260f7387",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "coverage-notice",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "authorization",
+            "required": "Resolve the effective object-permission policy before classifying this override.",
+            "observed": "The DRF object lookup/action policy is missing, dynamic or unsupported.",
+            "action": {
+              "file_path": "cvat/apps/quality_control/views.py",
+              "line_number": 427
+            },
+            "assumptions": [],
+            "related_locations": []
+          }
+        }
+      ],
+      "semantic_unit_candidates": [],
+      "cna_cwes": [
+        "CWE-862"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2026-58373",
+      "role": "fixed",
+      "files": 2,
+      "units": [
+        {
+          "path": "cvat/apps/quality_control/views.py",
+          "function": "QualityReportViewSet.get_queryset",
+          "start_line": 210,
+          "end_line": 283,
+          "snippet_sha256": "d855c28bff67a2690523d6dce5ec8a96a4664f133e051ea51cec72a1ef3e35d8"
+        }
+      ],
+      "alerts": [
+        {
+          "title": "Object permission policy cannot be resolved",
+          "severity": "INFO",
+          "category": "sast",
+          "module": "coverage",
+          "description": "The DRF object lookup/action policy is missing, dynamic or unsupported. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "cvat/apps/quality_control/views.py",
+          "line_number": 428,
+          "code_snippet": "    def data(self, request: ExtendedRequest, pk):\n        report = self.get_object()  # check permissions\n        format_name = QualityReportExportFormat(\n            request.query_params.get(\"format\", default=QualityReportExportFormat.JSON.value)\n        )\n        report_data, content_type = prepare_report_for_downloading(\n            report, host=request.build_absolute_uri(\"/\"), export_format=format_name\n        )\n        return HttpResponse(report_data, content_type=content_type)",
+          "recommendation": "Resolve the effective object-permission policy before classifying this override.",
+          "cwe": null,
+          "confidence": "medium",
+          "rule_id": "PY-OBL-AUTH-001-REVIEW",
+          "references": [
+            "https://www.django-rest-framework.org/api-guide/permissions/#object-level-permissions"
+          ],
+          "fingerprint": "66e37c5540eb848d260f7387",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "coverage-notice",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "authorization",
+            "required": "Resolve the effective object-permission policy before classifying this override.",
+            "observed": "The DRF object lookup/action policy is missing, dynamic or unsupported.",
+            "action": {
+              "file_path": "cvat/apps/quality_control/views.py",
+              "line_number": 428
+            },
+            "assumptions": [],
+            "related_locations": []
+          }
+        }
+      ],
+      "semantic_unit_candidates": [],
+      "cna_cwes": [
+        "CWE-862"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2022-39227",
+      "role": "vulnerable",
+      "files": 1,
+      "units": [
+        {
+          "path": "python_jwt/__init__.py",
+          "function": "verify_jwt",
+          "start_line": 101,
+          "end_line": 206,
+          "snippet_sha256": "f6b81dc89ad127a7d023ea3f07a3d38ec8a0b89354dfe1baa6087106e98a58db"
+        }
+      ],
+      "alerts": [],
+      "semantic_unit_candidates": [],
+      "cna_cwes": [
+        "CWE-290"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2022-39227",
+      "role": "fixed",
+      "files": 1,
+      "units": [
+        {
+          "path": "python_jwt/__init__.py",
+          "function": "verify_jwt",
+          "start_line": 107,
+          "end_line": 217,
+          "snippet_sha256": "f820efe9a45315febf34e753333e5ebf700e9a7ba667b8691415d1151c160f9f"
+        }
+      ],
+      "alerts": [],
+      "semantic_unit_candidates": [],
+      "cna_cwes": [
+        "CWE-290"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "files": 4,
+      "units": [
+        {
+          "path": "src/waitress/receiver.py",
+          "function": "ChunkedReceiver.received",
+          "start_line": 82,
+          "end_line": 180,
+          "snippet_sha256": "af18a7c0681b8b22e31755fbcb1bbdee1587cba776b1ad542933af7ffb55af94"
+        },
+        {
+          "path": "src/waitress/parser.py",
+          "function": "HTTPRequestParser.parse_header",
+          "start_line": 201,
+          "end_line": 329,
+          "snippet_sha256": "655caf339043fa2353140e2651334c9173870fa311bda8b6a495931b4efbb749"
+        }
+      ],
+      "alerts": [],
+      "semantic_unit_candidates": [],
+      "cna_cwes": [
+        "CWE-444"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "files": 4,
+      "units": [
+        {
+          "path": "src/waitress/receiver.py",
+          "function": "ChunkedReceiver.received",
+          "start_line": 83,
+          "end_line": 194,
+          "snippet_sha256": "0bb3329bf00172095e92a2ae0093bc63e5f4e2a4044350c7a04faa35f13cd169"
+        },
+        {
+          "path": "src/waitress/parser.py",
+          "function": "HTTPRequestParser.parse_header",
+          "start_line": 200,
+          "end_line": 329,
+          "snippet_sha256": "b94cf3a2e723295fb4c5149304dee78ee1f2082d4c53a7dd90fb933eca0c6ad7"
+        }
+      ],
+      "alerts": [],
+      "semantic_unit_candidates": [],
+      "cna_cwes": [
+        "CWE-444"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "files": 3,
+      "units": [
+        {
+          "path": "jose/backends/native.py",
+          "function": "HMACKey.__init__",
+          "start_line": 23,
+          "end_line": 52,
+          "snippet_sha256": "f82e7fd2c1e2e1ad3c272dc24b86385a3bfc7696e63072ec20139c1d4909e8e2"
+        },
+        {
+          "path": "jose/backends/cryptography_backend.py",
+          "function": "CryptographyHMACKey.__init__",
+          "start_line": 539,
+          "end_line": 568,
+          "snippet_sha256": "d5c373799ffcab08f8cd7588b2ee93dcbc46781d7a317d5771c100ad8f15a652"
+        }
+      ],
+      "alerts": [],
+      "semantic_unit_candidates": [],
+      "cna_cwes": [],
+      "strict_cna_cwe_scorable": false,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "files": 3,
+      "units": [
+        {
+          "path": "jose/backends/native.py",
+          "function": "HMACKey.__init__",
+          "start_line": 23,
+          "end_line": 45,
+          "snippet_sha256": "fd5f7c6ce5e683f4af3658bf7847cb598c8a2c029f10a22759a84e00b24afbd2"
+        },
+        {
+          "path": "jose/backends/cryptography_backend.py",
+          "function": "CryptographyHMACKey.__init__",
+          "start_line": 550,
+          "end_line": 572,
+          "snippet_sha256": "28a92af2a4dac20ef322edc7101614dc2f597dabfd44dc72b7b08314bbd90b5c"
+        }
+      ],
+      "alerts": [],
+      "semantic_unit_candidates": [],
+      "cna_cwes": [],
+      "strict_cna_cwe_scorable": false,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "files": 2,
+      "units": [
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Message.parse_headers",
+          "start_line": 62,
+          "end_line": 123,
+          "snippet_sha256": "d772a9e1d94c37d34c710dddeb5c3f328e7d91d26087f8e39938450b6178ad2a"
+        },
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Message.set_body_reader",
+          "start_line": 125,
+          "end_line": 154,
+          "snippet_sha256": "c83c1da5efdb7cba2343848e56f3c0b4eb02a8c36c39a2c98f5628d7f9af2ba6"
+        },
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Request.set_body_reader",
+          "start_line": 357,
+          "end_line": 360,
+          "snippet_sha256": "63a3251b97ef7bbeda47c2b0f56c6cfcbb30dfdce053983c8cf151c9abf3d975"
+        }
+      ],
+      "alerts": [],
+      "semantic_unit_candidates": [],
+      "cna_cwes": [
+        "CWE-444"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "files": 2,
+      "units": [
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Message.parse_headers",
+          "start_line": 70,
+          "end_line": 156,
+          "snippet_sha256": "4a1015d6205acd7be238f9a2ee3c2849d0bee9afefd19009fbc74754bb26faa0"
+        },
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Message.set_body_reader",
+          "start_line": 158,
+          "end_line": 225,
+          "snippet_sha256": "42b73f3eb36074cac56ee4afc2d84fa37b107909f298a5a3c0da5cce89ca814a"
+        },
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Request.set_body_reader",
+          "start_line": 447,
+          "end_line": 450,
+          "snippet_sha256": "63a3251b97ef7bbeda47c2b0f56c6cfcbb30dfdce053983c8cf151c9abf3d975"
+        }
+      ],
+      "alerts": [],
+      "semantic_unit_candidates": [],
+      "cna_cwes": [
+        "CWE-444"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "scanner_errors": []
+    }
+  ],
+  "summary": {
+    "vulnerable_cases_with_obligation_candidates": [
+      "CVE-2026-82411"
+    ],
+    "patched_cases_with_obligation_candidates": [],
+    "application_alerts": 3,
+    "scanner_errors": 0,
+    "strict_cna_cwe_vulnerable_match_cases": [],
+    "strict_cna_cwe_patched_match_cases": [],
+    "strict_cna_cwe_unscorable_cases": [
+      "CVE-2024-33663"
+    ]
+  },
+  "labels": "Upstream advisory/repair roles plus author-derived function units; no independent human adjudication",
+  "interpretation": "Fresh source exposure after scanner freeze; purposive metadata-aware selection. Not real-world accuracy or deployed exploitability. Patched files are not globally clean."
+}

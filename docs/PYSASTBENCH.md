@@ -1,7 +1,7 @@
 # PySASTBench-backed detection tuning
 
 Reference: [Victor725/PySASTBench](https://github.com/Victor725/PySASTBench),
-commit `3ad04b72c516d0533a5dc9c8042c9808e69e0f40`. Latest evaluation run: 2026-11-14, library-flow freeze `6345734`.
+commit `3ad04b72c516d0533a5dc9c8042c9808e69e0f40`. Latest evaluation run: 2026-11-14, obligation freeze `8c10fdb`; all case outcomes and alert counts unchanged. [Current regression evidence](evaluation/obligations-2026-11-14/synthetic-summary.json).
 The Step 3 framework-source increment reached 93 labelled detections; the coverage repair preserves those counts. See the [earlier snapshot](evaluation/2026-11-12/README.md) and [current raw result](evaluation/library-flows-2026-11-14/pysastbench.json).
 The synthetic corpus has 120 labelled vulnerable/fixed pairs across six CWE categories.
 The external checkout is ignored and not shipped or redistributed with Theron.

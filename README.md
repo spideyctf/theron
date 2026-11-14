@@ -11,7 +11,15 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 **Platform direction:** Theron's broader goal is unified, evidence-driven security analysis across application code, dependencies, secrets, infrastructure, AI pipelines and agents, with correlation and controlled verification added in stages. The [platform contract, coverage matrix and ranked backlog](docs/PLATFORM.md) distinguish implemented capabilities from experimental and planned work. This vision does not expand the current coverage claims below.
 
-## Latest development: library-boundary flows
+## Latest implementation: authorization, JWT and HTTP conditions
+
+**14 November 2026:** [implementation, six-case evaluation and reproduction](docs/evaluation/obligations-2026-11-14/README.md), scanner freeze `8c10fdb`. New bounded checks track declared DRF object-permission checks, dangerous JWT verification settings/key boundaries, and unchecked h11 chunk-footer consumption. Required conditions, action locations and assumptions are visible in frontend details and JSON/HTML/SARIF exports.
+
+On six external candidates registered before source inspection, automatic analysis flags **1/6 vulnerable mechanism units and 0/6 repaired units**; five misses remain. This advisory/function-unit proxy is not independently labelled accuracy. Strict CNA-CWE/function matching yields zero matches among five labelled cases; one case lacks a CNA CWE. Isolated verification distinguishes five revision pairs: one unmodified upstream test group and four explicitly author-derived adapters. CVAT's service-dependent oracle remains unrun. Runtime reproduction does not turn missed static cases into detections. Earlier exposed h11 code gains a footer candidate; JWT warnings on both Planet revisions remain review burden.
+
+**658 Python tests, 15 frontend tests and frontend build pass.** All 1,470 exposed synthetic outcomes/alert counts remain unchanged: OWASP test recall/precision **73.03%/100%**, PySASTBench **78.15%/95.88%**, with its one unresolved label retained. A pinned offline 273-file smoke completes in **117.76 seconds against 120 seconds**, retaining budget/shape/size notices. The system is a stronger research prototype; broad coverage, independent validation and a measured cross-layer research benefit remain unfinished. No publication-readiness claim follows.
+
+## Previous development: library-boundary flows
 
 **14 November 2026:** [results, configuration and limits](docs/evaluation/library-flows-2026-11-14/README.md). Theron now tracks externally selected module-attribute invocation and known HTTP/HTML content flowing into dangerous operations. Explicit library trust-boundary models work through CLI configuration and the local API; findings retain their assumptions, traces and advisory classification through reports and frontend details.
 
@@ -81,7 +89,7 @@ See the [frozen protocol](docs/evaluation/owasp-2026-11-12/README.md), [complete
 
 ## PySASTBench tuning benchmark
 
-Re-evaluated **14 November 2026** at library-flow freeze `6345734`, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). Label-matched counts remain unchanged. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
+Re-evaluated **14 November 2026** at obligation freeze `8c10fdb`, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). Label-matched counts remain unchanged. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
 
 | Measure | Result |
 | --- | ---: |

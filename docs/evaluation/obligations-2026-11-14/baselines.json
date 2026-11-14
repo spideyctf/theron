@@ -1,0 +1,340 @@
+{
+  "tools": {
+    "bandit": {
+      "version": "1.9.4",
+      "covered_files": 28,
+      "alerts": [
+        {
+          "path": "CVE-2024-1135/fixed/gunicorn/http/message.py",
+          "line": 26,
+          "rule": "B105",
+          "cwe": 259
+        },
+        {
+          "path": "CVE-2024-33663/fixed/jose/backends/cryptography_backend.py",
+          "line": 232,
+          "rule": "B303",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-33663/fixed/jose/backends/cryptography_backend.py",
+          "line": 232,
+          "rule": "B303",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-33663/fixed/jose/utils.py",
+          "line": 21,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-33663/vulnerable/jose/backends/cryptography_backend.py",
+          "line": 224,
+          "rule": "B303",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-33663/vulnerable/jose/backends/cryptography_backend.py",
+          "line": 224,
+          "rule": "B303",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-33663/vulnerable/jose/utils.py",
+          "line": 21,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2026-58373/fixed/cvat/apps/quality_control/permissions.py",
+          "line": 79,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2026-58373/fixed/cvat/apps/quality_control/permissions.py",
+          "line": 248,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2026-58373/fixed/cvat/apps/quality_control/permissions.py",
+          "line": 267,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2026-58373/fixed/cvat/apps/quality_control/views.py",
+          "line": 115,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2026-58373/fixed/cvat/apps/quality_control/views.py",
+          "line": 334,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2026-58373/vulnerable/cvat/apps/quality_control/permissions.py",
+          "line": 77,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2026-58373/vulnerable/cvat/apps/quality_control/permissions.py",
+          "line": 246,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2026-58373/vulnerable/cvat/apps/quality_control/permissions.py",
+          "line": 265,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2026-58373/vulnerable/cvat/apps/quality_control/views.py",
+          "line": 115,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2026-58373/vulnerable/cvat/apps/quality_control/views.py",
+          "line": 333,
+          "rule": "B101",
+          "cwe": 703
+        }
+      ],
+      "units": [
+        {
+          "id": "CVE-2026-82411",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2026-82411",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2026-58373",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2026-58373",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2022-39227",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2022-39227",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2022-24761",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2022-24761",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-33663",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-33663",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-1135",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-1135",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        }
+      ],
+      "errors": [],
+      "raw_report_sha256": "7c87dc8c858125b80842f41bc5233c6ee724cbd141fd416f3644d48707739653"
+    },
+    "semgrep": {
+      "version": "1.185.0",
+      "covered_files": 28,
+      "alerts": [
+        {
+          "path": "CVE-2024-1135/fixed/gunicorn/http/message.py",
+          "line": 43,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-1135/vulnerable/gunicorn/http/message.py",
+          "line": 39,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2026-58373/fixed/cvat/apps/quality_control/views.py",
+          "line": 351,
+          "rule": "access-foreign-keys",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2026-58373/vulnerable/cvat/apps/quality_control/views.py",
+          "line": 350,
+          "rule": "access-foreign-keys",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2026-82411/fixed/src/objects/api/v2/views.py",
+          "line": 96,
+          "rule": "string-concat-in-list",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2026-82411/fixed/src/objects/api/v2/views.py",
+          "line": 347,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2026-82411/fixed/src/objects/token/permissions.py",
+          "line": 17,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2026-82411/fixed/src/objects/token/permissions.py",
+          "line": 45,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2026-82411/vulnerable/src/objects/api/v2/views.py",
+          "line": 96,
+          "rule": "string-concat-in-list",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2026-82411/vulnerable/src/objects/api/v2/views.py",
+          "line": 346,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2026-82411/vulnerable/src/objects/token/permissions.py",
+          "line": 17,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2026-82411/vulnerable/src/objects/token/permissions.py",
+          "line": 45,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        }
+      ],
+      "units": [
+        {
+          "id": "CVE-2026-82411",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2026-82411",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2026-58373",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2026-58373",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2022-39227",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2022-39227",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2022-24761",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2022-24761",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-33663",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-33663",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-1135",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-1135",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        }
+      ],
+      "errors": [],
+      "raw_report_sha256": "99417a07b83abb5f179dff82c8ad44af91f47afe797c7060f7b9c7f3f2484470"
+    }
+  },
+  "native_verification": {
+    "source_files": 28,
+    "rule_files": 337,
+    "all_bytes_identical": true,
+    "native_stage": "/tmp/theron-obligation-baselines"
+  },
+  "flags": {
+    "bandit": [
+      "--ignore-nosec",
+      "--exit-zero",
+      "all default rules/severities/confidences"
+    ],
+    "semgrep": [
+      "--metrics=off",
+      "--disable-version-check",
+      "--no-git-ignore",
+      "--no-rewrite-rule-ids",
+      "--timeout=10",
+      "--jobs=2"
+    ]
+  },
+  "interpretation": "All alerts and errors retained. Function-span overlap is not a semantic vulnerability match. Mixed Windows/WSL execution, no speed ranking."
+}

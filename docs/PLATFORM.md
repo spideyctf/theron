@@ -1,10 +1,12 @@
 # Theron platform contract and implementation roadmap
 
-Status: contract declared 12 November 2026; implementation status updated through Step 4 on 13 November 2026 (Asia/Calcutta).
+Status: contract declared 12 November 2026; latest bounded implementation/evaluation update 14 November 2026 (Asia/Calcutta).
 Original code/evaluation baseline: `4c1bc8c83fcf27c26ac4b3f4ca3fd70a6a6a6e52`.
 This document separates implemented capabilities from research acceptance criteria. Checkpoint reports below retain the evidence and measurement limits.
 
 ## Platform goal
+
+Latest implemented slice: [authorization, JWT and HTTP required-condition evidence](evaluation/obligations-2026-11-14/README.md), frozen at `8c10fdb`, with end-to-end report delivery, 658 Python tests and 15 frontend tests. Six preregistered external cases yield one automatic vulnerable-mechanism candidate, no repaired-unit candidates and five misses. Five isolated revision pairs distinguish behavior, but four are author-derived adapters; CVAT is unrun. This adds bounded checks and a research-only verification runner, not general authorization/crypto/protocol coverage or a production verification service. Cross-layer correlation benefit and independent labels remain unestablished.
 
 Build and evaluate Theron as a unified, evidence-driven security platform that identifies, correlates, prioritizes and helps verify vulnerabilities across application code, dependencies, secrets, infrastructure, AI pipelines and autonomous agents, providing actionable findings through a single developer workflow.
 

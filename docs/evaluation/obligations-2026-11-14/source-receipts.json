@@ -1,0 +1,419 @@
+{
+  "implementation_revision": "8c10fdbc904ef9323d00134878f5b2c6ed0097d0",
+  "records": [
+    {
+      "id": "CVE-2026-82411",
+      "role": "vulnerable",
+      "revision": "31ac51e1a5db2e11f0f320acf5312d148c2330c1",
+      "path": "src/objects/api/v2/views.py",
+      "source_sha256": "2e1144e5f67a203faf9c17d677cf03dd098d36ea4bf84f5c5d2c12716d302096",
+      "git_blob_sha": "3ae11fa5f454bee79d8d7ddb9312fd6280a4cd34",
+      "url": "https://github.com/maykinmedia/open-object/blob/31ac51e1a5db2e11f0f320acf5312d148c2330c1/src/objects/api/v2/views.py"
+    },
+    {
+      "id": "CVE-2026-82411",
+      "role": "vulnerable",
+      "revision": "31ac51e1a5db2e11f0f320acf5312d148c2330c1",
+      "path": "src/objects/token/permissions.py",
+      "source_sha256": "271ec1bbfe3c785b7ffe1ecd30354a907ab80ff122fde031ff4667a2a86be462",
+      "git_blob_sha": "aa2e318fe6877e2b25ff5d41a140acbe8c535d29",
+      "url": "https://github.com/maykinmedia/open-object/blob/31ac51e1a5db2e11f0f320acf5312d148c2330c1/src/objects/token/permissions.py"
+    },
+    {
+      "id": "CVE-2026-82411",
+      "role": "vulnerable",
+      "revision": "31ac51e1a5db2e11f0f320acf5312d148c2330c1",
+      "path": "src/objects/tests/v2/test_auth.py",
+      "source_sha256": "7bf13dcc46a49e7f18d44b2b0eb9b1df84d433e486907c8b081abd2a90d6d5ea",
+      "git_blob_sha": "089172c610b583c7052b18f17208e83bfbf93e32",
+      "url": "https://github.com/maykinmedia/open-object/blob/31ac51e1a5db2e11f0f320acf5312d148c2330c1/src/objects/tests/v2/test_auth.py"
+    },
+    {
+      "id": "CVE-2026-82411",
+      "role": "fixed",
+      "revision": "11c5b85ea5d1d80f940883f01b8b8ea80ccdd47c",
+      "path": "src/objects/api/v2/views.py",
+      "source_sha256": "24f71b77f70252956173596e7c6e270376408b82405896e206df3b9e9062de1b",
+      "git_blob_sha": "6a9c13b82ac6fcc877af2de3c4470d6c30df8972",
+      "url": "https://github.com/maykinmedia/open-object/blob/11c5b85ea5d1d80f940883f01b8b8ea80ccdd47c/src/objects/api/v2/views.py"
+    },
+    {
+      "id": "CVE-2026-82411",
+      "role": "fixed",
+      "revision": "11c5b85ea5d1d80f940883f01b8b8ea80ccdd47c",
+      "path": "src/objects/token/permissions.py",
+      "source_sha256": "bb52d0a1520fb2c3e8284619aaaafc5d721dbc7f08dbb8d48fc944b31b91a8f7",
+      "git_blob_sha": "c589d8e26be7c81e742d021da32ccab7c4014447",
+      "url": "https://github.com/maykinmedia/open-object/blob/11c5b85ea5d1d80f940883f01b8b8ea80ccdd47c/src/objects/token/permissions.py"
+    },
+    {
+      "id": "CVE-2026-82411",
+      "role": "fixed",
+      "revision": "11c5b85ea5d1d80f940883f01b8b8ea80ccdd47c",
+      "path": "src/objects/tests/v2/test_auth.py",
+      "source_sha256": "e7b9dd0094c12c6176ded195dcb58a89901ef41b272e4dd268df69d44723fa86",
+      "git_blob_sha": "67b705ff35ddd323bc0dc2b538387806305c562c",
+      "url": "https://github.com/maykinmedia/open-object/blob/11c5b85ea5d1d80f940883f01b8b8ea80ccdd47c/src/objects/tests/v2/test_auth.py"
+    },
+    {
+      "id": "CVE-2026-58373",
+      "role": "vulnerable",
+      "revision": "a34ac46959c50214f3d8f4939666c79919570695",
+      "path": "cvat/apps/quality_control/views.py",
+      "source_sha256": "30fb27b33396b6fcc3e10db3ec08d77d1d03e09ec5813754d3c20668f637f9d6",
+      "git_blob_sha": "aba97f9befa1453880eb08552243fec8375c061f",
+      "url": "https://github.com/cvat-ai/cvat/blob/a34ac46959c50214f3d8f4939666c79919570695/cvat/apps/quality_control/views.py"
+    },
+    {
+      "id": "CVE-2026-58373",
+      "role": "vulnerable",
+      "revision": "a34ac46959c50214f3d8f4939666c79919570695",
+      "path": "cvat/apps/quality_control/permissions.py",
+      "source_sha256": "4ce98f4f28dbf80c22f573501973dacdd293d5e5ae9c5040086f457cfe69fc0e",
+      "git_blob_sha": "819dacff215abc7b0aa7c3f5afb381a9fd06ca19",
+      "url": "https://github.com/cvat-ai/cvat/blob/a34ac46959c50214f3d8f4939666c79919570695/cvat/apps/quality_control/permissions.py"
+    },
+    {
+      "id": "CVE-2026-58373",
+      "error": "exec_command failed: CreateProcess { message: \"Rejected(\\\"Failed to create unified exec process: The filename or extension is too long. (os error 206)\\\")\" }"
+    },
+    {
+      "id": "CVE-2026-58373",
+      "role": "fixed",
+      "revision": "27953f19d2265f8b495369f816730a7452db791b",
+      "path": "cvat/apps/quality_control/views.py",
+      "source_sha256": "4bc13751c366a9afc397f26a00c788af5dee6ce9016d63cd6791c2858b4589ac",
+      "git_blob_sha": "8ea7dc7431e130e6fe779689e641661c93568f7c",
+      "url": "https://github.com/cvat-ai/cvat/blob/27953f19d2265f8b495369f816730a7452db791b/cvat/apps/quality_control/views.py"
+    },
+    {
+      "id": "CVE-2026-58373",
+      "role": "fixed",
+      "revision": "27953f19d2265f8b495369f816730a7452db791b",
+      "path": "cvat/apps/quality_control/permissions.py",
+      "source_sha256": "9cf1a1fdbf05ba71f607591d6b3d9cb29ec64b407404c374f50d2d2f9f2c4189",
+      "git_blob_sha": "8476c5fd6c0ac904c2fb8e917acfd7a2c05c170d",
+      "url": "https://github.com/cvat-ai/cvat/blob/27953f19d2265f8b495369f816730a7452db791b/cvat/apps/quality_control/permissions.py"
+    },
+    {
+      "id": "CVE-2026-58373",
+      "error": "exec_command failed: CreateProcess { message: \"Rejected(\\\"Failed to create unified exec process: The filename or extension is too long. (os error 206)\\\")\" }"
+    },
+    {
+      "id": "CVE-2022-39227",
+      "role": "vulnerable",
+      "revision": "33d93e4b430910045d0b3bbb081064bf8a379e4e",
+      "path": "python_jwt/__init__.py",
+      "source_sha256": "5b327abd2e581ed2deca5c0a592ab1054cc67753a47f3b77b99fad498e17e0f7",
+      "git_blob_sha": "4ff686ab796d232781c08810e7df51100e0b95f0",
+      "url": "https://github.com/davedoesdev/python-jwt/blob/33d93e4b430910045d0b3bbb081064bf8a379e4e/python_jwt/__init__.py"
+    },
+    {
+      "id": "CVE-2022-39227",
+      "role": "vulnerable",
+      "revision": "33d93e4b430910045d0b3bbb081064bf8a379e4e",
+      "path": "test/vulnerability_vows.py",
+      "error": "{\"content\":[{\"type\":\"text\",\"text\":\"GitHub API error 404: {\\\"message\\\":\\\"Not Found\\\",\\\"documentation_url\\\":\\\"https://docs.github.com/rest/repos/contents#get-repository-content\\\",\\\"status\\\":\\\"404\\\"}\"}],\"structuredContent\":{\"error\":\"GitHub API error 404: {\\\"message\\\":\\\"Not Found\\\",\\\"documentation_url\\\""
+    },
+    {
+      "id": "CVE-2022-39227",
+      "role": "fixed",
+      "revision": "88ad9e67c53aa5f7c43ec4aa52ed34b7930068c9",
+      "path": "python_jwt/__init__.py",
+      "source_sha256": "1b06ad0baab6338554bc88db3ccc1c129049c8011c2f56f8c4f26fcf74e8dae9",
+      "git_blob_sha": "cf58f99f06867f68f2fa177c5153762f8d241883",
+      "url": "https://github.com/davedoesdev/python-jwt/blob/88ad9e67c53aa5f7c43ec4aa52ed34b7930068c9/python_jwt/__init__.py"
+    },
+    {
+      "id": "CVE-2022-39227",
+      "role": "fixed",
+      "revision": "88ad9e67c53aa5f7c43ec4aa52ed34b7930068c9",
+      "path": "test/vulnerability_vows.py",
+      "source_sha256": "b9dc7090317c290cf8408cb2f61034743e9af177643549d21352c7c304c4c544",
+      "git_blob_sha": "65c1d14ca5d05578fe2382a6f160f2b658dab81b",
+      "url": "https://github.com/davedoesdev/python-jwt/blob/88ad9e67c53aa5f7c43ec4aa52ed34b7930068c9/test/vulnerability_vows.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/parser.py",
+      "source_sha256": "8d699df133d6e60e3701d73d32247459d3ad1b37f162d30c7c46fd1efadf6434",
+      "git_blob_sha": "a6e4d9822e1e9402f874e918c08f2732bc4f23a9",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/parser.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/receiver.py",
+      "source_sha256": "0758fa8c8b63777a11af9a0c4abb37edcc76cbd7ff27b93e1b3c7ad8a5c6c9ca",
+      "git_blob_sha": "878528087b65a06ab7cdef3de9387cdf304ebab2",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/receiver.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/rfc7230.py",
+      "source_sha256": "d6279c7be8517127b5f725bc4d6cc239df39ba2efd5b1192f502d5e9d43cd1d7",
+      "git_blob_sha": "9b25fbd9a612b94b5fe07232ba0a36e10fb2def2",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/rfc7230.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "src/waitress/utilities.py",
+      "source_sha256": "d1898bc687d35c46c38ffcfce02f6d9201180ed858794bdf1a960914fe591a91",
+      "git_blob_sha": "3caaa336f8286497a215d282d2ef3f26b05120d6",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/src/waitress/utilities.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "tests/test_receiver.py",
+      "source_sha256": "ad9a95b5080dcc39b4b8688f8c93199a542c46882fe9c0a4fdeb887fb964e0a1",
+      "git_blob_sha": "f55aa68ef534c44d7ff59d1f95c677ce6952d9d0",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/tests/test_receiver.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "error": "exec_command failed: CreateProcess { message: \"Rejected(\\\"Failed to create unified exec process: The filename or extension is too long. (os error 206)\\\")\" }"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/parser.py",
+      "source_sha256": "2692a2d4e7d55b538f5d2a040c1ef6fccaac500c24466c97af893b14c76f89e5",
+      "git_blob_sha": "ff16a4028a02b8d0252229da02258fb27b1b2c17",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/parser.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/receiver.py",
+      "source_sha256": "a267165635aaeb5c50dc79848baa753862ecbf645a0329b5d0d43eb2e1c29dc3",
+      "git_blob_sha": "766335521fb48ad700a47e0e29a64545460aa459",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/receiver.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/rfc7230.py",
+      "source_sha256": "0f5fe455e0896b71bebb88c09e26627854cc7b7c6b31abd38d00c46e3f5205fa",
+      "git_blob_sha": "26e6426019361428ce579213714b01290f4c6bf5",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/rfc7230.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "src/waitress/utilities.py",
+      "source_sha256": "a4077949bb96e4125baac8ace487d894ab649719ba218c7cd6f38115dea38b81",
+      "git_blob_sha": "6ae474204f0f62fafce13cdfaad7880071aceda9",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/src/waitress/utilities.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "tests/test_receiver.py",
+      "source_sha256": "298fc61b815ee2716c80e544235b3b8634c090f5329dc71a9d6bb35f39dc1851",
+      "git_blob_sha": "d160cac4d1678696de2566f3fa989e9fb1350869",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/tests/test_receiver.py"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "error": "exec_command failed: CreateProcess { message: \"Rejected(\\\"Failed to create unified exec process: The filename or extension is too long. (os error 206)\\\")\" }"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/backends/native.py",
+      "source_sha256": "f73ca8ba79a31b5660549624b1e31c0e8b0938120b2d1caefd46f3847ed9675a",
+      "git_blob_sha": "eb3a6ae3f3816a04e0769d52aa034657c2d3cb9a",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/backends/native.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/backends/cryptography_backend.py",
+      "source_sha256": "dbcfbbf7610a5468e3ab69d4a0259d7f23c69285df58de6f1c53bbba8942b688",
+      "git_blob_sha": "abd2426067b86a0ddaeb634d329f7e0defe40bee",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/backends/cryptography_backend.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "jose/utils.py",
+      "source_sha256": "fdda12c919def8eca08d2237233d645934869f05471cc03aff0607392d6b842c",
+      "git_blob_sha": "fcef885111c7761ab372f025f20e5cf7f073c0c6",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/jose/utils.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "revision": "e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3",
+      "path": "tests/test_jws.py",
+      "source_sha256": "f1c5d6a3e1b7a6b05e5ee595eef0d94606d67ed74c1179b30dd8a7317e50ab3d",
+      "git_blob_sha": "01b5fd05491473ee40961a87209f4e7f1a764863",
+      "url": "https://github.com/mpdavis/python-jose/blob/e5fcca27712c0ebdeb55d3c3cdad1c6e0f708ac3/tests/test_jws.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/backends/native.py",
+      "source_sha256": "b99b8ff04aa28403ec986771b25332861f831a87b5c972d7981fcffb6cd7c92f",
+      "git_blob_sha": "8cc77dab75d54065affad1cbf75b6d24fc722da6",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/backends/native.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/backends/cryptography_backend.py",
+      "source_sha256": "74e2fad4464f60a492a1d353545904b7148f1c6fa042a4426771f301f3185ac1",
+      "git_blob_sha": "1525cf26556d2b4f15d058545937ec229383d75d",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/backends/cryptography_backend.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "jose/utils.py",
+      "source_sha256": "c4556c47cab0ae091ecd92906abcb555e8981a7dbd2b2eee21c5f59aa2624d8c",
+      "git_blob_sha": "8cc0f991a9e786142ac0a384e2d7b59c1b860e5a",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/jose/utils.py"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "revision": "82cd15fa81eec17798015c4b9b96aacd1ae0fbfb",
+      "path": "tests/test_jws.py",
+      "source_sha256": "98a6b0840caf2ec7ccad907b34575a21156523a272ac61ed210f6362d9e324a6",
+      "git_blob_sha": "1609b6b599ec1d7d36119a1011ec295d4b569b8d",
+      "url": "https://github.com/mpdavis/python-jose/blob/82cd15fa81eec17798015c4b9b96aacd1ae0fbfb/tests/test_jws.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/http/message.py",
+      "source_sha256": "cd0c6595e4e9201bc2eab2969078b249a52bd36cee3b70695f60f2dd841b9b08",
+      "git_blob_sha": "1f93c7145223bbffd048d96fe95a02ec80ff4592",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/http/message.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "gunicorn/http/body.py",
+      "source_sha256": "17ddb91724e8b5f436890f8b4c14268d3b1687d348fc825215d105a75a96504a",
+      "git_blob_sha": "aa1af2cb3c2913757962ef5597f26c27b72969f7",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/gunicorn/http/body.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "tests/test_http.py",
+      "source_sha256": "2c61db8937d09a1ef5b9f394f475c5fc6d909975ccdba3875e7454bd146fd274",
+      "git_blob_sha": "b6ca46b22f5940a0bf745c0a952fd141f3dda576",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/tests/test_http.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "revision": "ab9c8301cb9ae573ba597154ddeea16f0326fc15",
+      "path": "tests/treq.py",
+      "source_sha256": "2a0289fdbdaffb805119aeba28897f476465b853a80ff76294adad3c940b2def",
+      "git_blob_sha": "ffe0691fde0c9bfa950faa9f44477e8c2b7bbb39",
+      "url": "https://github.com/benoitc/gunicorn/blob/ab9c8301cb9ae573ba597154ddeea16f0326fc15/tests/treq.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/http/message.py",
+      "source_sha256": "bd48bdcdd8d6d00b5507f014e021bbc4f01d7a7c8a7db8c53ddd3a1abef27c1c",
+      "git_blob_sha": "88ffa5a25d94dea6d098246c83433470f2f19a40",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/http/message.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "gunicorn/http/body.py",
+      "source_sha256": "82d608b3c9518ea573414d7ff96b5c4d746c92b394ce3d310c9fc6922b0fbc21",
+      "git_blob_sha": "78f03214a5d7157af092899e09cefe9d33e635a4",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/gunicorn/http/body.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "tests/test_http.py",
+      "source_sha256": "c99fdb1c7c498d4cef3e3e968afe69f6cb2615986d9b6eaceb77cdd00b3eb5c0",
+      "git_blob_sha": "0eb69460178be5dcebc35b1e675be6832b29107e",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/tests/test_http.py"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "revision": "f63d59e4d73a8ee28748d2c700fb81c8780bc419",
+      "path": "tests/treq.py",
+      "source_sha256": "bf51e76235175e6c0a868f4e6930688333f23405b0c451e3b4b366fc90267a25",
+      "git_blob_sha": "aeaae151f7e6aaecc1449541dd4065d4f9db51fa",
+      "url": "https://github.com/benoitc/gunicorn/blob/f63d59e4d73a8ee28748d2c700fb81c8780bc419/tests/treq.py"
+    },
+    {
+      "id": "CVE-2026-58373",
+      "role": "vulnerable",
+      "revision": "a34ac46959c50214f3d8f4939666c79919570695",
+      "path": "tests/python/rest_api/test_quality_control.py",
+      "source_sha256": "5e14bb9b0302b60294ca21679af9786cbe76875bdf667d761a3c686783f750a9",
+      "git_blob_sha": "edced51ee90defbade09729496af242f7b4958d9",
+      "url": "https://github.com/cvat-ai/cvat/blob/a34ac46959c50214f3d8f4939666c79919570695/tests/python/rest_api/test_quality_control.py",
+      "recovered_from_windows_command_length_limit": true
+    },
+    {
+      "id": "CVE-2026-58373",
+      "role": "fixed",
+      "revision": "27953f19d2265f8b495369f816730a7452db791b",
+      "path": "tests/python/rest_api/test_quality_control.py",
+      "source_sha256": "ab56d6de8367364e95f26bebb99170e7b61e7454b4c085137c9aa45a18521c38",
+      "git_blob_sha": "307b122fdeb672146650635cf054b787f0b675bb",
+      "url": "https://github.com/cvat-ai/cvat/blob/27953f19d2265f8b495369f816730a7452db791b/tests/python/rest_api/test_quality_control.py",
+      "recovered_from_windows_command_length_limit": true
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "revision": "22c03947e3bcd7631120aae40d3d844d4f35e49f",
+      "path": "tests/test_parser.py",
+      "source_sha256": "49cd48fae6800dddd9279308daee6c506ffc5b4ddeee277f3fa613f55a7d805b",
+      "git_blob_sha": "aacef26d7334d08260ec56e9a8f98835bb6cb3ec",
+      "url": "https://github.com/Pylons/waitress/blob/22c03947e3bcd7631120aae40d3d844d4f35e49f/tests/test_parser.py",
+      "recovered_from_windows_command_length_limit": true
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "revision": "9e0b8c801e4d505c2ffc91b891af4ba48af715e0",
+      "path": "tests/test_parser.py",
+      "source_sha256": "0b04ba4e8451556dd1254c7cbcb54b8f0f07cc2d64886d80f2e958dafb63359a",
+      "git_blob_sha": "4461bdea46e21faf982b4ff26b51c5bec63244a4",
+      "url": "https://github.com/Pylons/waitress/blob/9e0b8c801e4d505c2ffc91b891af4ba48af715e0/tests/test_parser.py",
+      "recovered_from_windows_command_length_limit": true
+    }
+  ]
+}
