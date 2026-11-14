@@ -541,9 +541,9 @@ def analyze_structural_obligations(path,content,tree,project,disabled,module):
     if 'crypto_obligations' not in disabled:
         SignedPayload.analyze(context)
         HMACKeyFormats.analyze(context)
-    from scanner.python_security_state import HTMLCanonicalization,TLSPoolPolicy,MCPMessageValidation,ASTCallableBoundary
+    from scanner.python_security_state import HTMLCanonicalization,TLSPoolPolicy,TLSHostnamePolicy,MCPMessageValidation,ASTCallableBoundary
     for flag,check in [('html_obligations',HTMLCanonicalization),('tls_obligations',TLSPoolPolicy),
-                       ('message_obligations',MCPMessageValidation),('sandbox_obligations',ASTCallableBoundary)]:
+                       ('tls_obligations',TLSHostnamePolicy),('message_obligations',MCPMessageValidation),('sandbox_obligations',ASTCallableBoundary)]:
         if flag not in disabled:check.analyze(context)
     return context.findings
 

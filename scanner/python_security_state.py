@@ -222,6 +222,92 @@ class TLSPoolPolicy:
                     'tls','Review pool policy outside the bounded analysis.','TLS pool-policy analysis is incomplete.',None,uncertain=True)
 
 
+class TLSHostnamePolicy:
+    """Track native/manual hostname checks at the handshake, retaining unknown defaults."""
+    FACTORIES={'urllib3.util.ssl_.create_urllib3_context','urllib3.util.proxy.create_proxy_ssl_context'}
+    WRAPPERS={'urllib3.util.ssl_.ssl_wrap_socket'}
+    MATCHERS={'ssl.match_hostname','urllib3.util.ssl_match_hostname.match_hostname'}
+
+    def __init__(self,context,method):
+        self.context=context
+        self.bindings=function_bindings(context,method)
+        self.actions={}
+
+    @staticmethod
+    def hostname(node,state):
+        versions=tuple(sorted((n.id,state.values.get('@hostname-write:'+n.id)) for n in ast.walk(node) if isinstance(n,ast.Name)))
+        return ast.dump(node),versions
+
+    def value(self,node,state):
+        if isinstance(node,ast.Name):return state.values.get(node.id)
+        if not isinstance(node,ast.Call):return None
+        name=self.context.resolve(node.func,self.bindings)
+        if name in self.FACTORIES:return Value('manual-hostname-context',(node.lineno,node.col_offset),node.lineno)
+        if name in self.WRAPPERS:
+            keywords={k.arg:k.value for k in node.keywords}
+            context=self.value(keywords.get('ssl_context'),state)
+            hostname=keywords.get('server_hostname')
+            if isinstance(hostname,ast.Constant) and hostname.value is None:return None
+            if context and context.kind=='manual-hostname-context' and hostname is not None:
+                token=(context.token,self.hostname(hostname,state),node.lineno,node.col_offset,
+                       ('native-hostname',context.token) in state.checked,
+                       ('disabled-hostname',context.token) in state.checked)
+                self.actions[token]=node
+                return Value('hostname-socket',token,node.lineno)
+        return None
+
+    def statement(self,node,state):
+        if isinstance(node,(ast.Assign,ast.AnnAssign)):
+            value=self.value(node.value,state)
+            for target in node.targets if isinstance(node,ast.Assign) else [node.target]:
+                if isinstance(target,ast.Name):
+                    state.values[target.id]=value
+                    state.values['@hostname-write:'+target.id]=Value('assignment',(node.lineno,node.col_offset),node.lineno)
+                elif isinstance(target,ast.Attribute) and target.attr=='check_hostname':
+                    context=self.value(target.value,state)
+                    if not context or context.kind!='manual-hostname-context':continue
+                    key=('native-hostname',context.token)
+                    state.checked.discard(key)
+                    state.checked.discard(('disabled-hostname',context.token))
+                    if isinstance(node.value,ast.Constant) and node.value.value is True:state.checked.add(key)
+                    elif isinstance(node.value,ast.Constant) and node.value.value is False:state.checked.add(('disabled-hostname',context.token))
+        elif isinstance(node,ast.Expr) and isinstance(node.value,ast.Call):
+            call=node.value
+            if len(call.args)<2 or self.context.resolve(call.func,self.bindings) not in self.MATCHERS:return
+            certificate=call.args[0]
+            if not (isinstance(certificate,ast.Call) and isinstance(certificate.func,ast.Attribute) and certificate.func.attr=='getpeercert'):return
+            socket=self.value(certificate.func.value,state)
+            if socket and socket.kind=='hostname-socket' and socket.token[1]==self.hostname(call.args[1],state):
+                state.checked.add(('matched-hostname',socket.token))
+
+    def condition(self,node,truth,state):pass
+
+    def returned(self,node,state):
+        socket=self.value(node.value,state)
+        if not socket or socket.kind!='hostname-socket':return
+        if socket.token[4] or ('matched-hostname',socket.token) in state.checked:return
+        action=self.actions[socket.token]
+        if any(f.rule_id.startswith('PY-OBL-TLS-HOSTNAME-001') and f.line_number==action.lineno for f in self.context.findings):return
+        self.context.emit(action,'PY-OBL-TLS-HOSTNAME-001','TLS socket is returned without local hostname verification',
+            'tls','Enable hostname verification before the handshake, or match the peer certificate against the intended hostname before returning the socket.',
+            ('An explicit check_hostname=False context reaches ssl_wrap_socket and is returned without an observed matching certificate check.' if socket.token[5] else
+             'A urllib3 context reaches a returned TLS socket without a local hostname check; the factory default depends on the library version, which this check does not establish.'),
+            'CWE-295',['Supplying server_hostname alone provides SNI, not a hostname check. Without an observed disable, this is only a coverage notice because urllib3 factory defaults changed across releases.',
+                'Caller-side checks, custom verification helpers, verification policy and deployment trust remain unverified; this is a local obligation, not confirmed exploitation.'],state.uncertain or not socket.token[5],
+            [dict(role='context-creation',file_path=self.context.path,line_number=socket.token[0][0]),
+             dict(role='return',file_path=self.context.path,line_number=node.lineno)])
+
+    @classmethod
+    def analyze(cls,context):
+        if not context.imports_api(cls.FACTORIES) or not context.imports_api(cls.WRAPPERS):return
+        for method in ast.walk(context.tree):
+            if not isinstance(method,(ast.FunctionDef,ast.AsyncFunctionDef)):continue
+            domain=cls(context,method)
+            try:BoundedPaths(domain).walk(method.body,[State()])
+            except OverflowError:context.emit(method,'PY-OBL-TLS-HOSTNAME-001','TLS hostname path budget reached',
+                'tls','Review hostname validation outside the bounded analysis.','TLS hostname analysis is incomplete.',None,uncertain=True)
+
+
 class MCPMessageValidation:
     """Per-message validation must not silently terminate an MCP receive loop."""
     STREAM='anyio.streams.memory.MemoryObjectReceiveStream'
