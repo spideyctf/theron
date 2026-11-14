@@ -106,7 +106,7 @@ class BoundedPaths:
             following=[]
             for state in states:
                 self.steps+=1
-                if self.steps>2048 or len(following)>32:
+                if self.steps>2048:
                     raise OverflowError('obligation path budget')
                 if isinstance(node,ast.If):
                     constant=node.test.value if isinstance(node.test,ast.Constant) else None
@@ -138,6 +138,11 @@ class BoundedPaths:
                 else:
                     self.domain.statement(node,state)
                     following.append(state)
+            unique={}
+            for branch in following:
+                key=(tuple(sorted(branch.values.items())),frozenset(branch.checked),branch.uncertain,tuple(branch.checks))
+                unique.setdefault(key,branch)
+            following=list(unique.values())
             if len(following)>32:
                 raise OverflowError('obligation path budget')
             states=following
@@ -207,7 +212,7 @@ class Context:
         return None
 
     def emit(self,node,rule,title,domain,required,observed,cwe,assumptions=(),uncertain=False,related_locations=()):
-        reference={'authorization':DRF_REFERENCE,'protocol':HTTP_REFERENCE}[domain]
+        reference={'authorization':DRF_REFERENCE,'protocol':HTTP_REFERENCE,'crypto':'https://jwcrypto.readthedocs.io/en/latest/jws.html'}[domain]
         snippet='\n'.join(self.content.splitlines()[max(0,node.lineno-1):node.end_lineno])
         self.findings.append(Finding(title=title,severity=Severity.INFO if uncertain else Severity.MEDIUM,
             category=Category.SAST,module='coverage' if uncertain else self.module,file_path=self.path,line_number=node.lineno,
@@ -522,5 +527,282 @@ class ChunkFooter:
 def analyze_structural_obligations(path,content,tree,project,disabled,module):
     context=Context(path,content,tree,project,module)
     if 'auth_obligations' not in disabled:ObjectPermissions.analyze(context)
-    if 'protocol_obligations' not in disabled:ChunkFooter.analyze(context)
+    if 'protocol_obligations' not in disabled:
+        ChunkFooter.analyze(context)
+        HTTPGrammar.analyze(context)
+    if 'crypto_obligations' not in disabled:
+        SignedPayload.analyze(context)
+        HMACKeyFormats.analyze(context)
     return context.findings
+
+
+class SignedPayload:
+    """Keep compact-token claims distinct from the payload accepted by a JWS verifier."""
+    DECODERS={'json.loads','jwcrypto.common.json_decode','jwcrypto.common.base64url_decode',
+              'base64.urlsafe_b64decode','base64.b64decode'}
+
+    def __init__(self,context,method):
+        self.context,self.method=context,method
+        self.parameters={a.arg for a in method.args.posonlyargs+method.args.args+method.args.kwonlyargs}
+
+    def value(self,node,state):
+        if isinstance(node,ast.Name):return state.values.get(node.id)
+        if isinstance(node,ast.Attribute) and node.attr=='payload':
+            owner=self.value(node.value,state)
+            if owner and owner.kind=='jws':
+                verified=next((v for v in state.checked if v[:2]==('verified',owner.token)),None)
+                if verified:return Value('verified-claims',(owner.token,verified[2]),node.lineno)
+        if isinstance(node,ast.Subscript):
+            owner=self.value(node.value,state)
+            if owner and owner.kind=='segments' and isinstance(node.slice,ast.Constant) and node.slice.value==1:
+                return Value('raw-claims',owner.token,node.lineno)
+        if not isinstance(node,ast.Call):return None
+        name=self.context.resolve(node.func)
+        root=node.func
+        while isinstance(root,ast.Attribute):root=root.value
+        if isinstance(root,ast.Name) and root.id in state.values:name=''
+        if name=='jwcrypto.jws.JWS':return Value('jws',(node.lineno,node.col_offset),node.lineno)
+        if name in self.DECODERS and node.args:return self.value(node.args[0],state)
+        if isinstance(node.func,ast.Attribute) and node.func.attr=='split' and len(node.args)==1 and isinstance(node.args[0],ast.Constant) and node.args[0].value=='.':
+            source=self.value(node.func.value,state)
+            if source and source.kind=='representation':return Value('segments',source.token,node.lineno)
+        return None
+
+    def statement(self,node,state):
+        if isinstance(node,(ast.Assign,ast.AnnAssign)):
+            value=self.value(node.value,state)
+            for target in node.targets if isinstance(node,ast.Assign) else [node.target]:
+                if isinstance(target,ast.Name):
+                    if value is not None or target.id in state.values or target.id in self.context.bindings:
+                        state.values[target.id]=value
+                elif isinstance(target,(ast.Tuple,ast.List)):
+                    for index,part in enumerate(target.elts):
+                        if isinstance(part,ast.Name):
+                            state.values[part.id]=(Value('raw-claims',value.token,node.lineno)
+                                if value and value.kind=='segments' and len(target.elts)==3 and index==1 else None)
+                elif isinstance(target,ast.Attribute):
+                    owner=self.value(target.value,state)
+                    if owner and owner.kind=='jws' and target.attr in {'payload','deserialize','verify'}:
+                        # Replacing a verifier's payload/method invalidates its known contract.
+                        state.checked={v for v in state.checked if not (v[0]=='verified' and v[1]==owner.token)}
+                        for key,known in list(state.values.items()):
+                            if known and known.kind=='jws' and known.token==owner.token:state.values[key]=None
+        elif isinstance(node,ast.Expr) and isinstance(node.value,ast.Call):
+            call=node.value
+            if isinstance(call.func,ast.Attribute) and call.func.attr=='deserialize':
+                owner=self.value(call.func.value,state)
+                raw=self.value(call.args[0],state) if call.args else None
+                key=next((k.value for k in call.keywords if k.arg=='key'),call.args[1] if len(call.args)>1 else None)
+                if owner and owner.kind=='jws':
+                    state.checked={v for v in state.checked if not (v[0]=='verified' and v[1]==owner.token)}
+                if owner and owner.kind=='jws' and raw and raw.kind=='representation' and key is not None:
+                    if not (isinstance(key,ast.Constant) and key.value is None):
+                        state.checked.add(('verified',owner.token,raw.token))
+
+    def condition(self,node,truth,state):
+        if not (isinstance(node,ast.Compare) and len(node.ops)==len(node.comparators)==1):return
+        equal=(isinstance(node.ops[0],ast.Eq) and truth) or (isinstance(node.ops[0],ast.NotEq) and not truth)
+        if not equal:return
+        left,right=self.value(node.left,state),self.value(node.comparators[0],state)
+        for raw,bound in [(left,right),(right,left)]:
+            if raw and bound and raw.kind=='raw-claims' and bound.kind=='verified-claims' and raw.token==bound.token[1]:
+                state.checked.add(('bound',raw.token))
+
+    def returned(self,node,state):
+        values=node.value.elts if isinstance(node.value,(ast.Tuple,ast.List)) else [node.value]
+        for expression in values:
+            value=self.value(expression,state)
+            if not value or value.kind!='raw-claims' or ('bound',value.token) in state.checked:continue
+            verified=[v for v in state.checked if v[0]=='verified' and v[2]==value.token]
+            if not verified:continue
+            rule='PY-OBL-JWS-PAYLOAD-001'+('-REVIEW' if state.uncertain else '')
+            if any(f.rule_id==rule and f.line_number==node.lineno for f in self.context.findings):continue
+            if state.uncertain and any(f.rule_id=='PY-OBL-JWS-PAYLOAD-001' and f.line_number==node.lineno for f in self.context.findings):continue
+            if not state.uncertain:
+                self.context.findings[:]=[f for f in self.context.findings if not (f.rule_id=='PY-OBL-JWS-PAYLOAD-001-REVIEW' and f.line_number==node.lineno)]
+            self.context.emit(node,'PY-OBL-JWS-PAYLOAD-001','Returned claims are parsed outside the verified JWS payload',
+                'crypto','Return claims decoded from the verifier payload, or establish equality with that exact payload before returning them.',
+                'A keyed JWS deserialization accepts one payload representation, while returned claims are independently decoded from a compact-token segment.',
+                'CWE-347',['The resolved jwcrypto JWS API may accept compact and JSON representations.',
+                    'A non-null verification key, caller trust boundary and claim use remain runtime assumptions.'],state.uncertain,
+                [dict(role='claims-decoding',file_path=self.context.path,line_number=value.line)])
+
+    @classmethod
+    def analyze(cls,context):
+        for method in ast.walk(context.tree):
+            if not isinstance(method,(ast.FunctionDef,ast.AsyncFunctionDef)):continue
+            if not any(isinstance(n,ast.Call) and context.resolve(n.func)=='jwcrypto.jws.JWS' for n in ast.walk(method)):continue
+            domain=cls(context,method)
+            initial=State(values={p:Value('representation',(p,),method.lineno) for p in domain.parameters})
+            try:BoundedPaths(domain).walk(method.body,[initial])
+            except OverflowError:context.emit(method,'PY-OBL-JWS-PAYLOAD-001','Signed payload path budget reached',
+                'crypto','Review payload identity on paths outside the bounded analysis.',
+                'Signed-payload path analysis is incomplete.',None,uncertain=True)
+
+
+class HMACKeyFormats:
+    """A finite public-key blacklist is not a complete symmetric-key type boundary."""
+    FORMATS=(b'-----BEGIN PUBLIC KEY-----',b'-----BEGIN RSA PUBLIC KEY-----',
+             b'-----BEGIN CERTIFICATE-----',b'ssh-rsa',b'ssh-ed25519',b'ssh-dss',
+             b'ecdsa-sha2-nistp256',b'ecdsa-sha2-nistp384',b'ecdsa-sha2-nistp521')
+    APIS={'hmac.new','cryptography.hazmat.primitives.hmac.HMAC'}
+
+    @classmethod
+    def analyze(cls,context):
+        for owner in context.tree.body:
+            if not isinstance(owner,ast.ClassDef):continue
+            constructor=next((n for n in owner.body if isinstance(n,ast.FunctionDef) and n.name=='__init__'),None)
+            if constructor is None or not constructor.args.args:continue
+            receiver=constructor.args.args[0].arg
+            fields=set()
+            for method in owner.body:
+                if not isinstance(method,ast.FunctionDef) or not method.args.args:continue
+                for call in ast.walk(method):
+                    if not (isinstance(call,ast.Call) and context.resolve(call.func) in cls.APIS and call.args):continue
+                    root=call.func
+                    while isinstance(root,ast.Attribute):root=root.value
+                    if isinstance(root,ast.Name) and (root.id in {a.arg for a in method.args.args}
+                        or any(isinstance(n,(ast.Assign,ast.AnnAssign)) and any(isinstance(t,ast.Name) and t.id==root.id
+                            for t in (n.targets if isinstance(n,ast.Assign) else [n.target])) for n in ast.walk(method))):continue
+                    secret=call.args[0]
+                    if isinstance(secret,ast.Attribute) and isinstance(secret.value,ast.Name) and secret.value.id==method.args.args[0].arg:
+                        fields.add(secret.attr)
+            if not fields:continue
+            lists={n.targets[0].id:n.value for n in ast.walk(constructor) if isinstance(n,ast.Assign)
+                   and len(n.targets)==1 and isinstance(n.targets[0],ast.Name) and isinstance(n.value,(ast.List,ast.Tuple,ast.Set))}
+            for guard in ast.walk(constructor):
+                if not isinstance(guard,ast.If) or len(guard.body)!=1 or not isinstance(guard.body[0],ast.Raise):continue
+                test=guard.test
+                if not (isinstance(test,ast.Call) and isinstance(test.func,ast.Name) and test.func.id=='any'
+                        and len(test.args)==1 and isinstance(test.args[0],ast.GeneratorExp)):continue
+                generator=test.args[0]
+                if len(generator.generators)!=1:continue
+                comp=generator.generators[0];comparison=generator.elt
+                if comp.ifs or not isinstance(comp.target,ast.Name) or not isinstance(comp.iter,ast.Name):continue
+                if not (isinstance(comparison,ast.Compare) and len(comparison.ops)==1 and isinstance(comparison.ops[0],ast.In)
+                        and isinstance(comparison.left,ast.Name) and comparison.left.id==comp.target.id
+                        and isinstance(comparison.comparators[0],ast.Name)):continue
+                key=comparison.comparators[0].id
+                if key not in {a.arg for a in constructor.args.args[1:]}:continue
+                values=lists.get(comp.iter.id)
+                if values is None or not all(isinstance(v,ast.Constant) and isinstance(v.value,(str,bytes)) for v in values.elts):continue
+                markers=[v.value.encode() if isinstance(v.value,str) else v.value for v in values.elts]
+                if not any(marker in cls.FORMATS for marker in markers):continue
+                omitted=[fmt.decode() for fmt in cls.FORMATS if not any(marker in fmt+b' AAAA' for marker in markers)]
+                if not omitted:continue
+                assignments=[n for n in ast.walk(constructor) if isinstance(n,ast.Assign) and n.lineno>guard.lineno
+                    and isinstance(n.value,ast.Name) and n.value.id==key and any(isinstance(t,ast.Attribute)
+                    and isinstance(t.value,ast.Name) and t.value.id==receiver and t.attr in fields for t in n.targets)]
+                if not assignments:continue
+                other_guards=[n for n in ast.walk(constructor) if isinstance(n,ast.If) and n is not guard
+                    and any(isinstance(t,ast.Name) and t.id==key for t in ast.walk(n.test))
+                    and any(isinstance(t,ast.Call) and not (isinstance(t.func,ast.Name) and t.func.id in {'isinstance','any','all','len'}) for t in ast.walk(n.test))]
+                changed_key=[n for n in ast.walk(constructor) if isinstance(n,ast.Assign) and guard.lineno<n.lineno<max(a.lineno for a in assignments)
+                    and any(isinstance(t,ast.Name) and t.id==key for t in n.targets)]
+                context.emit(guard,'PY-OBL-HMAC-FORMAT-001','HMAC key blacklist omits recognized public-key formats',
+                    'crypto','Use a complete key-format/type boundary before accepting asymmetric representations as HMAC secrets.',
+                    'A finite public-key rejection list guards material stored for a resolved HMAC operation, but omits: '+', '.join(omitted)+'.',
+                    'CWE-347',['This checks the visible finite blacklist, not all possible key-format parsers or caller restrictions.',
+                        'Accepting omitted representations and an attacker-relevant verifier configuration require runtime validation.'],
+                    uncertain=bool(other_guards or changed_key),
+                    related_locations=[dict(role='key-storage',file_path=context.path,line_number=n.lineno) for n in assignments])
+
+
+class HTTPGrammar:
+    """Conservative parser anti-patterns tied to resolved HTTP library contracts."""
+    HTTP_APIS={'waitress.utilities.BadRequest','waitress.receiver.ChunkedReceiver',
+               'gunicorn.http.body.ChunkedReader'}
+
+    @staticmethod
+    def root(node):
+        while isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute) and node.func.attr in {'strip','encode','decode'}:
+            node=node.func.value
+        return node
+
+    @staticmethod
+    def header(node):
+        return (isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute) and node.func.attr=='get'
+                and node.args and isinstance(node.args[0],ast.Constant) and node.args[0].value in {'CONTENT_LENGTH','Content-Length','content-length'})
+
+    @staticmethod
+    def guards(node,parents,value):
+        """Collect enclosing true predicates and preceding terminating rejection guards."""
+        while node in parents:
+            parent=parents[node]
+            for field in ['body','orelse','finalbody']:
+                block=getattr(parent,field,[])
+                if isinstance(block,list) and node in block:
+                    for previous in block[:block.index(node)]:
+                        if isinstance(previous,ast.If) and previous.body and isinstance(previous.body[-1],(ast.Raise,ast.Return,ast.Break,ast.Continue)):
+                            yield previous.test
+                    if isinstance(parent,ast.If) and field=='body':yield parent.test
+            node=parent
+
+    @classmethod
+    def analyze(cls,context):
+        if not any(isinstance(n,ast.Call) and context.resolve(n.func) in cls.HTTP_APIS for n in ast.walk(context.tree)):return
+        for method in ast.walk(context.tree):
+            if not isinstance(method,ast.FunctionDef):continue
+            parents={child:parent for parent in ast.walk(method) for child in ast.iter_child_nodes(parent)}
+            nodes=list(ast.walk(method))
+            crlf=any(isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr=='find'
+                and n.args and isinstance(n.args[0],ast.Constant) and n.args[0].value==b'\r\n' for n in nodes)
+            bindings={n.targets[0].id:n.value for n in nodes if isinstance(n,ast.Assign) and len(n.targets)==1 and isinstance(n.targets[0],ast.Name)}
+            shadowed={a.arg for a in method.args.args} | set(bindings)
+            for call in nodes:
+                if not (isinstance(call,ast.Call) and isinstance(call.func,ast.Name) and call.func.id=='int'
+                        and 'int' not in context.bindings and 'int' not in shadowed and call.args):continue
+                raw=cls.root(call.args[0]);base=call.args[1] if len(call.args)>1 else None
+                hexadecimal=isinstance(base,ast.Constant) and base.value==16
+                decimal=base is None or isinstance(base,ast.Constant) and base.value==10
+                header=cls.header(raw) or isinstance(raw,ast.Name) and cls.header(bindings.get(raw.id))
+                assigned=parents.get(call)
+                counter=False
+                if hexadecimal and isinstance(assigned,ast.Assign) and len(assigned.targets)==1 and isinstance(assigned.targets[0],ast.Name):
+                    size=assigned.targets[0].id
+                    fields={t.attr for n in nodes if isinstance(n,ast.Assign) and isinstance(n.value,ast.Name) and n.value.id==size
+                        for t in n.targets if isinstance(t,ast.Attribute)}
+                    bound_names={name for name,v in bindings.items() if isinstance(v,ast.Attribute) and v.attr in fields}
+                    counter=any(isinstance(n,ast.Subscript) and isinstance(n.slice,ast.Slice)
+                        and isinstance(n.slice.upper,ast.Name) and n.slice.upper.id in bound_names for n in nodes)
+                if not (decimal and header or hexadecimal and crlf and counter):continue
+                predicates=list(cls.guards(call,parents,raw))
+                lexical=False;unknown=False
+                for predicate in predicates:
+                    for check in ast.walk(predicate):
+                        if not isinstance(check,ast.Call):continue
+                        mentions=isinstance(raw,ast.Name) and any(isinstance(v,ast.Name) and v.id==raw.id for v in ast.walk(check))
+                        if not mentions:continue
+                        if isinstance(check.func,ast.Attribute) and check.func.attr in {'match','fullmatch','isdigit','isdecimal'}:
+                            lexical=True
+                        elif not (isinstance(check.func,ast.Name) and check.func.id in {'isinstance','len'}):unknown=True
+                if lexical:continue  # Observed guard suppresses this anti-pattern; its language is not proved safe.
+                context.emit(call,'PY-OBL-HTTP-NUMERIC-001','HTTP framing length uses permissive integer parsing',
+                    'protocol','Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.',
+                    'A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms.',
+                    'CWE-444',['Only visible dominating guards and resolved HTTP library contracts are modelled; caller filtering remains unverified.',
+                        'Recognizing a lexical guard does not certify its regular expression or all parser paths.'],uncertain=unknown)
+            for branch in nodes:
+                if not isinstance(branch,ast.If) or len(branch.body)!=1 or not isinstance(branch.body[0],ast.If):continue
+                test=branch.test
+                if not (isinstance(test,ast.Compare) and len(test.ops)==1 and isinstance(test.ops[0],ast.Eq)
+                    and isinstance(test.comparators[0],ast.Constant) and test.comparators[0].value=='TRANSFER-ENCODING'):continue
+                inner=branch.body[0];condition=inner.test
+                if inner.orelse or not (isinstance(condition,ast.Compare) and len(condition.ops)==1 and isinstance(condition.ops[0],ast.Eq)
+                    and isinstance(condition.comparators[0],ast.Constant) and condition.comparators[0].value=='chunked'
+                    and isinstance(condition.left,ast.Call) and isinstance(condition.left.func,ast.Attribute)
+                    and condition.left.func.attr=='lower'):continue
+                loop=parents.get(branch)
+                while loop is not None and not isinstance(loop,ast.For):loop=parents.get(loop)
+                if not (loop and isinstance(loop.target,(ast.Tuple,ast.List)) and len(loop.target.elts)==2
+                    and all(isinstance(v,ast.Name) for v in loop.target.elts)
+                    and isinstance(loop.iter,ast.Attribute) and loop.iter.attr=='headers'
+                    and isinstance(test.left,ast.Name) and test.left.id==loop.target.elts[0].id
+                    and isinstance(condition.left.func.value,ast.Name) and condition.left.func.value.id==loop.target.elts[1].id):continue
+                if not (len(inner.body)==1 and isinstance(inner.body[0],ast.Assign)
+                    and isinstance(inner.body[0].value,ast.Constant) and inner.body[0].value.value is True):continue
+                if not any(isinstance(n,ast.Call) and context.resolve(n.func)=='gunicorn.http.body.ChunkedReader' for n in nodes):continue
+                context.emit(inner,'PY-OBL-HTTP-CODING-001','Unsupported transfer codings have no rejecting branch',
+                    'protocol','Reject unsupported Transfer-Encoding values before choosing a request body reader.',
+                    'The HTTP parser handles only the chunked value in its Transfer-Encoding branch and has no alternate rejection in that branch.',
+                    'CWE-444',['This is a narrow branch-shape check, not a complete HTTP framing, proxy or deployment model.'])
