@@ -1,0 +1,16 @@
+{
+  "repository": "modelcontextprotocol/python-sdk",
+  "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+  "records": [
+    {
+      "path": "examples/fastmcp/complex_inputs.py",
+      "git_blob_sha": "e859165a97c26403a8b5ff8a63f30478a952555c",
+      "source_sha256": "fc43403b25a242b7dee02273fad454a141048dad89f99c21e8544a031cf3905e"
+    },
+    {
+      "path": "examples/fastmcp/desktop.py",
+      "git_blob_sha": "8fd71b263b348bae5b79f5f9f4461c26c2db6e85",
+      "source_sha256": "02d90dcd1dcda95cc82575a5b2b292e5003a956ce0e9bc20e20ea9ad7696ed28"
+    }
+  ]
+}

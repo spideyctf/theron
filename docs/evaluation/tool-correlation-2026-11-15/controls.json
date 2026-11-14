@@ -1,0 +1,1363 @@
+{
+  "implementation_revision": "47932f996d0dfb9711207a960c111756a9318558",
+  "original_authored_controls": true,
+  "independent_real_code_study": false,
+  "advisory_fixture": {
+    "id": "TEST-OSV-001",
+    "aliases": [
+      "TEST-ALIAS-001"
+    ],
+    "summary": "Original test advisory",
+    "database_specific": {
+      "severity": "HIGH",
+      "cwe_ids": [
+        "CWE-79"
+      ]
+    },
+    "affected": [
+      {
+        "package": {
+          "name": "demo",
+          "ecosystem": "PyPI"
+        },
+        "ranges": [
+          {
+            "events": [
+              {
+                "introduced": "0"
+              },
+              {
+                "fixed": "1.1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "records": [
+    {
+      "name": "helper-metadata",
+      "expected_link": true,
+      "actual_link": true,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 1,
+          "dependency_context_edges": 1,
+          "attribution_bases": [
+            "distribution-record-claim"
+          ],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+      }
+    },
+    {
+      "name": "direct-import-alias",
+      "expected_link": true,
+      "actual_link": true,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 1,
+          "dependency_context_edges": 1,
+          "attribution_bases": [
+            "distribution-record-claim"
+          ],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "776195ef2a8d108bae8f896d83e606c0c83a5f6bd8f8e1a30ddef14cd17e5e94"
+      }
+    },
+    {
+      "name": "async-handler",
+      "expected_link": true,
+      "actual_link": true,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 1,
+          "dependency_context_edges": 1,
+          "attribution_bases": [
+            "distribution-record-claim"
+          ],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "80c69786d5f9c9da9b5b93591916fc9d5d27110f107efde969beda1a35cd23be"
+      }
+    },
+    {
+      "name": "same-name-only",
+      "expected_link": true,
+      "actual_link": true,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 1,
+          "dependency_context_edges": 1,
+          "attribution_bases": [
+            "same-name-declaration-only"
+          ],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "demo",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "helpers.py": "c83f04f8d7aacf9792956415497221b6e468bc2123c08b0f7e46f8266fcdd4c7",
+        "requirements.txt": "782b06f76b0ed0db7ffe64b17a0d9a1692865f5a725ff6b2de1fed687676ca9e",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+      }
+    },
+    {
+      "name": "different-name-without-metadata",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 1,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+      }
+    },
+    {
+      "name": "unregistered-handler",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "7c93d0491dcf175150677149edeff6a695e5f42674c68431bacd77cb758a987f"
+      }
+    },
+    {
+      "name": "unused-import",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "d74f667f5e240c75590cedc69b9471aca3304fed50ffec9b0b257eef48ef9420",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+      }
+    },
+    {
+      "name": "local-shadow",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38",
+        "yaml.py": "d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1"
+      }
+    },
+    {
+      "name": "namespace-shadow",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38",
+        "yaml/extra.py": "d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1"
+      }
+    },
+    {
+      "name": "wrong-version",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 1,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "b3a7a1001d77cd22549d97615e67baea55bd111064c2264812649e034e0e5fcf",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+      }
+    },
+    {
+      "name": "ambiguous-owner",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 1,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85",
+        "other/other-1.dist-info/METADATA": "136db5aeff3cb8aee0953d342d3ecc37f77a0f59b2f5e69a3c1b1018ce4e9101",
+        "other/other-1.dist-info/RECORD": "c58d9fe7ef56ebf1074cd6ceb1da5fb19c813db6547c033d679bc00af67758f4",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+      }
+    },
+    {
+      "name": "stdlib",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "json",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "helpers.py": "06cef126833caa3f01b898892f6078f41b4c935dab5c8a27cf175c116109c4c9",
+        "requirements.txt": "7023cfec88c33092379870e0675c3b637ee2bc10d4a8b866bbf55398c332048f",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+      }
+    },
+    {
+      "name": "replaced-framework",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "3214c5c04bb54cdd3ed511efab392d02688d8ae426293a9517c742837f082bdd"
+      }
+    },
+    {
+      "name": "wrapped-helper",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "26e11ef29d215c944d0cfdeb9af0fd8552116459e7e72e7d14ea71562da65dd7",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+      }
+    },
+    {
+      "name": "replaced-api",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+        "helpers.py": "27f53a275e51a49e60301a0c1535a962f3a89111b72ec1afb4da398a94227025",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+      }
+    },
+    {
+      "name": "malformed-record",
+      "expected_link": false,
+      "actual_link": false,
+      "exact_result": true,
+      "modes": {
+        "code_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "dependency_only": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 1,
+          "vulnerability_count": 1
+        },
+        "code_dependency": {
+          "tool_groups": 0,
+          "api_call_edges": 0,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        },
+        "combined": {
+          "tool_groups": 1,
+          "api_call_edges": 1,
+          "dependency_context_edges": 0,
+          "attribution_bases": [],
+          "original_finding_count": 2,
+          "vulnerability_count": 2
+        }
+      },
+      "advisory_snapshot": {
+        "id": "TEST-OSV-001",
+        "aliases": [
+          "TEST-ALIAS-001"
+        ],
+        "summary": "Original test advisory",
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-79"
+          ]
+        },
+        "affected": [
+          {
+            "package": {
+              "name": "PyYAML",
+              "ecosystem": "PyPI"
+            },
+            "ranges": [
+              {
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_correlation_preserves_findings": true,
+      "source_text_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+        "evidence/PyYAML-1.0.0.dist-info/RECORD": "6c64343adf1c17fcec3054091e725c405ded264e103fbccc42ab554c945df197",
+        "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85",
+        "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177",
+        "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+      }
+    }
+  ],
+  "correct": 16,
+  "total": 16,
+  "additional_vulnerabilities": 0,
+  "review_benefit_measured": false,
+  "interpretation": "Correctness of original handler/dependency-context controls and required-input ablations only. Missing MCP configuration prevents configured-entrypoint groups by design. This is not a scanner accuracy or research-advantage estimate."
+}

@@ -1,0 +1,215 @@
+{
+  "implementation_revision": "47932f996d0dfb9711207a960c111756a9318558",
+  "records": [
+    {
+      "path": "examples/fastmcp/complex_inputs.py",
+      "source_sha256": "fc43403b25a242b7dee02273fad454a141048dad89f99c21e8544a031cf3905e",
+      "configuration_researcher_generated": true,
+      "groups": [
+        {
+          "id": "mcp-tool-686b398e11a674214f01dcbb",
+          "title": "Declared MCP tool: name_shrimp",
+          "scope": "example",
+          "classification": "inferred",
+          "maturity": "experimental",
+          "finding_fingerprints": [],
+          "relationships": [
+            {
+              "kind": "declares_entrypoint",
+              "source": {
+                "kind": "configuration",
+                "file_path": ".vscode/mcp.json",
+                "pointer": "/servers/upstream-example"
+              },
+              "target": {
+                "kind": "file",
+                "file_path": "examples/fastmcp/complex_inputs.py"
+              },
+              "classification": "inferred",
+              "basis": "supported_python_declaration",
+              "evidence": [
+                {
+                  "file_path": ".vscode/mcp.json",
+                  "pointer": "/servers/upstream-example/args"
+                }
+              ],
+              "provenance": {
+                "commit_sha": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+                "source_text_sha256": {
+                  ".vscode/mcp.json": "9a723cfe8aa86ce6a348bb22580ef0e01a554ccca9480143520c5af407837a72"
+                }
+              }
+            },
+            {
+              "kind": "declares_tool_handler",
+              "source": {
+                "kind": "file",
+                "file_path": "examples/fastmcp/complex_inputs.py"
+              },
+              "target": {
+                "kind": "function",
+                "file_path": "examples/fastmcp/complex_inputs.py",
+                "line_number": 24,
+                "symbol": "examples.fastmcp.complex_inputs.name_shrimp"
+              },
+              "classification": "inferred",
+              "basis": "supported_fastmcp_registration",
+              "evidence": [
+                {
+                  "file_path": "examples/fastmcp/complex_inputs.py",
+                  "line_number": 23,
+                  "role": "tool-registration"
+                },
+                {
+                  "file_path": "examples/fastmcp/complex_inputs.py",
+                  "line_number": 24,
+                  "role": "handler-definition"
+                },
+                {
+                  "file_path": "examples/fastmcp/complex_inputs.py",
+                  "line_number": 13,
+                  "role": "server-instance-construction"
+                }
+              ],
+              "provenance": {
+                "commit_sha": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+                "source_text_sha256": {
+                  "examples/fastmcp/complex_inputs.py": "fc43403b25a242b7dee02273fad454a141048dad89f99c21e8544a031cf3905e"
+                }
+              }
+            }
+          ],
+          "limitations": [
+            "Tool registration and call paths are statically inferred under supported FastMCP contracts; startup, dispatch and path conditions are not verified.",
+            "An imported API call and OSV version match do not prove that the called function is affected by the advisory.",
+            "Distribution metadata is a collected artifact claim, not authenticated ownership, an installed environment or effective import-path proof.",
+            "Existing findings retain their severity and count; no additional vulnerability is inferred from a joined group."
+          ],
+          "resolution_notes": []
+        }
+      ],
+      "resolutions": [
+        {
+          "config_file": ".vscode/mcp.json",
+          "pointer": "/servers/upstream-example",
+          "status": "resolved",
+          "reason": "declared_tool_context",
+          "entrypoint": "examples/fastmcp/complex_inputs.py",
+          "classification": "inferred",
+          "scope": "application",
+          "group_ids": [
+            "mcp-tool-686b398e11a674214f01dcbb"
+          ]
+        }
+      ],
+      "vulnerability_findings": 0
+    },
+    {
+      "path": "examples/fastmcp/desktop.py",
+      "source_sha256": "02d90dcd1dcda95cc82575a5b2b292e5003a956ce0e9bc20e20ea9ad7696ed28",
+      "configuration_researcher_generated": true,
+      "groups": [
+        {
+          "id": "mcp-tool-927f81db5190ab23996b42d3",
+          "title": "Declared MCP tool: add",
+          "scope": "example",
+          "classification": "inferred",
+          "maturity": "experimental",
+          "finding_fingerprints": [],
+          "relationships": [
+            {
+              "kind": "declares_entrypoint",
+              "source": {
+                "kind": "configuration",
+                "file_path": ".vscode/mcp.json",
+                "pointer": "/servers/upstream-example"
+              },
+              "target": {
+                "kind": "file",
+                "file_path": "examples/fastmcp/desktop.py"
+              },
+              "classification": "inferred",
+              "basis": "supported_python_declaration",
+              "evidence": [
+                {
+                  "file_path": ".vscode/mcp.json",
+                  "pointer": "/servers/upstream-example/args"
+                }
+              ],
+              "provenance": {
+                "commit_sha": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+                "source_text_sha256": {
+                  ".vscode/mcp.json": "74f69f80c6214695dde7d3b97578a2184c4427ab90f7a7c4f31b19621b4b16dd"
+                }
+              }
+            },
+            {
+              "kind": "declares_tool_handler",
+              "source": {
+                "kind": "file",
+                "file_path": "examples/fastmcp/desktop.py"
+              },
+              "target": {
+                "kind": "function",
+                "file_path": "examples/fastmcp/desktop.py",
+                "line_number": 23,
+                "symbol": "examples.fastmcp.desktop.add"
+              },
+              "classification": "inferred",
+              "basis": "supported_fastmcp_registration",
+              "evidence": [
+                {
+                  "file_path": "examples/fastmcp/desktop.py",
+                  "line_number": 22,
+                  "role": "tool-registration"
+                },
+                {
+                  "file_path": "examples/fastmcp/desktop.py",
+                  "line_number": 23,
+                  "role": "handler-definition"
+                },
+                {
+                  "file_path": "examples/fastmcp/desktop.py",
+                  "line_number": 12,
+                  "role": "server-instance-construction"
+                }
+              ],
+              "provenance": {
+                "commit_sha": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+                "source_text_sha256": {
+                  "examples/fastmcp/desktop.py": "02d90dcd1dcda95cc82575a5b2b292e5003a956ce0e9bc20e20ea9ad7696ed28"
+                }
+              }
+            }
+          ],
+          "limitations": [
+            "Tool registration and call paths are statically inferred under supported FastMCP contracts; startup, dispatch and path conditions are not verified.",
+            "An imported API call and OSV version match do not prove that the called function is affected by the advisory.",
+            "Distribution metadata is a collected artifact claim, not authenticated ownership, an installed environment or effective import-path proof.",
+            "Existing findings retain their severity and count; no additional vulnerability is inferred from a joined group."
+          ],
+          "resolution_notes": []
+        }
+      ],
+      "resolutions": [
+        {
+          "config_file": ".vscode/mcp.json",
+          "pointer": "/servers/upstream-example",
+          "status": "resolved",
+          "reason": "declared_tool_context",
+          "entrypoint": "examples/fastmcp/desktop.py",
+          "classification": "inferred",
+          "scope": "application",
+          "group_ids": [
+            "mcp-tool-927f81db5190ab23996b42d3"
+          ]
+        }
+      ],
+      "vulnerability_findings": 0
+    }
+  ],
+  "project_previously_exposed": true,
+  "untouched_holdout": false,
+  "independent_labels": false,
+  "interpretation": "Unchanged public source with generated direct-Python client declarations. Static tool/call-path compatibility only; no code execution, installed dependencies, advisory matching, vulnerability accuracy or real-world triage benefit evaluated."
+}

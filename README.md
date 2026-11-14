@@ -20,7 +20,7 @@ The broader project goal is a unified security platform for application code, de
 | AI and agent coverage | Selected model-output-to-dangerous-operation flows, credential candidates, MCP configuration and tool/permission checks |
 | Security-state checks | Bounded authorization, JWT/JWS, HTTP framing, HTML transformation, TLS and AST-interpreter checks |
 | Live dependency evidence | OSV exact-version matching, advisory aliases, severity provenance, fixed-version boundaries and CycloneDX inventory |
-| Connected review context | Experimental links between supported MCP declarations, Python code and dependency findings |
+| Connected review context | Supported MCP tool declarations, bounded local call paths and dependency attribution from collected distribution records, with weaker associations labelled |
 | Practical delivery | CLI, local API, React workspace, baselines, filters, CI thresholds and JSON/HTML/SARIF exports |
 | Reproducible evaluation | Pinned source, per-case results, positive/negative controls and selected vulnerable/fixed behavior checks |
 
@@ -28,22 +28,23 @@ Repository code is analyzed as text. Runtime verification is a separate research
 
 ## Measured results
 
-Recorded 14 November 2026; detector checkpoint `7b64719`.
+Updated 15 November 2026. Correlation checkpoint `7b99d5c`; detection benchmark checkpoint `7b64719`.
 
 | Measurement | Result |
 | --- | ---: |
-| Python regression tests | **763 passing** |
-| Frontend checkpoint | **17 passing tests; production build passes** |
+| Python regression tests | **823 passing** |
+| Frontend checkpoint | **19 passing tests; production build passes** |
 | Synthetic case outcomes tracked | **1,470** |
 | Exposed OWASP validation recall / label-matched precision | **91.67% / 100%** |
 | Exposed OWASP test recall / label-matched precision | **73.03% / 100%** |
 | Exposed PySASTBench recall / label-matched precision | **78.15% / 95.88%** |
 | Live OSV advisory-specific calibration | **6/6 checks pass** |
 | Original dependency/MCP correlation controls | **13/13 pass** |
+| Original tool/call-path/dependency controls | **16/16 expected outcomes** |
 | Pilot projects with selected before/after behavior checks | **10** |
 | Pinned offline scan smoke | **273 files read in 52.89 seconds** |
 
-The frontend source is unchanged from its last passing checkpoint. Runtime checks comprise five unmodified upstream pairs, two adapted upstream pairs and three author-derived pairs; they validate selected library behavior. Scanner detection results are reported separately in the [assessment](docs/PROJECT_ASSESSMENT.md).
+The new [tool-level correlation increment](docs/evaluation/tool-correlation-2026-11-15/README.md) passes the current regression/frontend checks and a source-only compatibility check on two pinned upstream examples. Correlation controls are original engineering cases, not independent real-world accuracy. Runtime checks comprise five unmodified upstream pairs, two adapted upstream pairs and three author-derived pairs; they validate selected library behavior. Scanner detection results are reported separately in the [assessment](docs/PROJECT_ASSESSMENT.md).
 
 ### Benchmark comparison
 

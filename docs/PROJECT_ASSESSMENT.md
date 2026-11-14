@@ -1,6 +1,8 @@
 # Theron: realistic project assessment and improvement plan
 
-**Assessment date:** 14 November 2026. **Detector checkpoint:** `7b64719`. **Evidence checkpoint:** `15a4356`.
+**Assessment date:** 15 November 2026. **Current correlation checkpoint:** `7b99d5c`. **Detection benchmark checkpoint:** `7b64719`. **Paired behavior evidence:** `15a4356`.
+
+Latest increment: [tool-level correlation and package-attribution evidence](evaluation/tool-correlation-2026-11-15/README.md). Supported tool registration, bounded local call paths, collected distribution-record claims, source/advisory digests and frontend provenance are implemented. All 16 original controls match expectations, and two pinned upstream source examples each produce one tool group under generated configurations. These checks do not establish independent edge accuracy, new vulnerabilities or improved review decisions; the real-code research gate remains open.
 
 ## Current verdict
 
@@ -20,7 +22,7 @@ The [README](../README.md) presents the strengths and practical entry points. Th
 | Security obligations | Selected DRF object checks, JWT/JWS/HMAC, HTTP framing, HTML normalization, TLS pool/hostname state and AST callable boundaries | Advisory models with library/caller assumptions, not general policy, cryptography or protocol proofs |
 | AI and agents | Selected model-output-to-dangerous-operation flows, provider-shaped credentials, MCP/instruction/tool/configuration checks | No comprehensive prompt-injection, RAG, agent permission or resource-isolation model |
 | Dependencies | Exact-version OSV queries with pagination/failure handling, alias grouping, severity provenance, fixed boundaries and CycloneDX SBOM | Unsupported ranges/locks, installation, distribution ownership and vulnerable-function reachability remain unresolved |
-| MCP context | Inferred supported declaration-to-Python-to-finding links and selected dependency-declaration links | Association does not prove execution or vulnerability reachability |
+| MCP context | Supported tool declarations, bounded helper/API call paths, original findings and distribution-metadata/dependency links, with source/advisory provenance | Static associations and metadata claims do not prove execution, installation or vulnerable-function reachability |
 | Review and delivery | CLI, local API/React UI, filters, evidence, baselines, CI thresholds and JSON/HTML/SARIF/SBOM | In-memory history and single-user operation; no durable multi-user review service |
 | Verification | Pinned source/dependencies, import-origin checks and selected paired behavior tests | Research harnesses, not full upstream-suite acceptance or a production verification service |
 
@@ -32,14 +34,15 @@ The frontend displays the principal finding, obligation, dependency and correlat
 
 | Measurement | Recorded result | Meaning |
 | --- | --- | --- |
-| Python suite | **763 pass**, one dependency deprecation warning | Regression confidence within tested behavior |
-| Frontend | **17 pass; production build passes** at its last checkpoint; source unchanged since | The recorded frontend checkpoint, not a fresh rerun in this documentation change |
+| Python suite | **823 pass**, one dependency deprecation warning | Current correlation-increment regression checkpoint |
+| Frontend | **19 pass; production build passes** | Current correlation symbols, provenance and unresolved-state UI tested |
 | Synthetic stability | **1,470 case outcomes and alert counts unchanged** after the latest detector changes | Recent changes preserve those exposed regressions |
 | Offline smoke | **52.89 seconds / 120 seconds**, 273 files read from 275 selected | One pinned offline SAST/AI/agentic workload; not a capacity or speed ranking |
 | Incomplete coverage | Three application notices, 12 context findings, two oversized files in that smoke | A completed scan is not complete analysis of every input |
 | Live repository OSV | **134 completed unique queries**, no advisory matches, one unresolved-range notice | Exact declarations were queried; unpinned dependencies prevent an installed-environment safety conclusion |
 | OSV calibration | **6/6 advisory-specific checks pass** | Three vulnerable/repaired version pairs match expectations for named CVEs; repaired references can match other advisories |
 | Correlation controls | **13/13**, four inferred context edges, unchanged vulnerability payloads | Original engineering controls; zero additional discoveries or measured reviewer benefit |
+| Tool-level correlation controls | **16/16 expected outcomes**, full finding payloads unchanged on/off | Original controls and four input ablations; not independent real-code accuracy |
 
 Earlier operational crashes and two 120-second timeouts are preserved. Later successful runs do not erase those failures. The current smoke excludes SCA/network work and is not comparable to full four-module live scan duration.
 
