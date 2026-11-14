@@ -1,0 +1,475 @@
+{
+  "implementation_revision": "b8ec32f",
+  "evaluated_at": "2026-11-14T19:37:01.596654+00:00",
+  "driver_sha256": "46403603abf98e7e7b36769f0d9ca0be0e0c3e4debe4bd473f9c04ff46152e27",
+  "records": [
+    {
+      "repository": "blazickjp/arxiv-mcp-server",
+      "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+      "expected_files": 87,
+      "collected_files": 87,
+      "osv_transport_records": [],
+      "declarations": [
+        {
+          "name": "arxiv",
+          "declared_version": ">=2.1.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "httpx",
+          "declared_version": ">=0.24.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "python-dateutil",
+          "declared_version": ">=2.8.2",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "pydantic",
+          "declared_version": ">=2.8.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "mcp",
+          "declared_version": ">=1.27.0,<2.0.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "aiohttp",
+          "declared_version": ">=3.9.1",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "python-dotenv",
+          "declared_version": ">=1.0.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "pydantic-settings",
+          "declared_version": ">=2.1.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "aiofiles",
+          "declared_version": ">=23.2.1",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "uvicorn",
+          "declared_version": ">=0.30.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "starlette",
+          "declared_version": ">=0.27.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "sse-starlette",
+          "declared_version": ">=1.8.2",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "anyio",
+          "declared_version": ">=4.2.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "lxml",
+          "declared_version": ">=4.6.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "requests",
+          "declared_version": ">=2.25.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "pymupdf4llm",
+          "declared_version": ">=0.0.17",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "pymupdf-layout",
+          "declared_version": ">=1.26.6",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "pytest",
+          "declared_version": ">=8.0.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "pytest-asyncio",
+          "declared_version": ">=0.23.5",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "pytest-cov",
+          "declared_version": ">=4.1.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "pytest-mock",
+          "declared_version": ">=3.10.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "aioresponses",
+          "declared_version": ">=0.7.6",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "black",
+          "declared_version": ">=23.3.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "sentence-transformers",
+          "declared_version": ">=3.0.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "numpy",
+          "declared_version": ">=1.26.0",
+          "source": "pyproject.toml",
+          "exact_version": null
+        }
+      ],
+      "status": "complete",
+      "modes": {
+        "code_only": {
+          "groups": [],
+          "resolutions": [],
+          "application_findings": 0,
+          "context_findings": 1,
+          "vulnerability_findings": 0
+        },
+        "dependency_only": {
+          "groups": [],
+          "resolutions": [],
+          "application_findings": 1,
+          "context_findings": 0,
+          "vulnerability_findings": 0
+        },
+        "code_dependency": {
+          "groups": [],
+          "resolutions": [],
+          "application_findings": 1,
+          "context_findings": 1,
+          "vulnerability_findings": 0
+        },
+        "combined": {
+          "groups": [],
+          "resolutions": [
+            {
+              "config_file": ".mcp.json",
+              "pointer": "/mcpServers/arxiv",
+              "status": "unresolved",
+              "reason": "unsupported_interpreter_or_wrapper",
+              "entrypoint": null,
+              "classification": "unknown",
+              "scope": "application",
+              "group_ids": []
+            },
+            {
+              "config_file": "mcp.json",
+              "pointer": "/mcpServers/arxiv",
+              "status": "unresolved",
+              "reason": "unsupported_interpreter_or_wrapper",
+              "entrypoint": null,
+              "classification": "unknown",
+              "scope": "application",
+              "group_ids": []
+            }
+          ],
+          "application_findings": 1,
+          "context_findings": 1,
+          "vulnerability_findings": 0
+        }
+      },
+      "correlation_preserves_findings": true,
+      "findings": [
+        {
+          "fingerprint": "e68870aad8d296b0f9d20987",
+          "rule_id": "SCA-UNRESOLVED-001",
+          "file_path": "pyproject.toml",
+          "line_number": null,
+          "severity": "INFO",
+          "scope": "application",
+          "module": "sca",
+          "title": "Unresolved dependency versions"
+        },
+        {
+          "fingerprint": "7befaa82957d123ed3293668",
+          "rule_id": "PY-BUDGET-001",
+          "file_path": "tests/tools/test_paper_outline.py",
+          "line_number": null,
+          "severity": "INFO",
+          "scope": "test",
+          "module": "coverage",
+          "title": "Python call-analysis budget reached"
+        }
+      ],
+      "seconds": 17.346
+    },
+    {
+      "repository": "figma/mcp-server-guide",
+      "revision": "5f3024c3decd83ff6f0bfb3ef36a2c4cfbff961d",
+      "expected_files": 9,
+      "collected_files": 9,
+      "osv_transport_records": [],
+      "declarations": [],
+      "status": "complete",
+      "modes": {
+        "code_only": {
+          "groups": [],
+          "resolutions": [],
+          "application_findings": 0,
+          "context_findings": 0,
+          "vulnerability_findings": 0
+        },
+        "dependency_only": {
+          "groups": [],
+          "resolutions": [],
+          "application_findings": 1,
+          "context_findings": 0,
+          "vulnerability_findings": 0
+        },
+        "code_dependency": {
+          "groups": [],
+          "resolutions": [],
+          "application_findings": 1,
+          "context_findings": 0,
+          "vulnerability_findings": 0
+        },
+        "combined": {
+          "groups": [],
+          "resolutions": [
+            {
+              "config_file": ".antigravity-plugin/mcp_config.json",
+              "pointer": "/mcpServers/figma",
+              "status": "unresolved",
+              "reason": "unsupported_interpreter_or_wrapper",
+              "entrypoint": null,
+              "classification": "unknown",
+              "scope": "application",
+              "group_ids": []
+            },
+            {
+              "config_file": ".mcp.json",
+              "pointer": "/mcpServers/figma",
+              "status": "unresolved",
+              "reason": "not_a_direct_stdio_declaration",
+              "entrypoint": null,
+              "classification": "unknown",
+              "scope": "application",
+              "group_ids": []
+            },
+            {
+              "config_file": "figma-power/mcp.json",
+              "pointer": "/mcpServers/figma",
+              "status": "unresolved",
+              "reason": "not_a_direct_stdio_declaration",
+              "entrypoint": null,
+              "classification": "unknown",
+              "scope": "application",
+              "group_ids": []
+            },
+            {
+              "config_file": "mcp.json",
+              "pointer": "/mcpServers/figma",
+              "status": "unresolved",
+              "reason": "not_a_direct_stdio_declaration",
+              "entrypoint": null,
+              "classification": "unknown",
+              "scope": "application",
+              "group_ids": []
+            }
+          ],
+          "application_findings": 1,
+          "context_findings": 0,
+          "vulnerability_findings": 0
+        }
+      },
+      "correlation_preserves_findings": true,
+      "findings": [
+        {
+          "fingerprint": "8c0f973e7f1f2dca9c6d9ab5",
+          "rule_id": null,
+          "file_path": "N/A",
+          "line_number": null,
+          "severity": "INFO",
+          "scope": "application",
+          "module": "sca",
+          "title": "No Dependency Declarations Parsed"
+        }
+      ],
+      "seconds": 0.416
+    },
+    {
+      "repository": "GongRzhe/Office-Word-MCP-Server",
+      "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+      "expected_files": 30,
+      "collected_files": 30,
+      "osv_transport_records": [],
+      "declarations": [
+        {
+          "name": "python-docx",
+          "declared_version": ">=1.1.2",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "fastmcp",
+          "declared_version": ">=2.8.1",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "msoffcrypto-tool",
+          "declared_version": ">=5.4.2",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "docx2pdf",
+          "declared_version": ">=0.1.8",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "pytest",
+          "declared_version": ">=8.4.2",
+          "source": "pyproject.toml",
+          "exact_version": null
+        },
+        {
+          "name": "fastmcp",
+          "declared_version": null,
+          "source": "requirements.txt",
+          "exact_version": null
+        },
+        {
+          "name": "python-docx",
+          "declared_version": null,
+          "source": "requirements.txt",
+          "exact_version": null
+        },
+        {
+          "name": "msoffcrypto-tool",
+          "declared_version": null,
+          "source": "requirements.txt",
+          "exact_version": null
+        },
+        {
+          "name": "docx2pdf",
+          "declared_version": null,
+          "source": "requirements.txt",
+          "exact_version": null
+        },
+        {
+          "name": "python-dotenv",
+          "declared_version": null,
+          "source": "requirements.txt",
+          "exact_version": null
+        }
+      ],
+      "status": "complete",
+      "modes": {
+        "code_only": {
+          "groups": [],
+          "resolutions": [],
+          "application_findings": 0,
+          "context_findings": 0,
+          "vulnerability_findings": 0
+        },
+        "dependency_only": {
+          "groups": [],
+          "resolutions": [],
+          "application_findings": 2,
+          "context_findings": 0,
+          "vulnerability_findings": 0
+        },
+        "code_dependency": {
+          "groups": [],
+          "resolutions": [],
+          "application_findings": 2,
+          "context_findings": 0,
+          "vulnerability_findings": 0
+        },
+        "combined": {
+          "groups": [],
+          "resolutions": [
+            {
+              "config_file": "mcp-config.json",
+              "pointer": "/mcpServers/word-document-server",
+              "status": "unresolved",
+              "reason": "unsupported_interpreter_or_wrapper",
+              "entrypoint": null,
+              "classification": "unknown",
+              "scope": "application",
+              "group_ids": []
+            }
+          ],
+          "application_findings": 2,
+          "context_findings": 0,
+          "vulnerability_findings": 0
+        }
+      },
+      "correlation_preserves_findings": true,
+      "findings": [
+        {
+          "fingerprint": "e68870aad8d296b0f9d20987",
+          "rule_id": "SCA-UNRESOLVED-001",
+          "file_path": "pyproject.toml",
+          "line_number": null,
+          "severity": "INFO",
+          "scope": "application",
+          "module": "sca",
+          "title": "Unresolved dependency versions"
+        },
+        {
+          "fingerprint": "64c0371c56267f12cc97d8ac",
+          "rule_id": "SCA-UNRESOLVED-001",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "severity": "INFO",
+          "scope": "application",
+          "module": "sca",
+          "title": "Unresolved dependency versions"
+        }
+      ],
+      "seconds": 2.732
+    }
+  ],
+  "ablations": "Same frozen normalized SAST/SCA findings projected by module; only correlation inputs vary. No repeated live OSV requests.",
+  "independent_labels": false,
+  "review_benefit_measured": false,
+  "target_code_executed": false
+}

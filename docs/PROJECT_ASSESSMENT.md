@@ -6,6 +6,8 @@ Latest increment: [tool-level correlation and package-attribution evidence](eval
 
 ## Current verdict
 
+Latest external-source check: the [frozen real-repository correlation pilot](evaluation/real-correlation-2026-11-15/README.md) collected 126 verified files across three repositories. All seven declarations remained unresolved; no correlation groups were produced. All 35 parsed dependency declaration tuples lacked supported exact versions, so OSV made no requests. Correlation preserved finding payloads/counts, but this pilot demonstrates compatibility gaps rather than a cross-layer research benefit. The next engineering priorities are evidence-backed package launches, supported lockfile resolution and broader client path contracts, followed by a new reserve. These sources are now development-exposed.
+
 Theron is a working, evaluated research prototype with a usable local developer workflow. It combines Python analysis, dependency advisories, AI/agent checks and inspectable reports. Engineering quality and behavioral verification have improved substantially.
 
 It is suitable for a technical demonstration and a clearly scoped development/evaluation study. The evidence does **not yet support** a broad claim of industry-grade coverage, unseen-project superiority or a validated novel benefit from combining code, dependency and MCP evidence. Publication acceptance cannot be predicted from test counts or benchmark percentages.

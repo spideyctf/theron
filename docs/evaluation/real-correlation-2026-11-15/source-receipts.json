@@ -1,0 +1,1136 @@
+[
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "mcp.json",
+    "sha": "73e46cb682801983a6378d546ac91e6c40e8fde9",
+    "size": 106,
+    "status": "verified",
+    "sha256": "5535d19bba06c290e2017ef904009efbca10e3dcb6f56cd0f6b4a88a152d0ca7"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/__init__.py",
+    "sha": "46fd7d7e99e1aaee6abec0a95911bb752b544f3b",
+    "size": 197,
+    "status": "verified",
+    "sha256": "ca9817eb6135f895a0449eff78af00a4902ebe0f7f98c2275cc626bde9eb803d"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "pyproject.toml",
+    "sha": "3f1e3a838e459d58e9289ad240895187abb25616",
+    "size": 2528,
+    "status": "verified",
+    "sha256": "50cac571c5955a2389f65bc064f4f8874c2d19347b10371db7fb4be6c6e8ed38"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": ".mcp.json",
+    "sha": "d362e8750add8e9c17f2c036506a6734b8307968",
+    "size": 129,
+    "status": "verified",
+    "sha256": "0c589c17d30d6d5623d5a861cadba65bd8712f55d5fa16d36562be605e2f9498"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "scripts/smoke_installed_wheel.py",
+    "sha": "9701184a09bcc0092e8ff5611a84858d2c60107e",
+    "size": 8948,
+    "status": "verified",
+    "sha256": "3600f8b31ee5e2e670ab909442b3aef794d20a501921d44cef3e4836f3e9e92c"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "scripts/smoke_mcpb.py",
+    "sha": "b896467f2e34cca1238e1b8f37d2ae62af2be265",
+    "size": 4351,
+    "status": "verified",
+    "sha256": "0574a94ff1135bf5b6da292bfdf0c9a94459d27176fd844530660afd02ac24fc"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/prompts/__init__.py",
+    "sha": "81ce52cb253050ca13c444917859fc19204bc4aa",
+    "size": 148,
+    "status": "verified",
+    "sha256": "a17bb606cb104b4b7975ce13dcb3dc45337e2caceb0caa76fad0e9b47d06ff5f"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/prompts/compare_papers_prompt.py",
+    "sha": "3c4676ccfd15f22e7ef4c2c7a84987c605c77f0c",
+    "size": 529,
+    "status": "verified",
+    "sha256": "41455a124dfbf32c88cfae0cab4b797c265f58c8ac7e0a95be527820d85eaf3b"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/__main__.py",
+    "sha": "2f44a441bfa3d5fe09e717882bbf214e478caae8",
+    "size": 116,
+    "status": "verified",
+    "sha256": "8817be1bd4860c58edd6fbf1b7bee85f34a6bf650ab333c5c490ecd793c7114f"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/config.py",
+    "sha": "24c1606258c7a8c43193ff306219607b1e2bc989",
+    "size": 9224,
+    "status": "verified",
+    "sha256": "cae51c120a58a1843d76aa0d4f4ddcd3e027110c027e1b2add44ffec7119b0fe"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/prompts/deep_research_analysis_prompt.py",
+    "sha": "5a7e27258d04ab54f5db3bf5d9960e109c99bdeb",
+    "size": 3945,
+    "status": "verified",
+    "sha256": "292d3040286b157235c38286df2d873953e4f5332ac3b4737456a496d6ca8d5b"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/arxiv_api.py",
+    "sha": "220ee4e80f187f5bd32e5ce01b47580af63d4a28",
+    "size": 32778,
+    "status": "verified",
+    "sha256": "6c3c6c8931939cbe02ead3dc31f99e7b19e6f3a947fc0d8992ee1d645beddd9e"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/prompts/literature_review_prompt.py",
+    "sha": "a4f48ae178678155fe68fe4a2405249b81c6a04e",
+    "size": 493,
+    "status": "verified",
+    "sha256": "164d753a9d1b47c784e3cefdb93b7ba7a7e382a0a3b961c2eafc0e6425574c5d"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/prompts/prompts.py",
+    "sha": "836fb81a2a80762e7cd8cce2303ab13ede958dd5",
+    "size": 3922,
+    "status": "verified",
+    "sha256": "831c2806bd185f9f5c50cc356d9537d7beb63402a023d8a90ae03160cc6918b3"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/prompts/handlers.py",
+    "sha": "f8f1640d41e6c4c03fff6d0590d9b33841858f4a",
+    "size": 6216,
+    "status": "verified",
+    "sha256": "d0f3e9342417743e2f14d4b8c0bb0e3b60114e3004ddb018b4fef756917b774e"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/prompts/prompt_manager.py",
+    "sha": "0e71c2bf8043dd8e5ee67596036b850f7f4718a7",
+    "size": 791,
+    "status": "verified",
+    "sha256": "805de0f3b8b79e7b7186561fb786cf619b271c8c42cadeda8c84bea62b770bdc"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/prompts/summarize_paper_prompt.py",
+    "sha": "515f84df2f287d650db9bf31b55822985c16f0f4",
+    "size": 473,
+    "status": "verified",
+    "sha256": "f17d13ca77944a368b6953a9515aba1165f461db0f6d127a089610974ebc2d17"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/resources/__init__.py",
+    "sha": "7bbb0c3387407a98e1064e5ad7f77651310c8a2e",
+    "size": 354,
+    "status": "verified",
+    "sha256": "d10b1397c7e164ec634eb0560d0e43973959dec4dfcf9766e95facbd49f79dbe"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/resources/papers.py",
+    "sha": "89c9c48d40c5aeef305a01a93d13eef9c3100d44",
+    "size": 4079,
+    "status": "verified",
+    "sha256": "13e460380e84e4f3a52e030ecae1581ba4aa933e9432543dfe2b9c287c07cda2"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/__init__.py",
+    "sha": "1616118bbf0026dd141f4ff1afae070fb2bd1011",
+    "size": 2246,
+    "status": "verified",
+    "sha256": "5a8872d8919ba7905aee22f921f0361c5ede985665877aacc4cea85829ea598e"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/server.py",
+    "sha": "3235f5759c48efe2c11b45407ea352008de77a49",
+    "size": 9567,
+    "status": "verified",
+    "sha256": "aaa8d509065564d785541b4e79c9d81ad7cc2a17c51064280b8eb078160e1d90"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/alerts.py",
+    "sha": "522c23f530d09fd08bd6fd6f49aa67a71b352b74",
+    "size": 18597,
+    "status": "verified",
+    "sha256": "65c8e8f5ca726edda36cf990ebd09f07faee196d3ccf04d59b5adec7554810d8"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/arxiv_ids.py",
+    "sha": "d50a696135f9cc133f3d4456b9d88b10eedbe3e7",
+    "size": 3711,
+    "status": "verified",
+    "sha256": "72117414d4186d292a87b013d3c8349c94091fc25700be353074dfa70b867d1b"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/get_abstract.py",
+    "sha": "9aaca78f42ac366c3c00b40079602940f42fbacc",
+    "size": 6250,
+    "status": "verified",
+    "sha256": "ec9a85a440aa2d22f119bfdb2c328d1a5f7c267e96c6eed0b9a984e76358d228"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/citation_graph.py",
+    "sha": "e3838db7e0c8b6c1aec1d6fbf025031042a26ba6",
+    "size": 21905,
+    "status": "verified",
+    "sha256": "1109b2503509d219b7050fdef3818be034c38a40afa47aadf1c0f9648c5c5aa6"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/export_citations.py",
+    "sha": "788813a38ba90d573729d172630f401ecb6670a2",
+    "size": 13306,
+    "status": "verified",
+    "sha256": "19265a8653d624765f87e99dab10b481990644a47c58d07da3a06b71e59ac91f"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/latex.py",
+    "sha": "b9d392f742cd49629e66736b72f07b85946f02bd",
+    "size": 20142,
+    "status": "verified",
+    "sha256": "3859621266def0bef2a3825dc980a8e09885fbff288c6c2a1deb46f3e73b7a22"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/latex_archive.py",
+    "sha": "694d538a9c9dc2780459ed20ebb1451dd36b2513",
+    "size": 14874,
+    "status": "verified",
+    "sha256": "e0e3a82773c5a1438fc589eb184dc03b12f7ebe66129743c2e051839b4b3a48f"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/content.py",
+    "sha": "ee317be94a00b9e87d788053e192c18b952d7173",
+    "size": 5159,
+    "status": "verified",
+    "sha256": "5844b96c38816916140ee439ff8f19b566518ba3b77360f1d1fbe67898f1a434"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/latex_flatten.py",
+    "sha": "9c82c458a1f41216b202e4d87efa8c8415f188b6",
+    "size": 15265,
+    "status": "verified",
+    "sha256": "80f78ea196905be1fd5727615d95f0c1fe69e91866455e0d9a5f8759770a4610"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/download.py",
+    "sha": "2364379f2e5bad174464f8bda8f59629b6f10650",
+    "size": 76616,
+    "status": "verified",
+    "sha256": "aeee7a3d0eca9076d7b11aa1699257d498d9cddef24245cd526e6121fb414e47"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/read_paper.py",
+    "sha": "189f3ceda0ec4cf643cba1e24f0dc99559492a62",
+    "size": 5672,
+    "status": "verified",
+    "sha256": "f825783a60664c6c8a248874c0f067e054aa0bdcdd402173e074af3067fb1f3e"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/list_papers.py",
+    "sha": "f7e4073ae3bf23c23727e791ea0044c5d4b070ce",
+    "size": 11692,
+    "status": "verified",
+    "sha256": "726dff69a69e256f5da48a19952d4e2199da557fc6411966d2525ba779045a68"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/semantic_search.py",
+    "sha": "a7820b8a0d3e93d9163267a29e4a96e776baf33f",
+    "size": 15026,
+    "status": "verified",
+    "sha256": "7d19df120839799ab89ecd548b648894da93587ed6050eb0806785fa750250db"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/paper_outline.py",
+    "sha": "c043312e9c6cff1292db6b9538f105d92d3a6ed5",
+    "size": 52913,
+    "status": "verified",
+    "sha256": "abc28899f52658e7423f8bbb9fe524242b1c948dbbe7461674aab9b26169d2ee"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "src/arxiv_mcp_server/tools/search.py",
+    "sha": "8b76738c0d35e5c0a1f64031fe209b796de4312e",
+    "size": 25953,
+    "status": "verified",
+    "sha256": "21f4a480be7087b4d6f7bc64401adc2e65a6aad659ba39a744d2edede8d8c2c0"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/fixtures/__init__.py",
+    "sha": "e558e02fb520bc6c47848cfa128b4aba5b0751cb",
+    "size": 48,
+    "status": "verified",
+    "sha256": "c12f92bf212c1c4a291e490ea6d4ff414d0c1747ca6ede63ce72e5f2afbfc40e"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/prompts/conftest.py",
+    "sha": "1bc07680b62ee93be7350629f8b05eb49e30f667",
+    "size": 1366,
+    "status": "verified",
+    "sha256": "2366bc9ac971a798704ac693b1550479cd96a6b6a98e17781c0edf1f7ffdd1fd"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/prompts/test_prompt_integration.py",
+    "sha": "2a8be23021bfd7907c2c23fba7c64a42354c9c25",
+    "size": 1661,
+    "status": "verified",
+    "sha256": "c2aaf877409edf92728d093ea47405ae852ec5e8f0fe0202c4540195dd86e7ae"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/conftest.py",
+    "sha": "ea872f2e0976d150cd25ecbfa26bfe0b5537d36b",
+    "size": 2138,
+    "status": "verified",
+    "sha256": "e9c3ab53e995e60e151f893dcb4905fe67c2e08b9e370aa0a514849e08ce2494"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/__init__.py",
+    "sha": "8f8e44d7085376d5666cc60eadcd4ea8ced42bb0",
+    "size": 34,
+    "status": "verified",
+    "sha256": "6d25c2f0ef254bf6366c1ce20edf93fa30ddfca7cea673a0e1ec1ca1440e68f9"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/fixtures/paper_outlines.py",
+    "sha": "14c0a57a928ecf4e4dc3809c04aef07fd42965f7",
+    "size": 5321,
+    "status": "verified",
+    "sha256": "90dd9d06fb01893f2b2e78f087f3e63673b848fd09bd3170088b6f769a85aac5"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/prompts/test_prompts.py",
+    "sha": "7552e49a590adafde75bee634d7198e8a7496601",
+    "size": 4735,
+    "status": "verified",
+    "sha256": "92e4fa37d2f717fa15fe9c7f664ee472821b9d929a35a9d00e9d13be058d5a24"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_config.py",
+    "sha": "750ef0e441fbdc40ee97ce7c6f56f682a4d6c8dc",
+    "size": 11710,
+    "status": "verified",
+    "sha256": "25499a70dbd7b9290e16ebbd377dc5e47b371a541d753eb57986c35dafc315e5"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/repro/repro_406.py",
+    "sha": "eb9d088db1376992e00026630c30584994c0495f",
+    "size": 7298,
+    "status": "verified",
+    "sha256": "f6df27ca3850f573ff91f1a6747c01fa990448a219ede621fc42e397efaa09f7"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_blocker_fixes.py",
+    "sha": "4ececfbb7365a6576bc4cb2d57bbf2f946178958",
+    "size": 24796,
+    "status": "verified",
+    "sha256": "16381896c0902051e9273d16d04bd457aabe638fccde3664dc1b2457fcc59348"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_arxiv_api.py",
+    "sha": "47af3118b7afa1039e16d1a00ba6e5207d89368d",
+    "size": 3035,
+    "status": "verified",
+    "sha256": "63b5a289dff9a42129725ff0569402a16b44730f12039d2747f811ac4d3fcb01"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/repro/repro_hidden_fp_stall.py",
+    "sha": "161b9cc132cf025783ae8e0917a35c3b86d0f306",
+    "size": 3751,
+    "status": "verified",
+    "sha256": "dbadd0ae119ed79d3f289e6b133b6935cacd250e56a0106069b756f23fab5de3"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_installed_wheel_smoke.py",
+    "sha": "c4fb7f831d8a9d73485b65d5e45275f10a6e0259",
+    "size": 2297,
+    "status": "verified",
+    "sha256": "66866dd48f5a6a14b7d34ac144a055785397d34565116efc381a06237a3ea7aa"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_mcpb_smoke.py",
+    "sha": "c27acc3ed3fd316a55fb8f724145e4d4a9297a0c",
+    "size": 2036,
+    "status": "verified",
+    "sha256": "9b5cab9bc8b96a6d7d24d30585f4e664b7be05698ec222bad887142edfdea32b"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_import_boundaries.py",
+    "sha": "dfce2f7a325ea5b67890799fd796cae2b1663fa2",
+    "size": 876,
+    "status": "verified",
+    "sha256": "45bdcda666c679dff2b10d4b949a48d0fd1a5646a242f511e4c5a7019db0b961"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_mcp_bound_content_defaults.py",
+    "sha": "e9001b84c4f5c3983658ef71098f7289f59d575f",
+    "size": 3093,
+    "status": "verified",
+    "sha256": "b046f5179c8dcccf69416d928e26a0571b8f61e64ba9bd7352a73a10c98bc927"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_mcp_tool_error_semantics.py",
+    "sha": "5faa13679ea0d901619a64c1ad0f6dbbca280ae9",
+    "size": 1156,
+    "status": "verified",
+    "sha256": "98f1ea21b2c81ffa18704ecc6ab384ce23ac348a25ff4f3154527c7b616ff4fc"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_rate_limiter_checks.py",
+    "sha": "225e60c19f7c72fe50c31c373fe46fa845fc10b3",
+    "size": 4387,
+    "status": "verified",
+    "sha256": "5667021662a557606c027ac91b9d4b0f44ae71f952208bd02d04c08b433b56e4"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_tool_schemas.py",
+    "sha": "7e88e761c6a3e3761655e69b5ff8a3374dda87c3",
+    "size": 5481,
+    "status": "verified",
+    "sha256": "753e6e999170d3a7041b1802e8740f399dd780c39cfe64a3842e5a4073cf4ee2"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_arxiv_ids.py",
+    "sha": "559874f5cf82b8a5b39c8e7c8ac4d1e5a3bee887",
+    "size": 3615,
+    "status": "verified",
+    "sha256": "438ddb3b86072083f8b4826f969ea8b986160658babb0f17e9af06121275528a"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_retry_infrastructure.py",
+    "sha": "dabc7c554cb9bc021c544800ae2ca641b02b3139",
+    "size": 15322,
+    "status": "verified",
+    "sha256": "8336ffcceef3de7a31b45aa09e19e2f568095589ddaa1fefdb3b39253bf099ff"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_release_metadata.py",
+    "sha": "3e1750702315c5b0725e8b798d2dc0df70d4d6fc",
+    "size": 8359,
+    "status": "verified",
+    "sha256": "dc05a73c9888f14472ee2d94ee08347964f20150acef9d129bcc70e5f09d8b91"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/test_transport.py",
+    "sha": "044d3e02396cce78be49f59f674c69155ffb8147",
+    "size": 6205,
+    "status": "verified",
+    "sha256": "5084954256da110eb4addd62c20ac866d7c94d1f55503f1d3ff2a89b527e1720"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_alerts.py",
+    "sha": "0906ce6cb00ef8bcedf2c1dc658df0c4e021c41a",
+    "size": 32674,
+    "status": "verified",
+    "sha256": "82544304893030bcb2c843b9ff5f29cde5f593a1ff5d53741cddb806c0b6fd98"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_content.py",
+    "sha": "0ed68017353cf16d5d390496313d7cfc5356687e",
+    "size": 8617,
+    "status": "verified",
+    "sha256": "24d742be2582f7ce94598e82835b235802dab0098598a40070fbb1a721719328"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_download.py",
+    "sha": "659c299fb28e22848aa22992df70675671be9fd4",
+    "size": 44754,
+    "status": "verified",
+    "sha256": "410a5caef0315cfddf2880f40175a5cd7474d88c8bf618c7546d84d178551239"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_download_force.py",
+    "sha": "a4fe95c03dd7ebf092df98a62ef4e64d3e5a4480",
+    "size": 6748,
+    "status": "verified",
+    "sha256": "b8a6c780258bac1d28ecbc431d851901174b062f05cb6ec0f1914a2b43a64d85"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_download_html.py",
+    "sha": "7dc1a3afae3e092f938b90b8625649320b758a90",
+    "size": 17503,
+    "status": "verified",
+    "sha256": "ffcf25b707957c4a05d4c924cf6d6eb152c3d9799d1a7587b36e0851c7320f00"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_citation_graph.py",
+    "sha": "95bcdecb616e34e483336d3358ccb598c8e1d611",
+    "size": 35665,
+    "status": "verified",
+    "sha256": "0c53b0b12b4e72de284e93ec7bfff01e29d7f5282278b98de8fb7e1a96a5464d"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_download_footnotemark.py",
+    "sha": "805bcdd952e04bf5407bb99f14ef066170d926da",
+    "size": 2890,
+    "status": "verified",
+    "sha256": "fbda9ad0ea0851b8506f393e727f4fd4e8a4344bb1291baeeead0e1dde03dbd8"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_download_html_title.py",
+    "sha": "99165faf41387046520e5c2bdd6d873658516322",
+    "size": 3396,
+    "status": "verified",
+    "sha256": "e6da6cdd9d504b5fbff887427a70e9782db0aff55bd02d688783b1ddfeebc135"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_download_sidecar.py",
+    "sha": "7e31b7f94e548b0c0b4d6301f159d97865086e2a",
+    "size": 5648,
+    "status": "verified",
+    "sha256": "fe7dbe2e1ec8cb5274c4166cf77fdeac25ca9bf68cfcbbea8993f512b09b397c"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_download_icml_style.py",
+    "sha": "f6a491f9e78bdc8b69346185715de6fa867549c6",
+    "size": 3706,
+    "status": "verified",
+    "sha256": "fcfafcf209d55be506bd005b2f734e7b37ed2b8dfcdbbaa62fb9dafb516510d9"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_export_citations.py",
+    "sha": "e1a664c9fe124e98d0dfd7f8dca9cfe48942d07e",
+    "size": 24207,
+    "status": "verified",
+    "sha256": "0442584ec602b36e89532413d13bb2ce034c4f1956fe7f8e4d374b47a832dfc3"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_download_html_frontmatter.py",
+    "sha": "abfd9d4aeb23da1896243cdc3ff59190b6f35afb",
+    "size": 4879,
+    "status": "verified",
+    "sha256": "76cdc1c002066c23f2ebac1f44e0787e48dcea28693f4bb2df250ec7d82daeab"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_download_html_switch_noise.py",
+    "sha": "a01264034c4afc5ce277621c54c1f540e0dd0ab6",
+    "size": 4625,
+    "status": "verified",
+    "sha256": "81aba0cfe34e80a2f9579e9a0c8b58e001708b388f5acd62aa02e2d85663f65d"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_legacy_id_storage.py",
+    "sha": "5edec698c89600b02f7e314ac4df4eedda079038",
+    "size": 6217,
+    "status": "verified",
+    "sha256": "8073bedb39092f8ee6c9fecdfbd1b54dad3764316af1527a22251eddb58d0580"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_metadata_deadline_integration.py",
+    "sha": "b87855cec5097016ff0eb9128484bf29faf47469",
+    "size": 19568,
+    "status": "verified",
+    "sha256": "4debfcac35e20ad64e5f387f1b7815383adddea80b1a9c5569ccca89e2a43215"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_list_papers.py",
+    "sha": "bae7853bd8e7c4d8b94516fe9008c10466df6751",
+    "size": 4256,
+    "status": "verified",
+    "sha256": "327cbb11c5fb83e06401e7cf0404539469394afc454781843845e0242a45d479"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_get_abstract.py",
+    "sha": "0ce4c19687255288f3597a67390690aa15e9f5f6",
+    "size": 20929,
+    "status": "verified",
+    "sha256": "22787eef675cee71bdac417c79cfdeeff9d2afff49a5f4d8cba1e106addec677"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_metadata_deadline.py",
+    "sha": "96ca69dd1702d52a22c069eaa7c71b39a30de6d9",
+    "size": 20367,
+    "status": "verified",
+    "sha256": "4b76efbeb1c4ba4360f8bc0dd7560170ffc0789bba387ad91e65690061bd2eae"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_latex.py",
+    "sha": "3f1b239add4c0985316c14816c9d2367960d18d1",
+    "size": 24214,
+    "status": "verified",
+    "sha256": "0b1f3d0eabd55bfa0d99ca21dfb366e2889f9a8df0a69da6d6fd539384921c9e"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_no_version_downgrade.py",
+    "sha": "d1182b5249d9b3c3979d684f450a4de8dbbb283e",
+    "size": 11665,
+    "status": "verified",
+    "sha256": "1f548b0de320e77103624be0d1742cec76dc9aa7be6d4c9ff722d5eb668bc709"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_parser_review_fixes.py",
+    "sha": "933607d190cf076aee33645fb453795e6050212e",
+    "size": 4297,
+    "status": "verified",
+    "sha256": "86f4f61240c99e80ebf690d99584bb0adaa500bb89e3bf34c4a2b06983ed3e58"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_read_paper.py",
+    "sha": "a342937eb68e243d12d2d429c0f9514fc5593b3b",
+    "size": 10811,
+    "status": "verified",
+    "sha256": "ade96c5702918dba896107ca5e6b41d75902eed8a6937c653c71bd409c6f5c18"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_paper_id_normalize.py",
+    "sha": "a10939c1c018e0aa35414da508a44760f3e1ce25",
+    "size": 8377,
+    "status": "verified",
+    "sha256": "98b6fc6907f7d7238a6c1970d4bbf837d57fd61bcf11dd38d23dcd7e9ecc02bc"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_paper_outline.py",
+    "sha": "95fe56124db358bf5822f49d5acae28b5b5eeb2f",
+    "size": 81126,
+    "status": "verified",
+    "sha256": "18d17e3001755999a4db1397d124a1ff88b2278f54b94c1a48695849f0cc30b1"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_search.py",
+    "sha": "c05d3a4a4db5663260ad0b2e5d245183d8d1492f",
+    "size": 50202,
+    "status": "verified",
+    "sha256": "c6e14d57b681ce74b7b5b069688a33d877a0c13f62d74a496a7b91d8cac65776"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_versioned_storage_keys.py",
+    "sha": "ee9e2912b0bfadc55c30b7e34ed7219afb8798d0",
+    "size": 7242,
+    "status": "verified",
+    "sha256": "0563b598b4fe9715e00aa7137fde66e2941f71ebb9e59041a4a1e11d4cbcb4f8"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_semantic_search.py",
+    "sha": "2dba9d15a7ab22fbe935e5551ae1a35442762e29",
+    "size": 4924,
+    "status": "verified",
+    "sha256": "32e094f88a74a7ebfc4bbaf66b62025d87c789642ef3170935f83f9a8bcd69be"
+  },
+  {
+    "repository": "blazickjp/arxiv-mcp-server",
+    "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+    "path": "tests/tools/test_semantic_dependency.py",
+    "sha": "17182ac07b8f3098b14900372e3081d21c346117",
+    "size": 718,
+    "status": "verified",
+    "sha256": "d1a7a78c0d0104b31e32913cc0fb193270d6cc3ed59b4cfc5cb7a300cea49868"
+  },
+  {
+    "repository": "figma/mcp-server-guide",
+    "revision": "5f3024c3decd83ff6f0bfb3ef36a2c4cfbff961d",
+    "path": ".mcp.json",
+    "sha": "440d12baa0e1264183a906997a674473fcb44013",
+    "size": 1417,
+    "status": "verified",
+    "sha256": "8e44ae5557d480297ead261ced4a1a70da37cdba28806ecd5020fc590010c96d"
+  },
+  {
+    "repository": "figma/mcp-server-guide",
+    "revision": "5f3024c3decd83ff6f0bfb3ef36a2c4cfbff961d",
+    "path": ".antigravity-plugin/mcp_config.json",
+    "sha": "cf41a5576c4968813344e6cfb42eaa9a9b7cbbf0",
+    "size": 176,
+    "status": "verified",
+    "sha256": "8b9e7519bf0240090bf8483a6842c32ee7d313fb1ebd8512077ba61b16049ddf"
+  },
+  {
+    "repository": "figma/mcp-server-guide",
+    "revision": "5f3024c3decd83ff6f0bfb3ef36a2c4cfbff961d",
+    "path": "figma-power/mcp.json",
+    "sha": "4a9bcff959ed7160034c5e2468cd071c35dd60a4",
+    "size": 110,
+    "status": "verified",
+    "sha256": "719b51ce7c565fd5ed49ad6537112d71a0ba8dccc10b94ecce43403b8025e000"
+  },
+  {
+    "repository": "figma/mcp-server-guide",
+    "revision": "5f3024c3decd83ff6f0bfb3ef36a2c4cfbff961d",
+    "path": "mcp.json",
+    "sha": "5f69db4bb96e8c77a7a13168a6d69062b13ffabe",
+    "size": 1371,
+    "status": "verified",
+    "sha256": "080bab551d11739ac043d7dcdfd9413d991d20281e084f3361ba5fe80e7b913d"
+  },
+  {
+    "repository": "figma/mcp-server-guide",
+    "revision": "5f3024c3decd83ff6f0bfb3ef36a2c4cfbff961d",
+    "path": "workflow-skills/video-interaction-mapper/scripts/update_run_manifest.py",
+    "sha": "9d3df0e716daff1be3c749af58a2720214d0d5cb",
+    "size": 7145,
+    "status": "verified",
+    "sha256": "a9bb5a8121cfe2f14e531ca1db5f8ece48a3270a6dceb4285f899b7de85d7a92"
+  },
+  {
+    "repository": "figma/mcp-server-guide",
+    "revision": "5f3024c3decd83ff6f0bfb3ef36a2c4cfbff961d",
+    "path": "workflow-skills/video-interaction-mapper/scripts/prepare_upload_frames.py",
+    "sha": "c35d2f17b8b3ac342390dc7cb4abf77e8f27c107",
+    "size": 7284,
+    "status": "verified",
+    "sha256": "a6cddf1e28c0378832ee14408965292475905bced2cbd775e15a536332d4a522"
+  },
+  {
+    "repository": "figma/mcp-server-guide",
+    "revision": "5f3024c3decd83ff6f0bfb3ef36a2c4cfbff961d",
+    "path": "workflow-skills/video-interaction-mapper/scripts/resolve_moment_frames.py",
+    "sha": "86b2fe85363de671375a77c8224c142dcee5599d",
+    "size": 6465,
+    "status": "verified",
+    "sha256": "a174dc99505077990af0b382cbe6f5a013349be3a399db83478010a5fee19162"
+  },
+  {
+    "repository": "figma/mcp-server-guide",
+    "revision": "5f3024c3decd83ff6f0bfb3ef36a2c4cfbff961d",
+    "path": "workflow-skills/video-interaction-mapper/scripts/extract_key_frames.py",
+    "sha": "908cbddbe54455bffed1e085d46aecb3e21dc5ab",
+    "size": 13692,
+    "status": "verified",
+    "sha256": "1a91a2d0c77355303d575dc4104f865146e7509b8ee93fa19d8dcb7000a9e132"
+  },
+  {
+    "repository": "figma/mcp-server-guide",
+    "revision": "5f3024c3decd83ff6f0bfb3ef36a2c4cfbff961d",
+    "path": "workflow-skills/video-interaction-mapper/scripts/generate_figma_calls.py",
+    "sha": "45a98e02ecec84b48c68d346bdcb3e87df973999",
+    "size": 24564,
+    "status": "verified",
+    "sha256": "3658c364eb7c893fa8218614baf8b0850cc6a1bbbe2cbd05746ec0615704171b"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "office_word_mcp_server/__init__.py",
+    "sha": "d71a049fba7526ec79dab14eda8c6b05fd9afcca",
+    "size": 75,
+    "status": "verified",
+    "sha256": "9f81caad3781e49982666c9fb186133c9a3abbd30a35629ec84feeafd1ade863"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "pyproject.toml",
+    "sha": "ca9ea6a09addfa816a28e4f4377653d78cec011c",
+    "size": 1010,
+    "status": "verified",
+    "sha256": "00a4f078e7da767de14beecf0d6704b606d12be023a834082d410661f190f3c8"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "mcp-config.json",
+    "sha": "246a3ef281c8662dc5c39d6e20fadee052b143dd",
+    "size": 374,
+    "status": "verified",
+    "sha256": "e0fc2abc3e5ee788792b589056beec82fbdc8140ad9a571818f567e165ea727b"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "requirements.txt",
+    "sha": "7077dbb023f05ac438bff446d19de19e09de31da",
+    "size": 59,
+    "status": "verified",
+    "sha256": "713b0650babb1498cdc2598b7aeda0da4270378531a8986456864400fba46766"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "setup_mcp.py",
+    "sha": "f0caa5c4abf144aa4b54026e70347e2e876f9abc",
+    "size": 19633,
+    "status": "verified",
+    "sha256": "3dc16dc35954656864a2e8f5531f86ffff7474b2128d8391488a88a355b921b6"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "__init__.py",
+    "sha": "d9b86b650fb7864f1efac779e71e8804f214e261",
+    "size": 125,
+    "status": "verified",
+    "sha256": "a3d48770fedb1011946fe2b1d2de97ee5212e45000abed10a9b4f91b253cd547"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/core/comments.py",
+    "sha": "9695c8b622044cdbf153093765de65824eb4d2ba",
+    "size": 7207,
+    "status": "verified",
+    "sha256": "85a94fe5387e785c493250f3b2979eb3ddd733a666816cb7e7f617fa25b9cbd2"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "tests/test_convert_to_pdf.py",
+    "sha": "c692fc82a982ff69176d78a3b8215ca7dc8f6c3a",
+    "size": 3562,
+    "status": "verified",
+    "sha256": "dff2120ff9c081939b0315fdc578d28114f791535be9994c16c017275555c3b2"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/__init__.py",
+    "sha": "85d71f3950192d8de08036676e3a77808b40e72b",
+    "size": 475,
+    "status": "verified",
+    "sha256": "b5adca72464ce060f7d64e0899617fd875a6aa778774b9ca71a9be89adb16c87"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "test_formatting.py",
+    "sha": "f29f932a923a41c8d9113140604f7117842e1f4d",
+    "size": 3301,
+    "status": "verified",
+    "sha256": "5142bb02e50d50a86e40a301d77ddd9f71ff4f3bade75b1a99e1f66e9250246a"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/core/footnotes.py",
+    "sha": "f5147e0cf70d17475b712986c7f0b53c89c634ed",
+    "size": 32618,
+    "status": "verified",
+    "sha256": "72759d8ddcae7ea7c1ed682641136781898a14e110d91d79c5bde3ab48fd9494"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/core/protection.py",
+    "sha": "e706fd79c6b14fbe94d588ecbb824f213d436acb",
+    "size": 8462,
+    "status": "verified",
+    "sha256": "4bfc28ff8b79fd9c2e063fbefecaba54c83e8abfa5536c7936cea5074f303251"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/core/styles.py",
+    "sha": "49c5d51fbf00db7331a9f037c39c5f40789f9055",
+    "size": 4942,
+    "status": "verified",
+    "sha256": "31a6c5f6e3b9b1a6906874b2a8df238ac7e9891d3c83ae0c18fe50513087a141"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/core/tables.py",
+    "sha": "9cc8dcf6cabee5f870d80dee8868c086688c9704",
+    "size": 29656,
+    "status": "verified",
+    "sha256": "fdd91d4bf61a793c8a33f2a6bdb76482913d4e3bfc04543cf846232a29f30463"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/core/__init__.py",
+    "sha": "a0aa41db76cf40335a0fcbd63dff24bdd0dcc689",
+    "size": 679,
+    "status": "verified",
+    "sha256": "490b03309f0699c98655858bf503174481571faaaca61e53b8ed1569bc8304ed"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/core/unprotect.py",
+    "sha": "8daddef20ef6af310d2b46021d121eb4ace8127c",
+    "size": 3053,
+    "status": "verified",
+    "sha256": "afde793e3c591733ba8ab5ea7a7313361e66fb796b20054a32f5943466c35313"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/main.py",
+    "sha": "a6a0e491ddab71ba599ff84ca55e80fd455fe2ad",
+    "size": 30505,
+    "status": "verified",
+    "sha256": "967026a662e86b67d62994cbf020864995b66d48570ab0018dbe875a8002445d"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/tools/__init__.py",
+    "sha": "e18325360c8c314e0a477998be870af590c39a48",
+    "size": 1268,
+    "status": "verified",
+    "sha256": "a51c81b7b81f3f6caccf6a6fe0af504aad3c3a099be3984c08ca86a618433a11"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/tools/content_tools.py",
+    "sha": "d82500079412ccd47c97b8a2eb23812188230475",
+    "size": 19600,
+    "status": "verified",
+    "sha256": "45e54b7990093675dc4fd18b98da77b103ef16d8c69246ccd9fe1f9173cb6c44"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/tools/comment_tools.py",
+    "sha": "ffe88122f916665e7f887f8f962fa62225bccd69",
+    "size": 5021,
+    "status": "verified",
+    "sha256": "3f3a1c96c7a3e7066c73b58ed64037b7474f202dd87d0b900b63bb62eab4f58f"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/tools/document_tools.py",
+    "sha": "c15ad38ddc49a211db5634ab872a1f1af652bdd0",
+    "size": 7807,
+    "status": "verified",
+    "sha256": "e7a5f1106db3b5eeb45b0055e5e57916e60f22c3ccdae8fd74504849daf82f19"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/tools/extended_document_tools.py",
+    "sha": "8e51b23054f4b9cb152120467b64ee364f85ac52",
+    "size": 8207,
+    "status": "verified",
+    "sha256": "977eb2e8ebcb45fffab3ccb73d8f596e95769edfd9822a5e48cef4a60cf79909"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/tools/format_tools.py",
+    "sha": "a60fc0c4cb007ac60b8cfe408204f99f8bc77a22",
+    "size": 44248,
+    "status": "verified",
+    "sha256": "7be971915695e8f3cee38328e00bef7659248a3c1b3563393bb9a1afec62f76a"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/tools/footnote_tools.py",
+    "sha": "72b0190da330ae34cca7d2498ab3654c2aef9f44",
+    "size": 25049,
+    "status": "verified",
+    "sha256": "483b04be6ed3865eb35228aef07a3132a7a7f0808c68aae2d21e7ca788260813"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/utils/__init__.py",
+    "sha": "1146a586e21741162f6e9d0cdd2f65f129843380",
+    "size": 427,
+    "status": "verified",
+    "sha256": "fc4b29cd24dc0a208750d88513c6052e237fe4d22b2c7af0b927a81a643f55e7"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/tools/protection_tools.py",
+    "sha": "e52fd34a8343f860f10742bd4619b472cb1d4be5",
+    "size": 10634,
+    "status": "verified",
+    "sha256": "8bc7513df7f64f54a575791d467f4aabd6fc4ab92315314b624887fb6d87e4e4"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/utils/extended_document_utils.py",
+    "sha": "007d5ce1e35883fbf0822d6bc97f995fed2eefb7",
+    "size": 6987,
+    "status": "verified",
+    "sha256": "e04e6af24e1040df6347e28a5b5314028e7230d974d6908e8b32a870a2f8ecf7"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/utils/document_utils.py",
+    "sha": "c3681c08b85f31d5b6b967ebd8c6d1d0c4a3bfe0",
+    "size": 24037,
+    "status": "verified",
+    "sha256": "0b39155433a38b920a8ab79b7416726f6d187f1efccea0ae930f6c1b5b99529a"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_document_server/utils/file_utils.py",
+    "sha": "7974707c658071a2af6519c90ec538e07f0bbb85",
+    "size": 2641,
+    "status": "verified",
+    "sha256": "8b42a038ba0a3cb67bb37c95fa62391972dcdd8952e9b9d71283f8287130805c"
+  },
+  {
+    "repository": "GongRzhe/Office-Word-MCP-Server",
+    "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "path": "word_mcp_server.py",
+    "sha": "cd92472c04e9b4e375a066b9203d08dabd5b8804",
+    "size": 237,
+    "status": "verified",
+    "sha256": "55bfc2002f979685aacd45d6c61268cd71e5d795dcae9a701a0aa53378590661"
+  }
+]

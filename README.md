@@ -41,6 +41,7 @@ Updated 15 November 2026. Correlation checkpoint `7b99d5c`; detection benchmark 
 | Live OSV advisory-specific calibration | **6/6 checks pass** |
 | Original dependency/MCP correlation controls | **13/13 pass** |
 | Original tool/call-path/dependency controls | **16/16 expected outcomes** |
+| Frozen real-repository correlation pilot | **3 repositories; 126 verified files; 7 unresolved declarations; 0 groups** |
 | Pilot projects with selected before/after behavior checks | **10** |
 | Pinned offline scan smoke | **273 files read in 52.89 seconds** |
 
