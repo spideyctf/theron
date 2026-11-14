@@ -1,0 +1,1166 @@
+{
+  "implementation_revision": "b8ec32f",
+  "framework_alias_audit": "framework-alias-audit.json",
+  "records": [
+    {
+      "repository": "alpacahq/alpaca-mcp-server",
+      "revision": "9daa38cc41d2327467b8dd83cceb06b457074cbc",
+      "default_branch": "main",
+      "python_files": 18,
+      "python_bytes": 158252,
+      "configurations": [],
+      "truncated": false,
+      "selection_status": "no_collected_mcp_config"
+    },
+    {
+      "repository": "ariadng/metatrader-mcp-server",
+      "revision": "bd2ff591e32cb492fafefe74221d502dd78b71ef",
+      "default_branch": "main",
+      "python_files": 113,
+      "python_bytes": 273020,
+      "configurations": [],
+      "truncated": false,
+      "selection_status": "no_collected_mcp_config"
+    },
+    {
+      "repository": "awslabs/mcp",
+      "revision": "5d58a6adaf89a056d0c14e732593dceb12e633df",
+      "default_branch": "main",
+      "python_files": 2620,
+      "python_bytes": 38768590,
+      "configurations": [
+        "src/aurora-dsql-mcp-server/kiro_power/mcp.json",
+        "src/cloudwatch-mcp-server/skills/agentcore-investigation/mcp/.mcp.json",
+        "src/healthlake-mcp-server/examples/mcp_config.json",
+        "src/mysql-mcp-server/kiro_power/mcp.json",
+        "src/postgres-mcp-server/kiro_power/mcp.json"
+      ],
+      "truncated": false,
+      "selection_status": "python_file_budget"
+    },
+    {
+      "repository": "baidu-maps/mcp",
+      "revision": "aca9b28924112106e261786abc2dadfc1b39dda4",
+      "default_branch": "main",
+      "python_files": 3,
+      "python_bytes": 37230,
+      "configurations": [],
+      "truncated": false,
+      "selection_status": "no_collected_mcp_config"
+    },
+    {
+      "repository": "BeehiveInnovations/pal-mcp-server",
+      "revision": "7afc7c1cc96e23992c8f105f960132c657883bb1",
+      "default_branch": "main",
+      "python_files": 249,
+      "python_bytes": 3035831,
+      "configurations": [],
+      "truncated": false,
+      "selection_status": "no_collected_mcp_config"
+    },
+    {
+      "repository": "blazickjp/arxiv-mcp-server",
+      "revision": "aeb82ecf0e3d6e44d6d1b0341aaef35be5d19df1",
+      "default_branch": "main",
+      "python_files": 84,
+      "python_bytes": 984403,
+      "configurations": [
+        ".mcp.json",
+        "mcp.json"
+      ],
+      "truncated": false,
+      "files": [
+        {
+          "path": ".mcp.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d362e8750add8e9c17f2c036506a6734b8307968",
+          "size": 129,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/d362e8750add8e9c17f2c036506a6734b8307968"
+        },
+        {
+          "path": "mcp.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "73e46cb682801983a6378d546ac91e6c40e8fde9",
+          "size": 106,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/73e46cb682801983a6378d546ac91e6c40e8fde9"
+        },
+        {
+          "path": "pyproject.toml",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3f1e3a838e459d58e9289ad240895187abb25616",
+          "size": 2528,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/3f1e3a838e459d58e9289ad240895187abb25616"
+        },
+        {
+          "path": "scripts/smoke_installed_wheel.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9701184a09bcc0092e8ff5611a84858d2c60107e",
+          "size": 8948,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/9701184a09bcc0092e8ff5611a84858d2c60107e"
+        },
+        {
+          "path": "scripts/smoke_mcpb.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b896467f2e34cca1238e1b8f37d2ae62af2be265",
+          "size": 4351,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/b896467f2e34cca1238e1b8f37d2ae62af2be265"
+        },
+        {
+          "path": "src/arxiv_mcp_server/__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "46fd7d7e99e1aaee6abec0a95911bb752b544f3b",
+          "size": 197,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/46fd7d7e99e1aaee6abec0a95911bb752b544f3b"
+        },
+        {
+          "path": "src/arxiv_mcp_server/__main__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2f44a441bfa3d5fe09e717882bbf214e478caae8",
+          "size": 116,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/2f44a441bfa3d5fe09e717882bbf214e478caae8"
+        },
+        {
+          "path": "src/arxiv_mcp_server/arxiv_api.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "220ee4e80f187f5bd32e5ce01b47580af63d4a28",
+          "size": 32778,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/220ee4e80f187f5bd32e5ce01b47580af63d4a28"
+        },
+        {
+          "path": "src/arxiv_mcp_server/config.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "24c1606258c7a8c43193ff306219607b1e2bc989",
+          "size": 9224,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/24c1606258c7a8c43193ff306219607b1e2bc989"
+        },
+        {
+          "path": "src/arxiv_mcp_server/prompts/__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "81ce52cb253050ca13c444917859fc19204bc4aa",
+          "size": 148,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/81ce52cb253050ca13c444917859fc19204bc4aa"
+        },
+        {
+          "path": "src/arxiv_mcp_server/prompts/compare_papers_prompt.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3c4676ccfd15f22e7ef4c2c7a84987c605c77f0c",
+          "size": 529,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/3c4676ccfd15f22e7ef4c2c7a84987c605c77f0c"
+        },
+        {
+          "path": "src/arxiv_mcp_server/prompts/deep_research_analysis_prompt.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "5a7e27258d04ab54f5db3bf5d9960e109c99bdeb",
+          "size": 3945,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/5a7e27258d04ab54f5db3bf5d9960e109c99bdeb"
+        },
+        {
+          "path": "src/arxiv_mcp_server/prompts/handlers.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f8f1640d41e6c4c03fff6d0590d9b33841858f4a",
+          "size": 6216,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/f8f1640d41e6c4c03fff6d0590d9b33841858f4a"
+        },
+        {
+          "path": "src/arxiv_mcp_server/prompts/literature_review_prompt.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a4f48ae178678155fe68fe4a2405249b81c6a04e",
+          "size": 493,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/a4f48ae178678155fe68fe4a2405249b81c6a04e"
+        },
+        {
+          "path": "src/arxiv_mcp_server/prompts/prompt_manager.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "0e71c2bf8043dd8e5ee67596036b850f7f4718a7",
+          "size": 791,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/0e71c2bf8043dd8e5ee67596036b850f7f4718a7"
+        },
+        {
+          "path": "src/arxiv_mcp_server/prompts/prompts.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "836fb81a2a80762e7cd8cce2303ab13ede958dd5",
+          "size": 3922,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/836fb81a2a80762e7cd8cce2303ab13ede958dd5"
+        },
+        {
+          "path": "src/arxiv_mcp_server/prompts/summarize_paper_prompt.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "515f84df2f287d650db9bf31b55822985c16f0f4",
+          "size": 473,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/515f84df2f287d650db9bf31b55822985c16f0f4"
+        },
+        {
+          "path": "src/arxiv_mcp_server/resources/__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "7bbb0c3387407a98e1064e5ad7f77651310c8a2e",
+          "size": 354,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/7bbb0c3387407a98e1064e5ad7f77651310c8a2e"
+        },
+        {
+          "path": "src/arxiv_mcp_server/resources/papers.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "89c9c48d40c5aeef305a01a93d13eef9c3100d44",
+          "size": 4079,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/89c9c48d40c5aeef305a01a93d13eef9c3100d44"
+        },
+        {
+          "path": "src/arxiv_mcp_server/server.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3235f5759c48efe2c11b45407ea352008de77a49",
+          "size": 9567,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/3235f5759c48efe2c11b45407ea352008de77a49"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "1616118bbf0026dd141f4ff1afae070fb2bd1011",
+          "size": 2246,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/1616118bbf0026dd141f4ff1afae070fb2bd1011"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/alerts.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "522c23f530d09fd08bd6fd6f49aa67a71b352b74",
+          "size": 18597,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/522c23f530d09fd08bd6fd6f49aa67a71b352b74"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/arxiv_ids.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d50a696135f9cc133f3d4456b9d88b10eedbe3e7",
+          "size": 3711,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/d50a696135f9cc133f3d4456b9d88b10eedbe3e7"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/citation_graph.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e3838db7e0c8b6c1aec1d6fbf025031042a26ba6",
+          "size": 21905,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/e3838db7e0c8b6c1aec1d6fbf025031042a26ba6"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/content.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ee317be94a00b9e87d788053e192c18b952d7173",
+          "size": 5159,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/ee317be94a00b9e87d788053e192c18b952d7173"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/download.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2364379f2e5bad174464f8bda8f59629b6f10650",
+          "size": 76616,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/2364379f2e5bad174464f8bda8f59629b6f10650"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/export_citations.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "788813a38ba90d573729d172630f401ecb6670a2",
+          "size": 13306,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/788813a38ba90d573729d172630f401ecb6670a2"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/get_abstract.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9aaca78f42ac366c3c00b40079602940f42fbacc",
+          "size": 6250,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/9aaca78f42ac366c3c00b40079602940f42fbacc"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/latex.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b9d392f742cd49629e66736b72f07b85946f02bd",
+          "size": 20142,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/b9d392f742cd49629e66736b72f07b85946f02bd"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/latex_archive.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "694d538a9c9dc2780459ed20ebb1451dd36b2513",
+          "size": 14874,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/694d538a9c9dc2780459ed20ebb1451dd36b2513"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/latex_flatten.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9c82c458a1f41216b202e4d87efa8c8415f188b6",
+          "size": 15265,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/9c82c458a1f41216b202e4d87efa8c8415f188b6"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/list_papers.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f7e4073ae3bf23c23727e791ea0044c5d4b070ce",
+          "size": 11692,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/f7e4073ae3bf23c23727e791ea0044c5d4b070ce"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/paper_outline.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c043312e9c6cff1292db6b9538f105d92d3a6ed5",
+          "size": 52913,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/c043312e9c6cff1292db6b9538f105d92d3a6ed5"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/read_paper.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "189f3ceda0ec4cf643cba1e24f0dc99559492a62",
+          "size": 5672,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/189f3ceda0ec4cf643cba1e24f0dc99559492a62"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/search.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "8b76738c0d35e5c0a1f64031fe209b796de4312e",
+          "size": 25953,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/8b76738c0d35e5c0a1f64031fe209b796de4312e"
+        },
+        {
+          "path": "src/arxiv_mcp_server/tools/semantic_search.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a7820b8a0d3e93d9163267a29e4a96e776baf33f",
+          "size": 15026,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/a7820b8a0d3e93d9163267a29e4a96e776baf33f"
+        },
+        {
+          "path": "tests/__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "8f8e44d7085376d5666cc60eadcd4ea8ced42bb0",
+          "size": 34,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/8f8e44d7085376d5666cc60eadcd4ea8ced42bb0"
+        },
+        {
+          "path": "tests/conftest.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ea872f2e0976d150cd25ecbfa26bfe0b5537d36b",
+          "size": 2138,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/ea872f2e0976d150cd25ecbfa26bfe0b5537d36b"
+        },
+        {
+          "path": "tests/fixtures/__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e558e02fb520bc6c47848cfa128b4aba5b0751cb",
+          "size": 48,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/e558e02fb520bc6c47848cfa128b4aba5b0751cb"
+        },
+        {
+          "path": "tests/fixtures/paper_outlines.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "14c0a57a928ecf4e4dc3809c04aef07fd42965f7",
+          "size": 5321,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/14c0a57a928ecf4e4dc3809c04aef07fd42965f7"
+        },
+        {
+          "path": "tests/prompts/conftest.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "1bc07680b62ee93be7350629f8b05eb49e30f667",
+          "size": 1366,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/1bc07680b62ee93be7350629f8b05eb49e30f667"
+        },
+        {
+          "path": "tests/prompts/test_prompt_integration.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2a8be23021bfd7907c2c23fba7c64a42354c9c25",
+          "size": 1661,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/2a8be23021bfd7907c2c23fba7c64a42354c9c25"
+        },
+        {
+          "path": "tests/prompts/test_prompts.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "7552e49a590adafde75bee634d7198e8a7496601",
+          "size": 4735,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/7552e49a590adafde75bee634d7198e8a7496601"
+        },
+        {
+          "path": "tests/repro/repro_406.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "eb9d088db1376992e00026630c30584994c0495f",
+          "size": 7298,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/eb9d088db1376992e00026630c30584994c0495f"
+        },
+        {
+          "path": "tests/repro/repro_hidden_fp_stall.py",
+          "mode": "100755",
+          "type": "blob",
+          "sha": "161b9cc132cf025783ae8e0917a35c3b86d0f306",
+          "size": 3751,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/161b9cc132cf025783ae8e0917a35c3b86d0f306"
+        },
+        {
+          "path": "tests/test_arxiv_api.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "47af3118b7afa1039e16d1a00ba6e5207d89368d",
+          "size": 3035,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/47af3118b7afa1039e16d1a00ba6e5207d89368d"
+        },
+        {
+          "path": "tests/test_blocker_fixes.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "4ececfbb7365a6576bc4cb2d57bbf2f946178958",
+          "size": 24796,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/4ececfbb7365a6576bc4cb2d57bbf2f946178958"
+        },
+        {
+          "path": "tests/test_config.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "750ef0e441fbdc40ee97ce7c6f56f682a4d6c8dc",
+          "size": 11710,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/750ef0e441fbdc40ee97ce7c6f56f682a4d6c8dc"
+        },
+        {
+          "path": "tests/test_import_boundaries.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "dfce2f7a325ea5b67890799fd796cae2b1663fa2",
+          "size": 876,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/dfce2f7a325ea5b67890799fd796cae2b1663fa2"
+        },
+        {
+          "path": "tests/test_installed_wheel_smoke.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c4fb7f831d8a9d73485b65d5e45275f10a6e0259",
+          "size": 2297,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/c4fb7f831d8a9d73485b65d5e45275f10a6e0259"
+        },
+        {
+          "path": "tests/test_mcp_bound_content_defaults.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e9001b84c4f5c3983658ef71098f7289f59d575f",
+          "size": 3093,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/e9001b84c4f5c3983658ef71098f7289f59d575f"
+        },
+        {
+          "path": "tests/test_mcp_tool_error_semantics.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "5faa13679ea0d901619a64c1ad0f6dbbca280ae9",
+          "size": 1156,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/5faa13679ea0d901619a64c1ad0f6dbbca280ae9"
+        },
+        {
+          "path": "tests/test_mcpb_smoke.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c27acc3ed3fd316a55fb8f724145e4d4a9297a0c",
+          "size": 2036,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/c27acc3ed3fd316a55fb8f724145e4d4a9297a0c"
+        },
+        {
+          "path": "tests/test_rate_limiter_checks.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "225e60c19f7c72fe50c31c373fe46fa845fc10b3",
+          "size": 4387,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/225e60c19f7c72fe50c31c373fe46fa845fc10b3"
+        },
+        {
+          "path": "tests/test_release_metadata.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3e1750702315c5b0725e8b798d2dc0df70d4d6fc",
+          "size": 8359,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/3e1750702315c5b0725e8b798d2dc0df70d4d6fc"
+        },
+        {
+          "path": "tests/test_retry_infrastructure.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "dabc7c554cb9bc021c544800ae2ca641b02b3139",
+          "size": 15322,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/dabc7c554cb9bc021c544800ae2ca641b02b3139"
+        },
+        {
+          "path": "tests/test_tool_schemas.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "7e88e761c6a3e3761655e69b5ff8a3374dda87c3",
+          "size": 5481,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/7e88e761c6a3e3761655e69b5ff8a3374dda87c3"
+        },
+        {
+          "path": "tests/test_transport.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "044d3e02396cce78be49f59f674c69155ffb8147",
+          "size": 6205,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/044d3e02396cce78be49f59f674c69155ffb8147"
+        },
+        {
+          "path": "tests/tools/test_alerts.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "0906ce6cb00ef8bcedf2c1dc658df0c4e021c41a",
+          "size": 32674,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/0906ce6cb00ef8bcedf2c1dc658df0c4e021c41a"
+        },
+        {
+          "path": "tests/tools/test_arxiv_ids.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "559874f5cf82b8a5b39c8e7c8ac4d1e5a3bee887",
+          "size": 3615,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/559874f5cf82b8a5b39c8e7c8ac4d1e5a3bee887"
+        },
+        {
+          "path": "tests/tools/test_citation_graph.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "95bcdecb616e34e483336d3358ccb598c8e1d611",
+          "size": 35665,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/95bcdecb616e34e483336d3358ccb598c8e1d611"
+        },
+        {
+          "path": "tests/tools/test_content.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "0ed68017353cf16d5d390496313d7cfc5356687e",
+          "size": 8617,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/0ed68017353cf16d5d390496313d7cfc5356687e"
+        },
+        {
+          "path": "tests/tools/test_download.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "659c299fb28e22848aa22992df70675671be9fd4",
+          "size": 44754,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/659c299fb28e22848aa22992df70675671be9fd4"
+        },
+        {
+          "path": "tests/tools/test_download_footnotemark.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "805bcdd952e04bf5407bb99f14ef066170d926da",
+          "size": 2890,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/805bcdd952e04bf5407bb99f14ef066170d926da"
+        },
+        {
+          "path": "tests/tools/test_download_force.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a4fe95c03dd7ebf092df98a62ef4e64d3e5a4480",
+          "size": 6748,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/a4fe95c03dd7ebf092df98a62ef4e64d3e5a4480"
+        },
+        {
+          "path": "tests/tools/test_download_html.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "7dc1a3afae3e092f938b90b8625649320b758a90",
+          "size": 17503,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/7dc1a3afae3e092f938b90b8625649320b758a90"
+        },
+        {
+          "path": "tests/tools/test_download_html_frontmatter.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "abfd9d4aeb23da1896243cdc3ff59190b6f35afb",
+          "size": 4879,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/abfd9d4aeb23da1896243cdc3ff59190b6f35afb"
+        },
+        {
+          "path": "tests/tools/test_download_html_switch_noise.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a01264034c4afc5ce277621c54c1f540e0dd0ab6",
+          "size": 4625,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/a01264034c4afc5ce277621c54c1f540e0dd0ab6"
+        },
+        {
+          "path": "tests/tools/test_download_html_title.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "99165faf41387046520e5c2bdd6d873658516322",
+          "size": 3396,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/99165faf41387046520e5c2bdd6d873658516322"
+        },
+        {
+          "path": "tests/tools/test_download_icml_style.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f6a491f9e78bdc8b69346185715de6fa867549c6",
+          "size": 3706,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/f6a491f9e78bdc8b69346185715de6fa867549c6"
+        },
+        {
+          "path": "tests/tools/test_download_sidecar.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "7e31b7f94e548b0c0b4d6301f159d97865086e2a",
+          "size": 5648,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/7e31b7f94e548b0c0b4d6301f159d97865086e2a"
+        },
+        {
+          "path": "tests/tools/test_export_citations.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e1a664c9fe124e98d0dfd7f8dca9cfe48942d07e",
+          "size": 24207,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/e1a664c9fe124e98d0dfd7f8dca9cfe48942d07e"
+        },
+        {
+          "path": "tests/tools/test_get_abstract.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "0ce4c19687255288f3597a67390690aa15e9f5f6",
+          "size": 20929,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/0ce4c19687255288f3597a67390690aa15e9f5f6"
+        },
+        {
+          "path": "tests/tools/test_latex.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3f1b239add4c0985316c14816c9d2367960d18d1",
+          "size": 24214,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/3f1b239add4c0985316c14816c9d2367960d18d1"
+        },
+        {
+          "path": "tests/tools/test_legacy_id_storage.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "5edec698c89600b02f7e314ac4df4eedda079038",
+          "size": 6217,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/5edec698c89600b02f7e314ac4df4eedda079038"
+        },
+        {
+          "path": "tests/tools/test_list_papers.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "bae7853bd8e7c4d8b94516fe9008c10466df6751",
+          "size": 4256,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/bae7853bd8e7c4d8b94516fe9008c10466df6751"
+        },
+        {
+          "path": "tests/tools/test_metadata_deadline.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "96ca69dd1702d52a22c069eaa7c71b39a30de6d9",
+          "size": 20367,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/96ca69dd1702d52a22c069eaa7c71b39a30de6d9"
+        },
+        {
+          "path": "tests/tools/test_metadata_deadline_integration.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b87855cec5097016ff0eb9128484bf29faf47469",
+          "size": 19568,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/b87855cec5097016ff0eb9128484bf29faf47469"
+        },
+        {
+          "path": "tests/tools/test_no_version_downgrade.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d1182b5249d9b3c3979d684f450a4de8dbbb283e",
+          "size": 11665,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/d1182b5249d9b3c3979d684f450a4de8dbbb283e"
+        },
+        {
+          "path": "tests/tools/test_paper_id_normalize.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a10939c1c018e0aa35414da508a44760f3e1ce25",
+          "size": 8377,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/a10939c1c018e0aa35414da508a44760f3e1ce25"
+        },
+        {
+          "path": "tests/tools/test_paper_outline.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "95fe56124db358bf5822f49d5acae28b5b5eeb2f",
+          "size": 81126,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/95fe56124db358bf5822f49d5acae28b5b5eeb2f"
+        },
+        {
+          "path": "tests/tools/test_parser_review_fixes.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "933607d190cf076aee33645fb453795e6050212e",
+          "size": 4297,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/933607d190cf076aee33645fb453795e6050212e"
+        },
+        {
+          "path": "tests/tools/test_read_paper.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a342937eb68e243d12d2d429c0f9514fc5593b3b",
+          "size": 10811,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/a342937eb68e243d12d2d429c0f9514fc5593b3b"
+        },
+        {
+          "path": "tests/tools/test_search.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c05d3a4a4db5663260ad0b2e5d245183d8d1492f",
+          "size": 50202,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/c05d3a4a4db5663260ad0b2e5d245183d8d1492f"
+        },
+        {
+          "path": "tests/tools/test_semantic_dependency.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "17182ac07b8f3098b14900372e3081d21c346117",
+          "size": 718,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/17182ac07b8f3098b14900372e3081d21c346117"
+        },
+        {
+          "path": "tests/tools/test_semantic_search.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2dba9d15a7ab22fbe935e5551ae1a35442762e29",
+          "size": 4924,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/2dba9d15a7ab22fbe935e5551ae1a35442762e29"
+        },
+        {
+          "path": "tests/tools/test_versioned_storage_keys.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ee9e2912b0bfadc55c30b7e34ed7219afb8798d0",
+          "size": 7242,
+          "url": "https://api.github.com/repos/blazickjp/arxiv-mcp-server/git/blobs/ee9e2912b0bfadc55c30b7e34ed7219afb8798d0"
+        }
+      ],
+      "selection_status": "selected"
+    },
+    {
+      "repository": "CursorTouch/Windows-MCP",
+      "revision": "6e57e44b84b82309234aa1f534b6a7642c5a1a11",
+      "default_branch": "main",
+      "python_files": 219,
+      "python_bytes": 1980274,
+      "configurations": [],
+      "truncated": false,
+      "selection_status": "no_collected_mcp_config"
+    },
+    {
+      "repository": "datalayer/jupyter-mcp-server",
+      "revision": "fe0a1d4f05923e926b478a65c7aed663179e73c9",
+      "default_branch": "main",
+      "python_files": 203,
+      "python_bytes": 1850288,
+      "configurations": [
+        ".vscode/mcp.json",
+        "docs/sourcey/mcp.json",
+        "extensions/claude-plugin/.mcp.json"
+      ],
+      "truncated": false,
+      "selection_status": "python_file_budget"
+    },
+    {
+      "repository": "designcomputer/mysql_mcp_server",
+      "revision": "943ce83816372a03e5872be5424ebfcf252aa5ac",
+      "default_branch": "main",
+      "python_files": 6,
+      "python_bytes": 44345,
+      "configurations": [],
+      "truncated": false,
+      "selection_status": "no_collected_mcp_config"
+    },
+    {
+      "repository": "figma/mcp-server-guide",
+      "revision": "5f3024c3decd83ff6f0bfb3ef36a2c4cfbff961d",
+      "default_branch": "main",
+      "python_files": 5,
+      "python_bytes": 59150,
+      "configurations": [
+        ".antigravity-plugin/mcp_config.json",
+        ".mcp.json",
+        "figma-power/mcp.json",
+        "mcp.json"
+      ],
+      "truncated": false,
+      "files": [
+        {
+          "path": ".antigravity-plugin/mcp_config.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "cf41a5576c4968813344e6cfb42eaa9a9b7cbbf0",
+          "size": 176,
+          "url": "https://api.github.com/repos/figma/mcp-server-guide/git/blobs/cf41a5576c4968813344e6cfb42eaa9a9b7cbbf0"
+        },
+        {
+          "path": ".mcp.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "440d12baa0e1264183a906997a674473fcb44013",
+          "size": 1417,
+          "url": "https://api.github.com/repos/figma/mcp-server-guide/git/blobs/440d12baa0e1264183a906997a674473fcb44013"
+        },
+        {
+          "path": "figma-power/mcp.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "4a9bcff959ed7160034c5e2468cd071c35dd60a4",
+          "size": 110,
+          "url": "https://api.github.com/repos/figma/mcp-server-guide/git/blobs/4a9bcff959ed7160034c5e2468cd071c35dd60a4"
+        },
+        {
+          "path": "mcp.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "5f69db4bb96e8c77a7a13168a6d69062b13ffabe",
+          "size": 1371,
+          "url": "https://api.github.com/repos/figma/mcp-server-guide/git/blobs/5f69db4bb96e8c77a7a13168a6d69062b13ffabe"
+        },
+        {
+          "path": "workflow-skills/video-interaction-mapper/scripts/extract_key_frames.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "908cbddbe54455bffed1e085d46aecb3e21dc5ab",
+          "size": 13692,
+          "url": "https://api.github.com/repos/figma/mcp-server-guide/git/blobs/908cbddbe54455bffed1e085d46aecb3e21dc5ab"
+        },
+        {
+          "path": "workflow-skills/video-interaction-mapper/scripts/generate_figma_calls.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "45a98e02ecec84b48c68d346bdcb3e87df973999",
+          "size": 24564,
+          "url": "https://api.github.com/repos/figma/mcp-server-guide/git/blobs/45a98e02ecec84b48c68d346bdcb3e87df973999"
+        },
+        {
+          "path": "workflow-skills/video-interaction-mapper/scripts/prepare_upload_frames.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c35d2f17b8b3ac342390dc7cb4abf77e8f27c107",
+          "size": 7284,
+          "url": "https://api.github.com/repos/figma/mcp-server-guide/git/blobs/c35d2f17b8b3ac342390dc7cb4abf77e8f27c107"
+        },
+        {
+          "path": "workflow-skills/video-interaction-mapper/scripts/resolve_moment_frames.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "86b2fe85363de671375a77c8224c142dcee5599d",
+          "size": 6465,
+          "url": "https://api.github.com/repos/figma/mcp-server-guide/git/blobs/86b2fe85363de671375a77c8224c142dcee5599d"
+        },
+        {
+          "path": "workflow-skills/video-interaction-mapper/scripts/update_run_manifest.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9d3df0e716daff1be3c749af58a2720214d0d5cb",
+          "size": 7145,
+          "url": "https://api.github.com/repos/figma/mcp-server-guide/git/blobs/9d3df0e716daff1be3c749af58a2720214d0d5cb"
+        }
+      ],
+      "selection_status": "selected"
+    },
+    {
+      "repository": "financial-datasets/mcp-server",
+      "revision": "08e7a3dbb949d3d99bbd6d6f3a22e5f02973ec58",
+      "default_branch": "main",
+      "python_files": 1,
+      "python_bytes": 11548,
+      "configurations": [],
+      "truncated": false,
+      "selection_status": "no_collected_mcp_config"
+    },
+    {
+      "repository": "GongRzhe/Office-Word-MCP-Server",
+      "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+      "default_branch": "main",
+      "python_files": 27,
+      "python_bytes": 300456,
+      "configurations": [
+        "mcp-config.json"
+      ],
+      "truncated": false,
+      "files": [
+        {
+          "path": "__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d9b86b650fb7864f1efac779e71e8804f214e261",
+          "size": 125,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/d9b86b650fb7864f1efac779e71e8804f214e261"
+        },
+        {
+          "path": "mcp-config.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "246a3ef281c8662dc5c39d6e20fadee052b143dd",
+          "size": 374,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/246a3ef281c8662dc5c39d6e20fadee052b143dd"
+        },
+        {
+          "path": "office_word_mcp_server/__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d71a049fba7526ec79dab14eda8c6b05fd9afcca",
+          "size": 75,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/d71a049fba7526ec79dab14eda8c6b05fd9afcca"
+        },
+        {
+          "path": "pyproject.toml",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ca9ea6a09addfa816a28e4f4377653d78cec011c",
+          "size": 1010,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/ca9ea6a09addfa816a28e4f4377653d78cec011c"
+        },
+        {
+          "path": "requirements.txt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "7077dbb023f05ac438bff446d19de19e09de31da",
+          "size": 59,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/7077dbb023f05ac438bff446d19de19e09de31da"
+        },
+        {
+          "path": "setup_mcp.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f0caa5c4abf144aa4b54026e70347e2e876f9abc",
+          "size": 19633,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/f0caa5c4abf144aa4b54026e70347e2e876f9abc"
+        },
+        {
+          "path": "test_formatting.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f29f932a923a41c8d9113140604f7117842e1f4d",
+          "size": 3301,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/f29f932a923a41c8d9113140604f7117842e1f4d"
+        },
+        {
+          "path": "tests/test_convert_to_pdf.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c692fc82a982ff69176d78a3b8215ca7dc8f6c3a",
+          "size": 3562,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/c692fc82a982ff69176d78a3b8215ca7dc8f6c3a"
+        },
+        {
+          "path": "word_document_server/__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "85d71f3950192d8de08036676e3a77808b40e72b",
+          "size": 475,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/85d71f3950192d8de08036676e3a77808b40e72b"
+        },
+        {
+          "path": "word_document_server/core/__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a0aa41db76cf40335a0fcbd63dff24bdd0dcc689",
+          "size": 679,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/a0aa41db76cf40335a0fcbd63dff24bdd0dcc689"
+        },
+        {
+          "path": "word_document_server/core/comments.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9695c8b622044cdbf153093765de65824eb4d2ba",
+          "size": 7207,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/9695c8b622044cdbf153093765de65824eb4d2ba"
+        },
+        {
+          "path": "word_document_server/core/footnotes.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f5147e0cf70d17475b712986c7f0b53c89c634ed",
+          "size": 32618,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/f5147e0cf70d17475b712986c7f0b53c89c634ed"
+        },
+        {
+          "path": "word_document_server/core/protection.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e706fd79c6b14fbe94d588ecbb824f213d436acb",
+          "size": 8462,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/e706fd79c6b14fbe94d588ecbb824f213d436acb"
+        },
+        {
+          "path": "word_document_server/core/styles.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "49c5d51fbf00db7331a9f037c39c5f40789f9055",
+          "size": 4942,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/49c5d51fbf00db7331a9f037c39c5f40789f9055"
+        },
+        {
+          "path": "word_document_server/core/tables.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9cc8dcf6cabee5f870d80dee8868c086688c9704",
+          "size": 29656,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/9cc8dcf6cabee5f870d80dee8868c086688c9704"
+        },
+        {
+          "path": "word_document_server/core/unprotect.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "8daddef20ef6af310d2b46021d121eb4ace8127c",
+          "size": 3053,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/8daddef20ef6af310d2b46021d121eb4ace8127c"
+        },
+        {
+          "path": "word_document_server/main.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a6a0e491ddab71ba599ff84ca55e80fd455fe2ad",
+          "size": 30505,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/a6a0e491ddab71ba599ff84ca55e80fd455fe2ad"
+        },
+        {
+          "path": "word_document_server/tools/__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e18325360c8c314e0a477998be870af590c39a48",
+          "size": 1268,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/e18325360c8c314e0a477998be870af590c39a48"
+        },
+        {
+          "path": "word_document_server/tools/comment_tools.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ffe88122f916665e7f887f8f962fa62225bccd69",
+          "size": 5021,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/ffe88122f916665e7f887f8f962fa62225bccd69"
+        },
+        {
+          "path": "word_document_server/tools/content_tools.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d82500079412ccd47c97b8a2eb23812188230475",
+          "size": 19600,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/d82500079412ccd47c97b8a2eb23812188230475"
+        },
+        {
+          "path": "word_document_server/tools/document_tools.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c15ad38ddc49a211db5634ab872a1f1af652bdd0",
+          "size": 7807,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/c15ad38ddc49a211db5634ab872a1f1af652bdd0"
+        },
+        {
+          "path": "word_document_server/tools/extended_document_tools.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "8e51b23054f4b9cb152120467b64ee364f85ac52",
+          "size": 8207,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/8e51b23054f4b9cb152120467b64ee364f85ac52"
+        },
+        {
+          "path": "word_document_server/tools/footnote_tools.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "72b0190da330ae34cca7d2498ab3654c2aef9f44",
+          "size": 25049,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/72b0190da330ae34cca7d2498ab3654c2aef9f44"
+        },
+        {
+          "path": "word_document_server/tools/format_tools.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a60fc0c4cb007ac60b8cfe408204f99f8bc77a22",
+          "size": 44248,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/a60fc0c4cb007ac60b8cfe408204f99f8bc77a22"
+        },
+        {
+          "path": "word_document_server/tools/protection_tools.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e52fd34a8343f860f10742bd4619b472cb1d4be5",
+          "size": 10634,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/e52fd34a8343f860f10742bd4619b472cb1d4be5"
+        },
+        {
+          "path": "word_document_server/utils/__init__.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "1146a586e21741162f6e9d0cdd2f65f129843380",
+          "size": 427,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/1146a586e21741162f6e9d0cdd2f65f129843380"
+        },
+        {
+          "path": "word_document_server/utils/document_utils.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c3681c08b85f31d5b6b967ebd8c6d1d0c4a3bfe0",
+          "size": 24037,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/c3681c08b85f31d5b6b967ebd8c6d1d0c4a3bfe0"
+        },
+        {
+          "path": "word_document_server/utils/extended_document_utils.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "007d5ce1e35883fbf0822d6bc97f995fed2eefb7",
+          "size": 6987,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/007d5ce1e35883fbf0822d6bc97f995fed2eefb7"
+        },
+        {
+          "path": "word_document_server/utils/file_utils.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "7974707c658071a2af6519c90ec538e07f0bbb85",
+          "size": 2641,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/7974707c658071a2af6519c90ec538e07f0bbb85"
+        },
+        {
+          "path": "word_mcp_server.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "cd92472c04e9b4e375a066b9203d08dabd5b8804",
+          "size": 237,
+          "url": "https://api.github.com/repos/GongRzhe/Office-Word-MCP-Server/git/blobs/cd92472c04e9b4e375a066b9203d08dabd5b8804"
+        }
+      ],
+      "selection_status": "selected"
+    }
+  ],
+  "selected": [
+    "blazickjp/arxiv-mcp-server",
+    "figma/mcp-server-guide",
+    "GongRzhe/Office-Word-MCP-Server"
+  ],
+  "all_sources_unopened_at_selection": true
+}
