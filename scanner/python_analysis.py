@@ -11,6 +11,9 @@ CALL_RETURN_TYPES = {
     'lxml.etree.parse':'lxml.etree._ElementTree', 'xml.sax.make_parser':'xml.sax.XMLReader',
     'random.Random':'random.Random', 'random.SystemRandom':'random.SystemRandom', 'ldap3.Connection':'ldap3.Connection',
     'bs4.BeautifulSoup':'bs4.element.Tag',
+    **{'cryptography.hazmat.primitives.serialization.'+name:'cryptography.PublicKey'
+       for name in ['load_pem_public_key','load_der_public_key','load_ssh_public_key']},
+    'cryptography.PublicKey.public_bytes':'cryptography.SerializedPublicKey',
     **{root+'.'+method: 'requests.Response' if root.startswith('requests') else 'httpx.Response'
        for root in ['requests','requests.Session','httpx','httpx.Client','httpx.AsyncClient']
        for method in ['get','post','put','patch','delete','head','options','request']},
@@ -27,7 +30,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.matched_entrypoints = set()
         self.imported_modules = set()
         self.disabled_features = frozenset(disabled_features)
-        if not self.disabled_features <= {"local_imports", "interprocedural", "sanitizers"}:
+        if not self.disabled_features <= {"local_imports", "interprocedural", "sanitizers", "auth_obligations", "crypto_obligations", "protocol_obligations"}:
             raise ValueError("Unknown analysis ablation")
         if "local_imports" in self.disabled_features:
             project = None
@@ -76,6 +79,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                         index(node.body, name + ".")
             index(tree.body)
             self.visit(tree)
+            from scanner.python_obligations import analyze_structural_obligations
+            self.findings.extend(analyze_structural_obligations(self.file_path,self.content,tree,self.project,self.disabled_features,self.module))
             for entry in self.entrypoints:
                 if entry['file']==self.file_path and (entry['file'],entry['function'],entry['parameter']) not in self.matched_entrypoints:
                     self.findings.append(Finding(title='Configured entrypoint could not be resolved',severity=Severity.INFO,
@@ -514,6 +519,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return ("input", node.lineno)
         if isinstance(node, ast.Call):
             name = self._name(node.func)
+            if name in {'jwt.get_unverified_header','jwt.api_jws.get_unverified_header',
+                        'jose.jwt.get_unverified_header','jose.jws.get_unverified_header'}:
+                return self._source(node.args[0]) if node.args else None
             if self._name(node) in {'requests.Response','httpx.Response'}:
                 return ('remote-response',node.lineno,frozenset(),self.file_path)
             if name in {'requests.Response.json','httpx.Response.json'} and isinstance(node.func,ast.Attribute):
@@ -1361,6 +1369,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         }
 
     def visit_Call(self, node):
+        if 'crypto_obligations' not in self.disabled_features:
+            from scanner.python_obligations import check_crypto_call
+            check_crypto_call(self,node)
         target_source = self.taint.get(self._key(node.func))
         if not target_source and not self._name(node.func):
             target_source = self._source(node.func)
@@ -1602,7 +1613,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             self._invoke(node, name)
         self.generic_visit(node)
 
-    def _add(self, node, rule_id, title, severity, category, description, recommendation, cwe, experimental=False, source_line=None, source_file=None, confidence=None, evidence_kind='static-flow', maturity=None):
+    def _add(self, node, rule_id, title, severity, category, description, recommendation, cwe, experimental=False, source_line=None, source_file=None, confidence=None, evidence_kind='static-flow', maturity=None, obligation=None):
         from scanner.utils.helpers import redact_secrets
         lines = self.content.splitlines()
         indices = set(range(node.lineno - 1, min(len(lines), node.end_lineno)))
@@ -1613,13 +1624,15 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if assumptions and severity!=Severity.INFO:
             description += ' Conditional on configured entrypoint trust boundary: ' + redact_secrets('; '.join(sorted(assumptions))) + '. Caller reachability is not established by this scan.'
             evidence_kind,maturity,confidence='configured-flow','advisory','medium'
+            if obligation is not None:
+                obligation={**obligation,'assumptions':list(obligation.get('assumptions',[]))+[redact_secrets(s) for s in sorted(assumptions)]}
         self.findings.append(Finding(title=title, severity=severity, category=category, module=self.module,
             description=description, file_path=self.file_path, line_number=node.lineno,
             code_snippet=snippet, recommendation=recommendation, cwe=cwe,
             confidence=confidence or ("medium" if experimental else "high"), rule_id=rule_id,
             maturity=maturity or ("experimental" if experimental else "stable"), evidence_kind="coverage-notice" if severity == Severity.INFO else evidence_kind,
             trace=([{"role": "source", "file_path": source_file or self.file_path, "line_number": source_line}] if source_line else [])
-                  + [{"role": "sink", "file_path": self.file_path, "line_number": node.lineno}]))
+                  + [{"role": "sink", "file_path": self.file_path, "line_number": node.lineno}],obligation=obligation))
 
 
 def analyze_python(file_path, content, module="ai", include_experimental=False, project=None, disabled_features=(), entrypoints=()):

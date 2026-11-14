@@ -58,6 +58,7 @@ def generate_sarif_report(result: ScanResult) -> str:
                 "aliases": finding.aliases,
                 "severity_source": finding.severity_source,
                 "trace": finding.trace,
+                **({"obligation":finding.obligation} if finding.obligation is not None else {}),
             },
             "partialFingerprints": {"theron/v1": finding.fingerprint} if finding.fingerprint else {},
         })

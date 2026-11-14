@@ -1,0 +1,167 @@
+{
+  "repo_full_name": "owner/obligations",
+  "branch": "main",
+  "findings": [
+    {
+      "title": "Declared object permission check is missing on a return path",
+      "severity": "MEDIUM",
+      "category": "sast",
+      "module": "sast",
+      "description": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object. This is bounded static evidence, not verified deployment exploitability.",
+      "file_path": "views.py",
+      "line_number": 9,
+      "code_snippet": "  return get_object_or_404(self.get_queryset(),pk=1)",
+      "recommendation": "Check the same requested object using the declared object-permission policy before exposing it.",
+      "cwe": "CWE-863",
+      "confidence": "medium",
+      "rule_id": "PY-OBL-AUTH-001",
+      "references": [
+        "https://www.django-rest-framework.org/api-guide/permissions/#object-level-permissions"
+      ],
+      "fingerprint": "94cf0ecf4e45bd1af7aae3dd",
+      "maturity": "advisory",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "static-obligation",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": [],
+      "obligation": {
+        "domain": "authorization",
+        "required": "Check the same requested object using the declared object-permission policy before exposing it.",
+        "observed": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object.",
+        "action": {
+          "file_path": "views.py",
+          "line_number": 9
+        },
+        "assumptions": [
+          "Queryset filtering, alternate checks and deployment reachability may affect actual exposure."
+        ],
+        "related_locations": [
+          {
+            "role": "lookup",
+            "file_path": "views.py",
+            "line_number": 9
+          },
+          {
+            "role": "policy",
+            "file_path": "views.py",
+            "line_number": 7
+          }
+        ]
+      }
+    },
+    {
+      "title": "JWT signature verification is explicitly disabled",
+      "severity": "MEDIUM",
+      "category": "sast",
+      "module": "sast",
+      "description": "The resolved JWT decoder explicitly sets verify_signature=False. Application authentication use and runtime library behavior require validation.",
+      "file_path": "tokens.py",
+      "line_number": 2,
+      "code_snippet": "2: jwt.decode(token,key,algorithms=[\"RS256\"],options={\"verify_signature\":False})",
+      "recommendation": "Verify signatures using a fixed, compatible algorithm/key configuration; keep unverified decoding separate from trusted claims.",
+      "cwe": "CWE-347",
+      "confidence": "medium",
+      "rule_id": "PY-OBL-JWT-VERIFY-001",
+      "references": [],
+      "fingerprint": "596f52d64ea1dae846c7a1ba",
+      "maturity": "advisory",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "static-obligation",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": [
+        {
+          "role": "sink",
+          "file_path": "tokens.py",
+          "line_number": 2
+        }
+      ],
+      "obligation": {
+        "domain": "crypto",
+        "required": "Bind signature verification to a trusted algorithm and compatible key.",
+        "observed": "The resolved JWT decoder explicitly sets verify_signature=False.",
+        "action": {
+          "file_path": "tokens.py",
+          "line_number": 2
+        },
+        "assumptions": [
+          "A decode/verify call is not itself proof that its claims are used for authentication."
+        ]
+      }
+    },
+    {
+      "title": "HTTP chunk footer is consumed without an observed byte check",
+      "severity": "MEDIUM",
+      "category": "sast",
+      "module": "sast",
+      "description": "A resolved h11 receive-buffer read supplies footer bytes whose length advances a two-byte chunk delimiter state without an observed content check. This is bounded static evidence, not verified deployment exploitability.",
+      "file_path": "reader.py",
+      "line_number": 8,
+      "code_snippet": "  self.pending-=len(data)",
+      "recommendation": "Validate the exact CRLF footer, including fragmented prefixes, before advancing parser state.",
+      "cwe": "CWE-444",
+      "confidence": "medium",
+      "rule_id": "PY-OBL-HTTP-001",
+      "references": [
+        "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+      ],
+      "fingerprint": "678f2a130714eed927fcebdb",
+      "maturity": "advisory",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "static-obligation",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": [],
+      "obligation": {
+        "domain": "protocol",
+        "required": "Validate the exact CRLF footer, including fragmented prefixes, before advancing parser state.",
+        "observed": "A resolved h11 receive-buffer read supplies footer bytes whose length advances a two-byte chunk delimiter state without an observed content check.",
+        "action": {
+          "file_path": "reader.py",
+          "line_number": 8
+        },
+        "assumptions": [
+          "The h11 receive-buffer and chunk-event contracts identify this as HTTP/1.1 chunk framing."
+        ],
+        "related_locations": [
+          {
+            "role": "read",
+            "file_path": "reader.py",
+            "line_number": 7
+          }
+        ]
+      }
+    }
+  ],
+  "files_scanned": 3,
+  "modules_run": [
+    "sast"
+  ],
+  "sbom": null,
+  "scan_duration_seconds": 0.0,
+  "summary": {
+    "repo": "owner/obligations",
+    "branch": "main",
+    "files_scanned": 3,
+    "total_findings": 3,
+    "context_findings": 0,
+    "vulnerability_findings": 3,
+    "by_severity": {
+      "MEDIUM": 3
+    },
+    "modules_run": [
+      "sast"
+    ],
+    "scan_duration_seconds": 0.0
+  },
+  "project_profile": null,
+  "context_findings": [],
+  "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "correlation_enabled": false,
+  "correlation_groups": [],
+  "correlation_resolutions": []
+}

@@ -54,6 +54,7 @@ class Finding:
     aliases: List[str] = field(default_factory=list)
     severity_source: str = "rule"
     trace: List[dict] = field(default_factory=list)
+    obligation: Optional[dict] = None
 
     def to_dict(self) -> dict:
         return {
@@ -78,6 +79,7 @@ class Finding:
             "aliases": self.aliases,
             "severity_source": self.severity_source,
             "trace": self.trace,
+            **({"obligation": self.obligation} if self.obligation is not None else {}),
         }
 
 

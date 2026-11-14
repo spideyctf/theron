@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Security Scan Report — owner/obligations</title>
+    <style>
+        :root {
+            --bg: #0d1117; --card-bg: #161b22; --border: #30363d;
+            --text: #c9d1d9; --text-dim: #8b949e; --accent: #58a6ff;
+            --critical: #f85149; --high: #ff7b72; --medium: #d29922;
+            --low: #58a6ff; --info: #8b949e; --green: #3fb950;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        h2 { font-size: 1.3rem; margin: 24px 0 12px; }
+        .header { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        .meta { color: var(--text-dim); font-size: 0.9rem; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin: 16px 0; }
+        .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-align: center; }
+        .stat-card .num { font-size: 2rem; font-weight: bold; }
+        .stat-card .label { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; }
+        .stat-critical .num { color: var(--critical); }
+        .stat-high .num { color: var(--high); }
+        .stat-medium .num { color: var(--medium); }
+        .stat-low .num { color: var(--low); }
+        .stat-info .num { color: var(--info); }
+        .stat-total .num { color: var(--accent); }
+        .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .filter-btn { background: var(--card-bg); border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+        .filter-btn:hover { border-color: var(--accent); }
+        .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+        .finding { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+        .finding-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+        .badge { padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+        .badge-critical { background: var(--critical); color: #fff; }
+        .badge-high { background: var(--high); color: #fff; }
+        .badge-medium { background: var(--medium); color: #000; }
+        .badge-low { background: var(--low); color: #fff; }
+        .badge-info { background: var(--info); color: #000; }
+        .badge-category { background: var(--border); color: var(--text); }
+        .finding-title { font-weight: 600; font-size: 1rem; }
+        .finding-meta { color: var(--text-dim); font-size: 0.85rem; margin: 4px 0; }
+        .finding-desc { margin: 8px 0; font-size: 0.9rem; }
+        .finding-rec { background: rgba(63,185,80,0.1); border-left: 3px solid var(--green); padding: 8px 12px; margin: 8px 0; font-size: 0.85rem; border-radius: 0 4px 4px 0; }
+        .code-block { background: #0d1117; border: 1px solid var(--border); border-radius: 4px; padding: 12px; font-family: 'SF Mono', Monaco, monospace; font-size: 0.8rem; overflow-x: auto; margin: 8px 0; white-space: pre; }
+        .tab-bar { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+        .tab { padding: 8px 16px; cursor: pointer; border-bottom: 2px solid transparent; color: var(--text-dim); }
+        .tab.active { border-bottom-color: var(--accent); color: var(--accent); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .sbom-pre { background: #0d1117; border: 1px solid var(--border); border-radius: 4px; padding: 12px; font-family: monospace; font-size: 0.8rem; overflow-x: auto; max-height: 600px; overflow-y: auto; }
+        .no-findings { text-align: center; padding: 40px; color: var(--green); font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 AI Infrastructure Security Scan Report</h1>
+            <p class="meta">
+                <strong>Repository:</strong> owner/obligations &nbsp;|&nbsp;
+                <strong>Branch:</strong> main &nbsp;|&nbsp;
+                <strong>Files Scanned:</strong> 3 &nbsp;|&nbsp;
+                <strong>Modules:</strong> sast &nbsp;|&nbsp;
+                <strong>Duration:</strong> 0.0s
+            </p>
+        </div>
+        <div class="summary-grid">
+            <div class="stat-card stat-total"><div class="num">3</div><div class="label">Total</div></div>
+            <div class="stat-card stat-critical"><div class="num">0</div><div class="label">Critical</div></div>
+            <div class="stat-card stat-high"><div class="num">0</div><div class="label">High</div></div>
+            <div class="stat-card stat-medium"><div class="num">3</div><div class="label">Medium</div></div>
+            <div class="stat-card stat-low"><div class="num">0</div><div class="label">Low</div></div>
+            <div class="stat-card stat-info"><div class="num">0</div><div class="label">Info</div></div>
+        </div>
+        <p class="meta">3 non-informational findings; 0 informational review/coverage notices. Static findings require validation.</p>
+        <div class="tab-bar">
+            <div class="tab active" onclick="switchTab('findings')">Findings (3)</div>
+            <div class="tab" onclick="switchTab('sbom')">SBOM</div>
+            <div class="tab" onclick="switchTab('correlation')">MCP links (pilot)</div>
+        </div>
+        <div id="tab-findings" class="tab-content active">
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterFindings('all', this)">All</button>
+                <button class="filter-btn" onclick="filterFindings('CRITICAL', this)">Critical</button>
+                <button class="filter-btn" onclick="filterFindings('HIGH', this)">High</button>
+                <button class="filter-btn" onclick="filterFindings('MEDIUM', this)">Medium</button>
+                <button class="filter-btn" onclick="filterFindings('LOW', this)">Low</button>
+                <button class="filter-btn" onclick="filterFindings('INFO', this)">Info</button>
+            </div>
+            <div id="findings-list"></div>
+            <details><summary>Tests, examples and documentation evidence (excluded from application totals)</summary><pre class="sbom-pre" id="context-evidence"></pre></details>
+        </div>
+        <div id="tab-correlation" class="tab-content">
+            <h2>MCP configuration-to-code links (pilot)</h2>
+            <p>Static declarations and code evidence only. Runtime reachability, exposure, authentication and privileges remain unknown. Groups do not add vulnerability counts.</p>
+            <pre class="sbom-pre" id="correlation-evidence"></pre>
+        </div>
+        <div id="tab-sbom" class="tab-content">
+            <h2>Software Bill of Materials (SBOM)</h2>
+            <p class="meta">CycloneDX 1.5 format — auto-generated from dependency manifests</p>
+            <pre class="sbom-pre" id="sbom-content"></pre>
+        </div>
+    </div>
+    <script>
+        const findings = [{"title": "Declared object permission check is missing on a return path", "severity": "MEDIUM", "category": "sast", "module": "sast", "description": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object. This is bounded static evidence, not verified deployment exploitability.", "file_path": "views.py", "line_number": 9, "code_snippet": "  return get_object_or_404(self.get_queryset(),pk=1)", "recommendation": "Check the same requested object using the declared object-permission policy before exposing it.", "cwe": "CWE-863", "confidence": "medium", "rule_id": "PY-OBL-AUTH-001", "references": ["https://www.django-rest-framework.org/api-guide/permissions/#object-level-permissions"], "fingerprint": "94cf0ecf4e45bd1af7aae3dd", "maturity": "advisory", "status": "new", "scope": "application", "evidence_kind": "static-obligation", "aliases": [], "severity_source": "rule", "trace": [], "obligation": {"domain": "authorization", "required": "Check the same requested object using the declared object-permission policy before exposing it.", "observed": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object.", "action": {"file_path": "views.py", "line_number": 9}, "assumptions": ["Queryset filtering, alternate checks and deployment reachability may affect actual exposure."], "related_locations": [{"role": "lookup", "file_path": "views.py", "line_number": 9}, {"role": "policy", "file_path": "views.py", "line_number": 7}]}}, {"title": "JWT signature verification is explicitly disabled", "severity": "MEDIUM", "category": "sast", "module": "sast", "description": "The resolved JWT decoder explicitly sets verify_signature=False. Application authentication use and runtime library behavior require validation.", "file_path": "tokens.py", "line_number": 2, "code_snippet": "2: jwt.decode(token,key,algorithms=[\"RS256\"],options={\"verify_signature\":False})", "recommendation": "Verify signatures using a fixed, compatible algorithm/key configuration; keep unverified decoding separate from trusted claims.", "cwe": "CWE-347", "confidence": "medium", "rule_id": "PY-OBL-JWT-VERIFY-001", "references": [], "fingerprint": "596f52d64ea1dae846c7a1ba", "maturity": "advisory", "status": "new", "scope": "application", "evidence_kind": "static-obligation", "aliases": [], "severity_source": "rule", "trace": [{"role": "sink", "file_path": "tokens.py", "line_number": 2}], "obligation": {"domain": "crypto", "required": "Bind signature verification to a trusted algorithm and compatible key.", "observed": "The resolved JWT decoder explicitly sets verify_signature=False.", "action": {"file_path": "tokens.py", "line_number": 2}, "assumptions": ["A decode/verify call is not itself proof that its claims are used for authentication."]}}, {"title": "HTTP chunk footer is consumed without an observed byte check", "severity": "MEDIUM", "category": "sast", "module": "sast", "description": "A resolved h11 receive-buffer read supplies footer bytes whose length advances a two-byte chunk delimiter state without an observed content check. This is bounded static evidence, not verified deployment exploitability.", "file_path": "reader.py", "line_number": 8, "code_snippet": "  self.pending-=len(data)", "recommendation": "Validate the exact CRLF footer, including fragmented prefixes, before advancing parser state.", "cwe": "CWE-444", "confidence": "medium", "rule_id": "PY-OBL-HTTP-001", "references": ["https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"], "fingerprint": "678f2a130714eed927fcebdb", "maturity": "advisory", "status": "new", "scope": "application", "evidence_kind": "static-obligation", "aliases": [], "severity_source": "rule", "trace": [], "obligation": {"domain": "protocol", "required": "Validate the exact CRLF footer, including fragmented prefixes, before advancing parser state.", "observed": "A resolved h11 receive-buffer read supplies footer bytes whose length advances a two-byte chunk delimiter state without an observed content check.", "action": {"file_path": "reader.py", "line_number": 8}, "assumptions": ["The h11 receive-buffer and chunk-event contracts identify this as HTTP/1.1 chunk framing."], "related_locations": [{"role": "read", "file_path": "reader.py", "line_number": 7}]}}];
+        const contextEvidence = [];
+        const correlationEvidence = {
+  "enabled": false,
+  "groups": [],
+  "resolutions": []
+};
+        const sbom = null;
+        function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : ''; }
+        function renderFindings(filter) {
+            const list = document.getElementById('findings-list');
+            const filtered = filter === 'all' ? findings : findings.filter(f => f.severity === filter);
+            if (filtered.length === 0) { list.innerHTML = '<div class="no-findings">✅ No findings at this severity level</div>'; return; }
+            list.innerHTML = filtered.map((f, i) => `
+                <div class="finding" data-severity="${f.severity}">
+                    <div class="finding-header">
+                        <span class="badge badge-${f.severity.toLowerCase()}">${f.severity}</span>
+                        <span class="badge badge-category">${f.category}</span>
+                        <span class="finding-title">${esc(f.title)}</span>
+                    </div>
+                    <div class="finding-meta">📁 ${esc(f.file_path)}:${f.line_number || 'N/A'} &nbsp;|&nbsp; 🏷️ ${esc(f.cwe || 'N/A')} &nbsp;|&nbsp; 🎯 ${esc(f.confidence)} &nbsp;|&nbsp; 📦 ${esc(f.module)}</div>
+                    <div class="finding-desc">${esc(f.description)}</div>
+                    <div class="finding-evidence"><strong>Evidence classification:</strong> ${esc(f.evidence_kind || 'unspecified')} · Scope: ${esc(f.scope || 'application')} · Maturity: ${esc(f.maturity || 'unspecified')}
+                    ${Array.isArray(f.trace) && f.trace.length ? `<ol>${f.trace.map(step => `<li>${esc(step.role)}: <code>${esc(step.file_path)}:${esc(step.line_number)}</code></li>`).join('')}</ol>` : '<p>No source-to-sink trace supplied.</p>'}
+                    ${f.fingerprint ? `<div>Fingerprint: <code>${esc(f.fingerprint)}</code></div>` : ''}</div>
+                    ${f.obligation ? `<div class="finding-obligation"><strong>Required security condition:</strong> ${esc(f.obligation.required)}
+                      <p>${esc(f.obligation.observed)}</p>
+                      ${Array.isArray(f.obligation.assumptions) ? `<ul>${f.obligation.assumptions.map(a=>`<li>${esc(a)}</li>`).join('')}</ul>` : ''}
+                      ${Array.isArray(f.obligation.related_locations) ? `<ul>${f.obligation.related_locations.map(p=>`<li>${esc(p.role)}: ${esc(p.file_path)}:${esc(p.line_number)}</li>`).join('')}</ul>` : ''}</div>` : ''}
+                    ${f.recommendation ? `<div class="finding-rec">💡 <strong>Recommendation:</strong> ${esc(f.recommendation)}</div>` : ''}
+                    ${f.code_snippet ? `<div class="code-block">${esc(f.code_snippet)}</div>` : ''}
+                </div>
+            `).join('');
+        }
+        function filterFindings(severity, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderFindings(severity);
+        }
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('tab-' + tabName).classList.add('active');
+        }
+        document.getElementById('context-evidence').textContent = JSON.stringify(contextEvidence, null, 2);
+        document.getElementById('correlation-evidence').textContent = JSON.stringify(correlationEvidence, null, 2);
+        renderFindings('all');
+        document.getElementById('sbom-content').textContent = sbom ? JSON.stringify(sbom, null, 2) : 'No SBOM generated (SCA module not run or no dependencies found)';
+    </script>
+</body>
+</html>

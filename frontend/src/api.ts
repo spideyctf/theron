@@ -9,6 +9,9 @@ export interface Finding {
   references: string[]; fingerprint: string | null; maturity: string; status: string
   scope?: string; evidence_kind?: string; aliases?: string[]; severity_source?: string
   trace?: { role: string; file_path: string; line_number: number }[]
+  obligation?: { domain: string; required: string; observed: string; assumptions: string[]
+    action: { file_path: string; line_number: number }
+    related_locations?: { role: string; file_path: string; line_number: number; matches_returned_object?: boolean; matches_subject?: boolean }[] }
 }
 export interface ScanResult {
   repo_full_name: string; branch: string; findings: Finding[]; files_scanned: number

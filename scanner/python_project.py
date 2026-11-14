@@ -8,6 +8,7 @@ class PythonProject:
     def __init__(self, files):
         self.functions, self.classes, self.names, self.locations = {}, set(), {}, {}
         self.modules = {}
+        self.trees, self.class_definitions, self.bindings = {}, {}, {}
         for path in files:
             if path.endswith('.py'):
                 module = self.module_name(path)
@@ -22,6 +23,7 @@ class PythonProject:
                 tree = ast.parse(files[path], filename=path)
             except (SyntaxError, RecursionError):
                 continue
+            self.trees[path] = tree
             bindings = {}
             for statement in tree.body:
                 if isinstance(statement, ast.Import):
@@ -33,12 +35,18 @@ class PythonProject:
                         bindings[alias.asname or alias.name] = f'{imported}.{alias.name}'.strip('.')
                 elif isinstance(statement, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
                     bindings[statement.name] = f'{module}.{statement.name}'
+                elif isinstance(statement,(ast.Assign,ast.AnnAssign)):
+                    for target in statement.targets if isinstance(statement,ast.Assign) else [statement.target]:
+                        if isinstance(target,ast.Name):
+                            bindings[target.id] = ''
+            self.bindings[path] = bindings
             def index(nodes, prefix):
                 for node in nodes:
                     if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
                         name = prefix + node.name
                         if isinstance(node, ast.ClassDef):
                             self.classes.add(name)
+                            self.class_definitions[name] = (path,node,bindings)
                         else:
                             self.functions[name] = node
                             self.names[id(node)] = name
