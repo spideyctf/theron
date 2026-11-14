@@ -40,3 +40,9 @@ def test_ordinary_mapping_or_noninterpreter_use_stays_quiet():
 
 def test_custom_function_types_are_not_assumed_builtin_capabilities():
     assert not scan(CODE.replace('import ast','import ast\nmap=custom'))
+
+
+def test_accessor_local_bindings_do_not_imply_builtin_getattr():
+    assert not scan(CODE.replace(' return getattr(obj,name)',' getattr=custom\n return getattr(obj,name)'))
+    assert not scan(CODE.replace('def accessor(obj,name):','def accessor(obj,name,*,getattr=custom):'))
+    assert not scan(CODE.replace(' return getattr(obj,name)',' from custom import getattr\n return getattr(obj,name)'))

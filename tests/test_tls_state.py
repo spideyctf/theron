@@ -43,3 +43,15 @@ def test_unrelated_manager_and_constant_policy_do_not_establish_cross_policy_reu
 def test_keyword_policy_and_connection_aliases_are_supported():
     code=CODE.replace('  self.configure(connection,verify)','  alias=connection\n  self.configure(conn=alias,verify=verify)')
     assert matches(code)
+
+
+def test_constructor_parameter_or_local_assignment_shadows_imported_factory():
+    assert not matches(CODE.replace('def __init__(self):','def __init__(self,PoolManager):'))
+    assert not matches(CODE.replace('  self.manager=PoolManager()','  PoolManager=custom\n  self.manager=PoolManager()'))
+
+
+def test_reassigned_or_deleted_manager_does_not_retain_library_contract():
+    assert not matches(CODE.replace('  return self.manager.connection_from_url(url)',
+                                   '  self.manager=custom\n  return self.manager.connection_from_url(url)'))
+    assert not matches(CODE+'\n def replace(self,value):\n  self.manager=value\n')
+    assert not matches(CODE+'\n def remove(self):\n  del self.manager\n')

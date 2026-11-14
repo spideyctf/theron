@@ -3,6 +3,23 @@ import ast
 from scanner.python_obligations import BoundedPaths,State,Value
 
 
+def function_bindings(context,method):
+    """Conservatively invalidate imported names shadowed in a function scope."""
+    bindings=context.bindings.copy()
+    for arg in method.args.posonlyargs+method.args.args+method.args.kwonlyargs:
+        bindings[arg.arg]=''
+    for arg in [method.args.vararg,method.args.kwarg]:
+        if arg:bindings[arg.arg]=''
+    for node in HTMLCanonicalization.scoped(method.body):
+        if isinstance(node,(ast.FunctionDef,ast.AsyncFunctionDef,ast.ClassDef)):
+            bindings[node.name]=''
+        elif isinstance(node,ast.Name) and isinstance(node.ctx,(ast.Store,ast.Del)):
+            bindings[node.id]=''
+        elif isinstance(node,(ast.Import,ast.ImportFrom)):
+            for alias in node.names:bindings[alias.asname or alias.name.split('.')[0]]=''
+    return bindings
+
+
 class HTMLCanonicalization:
     CLEANERS={'lxml.html.clean.Cleaner','lxml_html_clean.Cleaner'}
     PARSERS={'lxml.html.fromstring','lxml.html.fragment_fromstring','lxml.html.soupparser.fromstring'}
@@ -163,12 +180,20 @@ class TLSPoolPolicy:
         for owner in context.tree.body:
             if not isinstance(owner,ast.ClassDef):continue
             methods={n.name:n for n in owner.body if isinstance(n,ast.FunctionDef) and n.args.args}
-            fields=set();lookups=set();mutators={}
+            fields=set();invalid_fields=set();lookups=set();mutators={}
             for method in methods.values():
                 receiver=method.args.args[0].arg
+                bindings=function_bindings(context,method)
                 for n in HTMLCanonicalization.scoped(method.body):
-                    if isinstance(n,ast.Assign) and isinstance(n.value,ast.Call) and context.resolve(n.value.func) in cls.MANAGERS:
-                        fields.update(t.attr for t in n.targets if isinstance(t,ast.Attribute) and isinstance(t.value,ast.Name) and t.value.id==receiver)
+                    if not isinstance(n,(ast.Assign,ast.AnnAssign,ast.AugAssign,ast.Delete)):continue
+                    targets=n.targets if isinstance(n,(ast.Assign,ast.Delete)) else [n.target]
+                    for target in targets:
+                        if not (isinstance(target,ast.Attribute) and isinstance(target.value,ast.Name) and target.value.id==receiver):continue
+                        value=getattr(n,'value',None)
+                        if isinstance(value,ast.Call) and context.resolve(value.func,bindings) in cls.MANAGERS:
+                            fields.add(target.attr)
+                        else:invalid_fields.add(target.attr)
+            fields-=invalid_fields
             for name,method in methods.items():
                 params=[a.arg for a in method.args.args[1:]];receiver=method.args.args[0].arg
                 for n in HTMLCanonicalization.scoped(method.body):
@@ -269,7 +294,7 @@ class ASTCallableBoundary:
         functions={n.name:n for n in context.tree.body if isinstance(n,ast.FunctionDef)}
         accessors=set()
         for name,fn in functions.items():
-            if any(a.arg=='getattr' for a in fn.args.args) or 'getattr' in context.bindings:continue
+            if 'getattr' in function_bindings(context,fn):continue
             returns=[n for n in HTMLCanonicalization.scoped(fn.body) if isinstance(n,ast.Return)]
             if not any(isinstance(n.value,ast.Call) and isinstance(n.value.func,ast.Name) and n.value.func.id=='getattr' for n in returns):continue
             if not any(isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr in {'startswith','endswith'}
