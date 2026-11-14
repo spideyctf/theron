@@ -64,7 +64,9 @@ export interface ScanJob {
   correlation_enabled?: boolean
 }
 export interface AnalysisEntrypoint { file: string; function: string; parameter: string; reason: string; type?: 'bs4.element.Tag' }
-export interface ScanInput { repository: string; branch: string | null; modules: string[]; include_experimental: boolean; correlation_enabled?: boolean; analysis_entrypoints?: AnalysisEntrypoint[] }
+export interface ScanInput { repository: string; branch: string | null; modules: string[]; include_experimental: boolean; correlation_enabled?: boolean; analysis_entrypoints?: AnalysisEntrypoint[]
+  mcp_bindings?: {config_file: string; pointer: string; entrypoint: string; config_sha256: string; entrypoint_sha256: string
+    kind: 'http' | 'absolute-python'; reason: string}[] }
 export interface Health { status: string; github_token_configured: boolean }
 
 async function request<T>(path: string, options?: RequestInit): Promise<T> {

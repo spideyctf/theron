@@ -43,6 +43,25 @@ it('distinguishes locked inventory versions from verified installation', () => {
   expect(screen.getByText('uv.lock')).toBeInTheDocument()
 })
 
+it('keeps floating package candidates and explicit source bindings distinct from runtime resolution', () => {
+  const value: ScanResult = {...report,correlation_groups:[],correlation_resolutions:[{
+    config_file:'.mcp.json',pointer:'/mcpServers/demo',entrypoint:'server.py',status:'candidate',reason:'package_entrypoint_inferred',
+    classification:'inferred',scope:'application',group_ids:[],package_entrypoint:{basis:'floating_distribution_entrypoint_candidate',
+      package:'demo',command:'demo',object_reference:'server:main',callable_file:'server.py',callable_line:1,
+      floating_request:true,candidate_version:'1.0',installation_verified:false,startup_verified:false,source_text_sha256:{}},
+  },{
+    config_file:'mcp-config.json',pointer:'/mcpServers/remote',entrypoint:'server.py',status:'source_bound',
+    reason:'explicit_implementation_source_bound',classification:'inferred',scope:'application',group_ids:[],
+    deployment_binding:{basis:'explicit_hash_bound_source_claim',kind:'http',reason:'Declared implementation mapping',
+      source_text_sha256:{},runtime_verified:false,remote_identity_verified:false},
+  }]}
+  render(<Correlations result={value} />)
+  expect(screen.getByText(/collected version candidate 1.0; launch may select another version/)).toBeInTheDocument()
+  expect(screen.getByText(/runtime and remote identity unverified/)).toBeInTheDocument()
+  expect(screen.getByText('candidate · inferred')).toBeInTheDocument()
+  expect(screen.getByText('source_bound · inferred')).toBeInTheDocument()
+})
+
 it('renders tool symbols, dependency attribution and snapshot provenance from the backend fixture', () => {
   const result=toolReport as ScanResult
   render(<Correlations result={result} />)

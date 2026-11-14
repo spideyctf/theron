@@ -51,7 +51,10 @@ def main():
     assert len(reviews)==26 and all(not r['review']['vulnerability_confirmed'] for r in reviews)
     value=dict(implementation_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         development_exposed=True,independent_labels=False,runtime_tests_performed=False,
-        archived_osv_sha256=hashlib.sha256((PREVIOUS/'osv-records.json').read_bytes()).hexdigest(),
+        source_receipts_sha256=hashlib.sha256((PREVIOUS/'source-receipts.json').read_text(encoding='utf-8').encode()).hexdigest(),
+        evaluation_driver_sha256=hashlib.sha256(Path(__file__).read_text(encoding='utf-8').encode()).hexdigest(),
+        archived_osv_sha256=hashlib.sha256((PREVIOUS/'osv-records.json').read_text(encoding='utf-8').encode()).hexdigest(),
+        artifact_hash_basis='UTF-8 text with LF newlines; original Git blob receipts retain raw-byte source hashes',
         advisory_candidates_preserved=True,correlation_preserves_findings=True,
         statuses=dict(Counter(r['review']['status'] for r in reviews)),reviews=reviews,binding=binding,
         resolutions=result.correlation_resolutions,groups=result.correlation_groups)
