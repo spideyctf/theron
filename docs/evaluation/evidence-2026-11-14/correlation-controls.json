@@ -1,0 +1,199 @@
+{
+  "implementation_revision": "f370de1c7078e2b6e07154e2a8d4974ef757e3b1",
+  "original_authored_controls": true,
+  "independent_real_code_study": false,
+  "records": [
+    {
+      "name": "direct-import",
+      "expected_context_edge": true,
+      "actual_context_edge": true,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "11744fac24f8108e35026fd5ca1c0c66655f004c4b050d499675007076575a9e",
+        "requirements.txt": "957244fa3de7e80eaf5337e02c64b3bb2824d6376a8ca03e892ed028bd646cc6"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "aliased-import",
+      "expected_context_edge": true,
+      "actual_context_edge": true,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "3ac8d6834be6e4930a9ee6137e08222bd6bbb8c3f761496484b15873dde15c5a",
+        "requirements.txt": "957244fa3de7e80eaf5337e02c64b3bb2824d6376a8ca03e892ed028bd646cc6"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "from-import",
+      "expected_context_edge": true,
+      "actual_context_edge": true,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "0bd3209963c9b140af84ac6f580bff368322b2c3a0e14e90901b0f207ca29033",
+        "requirements.txt": "957244fa3de7e80eaf5337e02c64b3bb2824d6376a8ca03e892ed028bd646cc6"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "dependency-only",
+      "expected_context_edge": true,
+      "actual_context_edge": true,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "cb016d8940663be7bc4d0579b29522b1b5287e65a16324d43e5ff4d18d5aefe1",
+        "requirements.txt": "957244fa3de7e80eaf5337e02c64b3bb2824d6376a8ca03e892ed028bd646cc6"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "unrelated-import",
+      "expected_context_edge": false,
+      "actual_context_edge": false,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "e3c279067134ea64b3bb060986d1056e1e91781d52d7e1fbcc0fb9168f4e6899",
+        "requirements.txt": "957244fa3de7e80eaf5337e02c64b3bb2824d6376a8ca03e892ed028bd646cc6"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "comment-only",
+      "expected_context_edge": false,
+      "actual_context_edge": false,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "062a21b0e66005ca1102dd38564fc43251df26aa51c44d5ec123c97e0e03b701",
+        "requirements.txt": "957244fa3de7e80eaf5337e02c64b3bb2824d6376a8ca03e892ed028bd646cc6"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "local-shadow",
+      "expected_context_edge": false,
+      "actual_context_edge": false,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "11744fac24f8108e35026fd5ca1c0c66655f004c4b050d499675007076575a9e",
+        "requirements.txt": "957244fa3de7e80eaf5337e02c64b3bb2824d6376a8ca03e892ed028bd646cc6",
+        "demo.py": "d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "namespace-shadow",
+      "expected_context_edge": false,
+      "actual_context_edge": false,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "11744fac24f8108e35026fd5ca1c0c66655f004c4b050d499675007076575a9e",
+        "requirements.txt": "957244fa3de7e80eaf5337e02c64b3bb2824d6376a8ca03e892ed028bd646cc6",
+        "demo/local.py": "d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "conditional-import",
+      "expected_context_edge": false,
+      "actual_context_edge": false,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "22c942bfc899eff4e8d42a0f58089cea83fc9046ccc5608a9f92ad9ffd53766c",
+        "requirements.txt": "957244fa3de7e80eaf5337e02c64b3bb2824d6376a8ca03e892ed028bd646cc6"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "stdlib-collision",
+      "expected_context_edge": false,
+      "actual_context_edge": false,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "d6aa2a209ebb3bca60e0d9b00ed9a9e6c11d084191f5fed56e87f64fbb9aa735",
+        "requirements.txt": "fb49b91a21afd7a130ee8efa303ca7e72167293d8e3a106af80c184aea7d063c"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "namespace-mismatch",
+      "expected_context_edge": false,
+      "actual_context_edge": false,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "04eaffa723550cd72ec8e37725f85e391cb56eb3a099c763ec21c9df7d134f6d",
+        "requirements.txt": "8b6eba6b3ea108a930b5d3fea922294167f609dccf11ede70e4184013b534cff"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "nonancestor-manifest",
+      "expected_context_edge": false,
+      "actual_context_edge": false,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1",
+        "server.py": "11744fac24f8108e35026fd5ca1c0c66655f004c4b050d499675007076575a9e",
+        "other/requirements.txt": "957244fa3de7e80eaf5337e02c64b3bb2824d6376a8ca03e892ed028bd646cc6"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    },
+    {
+      "name": "nearer-manifest",
+      "expected_context_edge": false,
+      "actual_context_edge": false,
+      "exact_result": true,
+      "original_findings_unchanged": true,
+      "source_sha256": {
+        ".vscode/mcp.json": "209f93b18468a2ecc81c1363f1c82280ccfdd724c458fe73bec10e2a0d7dc3a7",
+        "server.py": "11744fac24f8108e35026fd5ca1c0c66655f004c4b050d499675007076575a9e",
+        "requirements.txt": "957244fa3de7e80eaf5337e02c64b3bb2824d6376a8ca03e892ed028bd646cc6",
+        "nested/server.py": "11744fac24f8108e35026fd5ca1c0c66655f004c4b050d499675007076575a9e",
+        "nested/pyproject.toml": "8cd0510b8e99338ed5ee41eb1efc36c179ca378e5027588d2286b5fd340be456"
+      },
+      "correlation_on_groups": 1,
+      "correlation_off_groups": 0
+    }
+  ],
+  "correct": 13,
+  "total": 13,
+  "additional_context_edges": 4,
+  "additional_vulnerability_discoveries": 0,
+  "review_time_or_decision_improvement_measured": false,
+  "interpretation": "Typed join correctness on original controls only. Ablation confirms unchanged findings. Context is not causal reachability, an independent research contribution, or new vulnerability discovery."
+}

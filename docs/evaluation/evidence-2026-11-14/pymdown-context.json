@@ -1,0 +1,860 @@
+{
+  "records": [
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/__init__.py",
+      "git_blob_sha": "b04e80430caf8fdaac5652b7464f785c3b6faf69",
+      "source_sha256": "f5be6d551a91888685933803fe2f749db8b10e6afff896677c266a6958765525"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/__meta__.py",
+      "git_blob_sha": "b8400f7e9eccd28697ff018185caff7479c8fa11",
+      "source_sha256": "01061ce7254949622e2be1a95c8f956b8a49c87ec03262c2c840b0a37ceb626a"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/_bypassnorm.py",
+      "git_blob_sha": "d06a5f509b19b97881d73e03604eb253519aa547",
+      "source_sha256": "c4dec43a11d560b253b0d3e975317b214194bbd2ecc6432c153d5a528a294c98"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/arithmatex.py",
+      "git_blob_sha": "dbcb0ce5a5790d36729ae027bb9e4a192c39cc7d",
+      "source_sha256": "5c480234cb93eb5171d2149101da64092c703b639bb083b5b7bddba2ed575b69"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/b64.py",
+      "git_blob_sha": "20875b0cbffae309cf3157f1dbcb01b0ae0fea7b",
+      "source_sha256": "2ab0e9491836fc9229b5dc6aca0c13b7cdefd374f2e4579e44418ecbe31392b6"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/betterem.py",
+      "git_blob_sha": "bbbc63f03116b740954f8cf2eb592f3e463e0967",
+      "source_sha256": "fb0cc9b5faba18ae5e477400e21afd0f02e782d17c68b4ea0ee3d6a24b24190b"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/blocks/__init__.py",
+      "git_blob_sha": "d26475fe75acab3ad2d0e7075b37ce9f48bbec8f",
+      "source_sha256": "58945abab37caf9ca46b2ed8e0d31ceb91ee0435ac2300d10589163428d91936"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/blocks/admonition.py",
+      "git_blob_sha": "c3cc4371970ffa900b7a9223cc9c1af2da796495",
+      "source_sha256": "0cc216f262fcf3d01a2fcaf79733fd2ed7b0b1f34435484d14fb52d3f1257787"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/blocks/block.py",
+      "git_blob_sha": "f3879c594b76cb189fd5df91fe934e67f24b6c15",
+      "source_sha256": "d83acd5b06ee46c46312a9025917c025069b63e30d131a1d76ad8f932c25bd09"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/blocks/definition.py",
+      "git_blob_sha": "56b61058c16da1e56bf4126eed04001655a3c280",
+      "source_sha256": "688fb91db92057befca3919a8814740732943025571ffa962255d473f728379c"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/blocks/details.py",
+      "git_blob_sha": "976ed3c24146687cbbd0739e224b3e64a12ba3ab",
+      "source_sha256": "bd75333921cf886eaadf6e58e99a37f2cd41a1ae7ef332a9ca6c4bf7ff16676f"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/blocks/html.py",
+      "git_blob_sha": "4d73d7d40e811735b8491dd7db0a6ec0cedbaf65",
+      "source_sha256": "f25c5d6ea629c4a061f04e996d4a759ac183e56c15c6c3238bc48fef8f4b6edc"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/blocks/tab.py",
+      "git_blob_sha": "363d55aa164af8ff5796959f7702fa92872c16eb",
+      "source_sha256": "3d3f78c7fcb60ccf8a1b25fda812f942a89170b7af7ded205116876efe00dc57"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/caret.py",
+      "git_blob_sha": "4a4c3a1b246eccacabe1a4085c63808505a3761b",
+      "source_sha256": "9d36838485afe3c54e916898f3fe43f2b5638d291d87006181f4c331b807f895"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/critic.py",
+      "git_blob_sha": "9db6603ef2840615b5a591953960eea10f543c06",
+      "source_sha256": "e480c25b7d3fca5cc8bafd2556e629ffd919fa69ecb8eca3cf293f19bcf181f4"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/details.py",
+      "git_blob_sha": "0683be984bb15d5cde32ecbb1c42389812dc5dc8",
+      "source_sha256": "b2a9813a6121524803a4c9294694e8a65beafe6a3250806e668f37ef8ded7061"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/emoji.py",
+      "git_blob_sha": "897db6b019f02b266628be42da58f7a57f877ea6",
+      "source_sha256": "d540c371ba011052b9ac1a3e06f3ab8886b5823f90b5823cc3288916a98ba9bb"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/emoji1_db.py",
+      "git_blob_sha": "a57fc5e19ce9288591dfd8c34872916b75b07b09",
+      "source_sha256": "287d39a543b6cdf6aa4ed82fb3ca79e49cb6eef8210a5fc02e47007e6ccd6744"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/escapeall.py",
+      "git_blob_sha": "b5e264ea2d3e063cf5699d25ca0a86f1b9cc08d8",
+      "source_sha256": "4510626ec2047b6c92f346c155f0d0932dcdb814d9ecf2717e277d5ab8fa82f6"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/extra.py",
+      "git_blob_sha": "2fdabe5784fb85fb5af3ac441f079c7fa57a592c",
+      "source_sha256": "a8de9b0f087a80b8d045fcb354795251f43b7190effee66f0b3bf27af58489bc"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/highlight.py",
+      "git_blob_sha": "30282d5eb7818dbabd2f600a8668573feb4fab5e",
+      "source_sha256": "e3f07150a2b677a01491f61e69720b2a02a1b372821fdf3b83af97beaaf160fe"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/inlinehilite.py",
+      "git_blob_sha": "2a3d51eb9c0b082b97d7b6c28bc87849a14a1251",
+      "source_sha256": "e4e2c2389ad076c047543d470c26cd55c6f7b7bcccf0046f35d2b492bd25147f"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/keys.py",
+      "git_blob_sha": "88b1efec4543caf245e966157a2e97652185204b",
+      "source_sha256": "efeb6e3426faa9e2fbe0d0290d6eef40af324d60e31b5068ae46045abb6396fa"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/magiclink.py",
+      "git_blob_sha": "73cdce70f4940bedb343d8a14d51434a8c8774ec",
+      "source_sha256": "056a989056096f5343eb81b61f378f78f3f5c152c52791eb326e83692264b928"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/mark.py",
+      "git_blob_sha": "0b0b3795cbe82f711c2549b7be347c13c83f1e44",
+      "source_sha256": "a6105d09b3415dcaea8293310ad7967948daa8ba2be1bc2dc6d6d77e86a13917"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/pathconverter.py",
+      "git_blob_sha": "c125e183464da4bfbce4c1ce20fb589b01a0d5fa",
+      "source_sha256": "4b5340a989be5555b159971183f713f73d41a3bc938f1c80bbc3bb6335f4548f"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/progressbar.py",
+      "git_blob_sha": "5581ec54c65a8039ecc2b3f42d6a70362d88c41c",
+      "source_sha256": "36e5e6faae8a4f18844c5b40a34aafd06149635bdf1e0fa9669f4578db8bc589"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/saneheaders.py",
+      "git_blob_sha": "53e2c3d2bc705f116660ac48d3a0ea5faa3e2cb5",
+      "source_sha256": "07447493c9f79834e108b1079aa891be1f443e1174c244064f1944c2b02dc87c"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/slugs.py",
+      "git_blob_sha": "8a3870e27ea19d1ad52977211d3563688f973121",
+      "source_sha256": "d47678262370c94045cd71908293c0f82ad08ffc3ef999458e16a8c2c97a73df"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/smartsymbols.py",
+      "git_blob_sha": "9eb33307a758ac31ff6445313fde7a7c446e4e0e",
+      "source_sha256": "478650b04c10fc6cce03f2cb824398e6f8e8b8369ec6a30def0c00cc9da94464"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/snippets.py",
+      "git_blob_sha": "56b03de3ea0f2b0e5fdc45a1092c4ed980fa5204",
+      "source_sha256": "545ee13c55b18357197ab9add40538b425d30c96b873b470fc665e53a91b31c7"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/striphtml.py",
+      "git_blob_sha": "87d87902e939dd4672657e27c50543a49d6e1d8c",
+      "source_sha256": "9c5f2bca6c1d0a702791b298afa209ce0a2f23f294ef3d7528a98de0c9ba82db"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/superfences.py",
+      "git_blob_sha": "7f60b52a57441613ea24e2924471acffa348d2a9",
+      "source_sha256": "241198762d1490a37e239308d05a7dddc704f26a4a28bc30af6b4fc0f30251d7"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/tabbed.py",
+      "git_blob_sha": "81bfd9b2b2aa680e1fb78823d5c7861c97c51ddd",
+      "source_sha256": "dc1fa746d98a911621a4a9be93fb3c414cb746c8b27fc7ed3cb72dbec05847c9"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/tasklist.py",
+      "git_blob_sha": "88dc19a76140969791a6be081431c2fe9e2e833f",
+      "source_sha256": "fc2781580bdb03e01d04109a305bb8f2edb8f13eaf11caf9235cf2e30bff0c2a"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/tilde.py",
+      "git_blob_sha": "5de07a25d9fb80a0ef78ec4699729996079fd746",
+      "source_sha256": "4ec2b0ed2b1bf5d2a3f85fb888d8be69b2fff2f5ce646d3486415bfba83c8621"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pymdownx/util.py",
+      "git_blob_sha": "2303fe779bee588e83c5688da5578d049b8d9525",
+      "source_sha256": "c6c25c73ee67c4208be2c18a819d476be1e6660812965c458b8787aee9a9c320"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "pyproject.toml",
+      "git_blob_sha": "dbd3f0d51b684aa422a691cefebae6f7b9a62858",
+      "source_sha256": "155c3d82168f2b2f488028d57cd8f72bc98ff0c98503526eeb359c86f63fa3e5"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/__init__.py",
+      "git_blob_sha": "8eef0e82086d2cccfc3b2422deee7888e6ca8873",
+      "source_sha256": "dddd30bb9083d33894987be4402f7cba0cc62c930de49349cd32da670cad19f6"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/__init__.py",
+      "git_blob_sha": "8afdcd2aa8a6fd66b4234414c855e0425ed27d5e",
+      "source_sha256": "353f43d90ed5fb83aa9facf2f1b9fddd660dab398c1aee003ad20cf3ddbb31f5"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/a.txt",
+      "git_blob_sha": "7ecc8e4f331377db8d0caed7b316e625af7cb245",
+      "source_sha256": "52bae3d790db828968745ea85463bfc6440df99aaa6fdab81b0685ab9fb53008"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/b.txt",
+      "git_blob_sha": "528c55e3ae5ab31701e42285503ea9538f175afb",
+      "source_sha256": "c4b50f6b34a2cd8af501abce284e68ce30adb1ed65fb4214d29a3cc5dd1d9548"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/c.txt",
+      "git_blob_sha": "4fd4b94de69f62c54cbcf0487b426ad34823a376",
+      "source_sha256": "4152075cdee00a20b9d21aa336eddd4a539b9e9586229bc3bf1dd22fb39bbf14"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/d.txt",
+      "git_blob_sha": "528c55e3ae5ab31701e42285503ea9538f175afb",
+      "source_sha256": "c4b50f6b34a2cd8af501abce284e68ce30adb1ed65fb4214d29a3cc5dd1d9548"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/indented.txt",
+      "git_blob_sha": "b56288436272da9117ab8b80299ca7bdd00d863f",
+      "source_sha256": "3c0d1a1ca4089762669a62085287f2f734e801d13178498665f6202ce0b836a6"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/lines.txt",
+      "git_blob_sha": "a6b1847efd93e072ab5a9d453df8beedc8925d04",
+      "source_sha256": "377f978932e52ac87a42b4fcf20089c330cf88f46a93aae3934f8a1b9815a794"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/loop.txt",
+      "git_blob_sha": "81f9a5c71a3b3a36f9ac69bab5771f23d3a41c68",
+      "source_sha256": "47dc25b4f91628150bfa74595bd33ed2a0621b1999bcd63ca33f30f47e7f8f61"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/loop_block.txt",
+      "git_blob_sha": "0d4e0f24466515be345de5b380e907f41772ad93",
+      "source_sha256": "a02bbd150ae9d51d67821c598454e7cb2fc656c59d94489c4b6b8060ae8af574"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/missing.txt",
+      "git_blob_sha": "e7d576f8dfc60cf781f7ce71b52157136de08c16",
+      "source_sha256": "954da1d83d50b6e10c0e49f516ccfef50a17ad1e7885b612e08e8012bc0ad1f6"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/nested/nested.txt",
+      "git_blob_sha": "528c55e3ae5ab31701e42285503ea9538f175afb",
+      "source_sha256": "c4b50f6b34a2cd8af501abce284e68ce30adb1ed65fb4214d29a3cc5dd1d9548"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/section.txt",
+      "git_blob_sha": "ea99478ce4813e49c8874c6c3aef7e4884f88b1c",
+      "source_sha256": "61b1d704b2d5948e29d691e952ffcb36ac9c65e485fe871d5b4a8e2927fd55f9"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/_snippets/section_nested.txt",
+      "git_blob_sha": "cdc7cc54cd7a7572648bc66fbb069412f8bd8208",
+      "source_sha256": "015cc1f07236ed060ffbef9668e9414c43a85670267aba7482044c5f6addcbb1"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/test_extensions/test_snippets.py",
+      "git_blob_sha": "caa1a1b2bf7efc25f41eb1e65a9e34e5734a1696",
+      "source_sha256": "a8640e2d9a70844e4cf10d52fa969b407fee5e33d0e831613ae238877621b620"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "path": "tests/util.py",
+      "git_blob_sha": "32042a773298a740bfc1ac1e52691fa7386600dc",
+      "source_sha256": "4b8731750a2a716868410b097ce7c03dfaebc2af61d534c8b4e2628af0e2f4ad"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/__init__.py",
+      "git_blob_sha": "b04e80430caf8fdaac5652b7464f785c3b6faf69",
+      "source_sha256": "f5be6d551a91888685933803fe2f749db8b10e6afff896677c266a6958765525"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/__meta__.py",
+      "git_blob_sha": "4e7534c5c2f0e5fdc48f5a4ad5b7099cfd9c2c27",
+      "source_sha256": "2dc56c30e51fd9a5d291a34aae2544e1bac804d2ffb6d2f0722b1b5416758990"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/_bypassnorm.py",
+      "git_blob_sha": "d06a5f509b19b97881d73e03604eb253519aa547",
+      "source_sha256": "c4dec43a11d560b253b0d3e975317b214194bbd2ecc6432c153d5a528a294c98"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/arithmatex.py",
+      "git_blob_sha": "dbcb0ce5a5790d36729ae027bb9e4a192c39cc7d",
+      "source_sha256": "5c480234cb93eb5171d2149101da64092c703b639bb083b5b7bddba2ed575b69"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/b64.py",
+      "git_blob_sha": "20875b0cbffae309cf3157f1dbcb01b0ae0fea7b",
+      "source_sha256": "2ab0e9491836fc9229b5dc6aca0c13b7cdefd374f2e4579e44418ecbe31392b6"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/betterem.py",
+      "git_blob_sha": "bbbc63f03116b740954f8cf2eb592f3e463e0967",
+      "source_sha256": "fb0cc9b5faba18ae5e477400e21afd0f02e782d17c68b4ea0ee3d6a24b24190b"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/blocks/__init__.py",
+      "git_blob_sha": "d26475fe75acab3ad2d0e7075b37ce9f48bbec8f",
+      "source_sha256": "58945abab37caf9ca46b2ed8e0d31ceb91ee0435ac2300d10589163428d91936"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/blocks/admonition.py",
+      "git_blob_sha": "c3cc4371970ffa900b7a9223cc9c1af2da796495",
+      "source_sha256": "0cc216f262fcf3d01a2fcaf79733fd2ed7b0b1f34435484d14fb52d3f1257787"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/blocks/block.py",
+      "git_blob_sha": "f3879c594b76cb189fd5df91fe934e67f24b6c15",
+      "source_sha256": "d83acd5b06ee46c46312a9025917c025069b63e30d131a1d76ad8f932c25bd09"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/blocks/definition.py",
+      "git_blob_sha": "56b61058c16da1e56bf4126eed04001655a3c280",
+      "source_sha256": "688fb91db92057befca3919a8814740732943025571ffa962255d473f728379c"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/blocks/details.py",
+      "git_blob_sha": "976ed3c24146687cbbd0739e224b3e64a12ba3ab",
+      "source_sha256": "bd75333921cf886eaadf6e58e99a37f2cd41a1ae7ef332a9ca6c4bf7ff16676f"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/blocks/html.py",
+      "git_blob_sha": "4d73d7d40e811735b8491dd7db0a6ec0cedbaf65",
+      "source_sha256": "f25c5d6ea629c4a061f04e996d4a759ac183e56c15c6c3238bc48fef8f4b6edc"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/blocks/tab.py",
+      "git_blob_sha": "363d55aa164af8ff5796959f7702fa92872c16eb",
+      "source_sha256": "3d3f78c7fcb60ccf8a1b25fda812f942a89170b7af7ded205116876efe00dc57"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/caret.py",
+      "git_blob_sha": "4a4c3a1b246eccacabe1a4085c63808505a3761b",
+      "source_sha256": "9d36838485afe3c54e916898f3fe43f2b5638d291d87006181f4c331b807f895"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/critic.py",
+      "git_blob_sha": "9db6603ef2840615b5a591953960eea10f543c06",
+      "source_sha256": "e480c25b7d3fca5cc8bafd2556e629ffd919fa69ecb8eca3cf293f19bcf181f4"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/details.py",
+      "git_blob_sha": "0683be984bb15d5cde32ecbb1c42389812dc5dc8",
+      "source_sha256": "b2a9813a6121524803a4c9294694e8a65beafe6a3250806e668f37ef8ded7061"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/emoji.py",
+      "git_blob_sha": "897db6b019f02b266628be42da58f7a57f877ea6",
+      "source_sha256": "d540c371ba011052b9ac1a3e06f3ab8886b5823f90b5823cc3288916a98ba9bb"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/emoji1_db.py",
+      "git_blob_sha": "a57fc5e19ce9288591dfd8c34872916b75b07b09",
+      "source_sha256": "287d39a543b6cdf6aa4ed82fb3ca79e49cb6eef8210a5fc02e47007e6ccd6744"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/escapeall.py",
+      "git_blob_sha": "b5e264ea2d3e063cf5699d25ca0a86f1b9cc08d8",
+      "source_sha256": "4510626ec2047b6c92f346c155f0d0932dcdb814d9ecf2717e277d5ab8fa82f6"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/extra.py",
+      "git_blob_sha": "2fdabe5784fb85fb5af3ac441f079c7fa57a592c",
+      "source_sha256": "a8de9b0f087a80b8d045fcb354795251f43b7190effee66f0b3bf27af58489bc"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/highlight.py",
+      "git_blob_sha": "30282d5eb7818dbabd2f600a8668573feb4fab5e",
+      "source_sha256": "e3f07150a2b677a01491f61e69720b2a02a1b372821fdf3b83af97beaaf160fe"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/inlinehilite.py",
+      "git_blob_sha": "2a3d51eb9c0b082b97d7b6c28bc87849a14a1251",
+      "source_sha256": "e4e2c2389ad076c047543d470c26cd55c6f7b7bcccf0046f35d2b492bd25147f"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/keys.py",
+      "git_blob_sha": "88b1efec4543caf245e966157a2e97652185204b",
+      "source_sha256": "efeb6e3426faa9e2fbe0d0290d6eef40af324d60e31b5068ae46045abb6396fa"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/magiclink.py",
+      "git_blob_sha": "73cdce70f4940bedb343d8a14d51434a8c8774ec",
+      "source_sha256": "056a989056096f5343eb81b61f378f78f3f5c152c52791eb326e83692264b928"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/mark.py",
+      "git_blob_sha": "0b0b3795cbe82f711c2549b7be347c13c83f1e44",
+      "source_sha256": "a6105d09b3415dcaea8293310ad7967948daa8ba2be1bc2dc6d6d77e86a13917"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/pathconverter.py",
+      "git_blob_sha": "c125e183464da4bfbce4c1ce20fb589b01a0d5fa",
+      "source_sha256": "4b5340a989be5555b159971183f713f73d41a3bc938f1c80bbc3bb6335f4548f"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/progressbar.py",
+      "git_blob_sha": "5581ec54c65a8039ecc2b3f42d6a70362d88c41c",
+      "source_sha256": "36e5e6faae8a4f18844c5b40a34aafd06149635bdf1e0fa9669f4578db8bc589"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/saneheaders.py",
+      "git_blob_sha": "53e2c3d2bc705f116660ac48d3a0ea5faa3e2cb5",
+      "source_sha256": "07447493c9f79834e108b1079aa891be1f443e1174c244064f1944c2b02dc87c"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/slugs.py",
+      "git_blob_sha": "8a3870e27ea19d1ad52977211d3563688f973121",
+      "source_sha256": "d47678262370c94045cd71908293c0f82ad08ffc3ef999458e16a8c2c97a73df"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/smartsymbols.py",
+      "git_blob_sha": "9eb33307a758ac31ff6445313fde7a7c446e4e0e",
+      "source_sha256": "478650b04c10fc6cce03f2cb824398e6f8e8b8369ec6a30def0c00cc9da94464"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/snippets.py",
+      "git_blob_sha": "e7ae2e986655807dc13e06aa7efa5b4e5b470dd1",
+      "source_sha256": "efa824275ed43d22e9f83e9a031e806b249f527cff465de19b4ef1d9169ef5d8"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/striphtml.py",
+      "git_blob_sha": "87d87902e939dd4672657e27c50543a49d6e1d8c",
+      "source_sha256": "9c5f2bca6c1d0a702791b298afa209ce0a2f23f294ef3d7528a98de0c9ba82db"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/superfences.py",
+      "git_blob_sha": "7f60b52a57441613ea24e2924471acffa348d2a9",
+      "source_sha256": "241198762d1490a37e239308d05a7dddc704f26a4a28bc30af6b4fc0f30251d7"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/tabbed.py",
+      "git_blob_sha": "81bfd9b2b2aa680e1fb78823d5c7861c97c51ddd",
+      "source_sha256": "dc1fa746d98a911621a4a9be93fb3c414cb746c8b27fc7ed3cb72dbec05847c9"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/tasklist.py",
+      "git_blob_sha": "88dc19a76140969791a6be081431c2fe9e2e833f",
+      "source_sha256": "fc2781580bdb03e01d04109a305bb8f2edb8f13eaf11caf9235cf2e30bff0c2a"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/tilde.py",
+      "git_blob_sha": "5de07a25d9fb80a0ef78ec4699729996079fd746",
+      "source_sha256": "4ec2b0ed2b1bf5d2a3f85fb888d8be69b2fff2f5ce646d3486415bfba83c8621"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pymdownx/util.py",
+      "git_blob_sha": "2303fe779bee588e83c5688da5578d049b8d9525",
+      "source_sha256": "c6c25c73ee67c4208be2c18a819d476be1e6660812965c458b8787aee9a9c320"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "pyproject.toml",
+      "git_blob_sha": "dbd3f0d51b684aa422a691cefebae6f7b9a62858",
+      "source_sha256": "155c3d82168f2b2f488028d57cd8f72bc98ff0c98503526eeb359c86f63fa3e5"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/__init__.py",
+      "git_blob_sha": "8eef0e82086d2cccfc3b2422deee7888e6ca8873",
+      "source_sha256": "dddd30bb9083d33894987be4402f7cba0cc62c930de49349cd32da670cad19f6"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/__init__.py",
+      "git_blob_sha": "8afdcd2aa8a6fd66b4234414c855e0425ed27d5e",
+      "source_sha256": "353f43d90ed5fb83aa9facf2f1b9fddd660dab398c1aee003ad20cf3ddbb31f5"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/_snippets/a.txt",
+      "git_blob_sha": "7ecc8e4f331377db8d0caed7b316e625af7cb245",
+      "source_sha256": "52bae3d790db828968745ea85463bfc6440df99aaa6fdab81b0685ab9fb53008"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/_snippets/b.txt",
+      "git_blob_sha": "528c55e3ae5ab31701e42285503ea9538f175afb",
+      "source_sha256": "c4b50f6b34a2cd8af501abce284e68ce30adb1ed65fb4214d29a3cc5dd1d9548"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/_snippets/c.txt",
+      "git_blob_sha": "4fd4b94de69f62c54cbcf0487b426ad34823a376",
+      "source_sha256": "4152075cdee00a20b9d21aa336eddd4a539b9e9586229bc3bf1dd22fb39bbf14"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/_snippets/d.txt",
+      "git_blob_sha": "528c55e3ae5ab31701e42285503ea9538f175afb",
+      "source_sha256": "c4b50f6b34a2cd8af501abce284e68ce30adb1ed65fb4214d29a3cc5dd1d9548"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/_snippets/indented.txt",
+      "git_blob_sha": "b56288436272da9117ab8b80299ca7bdd00d863f",
+      "source_sha256": "3c0d1a1ca4089762669a62085287f2f734e801d13178498665f6202ce0b836a6"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/_snippets/lines.txt",
+      "git_blob_sha": "a6b1847efd93e072ab5a9d453df8beedc8925d04",
+      "source_sha256": "377f978932e52ac87a42b4fcf20089c330cf88f46a93aae3934f8a1b9815a794"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/_snippets/loop.txt",
+      "git_blob_sha": "81f9a5c71a3b3a36f9ac69bab5771f23d3a41c68",
+      "source_sha256": "47dc25b4f91628150bfa74595bd33ed2a0621b1999bcd63ca33f30f47e7f8f61"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/_snippets/loop_block.txt",
+      "git_blob_sha": "0d4e0f24466515be345de5b380e907f41772ad93",
+      "source_sha256": "a02bbd150ae9d51d67821c598454e7cb2fc656c59d94489c4b6b8060ae8af574"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/_snippets/missing.txt",
+      "git_blob_sha": "e7d576f8dfc60cf781f7ce71b52157136de08c16",
+      "source_sha256": "954da1d83d50b6e10c0e49f516ccfef50a17ad1e7885b612e08e8012bc0ad1f6"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/_snippets/section.txt",
+      "git_blob_sha": "ea99478ce4813e49c8874c6c3aef7e4884f88b1c",
+      "source_sha256": "61b1d704b2d5948e29d691e952ffcb36ac9c65e485fe871d5b4a8e2927fd55f9"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/_snippets/section_nested.txt",
+      "git_blob_sha": "cdc7cc54cd7a7572648bc66fbb069412f8bd8208",
+      "source_sha256": "015cc1f07236ed060ffbef9668e9414c43a85670267aba7482044c5f6addcbb1"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/test_extensions/test_snippets.py",
+      "git_blob_sha": "e91a8c4de02a42736e320060788c7d6c1c96b9be",
+      "source_sha256": "9fec5e404456fca6d2e917bb7b98bcd5518e956266cb321402897ee020089d38"
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "path": "tests/util.py",
+      "git_blob_sha": "32042a773298a740bfc1ac1e52691fa7386600dc",
+      "source_sha256": "4b8731750a2a716868410b097ce7c03dfaebc2af61d534c8b4e2628af0e2f4ad"
+    }
+  ]
+}

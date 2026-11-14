@@ -1,5 +1,7 @@
 # Theron platform contract and implementation roadmap
 
+Latest implementation: [security-state models and dependency evidence](evaluation/evidence-2026-11-14/README.md), `f370de1`, with 746 Python/17 frontend tests and build passing. New checks cover bounded HTML ordering, TLS pool policy, MCP validation and AST callable access. OSV pagination and typed metadata reach exports/frontend; MCP dependency context is explicitly inferred. Paired upstream checks now cover selected MCP/pymdown behaviors. Six pilot environments, SQLparse security validation and CVAT services remain unfinished; platform-wide research benefit remains unmeasured. Earlier checkpoint descriptions below are historical.
+
 Status: contract declared 12 November 2026; latest bounded implementation/evaluation update 14 November 2026 (Asia/Calcutta).
 Original code/evaluation baseline: `4c1bc8c83fcf27c26ac4b3f4ca3fd70a6a6a6e52`.
 This document separates implemented capabilities from research acceptance criteria. Checkpoint reports below retain the evidence and measurement limits.

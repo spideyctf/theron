@@ -1,5 +1,7 @@
 # Detection quality and report interpretation
 
+Latest checkpoint: [security-state models and upstream validation](evaluation/evidence-2026-11-14/README.md), implementation `f370de1`. 746 Python tests, 17 frontend tests and build pass; all 1,470 synthetic outcomes remain unchanged. The exposed pilot now has four mechanism candidates and two strict CNA matches among eight labelled cases. This is development evidence, not fresh recall. Selected MCP/pymdown upstream pairs reproduce; SQLparse functional tests do not distinguish the security repair. OSV and inferred dependency context retain declared-version/reachability uncertainty. Following dated reports preserve historical checkpoints.
+
 Theron produces static evidence for review, not automatically confirmed exploits. Passing a benchmark threshold does not establish industry-grade readiness. The current tuning corpus was inspected during development and is not held out.
 
 ## Report scopes

@@ -1,0 +1,1423 @@
+{
+  "records": [
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/__init__.py",
+      "git_blob_sha": "e93b95c9025e92751b1f15ef357ae6de3e216f79",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/__init__.py",
+      "source_sha256": "8105a14a68c0c52ace23f86ac2f039f1da1f38e0ffd1a4b8d7d08fc75ed14105"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/__init__.py",
+      "git_blob_sha": "e93b95c9025e92751b1f15ef357ae6de3e216f79",
+      "shared_fixed_blob": true,
+      "source_sha256": "8105a14a68c0c52ace23f86ac2f039f1da1f38e0ffd1a4b8d7d08fc75ed14105"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/cli/__init__.py",
+      "git_blob_sha": "3ef56d8063423b5851dc63ff3d12339065a91600",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/cli/__init__.py",
+      "source_sha256": "222dbce133681b99714cfe3411330684712ade54195b1bbd9bd26e539ee45294"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/cli/__init__.py",
+      "git_blob_sha": "3ef56d8063423b5851dc63ff3d12339065a91600",
+      "shared_fixed_blob": true,
+      "source_sha256": "222dbce133681b99714cfe3411330684712ade54195b1bbd9bd26e539ee45294"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/cli/claude.py",
+      "git_blob_sha": "1629f92871affea41aaec9ba9968f105d005a8ad",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/cli/claude.py",
+      "source_sha256": "a9b3281d9682859781dcd5c227986a28029233a92a18284aa1b8716ca23e1e0d"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/cli/claude.py",
+      "git_blob_sha": "1629f92871affea41aaec9ba9968f105d005a8ad",
+      "shared_fixed_blob": true,
+      "source_sha256": "a9b3281d9682859781dcd5c227986a28029233a92a18284aa1b8716ca23e1e0d"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/cli/cli.py",
+      "git_blob_sha": "b2632f1d922843837479960bd974564605f998b1",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/cli/cli.py",
+      "source_sha256": "d0bcd5aa537797a1929c5a72c9ac3e7ed6f9f3bbd9596e98aaeebea347ed5fa0"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/cli/cli.py",
+      "git_blob_sha": "b2632f1d922843837479960bd974564605f998b1",
+      "shared_fixed_blob": true,
+      "source_sha256": "d0bcd5aa537797a1929c5a72c9ac3e7ed6f9f3bbd9596e98aaeebea347ed5fa0"
+    },
+    {
+      "path": "src/mcp/client/__init__.py",
+      "error": "{\"content\":[{\"type\":\"text\",\"text\":\"Action completed.\"}],\"structuredContent\":{\"content\":\"\",\"encoding\":\"base64\",\"sha\":\"e69de29bb2d1d6434b8b29ae775ad8c2e48c5391\",\"display_url\":\"https://github.com/modelco",
+      "recovered": "Empty content was initially mistaken for a retrieval failure"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/client/__main__.py",
+      "git_blob_sha": "2ec68e56cdfd24252002659235befb7f3433a670",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/client/__main__.py",
+      "source_sha256": "ae76c92de9fbbdae24177df02c84f65fe35250ae2394228a17d63a0e15fc8f3b"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/client/__main__.py",
+      "git_blob_sha": "2ec68e56cdfd24252002659235befb7f3433a670",
+      "shared_fixed_blob": true,
+      "source_sha256": "ae76c92de9fbbdae24177df02c84f65fe35250ae2394228a17d63a0e15fc8f3b"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/client/auth.py",
+      "git_blob_sha": "fc6c96a438118a9c9f95250f8ddcd2ccdfaf1701",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/client/auth.py",
+      "source_sha256": "c71137665cad3da524aa4a5de1ec1b34042647b8f8522f2414d1e1c3adacd362"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/client/auth.py",
+      "git_blob_sha": "fc6c96a438118a9c9f95250f8ddcd2ccdfaf1701",
+      "shared_fixed_blob": true,
+      "source_sha256": "c71137665cad3da524aa4a5de1ec1b34042647b8f8522f2414d1e1c3adacd362"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/client/session.py",
+      "git_blob_sha": "3b7fc3fae758206a64fb9b0e81e983f4e2aa9bf3",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/client/session.py",
+      "source_sha256": "cf606ff1866c2bdf3e1438d2b94816f9ae0e1ec41c945799ba0dfbab857a583b"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/client/session.py",
+      "git_blob_sha": "3b7fc3fae758206a64fb9b0e81e983f4e2aa9bf3",
+      "shared_fixed_blob": true,
+      "source_sha256": "cf606ff1866c2bdf3e1438d2b94816f9ae0e1ec41c945799ba0dfbab857a583b"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/client/session_group.py",
+      "git_blob_sha": "a77dc7a1e862110e251b931f42e00b7938be3d5e",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/client/session_group.py",
+      "source_sha256": "78c4b6f5bde26c61789ef33d79cf9e9958bd68d9ee014e87b7b677f58dc053ef"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/client/session_group.py",
+      "git_blob_sha": "a77dc7a1e862110e251b931f42e00b7938be3d5e",
+      "shared_fixed_blob": true,
+      "source_sha256": "78c4b6f5bde26c61789ef33d79cf9e9958bd68d9ee014e87b7b677f58dc053ef"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/client/sse.py",
+      "git_blob_sha": "2013e4199efc7ee0b85b67788597f2f0fd92daee",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/client/sse.py",
+      "source_sha256": "e0a0819fbf4db6340f06abee0e3b9ad333a16747990aba74b9b5a0d0d4d50db4"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/client/sse.py",
+      "git_blob_sha": "2013e4199efc7ee0b85b67788597f2f0fd92daee",
+      "shared_fixed_blob": true,
+      "source_sha256": "e0a0819fbf4db6340f06abee0e3b9ad333a16747990aba74b9b5a0d0d4d50db4"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/client/stdio/__init__.py",
+      "git_blob_sha": "fce605633bf1a7c784abc254986d5731a899c35a",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/client/stdio/__init__.py",
+      "source_sha256": "52bf3fce40ec435f7b1324890126e9471d6f14d9cb065b200c92eaa121ae944d"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/client/stdio/__init__.py",
+      "git_blob_sha": "fce605633bf1a7c784abc254986d5731a899c35a",
+      "shared_fixed_blob": true,
+      "source_sha256": "52bf3fce40ec435f7b1324890126e9471d6f14d9cb065b200c92eaa121ae944d"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/client/stdio/win32.py",
+      "git_blob_sha": "825a0477d422b2a5e30e718ebfd4f5140b758d62",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/client/stdio/win32.py",
+      "source_sha256": "d401df5d8131f2ed09b02413655d370117607d374f54bad18f7f88e65104e83f"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/client/stdio/win32.py",
+      "git_blob_sha": "825a0477d422b2a5e30e718ebfd4f5140b758d62",
+      "shared_fixed_blob": true,
+      "source_sha256": "d401df5d8131f2ed09b02413655d370117607d374f54bad18f7f88e65104e83f"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/client/streamable_http.py",
+      "git_blob_sha": "7cf4278ccff9e96977ac1196b194066854788149",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/client/streamable_http.py",
+      "source_sha256": "a8c35c97889c5dde07c18e334b730976b5768ea82d245823644df659ac55aebd"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/client/streamable_http.py",
+      "git_blob_sha": "7cf4278ccff9e96977ac1196b194066854788149",
+      "shared_fixed_blob": true,
+      "source_sha256": "a8c35c97889c5dde07c18e334b730976b5768ea82d245823644df659ac55aebd"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/client/websocket.py",
+      "git_blob_sha": "ac542fb3f6a5068550a63190e7e052cb5afdd645",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/client/websocket.py",
+      "source_sha256": "a4036bada0c220eece413a94490576aebb42320602ac0b17fe126224c5855f27"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/client/websocket.py",
+      "git_blob_sha": "ac542fb3f6a5068550a63190e7e052cb5afdd645",
+      "shared_fixed_blob": true,
+      "source_sha256": "a4036bada0c220eece413a94490576aebb42320602ac0b17fe126224c5855f27"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/__init__.py",
+      "git_blob_sha": "0feed368e4f27649c5db3e6f0dcd299d311d66ed",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/__init__.py",
+      "source_sha256": "8de323024bc286128b132d5fa5e289e1dfdb4f5be79e6b869b5d68b50ee77018"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/__init__.py",
+      "git_blob_sha": "0feed368e4f27649c5db3e6f0dcd299d311d66ed",
+      "shared_fixed_blob": true,
+      "source_sha256": "8de323024bc286128b132d5fa5e289e1dfdb4f5be79e6b869b5d68b50ee77018"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/__main__.py",
+      "git_blob_sha": "1970eca7d320afb498ee60e20eb7986d0d523525",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/__main__.py",
+      "source_sha256": "29a9144aab85ed1e38520c20dcde5540226c3e7b0456b6f093e5274477ab570c"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/__main__.py",
+      "git_blob_sha": "1970eca7d320afb498ee60e20eb7986d0d523525",
+      "shared_fixed_blob": true,
+      "source_sha256": "29a9144aab85ed1e38520c20dcde5540226c3e7b0456b6f093e5274477ab570c"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/__init__.py",
+      "git_blob_sha": "6888ffe8d94ff1f9ee9dc0bb7f52c0834e1eadc1",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/__init__.py",
+      "source_sha256": "c66c41cc6018bde8ce133c6abd9c62464a28b48765a69e56ac23623cabee29d9"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/__init__.py",
+      "git_blob_sha": "6888ffe8d94ff1f9ee9dc0bb7f52c0834e1eadc1",
+      "shared_fixed_blob": true,
+      "source_sha256": "c66c41cc6018bde8ce133c6abd9c62464a28b48765a69e56ac23623cabee29d9"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/errors.py",
+      "git_blob_sha": "053c2fd2eebb0313fa5344ad6cddd77472bfab96",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/errors.py",
+      "source_sha256": "9d065db69b5376a3bdd61da1010f58cbc8a859478db32c3ea224b2c56d076300"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/errors.py",
+      "git_blob_sha": "053c2fd2eebb0313fa5344ad6cddd77472bfab96",
+      "shared_fixed_blob": true,
+      "source_sha256": "9d065db69b5376a3bdd61da1010f58cbc8a859478db32c3ea224b2c56d076300"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/handlers/__init__.py",
+      "git_blob_sha": "e99a62de1a5071a20d3746b8c67095a57817f3bf",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/handlers/__init__.py",
+      "source_sha256": "4f6b9e4165692c36cc20088e7113b2ba6c51c2a6bc3e8e6503dcddfc26edd947"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/handlers/__init__.py",
+      "git_blob_sha": "e99a62de1a5071a20d3746b8c67095a57817f3bf",
+      "shared_fixed_blob": true,
+      "source_sha256": "4f6b9e4165692c36cc20088e7113b2ba6c51c2a6bc3e8e6503dcddfc26edd947"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/handlers/authorize.py",
+      "git_blob_sha": "f03afd566bef2b2359cbb980eaff10a50e7f4281",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/handlers/authorize.py",
+      "source_sha256": "d06adce3c35f08af964dc1e3f12762680f6bb3befd2fc555d8e100aee3148549"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/handlers/authorize.py",
+      "git_blob_sha": "f03afd566bef2b2359cbb980eaff10a50e7f4281",
+      "shared_fixed_blob": true,
+      "source_sha256": "d06adce3c35f08af964dc1e3f12762680f6bb3befd2fc555d8e100aee3148549"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/handlers/metadata.py",
+      "git_blob_sha": "e37e5d311ff5c1661c738ef8c303786e2fb37d68",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/handlers/metadata.py",
+      "source_sha256": "3f33747033ba8d9b911504f0933ebce6997216fa63fd2ec3d455a9d15b9ce2d9"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/handlers/metadata.py",
+      "git_blob_sha": "e37e5d311ff5c1661c738ef8c303786e2fb37d68",
+      "shared_fixed_blob": true,
+      "source_sha256": "3f33747033ba8d9b911504f0933ebce6997216fa63fd2ec3d455a9d15b9ce2d9"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/handlers/register.py",
+      "git_blob_sha": "2e25c779a3f2fc89e403b6c92b03c15189309643",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/handlers/register.py",
+      "source_sha256": "27a6a1d7871dd5315b25db8ab76c5deba3556b645e0a5feab6130b133d15ed78"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/handlers/register.py",
+      "git_blob_sha": "2e25c779a3f2fc89e403b6c92b03c15189309643",
+      "shared_fixed_blob": true,
+      "source_sha256": "27a6a1d7871dd5315b25db8ab76c5deba3556b645e0a5feab6130b133d15ed78"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/handlers/revoke.py",
+      "git_blob_sha": "43b4dded90e7901799b4ca08fb4bb2615df94a1a",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/handlers/revoke.py",
+      "source_sha256": "0520efd0f7ff42ed207559c9f934b109f5937dff7a37beb23b88d1c93ee19ac7"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/handlers/revoke.py",
+      "git_blob_sha": "43b4dded90e7901799b4ca08fb4bb2615df94a1a",
+      "shared_fixed_blob": true,
+      "source_sha256": "0520efd0f7ff42ed207559c9f934b109f5937dff7a37beb23b88d1c93ee19ac7"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/handlers/token.py",
+      "git_blob_sha": "abea2bd41f2bb4292d375ddf5bf7ad0bbee2cf13",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/handlers/token.py",
+      "source_sha256": "286401d88a63b93dd145876e680fd7897b638790a2f0b13c6b4833286ca44767"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/handlers/token.py",
+      "git_blob_sha": "abea2bd41f2bb4292d375ddf5bf7ad0bbee2cf13",
+      "shared_fixed_blob": true,
+      "source_sha256": "286401d88a63b93dd145876e680fd7897b638790a2f0b13c6b4833286ca44767"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/json_response.py",
+      "git_blob_sha": "bd95bd693b8bfa80296d5b4d4849f7ea0db768de",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/json_response.py",
+      "source_sha256": "10cbf7a801fadaf46ec3c5c11dd154de4629d12f0977a0e34467f073b25cf575"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/json_response.py",
+      "git_blob_sha": "bd95bd693b8bfa80296d5b4d4849f7ea0db768de",
+      "shared_fixed_blob": true,
+      "source_sha256": "10cbf7a801fadaf46ec3c5c11dd154de4629d12f0977a0e34467f073b25cf575"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/middleware/__init__.py",
+      "git_blob_sha": "ba3ff63c342479203e3044abc236dcc02c4f80dd",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/middleware/__init__.py",
+      "source_sha256": "5e14548bfc3e89efd01bb5d3e447ea346f8d3d9bd7b49b601d207fb4f558348c"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/middleware/__init__.py",
+      "git_blob_sha": "ba3ff63c342479203e3044abc236dcc02c4f80dd",
+      "shared_fixed_blob": true,
+      "source_sha256": "5e14548bfc3e89efd01bb5d3e447ea346f8d3d9bd7b49b601d207fb4f558348c"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/middleware/auth_context.py",
+      "git_blob_sha": "1073c07ada9ab312b13bcb8d5d9e478f9e3d4e2c",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/middleware/auth_context.py",
+      "source_sha256": "f1d79e93a38f4297bb1ae151cfdfdb955a058c6dfa21cbc21d1dc3975d4e9fec"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/middleware/auth_context.py",
+      "git_blob_sha": "1073c07ada9ab312b13bcb8d5d9e478f9e3d4e2c",
+      "shared_fixed_blob": true,
+      "source_sha256": "f1d79e93a38f4297bb1ae151cfdfdb955a058c6dfa21cbc21d1dc3975d4e9fec"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/middleware/bearer_auth.py",
+      "git_blob_sha": "30b5e2ba6566d5ac4c9ca70683edf3942626cfd5",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/middleware/bearer_auth.py",
+      "source_sha256": "9c88f6833cfbdc323b574dfddd360f586de4610eaef78f428fdd79a465140faa"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/middleware/bearer_auth.py",
+      "git_blob_sha": "30b5e2ba6566d5ac4c9ca70683edf3942626cfd5",
+      "shared_fixed_blob": true,
+      "source_sha256": "9c88f6833cfbdc323b574dfddd360f586de4610eaef78f428fdd79a465140faa"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/middleware/client_auth.py",
+      "git_blob_sha": "37f7f50662ecacb82fc6e036ee5252d9ff41a010",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/middleware/client_auth.py",
+      "source_sha256": "465a0a01aedcf42325a881f16946612f3f7b8b227a071b3f7215c16f1c5e3a3c"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/middleware/client_auth.py",
+      "git_blob_sha": "37f7f50662ecacb82fc6e036ee5252d9ff41a010",
+      "shared_fixed_blob": true,
+      "source_sha256": "465a0a01aedcf42325a881f16946612f3f7b8b227a071b3f7215c16f1c5e3a3c"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/provider.py",
+      "git_blob_sha": "9f107f71b687ceb2deee5e8c52383b1224f6cdd1",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/provider.py",
+      "source_sha256": "74deb8246cdd5a137d3b44b6d02b1405eb642b62c3fa1288abc3aed55e91d0b6"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/provider.py",
+      "git_blob_sha": "9f107f71b687ceb2deee5e8c52383b1224f6cdd1",
+      "shared_fixed_blob": true,
+      "source_sha256": "74deb8246cdd5a137d3b44b6d02b1405eb642b62c3fa1288abc3aed55e91d0b6"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/routes.py",
+      "git_blob_sha": "d588d78ee3d948913a03fd4d783c783e3471efb4",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/routes.py",
+      "source_sha256": "808766503d1e60061eaf47e5b14e9a5bad9a66c866f6649460ee6f46fb81a7bf"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/routes.py",
+      "git_blob_sha": "d588d78ee3d948913a03fd4d783c783e3471efb4",
+      "shared_fixed_blob": true,
+      "source_sha256": "808766503d1e60061eaf47e5b14e9a5bad9a66c866f6649460ee6f46fb81a7bf"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/auth/settings.py",
+      "git_blob_sha": "1086bb77e294f1e1657ff95581fc002912d23645",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/auth/settings.py",
+      "source_sha256": "0d769d89152d4357b8dd0e5802712cf182c65e3f211615c725fe85321a375e2a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/auth/settings.py",
+      "git_blob_sha": "1086bb77e294f1e1657ff95581fc002912d23645",
+      "shared_fixed_blob": true,
+      "source_sha256": "0d769d89152d4357b8dd0e5802712cf182c65e3f211615c725fe85321a375e2a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/__init__.py",
+      "git_blob_sha": "84b052078adfd54786ab6037454ebaaca7f39a1f",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/__init__.py",
+      "source_sha256": "78a5fae50a49fd8e0fce77ba125e7828dc8e8adb5742c3e42b7f3b9ced8f1fb9"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/__init__.py",
+      "git_blob_sha": "84b052078adfd54786ab6037454ebaaca7f39a1f",
+      "shared_fixed_blob": true,
+      "source_sha256": "78a5fae50a49fd8e0fce77ba125e7828dc8e8adb5742c3e42b7f3b9ced8f1fb9"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/exceptions.py",
+      "git_blob_sha": "fb5bda106b26051b68b00e95cfbdf5e3c52e08c1",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/exceptions.py",
+      "source_sha256": "abd7635039a9c2618459c1c8f2ae14cc906d7fbb3b52d80bfbe381ece686cf24"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/exceptions.py",
+      "git_blob_sha": "fb5bda106b26051b68b00e95cfbdf5e3c52e08c1",
+      "shared_fixed_blob": true,
+      "source_sha256": "abd7635039a9c2618459c1c8f2ae14cc906d7fbb3b52d80bfbe381ece686cf24"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/prompts/__init__.py",
+      "git_blob_sha": "763726964c234f9532a88edbc06ade78cc94c6b1",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/prompts/__init__.py",
+      "source_sha256": "e01b0cc68628969a3183be319249330852fcbef7642d52797083cdb35343d49a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/prompts/__init__.py",
+      "git_blob_sha": "763726964c234f9532a88edbc06ade78cc94c6b1",
+      "shared_fixed_blob": true,
+      "source_sha256": "e01b0cc68628969a3183be319249330852fcbef7642d52797083cdb35343d49a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/prompts/base.py",
+      "git_blob_sha": "33bf680252275c3c93b94551a1c00795c34cc74c",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/prompts/base.py",
+      "source_sha256": "5a6ed5620d55e539649b7c271bca2bea41543b7672ca93cfc8b2ac452c57add7"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/prompts/base.py",
+      "git_blob_sha": "33bf680252275c3c93b94551a1c00795c34cc74c",
+      "shared_fixed_blob": true,
+      "source_sha256": "5a6ed5620d55e539649b7c271bca2bea41543b7672ca93cfc8b2ac452c57add7"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/prompts/manager.py",
+      "git_blob_sha": "7ccbdef369ecf8c098cb047d2dbc022f32f78a0e",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/prompts/manager.py",
+      "source_sha256": "9041a229f23133d5f75c8071a20f59567f4d8145e90451032d8ec538e23e6740"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/prompts/manager.py",
+      "git_blob_sha": "7ccbdef369ecf8c098cb047d2dbc022f32f78a0e",
+      "shared_fixed_blob": true,
+      "source_sha256": "9041a229f23133d5f75c8071a20f59567f4d8145e90451032d8ec538e23e6740"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/prompts/prompt_manager.py",
+      "git_blob_sha": "389e89624e0d5013983eec90568b5dc7df8e315c",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/prompts/prompt_manager.py",
+      "source_sha256": "f061b59adae059f7819c587c08501bf15e49175f264e843224f707c8a398400a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/prompts/prompt_manager.py",
+      "git_blob_sha": "389e89624e0d5013983eec90568b5dc7df8e315c",
+      "shared_fixed_blob": true,
+      "source_sha256": "f061b59adae059f7819c587c08501bf15e49175f264e843224f707c8a398400a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/resources/__init__.py",
+      "git_blob_sha": "b5805fb348b37459883a10d0c99da21541db3a4a",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/resources/__init__.py",
+      "source_sha256": "7b84b7ebd8c1a09b74edecfdfd968979fcc67f3e24afd9c6c06e0a3ccccc1dcf"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/resources/__init__.py",
+      "git_blob_sha": "b5805fb348b37459883a10d0c99da21541db3a4a",
+      "shared_fixed_blob": true,
+      "source_sha256": "7b84b7ebd8c1a09b74edecfdfd968979fcc67f3e24afd9c6c06e0a3ccccc1dcf"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/resources/base.py",
+      "git_blob_sha": "b2050e7f8754e6a7e3159f0e834bb6a6218ac7d6",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/resources/base.py",
+      "source_sha256": "50597549a96c891b22702530fc8b53525e019d25b859e57e68c22bd0123bb296"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/resources/base.py",
+      "git_blob_sha": "b2050e7f8754e6a7e3159f0e834bb6a6218ac7d6",
+      "shared_fixed_blob": true,
+      "source_sha256": "50597549a96c891b22702530fc8b53525e019d25b859e57e68c22bd0123bb296"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/resources/resource_manager.py",
+      "git_blob_sha": "d27e6ac126803f89022e6a6e9f6f69b32efbd836",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/resources/resource_manager.py",
+      "source_sha256": "c0907da4b23b4e04267da34968ea6181bac01c7eef70fe52f31318a79e7d404e"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/resources/resource_manager.py",
+      "git_blob_sha": "d27e6ac126803f89022e6a6e9f6f69b32efbd836",
+      "shared_fixed_blob": true,
+      "source_sha256": "c0907da4b23b4e04267da34968ea6181bac01c7eef70fe52f31318a79e7d404e"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/resources/templates.py",
+      "git_blob_sha": "a30b18253356a744059d8200a8afa5e7fcfda407",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/resources/templates.py",
+      "source_sha256": "80f168904fb42344293373170c86c992c87990e3204cfa99c89f2111f7a20a42"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/resources/templates.py",
+      "git_blob_sha": "a30b18253356a744059d8200a8afa5e7fcfda407",
+      "shared_fixed_blob": true,
+      "source_sha256": "80f168904fb42344293373170c86c992c87990e3204cfa99c89f2111f7a20a42"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/resources/types.py",
+      "git_blob_sha": "d3f10211d321255d6ad0b9dcfd17a1909f6fb2b9",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/resources/types.py",
+      "source_sha256": "bc378173d3309f29a28066a28397f1900f030f1745606febd430f5afb0719d68"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/resources/types.py",
+      "git_blob_sha": "d3f10211d321255d6ad0b9dcfd17a1909f6fb2b9",
+      "shared_fixed_blob": true,
+      "source_sha256": "bc378173d3309f29a28066a28397f1900f030f1745606febd430f5afb0719d68"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/server.py",
+      "git_blob_sha": "577ed1b9a142a6f2ec7e360272901503928bffc4",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/server.py",
+      "source_sha256": "976c39a6b1ee881bf68920d97b0d066dfdf9782d9866664b88009cc7fc64cb42"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/server.py",
+      "git_blob_sha": "577ed1b9a142a6f2ec7e360272901503928bffc4",
+      "shared_fixed_blob": true,
+      "source_sha256": "976c39a6b1ee881bf68920d97b0d066dfdf9782d9866664b88009cc7fc64cb42"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/tools/__init__.py",
+      "git_blob_sha": "ae9c6561920aec8455b3d336bed7db79e3527dff",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/tools/__init__.py",
+      "source_sha256": "65ba318723090e5f3b4af8e8bfc630358c0d662e793fd5619a94e30592deb279"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/tools/__init__.py",
+      "git_blob_sha": "ae9c6561920aec8455b3d336bed7db79e3527dff",
+      "shared_fixed_blob": true,
+      "source_sha256": "65ba318723090e5f3b4af8e8bfc630358c0d662e793fd5619a94e30592deb279"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/tools/base.py",
+      "git_blob_sha": "f32eb15bd15f705ff7986eb2a5fcc114083667fd",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/tools/base.py",
+      "source_sha256": "69dc39cb45d62d80252460ca993fd4f111d13aedbb8a443a6bcb0bf67b95582b"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/tools/base.py",
+      "git_blob_sha": "f32eb15bd15f705ff7986eb2a5fcc114083667fd",
+      "shared_fixed_blob": true,
+      "source_sha256": "69dc39cb45d62d80252460ca993fd4f111d13aedbb8a443a6bcb0bf67b95582b"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/tools/tool_manager.py",
+      "git_blob_sha": "153249379cd5caace78a5480a9c4e1e911975e3a",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/tools/tool_manager.py",
+      "source_sha256": "e186115e70784de6876bf780940d0375d68cdc1054cd3dbebb41646937009e4d"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/tools/tool_manager.py",
+      "git_blob_sha": "153249379cd5caace78a5480a9c4e1e911975e3a",
+      "shared_fixed_blob": true,
+      "source_sha256": "e186115e70784de6876bf780940d0375d68cdc1054cd3dbebb41646937009e4d"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/utilities/__init__.py",
+      "git_blob_sha": "be448f97ad864565ab62efb9807a263210530d0a",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/utilities/__init__.py",
+      "source_sha256": "fa2989f12fab5e66d73167836a695d3fe7470ea00f83fc3098f573f8b357d781"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/utilities/__init__.py",
+      "git_blob_sha": "be448f97ad864565ab62efb9807a263210530d0a",
+      "shared_fixed_blob": true,
+      "source_sha256": "fa2989f12fab5e66d73167836a695d3fe7470ea00f83fc3098f573f8b357d781"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/utilities/func_metadata.py",
+      "git_blob_sha": "374391325e94930c6cd2d0d095cd3977f52094da",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/utilities/func_metadata.py",
+      "source_sha256": "2ce177f7e5b13810dbfb58f432ec846551b88a6e4970c53d3c3dff94efafe7f9"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/utilities/func_metadata.py",
+      "git_blob_sha": "374391325e94930c6cd2d0d095cd3977f52094da",
+      "shared_fixed_blob": true,
+      "source_sha256": "2ce177f7e5b13810dbfb58f432ec846551b88a6e4970c53d3c3dff94efafe7f9"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/utilities/logging.py",
+      "git_blob_sha": "091d57e69d0bd03513b56aff815217f0a636c5d4",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/utilities/logging.py",
+      "source_sha256": "97966eb950caf556480294d406a1519049de0b1f72fb5f0772f304da8d6df749"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/utilities/logging.py",
+      "git_blob_sha": "091d57e69d0bd03513b56aff815217f0a636c5d4",
+      "shared_fixed_blob": true,
+      "source_sha256": "97966eb950caf556480294d406a1519049de0b1f72fb5f0772f304da8d6df749"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/fastmcp/utilities/types.py",
+      "git_blob_sha": "ccaa3d69a247575e33968fc242631a3ee92353a1",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/fastmcp/utilities/types.py",
+      "source_sha256": "aec347c3e3b421f66b08f91241b98cfa127659ef259eaadaf37e076ed0f60a5a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/fastmcp/utilities/types.py",
+      "git_blob_sha": "ccaa3d69a247575e33968fc242631a3ee92353a1",
+      "shared_fixed_blob": true,
+      "source_sha256": "aec347c3e3b421f66b08f91241b98cfa127659ef259eaadaf37e076ed0f60a5a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/lowlevel/__init__.py",
+      "git_blob_sha": "66df389916d96b19e2e2c943f6d257a81e3b90a8",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/lowlevel/__init__.py",
+      "source_sha256": "992eec96b5685b31cc62a0c70c827ba11671c0f646fc8eb751542224ddf5d586"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/lowlevel/__init__.py",
+      "git_blob_sha": "66df389916d96b19e2e2c943f6d257a81e3b90a8",
+      "shared_fixed_blob": true,
+      "source_sha256": "992eec96b5685b31cc62a0c70c827ba11671c0f646fc8eb751542224ddf5d586"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/lowlevel/helper_types.py",
+      "git_blob_sha": "3d09b250560c0401ac77782f786a9e4f92c4925a",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/lowlevel/helper_types.py",
+      "source_sha256": "2e6cc6371f45536e7c4ca0f22a3c1fcc7fca3a71f832493f93c8bd10816637b6"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/lowlevel/helper_types.py",
+      "git_blob_sha": "3d09b250560c0401ac77782f786a9e4f92c4925a",
+      "shared_fixed_blob": true,
+      "source_sha256": "2e6cc6371f45536e7c4ca0f22a3c1fcc7fca3a71f832493f93c8bd10816637b6"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/lowlevel/server.py",
+      "git_blob_sha": "882f5acc37e2b5396a2715263452879195fe436b",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/lowlevel/server.py",
+      "source_sha256": "af0ab567c9e1fcaea5d04a711933836b6fb165838aae56b19c22f68c39f533ba"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/lowlevel/server.py",
+      "git_blob_sha": "882f5acc37e2b5396a2715263452879195fe436b",
+      "shared_fixed_blob": true,
+      "source_sha256": "af0ab567c9e1fcaea5d04a711933836b6fb165838aae56b19c22f68c39f533ba"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/models.py",
+      "git_blob_sha": "3b5abba7851f4d586ea533d19573ff00be3adf9a",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/models.py",
+      "source_sha256": "0a8ac31ce281ca674e5b8da91d313b8dc9523d74523a9590791f267aa6d8b6c7"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/models.py",
+      "git_blob_sha": "3b5abba7851f4d586ea533d19573ff00be3adf9a",
+      "shared_fixed_blob": true,
+      "source_sha256": "0a8ac31ce281ca674e5b8da91d313b8dc9523d74523a9590791f267aa6d8b6c7"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/session.py",
+      "git_blob_sha": "ef5c5a3c336d985a568476ece39f8efc827a499e",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/session.py",
+      "source_sha256": "ab2f5443c8fb93fcd03a8e486750aec39c4702f7d46e3930b825d32beee6f7ab"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/session.py",
+      "git_blob_sha": "ef5c5a3c336d985a568476ece39f8efc827a499e",
+      "shared_fixed_blob": true,
+      "source_sha256": "ab2f5443c8fb93fcd03a8e486750aec39c4702f7d46e3930b825d32beee6f7ab"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/sse.py",
+      "git_blob_sha": "192c1290b53c68aee2add4a4dd85ebd7d2d4aeda",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/sse.py",
+      "source_sha256": "4916fda9b7beaedf164dd2f657a5c404a5a6f1edcfb212edd005d03e37199c10"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/sse.py",
+      "git_blob_sha": "192c1290b53c68aee2add4a4dd85ebd7d2d4aeda",
+      "shared_fixed_blob": true,
+      "source_sha256": "4916fda9b7beaedf164dd2f657a5c404a5a6f1edcfb212edd005d03e37199c10"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/stdio.py",
+      "git_blob_sha": "f0bbe5a316a215458285af336ebbe2b1f0ceea31",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/stdio.py",
+      "source_sha256": "bc77885d6226696ef838fc0a0e3ac9e03c4214990aaa329e7e9e9d01ea64555c"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/stdio.py",
+      "git_blob_sha": "f0bbe5a316a215458285af336ebbe2b1f0ceea31",
+      "shared_fixed_blob": true,
+      "source_sha256": "bc77885d6226696ef838fc0a0e3ac9e03c4214990aaa329e7e9e9d01ea64555c"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/streamable_http.py",
+      "git_blob_sha": "a94cc2834fc18fb5cb939a74a27efff60102c890",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/streamable_http.py",
+      "source_sha256": "52b442c3bf6bbde0f6ec0e015bad6c1c1af0dc1ac183ba6b745ba924fb66dfb2"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/streamable_http.py",
+      "git_blob_sha": "a94cc2834fc18fb5cb939a74a27efff60102c890",
+      "shared_fixed_blob": true,
+      "source_sha256": "52b442c3bf6bbde0f6ec0e015bad6c1c1af0dc1ac183ba6b745ba924fb66dfb2"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/streamable_http_manager.py",
+      "git_blob_sha": "8188c2f3b2c3822b9e337cd281ae46a9cab902e8",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/streamable_http_manager.py",
+      "source_sha256": "0e384f457a7d4c73a36089c2f2d210af3230809a38295214571b9ad09b9ba0dc"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/streamable_http_manager.py",
+      "git_blob_sha": "8188c2f3b2c3822b9e337cd281ae46a9cab902e8",
+      "shared_fixed_blob": true,
+      "source_sha256": "0e384f457a7d4c73a36089c2f2d210af3230809a38295214571b9ad09b9ba0dc"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/streaming_asgi_transport.py",
+      "git_blob_sha": "54a2fdb8c2b2af4000f3df106b81200481cf79ef",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/streaming_asgi_transport.py",
+      "source_sha256": "72ed4510f10c295d0e0dfbecb3f92fdf27f18e3d126fe767afe5b9295e0bac63"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/streaming_asgi_transport.py",
+      "git_blob_sha": "54a2fdb8c2b2af4000f3df106b81200481cf79ef",
+      "shared_fixed_blob": true,
+      "source_sha256": "72ed4510f10c295d0e0dfbecb3f92fdf27f18e3d126fe767afe5b9295e0bac63"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/server/websocket.py",
+      "git_blob_sha": "9dc3f2a25e8012b490b2cf2825f24ab300a44773",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/server/websocket.py",
+      "source_sha256": "b326e390ccfe6b4da312022735e3b428dd6476ce198f5fdc0531b6dc24b8cdf4"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/server/websocket.py",
+      "git_blob_sha": "9dc3f2a25e8012b490b2cf2825f24ab300a44773",
+      "shared_fixed_blob": true,
+      "source_sha256": "b326e390ccfe6b4da312022735e3b428dd6476ce198f5fdc0531b6dc24b8cdf4"
+    },
+    {
+      "path": "src/mcp/shared/__init__.py",
+      "error": "{\"content\":[{\"type\":\"text\",\"text\":\"Action completed.\"}],\"structuredContent\":{\"content\":\"\",\"encoding\":\"base64\",\"sha\":\"e69de29bb2d1d6434b8b29ae775ad8c2e48c5391\",\"display_url\":\"https://github.com/modelco",
+      "recovered": "Empty content was initially mistaken for a retrieval failure"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/shared/_httpx_utils.py",
+      "git_blob_sha": "e0611ce73dabd7ca89c97ba4b3f24a7f451ec4b0",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/shared/_httpx_utils.py",
+      "source_sha256": "04e4777af7539553dd4c2c89f2c53d70f733be1fd23d3c084437b6cac32b77d3"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/shared/_httpx_utils.py",
+      "git_blob_sha": "e0611ce73dabd7ca89c97ba4b3f24a7f451ec4b0",
+      "shared_fixed_blob": true,
+      "source_sha256": "04e4777af7539553dd4c2c89f2c53d70f733be1fd23d3c084437b6cac32b77d3"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/shared/auth.py",
+      "git_blob_sha": "c54d9f63bf3433ae2abf0f0614526e9e86d05cf8",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/shared/auth.py",
+      "source_sha256": "834988d3bed729e7edf1cafa61921f47d07ccfcf393de46af49bf8c29d7ca95f"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/shared/auth.py",
+      "git_blob_sha": "c54d9f63bf3433ae2abf0f0614526e9e86d05cf8",
+      "shared_fixed_blob": true,
+      "source_sha256": "834988d3bed729e7edf1cafa61921f47d07ccfcf393de46af49bf8c29d7ca95f"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/shared/context.py",
+      "git_blob_sha": "f3006e7d5f19f2281382da22772297776342ac6b",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/shared/context.py",
+      "source_sha256": "b2c01f1104bb8c2cfbb9fba535f369634d472d2189dffef6fae0807b1540a12d"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/shared/context.py",
+      "git_blob_sha": "f3006e7d5f19f2281382da22772297776342ac6b",
+      "shared_fixed_blob": true,
+      "source_sha256": "b2c01f1104bb8c2cfbb9fba535f369634d472d2189dffef6fae0807b1540a12d"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/shared/exceptions.py",
+      "git_blob_sha": "97a1c09a9fea4f2cd821223d7ae4ed8c97072ee4",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/shared/exceptions.py",
+      "source_sha256": "9e6220d1053f419936fa667662226be4b97d924566a7fea942d2c6502a7c703b"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/shared/exceptions.py",
+      "git_blob_sha": "97a1c09a9fea4f2cd821223d7ae4ed8c97072ee4",
+      "shared_fixed_blob": true,
+      "source_sha256": "9e6220d1053f419936fa667662226be4b97d924566a7fea942d2c6502a7c703b"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/shared/memory.py",
+      "git_blob_sha": "b53f8dd63cc028c33798bc0ec9548abb458aca5b",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/shared/memory.py",
+      "source_sha256": "492a5b990a1b6f0574544209428ecee3338e668dafda20e62a6a84192b46a95d"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/shared/memory.py",
+      "git_blob_sha": "b53f8dd63cc028c33798bc0ec9548abb458aca5b",
+      "shared_fixed_blob": true,
+      "source_sha256": "492a5b990a1b6f0574544209428ecee3338e668dafda20e62a6a84192b46a95d"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/shared/message.py",
+      "git_blob_sha": "6b02337145be7ac73e5d89d0e722b80b049f55e4",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/shared/message.py",
+      "source_sha256": "040ef5f4ebd77f9cfba67134d7c2635cce16c00c961fcb1b9584535c10db6b4a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/shared/message.py",
+      "git_blob_sha": "6b02337145be7ac73e5d89d0e722b80b049f55e4",
+      "shared_fixed_blob": true,
+      "source_sha256": "040ef5f4ebd77f9cfba67134d7c2635cce16c00c961fcb1b9584535c10db6b4a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/shared/progress.py",
+      "git_blob_sha": "856a8d3b6154b2a3b94669bb4c6481ba4a43808b",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/shared/progress.py",
+      "source_sha256": "7fb9c35f7d924b9f31182a9cdda76f9611bbbbf1071d2c3326f01bbfb151a61a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/shared/progress.py",
+      "git_blob_sha": "856a8d3b6154b2a3b94669bb4c6481ba4a43808b",
+      "shared_fixed_blob": true,
+      "source_sha256": "7fb9c35f7d924b9f31182a9cdda76f9611bbbbf1071d2c3326f01bbfb151a61a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/shared/session.py",
+      "git_blob_sha": "c0345d6ab2dc519783ed71204d4ca1d11772f8fb",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/shared/session.py",
+      "source_sha256": "0f77fd80d41830db5cdc16f0fc7201ad1a4ef94f28a882513fe8ebbf5632a88e"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/shared/session.py",
+      "git_blob_sha": "4b13709c676ffcf0740e5bb30fc9f970e4773b8a",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/1a9ead07f5319abf941b54668b911e3f3773a1cb/src/mcp/shared/session.py",
+      "source_sha256": "fad95e51776b32b6b71060c4ad185dfdf4adbce2875fcb13aad0cf695ee00856"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/shared/version.py",
+      "git_blob_sha": "d0007770586ff6cd4ab456786e41d717c461fa80",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/shared/version.py",
+      "source_sha256": "41be3383bd6253f5965afe0538309edaf8901b9dd86a789703b1a6c2838ff0a7"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/shared/version.py",
+      "git_blob_sha": "d0007770586ff6cd4ab456786e41d717c461fa80",
+      "shared_fixed_blob": true,
+      "source_sha256": "41be3383bd6253f5965afe0538309edaf8901b9dd86a789703b1a6c2838ff0a7"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/types.py",
+      "git_blob_sha": "6d94b56f6c19b901cc1cab462a761b4e79834730",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/src/mcp/types.py",
+      "source_sha256": "053500652aa6d26c9862b5b86b1599485bc74885067ab3dd9cc0e0cdbca78755"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/types.py",
+      "git_blob_sha": "6d94b56f6c19b901cc1cab462a761b4e79834730",
+      "shared_fixed_blob": true,
+      "source_sha256": "053500652aa6d26c9862b5b86b1599485bc74885067ab3dd9cc0e0cdbca78755"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "tests/shared/test_session.py",
+      "git_blob_sha": "eb4e004ae14eebb742c04b1b67b57916c02ebe33",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/tests/shared/test_session.py",
+      "source_sha256": "3108c0303273a25f3cdf7f834eb3a50383f098bde5e9dfb03303fcdea0f6792a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "tests/shared/test_session.py",
+      "git_blob_sha": "eb4e004ae14eebb742c04b1b67b57916c02ebe33",
+      "shared_fixed_blob": true,
+      "source_sha256": "3108c0303273a25f3cdf7f834eb3a50383f098bde5e9dfb03303fcdea0f6792a"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "tests/server/test_session.py",
+      "git_blob_sha": "1375df12f233c582503c39c92bdf6c5e4ec76e7e",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/tests/server/test_session.py",
+      "source_sha256": "bbf1a0fc29e9069e060ed392e715d87e1deb54283b4d1ea65887f7e6e69a4fbb"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "tests/server/test_session.py",
+      "git_blob_sha": "1375df12f233c582503c39c92bdf6c5e4ec76e7e",
+      "shared_fixed_blob": true,
+      "source_sha256": "bbf1a0fc29e9069e060ed392e715d87e1deb54283b4d1ea65887f7e6e69a4fbb"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "tests/conftest.py",
+      "git_blob_sha": "af7e479932e6eae76c6026a747ce463cf81902ae",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/tests/conftest.py",
+      "source_sha256": "1a2e0badd8a1430f04a30109ad96ec7718e5052fb242076d78314345f77c197f"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "tests/conftest.py",
+      "git_blob_sha": "af7e479932e6eae76c6026a747ce463cf81902ae",
+      "shared_fixed_blob": true,
+      "source_sha256": "1a2e0badd8a1430f04a30109ad96ec7718e5052fb242076d78314345f77c197f"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "pyproject.toml",
+      "git_blob_sha": "0a11a3b1546b4d3789a12265ae6d320bda94ba46",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/29c69e6a47d0104d0afcea6ac35e7ab02fde809a/pyproject.toml",
+      "source_sha256": "37b30fc98a0276f52d3236daf2cfd1f35a17732eac0759f4b09cb728806a92f6"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "pyproject.toml",
+      "git_blob_sha": "0a11a3b1546b4d3789a12265ae6d320bda94ba46",
+      "shared_fixed_blob": true,
+      "source_sha256": "37b30fc98a0276f52d3236daf2cfd1f35a17732eac0759f4b09cb728806a92f6"
+    },
+    {
+      "path": "tests/__init__.py",
+      "error": "{\"content\":[{\"type\":\"text\",\"text\":\"Action completed.\"}],\"structuredContent\":{\"content\":\"\",\"encoding\":\"base64\",\"sha\":\"e69de29bb2d1d6434b8b29ae775ad8c2e48c5391\",\"display_url\":\"https://github.com/modelco",
+      "recovered": "Empty content was initially mistaken for a retrieval failure"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/client/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "shared_fixed_blob": false,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/client/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "shared_fixed_blob": true,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "src/mcp/shared/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "shared_fixed_blob": false,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "src/mcp/shared/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "shared_fixed_blob": true,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "path": "tests/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "shared_fixed_blob": false,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "path": "tests/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "shared_fixed_blob": true,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

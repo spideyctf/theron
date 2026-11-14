@@ -1,0 +1,3033 @@
+{
+  "implementation_revision": "f370de1c7078e2b6e07154e2a8d4974ef757e3b1",
+  "live_external_api": true,
+  "authentication_header_supplied": false,
+  "source_sha256": {
+    "pyproject.toml": "6823d28edbae445e57a28d44e0b53254951b1efbef7a09bfc3e6797313d3112e",
+    "frontend/package.json": "e54f1969ba7348ac337efa993272b66bfd59b93fe2bf6af99e6c49b954e2f2ca",
+    "frontend/package-lock.json": "b2e0c918c33c1520c9d246686e4b96508ede319a379b3afc53ed5fbc61c0c02c"
+  },
+  "wall_seconds": 26.459807699997327,
+  "successful_unique_queries": 134,
+  "findings": [
+    {
+      "title": "Unresolved dependency versions",
+      "severity": "INFO",
+      "category": "sca",
+      "module": "sca",
+      "description": "Some declarations are ranges or unpinned. They remain in the SBOM but were not checked as installed versions.",
+      "file_path": "pyproject.toml",
+      "line_number": null,
+      "code_snippet": null,
+      "recommendation": "Commit a supported lockfile or exact version pins for reliable advisory matching.",
+      "cwe": null,
+      "confidence": "high",
+      "rule_id": "SCA-UNRESOLVED-001",
+      "references": [],
+      "fingerprint": "e68870aad8d296b0f9d20987",
+      "maturity": "stable",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "coverage-notice",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": []
+    }
+  ],
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-11-14T09:48:23.174060+00:00",
+      "component": {
+        "type": "application",
+        "name": "spideyctf/theron"
+      },
+      "tools": [
+        {
+          "vendor": "Theron",
+          "name": "Theron",
+          "version": "1.0.0"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "requests",
+        "purl": "pkg:pypi/requests",
+        "bom-ref": "pkg:pypi/requests",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=2.28.0"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "PyYAML",
+        "purl": "pkg:pypi/PyYAML",
+        "bom-ref": "pkg:pypi/PyYAML",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=6.0"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "rich",
+        "purl": "pkg:pypi/rich",
+        "bom-ref": "pkg:pypi/rich",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=13.0.0"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "cvss",
+        "purl": "pkg:pypi/cvss",
+        "bom-ref": "pkg:pypi/cvss",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=3.6"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "pytest",
+        "purl": "pkg:pypi/pytest",
+        "bom-ref": "pkg:pypi/pytest",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=7.0.0"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "httpx",
+        "purl": "pkg:pypi/httpx",
+        "bom-ref": "pkg:pypi/httpx",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=0.28.0"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "fastapi",
+        "purl": "pkg:pypi/fastapi",
+        "bom-ref": "pkg:pypi/fastapi",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=0.115.0"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "uvicorn",
+        "purl": "pkg:pypi/uvicorn",
+        "bom-ref": "pkg:pypi/uvicorn",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=0.34.0"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "@adobe/css-tools",
+        "purl": "pkg:npm/%40adobe/css-tools@4.5.0",
+        "bom-ref": "pkg:npm/%40adobe/css-tools@4.5.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.5.0"
+          }
+        ],
+        "version": "4.5.0"
+      },
+      {
+        "type": "library",
+        "name": "@asamuzakjp/css-color",
+        "purl": "pkg:npm/%40asamuzakjp/css-color@3.2.0",
+        "bom-ref": "pkg:npm/%40asamuzakjp/css-color@3.2.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.2.0"
+          }
+        ],
+        "version": "3.2.0"
+      },
+      {
+        "type": "library",
+        "name": "lru-cache",
+        "purl": "pkg:npm/lru-cache@10.4.3",
+        "bom-ref": "pkg:npm/lru-cache@10.4.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "10.4.3"
+          }
+        ],
+        "version": "10.4.3"
+      },
+      {
+        "type": "library",
+        "name": "@babel/code-frame",
+        "purl": "pkg:npm/%40babel/code-frame@7.29.7",
+        "bom-ref": "pkg:npm/%40babel/code-frame@7.29.7",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "7.29.7"
+          }
+        ],
+        "version": "7.29.7"
+      },
+      {
+        "type": "library",
+        "name": "@babel/helper-validator-identifier",
+        "purl": "pkg:npm/%40babel/helper-validator-identifier@7.29.7",
+        "bom-ref": "pkg:npm/%40babel/helper-validator-identifier@7.29.7",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "7.29.7"
+          }
+        ],
+        "version": "7.29.7"
+      },
+      {
+        "type": "library",
+        "name": "@babel/runtime",
+        "purl": "pkg:npm/%40babel/runtime@7.29.10",
+        "bom-ref": "pkg:npm/%40babel/runtime@7.29.10",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "7.29.10"
+          }
+        ],
+        "version": "7.29.10"
+      },
+      {
+        "type": "library",
+        "name": "@csstools/color-helpers",
+        "purl": "pkg:npm/%40csstools/color-helpers@5.1.0",
+        "bom-ref": "pkg:npm/%40csstools/color-helpers@5.1.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.1.0"
+          }
+        ],
+        "version": "5.1.0"
+      },
+      {
+        "type": "library",
+        "name": "@csstools/css-calc",
+        "purl": "pkg:npm/%40csstools/css-calc@2.1.4",
+        "bom-ref": "pkg:npm/%40csstools/css-calc@2.1.4",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.1.4"
+          }
+        ],
+        "version": "2.1.4"
+      },
+      {
+        "type": "library",
+        "name": "@csstools/css-color-parser",
+        "purl": "pkg:npm/%40csstools/css-color-parser@3.1.0",
+        "bom-ref": "pkg:npm/%40csstools/css-color-parser@3.1.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.1.0"
+          }
+        ],
+        "version": "3.1.0"
+      },
+      {
+        "type": "library",
+        "name": "@csstools/css-parser-algorithms",
+        "purl": "pkg:npm/%40csstools/css-parser-algorithms@3.0.5",
+        "bom-ref": "pkg:npm/%40csstools/css-parser-algorithms@3.0.5",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.0.5"
+          }
+        ],
+        "version": "3.0.5"
+      },
+      {
+        "type": "library",
+        "name": "@csstools/css-tokenizer",
+        "purl": "pkg:npm/%40csstools/css-tokenizer@3.0.4",
+        "bom-ref": "pkg:npm/%40csstools/css-tokenizer@3.0.4",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.0.4"
+          }
+        ],
+        "version": "3.0.4"
+      },
+      {
+        "type": "library",
+        "name": "@jridgewell/resolve-uri",
+        "purl": "pkg:npm/%40jridgewell/resolve-uri@3.1.2",
+        "bom-ref": "pkg:npm/%40jridgewell/resolve-uri@3.1.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.1.2"
+          }
+        ],
+        "version": "3.1.2"
+      },
+      {
+        "type": "library",
+        "name": "@jridgewell/sourcemap-codec",
+        "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.6.0",
+        "bom-ref": "pkg:npm/%40jridgewell/sourcemap-codec@1.6.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.6.0"
+          }
+        ],
+        "version": "1.6.0"
+      },
+      {
+        "type": "library",
+        "name": "@jridgewell/trace-mapping",
+        "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.31",
+        "bom-ref": "pkg:npm/%40jridgewell/trace-mapping@0.3.31",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.3.31"
+          }
+        ],
+        "version": "0.3.31"
+      },
+      {
+        "type": "library",
+        "name": "@oxc-project/types",
+        "purl": "pkg:npm/%40oxc-project/types@0.152.0",
+        "bom-ref": "pkg:npm/%40oxc-project/types@0.152.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.152.0"
+          }
+        ],
+        "version": "0.152.0"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-android-arm-eabi",
+        "purl": "pkg:npm/%40rolldown/binding-android-arm-eabi@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-android-arm-eabi@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-android-arm64",
+        "purl": "pkg:npm/%40rolldown/binding-android-arm64@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-android-arm64@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-darwin-arm64",
+        "purl": "pkg:npm/%40rolldown/binding-darwin-arm64@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-darwin-arm64@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-darwin-x64",
+        "purl": "pkg:npm/%40rolldown/binding-darwin-x64@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-darwin-x64@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-freebsd-x64",
+        "purl": "pkg:npm/%40rolldown/binding-freebsd-x64@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-freebsd-x64@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-linux-arm-gnueabihf",
+        "purl": "pkg:npm/%40rolldown/binding-linux-arm-gnueabihf@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-linux-arm-gnueabihf@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-linux-arm64-gnu",
+        "purl": "pkg:npm/%40rolldown/binding-linux-arm64-gnu@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-linux-arm64-gnu@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-linux-arm64-musl",
+        "purl": "pkg:npm/%40rolldown/binding-linux-arm64-musl@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-linux-arm64-musl@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-linux-ppc64-gnu",
+        "purl": "pkg:npm/%40rolldown/binding-linux-ppc64-gnu@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-linux-ppc64-gnu@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-linux-s390x-gnu",
+        "purl": "pkg:npm/%40rolldown/binding-linux-s390x-gnu@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-linux-s390x-gnu@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-linux-x64-gnu",
+        "purl": "pkg:npm/%40rolldown/binding-linux-x64-gnu@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-linux-x64-gnu@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-linux-x64-musl",
+        "purl": "pkg:npm/%40rolldown/binding-linux-x64-musl@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-linux-x64-musl@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-openharmony-arm64",
+        "purl": "pkg:npm/%40rolldown/binding-openharmony-arm64@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-openharmony-arm64@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-win32-arm64-msvc",
+        "purl": "pkg:npm/%40rolldown/binding-win32-arm64-msvc@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-win32-arm64-msvc@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/binding-win32-x64-msvc",
+        "purl": "pkg:npm/%40rolldown/binding-win32-x64-msvc@1.2.12",
+        "bom-ref": "pkg:npm/%40rolldown/binding-win32-x64-msvc@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "@rolldown/pluginutils",
+        "purl": "pkg:npm/%40rolldown/pluginutils@1.0.1",
+        "bom-ref": "pkg:npm/%40rolldown/pluginutils@1.0.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.0.1"
+          }
+        ],
+        "version": "1.0.1"
+      },
+      {
+        "type": "library",
+        "name": "@testing-library/dom",
+        "purl": "pkg:npm/%40testing-library/dom@10.4.2",
+        "bom-ref": "pkg:npm/%40testing-library/dom@10.4.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "10.4.2"
+          }
+        ],
+        "version": "10.4.2"
+      },
+      {
+        "type": "library",
+        "name": "@testing-library/jest-dom",
+        "purl": "pkg:npm/%40testing-library/jest-dom@6.9.1",
+        "bom-ref": "pkg:npm/%40testing-library/jest-dom@6.9.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "6.9.1"
+          }
+        ],
+        "version": "6.9.1"
+      },
+      {
+        "type": "library",
+        "name": "dom-accessibility-api",
+        "purl": "pkg:npm/dom-accessibility-api@0.6.3",
+        "bom-ref": "pkg:npm/dom-accessibility-api@0.6.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.6.3"
+          }
+        ],
+        "version": "0.6.3"
+      },
+      {
+        "type": "library",
+        "name": "@testing-library/react",
+        "purl": "pkg:npm/%40testing-library/react@16.3.3",
+        "bom-ref": "pkg:npm/%40testing-library/react@16.3.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "16.3.3"
+          }
+        ],
+        "version": "16.3.3"
+      },
+      {
+        "type": "library",
+        "name": "@testing-library/user-event",
+        "purl": "pkg:npm/%40testing-library/user-event@14.6.7",
+        "bom-ref": "pkg:npm/%40testing-library/user-event@14.6.7",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "14.6.7"
+          }
+        ],
+        "version": "14.6.7"
+      },
+      {
+        "type": "library",
+        "name": "@types/aria-query",
+        "purl": "pkg:npm/%40types/aria-query@5.0.4",
+        "bom-ref": "pkg:npm/%40types/aria-query@5.0.4",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.0.4"
+          }
+        ],
+        "version": "5.0.4"
+      },
+      {
+        "type": "library",
+        "name": "@types/chai",
+        "purl": "pkg:npm/%40types/chai@5.2.3",
+        "bom-ref": "pkg:npm/%40types/chai@5.2.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.2.3"
+          }
+        ],
+        "version": "5.2.3"
+      },
+      {
+        "type": "library",
+        "name": "@types/deep-eql",
+        "purl": "pkg:npm/%40types/deep-eql@4.0.2",
+        "bom-ref": "pkg:npm/%40types/deep-eql@4.0.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.0.2"
+          }
+        ],
+        "version": "4.0.2"
+      },
+      {
+        "type": "library",
+        "name": "@types/estree",
+        "purl": "pkg:npm/%40types/estree@1.0.9",
+        "bom-ref": "pkg:npm/%40types/estree@1.0.9",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.0.9"
+          }
+        ],
+        "version": "1.0.9"
+      },
+      {
+        "type": "library",
+        "name": "@types/node",
+        "purl": "pkg:npm/%40types/node@22.20.5",
+        "bom-ref": "pkg:npm/%40types/node@22.20.5",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "22.20.5"
+          }
+        ],
+        "version": "22.20.5"
+      },
+      {
+        "type": "library",
+        "name": "@types/react",
+        "purl": "pkg:npm/%40types/react@19.3.0",
+        "bom-ref": "pkg:npm/%40types/react@19.3.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "19.3.0"
+          }
+        ],
+        "version": "19.3.0"
+      },
+      {
+        "type": "library",
+        "name": "@types/react-dom",
+        "purl": "pkg:npm/%40types/react-dom@19.3.0",
+        "bom-ref": "pkg:npm/%40types/react-dom@19.3.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "19.3.0"
+          }
+        ],
+        "version": "19.3.0"
+      },
+      {
+        "type": "library",
+        "name": "@vitejs/plugin-react",
+        "purl": "pkg:npm/%40vitejs/plugin-react@6.1.2",
+        "bom-ref": "pkg:npm/%40vitejs/plugin-react@6.1.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "6.1.2"
+          }
+        ],
+        "version": "6.1.2"
+      },
+      {
+        "type": "library",
+        "name": "@vitest/mocker",
+        "purl": "pkg:npm/%40vitest/mocker@5.0.3",
+        "bom-ref": "pkg:npm/%40vitest/mocker@5.0.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.0.3"
+          }
+        ],
+        "version": "5.0.3"
+      },
+      {
+        "type": "library",
+        "name": "@vitest/spy",
+        "purl": "pkg:npm/%40vitest/spy@5.0.3",
+        "bom-ref": "pkg:npm/%40vitest/spy@5.0.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.0.3"
+          }
+        ],
+        "version": "5.0.3"
+      },
+      {
+        "type": "library",
+        "name": "agent-base",
+        "purl": "pkg:npm/agent-base@7.1.4",
+        "bom-ref": "pkg:npm/agent-base@7.1.4",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "7.1.4"
+          }
+        ],
+        "version": "7.1.4"
+      },
+      {
+        "type": "library",
+        "name": "ansi-regex",
+        "purl": "pkg:npm/ansi-regex@5.0.1",
+        "bom-ref": "pkg:npm/ansi-regex@5.0.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.0.1"
+          }
+        ],
+        "version": "5.0.1"
+      },
+      {
+        "type": "library",
+        "name": "ansi-styles",
+        "purl": "pkg:npm/ansi-styles@5.2.0",
+        "bom-ref": "pkg:npm/ansi-styles@5.2.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.2.0"
+          }
+        ],
+        "version": "5.2.0"
+      },
+      {
+        "type": "library",
+        "name": "aria-query",
+        "purl": "pkg:npm/aria-query@5.3.0",
+        "bom-ref": "pkg:npm/aria-query@5.3.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.3.0"
+          }
+        ],
+        "version": "5.3.0"
+      },
+      {
+        "type": "library",
+        "name": "assertion-error",
+        "purl": "pkg:npm/assertion-error@2.0.1",
+        "bom-ref": "pkg:npm/assertion-error@2.0.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.0.1"
+          }
+        ],
+        "version": "2.0.1"
+      },
+      {
+        "type": "library",
+        "name": "chai",
+        "purl": "pkg:npm/chai@6.3.0",
+        "bom-ref": "pkg:npm/chai@6.3.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "6.3.0"
+          }
+        ],
+        "version": "6.3.0"
+      },
+      {
+        "type": "library",
+        "name": "css.escape",
+        "purl": "pkg:npm/css.escape@1.5.1",
+        "bom-ref": "pkg:npm/css.escape@1.5.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.5.1"
+          }
+        ],
+        "version": "1.5.1"
+      },
+      {
+        "type": "library",
+        "name": "cssstyle",
+        "purl": "pkg:npm/cssstyle@4.6.0",
+        "bom-ref": "pkg:npm/cssstyle@4.6.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.6.0"
+          }
+        ],
+        "version": "4.6.0"
+      },
+      {
+        "type": "library",
+        "name": "csstype",
+        "purl": "pkg:npm/csstype@3.2.3",
+        "bom-ref": "pkg:npm/csstype@3.2.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.2.3"
+          }
+        ],
+        "version": "3.2.3"
+      },
+      {
+        "type": "library",
+        "name": "data-urls",
+        "purl": "pkg:npm/data-urls@5.0.0",
+        "bom-ref": "pkg:npm/data-urls@5.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.0.0"
+          }
+        ],
+        "version": "5.0.0"
+      },
+      {
+        "type": "library",
+        "name": "debug",
+        "purl": "pkg:npm/debug@4.4.3",
+        "bom-ref": "pkg:npm/debug@4.4.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.4.3"
+          }
+        ],
+        "version": "4.4.3"
+      },
+      {
+        "type": "library",
+        "name": "decimal.js",
+        "purl": "pkg:npm/decimal.js@10.6.0",
+        "bom-ref": "pkg:npm/decimal.js@10.6.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "10.6.0"
+          }
+        ],
+        "version": "10.6.0"
+      },
+      {
+        "type": "library",
+        "name": "dequal",
+        "purl": "pkg:npm/dequal@2.0.3",
+        "bom-ref": "pkg:npm/dequal@2.0.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.0.3"
+          }
+        ],
+        "version": "2.0.3"
+      },
+      {
+        "type": "library",
+        "name": "detect-libc",
+        "purl": "pkg:npm/detect-libc@2.1.2",
+        "bom-ref": "pkg:npm/detect-libc@2.1.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.1.2"
+          }
+        ],
+        "version": "2.1.2"
+      },
+      {
+        "type": "library",
+        "name": "dom-accessibility-api",
+        "purl": "pkg:npm/dom-accessibility-api@0.5.16",
+        "bom-ref": "pkg:npm/dom-accessibility-api@0.5.16",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.5.16"
+          }
+        ],
+        "version": "0.5.16"
+      },
+      {
+        "type": "library",
+        "name": "entities",
+        "purl": "pkg:npm/entities@6.0.1",
+        "bom-ref": "pkg:npm/entities@6.0.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "6.0.1"
+          }
+        ],
+        "version": "6.0.1"
+      },
+      {
+        "type": "library",
+        "name": "es-module-lexer",
+        "purl": "pkg:npm/es-module-lexer@2.3.2",
+        "bom-ref": "pkg:npm/es-module-lexer@2.3.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.3.2"
+          }
+        ],
+        "version": "2.3.2"
+      },
+      {
+        "type": "library",
+        "name": "estree-walker",
+        "purl": "pkg:npm/estree-walker@3.0.3",
+        "bom-ref": "pkg:npm/estree-walker@3.0.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.0.3"
+          }
+        ],
+        "version": "3.0.3"
+      },
+      {
+        "type": "library",
+        "name": "expect-type",
+        "purl": "pkg:npm/expect-type@1.4.0",
+        "bom-ref": "pkg:npm/expect-type@1.4.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.4.0"
+          }
+        ],
+        "version": "1.4.0"
+      },
+      {
+        "type": "library",
+        "name": "fdir",
+        "purl": "pkg:npm/fdir@6.5.0",
+        "bom-ref": "pkg:npm/fdir@6.5.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "6.5.0"
+          }
+        ],
+        "version": "6.5.0"
+      },
+      {
+        "type": "library",
+        "name": "fsevents",
+        "purl": "pkg:npm/fsevents@2.3.3",
+        "bom-ref": "pkg:npm/fsevents@2.3.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.3.3"
+          }
+        ],
+        "version": "2.3.3"
+      },
+      {
+        "type": "library",
+        "name": "html-encoding-sniffer",
+        "purl": "pkg:npm/html-encoding-sniffer@4.0.0",
+        "bom-ref": "pkg:npm/html-encoding-sniffer@4.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.0.0"
+          }
+        ],
+        "version": "4.0.0"
+      },
+      {
+        "type": "library",
+        "name": "http-proxy-agent",
+        "purl": "pkg:npm/http-proxy-agent@7.0.2",
+        "bom-ref": "pkg:npm/http-proxy-agent@7.0.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "7.0.2"
+          }
+        ],
+        "version": "7.0.2"
+      },
+      {
+        "type": "library",
+        "name": "https-proxy-agent",
+        "purl": "pkg:npm/https-proxy-agent@7.0.6",
+        "bom-ref": "pkg:npm/https-proxy-agent@7.0.6",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "7.0.6"
+          }
+        ],
+        "version": "7.0.6"
+      },
+      {
+        "type": "library",
+        "name": "iconv-lite",
+        "purl": "pkg:npm/iconv-lite@0.6.3",
+        "bom-ref": "pkg:npm/iconv-lite@0.6.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.6.3"
+          }
+        ],
+        "version": "0.6.3"
+      },
+      {
+        "type": "library",
+        "name": "indent-string",
+        "purl": "pkg:npm/indent-string@4.0.0",
+        "bom-ref": "pkg:npm/indent-string@4.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.0.0"
+          }
+        ],
+        "version": "4.0.0"
+      },
+      {
+        "type": "library",
+        "name": "is-potential-custom-element-name",
+        "purl": "pkg:npm/is-potential-custom-element-name@1.0.1",
+        "bom-ref": "pkg:npm/is-potential-custom-element-name@1.0.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.0.1"
+          }
+        ],
+        "version": "1.0.1"
+      },
+      {
+        "type": "library",
+        "name": "js-tokens",
+        "purl": "pkg:npm/js-tokens@4.0.0",
+        "bom-ref": "pkg:npm/js-tokens@4.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.0.0"
+          }
+        ],
+        "version": "4.0.0"
+      },
+      {
+        "type": "library",
+        "name": "jsdom",
+        "purl": "pkg:npm/jsdom@26.1.0",
+        "bom-ref": "pkg:npm/jsdom@26.1.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "26.1.0"
+          }
+        ],
+        "version": "26.1.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss",
+        "purl": "pkg:npm/lightningcss@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss-android-arm64",
+        "purl": "pkg:npm/lightningcss-android-arm64@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss-android-arm64@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss-darwin-arm64",
+        "purl": "pkg:npm/lightningcss-darwin-arm64@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss-darwin-arm64@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss-darwin-x64",
+        "purl": "pkg:npm/lightningcss-darwin-x64@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss-darwin-x64@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss-freebsd-x64",
+        "purl": "pkg:npm/lightningcss-freebsd-x64@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss-freebsd-x64@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss-linux-arm-gnueabihf",
+        "purl": "pkg:npm/lightningcss-linux-arm-gnueabihf@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss-linux-arm-gnueabihf@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss-linux-arm64-gnu",
+        "purl": "pkg:npm/lightningcss-linux-arm64-gnu@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss-linux-arm64-gnu@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss-linux-arm64-musl",
+        "purl": "pkg:npm/lightningcss-linux-arm64-musl@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss-linux-arm64-musl@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss-linux-x64-gnu",
+        "purl": "pkg:npm/lightningcss-linux-x64-gnu@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss-linux-x64-gnu@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss-linux-x64-musl",
+        "purl": "pkg:npm/lightningcss-linux-x64-musl@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss-linux-x64-musl@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss-win32-arm64-msvc",
+        "purl": "pkg:npm/lightningcss-win32-arm64-msvc@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss-win32-arm64-msvc@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lightningcss-win32-x64-msvc",
+        "purl": "pkg:npm/lightningcss-win32-x64-msvc@1.33.0",
+        "bom-ref": "pkg:npm/lightningcss-win32-x64-msvc@1.33.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.33.0"
+          }
+        ],
+        "version": "1.33.0"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react",
+        "purl": "pkg:npm/lucide-react@0.468.0",
+        "bom-ref": "pkg:npm/lucide-react@0.468.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.468.0"
+          }
+        ],
+        "version": "0.468.0"
+      },
+      {
+        "type": "library",
+        "name": "lz-string",
+        "purl": "pkg:npm/lz-string@1.5.0",
+        "bom-ref": "pkg:npm/lz-string@1.5.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.5.0"
+          }
+        ],
+        "version": "1.5.0"
+      },
+      {
+        "type": "library",
+        "name": "magic-string",
+        "purl": "pkg:npm/magic-string@1.4.3",
+        "bom-ref": "pkg:npm/magic-string@1.4.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.4.3"
+          }
+        ],
+        "version": "1.4.3"
+      },
+      {
+        "type": "library",
+        "name": "min-indent",
+        "purl": "pkg:npm/min-indent@1.0.1",
+        "bom-ref": "pkg:npm/min-indent@1.0.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.0.1"
+          }
+        ],
+        "version": "1.0.1"
+      },
+      {
+        "type": "library",
+        "name": "ms",
+        "purl": "pkg:npm/ms@2.1.3",
+        "bom-ref": "pkg:npm/ms@2.1.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.1.3"
+          }
+        ],
+        "version": "2.1.3"
+      },
+      {
+        "type": "library",
+        "name": "nanoid",
+        "purl": "pkg:npm/nanoid@3.3.20",
+        "bom-ref": "pkg:npm/nanoid@3.3.20",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.3.20"
+          }
+        ],
+        "version": "3.3.20"
+      },
+      {
+        "type": "library",
+        "name": "nwsapi",
+        "purl": "pkg:npm/nwsapi@2.2.28",
+        "bom-ref": "pkg:npm/nwsapi@2.2.28",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.2.28"
+          }
+        ],
+        "version": "2.2.28"
+      },
+      {
+        "type": "library",
+        "name": "obug",
+        "purl": "pkg:npm/obug@2.2.1",
+        "bom-ref": "pkg:npm/obug@2.2.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.2.1"
+          }
+        ],
+        "version": "2.2.1"
+      },
+      {
+        "type": "library",
+        "name": "parse5",
+        "purl": "pkg:npm/parse5@7.3.0",
+        "bom-ref": "pkg:npm/parse5@7.3.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "7.3.0"
+          }
+        ],
+        "version": "7.3.0"
+      },
+      {
+        "type": "library",
+        "name": "picocolors",
+        "purl": "pkg:npm/picocolors@1.1.1",
+        "bom-ref": "pkg:npm/picocolors@1.1.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.1.1"
+          }
+        ],
+        "version": "1.1.1"
+      },
+      {
+        "type": "library",
+        "name": "picomatch",
+        "purl": "pkg:npm/picomatch@4.0.7",
+        "bom-ref": "pkg:npm/picomatch@4.0.7",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.0.7"
+          }
+        ],
+        "version": "4.0.7"
+      },
+      {
+        "type": "library",
+        "name": "postcss",
+        "purl": "pkg:npm/postcss@8.5.29",
+        "bom-ref": "pkg:npm/postcss@8.5.29",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "8.5.29"
+          }
+        ],
+        "version": "8.5.29"
+      },
+      {
+        "type": "library",
+        "name": "pretty-format",
+        "purl": "pkg:npm/pretty-format@27.5.1",
+        "bom-ref": "pkg:npm/pretty-format@27.5.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "27.5.1"
+          }
+        ],
+        "version": "27.5.1"
+      },
+      {
+        "type": "library",
+        "name": "punycode",
+        "purl": "pkg:npm/punycode@2.3.1",
+        "bom-ref": "pkg:npm/punycode@2.3.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.3.1"
+          }
+        ],
+        "version": "2.3.1"
+      },
+      {
+        "type": "library",
+        "name": "react",
+        "purl": "pkg:npm/react@19.3.0",
+        "bom-ref": "pkg:npm/react@19.3.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "19.3.0"
+          }
+        ],
+        "version": "19.3.0"
+      },
+      {
+        "type": "library",
+        "name": "react-dom",
+        "purl": "pkg:npm/react-dom@19.3.0",
+        "bom-ref": "pkg:npm/react-dom@19.3.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "19.3.0"
+          }
+        ],
+        "version": "19.3.0"
+      },
+      {
+        "type": "library",
+        "name": "react-is",
+        "purl": "pkg:npm/react-is@17.0.2",
+        "bom-ref": "pkg:npm/react-is@17.0.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "17.0.2"
+          }
+        ],
+        "version": "17.0.2"
+      },
+      {
+        "type": "library",
+        "name": "redent",
+        "purl": "pkg:npm/redent@3.0.0",
+        "bom-ref": "pkg:npm/redent@3.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.0.0"
+          }
+        ],
+        "version": "3.0.0"
+      },
+      {
+        "type": "library",
+        "name": "rolldown",
+        "purl": "pkg:npm/rolldown@1.2.12",
+        "bom-ref": "pkg:npm/rolldown@1.2.12",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.12"
+          }
+        ],
+        "version": "1.2.12"
+      },
+      {
+        "type": "library",
+        "name": "rrweb-cssom",
+        "purl": "pkg:npm/rrweb-cssom@0.8.0",
+        "bom-ref": "pkg:npm/rrweb-cssom@0.8.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.8.0"
+          }
+        ],
+        "version": "0.8.0"
+      },
+      {
+        "type": "library",
+        "name": "safer-buffer",
+        "purl": "pkg:npm/safer-buffer@2.1.2",
+        "bom-ref": "pkg:npm/safer-buffer@2.1.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.1.2"
+          }
+        ],
+        "version": "2.1.2"
+      },
+      {
+        "type": "library",
+        "name": "saxes",
+        "purl": "pkg:npm/saxes@6.0.0",
+        "bom-ref": "pkg:npm/saxes@6.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "6.0.0"
+          }
+        ],
+        "version": "6.0.0"
+      },
+      {
+        "type": "library",
+        "name": "scheduler",
+        "purl": "pkg:npm/scheduler@0.28.0",
+        "bom-ref": "pkg:npm/scheduler@0.28.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.28.0"
+          }
+        ],
+        "version": "0.28.0"
+      },
+      {
+        "type": "library",
+        "name": "source-map-js",
+        "purl": "pkg:npm/source-map-js@1.2.2",
+        "bom-ref": "pkg:npm/source-map-js@1.2.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.2.2"
+          }
+        ],
+        "version": "1.2.2"
+      },
+      {
+        "type": "library",
+        "name": "std-env",
+        "purl": "pkg:npm/std-env@4.3.0",
+        "bom-ref": "pkg:npm/std-env@4.3.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.3.0"
+          }
+        ],
+        "version": "4.3.0"
+      },
+      {
+        "type": "library",
+        "name": "strip-indent",
+        "purl": "pkg:npm/strip-indent@3.0.0",
+        "bom-ref": "pkg:npm/strip-indent@3.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.0.0"
+          }
+        ],
+        "version": "3.0.0"
+      },
+      {
+        "type": "library",
+        "name": "symbol-tree",
+        "purl": "pkg:npm/symbol-tree@3.2.4",
+        "bom-ref": "pkg:npm/symbol-tree@3.2.4",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.2.4"
+          }
+        ],
+        "version": "3.2.4"
+      },
+      {
+        "type": "library",
+        "name": "tinybench",
+        "purl": "pkg:npm/tinybench@6.2.1",
+        "bom-ref": "pkg:npm/tinybench@6.2.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "6.2.1"
+          }
+        ],
+        "version": "6.2.1"
+      },
+      {
+        "type": "library",
+        "name": "tinyexec",
+        "purl": "pkg:npm/tinyexec@1.3.1",
+        "bom-ref": "pkg:npm/tinyexec@1.3.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.3.1"
+          }
+        ],
+        "version": "1.3.1"
+      },
+      {
+        "type": "library",
+        "name": "tinyglobby",
+        "purl": "pkg:npm/tinyglobby@0.2.17",
+        "bom-ref": "pkg:npm/tinyglobby@0.2.17",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.2.17"
+          }
+        ],
+        "version": "0.2.17"
+      },
+      {
+        "type": "library",
+        "name": "tldts",
+        "purl": "pkg:npm/tldts@6.1.86",
+        "bom-ref": "pkg:npm/tldts@6.1.86",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "6.1.86"
+          }
+        ],
+        "version": "6.1.86"
+      },
+      {
+        "type": "library",
+        "name": "tldts-core",
+        "purl": "pkg:npm/tldts-core@6.1.86",
+        "bom-ref": "pkg:npm/tldts-core@6.1.86",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "6.1.86"
+          }
+        ],
+        "version": "6.1.86"
+      },
+      {
+        "type": "library",
+        "name": "tough-cookie",
+        "purl": "pkg:npm/tough-cookie@5.1.2",
+        "bom-ref": "pkg:npm/tough-cookie@5.1.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.1.2"
+          }
+        ],
+        "version": "5.1.2"
+      },
+      {
+        "type": "library",
+        "name": "tr46",
+        "purl": "pkg:npm/tr46@5.1.1",
+        "bom-ref": "pkg:npm/tr46@5.1.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.1.1"
+          }
+        ],
+        "version": "5.1.1"
+      },
+      {
+        "type": "library",
+        "name": "typescript",
+        "purl": "pkg:npm/typescript@5.7.3",
+        "bom-ref": "pkg:npm/typescript@5.7.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.7.3"
+          }
+        ],
+        "version": "5.7.3"
+      },
+      {
+        "type": "library",
+        "name": "undici-types",
+        "purl": "pkg:npm/undici-types@6.21.0",
+        "bom-ref": "pkg:npm/undici-types@6.21.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "6.21.0"
+          }
+        ],
+        "version": "6.21.0"
+      },
+      {
+        "type": "library",
+        "name": "vite",
+        "purl": "pkg:npm/vite@8.3.3",
+        "bom-ref": "pkg:npm/vite@8.3.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "8.3.3"
+          }
+        ],
+        "version": "8.3.3"
+      },
+      {
+        "type": "library",
+        "name": "vitest",
+        "purl": "pkg:npm/vitest@5.0.3",
+        "bom-ref": "pkg:npm/vitest@5.0.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.0.3"
+          }
+        ],
+        "version": "5.0.3"
+      },
+      {
+        "type": "library",
+        "name": "w3c-xmlserializer",
+        "purl": "pkg:npm/w3c-xmlserializer@5.0.0",
+        "bom-ref": "pkg:npm/w3c-xmlserializer@5.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.0.0"
+          }
+        ],
+        "version": "5.0.0"
+      },
+      {
+        "type": "library",
+        "name": "webidl-conversions",
+        "purl": "pkg:npm/webidl-conversions@7.0.0",
+        "bom-ref": "pkg:npm/webidl-conversions@7.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "7.0.0"
+          }
+        ],
+        "version": "7.0.0"
+      },
+      {
+        "type": "library",
+        "name": "whatwg-encoding",
+        "purl": "pkg:npm/whatwg-encoding@3.1.1",
+        "bom-ref": "pkg:npm/whatwg-encoding@3.1.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.1.1"
+          }
+        ],
+        "version": "3.1.1"
+      },
+      {
+        "type": "library",
+        "name": "whatwg-mimetype",
+        "purl": "pkg:npm/whatwg-mimetype@4.0.0",
+        "bom-ref": "pkg:npm/whatwg-mimetype@4.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.0.0"
+          }
+        ],
+        "version": "4.0.0"
+      },
+      {
+        "type": "library",
+        "name": "whatwg-url",
+        "purl": "pkg:npm/whatwg-url@14.2.0",
+        "bom-ref": "pkg:npm/whatwg-url@14.2.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "14.2.0"
+          }
+        ],
+        "version": "14.2.0"
+      },
+      {
+        "type": "library",
+        "name": "why-is-node-running",
+        "purl": "pkg:npm/why-is-node-running@3.2.1",
+        "bom-ref": "pkg:npm/why-is-node-running@3.2.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.2.1"
+          }
+        ],
+        "version": "3.2.1"
+      },
+      {
+        "type": "library",
+        "name": "ws",
+        "purl": "pkg:npm/ws@8.22.0",
+        "bom-ref": "pkg:npm/ws@8.22.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "8.22.0"
+          }
+        ],
+        "version": "8.22.0"
+      },
+      {
+        "type": "library",
+        "name": "xml-name-validator",
+        "purl": "pkg:npm/xml-name-validator@5.0.0",
+        "bom-ref": "pkg:npm/xml-name-validator@5.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.0.0"
+          }
+        ],
+        "version": "5.0.0"
+      },
+      {
+        "type": "library",
+        "name": "xmlchars",
+        "purl": "pkg:npm/xmlchars@2.2.0",
+        "bom-ref": "pkg:npm/xmlchars@2.2.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "frontend/package-lock.json"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.2.0"
+          }
+        ],
+        "version": "2.2.0"
+      }
+    ]
+  },
+  "interpretation": "Exact manifest/lock declarations queried against live OSV; ranges unresolved. No credential key or installed/deployed/reachable vulnerability assertion. Database results may change."
+}
