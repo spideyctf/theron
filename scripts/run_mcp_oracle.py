@@ -49,6 +49,9 @@ def main():
             code="""import sys,os,pathlib
 sys.dont_write_bytecode=True
 sys.path[:0]=['/target/src','/deps']
+import mcp.shared.session
+assert mcp.shared.session.__file__.startswith('/target/src/')
+print('TARGET_MODULE',mcp.shared.session.__file__)
 root=pathlib.Path('/tmp/oracle-tests');root.mkdir()
 pathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n')
 os.symlink('/oracle/tests/issues/test_malformed_input.py',root/'test_security.py')
@@ -59,7 +62,7 @@ import pytest
             tests=(['/tmp/oracle-tests/test_security.py'] if phase=='security' else
                    ['/tmp/oracle-tests/test_server.py::test_server_session_initialize',
                     '/tmp/oracle-tests/test_shared.py::test_in_flight_requests_cleared_after_completion'])
-            args=['-c','/tmp/pytest.ini','--confcutdir=/tmp/oracle-tests','-p','no:cacheprovider','-p','anyio.pytest_plugin','-q',*tests]
+            args=['-c','/tmp/pytest.ini','--confcutdir=/tmp/oracle-tests','--import-mode=importlib','-p','no:cacheprovider','-p','anyio.pytest_plugin','-q',*tests]
             code+='raise SystemExit(pytest.main('+repr(args)+'))\n'
             result=runner.run(CACHE/role,'CVE-2025-53366',oracle=security,python_code=code)
             records.append(dict(role=role,phase=phase,oracle_kind='selected_unmodified_upstream_tests',result=result))

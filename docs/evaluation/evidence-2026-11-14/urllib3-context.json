@@ -1,0 +1,676 @@
+{
+  "records": [
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/__init__.py",
+      "git_blob_sha": "fe86b59d782bdb09d70aa44f80370be95a667c83",
+      "source_sha256": "8f7cb31c86e65bb092f8829027df8f3d07ff60a3bc10e01ecbfacc5b4511eeeb"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/_collections.py",
+      "git_blob_sha": "da9857e986d89acac3ba05a6735dc08c249bde1a",
+      "source_sha256": "469d6657206073f52501ca7a3376add6c909057479278dcd6b0453bd6da0fd76"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/_version.py",
+      "git_blob_sha": "97f83dc2962a335735a643d7daa9a5a797ba76a0",
+      "source_sha256": "9f0867141506667beda8f16956591264ceb9ca36b6364495fc054eea1f6935fc"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/connection.py",
+      "git_blob_sha": "45580b7e1ea6835a328c0cb41fa41053873b58d5",
+      "source_sha256": "abebdffd333733245b65c167dfe5422990527f4a048468efec115e666ffb930e"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/connectionpool.py",
+      "git_blob_sha": "4708c5bfc7862d82be92321f519f5ad0c7814d6d",
+      "source_sha256": "20aa1eb89658f580189b418ae2af8c5c08725d6d0cfc59ef69b61a36c0c847e1"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/contrib/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/contrib/_appengine_environ.py",
+      "git_blob_sha": "8765b907d70c4a530bc90dc88f24b3df73473b01",
+      "source_sha256": "6c36f2384856d8228b25c42a00a032ac41cdf9a925b321c52aaeaf17c645b269"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/contrib/_securetransport/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/contrib/_securetransport/bindings.py",
+      "git_blob_sha": "11524d400bab28e066f2496de85d68a626c2d93d",
+      "source_sha256": "135ffb49cb2039c85fc677a8cdb02e78aef3882c05df97e76b80ee0c2609f7fa"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/contrib/_securetransport/low_level.py",
+      "git_blob_sha": "ed8120190c06fadbc1a14b328c2ca0196046b220",
+      "source_sha256": "96021db12c9ca9f0745e6e41889cd719e20a4fbc9b0903053c902091cc0f6b5b"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/contrib/appengine.py",
+      "git_blob_sha": "aa64a0914c60134abe7dc082312210922d779ed4",
+      "source_sha256": "ecfc5bd2d29f0c1fcb4c63c4462b301f4aa89a10e85143a8e64c326c028b4321"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/contrib/ntlmpool.py",
+      "git_blob_sha": "b2df45dcf6065647b2a8ec87d0c3c8fed475dac1",
+      "source_sha256": "e88f79875ffbd5fcf19a831236d634801f259f20a856d3ff0e9a851a3d787dd5"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/contrib/pyopenssl.py",
+      "git_blob_sha": "0cabab1aed14a6f8a090751b951ab50349f3a369",
+      "source_sha256": "be087a8f9db0f71830abedd1da47c1e4cd896e54004c97ca00ade52007359128"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/contrib/securetransport.py",
+      "git_blob_sha": "ab092de67a57c77d606ce00788450dca207c09cf",
+      "source_sha256": "2b118f664f1de187a95a6ed173e481b755ebcc87e72ca73c26451557be57ce01"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/contrib/socks.py",
+      "git_blob_sha": "93df8325d59c41d7496c322460018fd513468dec",
+      "source_sha256": "0dc463336974ad0308ca162b37aafeb6756463a6530f11c994cf3fbac0241820"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/exceptions.py",
+      "git_blob_sha": "cba6f3f560f71b3b15ab6aaf21dde4f1bba1bd00",
+      "source_sha256": "d0c9e7a372874cd7d745f63beb7f0db9f38f9146fa9973a6f8baa3fb8c76c3c0"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/fields.py",
+      "git_blob_sha": "9d630f491d9a39644ae65564dac88eb51f0bbe78",
+      "source_sha256": "92f2c30a0fc9987d652e3514118fc52d2f14858ee106f0cfb951136d8f2676b3"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/filepost.py",
+      "git_blob_sha": "36c9252c647e67bc7353c523152568b993c1331f",
+      "source_sha256": "e5bfeaaa04475652fbb8bb5d018073061f861e653901f255b7fd8dd174b73de6"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/packages/__init__.py",
+      "git_blob_sha": "fce4caa65d2eeba92acc20ab31097cb606d6c412",
+      "source_sha256": "87804b843e2d2da071d5a75a0ed2977eea6c82a634c162d76ff7f5ff256557a0"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/packages/backports/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/packages/backports/makefile.py",
+      "git_blob_sha": "b8fb2154b6d0618b62281578e5e947bca487cee4",
+      "source_sha256": "9dbcedde2d1a80f54fd3b8eaaa08e16988cc9ae022fd6e44d04cb0662bd53bc1"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/packages/six.py",
+      "git_blob_sha": "314424099f6240c4679d3b62685e4a38fe900449",
+      "source_sha256": "69dc78cfe78cfc3d15beed0822a573140090feec7d97ae32ec391211f6f1083b"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/packages/ssl_match_hostname/__init__.py",
+      "git_blob_sha": "6b12fd90aadeccacca096d16836c4d80d498cf58",
+      "source_sha256": "ce9a5ecdd1107691ac61eac8ea657a31f518cb8f79255e2670e582fc681b9635"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/packages/ssl_match_hostname/_implementation.py",
+      "git_blob_sha": "689208d3c63f1318e3a9a084a90e6b4532fa49bb",
+      "source_sha256": "e9d67eab4ef883b5e1b09dbb3050a091cb7c895359077b0c66f2a17fe294572d"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/poolmanager.py",
+      "git_blob_sha": "3a31a285bf64816fba65d2cb76b7aea66abaf534",
+      "source_sha256": "c21ce55fa51312038330e0b2d190cc50e351042cf9c3220cf19f68a57018f8b9"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/request.py",
+      "git_blob_sha": "398386a5b9f61c13be314e256e671a37d28e3623",
+      "source_sha256": "645488a97d02e968b38b179c0a1677fe8932bbb044bf4959bb5553d2cea1e123"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/response.py",
+      "git_blob_sha": "38693f4fc6e33766f7a6b4f1227867ae86d2da32",
+      "source_sha256": "846846061ed3904921fc8420e42d56ff1b8f36b8082afe415173f213eab42ee1"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/__init__.py",
+      "git_blob_sha": "4547fc522b690ba2697843edd044f2039a4123a9",
+      "source_sha256": "2449929a6aaa2f26b0f0fe75814226661f06c20f62d7349ef83a2a022b67da77"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/connection.py",
+      "git_blob_sha": "cd57455748be052ed416869fa91e7eb89e85ccbe",
+      "source_sha256": "db507e2d7d1cf1f9313c3b2cc8709a2b4a429e6aca9a196d839128a2e1e200f5"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/proxy.py",
+      "git_blob_sha": "34f884d5b314dbb28abd2af3ce159630f6028180",
+      "source_sha256": "1468a90049ef66d7b295d5cd8dc7b80c407b633c14f9ae657a9f32e52d2a1d08"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/queue.py",
+      "git_blob_sha": "41784104ee4bd5796006d1052536325d52db1e8c",
+      "source_sha256": "9d1817f3f797fbf564bf1a17d3de905a8cfc3ecd101d4004c482c263fecf9dc3"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/request.py",
+      "git_blob_sha": "25103383ec7abc7b46fb6a6f549efa38e4abe24c",
+      "source_sha256": "367cda10a4353dabb0e4c14c57a1e68043072137f402e6bd7d0bb38b6b99cc67"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/response.py",
+      "git_blob_sha": "5ea609ccedf18eb4ab70f8fc6990448eb6407237",
+      "source_sha256": "189a60dc4822f6a6895d1c01879c2ff8c36e4566a7e4122ee34a117a8c563f6f"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/retry.py",
+      "git_blob_sha": "d25a41b42ea43ae9261c5444bcd56b10641b4fa9",
+      "source_sha256": "b3764d2973bafeddb7650320f3396edb43cc4aaada4f8f79f92fe6118ff5f5a9"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/ssl_.py",
+      "git_blob_sha": "236aa8e630e7c33a6aca52d7efabeb4e979a72e0",
+      "source_sha256": "7d1ab3466a0b7e20efe7fb45ce016d1b394ebae1e82d7d2eb3b5947fbb580c0a"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/ssltransport.py",
+      "git_blob_sha": "1e41354f5d4588c063ae2e8a3dcc4119fa6ae45a",
+      "source_sha256": "22f190becf585a47f88f37ea5634eefd45a3c005203e7e4072d6a35bc54bcfa0"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/timeout.py",
+      "git_blob_sha": "ff69593b05b5eb5fcd336b4bd16193c44dc48ef5",
+      "source_sha256": "4126c150d381f7287a0270e7eb54ab2d0d21839a33d08f7eb97106f75009b888"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/url.py",
+      "git_blob_sha": "6ff238fe3cbd04f5a63862e8b6729e155e03360c",
+      "source_sha256": "2d67cb4a523897616650c29f0a412509a5b5d3ed0dfac2434fd6f1683649923b"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "src/urllib3/util/wait.py",
+      "git_blob_sha": "c280646c7be0b1887878254408c6f6c5158651ca",
+      "source_sha256": "dcc50a452014243076b60728eea454b245b4cd7180598bd1444e10d7feb194bb"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "test/__init__.py",
+      "git_blob_sha": "c03cfac257bbf527fe90b012f2bedb7d57f14337",
+      "source_sha256": "64675c69adbb6f6ed780427dbccc95fbd9024fd28ead482813bb92fbfd4c8ea3"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "test/conftest.py",
+      "git_blob_sha": "96c9b2b5bc4279d52fe86262cc627b2b23c169ad",
+      "source_sha256": "e418fd60feb62ac275cf521bc116667a74d4a42c0fe0246ec60c9fcb230463a5"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "path": "test/with_dummyserver/test_proxy_poolmanager.py",
+      "git_blob_sha": "c1535bd08774847fa85777c84a7fca09ac236c8d",
+      "source_sha256": "2fa58c446bf871730d26768b6624df05b02e0a90d5b579d1dc0fa45383abd6b7"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/__init__.py",
+      "git_blob_sha": "fe86b59d782bdb09d70aa44f80370be95a667c83",
+      "source_sha256": "8f7cb31c86e65bb092f8829027df8f3d07ff60a3bc10e01ecbfacc5b4511eeeb"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/_collections.py",
+      "git_blob_sha": "da9857e986d89acac3ba05a6735dc08c249bde1a",
+      "source_sha256": "469d6657206073f52501ca7a3376add6c909057479278dcd6b0453bd6da0fd76"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/_version.py",
+      "git_blob_sha": "97f83dc2962a335735a643d7daa9a5a797ba76a0",
+      "source_sha256": "9f0867141506667beda8f16956591264ceb9ca36b6364495fc054eea1f6935fc"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/connection.py",
+      "git_blob_sha": "9066e6ade468ee99a5d14234a84ec7d3b229b43d",
+      "source_sha256": "efcb1bd2e54eafcec0766080510ef3ec147202bdb2e421b36a6105a0a1c9781a"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/connectionpool.py",
+      "git_blob_sha": "4708c5bfc7862d82be92321f519f5ad0c7814d6d",
+      "source_sha256": "20aa1eb89658f580189b418ae2af8c5c08725d6d0cfc59ef69b61a36c0c847e1"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/contrib/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/contrib/_appengine_environ.py",
+      "git_blob_sha": "8765b907d70c4a530bc90dc88f24b3df73473b01",
+      "source_sha256": "6c36f2384856d8228b25c42a00a032ac41cdf9a925b321c52aaeaf17c645b269"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/contrib/_securetransport/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/contrib/_securetransport/bindings.py",
+      "git_blob_sha": "11524d400bab28e066f2496de85d68a626c2d93d",
+      "source_sha256": "135ffb49cb2039c85fc677a8cdb02e78aef3882c05df97e76b80ee0c2609f7fa"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/contrib/_securetransport/low_level.py",
+      "git_blob_sha": "ed8120190c06fadbc1a14b328c2ca0196046b220",
+      "source_sha256": "96021db12c9ca9f0745e6e41889cd719e20a4fbc9b0903053c902091cc0f6b5b"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/contrib/appengine.py",
+      "git_blob_sha": "aa64a0914c60134abe7dc082312210922d779ed4",
+      "source_sha256": "ecfc5bd2d29f0c1fcb4c63c4462b301f4aa89a10e85143a8e64c326c028b4321"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/contrib/ntlmpool.py",
+      "git_blob_sha": "b2df45dcf6065647b2a8ec87d0c3c8fed475dac1",
+      "source_sha256": "e88f79875ffbd5fcf19a831236d634801f259f20a856d3ff0e9a851a3d787dd5"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/contrib/pyopenssl.py",
+      "git_blob_sha": "0cabab1aed14a6f8a090751b951ab50349f3a369",
+      "source_sha256": "be087a8f9db0f71830abedd1da47c1e4cd896e54004c97ca00ade52007359128"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/contrib/securetransport.py",
+      "git_blob_sha": "ab092de67a57c77d606ce00788450dca207c09cf",
+      "source_sha256": "2b118f664f1de187a95a6ed173e481b755ebcc87e72ca73c26451557be57ce01"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/contrib/socks.py",
+      "git_blob_sha": "93df8325d59c41d7496c322460018fd513468dec",
+      "source_sha256": "0dc463336974ad0308ca162b37aafeb6756463a6530f11c994cf3fbac0241820"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/exceptions.py",
+      "git_blob_sha": "cba6f3f560f71b3b15ab6aaf21dde4f1bba1bd00",
+      "source_sha256": "d0c9e7a372874cd7d745f63beb7f0db9f38f9146fa9973a6f8baa3fb8c76c3c0"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/fields.py",
+      "git_blob_sha": "9d630f491d9a39644ae65564dac88eb51f0bbe78",
+      "source_sha256": "92f2c30a0fc9987d652e3514118fc52d2f14858ee106f0cfb951136d8f2676b3"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/filepost.py",
+      "git_blob_sha": "36c9252c647e67bc7353c523152568b993c1331f",
+      "source_sha256": "e5bfeaaa04475652fbb8bb5d018073061f861e653901f255b7fd8dd174b73de6"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/packages/__init__.py",
+      "git_blob_sha": "fce4caa65d2eeba92acc20ab31097cb606d6c412",
+      "source_sha256": "87804b843e2d2da071d5a75a0ed2977eea6c82a634c162d76ff7f5ff256557a0"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/packages/backports/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/packages/backports/makefile.py",
+      "git_blob_sha": "b8fb2154b6d0618b62281578e5e947bca487cee4",
+      "source_sha256": "9dbcedde2d1a80f54fd3b8eaaa08e16988cc9ae022fd6e44d04cb0662bd53bc1"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/packages/six.py",
+      "git_blob_sha": "314424099f6240c4679d3b62685e4a38fe900449",
+      "source_sha256": "69dc78cfe78cfc3d15beed0822a573140090feec7d97ae32ec391211f6f1083b"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/packages/ssl_match_hostname/__init__.py",
+      "git_blob_sha": "6b12fd90aadeccacca096d16836c4d80d498cf58",
+      "source_sha256": "ce9a5ecdd1107691ac61eac8ea657a31f518cb8f79255e2670e582fc681b9635"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/packages/ssl_match_hostname/_implementation.py",
+      "git_blob_sha": "689208d3c63f1318e3a9a084a90e6b4532fa49bb",
+      "source_sha256": "e9d67eab4ef883b5e1b09dbb3050a091cb7c895359077b0c66f2a17fe294572d"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/poolmanager.py",
+      "git_blob_sha": "3a31a285bf64816fba65d2cb76b7aea66abaf534",
+      "source_sha256": "c21ce55fa51312038330e0b2d190cc50e351042cf9c3220cf19f68a57018f8b9"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/request.py",
+      "git_blob_sha": "398386a5b9f61c13be314e256e671a37d28e3623",
+      "source_sha256": "645488a97d02e968b38b179c0a1677fe8932bbb044bf4959bb5553d2cea1e123"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/response.py",
+      "git_blob_sha": "38693f4fc6e33766f7a6b4f1227867ae86d2da32",
+      "source_sha256": "846846061ed3904921fc8420e42d56ff1b8f36b8082afe415173f213eab42ee1"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/__init__.py",
+      "git_blob_sha": "4547fc522b690ba2697843edd044f2039a4123a9",
+      "source_sha256": "2449929a6aaa2f26b0f0fe75814226661f06c20f62d7349ef83a2a022b67da77"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/connection.py",
+      "git_blob_sha": "cd57455748be052ed416869fa91e7eb89e85ccbe",
+      "source_sha256": "db507e2d7d1cf1f9313c3b2cc8709a2b4a429e6aca9a196d839128a2e1e200f5"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/proxy.py",
+      "git_blob_sha": "34f884d5b314dbb28abd2af3ce159630f6028180",
+      "source_sha256": "1468a90049ef66d7b295d5cd8dc7b80c407b633c14f9ae657a9f32e52d2a1d08"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/queue.py",
+      "git_blob_sha": "41784104ee4bd5796006d1052536325d52db1e8c",
+      "source_sha256": "9d1817f3f797fbf564bf1a17d3de905a8cfc3ecd101d4004c482c263fecf9dc3"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/request.py",
+      "git_blob_sha": "25103383ec7abc7b46fb6a6f549efa38e4abe24c",
+      "source_sha256": "367cda10a4353dabb0e4c14c57a1e68043072137f402e6bd7d0bb38b6b99cc67"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/response.py",
+      "git_blob_sha": "5ea609ccedf18eb4ab70f8fc6990448eb6407237",
+      "source_sha256": "189a60dc4822f6a6895d1c01879c2ff8c36e4566a7e4122ee34a117a8c563f6f"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/retry.py",
+      "git_blob_sha": "d25a41b42ea43ae9261c5444bcd56b10641b4fa9",
+      "source_sha256": "b3764d2973bafeddb7650320f3396edb43cc4aaada4f8f79f92fe6118ff5f5a9"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/ssl_.py",
+      "git_blob_sha": "236aa8e630e7c33a6aca52d7efabeb4e979a72e0",
+      "source_sha256": "7d1ab3466a0b7e20efe7fb45ce016d1b394ebae1e82d7d2eb3b5947fbb580c0a"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/ssltransport.py",
+      "git_blob_sha": "1e41354f5d4588c063ae2e8a3dcc4119fa6ae45a",
+      "source_sha256": "22f190becf585a47f88f37ea5634eefd45a3c005203e7e4072d6a35bc54bcfa0"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/timeout.py",
+      "git_blob_sha": "ff69593b05b5eb5fcd336b4bd16193c44dc48ef5",
+      "source_sha256": "4126c150d381f7287a0270e7eb54ab2d0d21839a33d08f7eb97106f75009b888"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/url.py",
+      "git_blob_sha": "6ff238fe3cbd04f5a63862e8b6729e155e03360c",
+      "source_sha256": "2d67cb4a523897616650c29f0a412509a5b5d3ed0dfac2434fd6f1683649923b"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "src/urllib3/util/wait.py",
+      "git_blob_sha": "c280646c7be0b1887878254408c6f6c5158651ca",
+      "source_sha256": "dcc50a452014243076b60728eea454b245b4cd7180598bd1444e10d7feb194bb"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "test/__init__.py",
+      "git_blob_sha": "c03cfac257bbf527fe90b012f2bedb7d57f14337",
+      "source_sha256": "64675c69adbb6f6ed780427dbccc95fbd9024fd28ead482813bb92fbfd4c8ea3"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "test/conftest.py",
+      "git_blob_sha": "ff8e463186398d241b56cd986037ba99078a99e1",
+      "source_sha256": "df77710282ca31f0241637b7135dc40b5e076dd4489cfbd267a1a8e8ce308632"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "path": "test/with_dummyserver/test_proxy_poolmanager.py",
+      "git_blob_sha": "737e5f7afac8340b3fe9f1ca1ba81a05b3fd1e50",
+      "source_sha256": "80ecbe0a1db1f648e0f915df33dd037dc3e7f667ac7bf877134505101aa66771"
+    }
+  ]
+}

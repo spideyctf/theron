@@ -1,0 +1,372 @@
+{
+  "records": [
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "pyproject.toml",
+      "git_blob_sha": "97214704b1d7bc14e696e9cb0f8067aa1a2da422",
+      "source_sha256": "957c18f7337c4a6d22f131ee1f4a4724881f206e90eff8bedb144f7ff8cbf3b6"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/__init__.py",
+      "git_blob_sha": "922c867e379f32109305808d523e79a2212deb4d",
+      "source_sha256": "6b13ada308923cbabda4ae3d438f3b1181181cd5102072925ede8f11740bcbac"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/_function_type_hints_utils.py",
+      "git_blob_sha": "d3045420e8dea4284ea28ab2a49f2b0882f5a4e0",
+      "source_sha256": "4d95a7367e969f084a7df0c0f6767936a20846f4274302f2c931dba46446db49"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/agent_types.py",
+      "git_blob_sha": "73772292e1374e324c2107c412d60431b40f8277",
+      "source_sha256": "2da7d7f97111a4a7bb75b3ca50bfd7e7df5f7435c4bfcf94dc87046fe4104d69"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/agents.py",
+      "git_blob_sha": "27121365801f2888442c95a01a4f68d939d614d7",
+      "source_sha256": "884fb4623af00b9ad854dae0e16d7daa8f4008e4d220081abc0860b77078523b"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/cli.py",
+      "git_blob_sha": "ccb8295efd9503967b2ed5038986644509965ac1",
+      "source_sha256": "2b6c202590fe07fc897217ab7fcdfbc0c7458e14685c912bab670bb54cff0cde"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/default_tools.py",
+      "git_blob_sha": "cf989955cff795d58b1cad23d068c94e8980812b",
+      "source_sha256": "14b0ceda1ba0a294b999a09e2d172942b3e4916efb6122616b7839ccb96149e8"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/gradio_ui.py",
+      "git_blob_sha": "e5e6ede1c18158de9835d7f96d4bcd80d2aeabc8",
+      "source_sha256": "5de402921104dba3c3955fcaa01ff1d5c6898a016c22f06dffb4ac834e6771bd"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/local_python_executor.py",
+      "git_blob_sha": "318efc392dfc490e830e88b1bf0531992c28e60d",
+      "source_sha256": "5b87150c7ffeb9280903eea75285b5d25d703578bc97c8db58a9f9364d67c673"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/mcp_client.py",
+      "git_blob_sha": "000e6e08b917bf89f252c0fd4ad76ee87f9d287f",
+      "source_sha256": "8b176a84bf223635ff3e26fe9b07bc1a9887cf2e71d0f9617f5c4bde17cb33f4"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/memory.py",
+      "git_blob_sha": "912bad6e9afd26c4ad420973bec5f8d2ddd49d8b",
+      "source_sha256": "3907e3fe9ff34e4b9fd0f2c2cd85d353cdf891641f900944e945456d487f5389"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/models.py",
+      "git_blob_sha": "4ba0197dd17d2d295ca6c19b9fef795314031981",
+      "source_sha256": "82a2294781e5b1607f21899d7fdfed540203c1aae99d5a842404a83ee82bcb5c"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/monitoring.py",
+      "git_blob_sha": "5f5c174daa257700935d5d2d66a110d0f81d49ab",
+      "source_sha256": "c8f1a6aae5e87e1d48d13bd2a6e58ffbcd535291cd59a6b1a1fc6d01bac33f57"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/prompts/code_agent.yaml",
+      "git_blob_sha": "29294601a2108f5b7784945c0225aaa3d2717567",
+      "source_sha256": "b4e6ad73cdda2d344cca8ceb281c5073bd1589339e248ba60faa20427167152a"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/prompts/structured_code_agent.yaml",
+      "git_blob_sha": "6f1058927ab6be1141a1308e64d9d1cb6245b653",
+      "source_sha256": "8636f4c73d136e774d3981e2a42fa8e42c0e482e5eb87c1c48c6b83411f876d1"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/prompts/toolcalling_agent.yaml",
+      "git_blob_sha": "3e99fb4237e62655ebfab48515397a32fdfb39a4",
+      "source_sha256": "cd9a33de54513795337dc6a07c2d816267949afd9ee5f39bc0e97ec197303991"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/remote_executors.py",
+      "git_blob_sha": "aed0445d14837dbb13740414d6ca9a972d83131e",
+      "source_sha256": "bcdc138e2e88b59a2c7ffbe4601b15243060abac3acc6a208a0ae8abe2a08633"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/tool_validation.py",
+      "git_blob_sha": "98ac46cf7822e255b3986559683144cf08d7d60e",
+      "source_sha256": "5e4997174185ec60e6705ebf793c0bd8daba1fd78f978d798c7f8ca462b05ae7"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/tools.py",
+      "git_blob_sha": "35622c0903e05e6a4b064569e98e1106be8a099e",
+      "source_sha256": "5d496d9cd6ad4cd187dc1e0127947b0bc51cb68e157ce11763e72e4b280aed50"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/utils.py",
+      "git_blob_sha": "ba73b9692b0bb17fb36af0ca0d2bc0bdccd9bd47",
+      "source_sha256": "a2e0d79ce846063d857ed68ee214db6a3f6ae8038dea47eb7783528daddb65a9"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "src/smolagents/vision_web_browser.py",
+      "git_blob_sha": "c6156ef16ac41b46ec916527a05b03ae3919b7c1",
+      "source_sha256": "8ce41b0d2bcc32a9e94b0068bffdbfe2ddc0cab6c77b4d4f0c14e6a000a1af30"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "tests/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "path": "tests/test_local_python_executor.py",
+      "git_blob_sha": "99b2c0871a7136e29e0de35b68113763edadf262",
+      "source_sha256": "64929466d1ee8a31af71b2abe43b7dea0bb2b416ec6a81c093af195b564497a7"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "pyproject.toml",
+      "git_blob_sha": "97214704b1d7bc14e696e9cb0f8067aa1a2da422",
+      "source_sha256": "957c18f7337c4a6d22f131ee1f4a4724881f206e90eff8bedb144f7ff8cbf3b6"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/__init__.py",
+      "git_blob_sha": "922c867e379f32109305808d523e79a2212deb4d",
+      "source_sha256": "6b13ada308923cbabda4ae3d438f3b1181181cd5102072925ede8f11740bcbac"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/_function_type_hints_utils.py",
+      "git_blob_sha": "d3045420e8dea4284ea28ab2a49f2b0882f5a4e0",
+      "source_sha256": "4d95a7367e969f084a7df0c0f6767936a20846f4274302f2c931dba46446db49"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/agent_types.py",
+      "git_blob_sha": "73772292e1374e324c2107c412d60431b40f8277",
+      "source_sha256": "2da7d7f97111a4a7bb75b3ca50bfd7e7df5f7435c4bfcf94dc87046fe4104d69"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/agents.py",
+      "git_blob_sha": "27121365801f2888442c95a01a4f68d939d614d7",
+      "source_sha256": "884fb4623af00b9ad854dae0e16d7daa8f4008e4d220081abc0860b77078523b"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/cli.py",
+      "git_blob_sha": "ccb8295efd9503967b2ed5038986644509965ac1",
+      "source_sha256": "2b6c202590fe07fc897217ab7fcdfbc0c7458e14685c912bab670bb54cff0cde"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/default_tools.py",
+      "git_blob_sha": "cf989955cff795d58b1cad23d068c94e8980812b",
+      "source_sha256": "14b0ceda1ba0a294b999a09e2d172942b3e4916efb6122616b7839ccb96149e8"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/gradio_ui.py",
+      "git_blob_sha": "e5e6ede1c18158de9835d7f96d4bcd80d2aeabc8",
+      "source_sha256": "5de402921104dba3c3955fcaa01ff1d5c6898a016c22f06dffb4ac834e6771bd"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/local_python_executor.py",
+      "git_blob_sha": "6fef1330d1cdd37275f2d2de3d9a0a54d5562ad7",
+      "source_sha256": "70943b2af1d24fae2baa536037028090f7e1f7ef44259e04ffed3099a03907e5"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/mcp_client.py",
+      "git_blob_sha": "000e6e08b917bf89f252c0fd4ad76ee87f9d287f",
+      "source_sha256": "8b176a84bf223635ff3e26fe9b07bc1a9887cf2e71d0f9617f5c4bde17cb33f4"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/memory.py",
+      "git_blob_sha": "912bad6e9afd26c4ad420973bec5f8d2ddd49d8b",
+      "source_sha256": "3907e3fe9ff34e4b9fd0f2c2cd85d353cdf891641f900944e945456d487f5389"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/models.py",
+      "git_blob_sha": "4ba0197dd17d2d295ca6c19b9fef795314031981",
+      "source_sha256": "82a2294781e5b1607f21899d7fdfed540203c1aae99d5a842404a83ee82bcb5c"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/monitoring.py",
+      "git_blob_sha": "5f5c174daa257700935d5d2d66a110d0f81d49ab",
+      "source_sha256": "c8f1a6aae5e87e1d48d13bd2a6e58ffbcd535291cd59a6b1a1fc6d01bac33f57"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/prompts/code_agent.yaml",
+      "git_blob_sha": "29294601a2108f5b7784945c0225aaa3d2717567",
+      "source_sha256": "b4e6ad73cdda2d344cca8ceb281c5073bd1589339e248ba60faa20427167152a"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/prompts/structured_code_agent.yaml",
+      "git_blob_sha": "6f1058927ab6be1141a1308e64d9d1cb6245b653",
+      "source_sha256": "8636f4c73d136e774d3981e2a42fa8e42c0e482e5eb87c1c48c6b83411f876d1"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/prompts/toolcalling_agent.yaml",
+      "git_blob_sha": "3e99fb4237e62655ebfab48515397a32fdfb39a4",
+      "source_sha256": "cd9a33de54513795337dc6a07c2d816267949afd9ee5f39bc0e97ec197303991"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/remote_executors.py",
+      "git_blob_sha": "aed0445d14837dbb13740414d6ca9a972d83131e",
+      "source_sha256": "bcdc138e2e88b59a2c7ffbe4601b15243060abac3acc6a208a0ae8abe2a08633"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/tool_validation.py",
+      "git_blob_sha": "98ac46cf7822e255b3986559683144cf08d7d60e",
+      "source_sha256": "5e4997174185ec60e6705ebf793c0bd8daba1fd78f978d798c7f8ca462b05ae7"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/tools.py",
+      "git_blob_sha": "35622c0903e05e6a4b064569e98e1106be8a099e",
+      "source_sha256": "5d496d9cd6ad4cd187dc1e0127947b0bc51cb68e157ce11763e72e4b280aed50"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/utils.py",
+      "git_blob_sha": "ba73b9692b0bb17fb36af0ca0d2bc0bdccd9bd47",
+      "source_sha256": "a2e0d79ce846063d857ed68ee214db6a3f6ae8038dea47eb7783528daddb65a9"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "src/smolagents/vision_web_browser.py",
+      "git_blob_sha": "c6156ef16ac41b46ec916527a05b03ae3919b7c1",
+      "source_sha256": "8ce41b0d2bcc32a9e94b0068bffdbfe2ddc0cab6c77b4d4f0c14e6a000a1af30"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "tests/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "path": "tests/test_local_python_executor.py",
+      "git_blob_sha": "02ed8f499cdcd3757aa0dc58255f0e4a0f38326c",
+      "source_sha256": "c0d329e0118aa6788a9033f1bb2798941fb5db275f83bdac1bb84b2d8d936fc3"
+    }
+  ]
+}

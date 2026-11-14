@@ -1,0 +1,420 @@
+{
+  "records": [
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/__init__.py",
+      "git_blob_sha": "5a7eb5137f8b8f93a5b5c540f5816c8fb3b448af",
+      "source_sha256": "48560921b4cd80e98ad71dc38430a6544dc12508938b23dc3f86ee1de19e225d"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/_version.py",
+      "git_blob_sha": "dd9daf7cf7a8305c4633723226202117043afb76",
+      "source_sha256": "80071922668913ce01b263fb39e54681e3f76515d6715c6f30900d014b9e2877"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/__init__.py",
+      "git_blob_sha": "129b5498b0d76fffb3074c94c1cbd0ad97a5bb0e",
+      "source_sha256": "6f57f04b69ba21a824e1fbb12bc21287e05f7b761e2b5c41f46dc4fc2fb8100b"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/comm.py",
+      "git_blob_sha": "78ed474904983c636dc46e32fecb660c08001af4",
+      "source_sha256": "a64999764d19a13b9c02d226813031a06dd74e67ce8daf7a410b79307700c489"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/commandline.py",
+      "git_blob_sha": "a7d29b66045b8ae725a4b526e07d9f3c771443c6",
+      "source_sha256": "02ab26e4d38e188f7cdcc0a8c51eb122294fde33f39dbad06cb7de96a806cc5d"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/connectivity.py",
+      "git_blob_sha": "d105b909ab44d8feb609f1abb2475fd240d004ff",
+      "source_sha256": "c1f7796c62fe50546001daf8b662e2a8f8a68b41c40ecf37a59715a025260988"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/dev.py",
+      "git_blob_sha": "a587f5972eb35558bbc800a54fd456de09393429",
+      "source_sha256": "00ed338b57f03e57d06572a20ddcea45c76025b7d1b08ba2ac018309c03d09ac"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/files.py",
+      "git_blob_sha": "0ea870cd3f0e87f686f08e702b2588d03971ad82",
+      "source_sha256": "6db91f42931b7fdbd97ad2ab91b0f973ee685ee6bf0f110ed50e6373ad1c89fb"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/fixes.py",
+      "git_blob_sha": "a52838227e39795f64acec186fc097c1e09907b0",
+      "source_sha256": "00829b8a72863da251b1265fccf27250db124f0baf006d6f57312bf3d63166e2"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/gcodeInterpreter.py",
+      "git_blob_sha": "8f07739814ed7c560680cbdf25005f22b2c2f537",
+      "source_sha256": "0aaf01bacfcac91b28d3506f12de92e9746482a8ef2ad35687fb8dc07d12b9c4"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/jinja.py",
+      "git_blob_sha": "26ad4b7ab2b6da8ccbca2e6bcf401c68db7a16e6",
+      "source_sha256": "b7311f5d29239a1a3b52b5d79bc29ee1b49f9f4880cfcb418a96d1e28976754d"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/json/__init__.py",
+      "git_blob_sha": "6e011f529619e3245714b519bef43a10244dfec9",
+      "source_sha256": "64c25d6eb0bdf7f378ec5a1eb7144b9cc77e2ac5150880cfadd61152b944fb63"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/json/encoding.py",
+      "git_blob_sha": "dc2fcc6aceddec80b3ac55a1bcdf46f22d1aa9a8",
+      "source_sha256": "bf5e84a97e7674d62c2972293c1c2e0de21de5700b5f577108f0f6144bcdf26c"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/json/serializing.py",
+      "git_blob_sha": "d8b9ab97062d10c2172fd8965cdf3c9620f5326d",
+      "source_sha256": "cad069390846b481403373e558b5c342ac7ccd2a07dcc8dc70c5cea55cebdded"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/net.py",
+      "git_blob_sha": "ed2ac65b1e46dfc74c2a6dd862c9536c60bc9541",
+      "source_sha256": "2d1b74e4dd212f37b806dd24074383219ac35d4d163e22890f123b4e79701ec7"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/paths.py",
+      "git_blob_sha": "41a54fe763cf2ebb473ad467097a82858c7cadb1",
+      "source_sha256": "06d306d150981b7ea7b5672b8a59273bad990c3da136ae8e70213915810d5c3c"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/pip.py",
+      "git_blob_sha": "bf50e048f3c73c9a687549b72f86a794012be6de",
+      "source_sha256": "2531e72b7ec125ad0d0c62e51b80ba1c5ee7698b5d4f100dfc293247affb18c3"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/piptestballoon/setup.py",
+      "git_blob_sha": "c0e26335d039d0cd91b4ee007847187873e512b7",
+      "source_sha256": "b6c78df401151e658d54de4883f33b71939b3bee05bccc5263a605100b917639"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/platform/__init__.py",
+      "git_blob_sha": "bccf75db0ccc82763436e5b612f34c216c687064",
+      "source_sha256": "b18d944efee2e30c426954cca0110436ebc0f642844c354480f269ccf93abe22"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/text.py",
+      "git_blob_sha": "81d0f580df11271ac4108ef4eccd2aabee231500",
+      "source_sha256": "9448c19e4496a80f9340538edeb060897085e095bc7088b75bf1e5d67bca51a2"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/tz.py",
+      "git_blob_sha": "f62de4456308425ce5ec2a0e5b34630bb3af8083",
+      "source_sha256": "b505027791c4e8dc15e4085a71cc6a20ff9c2bafee875209ab30b5db525b58dd"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/version.py",
+      "git_blob_sha": "34ffa00bc843551260a75739fbb99abfa5c5d521",
+      "source_sha256": "31c59b61224fe4fffecc6f7d2da870f6d1721c84e86aae7a8630ccefe6ffffb4"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/util/yaml.py",
+      "git_blob_sha": "3b9a5561b8ee6acd5614c2b69518af3ba1997c8e",
+      "source_sha256": "30cb724d979e1eba06a2b84bddfaaa6b08a3dc12c97c65e3eb86f74d961246e0"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "tests/util/__init__.py",
+      "git_blob_sha": "4bbbcc1cfe70f0453d96e4a4498bd2870aa1a379",
+      "source_sha256": "8bfefd56f80831b76c9605e9f116a9b4f72a9a2d35fba16f8ed3618472a60453"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "tests/util/test_net.py",
+      "git_blob_sha": "c2eb0ac71df6685df6ac34bd08a75295dfad1ce0",
+      "source_sha256": "56dcbc90f40e91f843e8e441a0eaf8e1376fbd2c1542cc2402ad7c1a82ef4f18"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/__init__.py",
+      "git_blob_sha": "5a7eb5137f8b8f93a5b5c540f5816c8fb3b448af",
+      "source_sha256": "48560921b4cd80e98ad71dc38430a6544dc12508938b23dc3f86ee1de19e225d"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/_version.py",
+      "git_blob_sha": "dd9daf7cf7a8305c4633723226202117043afb76",
+      "source_sha256": "80071922668913ce01b263fb39e54681e3f76515d6715c6f30900d014b9e2877"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/__init__.py",
+      "git_blob_sha": "129b5498b0d76fffb3074c94c1cbd0ad97a5bb0e",
+      "source_sha256": "6f57f04b69ba21a824e1fbb12bc21287e05f7b761e2b5c41f46dc4fc2fb8100b"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/comm.py",
+      "git_blob_sha": "78ed474904983c636dc46e32fecb660c08001af4",
+      "source_sha256": "a64999764d19a13b9c02d226813031a06dd74e67ce8daf7a410b79307700c489"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/commandline.py",
+      "git_blob_sha": "a7d29b66045b8ae725a4b526e07d9f3c771443c6",
+      "source_sha256": "02ab26e4d38e188f7cdcc0a8c51eb122294fde33f39dbad06cb7de96a806cc5d"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/connectivity.py",
+      "git_blob_sha": "d105b909ab44d8feb609f1abb2475fd240d004ff",
+      "source_sha256": "c1f7796c62fe50546001daf8b662e2a8f8a68b41c40ecf37a59715a025260988"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/dev.py",
+      "git_blob_sha": "a587f5972eb35558bbc800a54fd456de09393429",
+      "source_sha256": "00ed338b57f03e57d06572a20ddcea45c76025b7d1b08ba2ac018309c03d09ac"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/files.py",
+      "git_blob_sha": "0ea870cd3f0e87f686f08e702b2588d03971ad82",
+      "source_sha256": "6db91f42931b7fdbd97ad2ab91b0f973ee685ee6bf0f110ed50e6373ad1c89fb"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/fixes.py",
+      "git_blob_sha": "a52838227e39795f64acec186fc097c1e09907b0",
+      "source_sha256": "00829b8a72863da251b1265fccf27250db124f0baf006d6f57312bf3d63166e2"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/gcodeInterpreter.py",
+      "git_blob_sha": "8f07739814ed7c560680cbdf25005f22b2c2f537",
+      "source_sha256": "0aaf01bacfcac91b28d3506f12de92e9746482a8ef2ad35687fb8dc07d12b9c4"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/jinja.py",
+      "git_blob_sha": "26ad4b7ab2b6da8ccbca2e6bcf401c68db7a16e6",
+      "source_sha256": "b7311f5d29239a1a3b52b5d79bc29ee1b49f9f4880cfcb418a96d1e28976754d"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/json/__init__.py",
+      "git_blob_sha": "6e011f529619e3245714b519bef43a10244dfec9",
+      "source_sha256": "64c25d6eb0bdf7f378ec5a1eb7144b9cc77e2ac5150880cfadd61152b944fb63"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/json/encoding.py",
+      "git_blob_sha": "dc2fcc6aceddec80b3ac55a1bcdf46f22d1aa9a8",
+      "source_sha256": "bf5e84a97e7674d62c2972293c1c2e0de21de5700b5f577108f0f6144bcdf26c"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/json/serializing.py",
+      "git_blob_sha": "d8b9ab97062d10c2172fd8965cdf3c9620f5326d",
+      "source_sha256": "cad069390846b481403373e558b5c342ac7ccd2a07dcc8dc70c5cea55cebdded"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/net.py",
+      "git_blob_sha": "10c6b36e655496facc18daa165f7a353991aab39",
+      "source_sha256": "f1f11295b116f3cdf0888728de9ae3220e26086defa9e2169354576c45c05206"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/paths.py",
+      "git_blob_sha": "41a54fe763cf2ebb473ad467097a82858c7cadb1",
+      "source_sha256": "06d306d150981b7ea7b5672b8a59273bad990c3da136ae8e70213915810d5c3c"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/pip.py",
+      "git_blob_sha": "bf50e048f3c73c9a687549b72f86a794012be6de",
+      "source_sha256": "2531e72b7ec125ad0d0c62e51b80ba1c5ee7698b5d4f100dfc293247affb18c3"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/piptestballoon/setup.py",
+      "git_blob_sha": "c0e26335d039d0cd91b4ee007847187873e512b7",
+      "source_sha256": "b6c78df401151e658d54de4883f33b71939b3bee05bccc5263a605100b917639"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/platform/__init__.py",
+      "git_blob_sha": "bccf75db0ccc82763436e5b612f34c216c687064",
+      "source_sha256": "b18d944efee2e30c426954cca0110436ebc0f642844c354480f269ccf93abe22"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/text.py",
+      "git_blob_sha": "81d0f580df11271ac4108ef4eccd2aabee231500",
+      "source_sha256": "9448c19e4496a80f9340538edeb060897085e095bc7088b75bf1e5d67bca51a2"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/tz.py",
+      "git_blob_sha": "f62de4456308425ce5ec2a0e5b34630bb3af8083",
+      "source_sha256": "b505027791c4e8dc15e4085a71cc6a20ff9c2bafee875209ab30b5db525b58dd"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/version.py",
+      "git_blob_sha": "34ffa00bc843551260a75739fbb99abfa5c5d521",
+      "source_sha256": "31c59b61224fe4fffecc6f7d2da870f6d1721c84e86aae7a8630ccefe6ffffb4"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/util/yaml.py",
+      "git_blob_sha": "3b9a5561b8ee6acd5614c2b69518af3ba1997c8e",
+      "source_sha256": "30cb724d979e1eba06a2b84bddfaaa6b08a3dc12c97c65e3eb86f74d961246e0"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "tests/util/__init__.py",
+      "git_blob_sha": "4bbbcc1cfe70f0453d96e4a4498bd2870aa1a379",
+      "source_sha256": "8bfefd56f80831b76c9605e9f116a9b4f72a9a2d35fba16f8ed3618472a60453"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "tests/util/test_net.py",
+      "git_blob_sha": "53108a8bdec348d05f5cf511069d90b4e275fd86",
+      "source_sha256": "9af1dff5d98333903a855ae6c315f658fbf69c10bdec908c145157f2dd6c0606"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "path": "src/octoprint/_static_version.py",
+      "git_blob_sha": "73a4f3830b439d928bedc91f9a03c033ce2f2303",
+      "source_sha256": "27dddf930b9afd840784dbc66d524d0d5950b3453da81e20cd575f49d2026f4b"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "path": "src/octoprint/_static_version.py",
+      "git_blob_sha": "73a4f3830b439d928bedc91f9a03c033ce2f2303",
+      "source_sha256": "27dddf930b9afd840784dbc66d524d0d5950b3453da81e20cd575f49d2026f4b"
+    }
+  ]
+}

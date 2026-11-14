@@ -1,0 +1,660 @@
+{
+  "records": [
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "pyproject.toml",
+      "git_blob_sha": "1d1c55d6d4671611767c274f372a3a34d61f1abc",
+      "source_sha256": "3f7f81ca7d0532156098615ae0d1dc2c2edd03aa6f2457345371427c3966ab68"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/__init__.py",
+      "git_blob_sha": "bb6923c838e3915893c1acfa4a8bcf26ba646127",
+      "source_sha256": "cf15a85da54a86b02b0aa33ec74758b94947f531f54abac77fd42fef9cd5ecf2"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/__main__.py",
+      "git_blob_sha": "49afb5c35a24b6d0fbe3fd158e8f615b31058fae",
+      "source_sha256": "1c27c380760d788527badabbe3a23f4fd48fac12b2aab7a100c06f4eb35cffd4"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_cli.py",
+      "git_blob_sha": "218df26ed921b145f91507213eee23d24100aaf5",
+      "source_sha256": "983f335067d05bde821996c97b2f85c91e491e2a0a5070df2b1d123685680311"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/__init__.py",
+      "git_blob_sha": "31e5d8cc233c4934dd1cb70b904096d5a08f7c0a",
+      "source_sha256": "22c9ed846f39ffd2eb48f96add9f94410dc02d17a5ce70707c98d7271d4b1d07"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/fulcio/__init__.py",
+      "git_blob_sha": "4681dafcd8a72e8a1d326c0fa1d7eed823aa7d8c",
+      "source_sha256": "40a796d60e2c42b4b408302ede899a97abce9a3620b7f0dd6ca4731a1ca53bfc"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/fulcio/client.py",
+      "git_blob_sha": "0625191862fd47f87f30e0372dd1ac911e970f00",
+      "source_sha256": "f9e150f15d118c37abb57fb34adb0a9df57ce14940366290e73b2c200b271f62"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/merkle.py",
+      "git_blob_sha": "b930c7defedcdbcaf23f919d3539d66f2cc3b0f0",
+      "source_sha256": "e3759950a4bf1ba8b661989919931d82a2b8a09b0f9da5cbe5e72e39cc87ee01"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/oidc/__init__.py",
+      "git_blob_sha": "1e563ef094c0c56f7fb39ee21219359a1b4a2b0d",
+      "source_sha256": "bb367a7d2312fee782362be99d8510d8cc4134cd4f8f686440100b14961db59e"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/oidc/oauth.py",
+      "git_blob_sha": "cdbd8c7b64255fde314e8b71d7db2e46a823e4d6",
+      "source_sha256": "48fdf535bef06e7ab11e1cd136879bfba67a6fd5764e1e54ccc6cc7c2c93eb70"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/rekor/__init__.py",
+      "git_blob_sha": "7c1d3e36401c4e2fa0fc85ef985a77da787b7d9e",
+      "source_sha256": "5ab3b912a46b991b9bdab833e4d7b4cfb0c88a434acc52d65f86dcb93d48c8f2"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/rekor/checkpoint.py",
+      "git_blob_sha": "cc13896585890f9a2b6e57c50d64eecff258e392",
+      "source_sha256": "45a9d9257cf2a1248f304d4fbcd25928e81a764afb4813ef0d58f0c5dca713c1"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/rekor/client.py",
+      "git_blob_sha": "86fc0421edaed532797aceb9f476e752afb74788",
+      "source_sha256": "6ef671ddaa7100fde726dab6a983dc21927ed5d163de007aeabab4c1c10aaedc"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/sct.py",
+      "git_blob_sha": "8fd6cc5b2b6ec46dcf525be16653a1c4a92f7f7b",
+      "source_sha256": "a72ee86ab3b541045589162c0eb916ec60dd37304ce8dc1b39e09bd6a3b40186"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/timestamp.py",
+      "git_blob_sha": "f279e9d4746bc5b3f9f4da25b7abed5fb50ad4e4",
+      "source_sha256": "7250a27e7e4d67f0f77ec61f5d63355771ef7846d1e470e5c96d896c9f585fc7"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/trust.py",
+      "git_blob_sha": "b359836db4c7ae196024919f3399f2ed4622eade",
+      "source_sha256": "1153e42991d22e07e6d3207d68e42e679c7220b391984ee45f118ce011d1a4e4"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_internal/tuf.py",
+      "git_blob_sha": "7116be7006d18133c3dc0b150eb28599837e9ccf",
+      "source_sha256": "3b32951fddd78305925dd8f85b4dafc2b9153322ed0f09beb796b785fcb89ce7"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_store/__init__.py",
+      "git_blob_sha": "1f5f2d0b972a5b565cc31845ba9600b50d6c236c",
+      "source_sha256": "cd261a06ef234ae0d66fd5a54d85be1331c5e4e6d4790adafdd6042febb889be"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_store/prod/root.json",
+      "git_blob_sha": "38f80f940473ac167abae3db9bc6a94d0bdb8c4e",
+      "source_sha256": "e2a930b2d1d4053dd56e8faf66fd113658545d522e35d222ccf58fea87ccccf4"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_store/prod/trusted_root.json",
+      "git_blob_sha": "bb4e6fcd885c47d84583e6a8e9161f17248652b7",
+      "source_sha256": "cec894ad77f79b1cb324150f6363012bcef7492954f3ab9134f932e6aa2e2e20"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_store/staging/root.json",
+      "git_blob_sha": "e506177b8ed995ef4f73d6bb956b002cf9e81593",
+      "source_sha256": "e6f5c30caf721a18a99ecce57527f24cced9fffbf20f80d26e626f846ae5cbfe"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_store/staging/trusted_root.json",
+      "git_blob_sha": "f5b8853e7504683d71ad618b82beedd7135b0b9c",
+      "source_sha256": "99f4f7728a889fa7db2fec893c387714a64aaf032fbe3035909fc8445effb857"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/_utils.py",
+      "git_blob_sha": "86b1ccdc5c4fdff222aabded1b167ff7782f92d5",
+      "source_sha256": "c8a21f1876551267249e7c9d659c0110ddf299315971a33d7e712f06ea4c97ad"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/dsse/__init__.py",
+      "git_blob_sha": "0cc1136e5d58ff07d7338492a102ef322cb35e9c",
+      "source_sha256": "4b61e6ec77df967a025162442c88b4ddb79a93a5e023441465b03feffa99c3d3"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/dsse/_predicate.py",
+      "git_blob_sha": "77d2423f0a9db416461da0fefd0436e78b9e0220",
+      "source_sha256": "3d185ebe87e3659565d18938cccf4817af2fe036b29fe7a73163e8d538f53525"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/errors.py",
+      "git_blob_sha": "2a8838ff175e36faad810e46c96f96cbd3fdda3c",
+      "source_sha256": "bea5be11831ad87ae152bcfb63130095696fb84b7a32ef333cbb53120d4b688c"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/hashes.py",
+      "git_blob_sha": "86dd7607d81113ce845ad0fe5c1889cf2cf4ded5",
+      "source_sha256": "c9799b47843758dec6ac7c1879a4e9423156e3761a573fafe79a2c89223e8731"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/models.py",
+      "git_blob_sha": "e9693cc9faaff113641fb31406a7760740c41e3e",
+      "source_sha256": "16ad1cfb73278c9d8149665018325d500c53b77e4e1863f1169c6fca7544b67e"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/oidc.py",
+      "git_blob_sha": "c401dff59b5bd728b1740317b3e14552497f4fdd",
+      "source_sha256": "0644534ae87f155f0eeb56c856781dcc11a6052361a0a24f28e8b0332497db73"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/py.typed",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/sign.py",
+      "git_blob_sha": "6afc7d74cc00266bff1cf422125cfc5a48af5ec0",
+      "source_sha256": "0dcbd636a670c2598e861a8e0244e4f25adcf30ee7bd758ca1e0125c984ab44d"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/verify/__init__.py",
+      "git_blob_sha": "3a1c01eec6020cc6a6128db52fb85892a2c88a8f",
+      "source_sha256": "04fd2fd75e805458174d2625c2040a48884381799bd3c8634c7040a833b9e4e4"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/verify/policy.py",
+      "git_blob_sha": "2941edc24aef7b7f2f21105c3c8c0c6bde616a95",
+      "source_sha256": "c7b8764941180d25e7bdbed90710aca81c6e6ece8c7844657c790c688e96aa97"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "sigstore/verify/verifier.py",
+      "git_blob_sha": "59437caf14d015b541ee684a76c68e2b0e50b5aa",
+      "source_sha256": "218dc6111aada41517fddfd8f81cda6c76111eaedf73c7459405e39ba5eb7923"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "test/assets/bundle.txt",
+      "git_blob_sha": "42f25dbd1e98a1e14f2e5e0f9794cf573d89bcf3",
+      "source_sha256": "802dd60ff88333802f2585e73043bd21c341285e1992fe5b31755e1cadeae30e"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "test/assets/bundle.txt.sigstore",
+      "git_blob_sha": "e67a882c05fd8d421d2201939602afd403a96605",
+      "source_sha256": "86fba043bef861eccbbbb34bb7de78a5d8cfc09d1db858236d76fa45b6e5639f"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "test/assets/bundle_v3_no_signed_time.txt",
+      "git_blob_sha": "35f74a572261ce578b8210f12f14baec220ab700",
+      "source_sha256": "ca6de99a11d3d38056d838c7dc9a23a11a0c81bcace0d11eaa301a2ffb482c42"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "test/assets/bundle_v3_no_signed_time.txt.sigstore.json",
+      "git_blob_sha": "b5cad65280605a4dc2ca27c518f6952e962774c0",
+      "source_sha256": "d3919f9415fda1510be9db09dae4e1b1b22811605db1e6466bbe9730014a5f0c"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "test/assets/staging-tuf/timestamp.json",
+      "git_blob_sha": "5aa16c8e3d4c8be9717f5c34be05c74dff485eea",
+      "source_sha256": "85b51f3a410e50fc577e7ef0b489b3266682888d8867658013aa9f5ae85f8331"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "test/conftest.py",
+      "git_blob_sha": "349e35ed364d9d24f24df00e65dcab9cc00a26b8",
+      "source_sha256": "1b47f54e511c9df484e01dc48ca4ef46fc544aae2b50d9ac9793e8a705792ba9"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "test/unit/conftest.py",
+      "git_blob_sha": "d96e32b37f3a777e0ac9fe6d98f3b4bd4ad2da30",
+      "source_sha256": "920bdaa365aad493a4fc6e6bfdbbcfd4d3c2877e7f629eee500635519456e880"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "path": "test/unit/test_models.py",
+      "git_blob_sha": "f5f7e1f7821957e172896fbd4ee5637c3129f58e",
+      "source_sha256": "03bbcccfe2b319d38380ab8136581cceb50421eaa558c6d0b653167dd08e4315"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "pyproject.toml",
+      "git_blob_sha": "1d1c55d6d4671611767c274f372a3a34d61f1abc",
+      "source_sha256": "3f7f81ca7d0532156098615ae0d1dc2c2edd03aa6f2457345371427c3966ab68"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/__init__.py",
+      "git_blob_sha": "bb6923c838e3915893c1acfa4a8bcf26ba646127",
+      "source_sha256": "cf15a85da54a86b02b0aa33ec74758b94947f531f54abac77fd42fef9cd5ecf2"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/__main__.py",
+      "git_blob_sha": "49afb5c35a24b6d0fbe3fd158e8f615b31058fae",
+      "source_sha256": "1c27c380760d788527badabbe3a23f4fd48fac12b2aab7a100c06f4eb35cffd4"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_cli.py",
+      "git_blob_sha": "218df26ed921b145f91507213eee23d24100aaf5",
+      "source_sha256": "983f335067d05bde821996c97b2f85c91e491e2a0a5070df2b1d123685680311"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/__init__.py",
+      "git_blob_sha": "31e5d8cc233c4934dd1cb70b904096d5a08f7c0a",
+      "source_sha256": "22c9ed846f39ffd2eb48f96add9f94410dc02d17a5ce70707c98d7271d4b1d07"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/fulcio/__init__.py",
+      "git_blob_sha": "4681dafcd8a72e8a1d326c0fa1d7eed823aa7d8c",
+      "source_sha256": "40a796d60e2c42b4b408302ede899a97abce9a3620b7f0dd6ca4731a1ca53bfc"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/fulcio/client.py",
+      "git_blob_sha": "0625191862fd47f87f30e0372dd1ac911e970f00",
+      "source_sha256": "f9e150f15d118c37abb57fb34adb0a9df57ce14940366290e73b2c200b271f62"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/merkle.py",
+      "git_blob_sha": "b930c7defedcdbcaf23f919d3539d66f2cc3b0f0",
+      "source_sha256": "e3759950a4bf1ba8b661989919931d82a2b8a09b0f9da5cbe5e72e39cc87ee01"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/oidc/__init__.py",
+      "git_blob_sha": "1e563ef094c0c56f7fb39ee21219359a1b4a2b0d",
+      "source_sha256": "bb367a7d2312fee782362be99d8510d8cc4134cd4f8f686440100b14961db59e"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/oidc/oauth.py",
+      "git_blob_sha": "cdbd8c7b64255fde314e8b71d7db2e46a823e4d6",
+      "source_sha256": "48fdf535bef06e7ab11e1cd136879bfba67a6fd5764e1e54ccc6cc7c2c93eb70"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/rekor/__init__.py",
+      "git_blob_sha": "7c1d3e36401c4e2fa0fc85ef985a77da787b7d9e",
+      "source_sha256": "5ab3b912a46b991b9bdab833e4d7b4cfb0c88a434acc52d65f86dcb93d48c8f2"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/rekor/checkpoint.py",
+      "git_blob_sha": "cc13896585890f9a2b6e57c50d64eecff258e392",
+      "source_sha256": "45a9d9257cf2a1248f304d4fbcd25928e81a764afb4813ef0d58f0c5dca713c1"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/rekor/client.py",
+      "git_blob_sha": "86fc0421edaed532797aceb9f476e752afb74788",
+      "source_sha256": "6ef671ddaa7100fde726dab6a983dc21927ed5d163de007aeabab4c1c10aaedc"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/sct.py",
+      "git_blob_sha": "8fd6cc5b2b6ec46dcf525be16653a1c4a92f7f7b",
+      "source_sha256": "a72ee86ab3b541045589162c0eb916ec60dd37304ce8dc1b39e09bd6a3b40186"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/timestamp.py",
+      "git_blob_sha": "f279e9d4746bc5b3f9f4da25b7abed5fb50ad4e4",
+      "source_sha256": "7250a27e7e4d67f0f77ec61f5d63355771ef7846d1e470e5c96d896c9f585fc7"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/trust.py",
+      "git_blob_sha": "b359836db4c7ae196024919f3399f2ed4622eade",
+      "source_sha256": "1153e42991d22e07e6d3207d68e42e679c7220b391984ee45f118ce011d1a4e4"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_internal/tuf.py",
+      "git_blob_sha": "7116be7006d18133c3dc0b150eb28599837e9ccf",
+      "source_sha256": "3b32951fddd78305925dd8f85b4dafc2b9153322ed0f09beb796b785fcb89ce7"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_store/__init__.py",
+      "git_blob_sha": "1f5f2d0b972a5b565cc31845ba9600b50d6c236c",
+      "source_sha256": "cd261a06ef234ae0d66fd5a54d85be1331c5e4e6d4790adafdd6042febb889be"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_store/prod/root.json",
+      "git_blob_sha": "38f80f940473ac167abae3db9bc6a94d0bdb8c4e",
+      "source_sha256": "e2a930b2d1d4053dd56e8faf66fd113658545d522e35d222ccf58fea87ccccf4"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_store/prod/trusted_root.json",
+      "git_blob_sha": "bb4e6fcd885c47d84583e6a8e9161f17248652b7",
+      "source_sha256": "cec894ad77f79b1cb324150f6363012bcef7492954f3ab9134f932e6aa2e2e20"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_store/staging/root.json",
+      "git_blob_sha": "e506177b8ed995ef4f73d6bb956b002cf9e81593",
+      "source_sha256": "e6f5c30caf721a18a99ecce57527f24cced9fffbf20f80d26e626f846ae5cbfe"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_store/staging/trusted_root.json",
+      "git_blob_sha": "f5b8853e7504683d71ad618b82beedd7135b0b9c",
+      "source_sha256": "99f4f7728a889fa7db2fec893c387714a64aaf032fbe3035909fc8445effb857"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/_utils.py",
+      "git_blob_sha": "86b1ccdc5c4fdff222aabded1b167ff7782f92d5",
+      "source_sha256": "c8a21f1876551267249e7c9d659c0110ddf299315971a33d7e712f06ea4c97ad"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/dsse/__init__.py",
+      "git_blob_sha": "0cc1136e5d58ff07d7338492a102ef322cb35e9c",
+      "source_sha256": "4b61e6ec77df967a025162442c88b4ddb79a93a5e023441465b03feffa99c3d3"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/dsse/_predicate.py",
+      "git_blob_sha": "77d2423f0a9db416461da0fefd0436e78b9e0220",
+      "source_sha256": "3d185ebe87e3659565d18938cccf4817af2fe036b29fe7a73163e8d538f53525"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/errors.py",
+      "git_blob_sha": "2a8838ff175e36faad810e46c96f96cbd3fdda3c",
+      "source_sha256": "bea5be11831ad87ae152bcfb63130095696fb84b7a32ef333cbb53120d4b688c"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/hashes.py",
+      "git_blob_sha": "86dd7607d81113ce845ad0fe5c1889cf2cf4ded5",
+      "source_sha256": "c9799b47843758dec6ac7c1879a4e9423156e3761a573fafe79a2c89223e8731"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/models.py",
+      "git_blob_sha": "77a6ae0376ec07ba58b228a3bc5df49ee6e4fcb1",
+      "source_sha256": "89d0eaad66428dd6b8df9924caca8dd2bc7abeda166c0f0f0ac5d1c982264fba"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/oidc.py",
+      "git_blob_sha": "c401dff59b5bd728b1740317b3e14552497f4fdd",
+      "source_sha256": "0644534ae87f155f0eeb56c856781dcc11a6052361a0a24f28e8b0332497db73"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/py.typed",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/sign.py",
+      "git_blob_sha": "6afc7d74cc00266bff1cf422125cfc5a48af5ec0",
+      "source_sha256": "0dcbd636a670c2598e861a8e0244e4f25adcf30ee7bd758ca1e0125c984ab44d"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/verify/__init__.py",
+      "git_blob_sha": "3a1c01eec6020cc6a6128db52fb85892a2c88a8f",
+      "source_sha256": "04fd2fd75e805458174d2625c2040a48884381799bd3c8634c7040a833b9e4e4"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/verify/policy.py",
+      "git_blob_sha": "2941edc24aef7b7f2f21105c3c8c0c6bde616a95",
+      "source_sha256": "c7b8764941180d25e7bdbed90710aca81c6e6ece8c7844657c790c688e96aa97"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "sigstore/verify/verifier.py",
+      "git_blob_sha": "a0ec53aa9034ffd68a60a2d515997dcef54a7c7b",
+      "source_sha256": "50245f7f5e392962a4527b84c93bc3a5e7431ebbdeee33fc6aad5ad2edd538ec"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "test/assets/bundle.txt",
+      "git_blob_sha": "42f25dbd1e98a1e14f2e5e0f9794cf573d89bcf3",
+      "source_sha256": "802dd60ff88333802f2585e73043bd21c341285e1992fe5b31755e1cadeae30e"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "test/assets/bundle.txt.sigstore",
+      "git_blob_sha": "e67a882c05fd8d421d2201939602afd403a96605",
+      "source_sha256": "86fba043bef861eccbbbb34bb7de78a5d8cfc09d1db858236d76fa45b6e5639f"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "test/assets/staging-tuf/timestamp.json",
+      "git_blob_sha": "5aa16c8e3d4c8be9717f5c34be05c74dff485eea",
+      "source_sha256": "85b51f3a410e50fc577e7ef0b489b3266682888d8867658013aa9f5ae85f8331"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "test/conftest.py",
+      "git_blob_sha": "349e35ed364d9d24f24df00e65dcab9cc00a26b8",
+      "source_sha256": "1b47f54e511c9df484e01dc48ca4ef46fc544aae2b50d9ac9793e8a705792ba9"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "test/unit/conftest.py",
+      "git_blob_sha": "055856ec974bf7cdc037c4a0bfbf41d674a5a4f3",
+      "source_sha256": "cb4bb6eb6663ca1157acd6a77d05e16c6f22bf32a3bf5fe64ee63db4a860af60"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "path": "test/unit/test_models.py",
+      "git_blob_sha": "f900a1c17c2101e8ed0e9b2a09951c6b176c3462",
+      "source_sha256": "6467d963d6ab219d0ff7f740a94944a037bdd45c514ed32f98be4373d5941c83"
+    }
+  ]
+}

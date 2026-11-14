@@ -31,7 +31,7 @@ def main():
     for role in ['vulnerable','fixed']:
         for phase in ['patch_regression','functional_suite']:
             tests=['/oracle/tests/test_split.py::test_split_backslash'] if phase=='patch_regression' else ['/target/tests']
-            code="import sys,pathlib;sys.dont_write_bytecode=True;sys.path[:0]=['/target','/deps'];pathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n');import pytest;raise SystemExit(pytest.main("+repr(['-c','/tmp/pytest.ini','-p','no:cacheprovider','-q',*tests])+"))"
+            code="import sys,pathlib;sys.dont_write_bytecode=True;sys.path[:0]=['/target','/deps'];import sqlparse;assert sqlparse.__file__.startswith('/target/');print('TARGET_MODULE',sqlparse.__file__);pathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n');import pytest;raise SystemExit(pytest.main("+repr(['-c','/tmp/pytest.ini','--import-mode=importlib','-p','no:cacheprovider','-q',*tests])+"))"
             result=runner.run(cache/role,'CVE-2023-30608',oracle=cache/'fixed',python_code=code)
             records.append(dict(role=role,phase=phase,result=result))
             print(role,phase,result['exit_code'],result['output'][-2500:],flush=True)

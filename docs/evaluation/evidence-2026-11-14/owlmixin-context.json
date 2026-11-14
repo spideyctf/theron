@@ -1,0 +1,164 @@
+{
+  "records": [
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "revision": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "path": "owlmixin/__init__.py",
+      "git_blob_sha": "6b6a1944ef235a87a6919adcbb6a26e878119a71",
+      "source_sha256": "2541f616b71bc3d9ea9a0c0a1f1b5ecd7bf6e0c3990b59ae264a374df9b19f7a"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "revision": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "path": "owlmixin/owlcollections.py",
+      "git_blob_sha": "8ce340d350de8464a61fac00d0fb6174d3218206",
+      "source_sha256": "74376727cf5a25b3c233b680b7c05df7fcb209d51a2e7b13e6d694ee7983d045"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "revision": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "path": "owlmixin/owlenum.py",
+      "git_blob_sha": "cd7a9bc18e456a80d65894bc4c78863233864151",
+      "source_sha256": "3d8f9424f405b8da07e45b69a861033a77d0a0b561ba4dea09d6ac9f47c9f742"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "revision": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "path": "owlmixin/owloption.py",
+      "git_blob_sha": "184a5fcded9125b621d65269a125e9195bb3ada1",
+      "source_sha256": "980e5ae472b0e3fcd58a9980a572734bd588053cac1db4c4ca43df228b020202"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "revision": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "path": "owlmixin/samples.py",
+      "git_blob_sha": "2c8a658fad5f258098822675527d501b2d85e067",
+      "source_sha256": "51405aa149764908144c4ab1a859d5dd60583e3e8a09ae716560ff09c1dfc113"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "revision": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "path": "owlmixin/transformers.py",
+      "git_blob_sha": "5fd984a1f2cfd5a92bed9217bb104aba42bd7533",
+      "source_sha256": "bd09fcbcc6384e0756a487cb5937782d38c5d1fdcf4d81d652cf53d0c8e6bbf4"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "revision": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "path": "owlmixin/util.py",
+      "git_blob_sha": "15d8974d0b8eec579535cc0b7947aaeed0756d89",
+      "source_sha256": "f068e5eab3bfc9a0ce40b286c4cd106a273eda9d3ad808c15b9908939973c556"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "revision": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "path": "setup.py",
+      "git_blob_sha": "08be03ec62d8ea75363eb4917e6a08e48abe8fdc",
+      "source_sha256": "5554cf81ac0024ec2f3be2bb4605146a42513bdfb912c96afbad427bc5901d2d"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "revision": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "path": "tests/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "revision": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "path": "tests/test_util.py",
+      "git_blob_sha": "e1dbb46f8d80e1bd0f8aeb5490f4c7ff63e0b6aa",
+      "source_sha256": "132227bf785510a3884889d5991f75bac066cc763f4c3347b2ef3e82e17bdd97"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "revision": "409c30c0d2d357f3fbc3abd7a80d5c111a738aa2",
+      "path": "owlmixin/__init__.py",
+      "git_blob_sha": "6b6a1944ef235a87a6919adcbb6a26e878119a71",
+      "source_sha256": "2541f616b71bc3d9ea9a0c0a1f1b5ecd7bf6e0c3990b59ae264a374df9b19f7a"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "revision": "409c30c0d2d357f3fbc3abd7a80d5c111a738aa2",
+      "path": "owlmixin/owlcollections.py",
+      "git_blob_sha": "8ce340d350de8464a61fac00d0fb6174d3218206",
+      "source_sha256": "74376727cf5a25b3c233b680b7c05df7fcb209d51a2e7b13e6d694ee7983d045"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "revision": "409c30c0d2d357f3fbc3abd7a80d5c111a738aa2",
+      "path": "owlmixin/owlenum.py",
+      "git_blob_sha": "cd7a9bc18e456a80d65894bc4c78863233864151",
+      "source_sha256": "3d8f9424f405b8da07e45b69a861033a77d0a0b561ba4dea09d6ac9f47c9f742"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "revision": "409c30c0d2d357f3fbc3abd7a80d5c111a738aa2",
+      "path": "owlmixin/owloption.py",
+      "git_blob_sha": "184a5fcded9125b621d65269a125e9195bb3ada1",
+      "source_sha256": "980e5ae472b0e3fcd58a9980a572734bd588053cac1db4c4ca43df228b020202"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "revision": "409c30c0d2d357f3fbc3abd7a80d5c111a738aa2",
+      "path": "owlmixin/samples.py",
+      "git_blob_sha": "2c8a658fad5f258098822675527d501b2d85e067",
+      "source_sha256": "51405aa149764908144c4ab1a859d5dd60583e3e8a09ae716560ff09c1dfc113"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "revision": "409c30c0d2d357f3fbc3abd7a80d5c111a738aa2",
+      "path": "owlmixin/transformers.py",
+      "git_blob_sha": "5fd984a1f2cfd5a92bed9217bb104aba42bd7533",
+      "source_sha256": "bd09fcbcc6384e0756a487cb5937782d38c5d1fdcf4d81d652cf53d0c8e6bbf4"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "revision": "409c30c0d2d357f3fbc3abd7a80d5c111a738aa2",
+      "path": "owlmixin/util.py",
+      "git_blob_sha": "207b77f69813f5666ca73cb06ea6acfbe88119de",
+      "source_sha256": "0e39609207c8a114a13184c0e2c3c313db58101b2825a3aaaa65e02f8556c9c4"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "revision": "409c30c0d2d357f3fbc3abd7a80d5c111a738aa2",
+      "path": "setup.py",
+      "git_blob_sha": "08be03ec62d8ea75363eb4917e6a08e48abe8fdc",
+      "source_sha256": "5554cf81ac0024ec2f3be2bb4605146a42513bdfb912c96afbad427bc5901d2d"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "revision": "409c30c0d2d357f3fbc3abd7a80d5c111a738aa2",
+      "path": "tests/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "revision": "409c30c0d2d357f3fbc3abd7a80d5c111a738aa2",
+      "path": "tests/test_util.py",
+      "git_blob_sha": "60fe899afb33c50668e4d3b3183117e18c9bf417",
+      "source_sha256": "68b6f674f5255a54b02cedc3f8f6c77beeecd1ebad5bc66e32e7aaba0060f747"
+    }
+  ]
+}

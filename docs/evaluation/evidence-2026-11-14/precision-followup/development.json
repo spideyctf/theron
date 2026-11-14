@@ -1,0 +1,2929 @@
+{
+  "implementation_revision": "8a0a7cb",
+  "source_guided_development": true,
+  "new_holdout": false,
+  "independent_human_labels": false,
+  "records": [
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2026-82411",
+      "role": "vulnerable",
+      "alerts": [
+        {
+          "title": "Declared object permission check is missing on a return path",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/objects/api/v2/views.py",
+          "line_number": 317,
+          "code_snippet": "        return Response(serializer.data)",
+          "recommendation": "Check the same requested object using the declared object-permission policy before exposing it.",
+          "cwe": "CWE-863",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-AUTH-001",
+          "references": [
+            "https://www.django-rest-framework.org/api-guide/permissions/#object-level-permissions"
+          ],
+          "fingerprint": "a5ad12c4a9b0f325602aac8f",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "authorization",
+            "required": "Check the same requested object using the declared object-permission policy before exposing it.",
+            "observed": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object.",
+            "action": {
+              "file_path": "src/objects/api/v2/views.py",
+              "line_number": 317
+            },
+            "assumptions": [
+              "Queryset filtering, alternate checks and deployment reachability may affect actual exposure."
+            ],
+            "related_locations": [
+              {
+                "role": "lookup",
+                "file_path": "src/objects/api/v2/views.py",
+                "line_number": 315
+              },
+              {
+                "role": "policy",
+                "file_path": "src/objects/api/v2/views.py",
+                "line_number": 143
+              }
+            ]
+          }
+        }
+      ],
+      "mechanism_candidates": [
+        {
+          "title": "Declared object permission check is missing on a return path",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/objects/api/v2/views.py",
+          "line_number": 317,
+          "code_snippet": "        return Response(serializer.data)",
+          "recommendation": "Check the same requested object using the declared object-permission policy before exposing it.",
+          "cwe": "CWE-863",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-AUTH-001",
+          "references": [
+            "https://www.django-rest-framework.org/api-guide/permissions/#object-level-permissions"
+          ],
+          "fingerprint": "a5ad12c4a9b0f325602aac8f",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "authorization",
+            "required": "Check the same requested object using the declared object-permission policy before exposing it.",
+            "observed": "A DRF view with an identifiable object-level policy returns lookup-derived data without an observed check on that object.",
+            "action": {
+              "file_path": "src/objects/api/v2/views.py",
+              "line_number": 317
+            },
+            "assumptions": [
+              "Queryset filtering, alternate checks and deployment reachability may affect actual exposure."
+            ],
+            "related_locations": [
+              {
+                "role": "lookup",
+                "file_path": "src/objects/api/v2/views.py",
+                "line_number": 315
+              },
+              {
+                "role": "policy",
+                "file_path": "src/objects/api/v2/views.py",
+                "line_number": 143
+              }
+            ]
+          }
+        }
+      ],
+      "original_cna_cwes": [
+        "CWE-639"
+      ],
+      "units": [
+        {
+          "path": "src/objects/api/v2/views.py",
+          "function": "ObjectViewSet.history_detail",
+          "start_line": 312,
+          "end_line": 317,
+          "snippet_sha256": "e5fa8c784f8562e46041302e4c77fb31a1ee477c37d1c845e9f1b22c3effd29a"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2026-82411",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-639"
+      ],
+      "units": [
+        {
+          "path": "src/objects/api/v2/views.py",
+          "function": "ObjectViewSet.history_detail",
+          "start_line": 312,
+          "end_line": 318,
+          "snippet_sha256": "4466fd11ce1e952ff52e9a8043c3fe0b4c98e740686bc4e194cd8d59b6bb75ea"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2026-58373",
+      "role": "vulnerable",
+      "alerts": [
+        {
+          "title": "Object permission policy cannot be resolved",
+          "severity": "INFO",
+          "category": "sast",
+          "module": "coverage",
+          "description": "The DRF object lookup/action policy is missing, dynamic or unsupported. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "cvat/apps/quality_control/views.py",
+          "line_number": 427,
+          "code_snippet": "    def data(self, request: ExtendedRequest, pk):\n        report = self.get_object()  # check permissions\n        format_name = QualityReportExportFormat(\n            request.query_params.get(\"format\", default=QualityReportExportFormat.JSON.value)\n        )\n        report_data, content_type = prepare_report_for_downloading(\n            report, host=request.build_absolute_uri(\"/\"), export_format=format_name\n        )\n        return HttpResponse(report_data, content_type=content_type)",
+          "recommendation": "Resolve the effective object-permission policy before classifying this override.",
+          "cwe": null,
+          "confidence": "medium",
+          "rule_id": "PY-OBL-AUTH-001-REVIEW",
+          "references": [
+            "https://www.django-rest-framework.org/api-guide/permissions/#object-level-permissions"
+          ],
+          "fingerprint": "66e37c5540eb848d260f7387",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "coverage-notice",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "authorization",
+            "required": "Resolve the effective object-permission policy before classifying this override.",
+            "observed": "The DRF object lookup/action policy is missing, dynamic or unsupported.",
+            "action": {
+              "file_path": "cvat/apps/quality_control/views.py",
+              "line_number": 427
+            },
+            "assumptions": [],
+            "related_locations": []
+          }
+        }
+      ],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-862"
+      ],
+      "units": [
+        {
+          "path": "cvat/apps/quality_control/views.py",
+          "function": "QualityReportViewSet.get_queryset",
+          "start_line": 210,
+          "end_line": 282,
+          "snippet_sha256": "a7bbe704ad25714891e643a8a20f5e630be29c73057b34ed02619fad652a95e7"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2026-58373",
+      "role": "fixed",
+      "alerts": [
+        {
+          "title": "Object permission policy cannot be resolved",
+          "severity": "INFO",
+          "category": "sast",
+          "module": "coverage",
+          "description": "The DRF object lookup/action policy is missing, dynamic or unsupported. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "cvat/apps/quality_control/views.py",
+          "line_number": 428,
+          "code_snippet": "    def data(self, request: ExtendedRequest, pk):\n        report = self.get_object()  # check permissions\n        format_name = QualityReportExportFormat(\n            request.query_params.get(\"format\", default=QualityReportExportFormat.JSON.value)\n        )\n        report_data, content_type = prepare_report_for_downloading(\n            report, host=request.build_absolute_uri(\"/\"), export_format=format_name\n        )\n        return HttpResponse(report_data, content_type=content_type)",
+          "recommendation": "Resolve the effective object-permission policy before classifying this override.",
+          "cwe": null,
+          "confidence": "medium",
+          "rule_id": "PY-OBL-AUTH-001-REVIEW",
+          "references": [
+            "https://www.django-rest-framework.org/api-guide/permissions/#object-level-permissions"
+          ],
+          "fingerprint": "66e37c5540eb848d260f7387",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "coverage-notice",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "authorization",
+            "required": "Resolve the effective object-permission policy before classifying this override.",
+            "observed": "The DRF object lookup/action policy is missing, dynamic or unsupported.",
+            "action": {
+              "file_path": "cvat/apps/quality_control/views.py",
+              "line_number": 428
+            },
+            "assumptions": [],
+            "related_locations": []
+          }
+        }
+      ],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-862"
+      ],
+      "units": [
+        {
+          "path": "cvat/apps/quality_control/views.py",
+          "function": "QualityReportViewSet.get_queryset",
+          "start_line": 210,
+          "end_line": 283,
+          "snippet_sha256": "d855c28bff67a2690523d6dce5ec8a96a4664f133e051ea51cec72a1ef3e35d8"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2022-39227",
+      "role": "vulnerable",
+      "alerts": [
+        {
+          "title": "Returned claims are parsed outside the verified JWS payload",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A keyed JWS deserialization accepts one payload representation, while returned claims are independently decoded from a compact-token segment. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "python_jwt/__init__.py",
+          "line_number": 206,
+          "code_snippet": "    return parsed_header, parsed_claims",
+          "recommendation": "Return claims decoded from the verifier payload, or establish equality with that exact payload before returning them.",
+          "cwe": "CWE-347",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-JWS-PAYLOAD-001",
+          "references": [
+            "https://jwcrypto.readthedocs.io/en/latest/jws.html"
+          ],
+          "fingerprint": "752e690341a4eebc7ae2547e",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "crypto",
+            "required": "Return claims decoded from the verifier payload, or establish equality with that exact payload before returning them.",
+            "observed": "A keyed JWS deserialization accepts one payload representation, while returned claims are independently decoded from a compact-token segment.",
+            "action": {
+              "file_path": "python_jwt/__init__.py",
+              "line_number": 206
+            },
+            "assumptions": [
+              "The resolved jwcrypto JWS API may accept compact and JSON representations.",
+              "A non-null verification key, caller trust boundary and claim use remain runtime assumptions."
+            ],
+            "related_locations": [
+              {
+                "role": "claims-decoding",
+                "file_path": "python_jwt/__init__.py",
+                "line_number": 149
+              }
+            ]
+          }
+        }
+      ],
+      "mechanism_candidates": [
+        {
+          "title": "Returned claims are parsed outside the verified JWS payload",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A keyed JWS deserialization accepts one payload representation, while returned claims are independently decoded from a compact-token segment. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "python_jwt/__init__.py",
+          "line_number": 206,
+          "code_snippet": "    return parsed_header, parsed_claims",
+          "recommendation": "Return claims decoded from the verifier payload, or establish equality with that exact payload before returning them.",
+          "cwe": "CWE-347",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-JWS-PAYLOAD-001",
+          "references": [
+            "https://jwcrypto.readthedocs.io/en/latest/jws.html"
+          ],
+          "fingerprint": "752e690341a4eebc7ae2547e",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "crypto",
+            "required": "Return claims decoded from the verifier payload, or establish equality with that exact payload before returning them.",
+            "observed": "A keyed JWS deserialization accepts one payload representation, while returned claims are independently decoded from a compact-token segment.",
+            "action": {
+              "file_path": "python_jwt/__init__.py",
+              "line_number": 206
+            },
+            "assumptions": [
+              "The resolved jwcrypto JWS API may accept compact and JSON representations.",
+              "A non-null verification key, caller trust boundary and claim use remain runtime assumptions."
+            ],
+            "related_locations": [
+              {
+                "role": "claims-decoding",
+                "file_path": "python_jwt/__init__.py",
+                "line_number": 149
+              }
+            ]
+          }
+        }
+      ],
+      "original_cna_cwes": [
+        "CWE-290"
+      ],
+      "units": [
+        {
+          "path": "python_jwt/__init__.py",
+          "function": "verify_jwt",
+          "start_line": 101,
+          "end_line": 206,
+          "snippet_sha256": "f6b81dc89ad127a7d023ea3f07a3d38ec8a0b89354dfe1baa6087106e98a58db"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2022-39227",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-290"
+      ],
+      "units": [
+        {
+          "path": "python_jwt/__init__.py",
+          "function": "verify_jwt",
+          "start_line": 107,
+          "end_line": 217,
+          "snippet_sha256": "f820efe9a45315febf34e753333e5ebf700e9a7ba667b8691415d1151c160f9f"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "alerts": [
+        {
+          "title": "HTTP framing length uses permissive integer parsing",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/waitress/parser.py",
+          "line_number": 321,
+          "code_snippet": "                cl = int(headers.get(\"CONTENT_LENGTH\", 0))",
+          "recommendation": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+          "cwe": "CWE-444",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTTP-NUMERIC-001",
+          "references": [
+            "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+          ],
+          "fingerprint": "783d199d9563f8bce5ca11fa",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "protocol",
+            "required": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+            "observed": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms.",
+            "action": {
+              "file_path": "src/waitress/parser.py",
+              "line_number": 321
+            },
+            "assumptions": [
+              "Only visible dominating guards and resolved HTTP library contracts are modelled; caller filtering remains unverified.",
+              "Recognizing a lexical guard does not certify its regular expression or all parser paths."
+            ],
+            "related_locations": []
+          }
+        },
+        {
+          "title": "HTTP framing length uses permissive integer parsing",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/waitress/receiver.py",
+          "line_number": 146,
+          "code_snippet": "                            sz = int(line.strip(), 16)  # hexadecimal",
+          "recommendation": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+          "cwe": "CWE-444",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTTP-NUMERIC-001",
+          "references": [
+            "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+          ],
+          "fingerprint": "ce39b99fcb9e48600eac26d6",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "protocol",
+            "required": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+            "observed": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms.",
+            "action": {
+              "file_path": "src/waitress/receiver.py",
+              "line_number": 146
+            },
+            "assumptions": [
+              "Only visible dominating guards and resolved HTTP library contracts are modelled; caller filtering remains unverified.",
+              "Recognizing a lexical guard does not certify its regular expression or all parser paths."
+            ],
+            "related_locations": []
+          }
+        }
+      ],
+      "mechanism_candidates": [
+        {
+          "title": "HTTP framing length uses permissive integer parsing",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/waitress/parser.py",
+          "line_number": 321,
+          "code_snippet": "                cl = int(headers.get(\"CONTENT_LENGTH\", 0))",
+          "recommendation": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+          "cwe": "CWE-444",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTTP-NUMERIC-001",
+          "references": [
+            "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+          ],
+          "fingerprint": "783d199d9563f8bce5ca11fa",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "protocol",
+            "required": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+            "observed": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms.",
+            "action": {
+              "file_path": "src/waitress/parser.py",
+              "line_number": 321
+            },
+            "assumptions": [
+              "Only visible dominating guards and resolved HTTP library contracts are modelled; caller filtering remains unverified.",
+              "Recognizing a lexical guard does not certify its regular expression or all parser paths."
+            ],
+            "related_locations": []
+          }
+        },
+        {
+          "title": "HTTP framing length uses permissive integer parsing",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/waitress/receiver.py",
+          "line_number": 146,
+          "code_snippet": "                            sz = int(line.strip(), 16)  # hexadecimal",
+          "recommendation": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+          "cwe": "CWE-444",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTTP-NUMERIC-001",
+          "references": [
+            "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+          ],
+          "fingerprint": "ce39b99fcb9e48600eac26d6",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "protocol",
+            "required": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+            "observed": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms.",
+            "action": {
+              "file_path": "src/waitress/receiver.py",
+              "line_number": 146
+            },
+            "assumptions": [
+              "Only visible dominating guards and resolved HTTP library contracts are modelled; caller filtering remains unverified.",
+              "Recognizing a lexical guard does not certify its regular expression or all parser paths."
+            ],
+            "related_locations": []
+          }
+        }
+      ],
+      "original_cna_cwes": [
+        "CWE-444"
+      ],
+      "units": [
+        {
+          "path": "src/waitress/receiver.py",
+          "function": "ChunkedReceiver.received",
+          "start_line": 82,
+          "end_line": 180,
+          "snippet_sha256": "af18a7c0681b8b22e31755fbcb1bbdee1587cba776b1ad542933af7ffb55af94"
+        },
+        {
+          "path": "src/waitress/parser.py",
+          "function": "HTTPRequestParser.parse_header",
+          "start_line": 201,
+          "end_line": 329,
+          "snippet_sha256": "655caf339043fa2353140e2651334c9173870fa311bda8b6a495931b4efbb749"
+        }
+      ],
+      "strict_cna_matches": [
+        {
+          "title": "HTTP framing length uses permissive integer parsing",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/waitress/parser.py",
+          "line_number": 321,
+          "code_snippet": "                cl = int(headers.get(\"CONTENT_LENGTH\", 0))",
+          "recommendation": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+          "cwe": "CWE-444",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTTP-NUMERIC-001",
+          "references": [
+            "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+          ],
+          "fingerprint": "783d199d9563f8bce5ca11fa",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "protocol",
+            "required": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+            "observed": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms.",
+            "action": {
+              "file_path": "src/waitress/parser.py",
+              "line_number": 321
+            },
+            "assumptions": [
+              "Only visible dominating guards and resolved HTTP library contracts are modelled; caller filtering remains unverified.",
+              "Recognizing a lexical guard does not certify its regular expression or all parser paths."
+            ],
+            "related_locations": []
+          }
+        },
+        {
+          "title": "HTTP framing length uses permissive integer parsing",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/waitress/receiver.py",
+          "line_number": 146,
+          "code_snippet": "                            sz = int(line.strip(), 16)  # hexadecimal",
+          "recommendation": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+          "cwe": "CWE-444",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTTP-NUMERIC-001",
+          "references": [
+            "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+          ],
+          "fingerprint": "ce39b99fcb9e48600eac26d6",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "protocol",
+            "required": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+            "observed": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms.",
+            "action": {
+              "file_path": "src/waitress/receiver.py",
+              "line_number": 146
+            },
+            "assumptions": [
+              "Only visible dominating guards and resolved HTTP library contracts are modelled; caller filtering remains unverified.",
+              "Recognizing a lexical guard does not certify its regular expression or all parser paths."
+            ],
+            "related_locations": []
+          }
+        }
+      ]
+    },
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-444"
+      ],
+      "units": [
+        {
+          "path": "src/waitress/receiver.py",
+          "function": "ChunkedReceiver.received",
+          "start_line": 83,
+          "end_line": 194,
+          "snippet_sha256": "0bb3329bf00172095e92a2ae0093bc63e5f4e2a4044350c7a04faa35f13cd169"
+        },
+        {
+          "path": "src/waitress/parser.py",
+          "function": "HTTPRequestParser.parse_header",
+          "start_line": 200,
+          "end_line": 329,
+          "snippet_sha256": "b94cf3a2e723295fb4c5149304dee78ee1f2082d4c53a7dd90fb933eca0c6ad7"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "alerts": [
+        {
+          "title": "HMAC key blacklist omits recognized public-key formats",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A finite public-key rejection list guards material stored for a resolved HMAC operation, but omits: ssh-ed25519, ssh-dss, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "jose/backends/native.py",
+          "line_number": 46,
+          "code_snippet": "        if any(string_value in key for string_value in invalid_strings):\n            raise JWKError(\n                \"The specified key is an asymmetric key or x509 certificate and\"\n                \" should not be used as an HMAC secret.\"\n            )",
+          "recommendation": "Use a complete key-format/type boundary before accepting asymmetric representations as HMAC secrets.",
+          "cwe": "CWE-347",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HMAC-FORMAT-001",
+          "references": [
+            "https://jwcrypto.readthedocs.io/en/latest/jws.html"
+          ],
+          "fingerprint": "4a496a00674d2c74022d0895",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "crypto",
+            "required": "Use a complete key-format/type boundary before accepting asymmetric representations as HMAC secrets.",
+            "observed": "A finite public-key rejection list guards material stored for a resolved HMAC operation, but omits: ssh-ed25519, ssh-dss, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521.",
+            "action": {
+              "file_path": "jose/backends/native.py",
+              "line_number": 46
+            },
+            "assumptions": [
+              "This checks the visible finite blacklist, not all possible key-format parsers or caller restrictions.",
+              "Accepting omitted representations and an attacker-relevant verifier configuration require runtime validation."
+            ],
+            "related_locations": [
+              {
+                "role": "key-storage",
+                "file_path": "jose/backends/native.py",
+                "line_number": 52
+              }
+            ]
+          }
+        },
+        {
+          "title": "HMAC key blacklist omits recognized public-key formats",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A finite public-key rejection list guards material stored for a resolved HMAC operation, but omits: ssh-ed25519, ssh-dss, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "jose/backends/cryptography_backend.py",
+          "line_number": 562,
+          "code_snippet": "        if any(string_value in key for string_value in invalid_strings):\n            raise JWKError(\n                \"The specified key is an asymmetric key or x509 certificate and\"\n                \" should not be used as an HMAC secret.\"\n            )",
+          "recommendation": "Use a complete key-format/type boundary before accepting asymmetric representations as HMAC secrets.",
+          "cwe": "CWE-347",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HMAC-FORMAT-001",
+          "references": [
+            "https://jwcrypto.readthedocs.io/en/latest/jws.html"
+          ],
+          "fingerprint": "70a1d74d62e014b1115e0827",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "crypto",
+            "required": "Use a complete key-format/type boundary before accepting asymmetric representations as HMAC secrets.",
+            "observed": "A finite public-key rejection list guards material stored for a resolved HMAC operation, but omits: ssh-ed25519, ssh-dss, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521.",
+            "action": {
+              "file_path": "jose/backends/cryptography_backend.py",
+              "line_number": 562
+            },
+            "assumptions": [
+              "This checks the visible finite blacklist, not all possible key-format parsers or caller restrictions.",
+              "Accepting omitted representations and an attacker-relevant verifier configuration require runtime validation."
+            ],
+            "related_locations": [
+              {
+                "role": "key-storage",
+                "file_path": "jose/backends/cryptography_backend.py",
+                "line_number": 568
+              }
+            ]
+          }
+        }
+      ],
+      "mechanism_candidates": [
+        {
+          "title": "HMAC key blacklist omits recognized public-key formats",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A finite public-key rejection list guards material stored for a resolved HMAC operation, but omits: ssh-ed25519, ssh-dss, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "jose/backends/native.py",
+          "line_number": 46,
+          "code_snippet": "        if any(string_value in key for string_value in invalid_strings):\n            raise JWKError(\n                \"The specified key is an asymmetric key or x509 certificate and\"\n                \" should not be used as an HMAC secret.\"\n            )",
+          "recommendation": "Use a complete key-format/type boundary before accepting asymmetric representations as HMAC secrets.",
+          "cwe": "CWE-347",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HMAC-FORMAT-001",
+          "references": [
+            "https://jwcrypto.readthedocs.io/en/latest/jws.html"
+          ],
+          "fingerprint": "4a496a00674d2c74022d0895",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "crypto",
+            "required": "Use a complete key-format/type boundary before accepting asymmetric representations as HMAC secrets.",
+            "observed": "A finite public-key rejection list guards material stored for a resolved HMAC operation, but omits: ssh-ed25519, ssh-dss, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521.",
+            "action": {
+              "file_path": "jose/backends/native.py",
+              "line_number": 46
+            },
+            "assumptions": [
+              "This checks the visible finite blacklist, not all possible key-format parsers or caller restrictions.",
+              "Accepting omitted representations and an attacker-relevant verifier configuration require runtime validation."
+            ],
+            "related_locations": [
+              {
+                "role": "key-storage",
+                "file_path": "jose/backends/native.py",
+                "line_number": 52
+              }
+            ]
+          }
+        },
+        {
+          "title": "HMAC key blacklist omits recognized public-key formats",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A finite public-key rejection list guards material stored for a resolved HMAC operation, but omits: ssh-ed25519, ssh-dss, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "jose/backends/cryptography_backend.py",
+          "line_number": 562,
+          "code_snippet": "        if any(string_value in key for string_value in invalid_strings):\n            raise JWKError(\n                \"The specified key is an asymmetric key or x509 certificate and\"\n                \" should not be used as an HMAC secret.\"\n            )",
+          "recommendation": "Use a complete key-format/type boundary before accepting asymmetric representations as HMAC secrets.",
+          "cwe": "CWE-347",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HMAC-FORMAT-001",
+          "references": [
+            "https://jwcrypto.readthedocs.io/en/latest/jws.html"
+          ],
+          "fingerprint": "70a1d74d62e014b1115e0827",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "crypto",
+            "required": "Use a complete key-format/type boundary before accepting asymmetric representations as HMAC secrets.",
+            "observed": "A finite public-key rejection list guards material stored for a resolved HMAC operation, but omits: ssh-ed25519, ssh-dss, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521.",
+            "action": {
+              "file_path": "jose/backends/cryptography_backend.py",
+              "line_number": 562
+            },
+            "assumptions": [
+              "This checks the visible finite blacklist, not all possible key-format parsers or caller restrictions.",
+              "Accepting omitted representations and an attacker-relevant verifier configuration require runtime validation."
+            ],
+            "related_locations": [
+              {
+                "role": "key-storage",
+                "file_path": "jose/backends/cryptography_backend.py",
+                "line_number": 568
+              }
+            ]
+          }
+        }
+      ],
+      "original_cna_cwes": [],
+      "units": [
+        {
+          "path": "jose/backends/native.py",
+          "function": "HMACKey.__init__",
+          "start_line": 23,
+          "end_line": 52,
+          "snippet_sha256": "f82e7fd2c1e2e1ad3c272dc24b86385a3bfc7696e63072ec20139c1d4909e8e2"
+        },
+        {
+          "path": "jose/backends/cryptography_backend.py",
+          "function": "CryptographyHMACKey.__init__",
+          "start_line": 539,
+          "end_line": 568,
+          "snippet_sha256": "d5c373799ffcab08f8cd7588b2ee93dcbc46781d7a317d5771c100ad8f15a652"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [],
+      "units": [
+        {
+          "path": "jose/backends/native.py",
+          "function": "HMACKey.__init__",
+          "start_line": 23,
+          "end_line": 45,
+          "snippet_sha256": "fd5f7c6ce5e683f4af3658bf7847cb598c8a2c029f10a22759a84e00b24afbd2"
+        },
+        {
+          "path": "jose/backends/cryptography_backend.py",
+          "function": "CryptographyHMACKey.__init__",
+          "start_line": 550,
+          "end_line": 572,
+          "snippet_sha256": "28a92af2a4dac20ef322edc7101614dc2f597dabfd44dc72b7b08314bbd90b5c"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "alerts": [
+        {
+          "title": "Unsupported transfer codings have no rejecting branch",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "The HTTP parser handles only the chunked value in its Transfer-Encoding branch and has no alternate rejection in that branch. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "gunicorn/http/message.py",
+          "line_number": 135,
+          "code_snippet": "                if value.lower() == \"chunked\":\n                    chunked = True",
+          "recommendation": "Reject unsupported Transfer-Encoding values before choosing a request body reader.",
+          "cwe": "CWE-444",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTTP-CODING-001",
+          "references": [
+            "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+          ],
+          "fingerprint": "c61d4f0734714e3bb59a0fc6",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "protocol",
+            "required": "Reject unsupported Transfer-Encoding values before choosing a request body reader.",
+            "observed": "The HTTP parser handles only the chunked value in its Transfer-Encoding branch and has no alternate rejection in that branch.",
+            "action": {
+              "file_path": "gunicorn/http/message.py",
+              "line_number": 135
+            },
+            "assumptions": [
+              "This is a narrow branch-shape check, not a complete HTTP framing, proxy or deployment model."
+            ],
+            "related_locations": []
+          }
+        }
+      ],
+      "mechanism_candidates": [
+        {
+          "title": "Unsupported transfer codings have no rejecting branch",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "The HTTP parser handles only the chunked value in its Transfer-Encoding branch and has no alternate rejection in that branch. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "gunicorn/http/message.py",
+          "line_number": 135,
+          "code_snippet": "                if value.lower() == \"chunked\":\n                    chunked = True",
+          "recommendation": "Reject unsupported Transfer-Encoding values before choosing a request body reader.",
+          "cwe": "CWE-444",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTTP-CODING-001",
+          "references": [
+            "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+          ],
+          "fingerprint": "c61d4f0734714e3bb59a0fc6",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "protocol",
+            "required": "Reject unsupported Transfer-Encoding values before choosing a request body reader.",
+            "observed": "The HTTP parser handles only the chunked value in its Transfer-Encoding branch and has no alternate rejection in that branch.",
+            "action": {
+              "file_path": "gunicorn/http/message.py",
+              "line_number": 135
+            },
+            "assumptions": [
+              "This is a narrow branch-shape check, not a complete HTTP framing, proxy or deployment model."
+            ],
+            "related_locations": []
+          }
+        }
+      ],
+      "original_cna_cwes": [
+        "CWE-444"
+      ],
+      "units": [
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Message.parse_headers",
+          "start_line": 62,
+          "end_line": 123,
+          "snippet_sha256": "d772a9e1d94c37d34c710dddeb5c3f328e7d91d26087f8e39938450b6178ad2a"
+        },
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Message.set_body_reader",
+          "start_line": 125,
+          "end_line": 154,
+          "snippet_sha256": "c83c1da5efdb7cba2343848e56f3c0b4eb02a8c36c39a2c98f5628d7f9af2ba6"
+        },
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Request.set_body_reader",
+          "start_line": 357,
+          "end_line": 360,
+          "snippet_sha256": "63a3251b97ef7bbeda47c2b0f56c6cfcbb30dfdce053983c8cf151c9abf3d975"
+        }
+      ],
+      "strict_cna_matches": [
+        {
+          "title": "Unsupported transfer codings have no rejecting branch",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "The HTTP parser handles only the chunked value in its Transfer-Encoding branch and has no alternate rejection in that branch. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "gunicorn/http/message.py",
+          "line_number": 135,
+          "code_snippet": "                if value.lower() == \"chunked\":\n                    chunked = True",
+          "recommendation": "Reject unsupported Transfer-Encoding values before choosing a request body reader.",
+          "cwe": "CWE-444",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTTP-CODING-001",
+          "references": [
+            "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+          ],
+          "fingerprint": "c61d4f0734714e3bb59a0fc6",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "protocol",
+            "required": "Reject unsupported Transfer-Encoding values before choosing a request body reader.",
+            "observed": "The HTTP parser handles only the chunked value in its Transfer-Encoding branch and has no alternate rejection in that branch.",
+            "action": {
+              "file_path": "gunicorn/http/message.py",
+              "line_number": 135
+            },
+            "assumptions": [
+              "This is a narrow branch-shape check, not a complete HTTP framing, proxy or deployment model."
+            ],
+            "related_locations": []
+          }
+        }
+      ]
+    },
+    {
+      "partition": "six-exposed",
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-444"
+      ],
+      "units": [
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Message.parse_headers",
+          "start_line": 70,
+          "end_line": 156,
+          "snippet_sha256": "4a1015d6205acd7be238f9a2ee3c2849d0bee9afefd19009fbc74754bb26faa0"
+        },
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Message.set_body_reader",
+          "start_line": 158,
+          "end_line": 225,
+          "snippet_sha256": "42b73f3eb36074cac56ee4afc2d84fa37b107909f298a5a3c0da5cce89ca814a"
+        },
+        {
+          "path": "gunicorn/http/message.py",
+          "function": "Request.set_body_reader",
+          "start_line": 447,
+          "end_line": 450,
+          "snippet_sha256": "63a3251b97ef7bbeda47c2b0f56c6cfcbb30dfdce053983c8cf151c9abf3d975"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-22"
+      ],
+      "units": [
+        {
+          "function": "parse_version",
+          "start_line": 156,
+          "end_line": 185,
+          "path": "pymdownx/__meta__.py"
+        },
+        {
+          "function": "SnippetPreprocessor.__init__",
+          "start_line": 79,
+          "end_line": 95,
+          "path": "pymdownx/snippets.py"
+        },
+        {
+          "function": "SnippetPreprocessor.get_snippet_path",
+          "start_line": 155,
+          "end_line": 174,
+          "path": "pymdownx/snippets.py"
+        },
+        {
+          "function": "SnippetExtension.__init__",
+          "start_line": 365,
+          "end_line": 383,
+          "path": "pymdownx/snippets.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-22"
+      ],
+      "units": [
+        {
+          "function": "parse_version",
+          "start_line": 156,
+          "end_line": 185,
+          "path": "pymdownx/__meta__.py"
+        },
+        {
+          "function": "SnippetPreprocessor.__init__",
+          "start_line": 79,
+          "end_line": 96,
+          "path": "pymdownx/snippets.py"
+        },
+        {
+          "function": "SnippetPreprocessor.get_snippet_path",
+          "start_line": 156,
+          "end_line": 179,
+          "path": "pymdownx/snippets.py"
+        },
+        {
+          "function": "SnippetExtension.__init__",
+          "start_line": 370,
+          "end_line": 392,
+          "path": "pymdownx/snippets.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "alerts": [
+        {
+          "title": "MCP message validation can terminate its receive loop",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A message from a resolved MCP SessionMessage receive stream reaches model_validate without a visible continuing per-message exception boundary. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/mcp/shared/session.py",
+          "line_number": 357,
+          "code_snippet": "                    validated_request = self._receive_request_type.model_validate(\n                        message.message.root.model_dump(\n                            by_alias=True, mode=\"json\", exclude_none=True\n                        )\n                    )",
+          "recommendation": "Handle malformed-message validation failures inside the receive loop and return a protocol error without terminating unrelated processing.",
+          "cwe": "CWE-248",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-MCP-VALIDATION-001",
+          "references": [
+            "https://docs.pydantic.dev/latest/concepts/models/#error-handling"
+          ],
+          "fingerprint": "1e1e4d47f54644a6de245098",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "availability",
+            "required": "Handle malformed-message validation failures inside the receive loop and return a protocol error without terminating unrelated processing.",
+            "observed": "A message from a resolved MCP SessionMessage receive stream reaches model_validate without a visible continuing per-message exception boundary.",
+            "action": {
+              "file_path": "src/mcp/shared/session.py",
+              "line_number": 357
+            },
+            "assumptions": [
+              "The session model/transport contracts and exception behavior require upstream/runtime verification.",
+              "Caller restart policies and the impact on other sessions are not inferred."
+            ],
+            "related_locations": [
+              {
+                "role": "message-loop",
+                "file_path": "src/mcp/shared/session.py",
+                "line_number": 353
+              }
+            ]
+          }
+        }
+      ],
+      "mechanism_candidates": [
+        {
+          "title": "MCP message validation can terminate its receive loop",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A message from a resolved MCP SessionMessage receive stream reaches model_validate without a visible continuing per-message exception boundary. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/mcp/shared/session.py",
+          "line_number": 357,
+          "code_snippet": "                    validated_request = self._receive_request_type.model_validate(\n                        message.message.root.model_dump(\n                            by_alias=True, mode=\"json\", exclude_none=True\n                        )\n                    )",
+          "recommendation": "Handle malformed-message validation failures inside the receive loop and return a protocol error without terminating unrelated processing.",
+          "cwe": "CWE-248",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-MCP-VALIDATION-001",
+          "references": [
+            "https://docs.pydantic.dev/latest/concepts/models/#error-handling"
+          ],
+          "fingerprint": "1e1e4d47f54644a6de245098",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "availability",
+            "required": "Handle malformed-message validation failures inside the receive loop and return a protocol error without terminating unrelated processing.",
+            "observed": "A message from a resolved MCP SessionMessage receive stream reaches model_validate without a visible continuing per-message exception boundary.",
+            "action": {
+              "file_path": "src/mcp/shared/session.py",
+              "line_number": 357
+            },
+            "assumptions": [
+              "The session model/transport contracts and exception behavior require upstream/runtime verification.",
+              "Caller restart policies and the impact on other sessions are not inferred."
+            ],
+            "related_locations": [
+              {
+                "role": "message-loop",
+                "file_path": "src/mcp/shared/session.py",
+                "line_number": 353
+              }
+            ]
+          }
+        }
+      ],
+      "original_cna_cwes": [
+        "CWE-248"
+      ],
+      "units": [
+        {
+          "function": "BaseSession._receive_loop",
+          "start_line": 348,
+          "end_line": 430,
+          "path": "src/mcp/shared/session.py"
+        },
+        {
+          "function": null,
+          "start_line": 15,
+          "end_line": 20,
+          "path": "src/mcp/shared/session.py"
+        }
+      ],
+      "strict_cna_matches": [
+        {
+          "title": "MCP message validation can terminate its receive loop",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A message from a resolved MCP SessionMessage receive stream reaches model_validate without a visible continuing per-message exception boundary. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/mcp/shared/session.py",
+          "line_number": 357,
+          "code_snippet": "                    validated_request = self._receive_request_type.model_validate(\n                        message.message.root.model_dump(\n                            by_alias=True, mode=\"json\", exclude_none=True\n                        )\n                    )",
+          "recommendation": "Handle malformed-message validation failures inside the receive loop and return a protocol error without terminating unrelated processing.",
+          "cwe": "CWE-248",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-MCP-VALIDATION-001",
+          "references": [
+            "https://docs.pydantic.dev/latest/concepts/models/#error-handling"
+          ],
+          "fingerprint": "1e1e4d47f54644a6de245098",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "availability",
+            "required": "Handle malformed-message validation failures inside the receive loop and return a protocol error without terminating unrelated processing.",
+            "observed": "A message from a resolved MCP SessionMessage receive stream reaches model_validate without a visible continuing per-message exception boundary.",
+            "action": {
+              "file_path": "src/mcp/shared/session.py",
+              "line_number": 357
+            },
+            "assumptions": [
+              "The session model/transport contracts and exception behavior require upstream/runtime verification.",
+              "Caller restart policies and the impact on other sessions are not inferred."
+            ],
+            "related_locations": [
+              {
+                "role": "message-loop",
+                "file_path": "src/mcp/shared/session.py",
+                "line_number": 353
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-248"
+      ],
+      "units": [
+        {
+          "function": "BaseSession._receive_loop",
+          "start_line": 349,
+          "end_line": 451,
+          "path": "src/mcp/shared/session.py"
+        },
+        {
+          "function": null,
+          "start_line": 15,
+          "end_line": 21,
+          "path": "src/mcp/shared/session.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2023-30608",
+      "role": "vulnerable",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-1333"
+      ],
+      "units": [
+        {
+          "function": null,
+          "start_line": 59,
+          "end_line": 67,
+          "path": "sqlparse/keywords.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2023-30608",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-1333"
+      ],
+      "units": [
+        {
+          "function": null,
+          "start_line": 59,
+          "end_line": 67,
+          "path": "sqlparse/keywords.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "alerts": [
+        {
+          "title": "AST tool lookup returns an unwrapped capability",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "An AST-name resolver returns a raw callable from an injected tool table containing higher-order builtins and a name-filtered getattr accessor. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/smolagents/local_python_executor.py",
+          "line_number": 827,
+          "code_snippet": "        return static_tools[name.id]",
+          "recommendation": "Apply result-capability policy when exposing interpreter callables, including indirect calls through map/filter.",
+          "cwe": "CWE-863",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-AI-CAPABILITY-001",
+          "references": [
+            "https://docs.python.org/3/library/functions.html#getattr"
+          ],
+          "fingerprint": "8ecd5083b3078815871bba24",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "sandbox",
+            "required": "Apply result-capability policy when exposing interpreter callables, including indirect calls through map/filter.",
+            "observed": "An AST-name resolver returns a raw callable from an injected tool table containing higher-order builtins and a name-filtered getattr accessor.",
+            "action": {
+              "file_path": "src/smolagents/local_python_executor.py",
+              "line_number": 827
+            },
+            "assumptions": [
+              "Tool-table injection is a structural cross-function inference, not verified runtime dispatch.",
+              "The check does not prove all sandbox escapes or certify a wrapper merely because it is present."
+            ],
+            "related_locations": [
+              {
+                "role": "tool-registry",
+                "file_path": "src/smolagents/local_python_executor.py",
+                "line_number": 67
+              }
+            ]
+          }
+        }
+      ],
+      "mechanism_candidates": [
+        {
+          "title": "AST tool lookup returns an unwrapped capability",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "An AST-name resolver returns a raw callable from an injected tool table containing higher-order builtins and a name-filtered getattr accessor. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/smolagents/local_python_executor.py",
+          "line_number": 827,
+          "code_snippet": "        return static_tools[name.id]",
+          "recommendation": "Apply result-capability policy when exposing interpreter callables, including indirect calls through map/filter.",
+          "cwe": "CWE-863",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-AI-CAPABILITY-001",
+          "references": [
+            "https://docs.python.org/3/library/functions.html#getattr"
+          ],
+          "fingerprint": "8ecd5083b3078815871bba24",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "sandbox",
+            "required": "Apply result-capability policy when exposing interpreter callables, including indirect calls through map/filter.",
+            "observed": "An AST-name resolver returns a raw callable from an injected tool table containing higher-order builtins and a name-filtered getattr accessor.",
+            "action": {
+              "file_path": "src/smolagents/local_python_executor.py",
+              "line_number": 827
+            },
+            "assumptions": [
+              "Tool-table injection is a structural cross-function inference, not verified runtime dispatch.",
+              "The check does not prove all sandbox escapes or certify a wrapper merely because it is present."
+            ],
+            "related_locations": [
+              {
+                "role": "tool-registry",
+                "file_path": "src/smolagents/local_python_executor.py",
+                "line_number": 67
+              }
+            ]
+          }
+        }
+      ],
+      "original_cna_cwes": [
+        "CWE-94"
+      ],
+      "units": [
+        {
+          "function": "PrintContainer.__init__",
+          "start_line": 150,
+          "end_line": 151,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "check_import_authorized",
+          "start_line": 237,
+          "end_line": 245,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_eval",
+          "start_line": 248,
+          "end_line": 285,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_eval._check_return",
+          "start_line": 260,
+          "end_line": 283,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "evaluate_attribute",
+          "start_line": 288,
+          "end_line": 298,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "evaluate_name",
+          "start_line": 817,
+          "end_line": 835,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": null,
+          "start_line": 146,
+          "end_line": 151,
+          "path": "src/smolagents/local_python_executor.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-94"
+      ],
+      "units": [
+        {
+          "function": "check_safer_result",
+          "start_line": 149,
+          "end_line": 175,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_eval",
+          "start_line": 178,
+          "end_line": 201,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_eval._check_return",
+          "start_line": 190,
+          "end_line": 199,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_func",
+          "start_line": 204,
+          "end_line": 227,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_func._check_return",
+          "start_line": 222,
+          "end_line": 225,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "PrintContainer.__init__",
+          "start_line": 231,
+          "end_line": 232,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "check_import_authorized",
+          "start_line": 318,
+          "end_line": 326,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "evaluate_attribute",
+          "start_line": 329,
+          "end_line": 339,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "evaluate_name",
+          "start_line": 858,
+          "end_line": 876,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": null,
+          "start_line": 146,
+          "end_line": 232,
+          "path": "src/smolagents/local_python_executor.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [],
+      "units": [
+        {
+          "function": "HTTPSConnection._connect_tls_proxy",
+          "start_line": 471,
+          "end_line": 503,
+          "path": "src/urllib3/connection.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [],
+      "units": [
+        {
+          "function": "HTTPSConnection._connect_tls_proxy",
+          "start_line": 471,
+          "end_line": 507,
+          "path": "src/urllib3/connection.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2024-35195",
+      "role": "vulnerable",
+      "alerts": [
+        {
+          "title": "TLS verification policy is applied after policy-independent pool selection",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved urllib3 pool is selected without the per-call verification argument, then a local helper mutates certificate requirements on that selected pool. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/requests/adapters.py",
+          "line_number": 460,
+          "code_snippet": "        self.cert_verify(conn, request.url, verify, cert)",
+          "recommendation": "Partition connection pools by verification policy and TLS context before reusing connections.",
+          "cwe": "CWE-295",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-TLS-POOL-001",
+          "references": [
+            "https://urllib3.readthedocs.io/en/stable/advanced-usage.html#ssl-warnings"
+          ],
+          "fingerprint": "d27d64372a96b43389773085",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "tls",
+            "required": "Partition connection pools by verification policy and TLS context before reusing connections.",
+            "observed": "A resolved urllib3 pool is selected without the per-call verification argument, then a local helper mutates certificate requirements on that selected pool.",
+            "action": {
+              "file_path": "src/requests/adapters.py",
+              "line_number": 460
+            },
+            "assumptions": [
+              "Pool reuse, TLS context caching and call sequences require runtime verification.",
+              "Passing policy into selection suppresses this narrow check; correct pool-key construction is not proved."
+            ],
+            "related_locations": [
+              {
+                "role": "pool-selection",
+                "file_path": "src/requests/adapters.py",
+                "line_number": 456
+              }
+            ]
+          }
+        }
+      ],
+      "mechanism_candidates": [
+        {
+          "title": "TLS verification policy is applied after policy-independent pool selection",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved urllib3 pool is selected without the per-call verification argument, then a local helper mutates certificate requirements on that selected pool. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "src/requests/adapters.py",
+          "line_number": 460,
+          "code_snippet": "        self.cert_verify(conn, request.url, verify, cert)",
+          "recommendation": "Partition connection pools by verification policy and TLS context before reusing connections.",
+          "cwe": "CWE-295",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-TLS-POOL-001",
+          "references": [
+            "https://urllib3.readthedocs.io/en/stable/advanced-usage.html#ssl-warnings"
+          ],
+          "fingerprint": "d27d64372a96b43389773085",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "tls",
+            "required": "Partition connection pools by verification policy and TLS context before reusing connections.",
+            "observed": "A resolved urllib3 pool is selected without the per-call verification argument, then a local helper mutates certificate requirements on that selected pool.",
+            "action": {
+              "file_path": "src/requests/adapters.py",
+              "line_number": 460
+            },
+            "assumptions": [
+              "Pool reuse, TLS context caching and call sequences require runtime verification.",
+              "Passing policy into selection suppresses this narrow check; correct pool-key construction is not proved."
+            ],
+            "related_locations": [
+              {
+                "role": "pool-selection",
+                "file_path": "src/requests/adapters.py",
+                "line_number": 456
+              }
+            ]
+          }
+        }
+      ],
+      "original_cna_cwes": [
+        "CWE-670"
+      ],
+      "units": [
+        {
+          "function": "HTTPAdapter.build_response",
+          "start_line": 293,
+          "end_line": 328,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter.get_connection",
+          "start_line": 330,
+          "end_line": 357,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter.send",
+          "start_line": 436,
+          "end_line": 540,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": null,
+          "start_line": 8,
+          "end_line": 13,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": null,
+          "start_line": 61,
+          "end_line": 72,
+          "path": "src/requests/adapters.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2024-35195",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-670"
+      ],
+      "units": [
+        {
+          "function": "_urllib3_request_context",
+          "start_line": 75,
+          "end_line": 94,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter.build_response",
+          "start_line": 320,
+          "end_line": 355,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter._get_connection",
+          "start_line": 357,
+          "end_line": 384,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter.get_connection",
+          "start_line": 386,
+          "end_line": 413,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter.send",
+          "start_line": 492,
+          "end_line": 596,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": null,
+          "start_line": 8,
+          "end_line": 14,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": null,
+          "start_line": 62,
+          "end_line": 99,
+          "path": "src/requests/adapters.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [],
+      "units": [
+        {
+          "function": "construct_yaml_str",
+          "start_line": 44,
+          "end_line": 45,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_yaml",
+          "start_line": 91,
+          "end_line": 96,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_yamlf",
+          "start_line": 99,
+          "end_line": 106,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_csvf",
+          "start_line": 109,
+          "end_line": 122,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": null,
+          "start_line": 9,
+          "end_line": 15,
+          "path": "owlmixin/util.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [],
+      "units": [
+        {
+          "function": "construct_yaml_str",
+          "start_line": 44,
+          "end_line": 45,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_yaml",
+          "start_line": 90,
+          "end_line": 95,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_yamlf",
+          "start_line": 98,
+          "end_line": 105,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_csvf",
+          "start_line": 108,
+          "end_line": 121,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": null,
+          "start_line": 9,
+          "end_line": 15,
+          "path": "owlmixin/util.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "alerts": [
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/api/settings.py",
+          "line_number": 73,
+          "code_snippet": "73:     hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "e428590a1e71c67c6f2e06ae",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/api/settings.py",
+              "line_number": 73
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects md5 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/util/sockjs.py",
+          "line_number": 227,
+          "code_snippet": "227:         plugin_hash = hashlib.md5()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "359028408e735f9310e948bb",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/util/sockjs.py",
+              "line_number": 227
+            }
+          ]
+        },
+        {
+          "title": "External input controls a redirect destination",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "External input from line 186 reaches a resolved redirect destination without an observed destination boundary.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 237,
+          "code_snippet": "186:     redirect_url = request.args.get(\"redirect\", default_redirect_url)\n237:         return redirect(redirect_url)",
+          "recommendation": "Use fixed local destinations or validate scheme and host against a trusted allowlist.",
+          "cwe": "CWE-601",
+          "confidence": "high",
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "references": [],
+          "fingerprint": "3a305e487de07cc47e285421",
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-flow",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 186
+            },
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 237
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 558,
+          "code_snippet": "558:             hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "3f5ad1317742a3001c2bac30",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 558
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 1677,
+          "code_snippet": "1677:     hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "409f5a3485d467db6a64fd46",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 1677
+            }
+          ]
+        }
+      ],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-290"
+      ],
+      "units": [
+        {
+          "function": "AppKeysPlugin.on_api_command",
+          "start_line": 347,
+          "end_line": 403,
+          "path": "src/octoprint/plugins/appkeys/__init__.py"
+        },
+        {
+          "function": null,
+          "start_line": 36,
+          "end_line": 41,
+          "path": "src/octoprint/schema/config/access_control.py"
+        },
+        {
+          "function": null,
+          "start_line": 42,
+          "end_line": 49,
+          "path": "src/octoprint/schema/config/server.py"
+        },
+        {
+          "function": "Server.run",
+          "start_line": 298,
+          "end_line": 1382,
+          "path": "src/octoprint/server/__init__.py"
+        },
+        {
+          "function": "login",
+          "start_line": 297,
+          "end_line": 380,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "logout",
+          "start_line": 384,
+          "end_line": 403,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "_test_address",
+          "start_line": 770,
+          "end_line": 798,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": null,
+          "start_line": 38,
+          "end_line": 44,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "getSettings",
+          "start_line": 112,
+          "end_line": 413,
+          "path": "src/octoprint/server/api/settings.py"
+        },
+        {
+          "function": "_saveSettings",
+          "start_line": 520,
+          "end_line": 1242,
+          "path": "src/octoprint/server/api/settings.py"
+        },
+        {
+          "function": "performSystemAction",
+          "start_line": 97,
+          "end_line": 111,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": null,
+          "start_line": 15,
+          "end_line": 21,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": null,
+          "start_line": 96,
+          "end_line": 104,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": "passive_login",
+          "start_line": 664,
+          "end_line": 762,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "require_credentials_checked_recently",
+          "start_line": 1701,
+          "end_line": 1713,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "get_remote_address",
+          "start_line": 1716,
+          "end_line": 1720,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "validate_session_signature",
+          "start_line": 2012,
+          "end_line": 2014,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": null,
+          "start_line": 12,
+          "end_line": 18,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": null,
+          "start_line": 29,
+          "end_line": 34,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "PrinterStateConnection._get_remote_address",
+          "start_line": 181,
+          "end_line": 185,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": "PrinterStateConnection._keep_alive_callback",
+          "start_line": 187,
+          "end_line": 192,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 85,
+          "end_line": 98,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 101,
+          "end_line": 110,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 179,
+          "end_line": 188,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": "fix_json_encode",
+          "start_line": 31,
+          "end_line": 48,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "fix_websocket_check_origin",
+          "start_line": 63,
+          "end_line": 93,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": null,
+          "start_line": 18,
+          "end_line": 23,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": null,
+          "start_line": 26,
+          "end_line": 31,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "login",
+          "start_line": 182,
+          "end_line": 260,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": "reverse_proxy_test",
+          "start_line": 371,
+          "end_line": 386,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": null,
+          "start_line": 369,
+          "end_line": 389,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": "download_file",
+          "start_line": 275,
+          "end_line": 299,
+          "path": "src/octoprint/util/net.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "alerts": [
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/api/settings.py",
+          "line_number": 73,
+          "code_snippet": "73:     hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "e428590a1e71c67c6f2e06ae",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/api/settings.py",
+              "line_number": 73
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects md5 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/util/sockjs.py",
+          "line_number": 234,
+          "code_snippet": "234:         plugin_hash = hashlib.md5()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "d586bba55cf42ea9e69f2657",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/util/sockjs.py",
+              "line_number": 234
+            }
+          ]
+        },
+        {
+          "title": "External input controls a redirect destination",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "External input from line 186 reaches a resolved redirect destination without an observed destination boundary.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 238,
+          "code_snippet": "186:     redirect_url = request.args.get(\"redirect\", default_redirect_url)\n238:         return redirect(redirect_url)",
+          "recommendation": "Use fixed local destinations or validate scheme and host against a trusted allowlist.",
+          "cwe": "CWE-601",
+          "confidence": "high",
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "references": [],
+          "fingerprint": "eb2d0012656a96827629f981",
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-flow",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 186
+            },
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 238
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 564,
+          "code_snippet": "564:             hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "4314c55304eb78bf39c87197",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 564
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 1683,
+          "code_snippet": "1683:     hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "65d781aee18ecf7e6b06fac5",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 1683
+            }
+          ]
+        }
+      ],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-290"
+      ],
+      "units": [
+        {
+          "function": "AppKeysPlugin.on_api_command",
+          "start_line": 347,
+          "end_line": 399,
+          "path": "src/octoprint/plugins/appkeys/__init__.py"
+        },
+        {
+          "function": null,
+          "start_line": 36,
+          "end_line": 44,
+          "path": "src/octoprint/schema/config/access_control.py"
+        },
+        {
+          "function": null,
+          "start_line": 42,
+          "end_line": 49,
+          "path": "src/octoprint/schema/config/server.py"
+        },
+        {
+          "function": "Server.run",
+          "start_line": 298,
+          "end_line": 1383,
+          "path": "src/octoprint/server/__init__.py"
+        },
+        {
+          "function": "login",
+          "start_line": 296,
+          "end_line": 379,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "logout",
+          "start_line": 383,
+          "end_line": 402,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "_test_address",
+          "start_line": 769,
+          "end_line": 797,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": null,
+          "start_line": 38,
+          "end_line": 43,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "getSettings",
+          "start_line": 112,
+          "end_line": 423,
+          "path": "src/octoprint/server/api/settings.py"
+        },
+        {
+          "function": "_saveSettings",
+          "start_line": 530,
+          "end_line": 1259,
+          "path": "src/octoprint/server/api/settings.py"
+        },
+        {
+          "function": "performSystemAction",
+          "start_line": 97,
+          "end_line": 109,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": null,
+          "start_line": 15,
+          "end_line": 21,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": null,
+          "start_line": 96,
+          "end_line": 102,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": "passive_login",
+          "start_line": 665,
+          "end_line": 763,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "require_credentials_checked_recently",
+          "start_line": 1702,
+          "end_line": 1714,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "get_remote_address",
+          "start_line": 1721,
+          "end_line": 1722,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "validate_session_signature",
+          "start_line": 2014,
+          "end_line": 2016,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "get_reverse_proxy_info",
+          "start_line": 2033,
+          "end_line": 2063,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": null,
+          "start_line": 12,
+          "end_line": 18,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": null,
+          "start_line": 29,
+          "end_line": 35,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "PrinterStateConnection._get_remote_address",
+          "start_line": 183,
+          "end_line": 192,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": "PrinterStateConnection._keep_alive_callback",
+          "start_line": 194,
+          "end_line": 199,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 85,
+          "end_line": 98,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 101,
+          "end_line": 112,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 181,
+          "end_line": 195,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": "fix_json_encode",
+          "start_line": 33,
+          "end_line": 50,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "fix_websocket_check_origin",
+          "start_line": 65,
+          "end_line": 95,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "fix_tornado_xheader_handling",
+          "start_line": 98,
+          "end_line": 125,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "fix_tornado_xheader_handling.patched_apply_xheaders",
+          "start_line": 105,
+          "end_line": 121,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": null,
+          "start_line": 18,
+          "end_line": 24,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": null,
+          "start_line": 27,
+          "end_line": 33,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "login",
+          "start_line": 182,
+          "end_line": 261,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": "reverse_proxy_test",
+          "start_line": 372,
+          "end_line": 392,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": null,
+          "start_line": 370,
+          "end_line": 395,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": "download_file",
+          "start_line": 275,
+          "end_line": 299,
+          "path": "src/octoprint/util/net.py"
+        },
+        {
+          "function": "get_http_client_ip",
+          "start_line": 302,
+          "end_line": 322,
+          "path": "src/octoprint/util/net.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2024-34078",
+      "role": "vulnerable",
+      "alerts": [
+        {
+          "title": "Compatibility normalization follows HTML cleaning",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "Returned HTML derives from a resolved cleaner and is subsequently transformed with NFKC/NFKD normalization, which can introduce markup-significant characters. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "html_sanitizer/sanitizer.py",
+          "line_number": 427,
+          "code_snippet": "            html = unicodedata.normalize(\"NFKC\", html)",
+          "recommendation": "Apply compatibility normalization before HTML parsing/cleaning, or clean the transformed result again before returning it.",
+          "cwe": "CWE-79",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTML-ORDER-001",
+          "references": [
+            "https://lxml.de/lxmlhtml.html#cleaning-up-html"
+          ],
+          "fingerprint": "cf14e53b43960f2cb058303c",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "html",
+            "required": "Apply compatibility normalization before HTML parsing/cleaning, or clean the transformed result again before returning it.",
+            "observed": "Returned HTML derives from a resolved cleaner and is subsequently transformed with NFKC/NFKD normalization, which can introduce markup-significant characters.",
+            "action": {
+              "file_path": "html_sanitizer/sanitizer.py",
+              "line_number": 427
+            },
+            "assumptions": [
+              "The cleaner/serializer contracts are statically resolved; returned HTML rendering and attacker control remain caller assumptions.",
+              "This checks transformation order, not the completeness of every cleaner policy or DOM mutation."
+            ],
+            "related_locations": [
+              {
+                "role": "cleaning",
+                "file_path": "html_sanitizer/sanitizer.py",
+                "line_number": 407
+              },
+              {
+                "role": "return",
+                "file_path": "html_sanitizer/sanitizer.py",
+                "line_number": 429
+              }
+            ]
+          }
+        }
+      ],
+      "mechanism_candidates": [
+        {
+          "title": "Compatibility normalization follows HTML cleaning",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "Returned HTML derives from a resolved cleaner and is subsequently transformed with NFKC/NFKD normalization, which can introduce markup-significant characters. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "html_sanitizer/sanitizer.py",
+          "line_number": 427,
+          "code_snippet": "            html = unicodedata.normalize(\"NFKC\", html)",
+          "recommendation": "Apply compatibility normalization before HTML parsing/cleaning, or clean the transformed result again before returning it.",
+          "cwe": "CWE-79",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTML-ORDER-001",
+          "references": [
+            "https://lxml.de/lxmlhtml.html#cleaning-up-html"
+          ],
+          "fingerprint": "cf14e53b43960f2cb058303c",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "html",
+            "required": "Apply compatibility normalization before HTML parsing/cleaning, or clean the transformed result again before returning it.",
+            "observed": "Returned HTML derives from a resolved cleaner and is subsequently transformed with NFKC/NFKD normalization, which can introduce markup-significant characters.",
+            "action": {
+              "file_path": "html_sanitizer/sanitizer.py",
+              "line_number": 427
+            },
+            "assumptions": [
+              "The cleaner/serializer contracts are statically resolved; returned HTML rendering and attacker control remain caller assumptions.",
+              "This checks transformation order, not the completeness of every cleaner policy or DOM mutation."
+            ],
+            "related_locations": [
+              {
+                "role": "cleaning",
+                "file_path": "html_sanitizer/sanitizer.py",
+                "line_number": 407
+              },
+              {
+                "role": "return",
+                "file_path": "html_sanitizer/sanitizer.py",
+                "line_number": 429
+              }
+            ]
+          }
+        }
+      ],
+      "original_cna_cwes": [
+        "CWE-79"
+      ],
+      "units": [
+        {
+          "function": "Sanitizer.sanitize",
+          "start_line": 244,
+          "end_line": 429,
+          "path": "html_sanitizer/sanitizer.py"
+        }
+      ],
+      "strict_cna_matches": [
+        {
+          "title": "Compatibility normalization follows HTML cleaning",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "Returned HTML derives from a resolved cleaner and is subsequently transformed with NFKC/NFKD normalization, which can introduce markup-significant characters. This is bounded static evidence, not verified deployment exploitability.",
+          "file_path": "html_sanitizer/sanitizer.py",
+          "line_number": 427,
+          "code_snippet": "            html = unicodedata.normalize(\"NFKC\", html)",
+          "recommendation": "Apply compatibility normalization before HTML parsing/cleaning, or clean the transformed result again before returning it.",
+          "cwe": "CWE-79",
+          "confidence": "medium",
+          "rule_id": "PY-OBL-HTML-ORDER-001",
+          "references": [
+            "https://lxml.de/lxmlhtml.html#cleaning-up-html"
+          ],
+          "fingerprint": "cf14e53b43960f2cb058303c",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-obligation",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [],
+          "obligation": {
+            "domain": "html",
+            "required": "Apply compatibility normalization before HTML parsing/cleaning, or clean the transformed result again before returning it.",
+            "observed": "Returned HTML derives from a resolved cleaner and is subsequently transformed with NFKC/NFKD normalization, which can introduce markup-significant characters.",
+            "action": {
+              "file_path": "html_sanitizer/sanitizer.py",
+              "line_number": 427
+            },
+            "assumptions": [
+              "The cleaner/serializer contracts are statically resolved; returned HTML rendering and attacker control remain caller assumptions.",
+              "This checks transformation order, not the completeness of every cleaner policy or DOM mutation."
+            ],
+            "related_locations": [
+              {
+                "role": "cleaning",
+                "file_path": "html_sanitizer/sanitizer.py",
+                "line_number": 407
+              },
+              {
+                "role": "return",
+                "file_path": "html_sanitizer/sanitizer.py",
+                "line_number": 429
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2024-34078",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-79"
+      ],
+      "units": [
+        {
+          "function": "Sanitizer.sanitize",
+          "start_line": 244,
+          "end_line": 429,
+          "path": "html_sanitizer/sanitizer.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-20",
+        "CWE-325"
+      ],
+      "units": [
+        {
+          "function": "Bundle._verify",
+          "start_line": 447,
+          "end_line": 546,
+          "path": "sigstore/models.py"
+        },
+        {
+          "function": "Verifier._establish_time",
+          "start_line": 198,
+          "end_line": 237,
+          "path": "sigstore/verify/verifier.py"
+        }
+      ],
+      "strict_cna_matches": []
+    },
+    {
+      "partition": "ten-exposed",
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "alerts": [],
+      "mechanism_candidates": [],
+      "original_cna_cwes": [
+        "CWE-20",
+        "CWE-325"
+      ],
+      "units": [
+        {
+          "function": "Bundle._verify",
+          "start_line": 447,
+          "end_line": 557,
+          "path": "sigstore/models.py"
+        },
+        {
+          "function": "Verifier._establish_time",
+          "start_line": 198,
+          "end_line": 242,
+          "path": "sigstore/verify/verifier.py"
+        }
+      ],
+      "strict_cna_matches": []
+    }
+  ],
+  "summary": {
+    "six-exposed": {
+      "vulnerable_mechanism_cases": [
+        "CVE-2022-24761",
+        "CVE-2022-39227",
+        "CVE-2024-1135",
+        "CVE-2024-33663",
+        "CVE-2026-82411"
+      ],
+      "repaired_mechanism_cases": []
+    },
+    "ten-exposed": {
+      "vulnerable_mechanism_cases": [
+        "CVE-2024-34078",
+        "CVE-2024-35195",
+        "CVE-2025-5120",
+        "CVE-2025-53366"
+      ],
+      "repaired_mechanism_cases": []
+    }
+  },
+  "interpretation": "All pilot source is exposed. Original zero-match pilot and Requests alias overlap remain preserved. Mechanism candidates and strict CNA matches are separate; none establishes deployment exploitability."
+}

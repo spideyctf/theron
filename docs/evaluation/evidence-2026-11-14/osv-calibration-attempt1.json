@@ -1,0 +1,1053 @@
+{
+  "queried_at": "2026-11-14T11:35:35.222821+00:00",
+  "reference_pairs": [
+    [
+      "requests",
+      "2.31.0",
+      "2.32.0",
+      "CVE-2024-35195"
+    ],
+    [
+      "html-sanitizer",
+      "2.3.0",
+      "2.4.2",
+      "CVE-2024-34078"
+    ],
+    [
+      "mcp",
+      "1.9.4",
+      "1.10.0",
+      "CVE-2025-53366"
+    ]
+  ],
+  "records": [
+    {
+      "package": "requests",
+      "version": "2.31.0",
+      "role": "vulnerable_reference",
+      "reference_advisory": "CVE-2024-35195",
+      "complete_lookup": true,
+      "reference_advisory_matched": true,
+      "expected_reference_advisory_match": true,
+      "agrees_with_reference": true,
+      "manifest_sha256": "1d277ef3981a3e49b02912a0f03fe1ab563539d7e4e1b5c1e6404a57b19d883f",
+      "findings": [
+        {
+          "title": "Vulnerable Dependency: requests@2.31.0 \u2014 CVE-2024-35195",
+          "severity": "MEDIUM",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'requests' version 2.31.0 in requirements.txt matches advisory CVE-2024-35195: Requests `Session` object does not verify requests after making first request with verify=False. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade requests to a supported patched version. OSV lists fixed-version boundaries: 2.32.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2024-35195 for details.",
+          "cwe": "CWE-670",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2024-35195",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-9wx4-h78v-vm56",
+            "https://osv.dev/vulnerability/PYSEC-2026-1873"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2024-35195",
+            "GHSA-9wx4-h78v-vm56",
+            "PYSEC-2026-1873"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "requests",
+            "version": "2.31.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2024-35195",
+              "GHSA-9wx4-h78v-vm56",
+              "PYSEC-2026-1873"
+            ],
+            "cwes": [
+              "CWE-670"
+            ],
+            "fixed_versions": [
+              "2.32.0"
+            ],
+            "queried_at": "2026-11-14T11:35:31.478492+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: requests@2.31.0 \u2014 CVE-2024-47081",
+          "severity": "MEDIUM",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'requests' version 2.31.0 in requirements.txt matches advisory CVE-2024-47081: Requests vulnerable to .netrc credentials leak via malicious URLs. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade requests to a supported patched version. OSV lists fixed-version boundaries: 2.32.4. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2024-47081 for details.",
+          "cwe": "CWE-522",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2024-47081",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-9hjg-9r4m-mvj7",
+            "https://osv.dev/vulnerability/PYSEC-2026-1872"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2024-47081",
+            "GHSA-9hjg-9r4m-mvj7",
+            "PYSEC-2026-1872"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "requests",
+            "version": "2.31.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2024-47081",
+              "GHSA-9hjg-9r4m-mvj7",
+              "PYSEC-2026-1872"
+            ],
+            "cwes": [
+              "CWE-522"
+            ],
+            "fixed_versions": [
+              "2.32.4"
+            ],
+            "queried_at": "2026-11-14T11:35:31.479492+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: requests@2.31.0 \u2014 CVE-2026-25645",
+          "severity": "MEDIUM",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'requests' version 2.31.0 in requirements.txt matches advisory CVE-2026-25645: Requests has Insecure Temp File Reuse in its extract_zipped_paths() utility function. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade requests to a supported patched version. OSV lists fixed-version boundaries: 2.33.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-25645 for details.",
+          "cwe": "CWE-377",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-25645",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-gc5v-m9x4-r6x2",
+            "https://osv.dev/vulnerability/PYSEC-2026-2275"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-25645",
+            "GHSA-gc5v-m9x4-r6x2",
+            "PYSEC-2026-2275"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "requests",
+            "version": "2.31.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-25645",
+              "GHSA-gc5v-m9x4-r6x2",
+              "PYSEC-2026-2275"
+            ],
+            "cwes": [
+              "CWE-377"
+            ],
+            "fixed_versions": [
+              "2.33.0"
+            ],
+            "queried_at": "2026-11-14T11:35:31.479492+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        }
+      ]
+    },
+    {
+      "package": "requests",
+      "version": "2.32.0",
+      "role": "repaired_reference",
+      "reference_advisory": "CVE-2024-35195",
+      "complete_lookup": true,
+      "reference_advisory_matched": false,
+      "expected_reference_advisory_match": false,
+      "agrees_with_reference": true,
+      "manifest_sha256": "dd6b7fbc59b7406cd3790e63eaedf624517d0f2218ba3257cf30aaa2c555c80e",
+      "findings": [
+        {
+          "title": "Vulnerable Dependency: requests@2.32.0 \u2014 CVE-2024-47081",
+          "severity": "MEDIUM",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'requests' version 2.32.0 in requirements.txt matches advisory CVE-2024-47081: Requests vulnerable to .netrc credentials leak via malicious URLs. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade requests to a supported patched version. OSV lists fixed-version boundaries: 2.32.4. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2024-47081 for details.",
+          "cwe": "CWE-522",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2024-47081",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-9hjg-9r4m-mvj7",
+            "https://osv.dev/vulnerability/PYSEC-2026-1872"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2024-47081",
+            "GHSA-9hjg-9r4m-mvj7",
+            "PYSEC-2026-1872"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "requests",
+            "version": "2.32.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2024-47081",
+              "GHSA-9hjg-9r4m-mvj7",
+              "PYSEC-2026-1872"
+            ],
+            "cwes": [
+              "CWE-522"
+            ],
+            "fixed_versions": [
+              "2.32.4"
+            ],
+            "queried_at": "2026-11-14T11:35:32.195468+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: requests@2.32.0 \u2014 CVE-2026-25645",
+          "severity": "MEDIUM",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'requests' version 2.32.0 in requirements.txt matches advisory CVE-2026-25645: Requests has Insecure Temp File Reuse in its extract_zipped_paths() utility function. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade requests to a supported patched version. OSV lists fixed-version boundaries: 2.33.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-25645 for details.",
+          "cwe": "CWE-377",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-25645",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-gc5v-m9x4-r6x2",
+            "https://osv.dev/vulnerability/PYSEC-2026-2275"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-25645",
+            "GHSA-gc5v-m9x4-r6x2",
+            "PYSEC-2026-2275"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "requests",
+            "version": "2.32.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-25645",
+              "GHSA-gc5v-m9x4-r6x2",
+              "PYSEC-2026-2275"
+            ],
+            "cwes": [
+              "CWE-377"
+            ],
+            "fixed_versions": [
+              "2.33.0"
+            ],
+            "queried_at": "2026-11-14T11:35:32.195468+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        }
+      ]
+    },
+    {
+      "package": "html-sanitizer",
+      "version": "2.3.0",
+      "role": "vulnerable_reference",
+      "reference_advisory": "CVE-2024-34078",
+      "complete_lookup": true,
+      "reference_advisory_matched": true,
+      "expected_reference_advisory_match": true,
+      "agrees_with_reference": true,
+      "manifest_sha256": "d198c7271b2f2cb7a24c06312304562474f82f38e8c93280b19bad532760ac24",
+      "findings": [
+        {
+          "title": "Vulnerable Dependency: html-sanitizer@2.3.0 \u2014 CVE-2024-34078",
+          "severity": "HIGH",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'html-sanitizer' version 2.3.0 in requirements.txt matches advisory CVE-2024-34078: Arbitrary HTML present after sanitization because of unicode normalization. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade html-sanitizer to a supported patched version. OSV lists fixed-version boundaries: 2.4.2. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2024-34078 for details.",
+          "cwe": null,
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2024-34078",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-wvhx-q427-fgh3",
+            "https://osv.dev/vulnerability/PYSEC-2026-1455"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2024-34078",
+            "GHSA-wvhx-q427-fgh3",
+            "PYSEC-2026-1455"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "html-sanitizer",
+            "version": "2.3.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2024-34078",
+              "GHSA-wvhx-q427-fgh3",
+              "PYSEC-2026-1455"
+            ],
+            "cwes": [],
+            "fixed_versions": [
+              "2.4.2"
+            ],
+            "queried_at": "2026-11-14T11:35:32.886004+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        }
+      ]
+    },
+    {
+      "package": "html-sanitizer",
+      "version": "2.4.2",
+      "role": "repaired_reference",
+      "reference_advisory": "CVE-2024-34078",
+      "complete_lookup": true,
+      "reference_advisory_matched": false,
+      "expected_reference_advisory_match": false,
+      "agrees_with_reference": true,
+      "manifest_sha256": "aa8ddcd8084aeb8b41e31950009949ab3bc796d6074adf9fa36a93150bc2b6ed",
+      "findings": []
+    },
+    {
+      "package": "mcp",
+      "version": "1.9.4",
+      "role": "vulnerable_reference",
+      "reference_advisory": "CVE-2025-53366",
+      "complete_lookup": true,
+      "reference_advisory_matched": false,
+      "expected_reference_advisory_match": true,
+      "agrees_with_reference": false,
+      "manifest_sha256": "96d55156a0f754e7ef2dca4fb91264fb77297626b923e86cb4eaa8f77dd571ca",
+      "findings": [
+        {
+          "title": "Vulnerable Dependency: mcp@1.9.4 \u2014 CVE-2025-53365",
+          "severity": "HIGH",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.9.4 in requirements.txt matches advisory CVE-2025-53365: MCP Python SDK has Unhandled Exception in Streamable HTTP Transport, Leading to Denial of Service. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.10.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2025-53365 for details.",
+          "cwe": "CWE-248",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2025-53365",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-j975-95f5-7wqh",
+            "https://osv.dev/vulnerability/PYSEC-2026-1618"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2025-53365",
+            "GHSA-j975-95f5-7wqh",
+            "PYSEC-2026-1618"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.9.4",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2025-53365",
+              "GHSA-j975-95f5-7wqh",
+              "PYSEC-2026-1618"
+            ],
+            "cwes": [
+              "CWE-248"
+            ],
+            "fixed_versions": [
+              "1.10.0"
+            ],
+            "queried_at": "2026-11-14T11:35:34.436344+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: mcp@1.9.4 \u2014 CVE-2025-66416",
+          "severity": "HIGH",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.9.4 in requirements.txt matches advisory CVE-2025-66416: Model Context Protocol (MCP) Python SDK does not enable DNS rebinding protection by default. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.23.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2025-66416 for details.",
+          "cwe": null,
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2025-66416",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-9h52-p55h-vw2f",
+            "https://osv.dev/vulnerability/PYSEC-2026-1617"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2025-66416",
+            "GHSA-9h52-p55h-vw2f",
+            "PYSEC-2026-1617"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.9.4",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2025-66416",
+              "GHSA-9h52-p55h-vw2f",
+              "PYSEC-2026-1617"
+            ],
+            "cwes": [
+              "CWE-1188",
+              "CWE-350"
+            ],
+            "fixed_versions": [
+              "1.23.0"
+            ],
+            "queried_at": "2026-11-14T11:35:34.436344+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: mcp@1.9.4 \u2014 CVE-2026-116685",
+          "severity": "MEDIUM",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.9.4 in requirements.txt matches advisory CVE-2026-116685: Model Context Protocol Python SDK: HTTP client transports followed cross-origin redirects carrying custom headers and bodies. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.30.0, 2.2.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-116685 for details.",
+          "cwe": "CWE-200",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-116685",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-5h93-6whr-6q8j"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-116685",
+            "GHSA-5h93-6whr-6q8j"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.9.4",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-116685",
+              "GHSA-5h93-6whr-6q8j"
+            ],
+            "cwes": [
+              "CWE-200"
+            ],
+            "fixed_versions": [
+              "1.30.0",
+              "2.2.0"
+            ],
+            "queried_at": "2026-11-14T11:35:34.436344+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: mcp@1.9.4 \u2014 CVE-2026-52869",
+          "severity": "HIGH",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.9.4 in requirements.txt matches advisory CVE-2026-52869: MCP Python SDK: HTTP transports serve session requests without verifying the authenticated principal. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.27.2. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-52869 for details.",
+          "cwe": "CWE-639",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-52869",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-jpw9-pfvf-9f58",
+            "https://osv.dev/vulnerability/PYSEC-2026-3482"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-52869",
+            "GHSA-jpw9-pfvf-9f58",
+            "PYSEC-2026-3482"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.9.4",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-52869",
+              "GHSA-jpw9-pfvf-9f58",
+              "PYSEC-2026-3482"
+            ],
+            "cwes": [
+              "CWE-639"
+            ],
+            "fixed_versions": [
+              "1.27.2"
+            ],
+            "queried_at": "2026-11-14T11:35:34.436344+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: mcp@1.9.4 \u2014 CVE-2026-59950",
+          "severity": "HIGH",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.9.4 in requirements.txt matches advisory CVE-2026-59950: MCP Python SDK: WebSocket server transport does not support Host/Origin validation. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.28.1. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-59950 for details.",
+          "cwe": null,
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-59950",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-vj7q-gjh5-988w",
+            "https://osv.dev/vulnerability/PYSEC-2026-3483"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-59950",
+            "GHSA-vj7q-gjh5-988w",
+            "PYSEC-2026-3483"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.9.4",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-59950",
+              "GHSA-vj7q-gjh5-988w",
+              "PYSEC-2026-3483"
+            ],
+            "cwes": [
+              "CWE-1385",
+              "CWE-346"
+            ],
+            "fixed_versions": [
+              "1.28.1"
+            ],
+            "queried_at": "2026-11-14T11:35:34.436344+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: mcp@1.9.4 \u2014 CVE-2026-59951",
+          "severity": "MEDIUM",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.9.4 in requirements.txt matches advisory CVE-2026-59951: MCP Python SDK: Unbounded Session Accumulation in StreamableHTTP Transport Enables Resource Exhaustion. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.30.0, 2.2.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-59951 for details.",
+          "cwe": null,
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-59951",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-84m7-p3x7-pcfv"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-59951",
+            "GHSA-84m7-p3x7-pcfv"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.9.4",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-59951",
+              "GHSA-84m7-p3x7-pcfv"
+            ],
+            "cwes": [
+              "CWE-400",
+              "CWE-770",
+              "CWE-772"
+            ],
+            "fixed_versions": [
+              "1.30.0",
+              "2.2.0"
+            ],
+            "queried_at": "2026-11-14T11:35:34.436344+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        }
+      ]
+    },
+    {
+      "package": "mcp",
+      "version": "1.10.0",
+      "role": "repaired_reference",
+      "reference_advisory": "CVE-2025-53366",
+      "complete_lookup": true,
+      "reference_advisory_matched": false,
+      "expected_reference_advisory_match": false,
+      "agrees_with_reference": true,
+      "manifest_sha256": "ea27697399301329d26b01949cb7d2dc69d079bfda8b083153284e225058657c",
+      "findings": [
+        {
+          "title": "Vulnerable Dependency: mcp@1.10.0 \u2014 CVE-2025-66416",
+          "severity": "HIGH",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.10.0 in requirements.txt matches advisory CVE-2025-66416: Model Context Protocol (MCP) Python SDK does not enable DNS rebinding protection by default. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.23.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2025-66416 for details.",
+          "cwe": null,
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2025-66416",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-9h52-p55h-vw2f",
+            "https://osv.dev/vulnerability/PYSEC-2026-1617"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2025-66416",
+            "GHSA-9h52-p55h-vw2f",
+            "PYSEC-2026-1617"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.10.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2025-66416",
+              "GHSA-9h52-p55h-vw2f",
+              "PYSEC-2026-1617"
+            ],
+            "cwes": [
+              "CWE-1188",
+              "CWE-350"
+            ],
+            "fixed_versions": [
+              "1.23.0"
+            ],
+            "queried_at": "2026-11-14T11:35:35.222821+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: mcp@1.10.0 \u2014 CVE-2026-116684",
+          "severity": "MEDIUM",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.10.0 in requirements.txt matches advisory CVE-2026-116684: Model Context Protocol Python SDK: Server bearer-token authentication accepts tokens issued for a different resource server. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.30.0, 2.2.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-116684 for details.",
+          "cwe": "CWE-863",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-116684",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-w4fh-qvv9-3v23"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-116684",
+            "GHSA-w4fh-qvv9-3v23"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.10.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-116684",
+              "GHSA-w4fh-qvv9-3v23"
+            ],
+            "cwes": [
+              "CWE-863"
+            ],
+            "fixed_versions": [
+              "1.30.0",
+              "2.2.0"
+            ],
+            "queried_at": "2026-11-14T11:35:35.222821+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: mcp@1.10.0 \u2014 CVE-2026-116685",
+          "severity": "MEDIUM",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.10.0 in requirements.txt matches advisory CVE-2026-116685: Model Context Protocol Python SDK: HTTP client transports followed cross-origin redirects carrying custom headers and bodies. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.30.0, 2.2.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-116685 for details.",
+          "cwe": "CWE-200",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-116685",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-5h93-6whr-6q8j"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-116685",
+            "GHSA-5h93-6whr-6q8j"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.10.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-116685",
+              "GHSA-5h93-6whr-6q8j"
+            ],
+            "cwes": [
+              "CWE-200"
+            ],
+            "fixed_versions": [
+              "1.30.0",
+              "2.2.0"
+            ],
+            "queried_at": "2026-11-14T11:35:35.222821+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: mcp@1.10.0 \u2014 CVE-2026-116686",
+          "severity": "MEDIUM",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.10.0 in requirements.txt matches advisory CVE-2026-116686: Model Context Protocol Python SDK: Client fetched server-chosen $ref URLs while validating tool results against output schemas. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.30.0, 2.2.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-116686 for details.",
+          "cwe": "CWE-918",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-116686",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-rwrf-2pqf-9j8j"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-116686",
+            "GHSA-rwrf-2pqf-9j8j"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.10.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-116686",
+              "GHSA-rwrf-2pqf-9j8j"
+            ],
+            "cwes": [
+              "CWE-918"
+            ],
+            "fixed_versions": [
+              "1.30.0",
+              "2.2.0"
+            ],
+            "queried_at": "2026-11-14T11:35:35.222821+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: mcp@1.10.0 \u2014 CVE-2026-52869",
+          "severity": "HIGH",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.10.0 in requirements.txt matches advisory CVE-2026-52869: MCP Python SDK: HTTP transports serve session requests without verifying the authenticated principal. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.27.2. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-52869 for details.",
+          "cwe": "CWE-639",
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-52869",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-jpw9-pfvf-9f58",
+            "https://osv.dev/vulnerability/PYSEC-2026-3482"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-52869",
+            "GHSA-jpw9-pfvf-9f58",
+            "PYSEC-2026-3482"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.10.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-52869",
+              "GHSA-jpw9-pfvf-9f58",
+              "PYSEC-2026-3482"
+            ],
+            "cwes": [
+              "CWE-639"
+            ],
+            "fixed_versions": [
+              "1.27.2"
+            ],
+            "queried_at": "2026-11-14T11:35:35.222821+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: mcp@1.10.0 \u2014 CVE-2026-59950",
+          "severity": "HIGH",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.10.0 in requirements.txt matches advisory CVE-2026-59950: MCP Python SDK: WebSocket server transport does not support Host/Origin validation. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.28.1. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-59950 for details.",
+          "cwe": null,
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-59950",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-vj7q-gjh5-988w",
+            "https://osv.dev/vulnerability/PYSEC-2026-3483"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-59950",
+            "GHSA-vj7q-gjh5-988w",
+            "PYSEC-2026-3483"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.10.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-59950",
+              "GHSA-vj7q-gjh5-988w",
+              "PYSEC-2026-3483"
+            ],
+            "cwes": [
+              "CWE-1385",
+              "CWE-346"
+            ],
+            "fixed_versions": [
+              "1.28.1"
+            ],
+            "queried_at": "2026-11-14T11:35:35.222821+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        },
+        {
+          "title": "Vulnerable Dependency: mcp@1.10.0 \u2014 CVE-2026-59951",
+          "severity": "MEDIUM",
+          "category": "sca",
+          "module": "sca",
+          "description": "Declared exact PyPI package 'mcp' version 1.10.0 in requirements.txt matches advisory CVE-2026-59951: MCP Python SDK: Unbounded Session Accumulation in StreamableHTTP Transport Enables Resource Exhaustion. Application reachability and exploitability have not been verified.",
+          "file_path": "requirements.txt",
+          "line_number": null,
+          "code_snippet": null,
+          "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.30.0, 2.2.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-59951 for details.",
+          "cwe": null,
+          "confidence": "high",
+          "rule_id": "SCA-CVE-2026-59951",
+          "references": [
+            "https://osv.dev/vulnerability/GHSA-84m7-p3x7-pcfv"
+          ],
+          "fingerprint": null,
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "dependency-version-match",
+          "aliases": [
+            "CVE-2026-59951",
+            "GHSA-84m7-p3x7-pcfv"
+          ],
+          "severity_source": "advisory-metadata",
+          "trace": [],
+          "dependency": {
+            "package": "mcp",
+            "version": "1.10.0",
+            "ecosystem": "PyPI",
+            "manifest": "requirements.txt",
+            "provider": "OSV",
+            "advisory_ids": [
+              "CVE-2026-59951",
+              "GHSA-84m7-p3x7-pcfv"
+            ],
+            "cwes": [
+              "CWE-400",
+              "CWE-770",
+              "CWE-772"
+            ],
+            "fixed_versions": [
+              "1.30.0",
+              "2.2.0"
+            ],
+            "queried_at": "2026-11-14T11:35:35.222821+00:00",
+            "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+          }
+        }
+      ]
+    }
+  ],
+  "exact_checks_passed": 5,
+  "total": 6,
+  "implementation_file_sha256": {
+    "scanner/plugins/sca.py": "de0c798c11b09caeca687360223335969997d4b232c745f0bb4992178cbeb97f",
+    "scanner/advisories.py": "f08edde36336f1fadbea621b88cf6feb97904be2da2e2a76c4c0d28cc4b6c72f"
+  },
+  "interpretation": "Live positive/repair advisory-specific calibration on synthetic exact manifests. These packages were not added to Theron. A repaired reference can match other advisories; no installed/reachable vulnerability or safe upgrade is inferred. This is development calibration, not independent vulnerability-discovery accuracy."
+}

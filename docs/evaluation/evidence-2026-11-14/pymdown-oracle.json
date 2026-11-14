@@ -6,8 +6,8 @@
       "result": {
         "exit_code": 1,
         "timed_out": false,
-        "wall_seconds": 0.8669231750000037,
-        "output": "F                                                                        [100%]\n=================================== FAILURES ===================================\n______________________ TestSnippetsNested.test_restricted ______________________\n\nself = <tests.test_extensions.test_snippets.TestSnippetsNested testMethod=test_restricted>\n\n    def test_restricted(self):\n        \"\"\"Test file restriction.\"\"\"\n    \n>       with self.assertRaises(SnippetMissingError):\nE       AssertionError: SnippetMissingError not raised\n\ntests/test_extensions/test_snippets.py:501: AssertionError\n----------------------------- Captured stdout call -----------------------------\n\n=========================== short test summary info ============================\nFAILED tests/test_extensions/test_snippets.py::TestSnippetsNested::test_restricted\n1 failed in 0.25s\n",
+        "wall_seconds": 0.9166357160000018,
+        "output": "TARGET_MODULE /target/pymdownx/snippets.py\nF                                                                        [100%]\n=================================== FAILURES ===================================\n______________________ TestSnippetsNested.test_restricted ______________________\n\nself = <tests.test_extensions.test_snippets.TestSnippetsNested testMethod=test_restricted>\n\n    def test_restricted(self):\n        \"\"\"Test file restriction.\"\"\"\n    \n>       with self.assertRaises(SnippetMissingError):\nE       AssertionError: SnippetMissingError not raised\n\ntests/test_extensions/test_snippets.py:501: AssertionError\n----------------------------- Captured stdout call -----------------------------\n\n=========================== short test summary info ============================\nFAILED tests/test_extensions/test_snippets.py::TestSnippetsNested::test_restricted\n1 failed in 0.13s\n",
         "output_truncated": false,
         "command": [
           "prlimit",
@@ -57,7 +57,7 @@
           "/mnt/d/TheLobe/sem7/theron/.benchmark-cache/validated-oracles/CVE-2023-32309/vulnerable",
           "/target",
           "--ro-bind",
-          "/tmp/theron-pymdown-deps-389tjut1",
+          "/tmp/theron-pymdown-deps-4cgn161x",
           "/deps",
           "--ro-bind",
           "/mnt/d/TheLobe/sem7/theron/scripts",
@@ -70,7 +70,7 @@
           "-I",
           "-S",
           "-c",
-          "import sys,pathlib,shutil,os\nsys.dont_write_bytecode=True\nroot=pathlib.Path('/tmp/package');root.mkdir()\nos.symlink('/target/pymdownx',root/'pymdownx')\nshutil.copytree('/oracle/tests',root/'tests')\nos.chdir(root)\nsys.path[:0]=[str(root),'/deps']\npathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n')\nimport pytest\nraise SystemExit(pytest.main(['-c', '/tmp/pytest.ini', '-p', 'no:cacheprovider', '-q', '/tmp/package/tests/test_extensions/test_snippets.py::TestSnippetsNested::test_restricted']))\n"
+          "import sys,pathlib,shutil,os\nsys.dont_write_bytecode=True\nroot=pathlib.Path('/tmp/package');root.mkdir()\nos.symlink('/target/pymdownx',root/'pymdownx')\nshutil.copytree('/oracle/tests',root/'tests')\nos.chdir(root)\nsys.path[:0]=[str(root),'/deps']\nimport pymdownx.snippets\nassert pathlib.Path(pymdownx.snippets.__file__).resolve().is_relative_to('/target')\nprint('TARGET_MODULE',pathlib.Path(pymdownx.snippets.__file__).resolve())\npathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n')\nimport pytest\nraise SystemExit(pytest.main(['-c', '/tmp/pytest.ini', '--import-mode=importlib', '-p', 'no:cacheprovider', '-q', '/tmp/package/tests/test_extensions/test_snippets.py::TestSnippetsNested::test_restricted']))\n"
         ]
       }
     },
@@ -80,8 +80,8 @@
       "result": {
         "exit_code": 0,
         "timed_out": false,
-        "wall_seconds": 0.7666027630000016,
-        "output": ".                                                                        [100%]\n1 passed in 0.18s\n",
+        "wall_seconds": 0.7662568840000006,
+        "output": "TARGET_MODULE /target/pymdownx/snippets.py\n.                                                                        [100%]\n1 passed in 0.07s\n",
         "output_truncated": false,
         "command": [
           "prlimit",
@@ -131,7 +131,7 @@
           "/mnt/d/TheLobe/sem7/theron/.benchmark-cache/validated-oracles/CVE-2023-32309/vulnerable",
           "/target",
           "--ro-bind",
-          "/tmp/theron-pymdown-deps-389tjut1",
+          "/tmp/theron-pymdown-deps-4cgn161x",
           "/deps",
           "--ro-bind",
           "/mnt/d/TheLobe/sem7/theron/scripts",
@@ -144,7 +144,7 @@
           "-I",
           "-S",
           "-c",
-          "import sys,pathlib,shutil,os\nsys.dont_write_bytecode=True\nroot=pathlib.Path('/tmp/package');root.mkdir()\nos.symlink('/target/pymdownx',root/'pymdownx')\nshutil.copytree('/oracle/tests',root/'tests')\nos.chdir(root)\nsys.path[:0]=[str(root),'/deps']\npathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n')\nimport pytest\nraise SystemExit(pytest.main(['-c', '/tmp/pytest.ini', '-p', 'no:cacheprovider', '-q', '/tmp/package/tests/test_extensions/test_snippets.py::TestSnippetsFile::test_user']))\n"
+          "import sys,pathlib,shutil,os\nsys.dont_write_bytecode=True\nroot=pathlib.Path('/tmp/package');root.mkdir()\nos.symlink('/target/pymdownx',root/'pymdownx')\nshutil.copytree('/oracle/tests',root/'tests')\nos.chdir(root)\nsys.path[:0]=[str(root),'/deps']\nimport pymdownx.snippets\nassert pathlib.Path(pymdownx.snippets.__file__).resolve().is_relative_to('/target')\nprint('TARGET_MODULE',pathlib.Path(pymdownx.snippets.__file__).resolve())\npathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n')\nimport pytest\nraise SystemExit(pytest.main(['-c', '/tmp/pytest.ini', '--import-mode=importlib', '-p', 'no:cacheprovider', '-q', '/tmp/package/tests/test_extensions/test_snippets.py::TestSnippetsFile::test_user']))\n"
         ]
       }
     },
@@ -154,8 +154,8 @@
       "result": {
         "exit_code": 0,
         "timed_out": false,
-        "wall_seconds": 0.7664639949999952,
-        "output": ".                                                                        [100%]\n1 passed in 0.19s\n",
+        "wall_seconds": 0.8162179090000024,
+        "output": "TARGET_MODULE /target/pymdownx/snippets.py\n.                                                                        [100%]\n1 passed in 0.07s\n",
         "output_truncated": false,
         "command": [
           "prlimit",
@@ -205,7 +205,7 @@
           "/mnt/d/TheLobe/sem7/theron/.benchmark-cache/validated-oracles/CVE-2023-32309/fixed",
           "/target",
           "--ro-bind",
-          "/tmp/theron-pymdown-deps-389tjut1",
+          "/tmp/theron-pymdown-deps-4cgn161x",
           "/deps",
           "--ro-bind",
           "/mnt/d/TheLobe/sem7/theron/scripts",
@@ -218,7 +218,7 @@
           "-I",
           "-S",
           "-c",
-          "import sys,pathlib,shutil,os\nsys.dont_write_bytecode=True\nroot=pathlib.Path('/tmp/package');root.mkdir()\nos.symlink('/target/pymdownx',root/'pymdownx')\nshutil.copytree('/oracle/tests',root/'tests')\nos.chdir(root)\nsys.path[:0]=[str(root),'/deps']\npathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n')\nimport pytest\nraise SystemExit(pytest.main(['-c', '/tmp/pytest.ini', '-p', 'no:cacheprovider', '-q', '/tmp/package/tests/test_extensions/test_snippets.py::TestSnippetsNested::test_restricted']))\n"
+          "import sys,pathlib,shutil,os\nsys.dont_write_bytecode=True\nroot=pathlib.Path('/tmp/package');root.mkdir()\nos.symlink('/target/pymdownx',root/'pymdownx')\nshutil.copytree('/oracle/tests',root/'tests')\nos.chdir(root)\nsys.path[:0]=[str(root),'/deps']\nimport pymdownx.snippets\nassert pathlib.Path(pymdownx.snippets.__file__).resolve().is_relative_to('/target')\nprint('TARGET_MODULE',pathlib.Path(pymdownx.snippets.__file__).resolve())\npathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n')\nimport pytest\nraise SystemExit(pytest.main(['-c', '/tmp/pytest.ini', '--import-mode=importlib', '-p', 'no:cacheprovider', '-q', '/tmp/package/tests/test_extensions/test_snippets.py::TestSnippetsNested::test_restricted']))\n"
         ]
       }
     },
@@ -228,8 +228,8 @@
       "result": {
         "exit_code": 0,
         "timed_out": false,
-        "wall_seconds": 0.6663491889999946,
-        "output": ".                                                                        [100%]\n1 passed in 0.15s\n",
+        "wall_seconds": 0.8666977640000084,
+        "output": "TARGET_MODULE /target/pymdownx/snippets.py\n.                                                                        [100%]\n1 passed in 0.08s\n",
         "output_truncated": false,
         "command": [
           "prlimit",
@@ -279,7 +279,7 @@
           "/mnt/d/TheLobe/sem7/theron/.benchmark-cache/validated-oracles/CVE-2023-32309/fixed",
           "/target",
           "--ro-bind",
-          "/tmp/theron-pymdown-deps-389tjut1",
+          "/tmp/theron-pymdown-deps-4cgn161x",
           "/deps",
           "--ro-bind",
           "/mnt/d/TheLobe/sem7/theron/scripts",
@@ -292,7 +292,7 @@
           "-I",
           "-S",
           "-c",
-          "import sys,pathlib,shutil,os\nsys.dont_write_bytecode=True\nroot=pathlib.Path('/tmp/package');root.mkdir()\nos.symlink('/target/pymdownx',root/'pymdownx')\nshutil.copytree('/oracle/tests',root/'tests')\nos.chdir(root)\nsys.path[:0]=[str(root),'/deps']\npathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n')\nimport pytest\nraise SystemExit(pytest.main(['-c', '/tmp/pytest.ini', '-p', 'no:cacheprovider', '-q', '/tmp/package/tests/test_extensions/test_snippets.py::TestSnippetsFile::test_user']))\n"
+          "import sys,pathlib,shutil,os\nsys.dont_write_bytecode=True\nroot=pathlib.Path('/tmp/package');root.mkdir()\nos.symlink('/target/pymdownx',root/'pymdownx')\nshutil.copytree('/oracle/tests',root/'tests')\nos.chdir(root)\nsys.path[:0]=[str(root),'/deps']\nimport pymdownx.snippets\nassert pathlib.Path(pymdownx.snippets.__file__).resolve().is_relative_to('/target')\nprint('TARGET_MODULE',pathlib.Path(pymdownx.snippets.__file__).resolve())\npathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n')\nimport pytest\nraise SystemExit(pytest.main(['-c', '/tmp/pytest.ini', '--import-mode=importlib', '-p', 'no:cacheprovider', '-q', '/tmp/package/tests/test_extensions/test_snippets.py::TestSnippetsFile::test_user']))\n"
         ]
       }
     }
@@ -300,7 +300,7 @@
   "probe": {
     "exit_code": 0,
     "timed_out": false,
-    "wall_seconds": 0.06669659899999658,
+    "wall_seconds": 0.06454960700000356,
     "output": "{\"windows_visible\": false, \"home_visible\": false, \"network_result\": 101}\n",
     "output_truncated": false,
     "command": [
@@ -351,7 +351,7 @@
       "/mnt/d/TheLobe/sem7/theron/.benchmark-cache/validated-oracles/CVE-2023-32309/fixed",
       "/target",
       "--ro-bind",
-      "/tmp/theron-pymdown-deps-389tjut1",
+      "/tmp/theron-pymdown-deps-4cgn161x",
       "/deps",
       "--ro-bind",
       "/mnt/d/TheLobe/sem7/theron/scripts",
@@ -373,6 +373,6 @@
     "pluggy-1.7.0-py3-none-any.whl": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec",
     "pytest-8.3.5-py3-none-any.whl": "c69214aa47deac29fad6c2a4f590b9c4a9fdb16a403176fe154b79c0b4d4d820"
   },
-  "harness_sha256": "720935f5d6e11086a48acc34291e8f850447e5939ae58df5dcc0ee7384393905",
+  "harness_sha256": "f12ef0a7ac90d0ce7b94e69db997bb2d37e65622203f6e9ea56926a35bec5f53",
   "interpretation": "Two selected unmodified upstream tests with fixed-revision test fixtures on both source revisions. Functional control reads an allowed snippet file. The initial attempt used a new-option control unsupported by vulnerable code and is retained separately. No target build hooks; source readonly, test fixtures copied into ephemeral storage. Not the complete extension suite or full Vul4Py acceptance."
 }

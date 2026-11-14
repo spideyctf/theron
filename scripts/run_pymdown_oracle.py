@@ -40,10 +40,13 @@ os.symlink('/target/pymdownx',root/'pymdownx')
 shutil.copytree('/oracle/tests',root/'tests')
 os.chdir(root)
 sys.path[:0]=[str(root),'/deps']
+import pymdownx.snippets
+assert pathlib.Path(pymdownx.snippets.__file__).resolve().is_relative_to('/target')
+print('TARGET_MODULE',pathlib.Path(pymdownx.snippets.__file__).resolve())
 pathlib.Path('/tmp/pytest.ini').write_text('[pytest]\\n')
 import pytest
 """
-            code+='raise SystemExit(pytest.main('+repr(['-c','/tmp/pytest.ini','-p','no:cacheprovider','-q',*tests])+'))\n'
+            code+='raise SystemExit(pytest.main('+repr(['-c','/tmp/pytest.ini','--import-mode=importlib','-p','no:cacheprovider','-q',*tests])+'))\n'
             result=runner.run(cache/role,'CVE-2023-32309',oracle=cache/'fixed',python_code=code)
             records.append(dict(role=role,phase=phase,result=result))
             print(role,phase,result['exit_code'],result['output'][-2000:],flush=True)

@@ -1,0 +1,115 @@
+{
+  "records": [
+    {
+      "project": "mcp",
+      "evidence_kind": "upstream_unmodified",
+      "selected_pair_distinguishes_revisions": true,
+      "legitimate_control_passes_both": true,
+      "receipt": "mcp-oracle.json",
+      "complete_upstream_suite": false
+    },
+    {
+      "project": "pymdown",
+      "evidence_kind": "upstream_unmodified",
+      "selected_pair_distinguishes_revisions": true,
+      "legitimate_control_passes_both": true,
+      "receipt": "pymdown-oracle.json",
+      "complete_upstream_suite": false
+    },
+    {
+      "project": "smolagents",
+      "evidence_kind": "upstream_unmodified",
+      "selected_pair_distinguishes_revisions": true,
+      "legitimate_control_passes_both": true,
+      "receipt": "smolagents-oracle.json",
+      "complete_upstream_suite": false
+    },
+    {
+      "project": "sigstore",
+      "evidence_kind": "upstream_unmodified",
+      "selected_pair_distinguishes_revisions": true,
+      "legitimate_control_passes_both": true,
+      "receipt": "sigstore-oracle.json",
+      "complete_upstream_suite": false
+    },
+    {
+      "project": "requests",
+      "evidence_kind": "upstream_body_adapted_transport",
+      "selected_pair_distinguishes_revisions": true,
+      "legitimate_control_passes_both": true,
+      "receipt": "requests-oracle.json",
+      "complete_upstream_suite": false
+    },
+    {
+      "project": "owlmixin",
+      "evidence_kind": "upstream_body_adapted_environment",
+      "selected_pair_distinguishes_revisions": true,
+      "legitimate_control_passes_both": true,
+      "receipt": "owlmixin-oracle.json",
+      "complete_upstream_suite": false
+    },
+    {
+      "project": "urllib3",
+      "evidence_kind": "author_derived_adapter",
+      "selected_pair_distinguishes_revisions": true,
+      "legitimate_control_passes_both": true,
+      "receipt": "urllib3-oracle.json",
+      "complete_upstream_suite": false
+    },
+    {
+      "project": "html-sanitizer",
+      "evidence_kind": "upstream_unmodified",
+      "selected_pair_distinguishes_revisions": true,
+      "legitimate_control_passes_both": true,
+      "receipt": "../mechanisms-2026-11-14/vul4py/runtime.json",
+      "complete_upstream_suite": false
+    },
+    {
+      "project": "sqlparse",
+      "evidence_kind": "author_derived_adapter",
+      "selected_pair_distinguishes_revisions": true,
+      "legitimate_control_passes_both": true,
+      "receipt": "sqlparse-oracle.json",
+      "behavior_receipt": "sqlparse-resource-oracle.json",
+      "complete_upstream_suite": false,
+      "original_upstream_patch_test_discriminates_security": false
+    },
+    {
+      "project": "octoprint",
+      "evidence_kind": "author_derived_adapter",
+      "selected_pair_distinguishes_revisions": true,
+      "legitimate_control_passes_both": true,
+      "receipt": "octoprint-oracle.json",
+      "behavior_receipt": "octoprint-identity-oracle.json",
+      "complete_upstream_suite": false,
+      "original_upstream_patch_test_discriminates_security": false
+    }
+  ],
+  "pilot_projects_with_execution_receipts": 10,
+  "selected_behavior_pairs": 10,
+  "unmodified_upstream_pairs": 5,
+  "adapted_upstream_pairs": 2,
+  "author_derived_pairs": 3,
+  "original_patch_checks_without_security_discrimination": 2,
+  "complete_upstream_suite_acceptance": false,
+  "independent_human_adjudication": false,
+  "cvat": {
+    "status": "not_run",
+    "reason": "Docker Linux engine unavailable. Desktop startup fails removing stale userAnalyticsOtlpHttp.sock. Automatic approval review rejected the attempted stop/stale-runtime-socket recovery as blocked by policy; no recovery mutation executed."
+  },
+  "receipt_sha256_lf": {
+    "mcp-oracle.json": "2289dab292947a98245ecc47cd876df6031362fd6170a7fbc8dd2fa9f2814a06",
+    "pymdown-oracle.json": "80b195c049dfdc626079c31e76fcd7dafa05e03c470e04d5fc81656f2ac4cb2a",
+    "smolagents-oracle.json": "5628f5166bda43cf2e132892c710e6a675c74bc49bdbda1b400009b6ff2d55d6",
+    "sigstore-oracle.json": "0246685b89f915a248a918cd2637ced279d08182658bc50c188144bb4c21ef98",
+    "requests-oracle.json": "998bb09efa603c94181dd0e38861ae280eb4c09738631f161175015d9135efdb",
+    "owlmixin-oracle.json": "5f24c61acfd3298db3cf028b7ce766817137e6fb6a5b87fcc74396361f027b06",
+    "urllib3-oracle.json": "30c4a6e31aa76450e9d45c3ecca4b41b0fb9cc83b882a1b401f4319d44c0557f",
+    "../mechanisms-2026-11-14/vul4py/runtime.json": "a8044ec173ea0b34dce2b3df540b47629ce6189498513354e49263cb5cb1eeea",
+    "sqlparse-oracle.json": "b3a20203c09986e6845df582d9fdd44c2c0f10ad2fce0767072453621488ac76",
+    "sqlparse-resource-oracle.json": "82262596ac95f317f1b4566b689e407a8df0bc80a1cb7611fa90bde47504bb11",
+    "octoprint-oracle.json": "9656c8d552c280c527fb2705b90dbce2100a1a62009d398377e3c383749c7a59",
+    "octoprint-identity-oracle.json": "69238d2c14488aa3b3ee3f8e2ec71d61dc5310806cfb7db7b072340f6bd4ba6c"
+  },
+  "interpretation": "Ten exposed development projects, selected checks only. Ten behavior pairs distinguish revisions: five upstream, two adapted upstream and three author-derived. This is not scanner recall, complete upstream security/functional acceptance, deployed exploitation, or independent label adjudication. Original SQLparse/OctoPrint patch-test outcomes remain nondiscriminating or API-incompatible; separate bounded/helper-level adapters provide the paired observations."
+}

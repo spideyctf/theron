@@ -1,5 +1,7 @@
 # Security-state checks, dependency evidence and upstream validation
 
+**Latest follow-up:** [precision fixes, TLS hostname state and all ten pilot execution receipts](FOLLOWUP.md), detector `7b64719`, 763 Python tests passing. Ten selected behavior pairs distinguish revisions: five upstream, two adapted upstream and three author-derived. SQLparse/OctoPrint adapter observations do not replace their original upstream/application validation; CVAT remains unverified. The original checkpoint below is retained as historical evidence.
+
 14 November 2026. Detector frozen at `f370de1c7078e2b6e07154e2a8d4974ef757e3b1`. This is local development and isolated verification of public, pinned source; no deployed targets or credentials are probed. [Plan and acceptance gates](PLAN.md).
 
 ## Current results

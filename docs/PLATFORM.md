@@ -1,5 +1,7 @@
 # Theron platform contract and implementation roadmap
 
+Current slice `7b64719`: [TLS hostname state, precision repairs and pilot execution](evaluation/evidence-2026-11-14/FOLLOWUP.md). 763 Python tests pass; ten selected behavior pairs distinguish revisions: five upstream, two adapted upstream and three author-derived, with limitations disclosed. Source-guided default detection remains four of ten mechanisms. OSV calibration passes six advisory-specific checks. CVAT services, broader coverage and the proposed real-code correlation advantage remain unverified; platform-wide completion is not implied. Earlier checkpoints follow.
+
 Latest implementation: [security-state models and dependency evidence](evaluation/evidence-2026-11-14/README.md), `f370de1`, with 746 Python/17 frontend tests and build passing. New checks cover bounded HTML ordering, TLS pool policy, MCP validation and AST callable access. OSV pagination and typed metadata reach exports/frontend; MCP dependency context is explicitly inferred. Paired upstream checks now cover selected MCP/pymdown behaviors. Six pilot environments, SQLparse security validation and CVAT services remain unfinished; platform-wide research benefit remains unmeasured. Earlier checkpoint descriptions below are historical.
 
 Status: contract declared 12 November 2026; latest bounded implementation/evaluation update 14 November 2026 (Asia/Calcutta).
