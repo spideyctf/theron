@@ -1,0 +1,2963 @@
+{
+  "implementation_revision": "2273c5ce62547f6d004a4b3e518eba557d55ae00",
+  "development_exposed": true,
+  "independent_labels": false,
+  "runtime_tests_performed": false,
+  "source_receipts_sha256": "b4331241a082a44fba911875c9764b2ec2bf771b17e1434a9dbd03b613ba9985",
+  "evaluation_driver_sha256": "74683085ccabd143c79c6b51a6fb94133fc44d81d51fcfa0e744457d9ba6a342",
+  "archived_osv_sha256": "17a3ebc41eb3fd0858819b3f20cf656a4b7e94ec3bbf73645af8c644e8d7ce2f",
+  "artifact_hash_basis": "UTF-8 text with LF newlines; original Git blob receipts retain raw-byte source hashes",
+  "advisory_candidates_preserved": true,
+  "correlation_preserves_findings": true,
+  "statuses": {
+    "no_direct_usage_observed": 19,
+    "direct_api_call_observed": 7
+  },
+  "reviews": [
+    {
+      "fingerprint": "533cc4fc6ff1c50b205b48f2",
+      "package": "anyio",
+      "advisory_ids": [
+        "CVE-2026-63374",
+        "GHSA-82r6-8w77-94w6",
+        "PYSEC-2026-4025"
+      ],
+      "version": "4.9.0",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "53e7097b623658dd02aec08a",
+      "package": "anyio",
+      "advisory_ids": [
+        "CVE-2026-64847",
+        "GHSA-5p39-cfhj-2xmp",
+        "PYSEC-2026-4024"
+      ],
+      "version": "4.9.0",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "3188cfc630c19de921cc1df1",
+      "package": "certifi",
+      "advisory_ids": [
+        "GHSA-6q48-6c7w-9gw2",
+        "PYSEC-2026-4320"
+      ],
+      "version": "2025.1.31",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "10600d81acdbcf8f4230b374",
+      "package": "cryptography",
+      "advisory_ids": [
+        "CVE-2026-26007",
+        "GHSA-r6ph-v2qm-q3c2",
+        "PYSEC-2026-2141"
+      ],
+      "version": "44.0.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "f490d1cb8b4b7e69c130adb7",
+      "package": "cryptography",
+      "advisory_ids": [
+        "CVE-2026-34073",
+        "GHSA-m959-cc7f-wv43",
+        "PYSEC-2026-35"
+      ],
+      "version": "44.0.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "c02ee4177d90e85aa908d4cb",
+      "package": "cryptography",
+      "advisory_ids": [
+        "CVE-2026-69247",
+        "GHSA-g6cj-pr64-35w5",
+        "PYSEC-2026-3552"
+      ],
+      "version": "44.0.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "63012db18f430d57ebf60759",
+      "package": "cryptography",
+      "advisory_ids": [
+        "CVE-2026-69248",
+        "GHSA-m2h6-j472-rp4c",
+        "PYSEC-2026-3554"
+      ],
+      "version": "44.0.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "7376633d4989494431feb045",
+      "package": "cryptography",
+      "advisory_ids": [
+        "CVE-2026-69249",
+        "GHSA-jwv3-5hgf-82ww",
+        "PYSEC-2026-3553"
+      ],
+      "version": "44.0.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "fe0b0b81f83b9d010a2fcd10",
+      "package": "cryptography",
+      "advisory_ids": [
+        "GHSA-537c-gmf6-5ccf"
+      ],
+      "version": "44.0.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "d7928236e62fbdde3d2e39c6",
+      "package": "h11",
+      "advisory_ids": [
+        "CVE-2025-43859",
+        "GHSA-vqfr-h8mv-ghfj",
+        "PYSEC-2026-348"
+      ],
+      "version": "0.14.0",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "e631fdf22bec3bf95f0ad7b8",
+      "package": "idna",
+      "advisory_ids": [
+        "CVE-2026-45409",
+        "GHSA-65pc-fj4g-8rjx",
+        "PYSEC-2026-215"
+      ],
+      "version": "3.10",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "0ed471e7f27a18a7af21b1e7",
+      "package": "lxml",
+      "advisory_ids": [
+        "CVE-2026-41066",
+        "GHSA-vfmq-68hx-4jfw",
+        "PYSEC-2026-87"
+      ],
+      "version": "5.4.0",
+      "review": {
+        "status": "direct_api_call_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [
+          {
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 10,
+            "symbol": "lxml.etree",
+            "scope": "application"
+          }
+        ],
+        "calls": [
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 143,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.Element",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 158,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.tostring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 164,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 169,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.Element",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 196,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.tostring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 203,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.Element",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 242,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 248,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 251,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 254,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 255,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.Element",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 264,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 270,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 273,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 276,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 277,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 337,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 338,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 339,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.Element",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 395,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 398,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 399,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 403,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.Element",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 410,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 415,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 418,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 419,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 423,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 424,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 425,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 427,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 430,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 431,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 436,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.SubElement",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 437,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 524,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 525,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 634,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.tostring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 464,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.tostring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 466,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.tostring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 468,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 656,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 676,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 692,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.fromstring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 708,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.tostring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 587,
+            "scope": "application"
+          },
+          {
+            "symbol": "lxml.etree.tostring",
+            "file_path": "word_document_server/core/footnotes.py",
+            "line_number": 590,
+            "scope": "application"
+          }
+        ],
+        "imports_observed": 1,
+        "calls_observed": 47,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {
+          "word_document_server/core/footnotes.py": "72759d8ddcae7ea7c1ed682641136781898a14e110d91d79c5bde3ab48fd9494"
+        },
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "5f1c7db9b681d7f5d6821a6b",
+      "package": "mcp",
+      "advisory_ids": [
+        "CVE-2025-53365",
+        "GHSA-j975-95f5-7wqh",
+        "PYSEC-2026-1618"
+      ],
+      "version": "1.6.0",
+      "review": {
+        "status": "direct_api_call_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [
+          {
+            "file_path": "word_document_server/main.py",
+            "line_number": 17,
+            "symbol": "mcp.types.ToolAnnotations",
+            "scope": "application"
+          }
+        ],
+        "calls": [
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 96,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 106,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 116,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 126,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 136,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 146,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 156,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 166,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 175,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 186,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 195,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 217,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 239,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 248,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 257,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 266,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 276,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 287,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 301,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 315,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 326,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 336,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 346,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 357,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 367,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 377,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 388,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 398,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 409,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 418,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 428,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 437,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 448,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 459,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 470,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 479,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 492,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 507,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 522,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 533,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 548,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 558,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 571,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 581,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 590,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 600,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 610,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 620,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 630,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 640,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 650,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 660,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 670,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 683,
+            "scope": "application"
+          }
+        ],
+        "imports_observed": 1,
+        "calls_observed": 54,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {
+          "word_document_server/main.py": "967026a662e86b67d62994cbf020864995b66d48570ab0018dbe875a8002445d"
+        },
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "6c2e2fd1b060679afe636b5c",
+      "package": "mcp",
+      "advisory_ids": [
+        "CVE-2025-53366",
+        "GHSA-3qhf-m339-9g5v",
+        "PYSEC-2026-1616"
+      ],
+      "version": "1.6.0",
+      "review": {
+        "status": "direct_api_call_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [
+          {
+            "file_path": "word_document_server/main.py",
+            "line_number": 17,
+            "symbol": "mcp.types.ToolAnnotations",
+            "scope": "application"
+          }
+        ],
+        "calls": [
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 96,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 106,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 116,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 126,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 136,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 146,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 156,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 166,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 175,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 186,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 195,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 217,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 239,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 248,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 257,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 266,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 276,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 287,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 301,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 315,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 326,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 336,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 346,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 357,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 367,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 377,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 388,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 398,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 409,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 418,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 428,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 437,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 448,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 459,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 470,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 479,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 492,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 507,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 522,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 533,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 548,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 558,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 571,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 581,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 590,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 600,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 610,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 620,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 630,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 640,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 650,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 660,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 670,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 683,
+            "scope": "application"
+          }
+        ],
+        "imports_observed": 1,
+        "calls_observed": 54,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {
+          "word_document_server/main.py": "967026a662e86b67d62994cbf020864995b66d48570ab0018dbe875a8002445d"
+        },
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "e746ef513c7cebd843e0fe01",
+      "package": "mcp",
+      "advisory_ids": [
+        "CVE-2025-66416",
+        "GHSA-9h52-p55h-vw2f",
+        "PYSEC-2026-1617"
+      ],
+      "version": "1.6.0",
+      "review": {
+        "status": "direct_api_call_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [
+          {
+            "file_path": "word_document_server/main.py",
+            "line_number": 17,
+            "symbol": "mcp.types.ToolAnnotations",
+            "scope": "application"
+          }
+        ],
+        "calls": [
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 96,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 106,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 116,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 126,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 136,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 146,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 156,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 166,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 175,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 186,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 195,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 217,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 239,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 248,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 257,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 266,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 276,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 287,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 301,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 315,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 326,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 336,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 346,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 357,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 367,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 377,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 388,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 398,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 409,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 418,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 428,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 437,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 448,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 459,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 470,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 479,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 492,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 507,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 522,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 533,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 548,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 558,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 571,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 581,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 590,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 600,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 610,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 620,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 630,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 640,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 650,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 660,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 670,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 683,
+            "scope": "application"
+          }
+        ],
+        "imports_observed": 1,
+        "calls_observed": 54,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {
+          "word_document_server/main.py": "967026a662e86b67d62994cbf020864995b66d48570ab0018dbe875a8002445d"
+        },
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "1433934c2b78dac4ae9ca6a8",
+      "package": "mcp",
+      "advisory_ids": [
+        "CVE-2026-52869",
+        "GHSA-jpw9-pfvf-9f58",
+        "PYSEC-2026-3482"
+      ],
+      "version": "1.6.0",
+      "review": {
+        "status": "direct_api_call_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [
+          {
+            "file_path": "word_document_server/main.py",
+            "line_number": 17,
+            "symbol": "mcp.types.ToolAnnotations",
+            "scope": "application"
+          }
+        ],
+        "calls": [
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 96,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 106,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 116,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 126,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 136,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 146,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 156,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 166,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 175,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 186,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 195,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 217,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 239,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 248,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 257,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 266,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 276,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 287,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 301,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 315,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 326,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 336,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 346,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 357,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 367,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 377,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 388,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 398,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 409,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 418,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 428,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 437,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 448,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 459,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 470,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 479,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 492,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 507,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 522,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 533,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 548,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 558,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 571,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 581,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 590,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 600,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 610,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 620,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 630,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 640,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 650,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 660,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 670,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 683,
+            "scope": "application"
+          }
+        ],
+        "imports_observed": 1,
+        "calls_observed": 54,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {
+          "word_document_server/main.py": "967026a662e86b67d62994cbf020864995b66d48570ab0018dbe875a8002445d"
+        },
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "71902b4ab37684b3b92c51c4",
+      "package": "mcp",
+      "advisory_ids": [
+        "CVE-2026-59950",
+        "GHSA-vj7q-gjh5-988w",
+        "PYSEC-2026-3483"
+      ],
+      "version": "1.6.0",
+      "review": {
+        "status": "direct_api_call_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [
+          {
+            "file_path": "word_document_server/main.py",
+            "line_number": 17,
+            "symbol": "mcp.types.ToolAnnotations",
+            "scope": "application"
+          }
+        ],
+        "calls": [
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 96,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 106,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 116,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 126,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 136,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 146,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 156,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 166,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 175,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 186,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 195,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 217,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 239,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 248,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 257,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 266,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 276,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 287,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 301,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 315,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 326,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 336,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 346,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 357,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 367,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 377,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 388,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 398,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 409,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 418,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 428,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 437,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 448,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 459,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 470,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 479,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 492,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 507,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 522,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 533,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 548,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 558,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 571,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 581,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 590,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 600,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 610,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 620,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 630,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 640,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 650,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 660,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 670,
+            "scope": "application"
+          },
+          {
+            "symbol": "mcp.types.ToolAnnotations",
+            "file_path": "word_document_server/main.py",
+            "line_number": 683,
+            "scope": "application"
+          }
+        ],
+        "imports_observed": 1,
+        "calls_observed": 54,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {
+          "word_document_server/main.py": "967026a662e86b67d62994cbf020864995b66d48570ab0018dbe875a8002445d"
+        },
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "6821593b92f6c9aff7458ec4",
+      "package": "pygments",
+      "advisory_ids": [
+        "CVE-2026-4539",
+        "GHSA-5239-wwwm-4pmq",
+        "PYSEC-2026-2987"
+      ],
+      "version": "2.19.1",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "d72b9029e112699f5bc986e1",
+      "package": "python-dotenv",
+      "advisory_ids": [
+        "CVE-2026-28684",
+        "GHSA-mf9w-mj56-hr94",
+        "PYSEC-2026-2270"
+      ],
+      "version": "1.1.0",
+      "review": {
+        "status": "direct_api_call_observed",
+        "attribution_basis": "documented_import_name_contract",
+        "imports": [
+          {
+            "file_path": "word_document_server/main.py",
+            "line_number": 9,
+            "symbol": "dotenv.load_dotenv",
+            "scope": "application"
+          }
+        ],
+        "calls": [
+          {
+            "symbol": "dotenv.load_dotenv",
+            "file_path": "word_document_server/main.py",
+            "line_number": 13,
+            "scope": "application"
+          }
+        ],
+        "imports_observed": 1,
+        "calls_observed": 1,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {
+          "word_document_server/main.py": "967026a662e86b67d62994cbf020864995b66d48570ab0018dbe875a8002445d"
+        },
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "6c164f93b64e78bc6b0d1ddf",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2025-54121",
+        "GHSA-2c2j-9gv5-cj73",
+        "PYSEC-2026-1941"
+      ],
+      "version": "0.46.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "238b0a1c9869e61e9b1ba952",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2025-62727",
+        "GHSA-7f5h-v6xp-fcq8",
+        "PYSEC-2026-1942"
+      ],
+      "version": "0.46.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "575e90af12ad52eb6d66b581",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2026-48710",
+        "GHSA-86qp-5c8j-p5mr",
+        "PYSEC-2026-161",
+        "X41-2026-002"
+      ],
+      "version": "0.46.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "3c5a5f945a1347028465eb5d",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2026-48817",
+        "GHSA-x746-7m8f-x49c",
+        "PYSEC-2026-2280"
+      ],
+      "version": "0.46.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "63fb19726433dd5005052f73",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2026-48818",
+        "GHSA-wqp7-x3pw-xc5r",
+        "PYSEC-2026-2281"
+      ],
+      "version": "0.46.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "c1d96502157604b75ab5d30c",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2026-54282",
+        "GHSA-jp82-jpqv-5vv3",
+        "PYSEC-2026-248"
+      ],
+      "version": "0.46.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    },
+    {
+      "fingerprint": "255b1c73015f990cb1679a71",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2026-54283",
+        "GHSA-82w8-qh3p-5jfq",
+        "PYSEC-2026-249"
+      ],
+      "version": "0.46.2",
+      "review": {
+        "status": "no_direct_usage_observed",
+        "attribution_basis": "same_name_import_candidate",
+        "imports": [],
+        "calls": [],
+        "imports_observed": 0,
+        "calls_observed": 0,
+        "evidence_truncated": false,
+        "shadowed_roots": [],
+        "coverage": {
+          "python_files": 27,
+          "parsed": 27,
+          "parse_failures": [],
+          "file_limit": 200,
+          "truncated": false
+        },
+        "source_text_sha256": {},
+        "affected_behavior_verified": false,
+        "vulnerability_confirmed": false,
+        "limitations": [
+          "Imports and syntactic calls do not prove startup, branch feasibility or affected-function use.",
+          "No direct usage observed does not exclude transitive dependencies, callbacks, dynamic imports or other deployments.",
+          "Import-name contracts and record claims do not authenticate ownership or installation.",
+          "These are bounded source observations, not runtime tests or independent vulnerability labels."
+        ]
+      }
+    }
+  ],
+  "binding": {
+    "config_file": "mcp-config.json",
+    "pointer": "/mcpServers/word-document-server",
+    "entrypoint": "word_mcp_server.py",
+    "kind": "absolute-python",
+    "config_sha256": "e0fc2abc3e5ee788792b589056beec82fbdc8140ad9a571818f567e165ea727b",
+    "entrypoint_sha256": "55bfc2002f979685aacd45d6c61268cd71e5d795dcae9a701a0aa53378590661",
+    "reason": "Assistant source-review claim: map the declared absolute word_mcp_server.py to the same-named collected project entry script. Original machine path, installation and runtime identity remain unverified."
+  },
+  "resolutions": [
+    {
+      "config_file": "mcp-config.json",
+      "pointer": "/mcpServers/word-document-server",
+      "status": "source_bound",
+      "reason": "no_eligible_flow_evidence_in_entrypoint",
+      "entrypoint": "word_mcp_server.py",
+      "classification": "inferred",
+      "scope": "application",
+      "group_ids": [],
+      "deployment_binding": {
+        "basis": "explicit_hash_bound_source_claim",
+        "kind": "absolute-python",
+        "reason": "Assistant source-review claim: map the declared absolute word_mcp_server.py to the same-named collected project entry script. Original machine path, installation and runtime identity remain unverified.",
+        "source_text_sha256": {
+          "mcp-config.json": "e0fc2abc3e5ee788792b589056beec82fbdc8140ad9a571818f567e165ea727b",
+          "word_mcp_server.py": "55bfc2002f979685aacd45d6c61268cd71e5d795dcae9a701a0aa53378590661"
+        },
+        "runtime_verified": false,
+        "remote_identity_verified": false
+      }
+    }
+  ],
+  "groups": []
+}

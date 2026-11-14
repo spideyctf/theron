@@ -1,0 +1,411 @@
+{
+  "review_type": "assistant source/advisory assessment; not independent human labels or runtime verification",
+  "archived_advisories": "../lock-entrypoints-development-2026-11-15/osv-records.json",
+  "records": [
+    {
+      "fingerprint": "533cc4fc6ff1c50b205b48f2",
+      "package": "anyio",
+      "advisory_ids": [
+        "CVE-2026-63374",
+        "GHSA-82r6-8w77-94w6",
+        "PYSEC-2026-4025"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "53e7097b623658dd02aec08a",
+      "package": "anyio",
+      "advisory_ids": [
+        "CVE-2026-64847",
+        "GHSA-5p39-cfhj-2xmp",
+        "PYSEC-2026-4024"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "3188cfc630c19de921cc1df1",
+      "package": "certifi",
+      "advisory_ids": [
+        "GHSA-6q48-6c7w-9gw2",
+        "PYSEC-2026-4320"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "10600d81acdbcf8f4230b374",
+      "package": "cryptography",
+      "advisory_ids": [
+        "CVE-2026-26007",
+        "GHSA-r6ph-v2qm-q3c2",
+        "PYSEC-2026-2141"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "f490d1cb8b4b7e69c130adb7",
+      "package": "cryptography",
+      "advisory_ids": [
+        "CVE-2026-34073",
+        "GHSA-m959-cc7f-wv43",
+        "PYSEC-2026-35"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "c02ee4177d90e85aa908d4cb",
+      "package": "cryptography",
+      "advisory_ids": [
+        "CVE-2026-69247",
+        "GHSA-g6cj-pr64-35w5",
+        "PYSEC-2026-3552"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "63012db18f430d57ebf60759",
+      "package": "cryptography",
+      "advisory_ids": [
+        "CVE-2026-69248",
+        "GHSA-m2h6-j472-rp4c",
+        "PYSEC-2026-3554"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "7376633d4989494431feb045",
+      "package": "cryptography",
+      "advisory_ids": [
+        "CVE-2026-69249",
+        "GHSA-jwv3-5hgf-82ww",
+        "PYSEC-2026-3553"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "fe0b0b81f83b9d010a2fcd10",
+      "package": "cryptography",
+      "advisory_ids": [
+        "GHSA-537c-gmf6-5ccf"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "d7928236e62fbdde3d2e39c6",
+      "package": "h11",
+      "advisory_ids": [
+        "CVE-2025-43859",
+        "GHSA-vqfr-h8mv-ghfj",
+        "PYSEC-2026-348"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "e631fdf22bec3bf95f0ad7b8",
+      "package": "idna",
+      "advisory_ids": [
+        "CVE-2026-45409",
+        "GHSA-65pc-fj4g-8rjx",
+        "PYSEC-2026-215"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "0ed471e7f27a18a7af21b1e7",
+      "package": "lxml",
+      "advisory_ids": [
+        "CVE-2026-41066",
+        "GHSA-vfmq-68hx-4jfw",
+        "PYSEC-2026-87"
+      ],
+      "required_behavior": "The archived advisory concerns default entity handling in iterparse or ETCompatXMLParser with untrusted XML.",
+      "observed_api_symbols": [
+        "lxml.etree.Element",
+        "lxml.etree.SubElement",
+        "lxml.etree.fromstring",
+        "lxml.etree.tostring"
+      ],
+      "assessment": "Required parser API not observed among the collected direct calls; package use alone does not establish this advisory path.",
+      "next_validation": "Inspect transitive parser construction and options, trace untrusted XML into the affected parser APIs, and compare affected/repaired behavior in an isolated matching environment.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "5f1c7db9b681d7f5d6821a6b",
+      "package": "mcp",
+      "advisory_ids": [
+        "CVE-2025-53365",
+        "GHSA-j975-95f5-7wqh",
+        "PYSEC-2026-1618"
+      ],
+      "required_behavior": "SDK server/transport behavior and deployment conditions from this individual archived advisory must apply.",
+      "observed_api_symbols": [
+        "mcp.types.ToolAnnotations"
+      ],
+      "assessment": "Observed SDK calls construct ToolAnnotations. They do not validate affected transport or request handling. Source also contains configurable stdio, SSE and streamable-HTTP launch paths through FastMCP; effective transport, SDK execution and configuration are unverified.",
+      "next_validation": "Resolve the installed FastMCP/SDK versions and chosen transport, authentication/session/security settings; execute selected upstream functional/security checks in that matching isolated environment.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "6c2e2fd1b060679afe636b5c",
+      "package": "mcp",
+      "advisory_ids": [
+        "CVE-2025-53366",
+        "GHSA-3qhf-m339-9g5v",
+        "PYSEC-2026-1616"
+      ],
+      "required_behavior": "SDK server/transport behavior and deployment conditions from this individual archived advisory must apply.",
+      "observed_api_symbols": [
+        "mcp.types.ToolAnnotations"
+      ],
+      "assessment": "Observed SDK calls construct ToolAnnotations. They do not validate affected transport or request handling. Source also contains configurable stdio, SSE and streamable-HTTP launch paths through FastMCP; effective transport, SDK execution and configuration are unverified.",
+      "next_validation": "Resolve the installed FastMCP/SDK versions and chosen transport, authentication/session/security settings; execute selected upstream functional/security checks in that matching isolated environment.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "e746ef513c7cebd843e0fe01",
+      "package": "mcp",
+      "advisory_ids": [
+        "CVE-2025-66416",
+        "GHSA-9h52-p55h-vw2f",
+        "PYSEC-2026-1617"
+      ],
+      "required_behavior": "SDK server/transport behavior and deployment conditions from this individual archived advisory must apply.",
+      "observed_api_symbols": [
+        "mcp.types.ToolAnnotations"
+      ],
+      "assessment": "Observed SDK calls construct ToolAnnotations. They do not validate affected transport or request handling. Source also contains configurable stdio, SSE and streamable-HTTP launch paths through FastMCP; effective transport, SDK execution and configuration are unverified.",
+      "next_validation": "Resolve the installed FastMCP/SDK versions and chosen transport, authentication/session/security settings; execute selected upstream functional/security checks in that matching isolated environment.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "1433934c2b78dac4ae9ca6a8",
+      "package": "mcp",
+      "advisory_ids": [
+        "CVE-2026-52869",
+        "GHSA-jpw9-pfvf-9f58",
+        "PYSEC-2026-3482"
+      ],
+      "required_behavior": "SDK server/transport behavior and deployment conditions from this individual archived advisory must apply.",
+      "observed_api_symbols": [
+        "mcp.types.ToolAnnotations"
+      ],
+      "assessment": "Observed SDK calls construct ToolAnnotations. They do not validate affected transport or request handling. Source also contains configurable stdio, SSE and streamable-HTTP launch paths through FastMCP; effective transport, SDK execution and configuration are unverified.",
+      "next_validation": "Resolve the installed FastMCP/SDK versions and chosen transport, authentication/session/security settings; execute selected upstream functional/security checks in that matching isolated environment.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "71902b4ab37684b3b92c51c4",
+      "package": "mcp",
+      "advisory_ids": [
+        "CVE-2026-59950",
+        "GHSA-vj7q-gjh5-988w",
+        "PYSEC-2026-3483"
+      ],
+      "required_behavior": "SDK server/transport behavior and deployment conditions from this individual archived advisory must apply.",
+      "observed_api_symbols": [
+        "mcp.types.ToolAnnotations"
+      ],
+      "assessment": "Observed SDK calls construct ToolAnnotations. They do not validate affected transport or request handling. Source also contains configurable stdio, SSE and streamable-HTTP launch paths through FastMCP; effective transport, SDK execution and configuration are unverified.",
+      "next_validation": "Resolve the installed FastMCP/SDK versions and chosen transport, authentication/session/security settings; execute selected upstream functional/security checks in that matching isolated environment.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "6821593b92f6c9aff7458ec4",
+      "package": "pygments",
+      "advisory_ids": [
+        "CVE-2026-4539",
+        "GHSA-5239-wwwm-4pmq",
+        "PYSEC-2026-2987"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "d72b9029e112699f5bc986e1",
+      "package": "python-dotenv",
+      "advisory_ids": [
+        "CVE-2026-28684",
+        "GHSA-mf9w-mj56-hr94",
+        "PYSEC-2026-2270"
+      ],
+      "required_behavior": "The archived advisory concerns set_key or unset_key rewriting environment files under the specified filesystem conditions.",
+      "observed_api_symbols": [
+        "dotenv.load_dotenv"
+      ],
+      "assessment": "The observed direct call is load_dotenv, not the affected environment-file writer APIs. Transitive or dynamically invoked writes remain unknown.",
+      "next_validation": "Establish whether any deployed code invokes the affected writer APIs and whether the required filesystem conditions apply; then verify affected/repaired behavior.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "6c164f93b64e78bc6b0d1ddf",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2025-54121",
+        "GHSA-2c2j-9gv5-cj73",
+        "PYSEC-2026-1941"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "238b0a1c9869e61e9b1ba952",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2025-62727",
+        "GHSA-7f5h-v6xp-fcq8",
+        "PYSEC-2026-1942"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "575e90af12ad52eb6d66b581",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2026-48710",
+        "GHSA-86qp-5c8j-p5mr",
+        "PYSEC-2026-161",
+        "X41-2026-002"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "3c5a5f945a1347028465eb5d",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2026-48817",
+        "GHSA-x746-7m8f-x49c",
+        "PYSEC-2026-2280"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "63fb19726433dd5005052f73",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2026-48818",
+        "GHSA-wqp7-x3pw-xc5r",
+        "PYSEC-2026-2281"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "c1d96502157604b75ab5d30c",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2026-54282",
+        "GHSA-jp82-jpqv-5vv3",
+        "PYSEC-2026-248"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    },
+    {
+      "fingerprint": "255b1c73015f990cb1679a71",
+      "package": "starlette",
+      "advisory_ids": [
+        "CVE-2026-54283",
+        "GHSA-82w8-qh3p-5jfq",
+        "PYSEC-2026-249"
+      ],
+      "required_behavior": "Reachability of the behavior described in the individual archived advisory, including any environment/configuration preconditions.",
+      "observed_api_symbols": [],
+      "assessment": "No direct package usage observed in the collected source. This does not exclude transitive, dynamic or deployment-specific use and does not establish a false positive.",
+      "next_validation": "Resolve dependency ancestry and the deployed environment, identify an affected API/configuration path, then run a focused affected/repaired functional check.",
+      "affected_behavior_verified": false,
+      "vulnerability_confirmed": false
+    }
+  ]
+}

@@ -1,10 +1,12 @@
 # Theron: realistic project assessment and improvement plan
 
-**Assessment date:** 15 November 2026. **Current lock/entrypoint checkpoint:** `34ce50d`. **Detection benchmark checkpoint:** `7b64719`. **Paired behavior evidence:** `15a4356`.
+**Assessment date:** 15 November 2026. **Current application-evidence core checkpoint:** `71e6c88`. **Detection benchmark checkpoint:** `7b64719`. **Paired behavior evidence:** `15a4356`.
 
 Earlier [tool-level correlation and package-attribution evidence](evaluation/tool-correlation-2026-11-15/README.md) established supported tool registration, bounded local call paths, collected distribution-record claims, source/advisory digests and frontend provenance. All 16 original controls matched expectations, and two pinned upstream source examples each produced one tool group under generated configurations. These checks do not establish independent edge accuracy, new vulnerabilities or improved review decisions; the real-code research gate remains open.
 
 ## Current verdict
+
+Latest [application-source and launch-binding checkpoint](evaluation/application-context-2026-11-15/README.md): 882 Python tests, 23 frontend tests and production build pass. All 26 exposed advisory candidates now have source observations and assistant condition reviews: seven have direct package calls, nineteen have no direct usage observed; none is confirmed as an application vulnerability by this replay. HTTP and absolute launches accept explicit hash-bound implementation claims; unpinned packages can expose a unique collected-version candidate. These are distinct from runtime verification. The Office Word absolute declaration is source-bound under an explicit mapping but still yields zero tool groups; Figma remote identity and arxiv distribution metadata remain unknown. Matching deployed/isolated environments and affected/repaired behavior tests are still needed.
 
 New [lock inventory and package-entrypoint checkpoint](evaluation/lock-entrypoints-development-2026-11-15/README.md): 859 Python tests, 21 frontend tests and the production build pass. Supported `uv.lock` inventory versions now reach OSV, and supported `uv run` / pinned `uvx` metadata resolves static entrypoint context. An exposed Office Word development replay made 37 successful OSV queries and returned 26 advisory matches across ten package names. These are locked-inventory candidates, not confirmed application vulnerabilities. Its absolute MCP launch still produces no groups. This does not replace the original frozen result or demonstrate the incremental research benefit.
 
@@ -38,8 +40,8 @@ The frontend displays the principal finding, obligation, dependency and correlat
 
 | Measurement | Recorded result | Meaning |
 | --- | --- | --- |
-| Python suite | **859 pass**, one dependency deprecation warning | Current lock/entrypoint regression checkpoint |
-| Frontend | **21 pass; production build passes** | Correlation symbols, package/lock provenance and unresolved-state UI tested |
+| Python suite | **882 pass**, one dependency deprecation warning | Current application-evidence regression checkpoint |
+| Frontend | **23 pass; production build passes** | Application observations, floating candidates, explicit source bindings and provenance tested |
 | Synthetic stability | **1,470 case outcomes and alert counts unchanged** after the latest detector changes | Recent changes preserve those exposed regressions |
 | Offline smoke | **52.89 seconds / 120 seconds**, 273 files read from 275 selected | One pinned offline SAST/AI/agentic workload; not a capacity or speed ranking |
 | Incomplete coverage | Three application notices, 12 context findings, two oversized files in that smoke | A completed scan is not complete analysis of every input |

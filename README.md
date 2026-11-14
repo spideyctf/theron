@@ -28,12 +28,12 @@ Repository code is analyzed as text. Runtime verification is a separate research
 
 ## Measured results
 
-Updated 15 November 2026. Lock/entrypoint checkpoint `34ce50d`; detection benchmark checkpoint `7b64719`.
+Updated 15 November 2026. Application-evidence core checkpoint `71e6c88`; detection benchmark checkpoint `7b64719`.
 
 | Measurement | Result |
 | --- | ---: |
-| Python regression tests | **859 passing** |
-| Frontend checkpoint | **21 passing tests; production build passes** |
+| Python regression tests | **882 passing** |
+| Frontend checkpoint | **23 passing tests; production build passes** |
 | Synthetic case outcomes tracked | **1,470** |
 | Exposed OWASP validation recall / label-matched precision | **91.67% / 100%** |
 | Exposed OWASP test recall / label-matched precision | **73.03% / 100%** |
@@ -43,10 +43,11 @@ Updated 15 November 2026. Lock/entrypoint checkpoint `34ce50d`; detection benchm
 | Original tool/call-path/dependency controls | **16/16 expected outcomes** |
 | Frozen real-repository correlation pilot | **3 repositories; 126 verified files; 7 unresolved declarations; 0 groups** |
 | Exposed real lockfile development replay | **37/37 OSV queries complete; 26 advisory matches across 10 packages** |
+| Exposed advisory application-source review | **26 reviewed: 7 with direct package calls; 19 without direct usage observed; no application vulnerabilities confirmed** |
 | Pilot projects with selected before/after behavior checks | **10** |
 | Pinned offline scan smoke | **273 files read in 52.89 seconds** |
 
-The new [tool-level correlation increment](docs/evaluation/tool-correlation-2026-11-15/README.md) passes the current regression/frontend checks and a source-only compatibility check on two pinned upstream examples. Correlation controls are original engineering cases, not independent real-world accuracy. Runtime checks comprise five unmodified upstream pairs, two adapted upstream pairs and three author-derived pairs; they validate selected library behavior. Scanner detection results are reported separately in the [assessment](docs/PROJECT_ASSESSMENT.md).
+The [application-evidence increment](docs/evaluation/application-context-2026-11-15/README.md) adds advisory source observations, explicit HTTP/absolute implementation bindings and floating-package candidates. These distinguish inspectable source claims from runtime verification. The earlier [tool-level correlation increment](docs/evaluation/tool-correlation-2026-11-15/README.md) includes original controls and two upstream source examples; these are not independent real-world accuracy. Runtime checks comprise five unmodified upstream pairs, two adapted upstream pairs and three author-derived pairs; they validate selected library behavior. Scanner detection results are reported separately in the [assessment](docs/PROJECT_ASSESSMENT.md).
 
 ### Benchmark comparison
 
