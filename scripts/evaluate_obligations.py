@@ -42,8 +42,8 @@ def load_sources():
     return groups
 
 
-def main():
-    if subprocess.run(['git','diff','--quiet',FREEZE,'--','scanner','rules'],cwd=ROOT).returncode:
+def evaluate(out=OUT,freeze=FREEZE,source_guided=False):
+    if subprocess.run(['git','diff','--quiet',freeze,'--','scanner','rules'],cwd=ROOT).returncode:
         raise ValueError('Frozen scanner changed; preserve this run before a separately labelled development increment')
     groups=load_sources()
     cna_cwes={r['id']:sorted({d['cweId'] for t in r['record']['containers']['cna'].get('problemTypes',[])
@@ -80,12 +80,14 @@ def main():
                      strict_cna_cwe_vulnerable_match_cases=sorted({r['id'] for r in records if r['role']=='vulnerable' and r['strict_cna_cwe_unit_matches']}),
                      strict_cna_cwe_patched_match_cases=sorted({r['id'] for r in records if r['role']=='fixed' and r['strict_cna_cwe_unit_matches']}),
                      strict_cna_cwe_unscorable_cases=sorted({r['id'] for r in records if not r['strict_cna_cwe_scorable']}))
-        write(OUT/(mode+'.json'),dict(implementation_revision=FREEZE,records=records,summary=summary,
+        write(out/(mode+'.json'),dict(implementation_revision=freeze,records=records,summary=summary,
+            source_guided_development=source_guided,
             labels='Upstream advisory/repair roles plus author-derived function units; no independent human adjudication',
-            interpretation='Fresh source exposure after scanner freeze; purposive metadata-aware selection. Not real-world accuracy or deployed exploitability. Patched files are not globally clean.'))
+            interpretation=('Already exposed development source; no new held-out accuracy. ' if source_guided else 'Fresh source exposure after scanner freeze; purposive metadata-aware selection. ')
+                +'Not real-world accuracy or deployed exploitability. Patched files are not globally clean.'))
         summaries[mode]=summary
         print(mode,summary,flush=True)
-    write(OUT/'static-summary.json',dict(implementation_revision=FREEZE,candidates=6,modes=summaries))
+    write(out/'static-summary.json',dict(implementation_revision=freeze,candidates=6,source_guided_development=source_guided,modes=summaries))
 
 
-if __name__=='__main__':main()
+if __name__=='__main__':evaluate()

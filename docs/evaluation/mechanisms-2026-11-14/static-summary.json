@@ -1,0 +1,79 @@
+{
+  "implementation_revision": "6eb6aee2e554c52a5f7519f0f7b6bed016f56f1a",
+  "candidates": 6,
+  "source_guided_development": true,
+  "modes": {
+    "default": {
+      "vulnerable_cases_with_obligation_candidates": [
+        "CVE-2022-24761",
+        "CVE-2022-39227",
+        "CVE-2024-1135",
+        "CVE-2024-33663",
+        "CVE-2026-82411"
+      ],
+      "patched_cases_with_obligation_candidates": [],
+      "application_alerts": 9,
+      "scanner_errors": 0,
+      "strict_cna_cwe_vulnerable_match_cases": [
+        "CVE-2022-24761",
+        "CVE-2024-1135"
+      ],
+      "strict_cna_cwe_patched_match_cases": [],
+      "strict_cna_cwe_unscorable_cases": [
+        "CVE-2024-33663"
+      ]
+    },
+    "no-auth": {
+      "vulnerable_cases_with_obligation_candidates": [
+        "CVE-2022-24761",
+        "CVE-2022-39227",
+        "CVE-2024-1135",
+        "CVE-2024-33663"
+      ],
+      "patched_cases_with_obligation_candidates": [],
+      "application_alerts": 6,
+      "scanner_errors": 0,
+      "strict_cna_cwe_vulnerable_match_cases": [
+        "CVE-2022-24761",
+        "CVE-2024-1135"
+      ],
+      "strict_cna_cwe_patched_match_cases": [],
+      "strict_cna_cwe_unscorable_cases": [
+        "CVE-2024-33663"
+      ]
+    },
+    "no-crypto": {
+      "vulnerable_cases_with_obligation_candidates": [
+        "CVE-2022-24761",
+        "CVE-2024-1135",
+        "CVE-2026-82411"
+      ],
+      "patched_cases_with_obligation_candidates": [],
+      "application_alerts": 6,
+      "scanner_errors": 0,
+      "strict_cna_cwe_vulnerable_match_cases": [
+        "CVE-2022-24761",
+        "CVE-2024-1135"
+      ],
+      "strict_cna_cwe_patched_match_cases": [],
+      "strict_cna_cwe_unscorable_cases": [
+        "CVE-2024-33663"
+      ]
+    },
+    "no-protocol": {
+      "vulnerable_cases_with_obligation_candidates": [
+        "CVE-2022-39227",
+        "CVE-2024-33663",
+        "CVE-2026-82411"
+      ],
+      "patched_cases_with_obligation_candidates": [],
+      "application_alerts": 6,
+      "scanner_errors": 0,
+      "strict_cna_cwe_vulnerable_match_cases": [],
+      "strict_cna_cwe_patched_match_cases": [],
+      "strict_cna_cwe_unscorable_cases": [
+        "CVE-2024-33663"
+      ]
+    }
+  }
+}

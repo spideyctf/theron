@@ -1,0 +1,245 @@
+{
+  "implementation_revision": "6eb6aee2e554c52a5f7519f0f7b6bed016f56f1a",
+  "dataset_repository": "tabudz/vul4py",
+  "dataset_revision": "f80f861012cb7b7cfeca7323be51d33e72eaf8f3",
+  "metadata_sha256": "be07f47564d398b5ac63011942859afcc2a0b2dd00cbc36cd96d1706261526a7",
+  "seed": "theron-external-2026-11-14",
+  "selection": "First ten distinct eligible repositories ordered by SHA256(seed + NUL + vulnerability ID); no mechanism-based selection",
+  "selected": [
+    {
+      "vuln_id": "CVE-2023-32309",
+      "repo_url": "https://github.com/facelessuser/pymdown-extensions",
+      "fix_commit": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "repository": "facelessuser/pymdown-extensions"
+    },
+    {
+      "vuln_id": "CVE-2025-53366",
+      "repo_url": "https://github.com/modelcontextprotocol/python-sdk",
+      "fix_commit": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "repository": "modelcontextprotocol/python-sdk"
+    },
+    {
+      "vuln_id": "CVE-2023-30608",
+      "repo_url": "https://github.com/andialbrecht/sqlparse",
+      "fix_commit": "c457abd5f097dd13fb21543381e7cfafe7d31cfb",
+      "repository": "andialbrecht/sqlparse"
+    },
+    {
+      "vuln_id": "CVE-2025-5120",
+      "repo_url": "https://github.com/huggingface/smolagents",
+      "fix_commit": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "repository": "huggingface/smolagents"
+    },
+    {
+      "vuln_id": "CVE-2021-28363",
+      "repo_url": "https://github.com/urllib3/urllib3",
+      "fix_commit": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "repository": "urllib3/urllib3"
+    },
+    {
+      "vuln_id": "CVE-2024-35195",
+      "repo_url": "https://github.com/psf/requests",
+      "fix_commit": "a58d7f2ffb4d00b46dca2d70a3932a0b37e22fac",
+      "repository": "psf/requests"
+    },
+    {
+      "vuln_id": "CVE-2017-16618",
+      "repo_url": "https://github.com/tadashi-aikawa/owlmixin",
+      "fix_commit": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "repository": "tadashi-aikawa/owlmixin"
+    },
+    {
+      "vuln_id": "CVE-2024-32977",
+      "repo_url": "https://github.com/OctoPrint/OctoPrint",
+      "fix_commit": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "repository": "OctoPrint/OctoPrint"
+    },
+    {
+      "vuln_id": "CVE-2024-34078",
+      "repo_url": "https://github.com/matthiask/html-sanitizer",
+      "fix_commit": "48db42fc5143d0140c32d929c46b802f96913550",
+      "repository": "matthiask/html-sanitizer"
+    },
+    {
+      "vuln_id": "CVE-2024-55655",
+      "repo_url": "https://github.com/sigstore/sigstore-python",
+      "fix_commit": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "repository": "sigstore/sigstore-python"
+    }
+  ],
+  "excluded_prior_projects": [
+    {
+      "vuln_id": "CVE-2018-7753",
+      "repo_url": "https://github.com/mozilla/bleach",
+      "fix_commit": "c5df5789ec3471a31311f42c2d19fc2cf21b35ef",
+      "repository": "mozilla/bleach",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2020-6802",
+      "repo_url": "https://github.com/mozilla/bleach",
+      "fix_commit": "f77e0f6392177a06e46a49abd61a4d9f035e57fd",
+      "repository": "mozilla/bleach",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2021-23980",
+      "repo_url": "https://github.com/mozilla/bleach",
+      "fix_commit": "79b7a3c5e56a09d1d323a5006afa59b56162eb13",
+      "repository": "mozilla/bleach",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2022-24065",
+      "repo_url": "https://github.com/cookiecutter/cookiecutter",
+      "fix_commit": "fdffddb31fd2b46344dfa317531ff155e7999f77",
+      "repository": "cookiecutter/cookiecutter",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2022-24439",
+      "repo_url": "https://github.com/gitpython-developers/GitPython",
+      "fix_commit": "2625ed9fc074091c531c27ffcba7902771130261",
+      "repository": "gitpython-developers/GitPython",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2022-29217",
+      "repo_url": "https://github.com/jpadilla/pyjwt",
+      "fix_commit": "9c528670c455b8d948aff95ed50e22940d1ad3fc",
+      "repository": "jpadilla/pyjwt",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2023-26145",
+      "repo_url": "https://github.com/dgilland/pydash",
+      "fix_commit": "6ff0831ad285fff937cafd2a853f20cc9ae92021",
+      "repository": "dgilland/pydash",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2023-32303",
+      "repo_url": "https://github.com/planetlabs/planet-client-python",
+      "fix_commit": "d71415a83119c5e89d7b80d5f940d162376ee3b7",
+      "repository": "planetlabs/planet-client-python",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2023-34457",
+      "repo_url": "https://github.com/MechanicalSoup/MechanicalSoup",
+      "fix_commit": "d57c4a269bba3b9a0c5bfa20292955b849006d9e",
+      "repository": "MechanicalSoup/MechanicalSoup",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2023-37271",
+      "repo_url": "https://github.com/zopefoundation/RestrictedPython",
+      "fix_commit": "c8eca66ae49081f0016d2e1f094c3d72095ef531",
+      "repository": "zopefoundation/RestrictedPython",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2023-41039",
+      "repo_url": "https://github.com/zopefoundation/RestrictedPython",
+      "fix_commit": "4134aedcff17c977da7717693ed89ce56d54c120",
+      "repository": "zopefoundation/RestrictedPython",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2023-41040",
+      "repo_url": "https://github.com/gitpython-developers/GitPython",
+      "fix_commit": "74e55ee4544867e1bd976b7df5a45869ee397b0b",
+      "repository": "gitpython-developers/GitPython",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2024-22190",
+      "repo_url": "https://github.com/gitpython-developers/GitPython",
+      "fix_commit": "ef3192cc414f2fd9978908454f6fd95243784c7f",
+      "repository": "gitpython-developers/GitPython",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2024-47164",
+      "repo_url": "https://github.com/gradio-app/gradio",
+      "fix_commit": "08b51590163b306fd874f543f6fcaf23ac7d2646",
+      "repository": "gradio-app/gradio",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2024-47532",
+      "repo_url": "https://github.com/zopefoundation/RestrictedPython",
+      "fix_commit": "d701cc36cccac36b21fa200f1f2d1945a9a215e6",
+      "repository": "zopefoundation/RestrictedPython",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2024-47874",
+      "repo_url": "https://github.com/encode/starlette",
+      "fix_commit": "fd038f3070c302bff17ef7d173dbb0b007617733",
+      "repository": "encode/starlette",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2024-4941",
+      "repo_url": "https://github.com/gradio-app/gradio",
+      "fix_commit": "ee1e2942e0a1ae84a08a05464e41c8108a03fa9c",
+      "repository": "gradio-app/gradio",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2024-49768",
+      "repo_url": "https://github.com/Pylons/waitress",
+      "fix_commit": "e4359018537af376cf24bd13616d861e2fb76f65",
+      "repository": "Pylons/waitress",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2024-52303",
+      "repo_url": "https://github.com/aio-libs/aiohttp",
+      "fix_commit": "bc15db61615079d1b6327ba42c682f758fa96936",
+      "repository": "aio-libs/aiohttp",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2024-53861",
+      "repo_url": "https://github.com/jpadilla/pyjwt",
+      "fix_commit": "33022c25525c1020869c71ce2a4109e44ae4ced1",
+      "repository": "jpadilla/pyjwt",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2025-22153",
+      "repo_url": "https://github.com/zopefoundation/RestrictedPython",
+      "fix_commit": "48a92c5bb617a647cffd0dadd4d5cfe626bcdb2f",
+      "repository": "zopefoundation/RestrictedPython",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2025-43859",
+      "repo_url": "https://github.com/python-hyper/h11",
+      "fix_commit": "114803a29ce50116dc47951c690ad4892b1a36ed",
+      "repository": "python-hyper/h11",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2025-54121",
+      "repo_url": "https://github.com/encode/starlette",
+      "fix_commit": "9f7ec2eb512fcc3fe90b43cb9dd9e1d08696bec1",
+      "repository": "encode/starlette",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    },
+    {
+      "vuln_id": "CVE-2025-58367",
+      "repo_url": "https://github.com/dgilland/pydash",
+      "fix_commit": "2015f0a4bcdbc3a5b27652e38fe97b3ee13ac15f",
+      "repository": "dgilland/pydash",
+      "reason": "Repository present in earlier source/evaluation manifest"
+    }
+  ],
+  "eligible_rows": 76,
+  "total_rows": 100,
+  "target_source_opened": false,
+  "independent_oracles_verified": false,
+  "protocol": "Freeze before source; retrieve every selected patch/parent and Python source/test receipt. Retain unsupported cases, missing context and oracle/build failures. Never count failed infrastructure as safe. No tuning within this freeze."
+}
