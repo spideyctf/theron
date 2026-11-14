@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "error_type": "TimeoutExpired",
+  "implementation_revision": "b4d979cd7fa5729038ab09773c544ab324d78397",
+  "target_revision": "4c166e0b179e1ff10a3a432e2bd439765b601a81",
+  "selected_files": 275,
+  "wall_seconds": 120.01608469999337,
+  "limit_seconds": 120,
+  "network_required": false,
+  "target_code_executed": false,
+  "interpretation": "One offline CLI smoke with SAST/AI/agentic; SCA/network excluded. Not a throughput ranking or accuracy result."
+}

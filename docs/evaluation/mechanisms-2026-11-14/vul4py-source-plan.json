@@ -1,0 +1,399 @@
+{
+  "records": [
+    {
+      "id": "CVE-2023-32309",
+      "repository": "facelessuser/pymdown-extensions",
+      "fix_revision": "b7bb4878d6017c03c8dc97c42d8d3bb6ee81db9d",
+      "vulnerable_revision": "a8fb9666566dfb7e86094082860b5616885d35f4",
+      "files": [
+        {
+          "path": "pymdownx/__meta__.py",
+          "old_path": "pymdownx/__meta__.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -185,5 +185,5 @@ def parse_version(ver, pre=False):"
+          ]
+        },
+        {
+          "path": "pymdownx/snippets.py",
+          "old_path": "pymdownx/snippets.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -82,7 +82,8 @@ def __init__(self, config, md):",
+            "@@ -159,18 +160,22 @@ def get_snippet_path(self, path):",
+            "@@ -367,6 +372,10 @@ def __init__(self, *args, **kwargs):"
+          ]
+        },
+        {
+          "path": "tests/test_extensions/test_snippets.py",
+          "old_path": "tests/test_extensions/test_snippets.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -481,6 +481,63 @@ def test_user(self):"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-53366",
+      "repository": "modelcontextprotocol/python-sdk",
+      "fix_revision": "29c69e6a47d0104d0afcea6ac35e7ab02fde809a",
+      "vulnerable_revision": "1a9ead07f5319abf941b54668b911e3f3773a1cb",
+      "files": [
+        {
+          "path": "src/mcp/shared/session.py",
+          "old_path": "src/mcp/shared/session.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -15,6 +15,7 @@",
+            "@@ -354,27 +355,47 @@ async def _receive_loop(self) -> None:"
+          ]
+        },
+        {
+          "path": "tests/issues/test_malformed_input.py",
+          "old_path": "tests/issues/test_malformed_input.py",
+          "status": "added",
+          "hunks": [
+            "@@ -0,0 +1,172 @@"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-30608",
+      "repository": "andialbrecht/sqlparse",
+      "fix_revision": "c457abd5f097dd13fb21543381e7cfafe7d31cfb",
+      "vulnerable_revision": "b949fdf9a1538f98b57612bef6306fc38f32aaf7",
+      "files": [
+        {
+          "path": "sqlparse/keywords.py",
+          "old_path": "sqlparse/keywords.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -59,9 +59,9 @@"
+          ]
+        },
+        {
+          "path": "tests/test_split.py",
+          "old_path": "tests/test_split.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -18,8 +18,8 @@ def test_split_semicolon():"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2025-5120",
+      "repository": "huggingface/smolagents",
+      "fix_revision": "33a942e62b6fbf6a35d41f1c735bda2d64c163d0",
+      "vulnerable_revision": "41b1d7fd3034f386f9d1e64d082a16956bded0e8",
+      "files": [
+        {
+          "path": "src/smolagents/local_python_executor.py",
+          "old_path": "src/smolagents/local_python_executor.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -146,6 +146,87 @@ def nodunder_getattr(obj, name, default=None):",
+            "@@ -245,46 +326,6 @@ def check_import_authorized(import_to_check: str, authorized_imports: list[str])",
+            "@@ -824,7 +865,7 @@ def evaluate_name("
+          ]
+        },
+        {
+          "path": "tests/test_local_python_executor.py",
+          "old_path": "tests/test_local_python_executor.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -761,7 +761,8 @@ def test_types_as_objects(self):",
+            "@@ -1133,7 +1134,9 @@ class TestClass:",
+            "@@ -1187,7 +1190,9 @@ class TestClass:",
+            "@@ -2075,6 +2080,7 @@ def test_vulnerability_via_importlib(self, additional_authorized_imports, expect",
+            "@@ -2088,6 +2094,55 @@ def test_vulnerability_via_submodules(self, code, additional_authorized_imports,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2021-28363",
+      "repository": "urllib3/urllib3",
+      "fix_revision": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0",
+      "vulnerable_revision": "5e3432646ad63749ff0d655c157fe293cdc6c2aa",
+      "files": [
+        {
+          "path": "src/urllib3/connection.py",
+          "old_path": "src/urllib3/connection.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -490,6 +490,10 @@ def _connect_tls_proxy(self, hostname, conn):"
+          ]
+        },
+        {
+          "path": "test/conftest.py",
+          "old_path": "test/conftest.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -64,6 +64,17 @@ def no_san_server(tmp_path_factory):"
+          ]
+        },
+        {
+          "path": "test/with_dummyserver/test_proxy_poolmanager.py",
+          "old_path": "test/with_dummyserver/test_proxy_poolmanager.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -543,3 +543,25 @@ def test_basic_ipv6_proxy(self):"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-35195",
+      "repository": "psf/requests",
+      "fix_revision": "a58d7f2ffb4d00b46dca2d70a3932a0b37e22fac",
+      "vulnerable_revision": "eea3bbf9ac635f465ee6c9903dc57c677952dafd",
+      "files": [
+        {
+          "path": "src/requests/adapters.py",
+          "old_path": "src/requests/adapters.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -8,6 +8,7 @@",
+            "@@ -61,12 +62,38 @@ def SOCKSProxyManager(*args, **kwargs):",
+            "@@ -327,6 +354,35 @@ def build_response(self, req, resp):",
+            "@@ -453,7 +509,7 @@ def send("
+          ]
+        },
+        {
+          "path": "tests/test_requests.py",
+          "old_path": "tests/test_requests.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -2828,6 +2828,13 @@ def test_status_code_425(self):"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2017-16618",
+      "repository": "tadashi-aikawa/owlmixin",
+      "fix_revision": "5d0575303f6df869a515ced4285f24ba721e0d4e",
+      "vulnerable_revision": "409c30c0d2d357f3fbc3abd7a80d5c111a738aa2",
+      "files": [
+        {
+          "path": "owlmixin/util.py",
+          "old_path": "owlmixin/util.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -9,7 +9,7 @@",
+            "@@ -44,7 +44,6 @@ def increase_indent(self, flow=False, indentless=False):",
+            "@@ -93,7 +92,7 @@ def load_yaml(yaml_str):",
+            "@@ -103,7 +102,7 @@ def load_yamlf(fpath, encoding):"
+          ]
+        },
+        {
+          "path": "tests/test_util.py",
+          "old_path": "tests/test_util.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -2,8 +2,11 @@",
+            "@@ -82,3 +85,38 @@ def test_docopt(self):"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-32977",
+      "repository": "OctoPrint/OctoPrint",
+      "fix_revision": "5afbec8d23508edc25b0f1bdef1620580136add4",
+      "vulnerable_revision": "87832677be259ea3a1195d778ea2304728696e56",
+      "files": [
+        {
+          "path": "src/octoprint/plugins/appkeys/__init__.py",
+          "old_path": "src/octoprint/plugins/appkeys/__init__.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -356,12 +356,8 @@ def on_api_command(self, command, data):"
+          ]
+        },
+        {
+          "path": "src/octoprint/schema/config/access_control.py",
+          "old_path": "src/octoprint/schema/config/access_control.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -36,6 +36,9 @@ class AccessControlConfig(BaseModel):"
+          ]
+        },
+        {
+          "path": "src/octoprint/schema/config/server.py",
+          "old_path": "src/octoprint/schema/config/server.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -42,8 +42,8 @@ class ReverseProxyConfig(BaseModel):"
+          ]
+        },
+        {
+          "path": "src/octoprint/server/__init__.py",
+          "old_path": "src/octoprint/server/__init__.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -381,6 +381,7 @@ def run(self):"
+          ]
+        },
+        {
+          "path": "src/octoprint/server/api/__init__.py",
+          "old_path": "src/octoprint/server/api/__init__.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -38,7 +38,6 @@",
+            "@@ -302,7 +301,7 @@ def login():",
+            "@@ -398,7 +397,7 @@ def logout():",
+            "@@ -774,7 +773,7 @@ def _test_address(data):"
+          ]
+        },
+        {
+          "path": "src/octoprint/server/api/settings.py",
+          "old_path": "src/octoprint/server/api/settings.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -125,9 +125,11 @@ def getSettings():",
+            "@@ -410,6 +412,14 @@ def getSettings():",
+            "@@ -557,6 +567,13 @@ def _saveSettings(data):"
+          ]
+        },
+        {
+          "path": "src/octoprint/server/api/system.py",
+          "old_path": "src/octoprint/server/api/system.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -15,7 +15,7 @@",
+            "@@ -96,9 +96,7 @@ def _usageForFolders():"
+          ]
+        },
+        {
+          "path": "src/octoprint/server/util/flask.py",
+          "old_path": "src/octoprint/server/util/flask.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -12,7 +12,7 @@",
+            "@@ -29,6 +29,7 @@",
+            "@@ -666,7 +667,7 @@ def passive_login():",
+            "@@ -1713,10 +1714,11 @@ def decorated_view(*args, **kwargs):",
+            "@@ -2012,3 +2014,50 @@ def session_signature(user, session):"
+          ]
+        },
+        {
+          "path": "src/octoprint/server/util/sockjs.py",
+          "old_path": "src/octoprint/server/util/sockjs.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -85,14 +85,14 @@ class PrinterStateConnection(",
+            "@@ -101,10 +101,12 @@ class PrinterStateConnection(",
+            "@@ -179,10 +181,15 @@ def __init__("
+          ]
+        },
+        {
+          "path": "src/octoprint/server/util/tornado.py",
+          "old_path": "src/octoprint/server/util/tornado.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -18,6 +18,7 @@",
+            "@@ -26,6 +27,7 @@",
+            "@@ -93,6 +95,36 @@ def get_check_tuple(urlstring):"
+          ]
+        },
+        {
+          "path": "src/octoprint/server/views.py",
+          "old_path": "src/octoprint/server/views.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -198,6 +198,7 @@ def login():",
+            "@@ -369,21 +370,26 @@ def in_cache():"
+          ]
+        },
+        {
+          "path": "src/octoprint/util/net.py",
+          "old_path": "src/octoprint/util/net.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -297,3 +297,26 @@ def download_file(url, folder, max_length=None, connect_timeout=3.05, read_timeo"
+          ]
+        },
+        {
+          "path": "tests/util/test_net.py",
+          "old_path": "tests/util/test_net.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -2,10 +2,9 @@",
+            "@@ -37,9 +36,9 @@ def patched_ifaddresses_netmask(addr):",
+            "@@ -54,51 +53,160 @@ class UtilNetTest(unittest.TestCase):"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-34078",
+      "repository": "matthiask/html-sanitizer",
+      "fix_revision": "48db42fc5143d0140c32d929c46b802f96913550",
+      "vulnerable_revision": "207a8927b6d09a37054ba7304a003e1ab2da2290",
+      "files": [
+        {
+          "path": "html_sanitizer/sanitizer.py",
+          "old_path": "html_sanitizer/sanitizer.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -250,6 +250,12 @@ def sanitize(self, html):",
+            "@@ -420,10 +426,4 @@ def sanitize(self, html):"
+          ]
+        },
+        {
+          "path": "html_sanitizer/tests.py",
+          "old_path": "html_sanitizer/tests.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -655,3 +655,13 @@ def test_br_attribute_sanitization(self):"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2024-55655",
+      "repository": "sigstore/sigstore-python",
+      "fix_revision": "300b502ae99ebfaace124f1f4e422a6a669369cf",
+      "vulnerable_revision": "9ee7ac259bcce37f95db13aa7d84a407c8b99a17",
+      "files": [
+        {
+          "path": "sigstore/models.py",
+          "old_path": "sigstore/models.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -525,8 +525,11 @@ def _verify(self) -> None:",
+            "@@ -543,6 +546,14 @@ def _verify(self) -> None:"
+          ]
+        },
+        {
+          "path": "sigstore/verify/verifier.py",
+          "old_path": "sigstore/verify/verifier.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -227,7 +227,12 @@ def _establish_time(self, bundle: Bundle) -> List[TimestampVerificationResult]:"
+          ]
+        },
+        {
+          "path": "test/unit/conftest.py",
+          "old_path": "test/unit/conftest.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -117,6 +117,8 @@ def signing_bundle(asset):"
+          ]
+        },
+        {
+          "path": "test/unit/test_models.py",
+          "old_path": "test/unit/test_models.py",
+          "status": "modified",
+          "hunks": [
+            "@@ -180,6 +180,13 @@ def test_bundle_roundtrip(self, signing_bundle):"
+          ]
+        }
+      ]
+    }
+  ]
+}

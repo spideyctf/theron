@@ -1,0 +1,1509 @@
+{
+  "tools": {
+    "bandit": {
+      "version": "1.9.4",
+      "covered_files": 46,
+      "alerts": [
+        {
+          "path": "CVE-2017-16618/fixed/owlmixin/util.py",
+          "line": 129,
+          "rule": "B310",
+          "cwe": 22
+        },
+        {
+          "path": "CVE-2017-16618/vulnerable/owlmixin/util.py",
+          "line": 96,
+          "rule": "B506",
+          "cwe": 20
+        },
+        {
+          "path": "CVE-2017-16618/vulnerable/owlmixin/util.py",
+          "line": 106,
+          "rule": "B506",
+          "cwe": 20
+        },
+        {
+          "path": "CVE-2017-16618/vulnerable/owlmixin/util.py",
+          "line": 130,
+          "rule": "B310",
+          "cwe": 22
+        },
+        {
+          "path": "CVE-2023-32309/fixed/pymdownx/snippets.py",
+          "line": 191,
+          "rule": "B310",
+          "cwe": 22
+        },
+        {
+          "path": "CVE-2023-32309/vulnerable/pymdownx/snippets.py",
+          "line": 186,
+          "rule": "B310",
+          "cwe": 22
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/__init__.py",
+          "line": 360,
+          "rule": "B104",
+          "cwe": 605
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/__init__.py",
+          "line": 1454,
+          "rule": "B112",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/__init__.py",
+          "line": 1509,
+          "rule": "B311",
+          "cwe": 330
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/api/settings.py",
+          "line": 73,
+          "rule": "B324",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/api/system.py",
+          "line": 186,
+          "rule": "B604",
+          "cwe": 78
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 447,
+          "rule": "B110",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 474,
+          "rule": "B110",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 822,
+          "rule": "B403",
+          "cwe": 502
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 828,
+          "rule": "B301",
+          "cwe": 502
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 831,
+          "rule": "B403",
+          "cwe": 502
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 1066,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/sockjs.py",
+          "line": 234,
+          "rule": "B324",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/tornado.py",
+          "line": 822,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/tornado.py",
+          "line": 1261,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 205,
+          "rule": "B106",
+          "cwe": 259
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 564,
+          "rule": "B324",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 1683,
+          "rule": "B324",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 1713,
+          "rule": "B112",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/util/net.py",
+          "line": 197,
+          "rule": "B112",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/util/net.py",
+          "line": 220,
+          "rule": "B112",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/util/net.py",
+          "line": 259,
+          "rule": "B110",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/util/net.py",
+          "line": 289,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/util/net.py",
+          "line": 294,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/__init__.py",
+          "line": 360,
+          "rule": "B104",
+          "cwe": 605
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/__init__.py",
+          "line": 1453,
+          "rule": "B112",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/__init__.py",
+          "line": 1508,
+          "rule": "B311",
+          "cwe": 330
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/api/settings.py",
+          "line": 73,
+          "rule": "B324",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/api/system.py",
+          "line": 188,
+          "rule": "B604",
+          "cwe": 78
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 446,
+          "rule": "B110",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 473,
+          "rule": "B110",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 821,
+          "rule": "B403",
+          "cwe": 502
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 827,
+          "rule": "B301",
+          "cwe": 502
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 830,
+          "rule": "B403",
+          "cwe": 502
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 1065,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/sockjs.py",
+          "line": 227,
+          "rule": "B324",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/tornado.py",
+          "line": 790,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/tornado.py",
+          "line": 1229,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 204,
+          "rule": "B106",
+          "cwe": 259
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 558,
+          "rule": "B324",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 1677,
+          "rule": "B324",
+          "cwe": 327
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 1707,
+          "rule": "B112",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/util/net.py",
+          "line": 197,
+          "rule": "B112",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/util/net.py",
+          "line": 220,
+          "rule": "B112",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/util/net.py",
+          "line": 259,
+          "rule": "B110",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/util/net.py",
+          "line": 289,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/util/net.py",
+          "line": 294,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2025-53366/fixed/src/mcp/shared/session.py",
+          "line": 130,
+          "rule": "B101",
+          "cwe": 703
+        },
+        {
+          "path": "CVE-2025-53366/vulnerable/src/mcp/shared/session.py",
+          "line": 129,
+          "rule": "B101",
+          "cwe": 703
+        }
+      ],
+      "units": [
+        {
+          "id": "CVE-2023-32309",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2023-32309",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2025-53366",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2025-53366",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2023-30608",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2023-30608",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2025-5120",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2025-5120",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2021-28363",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2021-28363",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-35195",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-35195",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2017-16618",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": [
+            {
+              "path": "CVE-2017-16618/vulnerable/owlmixin/util.py",
+              "line": 96,
+              "rule": "B506",
+              "cwe": 20
+            },
+            {
+              "path": "CVE-2017-16618/vulnerable/owlmixin/util.py",
+              "line": 106,
+              "rule": "B506",
+              "cwe": 20
+            }
+          ]
+        },
+        {
+          "id": "CVE-2017-16618",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-32977",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": [
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/__init__.py",
+              "line": 360,
+              "rule": "B104",
+              "cwe": 605
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+              "line": 204,
+              "rule": "B106",
+              "cwe": 259
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/util/net.py",
+              "line": 289,
+              "rule": "B101",
+              "cwe": 703
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/util/net.py",
+              "line": 294,
+              "rule": "B101",
+              "cwe": 703
+            }
+          ]
+        },
+        {
+          "id": "CVE-2024-32977",
+          "role": "fixed",
+          "alerts_in_reference_functions": [
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/__init__.py",
+              "line": 360,
+              "rule": "B104",
+              "cwe": 605
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+              "line": 205,
+              "rule": "B106",
+              "cwe": 259
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/util/net.py",
+              "line": 289,
+              "rule": "B101",
+              "cwe": 703
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/util/net.py",
+              "line": 294,
+              "rule": "B101",
+              "cwe": 703
+            }
+          ]
+        },
+        {
+          "id": "CVE-2024-34078",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-34078",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-55655",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-55655",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        }
+      ],
+      "errors": [],
+      "raw_report_sha256": "743856666909dc99188d38b44dac64fcc9f2fa5a3cb6026b8bb4fc7c2c4bd1b1"
+    },
+    "semgrep": {
+      "version": "1.185.0",
+      "covered_files": 46,
+      "alerts": [
+        {
+          "path": "CVE-2017-16618/fixed/owlmixin/util.py",
+          "line": 115,
+          "rule": "unspecified-open-encoding",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2017-16618/fixed/owlmixin/util.py",
+          "line": 129,
+          "rule": "dynamic-urllib-use-detected",
+          "cwe": [
+            "CWE-939: Improper Authorization in Handler for Custom URL Scheme"
+          ]
+        },
+        {
+          "path": "CVE-2017-16618/vulnerable/owlmixin/util.py",
+          "line": 116,
+          "rule": "unspecified-open-encoding",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2017-16618/vulnerable/owlmixin/util.py",
+          "line": 130,
+          "rule": "dynamic-urllib-use-detected",
+          "cwe": [
+            "CWE-939: Improper Authorization in Handler for Custom URL Scheme"
+          ]
+        },
+        {
+          "path": "CVE-2021-28363/fixed/src/urllib3/connection.py",
+          "line": 466,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2021-28363/vulnerable/src/urllib3/connection.py",
+          "line": 466,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2023-30608/fixed/sqlparse/keywords.py",
+          "line": 70,
+          "rule": "string-concat-in-list",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2023-30608/fixed/sqlparse/keywords.py",
+          "line": 81,
+          "rule": "string-concat-in-list",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2023-30608/vulnerable/sqlparse/keywords.py",
+          "line": 70,
+          "rule": "string-concat-in-list",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2023-30608/vulnerable/sqlparse/keywords.py",
+          "line": 81,
+          "rule": "string-concat-in-list",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2023-32309/fixed/pymdownx/snippets.py",
+          "line": 191,
+          "rule": "dynamic-urllib-use-detected",
+          "cwe": [
+            "CWE-939: Improper Authorization in Handler for Custom URL Scheme"
+          ]
+        },
+        {
+          "path": "CVE-2023-32309/vulnerable/pymdownx/snippets.py",
+          "line": 186,
+          "rule": "dynamic-urllib-use-detected",
+          "cwe": [
+            "CWE-939: Improper Authorization in Handler for Custom URL Scheme"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/plugins/appkeys/__init__.py",
+          "line": 185,
+          "rule": "flask-url-for-external-true",
+          "cwe": [
+            "CWE-673: External Influence of Sphere Definition"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/plugins/appkeys/__init__.py",
+          "line": 200,
+          "rule": "flask-url-for-external-true",
+          "cwe": [
+            "CWE-673: External Influence of Sphere Definition"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/plugins/appkeys/__init__.py",
+          "line": 254,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/__init__.py",
+          "line": 229,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/__init__.py",
+          "line": 477,
+          "rule": "useless-inner-function",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/__init__.py",
+          "line": 1411,
+          "rule": "use-sys-exit",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/__init__.py",
+          "line": 1561,
+          "rule": "make-response-with-unknown-content",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/__init__.py",
+          "line": 1949,
+          "rule": "useless-inner-function",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/__init__.py",
+          "line": 2171,
+          "rule": "arbitrary-sleep",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/api/__init__.py",
+          "line": 94,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/api/__init__.py",
+          "line": 317,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/api/__init__.py",
+          "line": 396,
+          "rule": "secure-set-cookie",
+          "cwe": [
+            "CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/api/__init__.py",
+          "line": 663,
+          "rule": "use-raise-for-status",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/api/settings.py",
+          "line": 66,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/api/settings.py",
+          "line": 73,
+          "rule": "insecure-hash-algorithm-sha1",
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/api/system.py",
+          "line": 225,
+          "rule": "flask-url-for-external-true",
+          "cwe": [
+            "CWE-673: External Influence of Sphere Definition"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 495,
+          "rule": "return-not-in-function",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 680,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 708,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 708,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 731,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 747,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 828,
+          "rule": "avoid-pickle",
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 837,
+          "rule": "avoid-pickle",
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+          "line": 1752,
+          "rule": "make-response-with-unknown-content",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/sockjs.py",
+          "line": 179,
+          "rule": "return-in-init",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/sockjs.py",
+          "line": 597,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/sockjs.py",
+          "line": 601,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/tornado.py",
+          "line": 510,
+          "rule": "open-never-closed",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/tornado.py",
+          "line": 520,
+          "rule": "tempfile-without-flush",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/tornado.py",
+          "line": 1014,
+          "rule": "return-in-init",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/util/tornado.py",
+          "line": 1084,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 186,
+          "rule": "open-redirect",
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 245,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 260,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 295,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 341,
+          "rule": "make-response-with-unknown-content",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 384,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 564,
+          "rule": "insecure-hash-algorithm-sha1",
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 678,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 1661,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+          "line": 1683,
+          "rule": "insecure-hash-algorithm-sha1",
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/fixed/src/octoprint/util/net.py",
+          "line": 276,
+          "rule": "use-raise-for-status",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/plugins/appkeys/__init__.py",
+          "line": 185,
+          "rule": "flask-url-for-external-true",
+          "cwe": [
+            "CWE-673: External Influence of Sphere Definition"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/plugins/appkeys/__init__.py",
+          "line": 200,
+          "rule": "flask-url-for-external-true",
+          "cwe": [
+            "CWE-673: External Influence of Sphere Definition"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/plugins/appkeys/__init__.py",
+          "line": 254,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/__init__.py",
+          "line": 229,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/__init__.py",
+          "line": 476,
+          "rule": "useless-inner-function",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/__init__.py",
+          "line": 1410,
+          "rule": "use-sys-exit",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/__init__.py",
+          "line": 1560,
+          "rule": "make-response-with-unknown-content",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/__init__.py",
+          "line": 1948,
+          "rule": "useless-inner-function",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/__init__.py",
+          "line": 2170,
+          "rule": "arbitrary-sleep",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/api/__init__.py",
+          "line": 95,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/api/__init__.py",
+          "line": 318,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/api/__init__.py",
+          "line": 397,
+          "rule": "secure-set-cookie",
+          "cwe": [
+            "CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/api/__init__.py",
+          "line": 664,
+          "rule": "use-raise-for-status",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/api/settings.py",
+          "line": 66,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/api/settings.py",
+          "line": 73,
+          "rule": "insecure-hash-algorithm-sha1",
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/api/system.py",
+          "line": 227,
+          "rule": "flask-url-for-external-true",
+          "cwe": [
+            "CWE-673: External Influence of Sphere Definition"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 494,
+          "rule": "return-not-in-function",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 679,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 707,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 707,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 730,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 746,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 827,
+          "rule": "avoid-pickle",
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 836,
+          "rule": "avoid-pickle",
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+          "line": 1750,
+          "rule": "make-response-with-unknown-content",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/sockjs.py",
+          "line": 177,
+          "rule": "return-in-init",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/sockjs.py",
+          "line": 590,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/sockjs.py",
+          "line": 594,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/tornado.py",
+          "line": 478,
+          "rule": "open-never-closed",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/tornado.py",
+          "line": 488,
+          "rule": "tempfile-without-flush",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/tornado.py",
+          "line": 982,
+          "rule": "return-in-init",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/tornado.py",
+          "line": 1052,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 186,
+          "rule": "open-redirect",
+          "cwe": [
+            "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 244,
+          "rule": "is-function-without-parentheses",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 259,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 294,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 340,
+          "rule": "make-response-with-unknown-content",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 377,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 558,
+          "rule": "insecure-hash-algorithm-sha1",
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 672,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 1655,
+          "rule": "unescaped-template-extension",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+          "line": 1677,
+          "rule": "insecure-hash-algorithm-sha1",
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ]
+        },
+        {
+          "path": "CVE-2024-32977/vulnerable/src/octoprint/util/net.py",
+          "line": 276,
+          "rule": "use-raise-for-status",
+          "cwe": []
+        },
+        {
+          "path": "CVE-2025-5120/fixed/src/smolagents/local_python_executor.py",
+          "line": 1203,
+          "rule": "non-literal-import",
+          "cwe": [
+            "CWE-706: Use of Incorrectly-Resolved Name or Reference"
+          ]
+        },
+        {
+          "path": "CVE-2025-5120/vulnerable/src/smolagents/local_python_executor.py",
+          "line": 1162,
+          "rule": "non-literal-import",
+          "cwe": [
+            "CWE-706: Use of Incorrectly-Resolved Name or Reference"
+          ]
+        }
+      ],
+      "units": [
+        {
+          "id": "CVE-2023-32309",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2023-32309",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2025-53366",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2025-53366",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2023-30608",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2023-30608",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2025-5120",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2025-5120",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2021-28363",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2021-28363",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-35195",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-35195",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2017-16618",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": [
+            {
+              "path": "CVE-2017-16618/vulnerable/owlmixin/util.py",
+              "line": 116,
+              "rule": "unspecified-open-encoding",
+              "cwe": []
+            }
+          ]
+        },
+        {
+          "id": "CVE-2017-16618",
+          "role": "fixed",
+          "alerts_in_reference_functions": [
+            {
+              "path": "CVE-2017-16618/fixed/owlmixin/util.py",
+              "line": 115,
+              "rule": "unspecified-open-encoding",
+              "cwe": []
+            }
+          ]
+        },
+        {
+          "id": "CVE-2024-32977",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": [
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/__init__.py",
+              "line": 476,
+              "rule": "useless-inner-function",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/api/__init__.py",
+              "line": 318,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/api/__init__.py",
+              "line": 397,
+              "rule": "secure-set-cookie",
+              "cwe": [
+                "CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute"
+              ]
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+              "line": 679,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+              "line": 707,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+              "line": 707,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+              "line": 730,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/util/flask.py",
+              "line": 746,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+              "line": 186,
+              "rule": "open-redirect",
+              "cwe": [
+                "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+              ]
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+              "line": 244,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+              "line": 259,
+              "rule": "unescaped-template-extension",
+              "cwe": [
+                "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+              ]
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/server/views.py",
+              "line": 377,
+              "rule": "unescaped-template-extension",
+              "cwe": [
+                "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+              ]
+            },
+            {
+              "path": "CVE-2024-32977/vulnerable/src/octoprint/util/net.py",
+              "line": 276,
+              "rule": "use-raise-for-status",
+              "cwe": []
+            }
+          ]
+        },
+        {
+          "id": "CVE-2024-32977",
+          "role": "fixed",
+          "alerts_in_reference_functions": [
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/__init__.py",
+              "line": 477,
+              "rule": "useless-inner-function",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/api/__init__.py",
+              "line": 317,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/api/__init__.py",
+              "line": 396,
+              "rule": "secure-set-cookie",
+              "cwe": [
+                "CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute"
+              ]
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+              "line": 680,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+              "line": 708,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+              "line": 708,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+              "line": 731,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/util/flask.py",
+              "line": 747,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+              "line": 186,
+              "rule": "open-redirect",
+              "cwe": [
+                "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+              ]
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+              "line": 245,
+              "rule": "is-function-without-parentheses",
+              "cwe": []
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+              "line": 260,
+              "rule": "unescaped-template-extension",
+              "cwe": [
+                "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+              ]
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/server/views.py",
+              "line": 384,
+              "rule": "unescaped-template-extension",
+              "cwe": [
+                "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+              ]
+            },
+            {
+              "path": "CVE-2024-32977/fixed/src/octoprint/util/net.py",
+              "line": 276,
+              "rule": "use-raise-for-status",
+              "cwe": []
+            }
+          ]
+        },
+        {
+          "id": "CVE-2024-34078",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-34078",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-55655",
+          "role": "vulnerable",
+          "alerts_in_reference_functions": []
+        },
+        {
+          "id": "CVE-2024-55655",
+          "role": "fixed",
+          "alerts_in_reference_functions": []
+        }
+      ],
+      "errors": [],
+      "raw_report_sha256": "8dfad61593d8829eaab67036e66c445fc9731318664ba312358f2d0ef6b796bd"
+    }
+  },
+  "native_verification": {
+    "source_files": 46,
+    "rule_files": 337,
+    "all_bytes_identical": true,
+    "native_stage": "/tmp/theron-vul4py-baselines"
+  },
+  "flags": {
+    "bandit": [
+      "--ignore-nosec",
+      "--exit-zero",
+      "all default rules/severities/confidences"
+    ],
+    "semgrep": [
+      "--metrics=off",
+      "--disable-version-check",
+      "--no-git-ignore",
+      "--no-rewrite-rule-ids",
+      "--timeout=10",
+      "--jobs=2"
+    ]
+  },
+  "interpretation": "All alerts and errors retained. Function-span overlap is not a semantic vulnerability match. Mixed Windows/WSL execution, no speed ranking."
+}

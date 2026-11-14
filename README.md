@@ -11,7 +11,15 @@ Theron combines bounded Python flow analysis, AI-specific checks, dependency adv
 
 **Platform direction:** Theron's broader goal is unified, evidence-driven security analysis across application code, dependencies, secrets, infrastructure, AI pipelines and agents, with correlation and controlled verification added in stages. The [platform contract, coverage matrix and ranked backlog](docs/PLATFORM.md) distinguish implemented capabilities from experimental and planned work. This vision does not expand the current coverage claims below.
 
-## Latest implementation: authorization, JWT and HTTP conditions
+## Current progress and research readiness
+
+**14 November 2026:** [current capabilities, metrics and remaining gates](docs/STATUS.md); [latest implementation/evaluation](docs/evaluation/mechanisms-2026-11-14/README.md). **688 Python tests, 15 frontend tests and frontend build pass.** Required-condition evidence now covers verified JWS payload identity, incomplete HMAC key-format boundaries and selected HTTP framing grammar, alongside the existing authorization/JWT/footer checks. Seven original findings are tested through CLI/API/exports/frontend.
+
+Exposed development improves from **1/6 to 5/6 relevant vulnerable-mechanism candidates**, with none in the corresponding repaired units. This is tuning evidence, not fresh recall. The new preregistered ten-project Vul4Py pilot yields **zero strict CWE/location matches across eight CNA-labelled cases**, with two missing labels retained. An upstream security/functional test pair reproduces an html-sanitizer mechanism the scanner misses. All 1,470 exposed synthetic outcomes remain unchanged: OWASP test recall/precision **73.03%/100%**, PySASTBench **78.15%/95.88%**.
+
+**Broad research readiness remains incomplete.** Fresh real-code generalization, further upstream oracles, CVAT/custom policy analysis and demonstrated cross-layer benefit remain open. The post-fix offline smoke completes in **84.04 seconds against 120 seconds**; both earlier timeouts and the profiling diagnosis remain preserved. No paper draft or acceptance claim is included.
+
+## Previous implementation: authorization, JWT and HTTP conditions
 
 **14 November 2026:** [implementation, six-case evaluation and reproduction](docs/evaluation/obligations-2026-11-14/README.md), scanner freeze `8c10fdb`. New bounded checks track declared DRF object-permission checks, dangerous JWT verification settings/key boundaries, and unchecked h11 chunk-footer consumption. Required conditions, action locations and assumptions are visible in frontend details and JSON/HTML/SARIF exports.
 
@@ -89,7 +97,7 @@ See the [frozen protocol](docs/evaluation/owasp-2026-11-12/README.md), [complete
 
 ## PySASTBench tuning benchmark
 
-Re-evaluated **14 November 2026** at obligation freeze `8c10fdb`, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). Label-matched counts remain unchanged. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
+Re-evaluated **14 November 2026** at optimized mechanism checkpoint `ab48e94`, using default SAST rules and pinned [PySASTBench](https://github.com/Victor725/PySASTBench). Label-matched counts remain unchanged. The tuning corpus contains 120 vulnerable/fixed pairs across six CWEs. One vulnerable label cannot be resolved, leaving **119 scorable vulnerable variants and 120 fixed variants**.
 
 | Measure | Result |
 | --- | ---: |

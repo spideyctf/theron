@@ -1,0 +1,66 @@
+{
+  "records": [
+    {
+      "id": "CVE-2023-32309",
+      "repository": "facelessuser/pymdown-extensions",
+      "static_status": "no_strict_match",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "CVE-2025-53366",
+      "repository": "modelcontextprotocol/python-sdk",
+      "static_status": "no_strict_match",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "CVE-2023-30608",
+      "repository": "andialbrecht/sqlparse",
+      "static_status": "no_strict_match",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "CVE-2025-5120",
+      "repository": "huggingface/smolagents",
+      "static_status": "no_strict_match",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "CVE-2021-28363",
+      "repository": "urllib3/urllib3",
+      "static_status": "cna_cwe_missing",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "CVE-2024-35195",
+      "repository": "psf/requests",
+      "static_status": "no_strict_match",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "CVE-2017-16618",
+      "repository": "tadashi-aikawa/owlmixin",
+      "static_status": "cna_cwe_missing",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "CVE-2024-32977",
+      "repository": "OctoPrint/OctoPrint",
+      "static_status": "no_strict_match",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "CVE-2024-34078",
+      "repository": "matthiask/html-sanitizer",
+      "static_status": "no_strict_match",
+      "runtime_status": "upstream_security_and_functional_pair_verified"
+    },
+    {
+      "id": "CVE-2024-55655",
+      "repository": "sigstore/sigstore-python",
+      "static_status": "no_strict_match",
+      "runtime_status": "not_run"
+    }
+  ],
+  "full_vul4py_acceptance": false,
+  "independent_human_review": false
+}

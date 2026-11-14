@@ -1,0 +1,1545 @@
+{
+  "implementation_revision": "6eb6aee2e554c52a5f7519f0f7b6bed016f56f1a",
+  "records": [
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "files": 2,
+      "units": [
+        {
+          "function": "parse_version",
+          "start_line": 156,
+          "end_line": 185,
+          "path": "pymdownx/__meta__.py"
+        },
+        {
+          "function": "SnippetPreprocessor.__init__",
+          "start_line": 79,
+          "end_line": 95,
+          "path": "pymdownx/snippets.py"
+        },
+        {
+          "function": "SnippetPreprocessor.get_snippet_path",
+          "start_line": 155,
+          "end_line": 174,
+          "path": "pymdownx/snippets.py"
+        },
+        {
+          "function": "SnippetExtension.__init__",
+          "start_line": 365,
+          "end_line": 383,
+          "path": "pymdownx/snippets.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-22"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "files": 2,
+      "units": [
+        {
+          "function": "parse_version",
+          "start_line": 156,
+          "end_line": 185,
+          "path": "pymdownx/__meta__.py"
+        },
+        {
+          "function": "SnippetPreprocessor.__init__",
+          "start_line": 79,
+          "end_line": 96,
+          "path": "pymdownx/snippets.py"
+        },
+        {
+          "function": "SnippetPreprocessor.get_snippet_path",
+          "start_line": 156,
+          "end_line": 179,
+          "path": "pymdownx/snippets.py"
+        },
+        {
+          "function": "SnippetExtension.__init__",
+          "start_line": 370,
+          "end_line": 392,
+          "path": "pymdownx/snippets.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-22"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "files": 1,
+      "units": [
+        {
+          "function": "BaseSession._receive_loop",
+          "start_line": 348,
+          "end_line": 430,
+          "path": "src/mcp/shared/session.py"
+        },
+        {
+          "function": null,
+          "start_line": 15,
+          "end_line": 20,
+          "path": "src/mcp/shared/session.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-248"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "files": 1,
+      "units": [
+        {
+          "function": "BaseSession._receive_loop",
+          "start_line": 349,
+          "end_line": 451,
+          "path": "src/mcp/shared/session.py"
+        },
+        {
+          "function": null,
+          "start_line": 15,
+          "end_line": 21,
+          "path": "src/mcp/shared/session.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-248"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2023-30608",
+      "role": "vulnerable",
+      "files": 1,
+      "units": [
+        {
+          "function": null,
+          "start_line": 59,
+          "end_line": 67,
+          "path": "sqlparse/keywords.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-1333"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2023-30608",
+      "role": "fixed",
+      "files": 1,
+      "units": [
+        {
+          "function": null,
+          "start_line": 59,
+          "end_line": 67,
+          "path": "sqlparse/keywords.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-1333"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "files": 1,
+      "units": [
+        {
+          "function": "PrintContainer.__init__",
+          "start_line": 150,
+          "end_line": 151,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "check_import_authorized",
+          "start_line": 237,
+          "end_line": 245,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_eval",
+          "start_line": 248,
+          "end_line": 285,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_eval._check_return",
+          "start_line": 260,
+          "end_line": 283,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "evaluate_attribute",
+          "start_line": 288,
+          "end_line": 298,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "evaluate_name",
+          "start_line": 817,
+          "end_line": 835,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": null,
+          "start_line": 146,
+          "end_line": 151,
+          "path": "src/smolagents/local_python_executor.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-94"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "files": 1,
+      "units": [
+        {
+          "function": "check_safer_result",
+          "start_line": 149,
+          "end_line": 175,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_eval",
+          "start_line": 178,
+          "end_line": 201,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_eval._check_return",
+          "start_line": 190,
+          "end_line": 199,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_func",
+          "start_line": 204,
+          "end_line": 227,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "safer_func._check_return",
+          "start_line": 222,
+          "end_line": 225,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "PrintContainer.__init__",
+          "start_line": 231,
+          "end_line": 232,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "check_import_authorized",
+          "start_line": 318,
+          "end_line": 326,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "evaluate_attribute",
+          "start_line": 329,
+          "end_line": 339,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": "evaluate_name",
+          "start_line": 858,
+          "end_line": 876,
+          "path": "src/smolagents/local_python_executor.py"
+        },
+        {
+          "function": null,
+          "start_line": 146,
+          "end_line": 232,
+          "path": "src/smolagents/local_python_executor.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-94"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "files": 1,
+      "units": [
+        {
+          "function": "HTTPSConnection._connect_tls_proxy",
+          "start_line": 471,
+          "end_line": 503,
+          "path": "src/urllib3/connection.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [],
+      "strict_cna_cwe_scorable": false,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "files": 1,
+      "units": [
+        {
+          "function": "HTTPSConnection._connect_tls_proxy",
+          "start_line": 471,
+          "end_line": 507,
+          "path": "src/urllib3/connection.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [],
+      "strict_cna_cwe_scorable": false,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-35195",
+      "role": "vulnerable",
+      "files": 1,
+      "units": [
+        {
+          "function": "HTTPAdapter.build_response",
+          "start_line": 293,
+          "end_line": 328,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter.get_connection",
+          "start_line": 330,
+          "end_line": 357,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter.send",
+          "start_line": 436,
+          "end_line": 540,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": null,
+          "start_line": 8,
+          "end_line": 13,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": null,
+          "start_line": 61,
+          "end_line": 72,
+          "path": "src/requests/adapters.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-670"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-35195",
+      "role": "fixed",
+      "files": 1,
+      "units": [
+        {
+          "function": "_urllib3_request_context",
+          "start_line": 75,
+          "end_line": 94,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter.build_response",
+          "start_line": 320,
+          "end_line": 355,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter._get_connection",
+          "start_line": 357,
+          "end_line": 384,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter.get_connection",
+          "start_line": 386,
+          "end_line": 413,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": "HTTPAdapter.send",
+          "start_line": 492,
+          "end_line": 596,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": null,
+          "start_line": 8,
+          "end_line": 14,
+          "path": "src/requests/adapters.py"
+        },
+        {
+          "function": null,
+          "start_line": 62,
+          "end_line": 99,
+          "path": "src/requests/adapters.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-670"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "files": 1,
+      "units": [
+        {
+          "function": "construct_yaml_str",
+          "start_line": 44,
+          "end_line": 45,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_yaml",
+          "start_line": 91,
+          "end_line": 96,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_yamlf",
+          "start_line": 99,
+          "end_line": 106,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_csvf",
+          "start_line": 109,
+          "end_line": 122,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": null,
+          "start_line": 9,
+          "end_line": 15,
+          "path": "owlmixin/util.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [],
+      "strict_cna_cwe_scorable": false,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "files": 1,
+      "units": [
+        {
+          "function": "construct_yaml_str",
+          "start_line": 44,
+          "end_line": 45,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_yaml",
+          "start_line": 90,
+          "end_line": 95,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_yamlf",
+          "start_line": 98,
+          "end_line": 105,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": "load_csvf",
+          "start_line": 108,
+          "end_line": 121,
+          "path": "owlmixin/util.py"
+        },
+        {
+          "function": null,
+          "start_line": 9,
+          "end_line": 15,
+          "path": "owlmixin/util.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [],
+      "strict_cna_cwe_scorable": false,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "files": 12,
+      "units": [
+        {
+          "function": "AppKeysPlugin.on_api_command",
+          "start_line": 347,
+          "end_line": 403,
+          "path": "src/octoprint/plugins/appkeys/__init__.py"
+        },
+        {
+          "function": null,
+          "start_line": 36,
+          "end_line": 41,
+          "path": "src/octoprint/schema/config/access_control.py"
+        },
+        {
+          "function": null,
+          "start_line": 42,
+          "end_line": 49,
+          "path": "src/octoprint/schema/config/server.py"
+        },
+        {
+          "function": "Server.run",
+          "start_line": 298,
+          "end_line": 1382,
+          "path": "src/octoprint/server/__init__.py"
+        },
+        {
+          "function": "login",
+          "start_line": 297,
+          "end_line": 380,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "logout",
+          "start_line": 384,
+          "end_line": 403,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "_test_address",
+          "start_line": 770,
+          "end_line": 798,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": null,
+          "start_line": 38,
+          "end_line": 44,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "getSettings",
+          "start_line": 112,
+          "end_line": 413,
+          "path": "src/octoprint/server/api/settings.py"
+        },
+        {
+          "function": "_saveSettings",
+          "start_line": 520,
+          "end_line": 1242,
+          "path": "src/octoprint/server/api/settings.py"
+        },
+        {
+          "function": "performSystemAction",
+          "start_line": 97,
+          "end_line": 111,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": null,
+          "start_line": 15,
+          "end_line": 21,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": null,
+          "start_line": 96,
+          "end_line": 104,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": "passive_login",
+          "start_line": 664,
+          "end_line": 762,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "require_credentials_checked_recently",
+          "start_line": 1701,
+          "end_line": 1713,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "get_remote_address",
+          "start_line": 1716,
+          "end_line": 1720,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "validate_session_signature",
+          "start_line": 2012,
+          "end_line": 2014,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": null,
+          "start_line": 12,
+          "end_line": 18,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": null,
+          "start_line": 29,
+          "end_line": 34,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "PrinterStateConnection._get_remote_address",
+          "start_line": 181,
+          "end_line": 185,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": "PrinterStateConnection._keep_alive_callback",
+          "start_line": 187,
+          "end_line": 192,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 85,
+          "end_line": 98,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 101,
+          "end_line": 110,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 179,
+          "end_line": 188,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": "fix_json_encode",
+          "start_line": 31,
+          "end_line": 48,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "fix_websocket_check_origin",
+          "start_line": 63,
+          "end_line": 93,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": null,
+          "start_line": 18,
+          "end_line": 23,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": null,
+          "start_line": 26,
+          "end_line": 31,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "login",
+          "start_line": 182,
+          "end_line": 260,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": "reverse_proxy_test",
+          "start_line": 371,
+          "end_line": 386,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": null,
+          "start_line": 369,
+          "end_line": 389,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": "download_file",
+          "start_line": 275,
+          "end_line": 299,
+          "path": "src/octoprint/util/net.py"
+        }
+      ],
+      "alerts": [
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/api/settings.py",
+          "line_number": 73,
+          "code_snippet": "73:     hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "e428590a1e71c67c6f2e06ae",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/api/settings.py",
+              "line_number": 73
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects md5 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/util/sockjs.py",
+          "line_number": 227,
+          "code_snippet": "227:         plugin_hash = hashlib.md5()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "359028408e735f9310e948bb",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/util/sockjs.py",
+              "line_number": 227
+            }
+          ]
+        },
+        {
+          "title": "External input controls a redirect destination",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "External input from line 186 reaches a resolved redirect destination without an observed destination boundary.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 237,
+          "code_snippet": "186:     redirect_url = request.args.get(\"redirect\", default_redirect_url)\n237:         return redirect(redirect_url)",
+          "recommendation": "Use fixed local destinations or validate scheme and host against a trusted allowlist.",
+          "cwe": "CWE-601",
+          "confidence": "high",
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "references": [],
+          "fingerprint": "3a305e487de07cc47e285421",
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-flow",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 186
+            },
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 237
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 558,
+          "code_snippet": "558:             hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "3f5ad1317742a3001c2bac30",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 558
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 1677,
+          "code_snippet": "1677:     hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "409f5a3485d467db6a64fd46",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 1677
+            }
+          ]
+        }
+      ],
+      "cna_cwes": [
+        "CWE-290"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [
+        {
+          "title": "External input controls a redirect destination",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "External input from line 186 reaches a resolved redirect destination without an observed destination boundary.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 237,
+          "code_snippet": "186:     redirect_url = request.args.get(\"redirect\", default_redirect_url)\n237:         return redirect(redirect_url)",
+          "recommendation": "Use fixed local destinations or validate scheme and host against a trusted allowlist.",
+          "cwe": "CWE-601",
+          "confidence": "high",
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "references": [],
+          "fingerprint": "3a305e487de07cc47e285421",
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-flow",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 186
+            },
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 237
+            }
+          ]
+        }
+      ],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "files": 12,
+      "units": [
+        {
+          "function": "AppKeysPlugin.on_api_command",
+          "start_line": 347,
+          "end_line": 399,
+          "path": "src/octoprint/plugins/appkeys/__init__.py"
+        },
+        {
+          "function": null,
+          "start_line": 36,
+          "end_line": 44,
+          "path": "src/octoprint/schema/config/access_control.py"
+        },
+        {
+          "function": null,
+          "start_line": 42,
+          "end_line": 49,
+          "path": "src/octoprint/schema/config/server.py"
+        },
+        {
+          "function": "Server.run",
+          "start_line": 298,
+          "end_line": 1383,
+          "path": "src/octoprint/server/__init__.py"
+        },
+        {
+          "function": "login",
+          "start_line": 296,
+          "end_line": 379,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "logout",
+          "start_line": 383,
+          "end_line": 402,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "_test_address",
+          "start_line": 769,
+          "end_line": 797,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": null,
+          "start_line": 38,
+          "end_line": 43,
+          "path": "src/octoprint/server/api/__init__.py"
+        },
+        {
+          "function": "getSettings",
+          "start_line": 112,
+          "end_line": 423,
+          "path": "src/octoprint/server/api/settings.py"
+        },
+        {
+          "function": "_saveSettings",
+          "start_line": 530,
+          "end_line": 1259,
+          "path": "src/octoprint/server/api/settings.py"
+        },
+        {
+          "function": "performSystemAction",
+          "start_line": 97,
+          "end_line": 109,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": null,
+          "start_line": 15,
+          "end_line": 21,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": null,
+          "start_line": 96,
+          "end_line": 102,
+          "path": "src/octoprint/server/api/system.py"
+        },
+        {
+          "function": "passive_login",
+          "start_line": 665,
+          "end_line": 763,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "require_credentials_checked_recently",
+          "start_line": 1702,
+          "end_line": 1714,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "get_remote_address",
+          "start_line": 1721,
+          "end_line": 1722,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "validate_session_signature",
+          "start_line": 2014,
+          "end_line": 2016,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "get_reverse_proxy_info",
+          "start_line": 2033,
+          "end_line": 2063,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": null,
+          "start_line": 12,
+          "end_line": 18,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": null,
+          "start_line": 29,
+          "end_line": 35,
+          "path": "src/octoprint/server/util/flask.py"
+        },
+        {
+          "function": "PrinterStateConnection._get_remote_address",
+          "start_line": 183,
+          "end_line": 192,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": "PrinterStateConnection._keep_alive_callback",
+          "start_line": 194,
+          "end_line": 199,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 85,
+          "end_line": 98,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 101,
+          "end_line": 112,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": null,
+          "start_line": 181,
+          "end_line": 195,
+          "path": "src/octoprint/server/util/sockjs.py"
+        },
+        {
+          "function": "fix_json_encode",
+          "start_line": 33,
+          "end_line": 50,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "fix_websocket_check_origin",
+          "start_line": 65,
+          "end_line": 95,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "fix_tornado_xheader_handling",
+          "start_line": 98,
+          "end_line": 125,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "fix_tornado_xheader_handling.patched_apply_xheaders",
+          "start_line": 105,
+          "end_line": 121,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": null,
+          "start_line": 18,
+          "end_line": 24,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": null,
+          "start_line": 27,
+          "end_line": 33,
+          "path": "src/octoprint/server/util/tornado.py"
+        },
+        {
+          "function": "login",
+          "start_line": 182,
+          "end_line": 261,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": "reverse_proxy_test",
+          "start_line": 372,
+          "end_line": 392,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": null,
+          "start_line": 370,
+          "end_line": 395,
+          "path": "src/octoprint/server/views.py"
+        },
+        {
+          "function": "download_file",
+          "start_line": 275,
+          "end_line": 299,
+          "path": "src/octoprint/util/net.py"
+        },
+        {
+          "function": "get_http_client_ip",
+          "start_line": 302,
+          "end_line": 322,
+          "path": "src/octoprint/util/net.py"
+        }
+      ],
+      "alerts": [
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/api/settings.py",
+          "line_number": 73,
+          "code_snippet": "73:     hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "e428590a1e71c67c6f2e06ae",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/api/settings.py",
+              "line_number": 73
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects md5 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/util/sockjs.py",
+          "line_number": 234,
+          "code_snippet": "234:         plugin_hash = hashlib.md5()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "d586bba55cf42ea9e69f2657",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/util/sockjs.py",
+              "line_number": 234
+            }
+          ]
+        },
+        {
+          "title": "External input controls a redirect destination",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "External input from line 186 reaches a resolved redirect destination without an observed destination boundary.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 238,
+          "code_snippet": "186:     redirect_url = request.args.get(\"redirect\", default_redirect_url)\n238:         return redirect(redirect_url)",
+          "recommendation": "Use fixed local destinations or validate scheme and host against a trusted allowlist.",
+          "cwe": "CWE-601",
+          "confidence": "high",
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "references": [],
+          "fingerprint": "eb2d0012656a96827629f981",
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-flow",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 186
+            },
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 238
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 564,
+          "code_snippet": "564:             hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "4314c55304eb78bf39c87197",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 564
+            }
+          ]
+        },
+        {
+          "title": "Weak hash selected; security use unverified",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "A resolved hashlib call selects sha1 without usedforsecurity=False. Security impact depends on its use; this is not proof of an exploitable collision.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 1683,
+          "code_snippet": "1683:     hash = hashlib.sha1()",
+          "recommendation": "Use a modern hash for integrity and a password KDF for passwords; declare non-security checksum usage explicitly.",
+          "cwe": "CWE-328",
+          "confidence": "medium",
+          "rule_id": "PY-SAST-HASH-001",
+          "references": [],
+          "fingerprint": "65d781aee18ecf7e6b06fac5",
+          "maturity": "advisory",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-configuration",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 1683
+            }
+          ]
+        }
+      ],
+      "cna_cwes": [
+        "CWE-290"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [
+        {
+          "title": "External input controls a redirect destination",
+          "severity": "MEDIUM",
+          "category": "sast",
+          "module": "sast",
+          "description": "External input from line 186 reaches a resolved redirect destination without an observed destination boundary.",
+          "file_path": "src/octoprint/server/views.py",
+          "line_number": 238,
+          "code_snippet": "186:     redirect_url = request.args.get(\"redirect\", default_redirect_url)\n238:         return redirect(redirect_url)",
+          "recommendation": "Use fixed local destinations or validate scheme and host against a trusted allowlist.",
+          "cwe": "CWE-601",
+          "confidence": "high",
+          "rule_id": "PY-SAST-REDIRECT-001",
+          "references": [],
+          "fingerprint": "eb2d0012656a96827629f981",
+          "maturity": "stable",
+          "status": "new",
+          "scope": "application",
+          "evidence_kind": "static-flow",
+          "aliases": [],
+          "severity_source": "rule",
+          "trace": [
+            {
+              "role": "source",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 186
+            },
+            {
+              "role": "sink",
+              "file_path": "src/octoprint/server/views.py",
+              "line_number": 238
+            }
+          ]
+        }
+      ],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-34078",
+      "role": "vulnerable",
+      "files": 1,
+      "units": [
+        {
+          "function": "Sanitizer.sanitize",
+          "start_line": 244,
+          "end_line": 429,
+          "path": "html_sanitizer/sanitizer.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-79"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-34078",
+      "role": "fixed",
+      "files": 1,
+      "units": [
+        {
+          "function": "Sanitizer.sanitize",
+          "start_line": 244,
+          "end_line": 429,
+          "path": "html_sanitizer/sanitizer.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-79"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "files": 2,
+      "units": [
+        {
+          "function": "Bundle._verify",
+          "start_line": 447,
+          "end_line": 546,
+          "path": "sigstore/models.py"
+        },
+        {
+          "function": "Verifier._establish_time",
+          "start_line": 198,
+          "end_line": 237,
+          "path": "sigstore/verify/verifier.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-20",
+        "CWE-325"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "files": 2,
+      "units": [
+        {
+          "function": "Bundle._verify",
+          "start_line": 447,
+          "end_line": 557,
+          "path": "sigstore/models.py"
+        },
+        {
+          "function": "Verifier._establish_time",
+          "start_line": 198,
+          "end_line": 242,
+          "path": "sigstore/verify/verifier.py"
+        }
+      ],
+      "alerts": [],
+      "cna_cwes": [
+        "CWE-20",
+        "CWE-325"
+      ],
+      "strict_cna_cwe_scorable": true,
+      "strict_cna_cwe_unit_matches": [],
+      "all_alerts_in_repair_units": [],
+      "unit_errors": [],
+      "scanner_errors": []
+    }
+  ],
+  "summary": {
+    "cases": 10,
+    "snapshots": 20,
+    "source_files": 46,
+    "strict_cna_cwe_vulnerable_match_cases": [],
+    "strict_cna_cwe_patched_match_cases": [],
+    "strict_cna_cwe_unscorable_cases": [
+      "CVE-2017-16618",
+      "CVE-2021-28363"
+    ],
+    "alerts": 10,
+    "scanner_errors": 0,
+    "unit_errors": 0
+  },
+  "runtime_attempts": [
+    {
+      "id": "CVE-2023-32309",
+      "repository": "facelessuser/pymdown-extensions",
+      "runtime_status": "not_run",
+      "reason": "Changed test files retained; full upstream dependency/service environment and paired functional/exploit oracles not locally verified."
+    },
+    {
+      "id": "CVE-2025-53366",
+      "repository": "modelcontextprotocol/python-sdk",
+      "runtime_status": "not_run",
+      "reason": "Changed test files retained; full upstream dependency/service environment and paired functional/exploit oracles not locally verified."
+    },
+    {
+      "id": "CVE-2023-30608",
+      "repository": "andialbrecht/sqlparse",
+      "runtime_status": "not_run",
+      "reason": "Changed test files retained; full upstream dependency/service environment and paired functional/exploit oracles not locally verified."
+    },
+    {
+      "id": "CVE-2025-5120",
+      "repository": "huggingface/smolagents",
+      "runtime_status": "not_run",
+      "reason": "Changed test files retained; full upstream dependency/service environment and paired functional/exploit oracles not locally verified."
+    },
+    {
+      "id": "CVE-2021-28363",
+      "repository": "urllib3/urllib3",
+      "runtime_status": "not_run",
+      "reason": "Changed test files retained; full upstream dependency/service environment and paired functional/exploit oracles not locally verified."
+    },
+    {
+      "id": "CVE-2024-35195",
+      "repository": "psf/requests",
+      "runtime_status": "not_run",
+      "reason": "Changed test files retained; full upstream dependency/service environment and paired functional/exploit oracles not locally verified."
+    },
+    {
+      "id": "CVE-2017-16618",
+      "repository": "tadashi-aikawa/owlmixin",
+      "runtime_status": "not_run",
+      "reason": "Changed test files retained; full upstream dependency/service environment and paired functional/exploit oracles not locally verified."
+    },
+    {
+      "id": "CVE-2024-32977",
+      "repository": "OctoPrint/OctoPrint",
+      "runtime_status": "not_run",
+      "reason": "Changed test files retained; full upstream dependency/service environment and paired functional/exploit oracles not locally verified."
+    },
+    {
+      "id": "CVE-2024-34078",
+      "repository": "matthiask/html-sanitizer",
+      "runtime_status": "not_run",
+      "reason": "Changed test files retained; full upstream dependency/service environment and paired functional/exploit oracles not locally verified."
+    },
+    {
+      "id": "CVE-2024-55655",
+      "repository": "sigstore/sigstore-python",
+      "runtime_status": "not_run",
+      "reason": "Changed test files retained; full upstream dependency/service environment and paired functional/exploit oracles not locally verified."
+    }
+  ],
+  "independent_label_origin": "External Vul4Py fix metadata and CVE CNA records; source-location proxy derived by Theron authors",
+  "independent_human_adjudication": false,
+  "upstream_oracles_locally_verified": false,
+  "interpretation": "Frozen ten-project changed-file pilot selected before source inspection. Function/hunk+CWE proxy only, not independently adjudicated recall/precision. Missing full-repository context and all not-run runtime oracles retained. No source tuning after exposure."
+}

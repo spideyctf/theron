@@ -1,0 +1,1721 @@
+{
+  "errors": [],
+  "generated_at": "2026-11-14T06:06:48Z",
+  "metrics": {
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2017-16618\\fixed\\owlmixin\\util.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 161,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2017-16618\\vulnerable\\owlmixin\\util.py": {
+      "CONFIDENCE.HIGH": 3,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 3,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 162,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2021-28363\\fixed\\src\\urllib3\\connection.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 400,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2021-28363\\vulnerable\\src\\urllib3\\connection.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 399,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2023-30608\\fixed\\sqlparse\\keywords.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 855,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2023-30608\\vulnerable\\sqlparse\\keywords.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 855,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2023-32309\\fixed\\pymdownx\\__meta__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 139,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2023-32309\\fixed\\pymdownx\\snippets.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 294,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2023-32309\\vulnerable\\pymdownx\\__meta__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 139,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2023-32309\\vulnerable\\pymdownx\\snippets.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 286,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\plugins\\appkeys\\__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 487,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\schema\\config\\access_control.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 39,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\schema\\config\\server.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 139,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\__init__.py": {
+      "CONFIDENCE.HIGH": 2,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 2299,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\api\\__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 628,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\api\\settings.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 1,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1148,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\api\\system.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 1,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 300,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\flask.py": {
+      "CONFIDENCE.HIGH": 6,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 5,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1508,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\sockjs.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 1,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 642,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\tornado.py": {
+      "CONFIDENCE.HIGH": 2,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1493,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\views.py": {
+      "CONFIDENCE.HIGH": 3,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 2,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1497,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\util\\net.py": {
+      "CONFIDENCE.HIGH": 5,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 5,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 238,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\plugins\\appkeys\\__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 490,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\schema\\config\\access_control.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 37,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\schema\\config\\server.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 139,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\__init__.py": {
+      "CONFIDENCE.HIGH": 2,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 2298,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\api\\__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 629,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\api\\settings.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 1,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1133,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\api\\system.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 1,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 302,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\flask.py": {
+      "CONFIDENCE.HIGH": 6,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 5,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1468,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\sockjs.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 1,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 637,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\tornado.py": {
+      "CONFIDENCE.HIGH": 2,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1471,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\views.py": {
+      "CONFIDENCE.HIGH": 3,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 2,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1492,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\util\\net.py": {
+      "CONFIDENCE.HIGH": 5,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 5,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 219,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-34078\\fixed\\html_sanitizer\\sanitizer.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 329,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-34078\\vulnerable\\html_sanitizer\\sanitizer.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 329,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-35195\\fixed\\src\\requests\\adapters.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 480,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-35195\\vulnerable\\src\\requests\\adapters.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 434,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-55655\\fixed\\sigstore\\models.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 510,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-55655\\fixed\\sigstore\\verify\\verifier.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 343,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-55655\\vulnerable\\sigstore\\models.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 503,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-55655\\vulnerable\\sigstore\\verify\\verifier.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 341,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2025-5120\\fixed\\src\\smolagents\\local_python_executor.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1346,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2025-5120\\vulnerable\\src\\smolagents\\local_python_executor.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1315,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2025-53366\\fixed\\src\\mcp\\shared\\session.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 1,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 418,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2025-53366\\vulnerable\\src\\mcp\\shared\\session.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 1,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 398,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "_totals": {
+      "CONFIDENCE.HIGH": 48,
+      "CONFIDENCE.LOW": 2,
+      "CONFIDENCE.MEDIUM": 4,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 8,
+      "SEVERITY.LOW": 34,
+      "SEVERITY.MEDIUM": 12,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 31169,
+      "nosec": 0,
+      "skipped_tests": 0
+    }
+  },
+  "results": [
+    {
+      "code": "128     \"\"\"\n129     return json.loads(urlopen(url).read())\n130 \n",
+      "col_offset": 22,
+      "end_col_offset": 34,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2017-16618\\fixed\\owlmixin\\util.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 22,
+        "link": "https://cwe.mitre.org/data/definitions/22.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.",
+      "line_number": 129,
+      "line_range": [
+        129
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen",
+      "test_id": "B310",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "95     \"\"\"\n96     return yaml.load(yaml_str)\n97 \n",
+      "col_offset": 11,
+      "end_col_offset": 30,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2017-16618\\vulnerable\\owlmixin\\util.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 20,
+        "link": "https://cwe.mitre.org/data/definitions/20.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().",
+      "line_number": 96,
+      "line_range": [
+        96
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b506_yaml_load.html",
+      "test_id": "B506",
+      "test_name": "yaml_load"
+    },
+    {
+      "code": "105     with codecs.open(fpath, encoding=encoding) as f:\n106         return yaml.load(f)\n107 \n",
+      "col_offset": 15,
+      "end_col_offset": 27,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2017-16618\\vulnerable\\owlmixin\\util.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 20,
+        "link": "https://cwe.mitre.org/data/definitions/20.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().",
+      "line_number": 106,
+      "line_range": [
+        106
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b506_yaml_load.html",
+      "test_id": "B506",
+      "test_name": "yaml_load"
+    },
+    {
+      "code": "129     \"\"\"\n130     return json.loads(urlopen(url).read())\n131 \n",
+      "col_offset": 22,
+      "end_col_offset": 34,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2017-16618\\vulnerable\\owlmixin\\util.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 22,
+        "link": "https://cwe.mitre.org/data/definitions/22.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.",
+      "line_number": 130,
+      "line_range": [
+        130
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen",
+      "test_id": "B310",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "190         timeout = None if self.url_timeout == 0 else self.url_timeout\n191         with urllib.request.urlopen(http_request, timeout=timeout) as response:\n192 \n",
+      "col_offset": 13,
+      "end_col_offset": 66,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2023-32309\\fixed\\pymdownx\\snippets.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 22,
+        "link": "https://cwe.mitre.org/data/definitions/22.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.",
+      "line_number": 191,
+      "line_range": [
+        191
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen",
+      "test_id": "B310",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "185         timeout = None if self.url_timeout == 0 else self.url_timeout\n186         with urllib.request.urlopen(http_request, timeout=timeout) as response:\n187 \n",
+      "col_offset": 13,
+      "end_col_offset": 66,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2023-32309\\vulnerable\\pymdownx\\snippets.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 22,
+        "link": "https://cwe.mitre.org/data/definitions/22.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.",
+      "line_number": 186,
+      "line_range": [
+        186
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen",
+      "test_id": "B310",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "359                 else:\n360                     host = \"0.0.0.0\"\n361 \n",
+      "col_offset": 27,
+      "end_col_offset": 36,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\__init__.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 605,
+        "link": "https://cwe.mitre.org/data/definitions/605.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible binding to all interfaces.",
+      "line_number": 360,
+      "line_range": [
+        360
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b104_hardcoded_bind_all_interfaces.html",
+      "test_id": "B104",
+      "test_name": "hardcoded_bind_all_interfaces"
+    },
+    {
+      "code": "1453                     l10n_canonicalized.append(str(Locale.parse(x)))\n1454                 except Exception:\n1455                     # invalid language code, ignore\n1456                     continue\n1457             return Locale.negotiate(l10n_canonicalized, LANGUAGES)\n",
+      "col_offset": 16,
+      "end_col_offset": 28,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\__init__.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Continue detected.",
+      "line_number": 1454,
+      "line_range": [
+        1454,
+        1455,
+        1456
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html",
+      "test_id": "B112",
+      "test_name": "try_except_continue"
+    },
+    {
+      "code": "1508             chars = string.ascii_lowercase + string.ascii_uppercase + string.digits\n1509             secret_key = \"\".join(choice(chars) for _ in range(32))\n1510             s.set([\"server\", \"secretKey\"], secret_key)\n",
+      "col_offset": 33,
+      "end_col_offset": 46,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\__init__.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 330,
+        "link": "https://cwe.mitre.org/data/definitions/330.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+      "line_number": 1509,
+      "line_range": [
+        1509
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random",
+      "test_id": "B311",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "72 \n73     hash = hashlib.sha1()\n74 \n",
+      "col_offset": 11,
+      "end_col_offset": 25,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\api\\settings.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 327,
+        "link": "https://cwe.mitre.org/data/definitions/327.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Use of weak SHA1 hash for security. Consider usedforsecurity=False",
+      "line_number": 73,
+      "line_range": [
+        73
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+      "test_id": "B324",
+      "test_name": "hashlib"
+    },
+    {
+      "code": "185             return_code, stdout_lines, stderr_lines = CommandlineCaller().call(\n186                 command_spec[\"command\"], shell=True\n187             )\n188 \n189             if not do_ignore and return_code != 0:\n",
+      "col_offset": 54,
+      "end_col_offset": 13,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\api\\system.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Function call with shell=True parameter identified, possible security issue.",
+      "line_number": 186,
+      "line_range": [
+        185,
+        186,
+        187
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b604_any_other_function_with_shell_equals_true.html",
+      "test_id": "B604",
+      "test_name": "any_other_function_with_shell_equals_true"
+    },
+    {
+      "code": "446         return encode_cookie(f\"{name}|{timestamp}\", key=remember_key)\n447     except Exception:\n448         pass\n449 \n",
+      "col_offset": 4,
+      "end_col_offset": 12,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 447,
+      "line_range": [
+        447,
+        448
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "473                     return encode_cookie(name)\n474         except Exception:\n475             pass\n476 \n",
+      "col_offset": 8,
+      "end_col_offset": 16,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 474,
+      "line_range": [
+        474,
+        475
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "821     def get(self, key):\n822         import pickle\n823 \n",
+      "col_offset": 8,
+      "end_col_offset": 21,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 502,
+        "link": "https://cwe.mitre.org/data/definitions/502.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Consider possible security implications associated with pickle module.",
+      "line_number": 822,
+      "line_range": [
+        822
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle",
+      "test_id": "B403",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "827         if expires is None or expires > now:\n828             return pickle.loads(value)\n829 \n",
+      "col_offset": 19,
+      "end_col_offset": 38,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 502,
+        "link": "https://cwe.mitre.org/data/definitions/502.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.",
+      "line_number": 828,
+      "line_range": [
+        828
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle",
+      "test_id": "B301",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "830     def set(self, key, value, timeout=None):\n831         import pickle\n832 \n",
+      "col_offset": 8,
+      "end_col_offset": 21,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 502,
+        "link": "https://cwe.mitre.org/data/definitions/502.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Consider possible security implications associated with pickle module.",
+      "line_number": 831,
+      "line_range": [
+        831
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle",
+      "test_id": "B403",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "1065     def clean_all_data(self, cleanup_function):\n1066         assert callable(cleanup_function)\n1067 \n",
+      "col_offset": 8,
+      "end_col_offset": 41,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 1066,
+      "line_range": [
+        1066
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "233 \n234         plugin_hash = hashlib.md5()\n235         plugin_hash.update(\",\".join(ui_plugins).encode(\"utf-8\"))\n",
+      "col_offset": 22,
+      "end_col_offset": 35,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\sockjs.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 327,
+        "link": "https://cwe.mitre.org/data/definitions/327.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Use of weak MD5 hash for security. Consider usedforsecurity=False",
+      "line_number": 234,
+      "line_range": [
+        234
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+      "test_id": "B324",
+      "test_name": "hashlib"
+    },
+    {
+      "code": "821                 header_obj.add(key, value)\n822             assert request.connection is not None\n823             request.connection.write_headers(start_line, header_obj, chunk=body)\n",
+      "col_offset": 12,
+      "end_col_offset": 49,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\tornado.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 822,
+      "line_range": [
+        822
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "1260         else:\n1261             assert self.request.method == \"HEAD\"\n1262 \n",
+      "col_offset": 12,
+      "end_col_offset": 48,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\util\\tornado.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 1261,
+      "line_range": [
+        1261
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "204         allowed_paths += [\n205             url_for(\"plugin.appkeys.handle_auth_dialog\", app_token=\"*\"),\n206         ]\n",
+      "col_offset": 12,
+      "end_col_offset": 71,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\views.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 259,
+        "link": "https://cwe.mitre.org/data/definitions/259.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Possible hardcoded password: '*'",
+      "line_number": 205,
+      "line_range": [
+        205
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b106_hardcoded_password_funcarg.html",
+      "test_id": "B106",
+      "test_name": "hardcoded_password_funcarg"
+    },
+    {
+      "code": "563 \n564             hash = hashlib.sha1()\n565 \n",
+      "col_offset": 19,
+      "end_col_offset": 33,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\views.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 327,
+        "link": "https://cwe.mitre.org/data/definitions/327.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Use of weak SHA1 hash for security. Consider usedforsecurity=False",
+      "line_number": 564,
+      "line_range": [
+        564
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+      "test_id": "B324",
+      "test_name": "hashlib"
+    },
+    {
+      "code": "1682 \n1683     hash = hashlib.sha1()\n1684 \n",
+      "col_offset": 11,
+      "end_col_offset": 25,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\views.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 327,
+        "link": "https://cwe.mitre.org/data/definitions/327.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Use of weak SHA1 hash for security. Consider usedforsecurity=False",
+      "line_number": 1683,
+      "line_range": [
+        1683
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+      "test_id": "B324",
+      "test_name": "hashlib"
+    },
+    {
+      "code": "1712                 max_timestamp = s.st_mtime\n1713         except Exception:\n1714             # path does not exist.\n1715             continue\n1716 \n",
+      "col_offset": 8,
+      "end_col_offset": 20,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\server\\views.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Continue detected.",
+      "line_number": 1713,
+      "line_range": [
+        1713,
+        1714,
+        1715
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html",
+      "test_id": "B112",
+      "test_name": "try_except_continue"
+    },
+    {
+      "code": "196             ifaddresses = netifaces.ifaddresses(interface)\n197         except Exception:\n198             continue\n199         if family in ifaddresses:\n",
+      "col_offset": 8,
+      "end_col_offset": 20,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\util\\net.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Continue detected.",
+      "line_number": 197,
+      "line_range": [
+        197,
+        198
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html",
+      "test_id": "B112",
+      "test_name": "try_except_continue"
+    },
+    {
+      "code": "219                 return address\n220         except Exception:\n221             continue\n222 \n",
+      "col_offset": 8,
+      "end_col_offset": 20,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\util\\net.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Continue detected.",
+      "line_number": 220,
+      "line_range": [
+        220,
+        221
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html",
+      "test_id": "B112",
+      "test_name": "try_except_continue"
+    },
+    {
+      "code": "258             return True\n259         except Exception:\n260             pass\n261     return False\n",
+      "col_offset": 8,
+      "end_col_offset": 16,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\util\\net.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 259,
+      "line_range": [
+        259,
+        260
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "288         filename = secure_filename(filename)\n289         assert len(filename) > 0\n290 \n",
+      "col_offset": 8,
+      "end_col_offset": 32,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\util\\net.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 289,
+      "line_range": [
+        289
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "293         path = os.path.abspath(os.path.join(folder, filename))\n294         assert path.startswith(folder)\n295 \n",
+      "col_offset": 8,
+      "end_col_offset": 38,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\fixed\\src\\octoprint\\util\\net.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 294,
+      "line_range": [
+        294
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "359                 else:\n360                     host = \"0.0.0.0\"\n361 \n",
+      "col_offset": 27,
+      "end_col_offset": 36,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\__init__.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 605,
+        "link": "https://cwe.mitre.org/data/definitions/605.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible binding to all interfaces.",
+      "line_number": 360,
+      "line_range": [
+        360
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b104_hardcoded_bind_all_interfaces.html",
+      "test_id": "B104",
+      "test_name": "hardcoded_bind_all_interfaces"
+    },
+    {
+      "code": "1452                     l10n_canonicalized.append(str(Locale.parse(x)))\n1453                 except Exception:\n1454                     # invalid language code, ignore\n1455                     continue\n1456             return Locale.negotiate(l10n_canonicalized, LANGUAGES)\n",
+      "col_offset": 16,
+      "end_col_offset": 28,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\__init__.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Continue detected.",
+      "line_number": 1453,
+      "line_range": [
+        1453,
+        1454,
+        1455
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html",
+      "test_id": "B112",
+      "test_name": "try_except_continue"
+    },
+    {
+      "code": "1507             chars = string.ascii_lowercase + string.ascii_uppercase + string.digits\n1508             secret_key = \"\".join(choice(chars) for _ in range(32))\n1509             s.set([\"server\", \"secretKey\"], secret_key)\n",
+      "col_offset": 33,
+      "end_col_offset": 46,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\__init__.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 330,
+        "link": "https://cwe.mitre.org/data/definitions/330.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+      "line_number": 1508,
+      "line_range": [
+        1508
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random",
+      "test_id": "B311",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "72 \n73     hash = hashlib.sha1()\n74 \n",
+      "col_offset": 11,
+      "end_col_offset": 25,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\api\\settings.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 327,
+        "link": "https://cwe.mitre.org/data/definitions/327.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Use of weak SHA1 hash for security. Consider usedforsecurity=False",
+      "line_number": 73,
+      "line_range": [
+        73
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+      "test_id": "B324",
+      "test_name": "hashlib"
+    },
+    {
+      "code": "187             return_code, stdout_lines, stderr_lines = CommandlineCaller().call(\n188                 command_spec[\"command\"], shell=True\n189             )\n190 \n191             if not do_ignore and return_code != 0:\n",
+      "col_offset": 54,
+      "end_col_offset": 13,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\api\\system.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Function call with shell=True parameter identified, possible security issue.",
+      "line_number": 188,
+      "line_range": [
+        187,
+        188,
+        189
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b604_any_other_function_with_shell_equals_true.html",
+      "test_id": "B604",
+      "test_name": "any_other_function_with_shell_equals_true"
+    },
+    {
+      "code": "445         return encode_cookie(f\"{name}|{timestamp}\", key=remember_key)\n446     except Exception:\n447         pass\n448 \n",
+      "col_offset": 4,
+      "end_col_offset": 12,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 446,
+      "line_range": [
+        446,
+        447
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "472                     return encode_cookie(name)\n473         except Exception:\n474             pass\n475 \n",
+      "col_offset": 8,
+      "end_col_offset": 16,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 473,
+      "line_range": [
+        473,
+        474
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "820     def get(self, key):\n821         import pickle\n822 \n",
+      "col_offset": 8,
+      "end_col_offset": 21,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 502,
+        "link": "https://cwe.mitre.org/data/definitions/502.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Consider possible security implications associated with pickle module.",
+      "line_number": 821,
+      "line_range": [
+        821
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle",
+      "test_id": "B403",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "826         if expires is None or expires > now:\n827             return pickle.loads(value)\n828 \n",
+      "col_offset": 19,
+      "end_col_offset": 38,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 502,
+        "link": "https://cwe.mitre.org/data/definitions/502.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.",
+      "line_number": 827,
+      "line_range": [
+        827
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle",
+      "test_id": "B301",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "829     def set(self, key, value, timeout=None):\n830         import pickle\n831 \n",
+      "col_offset": 8,
+      "end_col_offset": 21,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 502,
+        "link": "https://cwe.mitre.org/data/definitions/502.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Consider possible security implications associated with pickle module.",
+      "line_number": 830,
+      "line_range": [
+        830
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle",
+      "test_id": "B403",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "1064     def clean_all_data(self, cleanup_function):\n1065         assert callable(cleanup_function)\n1066 \n",
+      "col_offset": 8,
+      "end_col_offset": 41,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\flask.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 1065,
+      "line_range": [
+        1065
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "226 \n227         plugin_hash = hashlib.md5()\n228         plugin_hash.update(\",\".join(ui_plugins).encode(\"utf-8\"))\n",
+      "col_offset": 22,
+      "end_col_offset": 35,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\sockjs.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 327,
+        "link": "https://cwe.mitre.org/data/definitions/327.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Use of weak MD5 hash for security. Consider usedforsecurity=False",
+      "line_number": 227,
+      "line_range": [
+        227
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+      "test_id": "B324",
+      "test_name": "hashlib"
+    },
+    {
+      "code": "789                 header_obj.add(key, value)\n790             assert request.connection is not None\n791             request.connection.write_headers(start_line, header_obj, chunk=body)\n",
+      "col_offset": 12,
+      "end_col_offset": 49,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\tornado.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 790,
+      "line_range": [
+        790
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "1228         else:\n1229             assert self.request.method == \"HEAD\"\n1230 \n",
+      "col_offset": 12,
+      "end_col_offset": 48,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\util\\tornado.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 1229,
+      "line_range": [
+        1229
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "203         allowed_paths += [\n204             url_for(\"plugin.appkeys.handle_auth_dialog\", app_token=\"*\"),\n205         ]\n",
+      "col_offset": 12,
+      "end_col_offset": 71,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\views.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 259,
+        "link": "https://cwe.mitre.org/data/definitions/259.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Possible hardcoded password: '*'",
+      "line_number": 204,
+      "line_range": [
+        204
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b106_hardcoded_password_funcarg.html",
+      "test_id": "B106",
+      "test_name": "hardcoded_password_funcarg"
+    },
+    {
+      "code": "557 \n558             hash = hashlib.sha1()\n559 \n",
+      "col_offset": 19,
+      "end_col_offset": 33,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\views.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 327,
+        "link": "https://cwe.mitre.org/data/definitions/327.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Use of weak SHA1 hash for security. Consider usedforsecurity=False",
+      "line_number": 558,
+      "line_range": [
+        558
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+      "test_id": "B324",
+      "test_name": "hashlib"
+    },
+    {
+      "code": "1676 \n1677     hash = hashlib.sha1()\n1678 \n",
+      "col_offset": 11,
+      "end_col_offset": 25,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\views.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 327,
+        "link": "https://cwe.mitre.org/data/definitions/327.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Use of weak SHA1 hash for security. Consider usedforsecurity=False",
+      "line_number": 1677,
+      "line_range": [
+        1677
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+      "test_id": "B324",
+      "test_name": "hashlib"
+    },
+    {
+      "code": "1706                 max_timestamp = s.st_mtime\n1707         except Exception:\n1708             # path does not exist.\n1709             continue\n1710 \n",
+      "col_offset": 8,
+      "end_col_offset": 20,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\server\\views.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Continue detected.",
+      "line_number": 1707,
+      "line_range": [
+        1707,
+        1708,
+        1709
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html",
+      "test_id": "B112",
+      "test_name": "try_except_continue"
+    },
+    {
+      "code": "196             ifaddresses = netifaces.ifaddresses(interface)\n197         except Exception:\n198             continue\n199         if family in ifaddresses:\n",
+      "col_offset": 8,
+      "end_col_offset": 20,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\util\\net.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Continue detected.",
+      "line_number": 197,
+      "line_range": [
+        197,
+        198
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html",
+      "test_id": "B112",
+      "test_name": "try_except_continue"
+    },
+    {
+      "code": "219                 return address\n220         except Exception:\n221             continue\n222 \n",
+      "col_offset": 8,
+      "end_col_offset": 20,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\util\\net.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Continue detected.",
+      "line_number": 220,
+      "line_range": [
+        220,
+        221
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html",
+      "test_id": "B112",
+      "test_name": "try_except_continue"
+    },
+    {
+      "code": "258             return True\n259         except Exception:\n260             pass\n261     return False\n",
+      "col_offset": 8,
+      "end_col_offset": 16,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\util\\net.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 259,
+      "line_range": [
+        259,
+        260
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "288         filename = secure_filename(filename)\n289         assert len(filename) > 0\n290 \n",
+      "col_offset": 8,
+      "end_col_offset": 32,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\util\\net.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 289,
+      "line_range": [
+        289
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "293         path = os.path.abspath(os.path.join(folder, filename))\n294         assert path.startswith(folder)\n295 \n",
+      "col_offset": 8,
+      "end_col_offset": 38,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2024-32977\\vulnerable\\src\\octoprint\\util\\net.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 294,
+      "line_range": [
+        294
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "129             raise RuntimeError(\"RequestResponder must be used as a context manager\")\n130         assert not self._completed, \"Request already responded to\"\n131 \n",
+      "col_offset": 8,
+      "end_col_offset": 66,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2025-53366\\fixed\\src\\mcp\\shared\\session.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 130,
+      "line_range": [
+        130
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "128             raise RuntimeError(\"RequestResponder must be used as a context manager\")\n129         assert not self._completed, \"Request already responded to\"\n130 \n",
+      "col_offset": 8,
+      "end_col_offset": 66,
+      "filename": "D:\\TheLobe\\sem7\\theron\\.benchmark-cache\\vul4py-baselines\\sources\\CVE-2025-53366\\vulnerable\\src\\mcp\\shared\\session.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 129,
+      "line_range": [
+        129
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    }
+  ]
+}

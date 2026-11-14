@@ -10,6 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'docs/evaluation/obligations-2026-11-14'
 CACHE=ROOT/'.benchmark-cache/obligation-baselines'
 RULE_REV='a5ad1714f00c9f7fde980cab0ea1d6dc6d414fd2'
+SOURCE_CACHE=ROOT/'.benchmark-cache/obligations'
 
 
 def read(path):return json.loads(path.read_text(encoding='utf-8-sig'))
@@ -22,10 +23,10 @@ def stage():
     if subprocess.check_output(['git','-C',str(rules),'status','--porcelain','--untracked-files=all','--','python'],text=True).strip():raise ValueError('Dirty rules')
     inventory={}
     for row in read(OUT/'source-receipts.json')['records']:
-        if 'error' in row:continue
+        if 'error' in row or row.get('expected_absent'):continue
         path=row['path']
-        if path.startswith(('tests/','test/')) or '/tests/' in path:continue
-        raw=(ROOT/'.benchmark-cache/obligations'/row['id']/row['role']/path).read_bytes()
+        if path.startswith(('tests/','test/')) or '/tests/' in path or Path(path).name in {'tests.py','conftest.py'}:continue
+        raw=(SOURCE_CACHE/row['id']/row['role']/path).read_bytes()
         if hashlib.sha256(raw).hexdigest()!=row['source_sha256']:raise ValueError('Source changed')
         name='/'.join([row['id'],row['role'],path])
         dest=CACHE/'sources'/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(raw)

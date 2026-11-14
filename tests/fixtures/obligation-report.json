@@ -135,9 +135,176 @@
           }
         ]
       }
+    },
+    {
+      "title": "Returned claims are parsed outside the verified JWS payload",
+      "severity": "MEDIUM",
+      "category": "sast",
+      "module": "sast",
+      "description": "A keyed JWS deserialization accepts one payload representation, while returned claims are independently decoded from a compact-token segment. This is bounded static evidence, not verified deployment exploitability.",
+      "file_path": "signed.py",
+      "line_number": 7,
+      "code_snippet": " return json_decode(base64url_decode(body))",
+      "recommendation": "Return claims decoded from the verifier payload, or establish equality with that exact payload before returning them.",
+      "cwe": "CWE-347",
+      "confidence": "medium",
+      "rule_id": "PY-OBL-JWS-PAYLOAD-001",
+      "references": [
+        "https://jwcrypto.readthedocs.io/en/latest/jws.html"
+      ],
+      "fingerprint": "98fe1e017d475584d5785aee",
+      "maturity": "advisory",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "static-obligation",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": [],
+      "obligation": {
+        "domain": "crypto",
+        "required": "Return claims decoded from the verifier payload, or establish equality with that exact payload before returning them.",
+        "observed": "A keyed JWS deserialization accepts one payload representation, while returned claims are independently decoded from a compact-token segment.",
+        "action": {
+          "file_path": "signed.py",
+          "line_number": 7
+        },
+        "assumptions": [
+          "The resolved jwcrypto JWS API may accept compact and JSON representations.",
+          "A non-null verification key, caller trust boundary and claim use remain runtime assumptions."
+        ],
+        "related_locations": [
+          {
+            "role": "claims-decoding",
+            "file_path": "signed.py",
+            "line_number": 4
+          }
+        ]
+      }
+    },
+    {
+      "title": "HMAC key blacklist omits recognized public-key formats",
+      "severity": "MEDIUM",
+      "category": "sast",
+      "module": "sast",
+      "description": "A finite public-key rejection list guards material stored for a resolved HMAC operation, but omits: -----BEGIN RSA PUBLIC KEY-----, -----BEGIN CERTIFICATE-----, ssh-ed25519, ssh-dss, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521. This is bounded static evidence, not verified deployment exploitability.",
+      "file_path": "keys.py",
+      "line_number": 5,
+      "code_snippet": "  if any(marker in key for marker in forbidden):\n   raise ValueError()",
+      "recommendation": "Use a complete key-format/type boundary before accepting asymmetric representations as HMAC secrets.",
+      "cwe": "CWE-347",
+      "confidence": "medium",
+      "rule_id": "PY-OBL-HMAC-FORMAT-001",
+      "references": [
+        "https://jwcrypto.readthedocs.io/en/latest/jws.html"
+      ],
+      "fingerprint": "98147460d4596d9bd11e9781",
+      "maturity": "advisory",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "static-obligation",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": [],
+      "obligation": {
+        "domain": "crypto",
+        "required": "Use a complete key-format/type boundary before accepting asymmetric representations as HMAC secrets.",
+        "observed": "A finite public-key rejection list guards material stored for a resolved HMAC operation, but omits: -----BEGIN RSA PUBLIC KEY-----, -----BEGIN CERTIFICATE-----, ssh-ed25519, ssh-dss, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521.",
+        "action": {
+          "file_path": "keys.py",
+          "line_number": 5
+        },
+        "assumptions": [
+          "This checks the visible finite blacklist, not all possible key-format parsers or caller restrictions.",
+          "Accepting omitted representations and an attacker-relevant verifier configuration require runtime validation."
+        ],
+        "related_locations": [
+          {
+            "role": "key-storage",
+            "file_path": "keys.py",
+            "line_number": 7
+          }
+        ]
+      }
+    },
+    {
+      "title": "HTTP framing length uses permissive integer parsing",
+      "severity": "MEDIUM",
+      "category": "sast",
+      "module": "sast",
+      "description": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms. This is bounded static evidence, not verified deployment exploitability.",
+      "file_path": "http_numbers.py",
+      "line_number": 9,
+      "code_snippet": "  size=int(line.strip(),16)",
+      "recommendation": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+      "cwe": "CWE-444",
+      "confidence": "medium",
+      "rule_id": "PY-OBL-HTTP-NUMERIC-001",
+      "references": [
+        "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+      ],
+      "fingerprint": "f3f0121383e79eb3582b3a1c",
+      "maturity": "advisory",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "static-obligation",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": [],
+      "obligation": {
+        "domain": "protocol",
+        "required": "Validate the exact decimal or hexadecimal HTTP length grammar before integer conversion; reject signs, prefixes and whitespace.",
+        "observed": "A resolved HTTP parser converts a Content-Length or chunk-size value without an observed lexical rejection guard. Python integer conversion accepts extra forms.",
+        "action": {
+          "file_path": "http_numbers.py",
+          "line_number": 9
+        },
+        "assumptions": [
+          "Only visible dominating guards and resolved HTTP library contracts are modelled; caller filtering remains unverified.",
+          "Recognizing a lexical guard does not certify its regular expression or all parser paths."
+        ],
+        "related_locations": []
+      }
+    },
+    {
+      "title": "Unsupported transfer codings have no rejecting branch",
+      "severity": "MEDIUM",
+      "category": "sast",
+      "module": "sast",
+      "description": "The HTTP parser handles only the chunked value in its Transfer-Encoding branch and has no alternate rejection in that branch. This is bounded static evidence, not verified deployment exploitability.",
+      "file_path": "http_codings.py",
+      "line_number": 6,
+      "code_snippet": "   if value.lower()==\"chunked\":\n    chunked=True",
+      "recommendation": "Reject unsupported Transfer-Encoding values before choosing a request body reader.",
+      "cwe": "CWE-444",
+      "confidence": "medium",
+      "rule_id": "PY-OBL-HTTP-CODING-001",
+      "references": [
+        "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+      ],
+      "fingerprint": "cd345f9c7f28d53f678d4ba0",
+      "maturity": "advisory",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "static-obligation",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": [],
+      "obligation": {
+        "domain": "protocol",
+        "required": "Reject unsupported Transfer-Encoding values before choosing a request body reader.",
+        "observed": "The HTTP parser handles only the chunked value in its Transfer-Encoding branch and has no alternate rejection in that branch.",
+        "action": {
+          "file_path": "http_codings.py",
+          "line_number": 6
+        },
+        "assumptions": [
+          "This is a narrow branch-shape check, not a complete HTTP framing, proxy or deployment model."
+        ],
+        "related_locations": []
+      }
     }
   ],
-  "files_scanned": 3,
+  "files_scanned": 7,
   "modules_run": [
     "sast"
   ],
@@ -146,12 +313,12 @@
   "summary": {
     "repo": "owner/obligations",
     "branch": "main",
-    "files_scanned": 3,
-    "total_findings": 3,
+    "files_scanned": 7,
+    "total_findings": 7,
     "context_findings": 0,
-    "vulnerability_findings": 3,
+    "vulnerability_findings": 7,
     "by_severity": {
-      "MEDIUM": 3
+      "MEDIUM": 7
     },
     "modules_run": [
       "sast"

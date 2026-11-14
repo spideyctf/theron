@@ -1,0 +1,167 @@
+{
+  "implementation_revision": "ab48e94d3f84ac6a8707a5d71285d05663dae997",
+  "comparison_revision": "6eb6aee2e554c52a5f7519f0f7b6bed016f56f1a",
+  "source_exposed": true,
+  "records": [
+    {
+      "id": "CVE-2026-82411",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2026-82411",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2026-58373",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2026-58373",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2022-39227",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2022-39227",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2022-24761",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-33663",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-1135",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2023-32309",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2025-53366",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2023-30608",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2023-30608",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2025-5120",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2021-28363",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-35195",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-35195",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2017-16618",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-32977",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-34078",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-34078",
+      "role": "fixed",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "vulnerable",
+      "alerts_unchanged": true
+    },
+    {
+      "id": "CVE-2024-55655",
+      "role": "fixed",
+      "alerts_unchanged": true
+    }
+  ]
+}

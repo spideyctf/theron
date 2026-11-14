@@ -27,7 +27,7 @@ for wheel in sorted(Path('/tmp/theron-obligation-wheels').glob('*.whl')):
         archive.extractall(DEPS)  # Data extraction only; .pth and install scripts are never processed.
 
 
-def run(source,case,oracle=None,probe=False):
+def run(source,case,oracle=None,probe=False,python_code=None):
     command=['bwrap','--unshare-all','--die-with-parent','--new-session','--cap-drop','ALL',
         '--ro-bind','/usr','/usr','--ro-bind','/lib','/lib','--ro-bind','/lib64','/lib64',
         '--proc','/proc','--dev','/dev','--size','16777216','--tmpfs','/tmp','--dir','/work','--chdir','/work',
@@ -38,6 +38,7 @@ def run(source,case,oracle=None,probe=False):
     if oracle:command+=['--ro-bind',str(oracle),'/oracle']
     code=("import os,socket,json; s=socket.socket(); print(json.dumps({'windows_visible':os.path.exists('/mnt/c'),'home_visible':os.path.exists('/home'),'network_result':s.connect_ex(('1.1.1.1',443))}))"
           if probe else "import sys,runpy; sys.dont_write_bytecode=True; sys.path[:0]=['/target','/target/src','/deps']; sys.argv=['oracle',"+repr(case)+"]; runpy.run_path('/harness/obligation_oracle.py',run_name='__main__')")
+    if python_code is not None:code=python_code
     command+=['--','/usr/bin/python3','-I','-S','-c',code]
     command=['prlimit','--as=1073741824','--cpu=15','--fsize=1048576','--nproc=64','--',*command]
     start=time.perf_counter()

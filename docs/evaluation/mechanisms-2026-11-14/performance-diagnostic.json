@@ -1,0 +1,105 @@
+{
+  "implementation_revision": "b4d979cd7fa5729038ab09773c544ab324d78397",
+  "instrumented_diagnostic": true,
+  "total_calls": 315586039,
+  "wall_seconds_under_profiler": 305.92876390000043,
+  "top_self_time": [
+    {
+      "file": "python_analysis.py",
+      "line": 489,
+      "function": "_source",
+      "calls": 2235386,
+      "self_seconds": 108.4249436,
+      "cumulative_seconds": 202.22280980000002
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.isinstance>",
+      "calls": 109268077,
+      "self_seconds": 20.785716700000002,
+      "cumulative_seconds": 20.786377
+    },
+    {
+      "file": "ast.py",
+      "line": 127,
+      "function": "_format",
+      "calls": 7253188,
+      "self_seconds": 19.5437629,
+      "cumulative_seconds": 29.7434824
+    },
+    {
+      "file": "python_analysis.py",
+      "line": 144,
+      "function": "_name",
+      "calls": 10042482,
+      "self_seconds": 15.3792296,
+      "cumulative_seconds": 22.7455669
+    },
+    {
+      "file": "ast.py",
+      "line": 269,
+      "function": "iter_child_nodes",
+      "calls": 12183784,
+      "self_seconds": 10.0886324,
+      "cumulative_seconds": 20.5953075
+    },
+    {
+      "file": "python_analysis.py",
+      "line": 1371,
+      "function": "visit_Call",
+      "calls": 232870,
+      "self_seconds": 9.2396588,
+      "cumulative_seconds": 284.0478781
+    },
+    {
+      "file": "ast.py",
+      "line": 257,
+      "function": "iter_fields",
+      "calls": 23179000,
+      "self_seconds": 8.671934700000001,
+      "cumulative_seconds": 11.8768796
+    },
+    {
+      "file": "ast.py",
+      "line": 409,
+      "function": "generic_visit",
+      "calls": 3128716,
+      "self_seconds": 7.5593455,
+      "cumulative_seconds": 292.38893620000005
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.getattr>",
+      "calls": 25716291,
+      "self_seconds": 7.2433575,
+      "cumulative_seconds": 7.2433737
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'search' of 're.Pattern' objects>",
+      "calls": 13719,
+      "self_seconds": 6.6946503,
+      "cumulative_seconds": 6.6946503
+    },
+    {
+      "file": "python_analysis.py",
+      "line": 965,
+      "function": "_merge_states",
+      "calls": 90226,
+      "self_seconds": 6.552612600000001,
+      "cumulative_seconds": 49.9161051
+    },
+    {
+      "file": "ast.py",
+      "line": 369,
+      "function": "walk",
+      "calls": 5790796,
+      "self_seconds": 5.385949800000001,
+      "cumulative_seconds": 29.872500000000002
+    }
+  ],
+  "interpretation": "Profiling overhead and concurrent baseline work: this is not an uninstrumented speed benchmark. Repeated invariant API set construction in source queries was hoisted; detection state is not cached."
+}

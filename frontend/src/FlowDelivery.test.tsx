@@ -35,7 +35,7 @@ it('shows all backend required-condition evidence in finding details and HTML', 
   const doc = document.implementation.createHTMLDocument('Obligation evidence')
   doc.documentElement.innerHTML = readFileSync('../tests/fixtures/obligation-report.html','utf8')
   new Function('document',doc.querySelector('script')!.textContent!)(doc)
-  expect(doc.querySelectorAll('.finding-obligation')).toHaveLength(3)
+  expect(doc.querySelectorAll('.finding-obligation')).toHaveLength(report.findings.filter(f => f.obligation).length)
   for (const f of report.findings.filter(f => f.obligation)) expect(doc.body.textContent).toContain(f.obligation!.required)
 })
 

@@ -1,0 +1,33 @@
+{
+  "implementation_revision": "ab48e94d3f84ac6a8707a5d71285d05663dae997",
+  "research_ready": false,
+  "engineering": "688 Python tests, 15 frontend tests and build passed",
+  "exposed_development": {
+    "vulnerable_semantic_candidates": 5,
+    "cases": 6,
+    "strict_cna_matches": 2,
+    "strict_labelled_cases": 5
+  },
+  "fresh_pilot": {
+    "strict_matches": 0,
+    "labelled_cases": 8,
+    "unscorable_cases": 2,
+    "upstream_paired_cases_verified": 1,
+    "runtime_not_run": 9
+  },
+  "operational_smoke": {
+    "status": "completed",
+    "wall_seconds": 84.04261859999679,
+    "limit_seconds": 120,
+    "earlier_timeouts_retained": 2
+  },
+  "unmet": [
+    "fresh real-code generalization",
+    "complete upstream oracle validation",
+    "custom IAM/remaining detection models",
+    "independent vulnerability-location/alert validation",
+    "measured cross-layer benefit",
+    "broader platform coverage and production validation",
+    "defensible contribution relative to related work"
+  ]
+}

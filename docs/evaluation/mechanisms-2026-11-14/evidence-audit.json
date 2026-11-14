@@ -1,0 +1,10 @@
+{
+  "source_sha256_and_git_blob_checks": 71,
+  "expected_absent_files": 1,
+  "registered_cases_retained": 10,
+  "registration_unchanged": true,
+  "full_alert_equivalence_groups": 32,
+  "synthetic_variants_unchanged": 1470,
+  "earlier_failures_retained": true,
+  "independent_human_review": false
+}

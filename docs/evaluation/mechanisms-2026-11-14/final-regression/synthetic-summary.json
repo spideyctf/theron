@@ -1,0 +1,66 @@
+{
+  "implementation_revision": "ab48e94d3f84ac6a8707a5d71285d05663dae997",
+  "exposed_tuning_data": true,
+  "partitions": {
+    "development": {
+      "summary": {
+        "tp": 202,
+        "fn": 77,
+        "fp": 9,
+        "tn": 449,
+        "errors": 0,
+        "precision": 0.957345971563981,
+        "recall": 0.7240143369175627,
+        "f1": 0.8244897959183674,
+        "false_positive_rate": 0.019650655021834062
+      },
+      "case_outcomes_and_alert_counts_unchanged": true
+    },
+    "validation": {
+      "summary": {
+        "tp": 77,
+        "fn": 7,
+        "fp": 0,
+        "tn": 164,
+        "errors": 0,
+        "precision": 1.0,
+        "recall": 0.9166666666666666,
+        "f1": 0.9565217391304348,
+        "false_positive_rate": 0.0
+      },
+      "case_outcomes_and_alert_counts_unchanged": true
+    },
+    "test": {
+      "summary": {
+        "tp": 65,
+        "fn": 24,
+        "fp": 0,
+        "tn": 156,
+        "errors": 0,
+        "precision": 1.0,
+        "recall": 0.7303370786516854,
+        "f1": 0.8441558441558441,
+        "false_positive_rate": 0.0
+      },
+      "case_outcomes_and_alert_counts_unchanged": true
+    },
+    "pysastbench": {
+      "summary": {
+        "tp": 93,
+        "fn": 26,
+        "fp": 4,
+        "tn": 116,
+        "errors": 1,
+        "precision": 0.9587628865979382,
+        "recall": 0.7815126050420168,
+        "false_positive_rate": 0.03333333333333333
+      },
+      "case_outcomes_and_alert_counts_unchanged": true,
+      "fixed_file_alerts": {
+        "files_with_any_alert": 14,
+        "total_alerts": 17,
+        "outside_label_match": 13
+      }
+    }
+  }
+}
