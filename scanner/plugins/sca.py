@@ -13,6 +13,7 @@ import json
 import re
 import os
 import requests
+from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import quote
 try:
@@ -39,6 +40,7 @@ class SCAScanner(Scanner):
         return "Software composition analysis: SBOM generation, live OSV.dev CVE checking, risky AI/ML package flagging"
 
     OSV_API = "https://api.osv.dev/v1"
+    MAX_OSV_PAGES = 20
 
     # AI/ML packages that warrant extra security scrutiny
     RISKY_AI_PACKAGES = {
@@ -391,6 +393,11 @@ class SCAScanner(Scanner):
                 summary = vuln.get("summary") or vuln.get("details") or "No details available"
                 if isinstance(summary, str) and len(summary) > 300:
                     summary = summary[:300] + "..."
+                affected=[a for member in members for a in member.get('affected',[]) if self._package_matches(a.get('package',{}),pkg_name,ecosystem)]
+                fixes=sorted({event['fixed'] for a in affected for span in a.get('ranges',[]) for event in span.get('events',[])
+                              if isinstance(event,dict) and isinstance(event.get('fixed'),str)})
+                cwes=sorted({cwe for member in members for cwe in (member.get('database_specific') or {}).get('cwe_ids',[])
+                             if isinstance(cwe,str) and re.fullmatch(r'CWE-\d+',cwe)})
 
                 findings.append(Finding(
                     title=f"Vulnerable Dependency: {pkg_name}@{version} — {vid}",
@@ -399,28 +406,66 @@ class SCAScanner(Scanner):
                     module=self.name,
                     description=f"Declared exact {ecosystem} package '{pkg_name}' version {version} in {source_file} matches advisory {vid}: {summary}. Application reachability and exploitability have not been verified." + (" Severity is provisional because no supported severity metadata was supplied." if severity_source == "provisional-unknown" else ""),
                     file_path=source_file,
-                    recommendation=f"Upgrade {pkg_name} to a patched version. See https://osv.dev/vulnerability/{vid} for details.",
-                    cwe="CWE-1104",
+                    recommendation=f"Review and upgrade {pkg_name} to a supported patched version. " +
+                        (f"OSV lists fixed-version boundaries: {', '.join(fixes)}. These are not necessarily the latest release or a universally compatible upgrade. " if fixes else "No fixed-version boundary was supplied for this package. ") +
+                        f"See https://osv.dev/vulnerability/{quote(vid,safe='')} for details.",
+                    cwe=cwes[0] if len(cwes)==1 else None,
                     confidence="high",
                     rule_id=f"SCA-{vid}",
-                    references=[f"https://osv.dev/vulnerability/{member['id']}" for member in members],
+                    references=[f"https://osv.dev/vulnerability/{quote(member['id'],safe='')}" for member in members],
                     aliases=aliases,
                     severity_source=severity_source,
                     evidence_kind="dependency-version-match",
+                    dependency=dict(package=pkg_name,version=version,ecosystem=ecosystem,manifest=source_file,
+                        provider='OSV',advisory_ids=aliases,cwes=cwes,fixed_versions=fixes,
+                        queried_at=datetime.now(timezone.utc).isoformat(),
+                        matching='OSV response for a declared exact version; installation and vulnerable-function reachability unverified'),
                 ))
         return findings
 
     def _query_osv(self, package: str, version: str, ecosystem: str) -> list:
-        """Query the OSV.dev API for a specific package version."""
+        """Read every page or fail the lookup; partial results are not a clean result."""
         payload = {"package": {"name": package, "ecosystem": ecosystem}, "version": version}
-        resp = requests.post(f"{self.OSV_API}/query", json=payload, timeout=(5, 15))
-        resp.raise_for_status()
-        data = resp.json()
-        if not isinstance(data, dict) or not isinstance(data.get("vulns", []), list):
-            raise ValueError("Malformed advisory response")
-        if any(not isinstance(vuln, dict) or not isinstance(vuln.get("id"), str) for vuln in data.get("vulns", [])):
-            raise ValueError("Malformed advisory entry")
-        return [vuln for vuln in data.get("vulns", []) if isinstance(vuln, dict) and not vuln.get("withdrawn")]
+        records={};tokens=set()
+        for _ in range(self.MAX_OSV_PAGES):
+            resp = requests.post(f"{self.OSV_API}/query", json=dict(payload), timeout=(5, 15))
+            resp.raise_for_status()
+            data = resp.json()
+            if not isinstance(data, dict) or not isinstance(data.get("vulns", []), list):
+                raise ValueError("Malformed advisory response")
+            for vuln in data.get('vulns',[]):
+                if not isinstance(vuln,dict) or not isinstance(vuln.get('id'),str) or not vuln['id']:
+                    raise ValueError('Malformed advisory entry')
+                if not isinstance(vuln.get('aliases',[]),list) or any(not isinstance(a,str) for a in vuln.get('aliases',[])):
+                    raise ValueError('Malformed advisory aliases')
+                if not isinstance(vuln.get('affected',[]),list) or any(not isinstance(a,dict) for a in vuln.get('affected',[])):
+                    raise ValueError('Malformed affected-package entry')
+                metadata=vuln.get('database_specific')
+                if metadata is not None and not isinstance(metadata,dict):raise ValueError('Malformed advisory metadata')
+                if metadata and (not isinstance(metadata.get('cwe_ids',[]),list) or any(not isinstance(c,str) for c in metadata.get('cwe_ids',[]))):
+                    raise ValueError('Malformed advisory CWE list')
+                if not isinstance(vuln.get('severity',[]),list):raise ValueError('Malformed severity list')
+                for affected in vuln.get('affected',[]):
+                    if not isinstance(affected.get('package',{}),dict) or not isinstance(affected.get('ranges',[]),list):
+                        raise ValueError('Malformed affected-package schema')
+                    for span in affected.get('ranges',[]):
+                        if not isinstance(span,dict) or not isinstance(span.get('events',[]),list) or any(not isinstance(e,dict) for e in span.get('events',[])):
+                            raise ValueError('Malformed affected range')
+                if vuln.get('withdrawn'):continue
+                records.setdefault(vuln['id'],vuln)
+            token=data.get('next_page_token')
+            if token is None or token=='':return list(records.values())
+            if not isinstance(token,str) or token in tokens:raise ValueError('Invalid or repeated OSV page token')
+            tokens.add(token);payload['page_token']=token
+        raise ValueError('OSV page limit reached; lookup incomplete')
+
+    @staticmethod
+    def _package_matches(record,package,ecosystem):
+        if not isinstance(record,dict) or record.get('ecosystem')!=ecosystem:return False
+        name=record.get('name')
+        if not isinstance(name,str):return False
+        normalize=lambda s:re.sub(r'[-_.]+','-',s).lower() if ecosystem=='PyPI' else s
+        return normalize(name)==normalize(package)
 
     @staticmethod
     def _osv_severity_to_finding(vuln: dict) -> Severity:

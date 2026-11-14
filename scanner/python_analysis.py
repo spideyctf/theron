@@ -42,7 +42,8 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.matched_entrypoints = set()
         self.imported_modules = set()
         self.disabled_features = frozenset(disabled_features)
-        if not self.disabled_features <= {"local_imports", "interprocedural", "sanitizers", "auth_obligations", "crypto_obligations", "protocol_obligations"}:
+        if not self.disabled_features <= {"local_imports", "interprocedural", "sanitizers", "auth_obligations", "crypto_obligations", "protocol_obligations",
+                                          "html_obligations", "tls_obligations", "message_obligations", "sandbox_obligations"}:
             raise ValueError("Unknown analysis ablation")
         if "local_imports" in self.disabled_features:
             project = None

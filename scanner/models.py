@@ -55,6 +55,7 @@ class Finding:
     severity_source: str = "rule"
     trace: List[dict] = field(default_factory=list)
     obligation: Optional[dict] = None
+    dependency: Optional[dict] = None
 
     def to_dict(self) -> dict:
         return {
@@ -80,6 +81,7 @@ class Finding:
             "severity_source": self.severity_source,
             "trace": self.trace,
             **({"obligation": self.obligation} if self.obligation is not None else {}),
+            **({"dependency": self.dependency} if self.dependency is not None else {}),
         }
 
 

@@ -7,9 +7,47 @@ import type { ScanJob, ScanResult } from './api'
 import backendReport from '../../tests/fixtures/flow-delivery-report.json'
 import libraryReport from '../../tests/fixtures/library-boundary-report.json'
 import obligationReport from '../../tests/fixtures/obligation-report.json'
+import osvReport from '../../tests/fixtures/osv-report.json'
+import dependencyCorrelationReport from '../../tests/fixtures/dependency-correlation-report.json'
 import { readFileSync } from 'node:fs'
 
 const generatedHtml = readFileSync('../tests/fixtures/flow-delivery-report.html', 'utf8')
+
+it('keeps OSV context distinct from causal code-flow and exposes both findings', async () => {
+  const user=userEvent.setup();const report=dependencyCorrelationReport as ScanResult
+  const job: ScanJob={id:'context',repository:report.repo_full_name,branch:'main',modules:['sast','sca'],include_experimental:false,
+    status:'completed',created_at:'2026-11-14T00:00:00Z',finished_at:null,error:null,result:report}
+  vi.spyOn(api,'health').mockResolvedValue({status:'ok',github_token_configured:true})
+  vi.spyOn(api,'list').mockResolvedValue([job]);vi.spyOn(api,'get').mockResolvedValue(job)
+  render(<App />)
+  await user.click(await screen.findByRole('button',{name:/project.*completed/}))
+  await user.click(screen.getByRole('tab',{name:/MCP links/}))
+  expect(screen.getByText('entrypoint import matches dependency declaration · inferred')).toBeInTheDocument()
+  expect(screen.getByText(/distribution ownership/,{selector:'li'})).toBeInTheDocument()
+  expect(screen.getByRole('link',{name:/TEST-OSV-001/})).toBeInTheDocument()
+})
+
+it('shows backend OSV evidence and retains its uncertainty in remediation and HTML', async () => {
+  const user = userEvent.setup()
+  const report = osvReport as ScanResult
+  const job: ScanJob = { id:'osv',repository:report.repo_full_name,branch:'main',modules:['sca'],include_experimental:false,
+    status:'completed',created_at:'2026-11-14T00:00:00Z',finished_at:null,error:null,result:report }
+  vi.spyOn(api,'health').mockResolvedValue({status:'ok',github_token_configured:true})
+  vi.spyOn(api,'list').mockResolvedValue([job]);vi.spyOn(api,'get').mockResolvedValue(job)
+  render(<App />)
+  await user.click(await screen.findByRole('button',{name:/osv-fixture.*completed/}))
+  await user.click(screen.getByRole('button',{name:report.findings[0].title}))
+  expect(screen.getByText('OSV package evidence')).toBeInTheDocument()
+  expect(screen.getByText('PyPI · demo@1.0')).toBeInTheDocument()
+  expect(screen.getByText('Fixed-version boundaries: 1.1')).toBeInTheDocument()
+  await user.click(screen.getByRole('button',{name:'Copy remediation details'}))
+  expect(await navigator.clipboard.readText()).toContain('reachability unverified')
+  const doc=document.implementation.createHTMLDocument('OSV export')
+  doc.documentElement.innerHTML=readFileSync('../tests/fixtures/osv-report.html','utf8')
+  new Function('document',doc.querySelector('script')!.textContent!)(doc)
+  expect(doc.querySelector('.finding-dependency')?.textContent).toContain('demo@1.0')
+  expect(doc.querySelector('.finding-dependency')?.textContent).toContain('reachability unverified')
+})
 
 it('shows all backend required-condition evidence in finding details and HTML', async () => {
   const user = userEvent.setup()

@@ -1,9 +1,11 @@
 """Bounded MCP declaration-to-code evidence. Never executes declared commands."""
 from collections import defaultdict
+import ast
 import hashlib
 import json
 from pathlib import PurePosixPath
 import re
+import sys
 
 from scanner.finding_utils import finding_scope
 
@@ -85,6 +87,43 @@ def _resolve(config_path, field, server):
     return candidate, 'workspace_binding_inferred' if candidate else 'unsupported_workspace_path'
 
 
+def _dependency_links(target,files,findings):
+    """Same-name import/declaration evidence only; never package/function reachability."""
+    candidates=[f for f in findings if f.evidence_kind=='dependency-version-match' and f.fingerprint and f.dependency
+                and f.dependency.get('ecosystem')=='PyPI' and f.dependency.get('manifest')==f.file_path and f.file_path in files]
+    standard=getattr(sys,'stdlib_module_names',None)
+    if not candidates or standard is None:return []
+    try:tree=ast.parse(files[target],filename=target)
+    except (SyntaxError,RecursionError):return []
+    roots={}
+    # Top-level import declarations are observed source facts, not execution claims.
+    for node in tree.body:
+        if isinstance(node,ast.Import):
+            for item in node.names:roots.setdefault(item.name.split('.')[0],node.lineno)
+        elif isinstance(node,ast.ImportFrom) and node.module and not node.level:
+            roots.setdefault(node.module.split('.')[0],node.lineno)
+    parents=PurePosixPath(target).parent.parts
+    manifest_dirs=[]
+    for path in files:
+        p=PurePosixPath(path);name=p.name
+        if name in {'pyproject.toml','Pipfile','Pipfile.lock'} or name.startswith('requirements') and name.endswith('.txt'):
+            directory=p.parent.parts
+            if parents[:len(directory)]==directory:manifest_dirs.append(directory)
+    if not manifest_dirs:return []
+    nearest=max(manifest_dirs,key=len)
+    links=[]
+    for f in candidates:
+        d=f.dependency;package=d.get('package','')
+        root=re.sub(r'[-_.]+','-',package).lower() if isinstance(package,str) else ''
+        if not root.isidentifier() or root not in roots or root in standard:continue
+        if PurePosixPath(f.file_path).parent.parts!=nearest:continue
+        # Local modules and namespace directories make distribution ownership ambiguous.
+        if any(p.endswith('.py') and (
+            PurePosixPath(p).stem.casefold()==root.casefold() or root.casefold() in [part.casefold() for part in PurePosixPath(p).parts[:-1]]) for p in files):continue
+        links.append((f,dict(role='import-declaration',file_path=target,line_number=roots[root])))
+    return sorted(links,key=lambda item:item[0].fingerprint)
+
+
 def correlate(result, files, enabled=True):
     """Attach additive report-local groups after normalization/partitioning."""
     result.correlation_enabled = enabled
@@ -144,21 +183,27 @@ def correlate(result, files, enabled=True):
             target=candidates[0][1]
             row.update(status='resolved',classification='inferred',entrypoint=target)
             members=sorted(flows.get(target,[]),key=lambda f:f.fingerprint)
-            if not members:
+            dependencies=_dependency_links(target,files,result.findings+result.context_findings)
+            if not members and not dependencies:
                 row['reason']='no_eligible_flow_evidence_in_entrypoint'
                 continue
-            refs=sorted({f.fingerprint for f in members})
+            refs=sorted({f.fingerprint for f in members} | {f.fingerprint for f,_ in dependencies})
             identity=[result.repo_full_name,result.commit_sha,result.branch,config_path,pointer,target,refs]
-            group_id='mcp-flow-'+hashlib.sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()[:24]
+            group_id=('mcp-flow-' if members else 'mcp-dependency-')+hashlib.sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()[:24]
             declaration=dict(kind='configuration',file_path=config_path,pointer=pointer)
             entry=dict(kind='file',file_path=target)
-            scopes=[finding_scope(config_path)]+[f.scope for f in members]
-            result.correlation_groups.append(dict(id=group_id,title='Declared MCP entrypoint contains a supported code flow',
+            scopes=[finding_scope(config_path),finding_scope(target)]+[f.scope for f in members]+[f.scope for f,_ in dependencies]
+            limitations=list(LIMITATIONS)
+            if dependencies:limitations.append('A same-name top-level import and nearest manifest declaration do not prove distribution ownership, installation, import execution or vulnerable-function use. Dependency context adds no vulnerability count.')
+            result.correlation_groups.append(dict(id=group_id,title='Declared MCP entrypoint contains a supported code flow' if members else 'Declared MCP entrypoint has matching OSV dependency context',
                 scope=next((s for s in scopes if s!='application'),'application'),classification='inferred',maturity='experimental',
-                finding_fingerprints=refs,limitations=list(LIMITATIONS),relationships=[
+                finding_fingerprints=refs,limitations=limitations,relationships=[
                     dict(kind='declares_entrypoint',source=declaration,target=entry,classification='inferred',
                          evidence=[dict(file_path=config_path,pointer=pointer+'/args')])]+[
                     dict(kind='entrypoint_contains_flow',source=entry,target=dict(kind='finding',fingerprint=f.fingerprint),
                          classification='observed',evidence=[{k:t[k] for k in ('role','file_path','line_number')} for t in f.trace],
-                         confidence=f.confidence,maturity=f.maturity) for f in members]))
+                         confidence=f.confidence,maturity=f.maturity) for f in members]+[
+                    dict(kind='entrypoint_import_matches_dependency_declaration',source=entry,
+                         target=dict(kind='finding',fingerprint=f.fingerprint),classification='inferred',
+                         evidence=[location,dict(role='dependency-declaration',file_path=f.file_path)]) for f,location in dependencies]))
             row['group_ids']=[group_id]

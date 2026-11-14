@@ -144,6 +144,11 @@ def generate_html_report(result: ScanResult) -> str:
                     <div class="finding-evidence"><strong>Evidence classification:</strong> ${{esc(f.evidence_kind || 'unspecified')}} · Scope: ${{esc(f.scope || 'application')}} · Maturity: ${{esc(f.maturity || 'unspecified')}}
                     ${{Array.isArray(f.trace) && f.trace.length ? `<ol>${{f.trace.map(step => `<li>${{esc(step.role)}}: <code>${{esc(step.file_path)}}:${{esc(step.line_number)}}</code></li>`).join('')}}</ol>` : '<p>No source-to-sink trace supplied.</p>'}}
                     ${{f.fingerprint ? `<div>Fingerprint: <code>${{esc(f.fingerprint)}}</code></div>` : ''}}</div>
+                    ${{f.dependency ? `<div class="finding-dependency"><strong>OSV package evidence:</strong> ${{esc(f.dependency.ecosystem)}} · ${{esc(f.dependency.package)}}@${{esc(f.dependency.version)}}
+                      <p>Declared in ${{esc(f.dependency.manifest)}} · Checked ${{esc(f.dependency.queried_at)}}</p>
+                      <p>Fixed-version boundaries: ${{esc((f.dependency.fixed_versions || []).join(', ') || 'Not supplied')}}</p>
+                      <p>Advisory identities: ${{esc((f.dependency.advisory_ids || []).join(', '))}}</p>
+                      <p>${{esc(f.dependency.matching)}}</p></div>` : ''}}
                     ${{f.obligation ? `<div class="finding-obligation"><strong>Required security condition:</strong> ${{esc(f.obligation.required)}}
                       <p>${{esc(f.obligation.observed)}}</p>
                       ${{Array.isArray(f.obligation.assumptions) ? `<ul>${{f.obligation.assumptions.map(a=>`<li>${{esc(a)}}</li>`).join('')}}</ul>` : ''}}

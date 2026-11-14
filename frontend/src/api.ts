@@ -12,6 +12,8 @@ export interface Finding {
   obligation?: { domain: string; required: string; observed: string; assumptions: string[]
     action: { file_path: string; line_number: number }
     related_locations?: { role: string; file_path: string; line_number: number; matches_returned_object?: boolean; matches_subject?: boolean }[] }
+  dependency?: { package: string; version: string; ecosystem: string; manifest: string; provider: string
+    advisory_ids: string[]; cwes: string[]; fixed_versions: string[]; queried_at: string; matching: string }
 }
 export interface ScanResult {
   repo_full_name: string; branch: string; findings: Finding[]; files_scanned: number

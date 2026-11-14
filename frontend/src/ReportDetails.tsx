@@ -28,7 +28,7 @@ export function Correlations({ result, onInspect }: { result: ScanResult; onInsp
         return <li key={fingerprint}>{finding ? <><a href={sourceUrl(result,finding)} target="_blank" rel="noreferrer">{finding.title} · {finding.file_path}:{finding.line_number}</a>{onInspect && <button className="quiet-button" onClick={() => onInspect(finding)} aria-label={`Inspect original finding: ${finding.title}`}>Inspect finding</button>}</> : 'Referenced finding unavailable'} <code>{fingerprint}</code></li>
       })}</ul><h5>Limits of this association</h5><ul>{group.limitations.map(limit => <li key={limit}>{limit}</li>)}</ul>
     </section>)}
-    {!groups.length && <p>No supported declaration-to-dangerous-flow group was established. This does not establish safety.</p>}
+    {!groups.length && <p>No supported code-flow or dependency-context group was established. This does not establish safety.</p>}
     <h4>Declaration resolution</h4>
     <div className="table-scroll"><table className="inventory-table"><thead><tr><th>Configuration</th><th>Candidate entrypoint</th><th>Outcome</th></tr></thead><tbody>{resolutions.map((row,i) => <tr key={i}><td>{row.config_file}<small>{row.pointer || 'Root object'} · {row.scope}</small></td><td>{row.entrypoint || 'Unresolved'}</td><td>{row.status} · {row.classification}<small>{row.reason.replaceAll('_',' ')}</small></td></tr>)}</tbody></table></div>
     {!resolutions.length && <p>No supported MCP configuration filenames were collected.</p>}

@@ -216,7 +216,11 @@ class Context:
         return None
 
     def emit(self,node,rule,title,domain,required,observed,cwe,assumptions=(),uncertain=False,related_locations=()):
-        reference={'authorization':DRF_REFERENCE,'protocol':HTTP_REFERENCE,'crypto':'https://jwcrypto.readthedocs.io/en/latest/jws.html'}[domain]
+        reference={'authorization':DRF_REFERENCE,'protocol':HTTP_REFERENCE,'crypto':'https://jwcrypto.readthedocs.io/en/latest/jws.html',
+                   'html':'https://lxml.de/lxmlhtml.html#cleaning-up-html',
+                   'tls':'https://urllib3.readthedocs.io/en/stable/advanced-usage.html#ssl-warnings',
+                   'availability':'https://docs.pydantic.dev/latest/concepts/models/#error-handling',
+                   'sandbox':'https://docs.python.org/3/library/functions.html#getattr'}[domain]
         snippet='\n'.join(self.content.splitlines()[max(0,node.lineno-1):node.end_lineno])
         self.findings.append(Finding(title=title,severity=Severity.INFO if uncertain else Severity.MEDIUM,
             category=Category.SAST,module='coverage' if uncertain else self.module,file_path=self.path,line_number=node.lineno,
@@ -537,6 +541,10 @@ def analyze_structural_obligations(path,content,tree,project,disabled,module):
     if 'crypto_obligations' not in disabled:
         SignedPayload.analyze(context)
         HMACKeyFormats.analyze(context)
+    from scanner.python_security_state import HTMLCanonicalization,TLSPoolPolicy,MCPMessageValidation,ASTCallableBoundary
+    for flag,check in [('html_obligations',HTMLCanonicalization),('tls_obligations',TLSPoolPolicy),
+                       ('message_obligations',MCPMessageValidation),('sandbox_obligations',ASTCallableBoundary)]:
+        if flag not in disabled:check.analyze(context)
     return context.findings
 
 
