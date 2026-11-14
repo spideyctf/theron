@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import { downloadBlob, sourceUrl } from './api'
-import type { Finding, ScanJob, ScanResult } from './api'
+import type { CorrelationEndpoint, Finding, ScanJob, ScanResult } from './api'
 
 type Component = { name?: string; version?: string; purl?: string; type?: string; 'bom-ref'?: string; properties?: { name: string; value: string }[] }
 type Bom = { bomFormat?: string; specVersion?: string; components?: Component[] }
 const pretty = (value: unknown) => JSON.stringify(value, null, 2)
+const endpoint = (value: CorrelationEndpoint) => value.symbol
+  ? `${value.symbol}${value.file_path ? ` (${value.file_path}${value.line_number ? `:${value.line_number}` : ''})` : ''}`
+  : value.package ? `${value.package}@${value.version || 'unknown version'}` : value.file_path || value.fingerprint || value.kind
 
 export function Correlations({ result, onInspect }: { result: ScanResult; onInspect?: (finding: Finding) => void }) {
   if (result.correlation_enabled === undefined) return <div className="report-empty"><h3>MCP links unavailable</h3><p>This report predates the correlation pilot. A new scan can collect declaration and code evidence.</p></div>
@@ -19,10 +22,13 @@ export function Correlations({ result, onInspect }: { result: ScanResult; onInsp
       <h4>{group.title}</h4><p>{group.scope} · {group.classification} · {group.maturity}</p><code>{group.id}</code>
       {group.relationships.map((edge,index) => <div key={index} className="correlation-edge">
         <strong>{edge.kind.replaceAll('_',' ')} · {edge.classification}</strong>
-        <p>{edge.source.file_path || edge.source.fingerprint}{edge.source.pointer && <code> {edge.source.pointer}</code>} → {edge.target.file_path || edge.target.fingerprint}</p>
+        <p>{endpoint(edge.source)}{edge.source.pointer && <code> {edge.source.pointer}</code>} → {endpoint(edge.target)}</p>
+        {edge.basis && <p>Evidence basis: {edge.basis.replaceAll('_',' ').replaceAll('-',' ')}</p>}
         {edge.confidence && <p>Original finding confidence: {edge.confidence} · maturity: {edge.maturity}</p>}
         <ul>{edge.evidence.map((location,i) => <li key={i}>{location.role && `${location.role}: `}<a href={sourceUrl(result,{ file_path:location.file_path, line_number:location.line_number || null })} target="_blank" rel="noreferrer">{location.file_path}{location.line_number ? `:${location.line_number}` : ''}</a>{location.pointer && <code> {location.pointer}</code>}</li>)}</ul>
+        {edge.provenance && <details className="raw-data"><summary>Source and advisory provenance</summary><pre>{pretty(edge.provenance)}</pre></details>}
       </div>)}
+      {!!group.resolution_notes?.length && <><h5>Unresolved call-path evidence</h5><ul>{group.resolution_notes.map((note,i) => <li key={i}>{note.reason.replaceAll('_',' ')} · {note.file_path}{note.line_number ? `:${note.line_number}` : ''}</li>)}</ul></>}
       <h5>Referenced findings</h5><ul>{group.finding_fingerprints.map(fingerprint => {
         const finding = findings.find(f => f.fingerprint === fingerprint)
         return <li key={fingerprint}>{finding ? <><a href={sourceUrl(result,finding)} target="_blank" rel="noreferrer">{finding.title} · {finding.file_path}:{finding.line_number}</a>{onInspect && <button className="quiet-button" onClick={() => onInspect(finding)} aria-label={`Inspect original finding: ${finding.title}`}>Inspect finding</button>}</> : 'Referenced finding unavailable'} <code>{fingerprint}</code></li>
@@ -30,7 +36,7 @@ export function Correlations({ result, onInspect }: { result: ScanResult; onInsp
     </section>)}
     {!groups.length && <p>No supported code-flow or dependency-context group was established. This does not establish safety.</p>}
     <h4>Declaration resolution</h4>
-    <div className="table-scroll"><table className="inventory-table"><thead><tr><th>Configuration</th><th>Candidate entrypoint</th><th>Outcome</th></tr></thead><tbody>{resolutions.map((row,i) => <tr key={i}><td>{row.config_file}<small>{row.pointer || 'Root object'} · {row.scope}</small></td><td>{row.entrypoint || 'Unresolved'}</td><td>{row.status} · {row.classification}<small>{row.reason.replaceAll('_',' ')}</small></td></tr>)}</tbody></table></div>
+    <div className="table-scroll"><table className="inventory-table"><thead><tr><th>Configuration</th><th>Candidate entrypoint</th><th>Outcome</th></tr></thead><tbody>{resolutions.map((row,i) => <tr key={i}><td>{row.config_file}<small>{row.pointer || 'Root object'} · {row.scope}</small></td><td>{row.entrypoint || 'Unresolved'}</td><td>{row.status} · {row.classification}<small>{row.reason.replaceAll('_',' ')}</small>{row.tool_resolution_notes?.map((note,j) => <small key={j}>Tool resolution: {note.reason.replaceAll('_',' ')} · {note.file_path}{note.line_number ? `:${note.line_number}` : ''}</small>)}</td></tr>)}</tbody></table></div>
     {!resolutions.length && <p>No supported MCP configuration filenames were collected.</p>}
     <details className="raw-data"><summary>Complete correlation evidence</summary><pre>{pretty({groups,resolutions})}</pre></details>
   </div>

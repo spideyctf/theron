@@ -10,6 +10,7 @@ Supported manifests: requirements.txt, package.json, pyproject.toml, go.mod, Pip
 """
 
 import json
+import hashlib
 import re
 import os
 import requests
@@ -419,6 +420,7 @@ class SCAScanner(Scanner):
                     dependency=dict(package=pkg_name,version=version,ecosystem=ecosystem,manifest=source_file,
                         provider='OSV',advisory_ids=aliases,cwes=cwes,fixed_versions=fixes,
                         queried_at=datetime.now(timezone.utc).isoformat(),
+                        advisory_record_sha256=hashlib.sha256(json.dumps(sorted(members,key=lambda m:m['id']),sort_keys=True,separators=(',',':')).encode()).hexdigest(),
                         matching='OSV response for a declared exact version; installation and vulnerable-function reachability unverified'),
                 ))
         return findings

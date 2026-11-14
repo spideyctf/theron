@@ -21,6 +21,15 @@ def test_all_pages_are_read_and_duplicate_ids_are_not_duplicate_findings(monkeyp
     assert all(url=='https://api.osv.dev/v1/query' for url,_,_ in calls)
 
 
+def test_advisory_provenance_changes_with_the_underlying_osv_record(monkeypatch):
+    record={'id':'TEST-RECORD','summary':'first'}
+    monkeypatch.setattr(SCAScanner,'_query_osv',lambda *args:[dict(record)])
+    first=SCAScanner()._check_osv([('demo','1.0','requirements.txt')])[0].dependency['advisory_record_sha256']
+    record['summary']='updated'
+    second=SCAScanner()._check_osv([('demo','1.0','requirements.txt')])[0].dependency['advisory_record_sha256']
+    assert len(first)==64 and first!=second
+
+
 @pytest.mark.parametrize('second',[
  {'vulns':[],'next_page_token':'next'}, {'vulns':[],'next_page_token':12},
  {'vulns':[{'id':'bad','affected':[{'ranges':['bad']}]}]},

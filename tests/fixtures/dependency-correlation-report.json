@@ -80,6 +80,7 @@
           "1.1"
         ],
         "queried_at": "2026-11-14T00:00:00+00:00",
+        "advisory_record_sha256": "632a220a493a70a0e85b4866c6575f7c83ef154c9545dcdf85f4799e10f7b370",
         "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
       }
     }

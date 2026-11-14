@@ -35,6 +35,9 @@ def should_scan_file(file_path: str, skip_dirs: Set[str] = None) -> bool:
                 continue
             return False
     basename = file_path.replace("\\", "/").rsplit("/", 1)[-1]
+    parent = file_path.replace("\\", "/").rsplit("/", 1)[0]
+    if parent.endswith('.dist-info') and basename in {'METADATA','RECORD'}:
+        return True
     ext = "." + basename.rsplit(".", 1)[-1] if "." in basename else ""
     if ext in SECURITY_RELEVANT_EXTENSIONS:
         return True

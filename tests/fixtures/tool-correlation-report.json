@@ -1,0 +1,457 @@
+{
+  "repo_full_name": "owner/tool-evidence-fixture",
+  "branch": "main",
+  "findings": [
+    {
+      "title": "Vulnerable Dependency: PyYAML@1.0.0 \u2014 TEST-OSV-001",
+      "severity": "HIGH",
+      "category": "sca",
+      "module": "sca",
+      "description": "Declared exact PyPI package 'PyYAML' version 1.0.0 in requirements.txt matches advisory TEST-OSV-001: Original test advisory. Application reachability and exploitability have not been verified.",
+      "file_path": "requirements.txt",
+      "line_number": null,
+      "code_snippet": null,
+      "recommendation": "Review and upgrade PyYAML to a supported patched version. OSV lists fixed-version boundaries: 1.1. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/TEST-OSV-001 for details.",
+      "cwe": "CWE-79",
+      "confidence": "high",
+      "rule_id": "SCA-TEST-OSV-001",
+      "references": [
+        "https://osv.dev/vulnerability/TEST-OSV-001"
+      ],
+      "fingerprint": "71076f1e91f330c8dddb8d8c",
+      "maturity": "stable",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "dependency-version-match",
+      "aliases": [
+        "TEST-ALIAS-001",
+        "TEST-OSV-001"
+      ],
+      "severity_source": "advisory-metadata",
+      "trace": [],
+      "dependency": {
+        "package": "PyYAML",
+        "version": "1.0.0",
+        "ecosystem": "PyPI",
+        "manifest": "requirements.txt",
+        "provider": "OSV",
+        "advisory_ids": [
+          "TEST-ALIAS-001",
+          "TEST-OSV-001"
+        ],
+        "cwes": [
+          "CWE-79"
+        ],
+        "fixed_versions": [
+          "1.1"
+        ],
+        "queried_at": "2026-11-15T00:00:00+00:00",
+        "advisory_record_sha256": "dfed20b050cb1e11aa766eb62adb52b07f2b4b4a437ed85910b6c837e061dcfc",
+        "matching": "OSV response for a declared exact version; installation and vulnerable-function reachability unverified"
+      }
+    },
+    {
+      "title": "External input reaches command/code execution",
+      "severity": "CRITICAL",
+      "category": "sast",
+      "module": "sast",
+      "description": "External input from line 6 reaches this execution sink without a recognised boundary.",
+      "file_path": "server.py",
+      "line_number": 6,
+      "code_snippet": "6:     exec(input())",
+      "recommendation": "Do not execute untrusted text. Use a fixed operation allowlist and structured arguments.",
+      "cwe": "CWE-94",
+      "confidence": "high",
+      "rule_id": "PY-SAST-EXEC-001",
+      "references": [],
+      "fingerprint": "c3ade31750c8fda506be6229",
+      "maturity": "stable",
+      "status": "new",
+      "scope": "application",
+      "evidence_kind": "static-flow",
+      "aliases": [],
+      "severity_source": "rule",
+      "trace": [
+        {
+          "role": "source",
+          "file_path": "server.py",
+          "line_number": 6
+        },
+        {
+          "role": "sink",
+          "file_path": "server.py",
+          "line_number": 6
+        }
+      ]
+    }
+  ],
+  "files_scanned": 6,
+  "modules_run": [
+    "sast",
+    "sca"
+  ],
+  "sbom": null,
+  "scan_duration_seconds": 0.0,
+  "summary": {
+    "repo": "owner/tool-evidence-fixture",
+    "branch": "main",
+    "files_scanned": 6,
+    "total_findings": 2,
+    "context_findings": 0,
+    "vulnerability_findings": 2,
+    "by_severity": {
+      "HIGH": 1,
+      "CRITICAL": 1
+    },
+    "modules_run": [
+      "sast",
+      "sca"
+    ],
+    "scan_duration_seconds": 0.0
+  },
+  "project_profile": null,
+  "context_findings": [],
+  "commit_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "correlation_enabled": true,
+  "correlation_groups": [
+    {
+      "id": "mcp-tool-a35b9fe010fc3c42ddb31566",
+      "title": "Declared MCP tool: inspect_text",
+      "scope": "application",
+      "classification": "inferred",
+      "maturity": "experimental",
+      "finding_fingerprints": [
+        "71076f1e91f330c8dddb8d8c",
+        "c3ade31750c8fda506be6229"
+      ],
+      "relationships": [
+        {
+          "kind": "declares_entrypoint",
+          "source": {
+            "kind": "configuration",
+            "file_path": ".vscode/mcp.json",
+            "pointer": "/servers/local"
+          },
+          "target": {
+            "kind": "file",
+            "file_path": "server.py"
+          },
+          "classification": "inferred",
+          "basis": "supported_python_declaration",
+          "evidence": [
+            {
+              "file_path": ".vscode/mcp.json",
+              "pointer": "/servers/local/args"
+            }
+          ],
+          "provenance": {
+            "commit_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "source_text_sha256": {
+              ".vscode/mcp.json": "b69f747d104ef8c6dbaf9ed837871eddb30b04b9ab1a73caa53df39166e18ff1"
+            }
+          }
+        },
+        {
+          "kind": "declares_tool_handler",
+          "source": {
+            "kind": "file",
+            "file_path": "server.py"
+          },
+          "target": {
+            "kind": "function",
+            "file_path": "server.py",
+            "line_number": 5,
+            "symbol": "server.inspect_text"
+          },
+          "classification": "inferred",
+          "basis": "supported_fastmcp_registration",
+          "evidence": [
+            {
+              "file_path": "server.py",
+              "line_number": 4,
+              "role": "tool-registration"
+            },
+            {
+              "file_path": "server.py",
+              "line_number": 5,
+              "role": "handler-definition"
+            },
+            {
+              "file_path": "server.py",
+              "line_number": 3,
+              "role": "server-instance-construction"
+            }
+          ],
+          "provenance": {
+            "commit_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "source_text_sha256": {
+              "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+            }
+          }
+        },
+        {
+          "kind": "reachable_function_contains_existing_flow",
+          "source": {
+            "kind": "function",
+            "file_path": "server.py",
+            "line_number": 5,
+            "symbol": "server.inspect_text"
+          },
+          "target": {
+            "kind": "finding",
+            "fingerprint": "c3ade31750c8fda506be6229"
+          },
+          "classification": "inferred",
+          "basis": "supported_static_call_path_contains_original_finding",
+          "evidence": [
+            {
+              "role": "source",
+              "file_path": "server.py",
+              "line_number": 6
+            },
+            {
+              "role": "sink",
+              "file_path": "server.py",
+              "line_number": 6
+            }
+          ],
+          "provenance": {
+            "commit_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "source_text_sha256": {
+              "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38"
+            }
+          }
+        },
+        {
+          "kind": "calls_local_function",
+          "source": {
+            "kind": "function",
+            "file_path": "server.py",
+            "line_number": 5,
+            "symbol": "server.inspect_text"
+          },
+          "target": {
+            "kind": "function",
+            "file_path": "helpers.py",
+            "line_number": 2,
+            "symbol": "helpers.parse"
+          },
+          "classification": "inferred",
+          "basis": "resolved_local_symbol",
+          "evidence": [
+            {
+              "file_path": "server.py",
+              "line_number": 7,
+              "role": "call-site"
+            },
+            {
+              "file_path": "server.py",
+              "line_number": 2,
+              "role": "import-declaration"
+            },
+            {
+              "file_path": "helpers.py",
+              "line_number": 2,
+              "role": "function-definition"
+            }
+          ],
+          "provenance": {
+            "commit_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "source_text_sha256": {
+              "server.py": "a91cbb444683c0b9e7cf69df0372ff5a79108fa48267534e6f50eba6917ccd38",
+              "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85"
+            }
+          }
+        },
+        {
+          "kind": "calls_imported_api",
+          "source": {
+            "kind": "function",
+            "file_path": "helpers.py",
+            "line_number": 2,
+            "symbol": "helpers.parse"
+          },
+          "target": {
+            "kind": "imported_api",
+            "symbol": "yaml.load"
+          },
+          "classification": "inferred",
+          "basis": "resolved_import_symbol",
+          "evidence": [
+            {
+              "file_path": "helpers.py",
+              "line_number": 3,
+              "role": "call-site"
+            },
+            {
+              "file_path": "helpers.py",
+              "line_number": 1,
+              "role": "import-declaration"
+            }
+          ],
+          "provenance": {
+            "commit_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "source_text_sha256": {
+              "helpers.py": "c4ffe3a5762282f61732726ebf02d20ab68c4e58430f42069dc0c2f7ad11ad85"
+            }
+          }
+        },
+        {
+          "kind": "import_has_dependency_context",
+          "source": {
+            "kind": "imported_api",
+            "symbol": "yaml.load"
+          },
+          "target": {
+            "kind": "dependency",
+            "package": "PyYAML",
+            "version": "1.0.0",
+            "file_path": "requirements.txt"
+          },
+          "classification": "inferred",
+          "basis": "distribution-record-claim",
+          "evidence": [
+            {
+              "role": "distribution-metadata",
+              "file_path": "evidence/PyYAML-1.0.0.dist-info/METADATA"
+            },
+            {
+              "role": "distribution-file-record",
+              "file_path": "evidence/PyYAML-1.0.0.dist-info/RECORD"
+            },
+            {
+              "role": "dependency-declaration",
+              "file_path": "requirements.txt"
+            }
+          ],
+          "provenance": {
+            "commit_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "source_text_sha256": {
+              "evidence/PyYAML-1.0.0.dist-info/METADATA": "be054dc5efacc53793ca65ca00062139c121a478faab89e947c0dc4eba147b50",
+              "evidence/PyYAML-1.0.0.dist-info/RECORD": "55c47383db0fb9b3f62a5eaa2d92012e098b583305f6e71e8380afbb65024159",
+              "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177"
+            }
+          }
+        },
+        {
+          "kind": "declared_version_matches_osv_advisory",
+          "source": {
+            "kind": "dependency",
+            "package": "PyYAML",
+            "version": "1.0.0",
+            "file_path": "requirements.txt"
+          },
+          "target": {
+            "kind": "finding",
+            "fingerprint": "71076f1e91f330c8dddb8d8c"
+          },
+          "classification": "inferred",
+          "basis": "existing_exact_version_osv_match",
+          "evidence": [
+            {
+              "role": "dependency-declaration",
+              "file_path": "requirements.txt"
+            }
+          ],
+          "provenance": {
+            "commit_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "source_text_sha256": {
+              "requirements.txt": "768a676a48f69453efc9b7a84b0f273c911cc1517bdf4fc458b3009ffc929177"
+            },
+            "osv_queried_at": "2026-11-15T00:00:00+00:00",
+            "advisory_ids": [
+              "TEST-ALIAS-001",
+              "TEST-OSV-001"
+            ],
+            "advisory_record_sha256": "dfed20b050cb1e11aa766eb62adb52b07f2b4b4a437ed85910b6c837e061dcfc"
+          }
+        }
+      ],
+      "limitations": [
+        "Tool registration and call paths are statically inferred under supported FastMCP contracts; startup, dispatch and path conditions are not verified.",
+        "An imported API call and OSV version match do not prove that the called function is affected by the advisory.",
+        "Distribution metadata is a collected artifact claim, not authenticated ownership, an installed environment or effective import-path proof.",
+        "Existing findings retain their severity and count; no additional vulnerability is inferred from a joined group."
+      ],
+      "resolution_notes": []
+    },
+    {
+      "id": "mcp-flow-11990cd8ea98128901a4dc54",
+      "title": "Declared MCP entrypoint contains a supported code flow",
+      "scope": "application",
+      "classification": "inferred",
+      "maturity": "experimental",
+      "finding_fingerprints": [
+        "c3ade31750c8fda506be6229"
+      ],
+      "limitations": [
+        "Workspace binding is inferred from the configuration location, not verified in a running MCP client.",
+        "Code presence and static flow do not establish startup or callback reachability.",
+        "Network exposure, authentication, effective privileges and exploitability remain unknown.",
+        "No declared command or scanned module was executed. Groups do not add vulnerability counts or severity."
+      ],
+      "relationships": [
+        {
+          "kind": "declares_entrypoint",
+          "source": {
+            "kind": "configuration",
+            "file_path": ".vscode/mcp.json",
+            "pointer": "/servers/local"
+          },
+          "target": {
+            "kind": "file",
+            "file_path": "server.py"
+          },
+          "classification": "inferred",
+          "evidence": [
+            {
+              "file_path": ".vscode/mcp.json",
+              "pointer": "/servers/local/args"
+            }
+          ]
+        },
+        {
+          "kind": "entrypoint_contains_flow",
+          "source": {
+            "kind": "file",
+            "file_path": "server.py"
+          },
+          "target": {
+            "kind": "finding",
+            "fingerprint": "c3ade31750c8fda506be6229"
+          },
+          "classification": "observed",
+          "evidence": [
+            {
+              "role": "source",
+              "file_path": "server.py",
+              "line_number": 6
+            },
+            {
+              "role": "sink",
+              "file_path": "server.py",
+              "line_number": 6
+            }
+          ],
+          "confidence": "high",
+          "maturity": "stable"
+        }
+      ]
+    }
+  ],
+  "correlation_resolutions": [
+    {
+      "config_file": ".vscode/mcp.json",
+      "pointer": "/servers/local",
+      "status": "resolved",
+      "reason": "workspace_binding_inferred",
+      "entrypoint": "server.py",
+      "classification": "inferred",
+      "scope": "application",
+      "group_ids": [
+        "mcp-tool-a35b9fe010fc3c42ddb31566",
+        "mcp-flow-11990cd8ea98128901a4dc54"
+      ]
+    }
+  ]
+}

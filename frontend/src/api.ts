@@ -27,16 +27,21 @@ export interface ScanResult {
     by_severity: Partial<Record<Severity, number>>; modules_run: string[]; scan_duration_seconds: number }
 }
 export interface EvidenceLocation { file_path: string; line_number?: number; pointer?: string; role?: string }
-export interface CorrelationEndpoint { kind: string; file_path?: string; pointer?: string; fingerprint?: string }
+export interface CorrelationEndpoint { kind: string; file_path?: string; pointer?: string; fingerprint?: string
+  symbol?: string; line_number?: number; package?: string; version?: string }
 export interface CorrelationGroup {
   id: string; title: string; scope: string; classification: string; maturity: string
   finding_fingerprints: string[]; limitations: string[]
+  resolution_notes?: { reason: string; file_path: string; line_number?: number }[]
   relationships: { kind: string; source: CorrelationEndpoint; target: CorrelationEndpoint; classification: string
-    evidence: EvidenceLocation[]; confidence?: string; maturity?: string }[]
+    evidence: EvidenceLocation[]; confidence?: string; maturity?: string; basis?: string
+    provenance?: { commit_sha: string | null; source_text_sha256: Record<string,string>; osv_queried_at?: string | null
+      advisory_ids?: string[]; advisory_record_sha256?: string | null } }[]
 }
 export interface CorrelationResolution {
   config_file: string; pointer: string; status: string; reason: string; entrypoint: string | null
   classification: string; scope: string; group_ids: string[]
+  tool_resolution_notes?: { reason: string; file_path: string; line_number?: number }[]
 }
 export interface ScanJob {
   id: string; repository: string; branch: string | null; modules: string[]; include_experimental: boolean

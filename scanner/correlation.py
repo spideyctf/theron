@@ -136,6 +136,7 @@ def correlate(result, files, enabled=True):
         if normalized:
             paths[normalized.casefold()].append((normalized,path))
     flows = defaultdict(list)
+    tools=None
     for finding in result.findings + result.context_findings:
         if finding.rule_id not in FLOW_RULES or finding.evidence_kind != 'static-flow' or not finding.fingerprint or finding.severity == 'INFO':
             continue
@@ -184,8 +185,19 @@ def correlate(result, files, enabled=True):
             row.update(status='resolved',classification='inferred',entrypoint=target)
             members=sorted(flows.get(target,[]),key=lambda f:f.fingerprint)
             dependencies=_dependency_links(target,files,result.findings+result.context_findings)
+            tool_groups=[]
+            if 'FastMCP' in files[target] or '.add_tool' in files[target]:
+                from scanner.correlation_tools import ToolEvidence
+                try:
+                    if tools is None:tools=ToolEvidence(files,result)
+                    tool_groups,notes=tools.groups(target,config_path,pointer,flows)
+                    if notes:row['tool_resolution_notes']=notes
+                except RecursionError:
+                    row['tool_resolution_notes']=[dict(reason='tool_analysis_recursion_limit',file_path=target)]
+                result.correlation_groups.extend(tool_groups)
+                row['group_ids']=[g['id'] for g in tool_groups]
             if not members and not dependencies:
-                row['reason']='no_eligible_flow_evidence_in_entrypoint'
+                row['reason']='declared_tool_context' if tool_groups else 'no_eligible_flow_evidence_in_entrypoint'
                 continue
             refs=sorted({f.fingerprint for f in members} | {f.fingerprint for f,_ in dependencies})
             identity=[result.repo_full_name,result.commit_sha,result.branch,config_path,pointer,target,refs]
@@ -206,4 +218,4 @@ def correlate(result, files, enabled=True):
                     dict(kind='entrypoint_import_matches_dependency_declaration',source=entry,
                          target=dict(kind='finding',fingerprint=f.fingerprint),classification='inferred',
                          evidence=[location,dict(role='dependency-declaration',file_path=f.file_path)]) for f,location in dependencies]))
-            row['group_ids']=[group_id]
+            row['group_ids'].append(group_id)

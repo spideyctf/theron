@@ -6,8 +6,32 @@ import App from './App'
 import { api } from './api'
 import type { ScanJob, ScanResult } from './api'
 import backendReport from '../../tests/fixtures/correlation-report.json'
+import toolReport from '../../tests/fixtures/tool-correlation-report.json'
 
 const report = backendReport as ScanResult
+
+it('renders tool symbols, dependency attribution and snapshot provenance from the backend fixture', () => {
+  const result=toolReport as ScanResult
+  render(<Correlations result={result} />)
+  const region=screen.getByRole('region',{name:'Declared MCP tool: inspect_text'})
+  expect(within(region).getByText('calls imported api · inferred')).toBeInTheDocument()
+  expect(within(region).getByText(/helpers.parse.*yaml.load/)).toBeInTheDocument()
+  expect(within(region).getByText(/yaml.load.*PyYAML@1.0.0/)).toBeInTheDocument()
+  expect(within(region).getByText('Evidence basis: distribution record claim')).toBeInTheDocument()
+  const provenance=result.correlation_groups!.find(g=>g.id.startsWith('mcp-tool-'))!.relationships.find(e=>e.kind==='declared_version_matches_osv_advisory')!.provenance!
+  expect(within(region).getByText((_,element)=>element?.tagName==='PRE' && element.textContent===JSON.stringify(provenance,null,2))).toBeInTheDocument()
+  expect(within(region).getAllByRole('link',{name:'helpers.py:3'}).length).toBeGreaterThan(0)
+  result.correlation_groups!.find(g=>g.id.startsWith('mcp-tool-'))!.limitations.forEach(limit=>expect(within(region).getByText(limit)).toBeInTheDocument())
+})
+
+it('shows unresolved tool and call-path reasons separately from findings', () => {
+  const result=structuredClone(toolReport) as ScanResult
+  result.correlation_groups!.find(g=>g.id.startsWith('mcp-tool-'))!.resolution_notes=[{reason:'handler_call_depth_reached',file_path:'helpers.py',line_number:3}]
+  result.correlation_resolutions![0].tool_resolution_notes=[{reason:'unsupported_tool_decorator',file_path:'server.py',line_number:4}]
+  render(<Correlations result={result} />)
+  expect(screen.getByText('handler call depth reached · helpers.py:3')).toBeInTheDocument()
+  expect(screen.getByText('Tool resolution: unsupported tool decorator · server.py:4')).toBeInTheDocument()
+})
 
 it('renders backend groups, classifications, member references and every source/sink location', () => {
   render(<Correlations result={report} />)
