@@ -146,6 +146,8 @@ class SCAScanner(Scanner):
                 confidence="high", rule_id="SCA-UNRESOLVED-001"))
         vuln_findings = self._check_osv(dependencies)
         findings.extend(vuln_findings)
+        from scanner.advisory_usage import annotate_usage
+        annotate_usage(findings, files)
 
         return findings
 

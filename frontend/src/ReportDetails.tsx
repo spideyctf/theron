@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { downloadBlob, sourceUrl } from './api'
-import type { CorrelationEndpoint, Finding, ScanJob, ScanResult } from './api'
+import type { ApplicationReview, CorrelationEndpoint, Finding, ScanJob, ScanResult } from './api'
 
 type Component = { name?: string; version?: string; purl?: string; type?: string; 'bom-ref'?: string; properties?: { name: string; value: string }[] }
 type Bom = { bomFormat?: string; specVersion?: string; components?: Component[] }
@@ -8,6 +8,17 @@ const pretty = (value: unknown) => JSON.stringify(value, null, 2)
 const endpoint = (value: CorrelationEndpoint) => value.symbol
   ? `${value.symbol}${value.file_path ? ` (${value.file_path}${value.line_number ? `:${value.line_number}` : ''})` : ''}`
   : value.package ? `${value.package}@${value.version || 'unknown version'}` : value.file_path || value.fingerprint || value.kind
+
+export function ApplicationEvidence({review}: {review: ApplicationReview}) {
+  return <section className="detail-section"><h4>Application code evidence</h4>
+    <p>{review.status.replaceAll('_',' ')} · {review.imports_observed} imports · {review.calls_observed} syntactic calls</p>
+    <p>Source observations only. Affected behavior and application vulnerability remain unverified.</p>
+    <p>{review.coverage.parsed} / {review.coverage.python_files} Python files parsed{review.coverage.truncated ? '; collection analysis limit reached' : ''}.</p>
+    <ul>{review.calls.map((call,i) => <li key={i}>{call.symbol} · {call.file_path}:{call.line_number} · {call.scope}</li>)}</ul>
+    <ul>{review.limitations.map(limit => <li key={limit}>{limit}</li>)}</ul>
+    <details><summary>Application source observations and hashes</summary><pre>{pretty(review)}</pre></details>
+  </section>
+}
 
 export function Correlations({ result, onInspect }: { result: ScanResult; onInspect?: (finding: Finding) => void }) {
   if (result.correlation_enabled === undefined) return <div className="report-empty"><h3>MCP links unavailable</h3><p>This report predates the correlation pilot. A new scan can collect declaration and code evidence.</p></div>
@@ -36,7 +47,7 @@ export function Correlations({ result, onInspect }: { result: ScanResult; onInsp
     </section>)}
     {!groups.length && <p>No supported code-flow or dependency-context group was established. This does not establish safety.</p>}
     <h4>Declaration resolution</h4>
-    <div className="table-scroll"><table className="inventory-table"><thead><tr><th>Configuration</th><th>Candidate entrypoint</th><th>Outcome</th></tr></thead><tbody>{resolutions.map((row,i) => <tr key={i}><td>{row.config_file}<small>{row.pointer || 'Root object'} · {row.scope}</small></td><td>{row.entrypoint || 'Unresolved'}</td><td>{row.status} · {row.classification}<small>{row.reason.replaceAll('_',' ')}</small>{row.package_entrypoint && <details><summary>Package entrypoint evidence</summary><p>{row.package_entrypoint.package} · {row.package_entrypoint.object_reference}</p><p>{row.package_entrypoint.basis.replaceAll('_',' ')}; installation and startup unverified.</p><pre>{pretty(row.package_entrypoint)}</pre></details>}{row.tool_resolution_notes?.map((note,j) => <small key={j}>Tool resolution: {note.reason.replaceAll('_',' ')} · {note.file_path}{note.line_number ? `:${note.line_number}` : ''}</small>)}</td></tr>)}</tbody></table></div>
+    <div className="table-scroll"><table className="inventory-table"><thead><tr><th>Configuration</th><th>Candidate entrypoint</th><th>Outcome</th></tr></thead><tbody>{resolutions.map((row,i) => <tr key={i}><td>{row.config_file}<small>{row.pointer || 'Root object'} · {row.scope}</small></td><td>{row.entrypoint || 'Unresolved'}</td><td>{row.status} · {row.classification}<small>{row.reason.replaceAll('_',' ')}</small>{row.package_entrypoint && <details><summary>Package entrypoint evidence</summary><p>{row.package_entrypoint.package} · {row.package_entrypoint.object_reference}</p>{row.package_entrypoint.floating_request && <p>Unpinned request: collected version candidate {row.package_entrypoint.candidate_version}; launch may select another version.</p>}<p>{row.package_entrypoint.basis.replaceAll('_',' ')}; installation and startup unverified.</p><pre>{pretty(row.package_entrypoint)}</pre></details>}{row.deployment_binding && <details><summary>Implementation source binding</summary><p>{row.deployment_binding.reason}</p><p>Hash-checked source claim; runtime and remote identity unverified.</p><pre>{pretty(row.deployment_binding)}</pre></details>}{row.tool_resolution_notes?.map((note,j) => <small key={j}>Tool resolution: {note.reason.replaceAll('_',' ')} · {note.file_path}{note.line_number ? `:${note.line_number}` : ''}</small>)}</td></tr>)}</tbody></table></div>
     {!resolutions.length && <p>No supported MCP configuration filenames were collected.</p>}
     <details className="raw-data"><summary>Complete correlation evidence</summary><pre>{pretty({groups,resolutions})}</pre></details>
   </div>

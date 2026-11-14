@@ -186,7 +186,7 @@ def _run_local_scan(args, module_names):
     result.findings = normalize_findings(result.findings, config)
     partition_findings(result)
     from scanner.correlation import correlate
-    correlate(result, files, config.get('correlation_enabled', True))
+    correlate(result, files, config.get('correlation_enabled', True), config.get('mcp_bindings', []))
     result.scan_duration_seconds = round(time.time() - start, 2)
 
     sev_order = {Severity.CRITICAL: 0, Severity.HIGH: 1, Severity.MEDIUM: 2, Severity.LOW: 3, Severity.INFO: 4}

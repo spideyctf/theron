@@ -1,7 +1,7 @@
 import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { expect, it, vi } from 'vitest'
-import { Correlations, Dependencies } from './ReportDetails'
+import { ApplicationEvidence, Correlations, Dependencies } from './ReportDetails'
 import App from './App'
 import { api } from './api'
 import type { ScanJob, ScanResult } from './api'
@@ -9,6 +9,17 @@ import backendReport from '../../tests/fixtures/correlation-report.json'
 import toolReport from '../../tests/fixtures/tool-correlation-report.json'
 
 const report = backendReport as ScanResult
+
+it('distinguishes application source observations from confirmed vulnerabilities', () => {
+  render(<ApplicationEvidence review={{status:'direct_api_call_observed',attribution_basis:'same_name_import_candidate',
+    imports_observed:1,calls_observed:1,imports:[],calls:[{file_path:'app.py',line_number:3,symbol:'demo.parse',scope:'application'}],
+    coverage:{python_files:2,parsed:1,parse_failures:['bad.py'],file_limit:200,truncated:false},
+    affected_behavior_verified:false,vulnerability_confirmed:false,limitations:['Transitive use remains unknown.'],
+    source_text_sha256:{'app.py':'hash-value'}}} />)
+  expect(screen.getByText(/Affected behavior and application vulnerability remain unverified/)).toBeInTheDocument()
+  expect(screen.getByText(/demo.parse.*app.py:3/)).toBeInTheDocument()
+  expect(screen.getByText(/1 \/ 2 Python files parsed/)).toBeInTheDocument()
+})
 
 it('shows package entrypoint claims and source hashes with runtime limits', () => {
   const value: ScanResult = {...report, correlation_groups: [], correlation_resolutions: [{

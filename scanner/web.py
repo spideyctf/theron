@@ -21,6 +21,7 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from scanner.engine import ScanEngine
 from scanner.config import validate_entrypoints
+from scanner.mcp_bindings import validate_bindings
 from scanner.reporters.json_reporter import generate_json_report
 from scanner.reporters.sarif import generate_sarif_report
 
@@ -35,6 +36,7 @@ class ScanRequest(BaseModel):
     include_experimental: bool = False
     correlation_enabled: bool = True
     analysis_entrypoints: List[dict] = Field(default_factory=list,max_length=100)
+    mcp_bindings: List[dict] = Field(default_factory=list,max_length=100)
 
 
 def repository_name(value: str) -> str:
@@ -104,7 +106,8 @@ def create_app(scanner_factory=ScanEngine, static_dir=None):
         try:
             engine = scanner_factory(token, config={"include_experimental": body.include_experimental,
                                                     'correlation_enabled':body.correlation_enabled,
-                                                    'analysis_entrypoints':body.analysis_entrypoints})
+                                                    'analysis_entrypoints':body.analysis_entrypoints,
+                                                    'mcp_bindings':body.mcp_bindings})
             owner, repo = body.repository.split("/")
             result = engine.scan_repo(owner, repo, branch=body.branch, modules=body.modules)
             with lock:
@@ -135,6 +138,7 @@ def create_app(scanner_factory=ScanEngine, static_dir=None):
             raise HTTPException(422, "Select one or more unique modules: ai, sast, sca, agentic.")
         try:
             validate_entrypoints(body.analysis_entrypoints)
+            validate_bindings(body.mcp_bindings)
         except ValueError as exc:
             raise HTTPException(422,str(exc)) from exc
         if body.branch is not None:

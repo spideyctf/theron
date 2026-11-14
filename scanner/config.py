@@ -12,6 +12,7 @@ DEFAULT_CONFIG = {
     "accepted_fingerprints": [],
     "correlation_enabled": True,
     "analysis_entrypoints": [],
+    "mcp_bindings": [],
 }
 
 MODULES = {"ai", "sast", "sca", "agentic"}
@@ -72,6 +73,8 @@ def load_config(scan_root: str, config_path: Optional[str] = None) -> Dict[str, 
             config[key] = loaded[key]
     validate_modules(config["modules"])
     validate_entrypoints(config['analysis_entrypoints'])
+    from scanner.mcp_bindings import validate_bindings
+    validate_bindings(config['mcp_bindings'])
     if type(config['correlation_enabled']) is not bool:
         raise ValueError('correlation_enabled must be a boolean')
     for key in ("exclude", "accepted_fingerprints"):

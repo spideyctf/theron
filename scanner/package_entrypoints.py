@@ -34,6 +34,7 @@ def package_launch(config_path, field, server, files):
     if not isinstance(args, list) or not args or any(not isinstance(a, str) for a in args):
         return None, 'invalid_or_missing_argument_vector', None
     requested = None
+    floating = False
     if server['command'] == 'uv':
         if args[0] != 'run' or len(args) < 2 or args[1].startswith('-'):
             return None, 'unsupported_uv_invocation', None
@@ -45,7 +46,8 @@ def package_launch(config_path, field, server, files):
         else:
             requested = args[0]
             command = requested.split('==')[0]
-        if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]*==\d+(?:\.\d+)+(?:[-+._][A-Za-z0-9.-]+)?', requested):
+        floating=bool(re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]*', requested))
+        if not floating and not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]*==\d+(?:\.\d+)+(?:[-+._][A-Za-z0-9.-]+)?', requested):
             return None, 'external_package_version_unresolved', None
         mode = 'collected_distribution_entrypoint_claim'
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]*', command):
@@ -81,7 +83,8 @@ def package_launch(config_path, field, server, files):
         except (ValueError, TypeError, AttributeError):
             return None, 'malformed_project_entrypoint_metadata', None
     else:
-        package, version = requested.split('==')
+        package, version = (requested, None) if floating else requested.split('==')
+        candidate_versions=set()
         for path, text in files.items():
             parent = PurePosixPath(path).parent
             if PurePosixPath(path).name != 'entry_points.txt' or not parent.name.endswith('.dist-info'):
@@ -91,8 +94,9 @@ def package_launch(config_path, field, server, files):
                 continue
             message = Parser().parsestr(files[metadata], headersonly=True)
             names, versions = message.get_all('Name', []), message.get_all('Version', [])
-            if len(names) != 1 or len(versions) != 1 or canonical(str(names[0]).strip()) != canonical(package) or str(versions[0]).strip() != version:
+            if len(names) != 1 or len(versions) != 1 or canonical(str(names[0]).strip()) != canonical(package) or (version is not None and str(versions[0]).strip() != version):
                 continue
+            if floating:candidate_versions.add(str(versions[0]).strip())
             parser = configparser.ConfigParser(interpolation=None, strict=True)
             parser.optionxform = str
             try:
@@ -102,6 +106,10 @@ def package_launch(config_path, field, server, files):
                 return None, 'malformed_distribution_entrypoint_metadata', None
             if target:
                 declarations.append((target, path, parent.parent, package))
+        if floating:
+            if not declarations:return None, 'external_package_version_unresolved', None
+            if len(candidate_versions)!=1:return None, 'ambiguous_floating_package_versions', None
+            version=next(iter(candidate_versions))
     if len(declarations) != 1:
         return None, 'missing_or_ambiguous_package_entrypoint', None
     target, metadata, source_root, package = declarations[0]
@@ -148,4 +156,6 @@ def package_launch(config_path, field, server, files):
                   callable_file=path, callable_line=definitions[0].lineno,
                   installation_verified=False, startup_verified=False,
                   source_text_sha256={p: hashlib.sha256(files[p].encode()).hexdigest() for p in evidence_paths})
+    if floating:
+        detail.update(basis='floating_distribution_entrypoint_candidate', floating_request=True, candidate_version=version)
     return path, 'package_entrypoint_inferred', detail

@@ -133,7 +133,7 @@ class ScanEngine:
 
         result.findings = normalize_findings(result.findings, self.config)
         partition_findings(result)
-        correlate(result, files, self.config.get('correlation_enabled', True))
+        correlate(result, files, self.config.get('correlation_enabled', True), self.config.get('mcp_bindings', []))
         result.scan_duration_seconds = round(time.time() - start_time, 2)
 
         # Sort findings by severity

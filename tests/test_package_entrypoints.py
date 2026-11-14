@@ -50,6 +50,20 @@ def test_pinned_uvx_uses_collected_distribution_entrypoint_and_record():
     assert len(evidence['source_text_sha256']) == 4
 
 
+def test_unpinned_request_uses_unique_collected_version_only_as_a_candidate():
+    config, server, files = distribution()
+    server['args']=['demo']
+    files[config]=json.dumps({'servers':{'demo':server}})
+    path, _, evidence=package_launch(config,'servers',server,files)
+    assert path=='server.py' and evidence['floating_request'] and evidence['candidate_version']=='1.0'
+    result=ScanResult(repo_full_name='owner/project',branch='main',findings=[])
+    correlate(result,files)
+    assert result.correlation_resolutions[0]['status']=='candidate'
+    files['other.dist-info/METADATA']='Name: demo\nVersion: 2.0\n'
+    files['other.dist-info/entry_points.txt']='[console_scripts]\ndemo=server:main\n'
+    assert package_launch(config,'servers',server,files)[0] is None
+
+
 @pytest.mark.parametrize('extra,reason', [
     ({'pyproject.toml': PROJECT.replace('server:main', 'other:main')}, 'missing_or_ambiguous_entrypoint_module'),
     ({'src/server.py': CODE}, 'missing_or_ambiguous_entrypoint_module'),

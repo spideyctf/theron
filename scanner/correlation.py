@@ -124,12 +124,14 @@ def _dependency_links(target,files,findings):
     return sorted(links,key=lambda item:item[0].fingerprint)
 
 
-def correlate(result, files, enabled=True):
+def correlate(result, files, enabled=True, bindings=None):
     """Attach additive report-local groups after normalization/partitioning."""
     result.correlation_enabled = enabled
     result.correlation_groups, result.correlation_resolutions = [], []
     if not enabled:
         return
+    from scanner.mcp_bindings import validate_bindings, bind_source
+    bindings=validate_bindings(bindings if bindings is not None else [])
     paths = defaultdict(list)
     for path in files:
         normalized = _path(path)
@@ -171,11 +173,16 @@ def correlate(result, files, enabled=True):
             pointer='/'+field+'/'+name.replace('~','~0').replace('/','~1')
             entrypoint,reason=_resolve(config_path,field,server)
             launch_evidence=None
-            if entrypoint is None and isinstance(server,dict) and server.get('command') in {'uv','uvx'}:
+            binding_evidence=None
+            binding=next((b for b in bindings if b['config_file']==config_path and b['pointer']==pointer),None)
+            if binding:
+                entrypoint,reason,binding_evidence=bind_source(binding,server,files)
+            elif entrypoint is None and isinstance(server,dict) and server.get('command') in {'uv','uvx'}:
                 from scanner.package_entrypoints import package_launch
                 entrypoint,reason,launch_evidence=package_launch(config_path,field,server,files)
             row=resolution(pointer,reason)
             if launch_evidence:row['package_entrypoint']=launch_evidence
+            if binding_evidence:row['deployment_binding']=binding_evidence
             if entrypoint is None:
                 continue
             row['entrypoint']=entrypoint
@@ -188,6 +195,8 @@ def correlate(result, files, enabled=True):
                 continue
             target=candidates[0][1]
             row.update(status='resolved',classification='inferred',entrypoint=target)
+            if binding_evidence:row['status']='source_bound'
+            elif launch_evidence and launch_evidence.get('floating_request'):row['status']='candidate'
             members=sorted(flows.get(target,[]),key=lambda f:f.fingerprint)
             dependencies=_dependency_links(target,files,result.findings+result.context_findings)
             tool_groups=[]
@@ -226,11 +235,22 @@ def correlate(result, files, enabled=True):
             row['group_ids'].append(group_id)
     groups_by_id={group['id']:group for group in result.correlation_groups}
     for row in result.correlation_resolutions:
+        binding=row.get('deployment_binding')
+        if binding:
+            for group_id in row['group_ids']:
+                group=groups_by_id[group_id]
+                group['limitations'].append('Explicit source binding is a supplied, hash-checked implementation claim; remote identity, environment equivalence and runtime dispatch remain unverified.')
+                group['relationships'].insert(0,dict(kind='explicitly_binds_implementation_source',classification='inferred',basis=binding['basis'],
+                    source=dict(kind='configuration',file_path=row['config_file'],pointer=row['pointer']),
+                    target=dict(kind='file',file_path=row['entrypoint']),
+                    evidence=[dict(file_path=p,role='explicit-source-binding') for p in binding['source_text_sha256']],
+                    provenance=dict(commit_sha=result.commit_sha,source_text_sha256=binding['source_text_sha256'])))
         launch=row.get('package_entrypoint')
         if not launch:continue
         for group_id in row['group_ids']:
             group=groups_by_id[group_id]
             group['limitations'].append('Package entrypoint metadata is a static claim; the declared callable, tool startup and effective installed distribution were not executed or verified.')
+            if launch.get('floating_request'):group['limitations'].append('The external package request is unpinned; the collected version is a candidate and a launch may select a different version.')
             group['relationships'].insert(0,dict(kind='package_metadata_declares_entrypoint',classification='inferred',basis=launch['basis'],
                 source=dict(kind='configuration',file_path=row['config_file'],pointer=row['pointer']),
                 target=dict(kind='function',file_path=launch['callable_file'],line_number=launch['callable_line'],symbol=launch['object_reference']),

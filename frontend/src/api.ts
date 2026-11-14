@@ -2,6 +2,13 @@ export const severities = ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'INFO'] as const
 export const modules = ['ai', 'sast', 'sca', 'agentic'] as const
 export type Severity = typeof severities[number]
 export type Module = typeof modules[number]
+export interface ApplicationReview {
+  status: string; attribution_basis: string; imports_observed: number; calls_observed: number
+  imports: {file_path: string; line_number: number; symbol: string; scope: string}[]
+  calls: {file_path: string; line_number: number; symbol: string; scope: string}[]
+  affected_behavior_verified: boolean; vulnerability_confirmed: boolean; limitations: string[]
+  source_text_sha256: Record<string,string>; coverage: {python_files: number; parsed: number; parse_failures: string[]; file_limit: number; truncated: boolean}
+}
 export interface Finding {
   title: string; severity: Severity; category: string; module: string; description: string
   file_path: string; line_number: number | null; code_snippet: string | null
@@ -14,7 +21,8 @@ export interface Finding {
     related_locations?: { role: string; file_path: string; line_number: number; matches_returned_object?: boolean; matches_subject?: boolean }[] }
   dependency?: { package: string; version: string; ecosystem: string; manifest: string; provider: string
     advisory_ids: string[]; cwes: string[]; fixed_versions: string[]; queried_at: string; matching: string
-    lock_provenance?: { format: string; source_text_sha256: string; installation_verified: boolean; environment_selected: boolean } }
+    lock_provenance?: { format: string; source_text_sha256: string; installation_verified: boolean; environment_selected: boolean }
+    application_review?: ApplicationReview }
 }
 export interface ScanResult {
   repo_full_name: string; branch: string; findings: Finding[]; files_scanned: number
@@ -45,7 +53,9 @@ export interface CorrelationResolution {
   tool_resolution_notes?: { reason: string; file_path: string; line_number?: number }[]
   package_entrypoint?: { basis: string; package: string; command: string; object_reference: string
     callable_file: string; callable_line: number; installation_verified: boolean; startup_verified: boolean
-    source_text_sha256: Record<string,string> }
+    source_text_sha256: Record<string,string>; floating_request?: boolean; candidate_version?: string }
+  deployment_binding?: { basis: string; kind: string; reason: string; source_text_sha256: Record<string,string>
+    runtime_verified: boolean; remote_identity_verified: boolean }
 }
 export interface ScanJob {
   id: string; repository: string; branch: string | null; modules: string[]; include_experimental: boolean
