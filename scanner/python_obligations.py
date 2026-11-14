@@ -187,6 +187,10 @@ class Context:
             return root+'.'+node.attr if root else ''
         return ''
 
+    def imports_api(self,apis):
+        return any(value and any(api==value or api.startswith(value+'.') for api in apis)
+                   for value in self.bindings.values())
+
     def inherits(self,name,roots,seen=None):
         if name in roots:return True
         seen=set() if seen is None else seen
@@ -629,6 +633,7 @@ class SignedPayload:
 
     @classmethod
     def analyze(cls,context):
+        if not context.imports_api({'jwcrypto.jws.JWS'}):return
         for method in ast.walk(context.tree):
             if not isinstance(method,(ast.FunctionDef,ast.AsyncFunctionDef)):continue
             if not any(isinstance(n,ast.Call) and context.resolve(n.func)=='jwcrypto.jws.JWS' for n in ast.walk(method)):continue
@@ -649,6 +654,7 @@ class HMACKeyFormats:
 
     @classmethod
     def analyze(cls,context):
+        if not context.imports_api(cls.APIS):return
         for owner in context.tree.body:
             if not isinstance(owner,ast.ClassDef):continue
             constructor=next((n for n in owner.body if isinstance(n,ast.FunctionDef) and n.name=='__init__'),None)
@@ -740,6 +746,7 @@ class HTTPGrammar:
 
     @classmethod
     def analyze(cls,context):
+        if not context.imports_api(cls.HTTP_APIS):return
         if not any(isinstance(n,ast.Call) and context.resolve(n.func) in cls.HTTP_APIS for n in ast.walk(context.tree)):return
         for method in ast.walk(context.tree):
             if not isinstance(method,ast.FunctionDef):continue
