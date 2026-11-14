@@ -22,6 +22,18 @@ CALL_RETURN_TYPES = {
 }
 
 
+SOUP_TEXT_APIS = {'bs4.element.Tag.'+method for method in ['find','find_all','select','select_one','get_text']}
+WEAK_RANDOM_APIS = {f'{root}.{method}' for root in ('random', 'random.Random')
+                        for method in ('random', 'randint', 'randrange', 'choice', 'choices', 'getrandbits',
+                                       'randbytes', 'uniform', 'normalvariate', 'gauss')}
+REQUEST_READ_APIS = {f"{root}.{method}" for root in ("flask.request", "bottle.request", "quart.request", "fastapi.Request", "starlette.requests.Request", "django.http.HttpRequest", "pyramid.request.Request", "sanic.request.Request", "aiohttp.web.Request", "falcon.Request")
+                        for method in ("get_json", "get_data", "json", "args.get", "args.getlist", "form.get", "form.getlist", "forms.get", "values.get", "values.getlist", "query.get", "query_params.get", "headers.get", "cookies.get", "GET.get", "POST.get", "GET.getlist", "POST.getlist", "COOKIES.get")}
+REQUEST_ATTRIBUTE_APIS = {f"{root}.{attribute}" for root in ("flask.request", "bottle.request", "quart.request", "fastapi.Request", "starlette.requests.Request", "django.http.HttpRequest", "pyramid.request.Request", "sanic.request.Request", "aiohttp.web.Request", "falcon.Request")
+                               for attribute in ("args", "form", "forms", "values", "query", "query_params", "json", "data", "headers", "cookies", "files", "GET", "POST", "body", "COOKIES", "FILES", "params", "matchdict", "stream", "media")}
+PATH_FILE_APIS = {f'pathlib.Path.{method}' for method in ('open', 'read_text', 'read_bytes', 'write_text', 'write_bytes')}
+HTTP_CLIENT_APIS = {f"{library}.{method}" for library in ("requests", "httpx") for method in ("get", "post", "put", "patch", "delete", "head", "options")}
+
+
 class PythonAIAnalyzer(ast.NodeVisitor):
     def __init__(self, file_path, content, module="ai", include_experimental=False, project=None, disabled_features=(), entrypoints=()):
         from scanner.config import validate_entrypoints
@@ -532,7 +544,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return self._source(node.args[0]) if node.args else None
             if name in {'kombu.utils.encoding.from_utf8','kombu.utils.encoding.bytes_to_str','kombu.utils.encoding.ensure_bytes'}:
                 return self._source(node.args[0]) if node.args else None
-            if name in {'bs4.element.Tag.'+method for method in ['find','find_all','select','select_one','get_text']}:
+            if name in SOUP_TEXT_APIS:
                 return self._source(node.func.value)
             if name in {'importlib.import_module','builtins.__import__'} or (isinstance(node.func,ast.Name) and node.func.id=='__import__' and '__import__' not in self.bindings):
                 return self._tag_source(self._source(node.args[0]),'reflective-object') if node.args else None
@@ -563,9 +575,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if (name == 'starlette.types.Scope.get' and node.args
                     and self._constant(node.args[0]) in {'path', 'raw_path', 'query_string', 'headers'}):
                 return ('input', node.lineno)
-            if name in {f'{root}.{method}' for root in ('random', 'random.Random')
-                        for method in ('random', 'randint', 'randrange', 'choice', 'choices', 'getrandbits',
-                                       'randbytes', 'uniform', 'normalvariate', 'gauss')}:
+            if name in WEAK_RANDOM_APIS:
                 return ('weak-random', node.lineno)
             if name in {'flask.make_response', 'quart.make_response'} and len(node.args) == 1 and not node.keywords:
                 body = node.args[0]
@@ -608,8 +618,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return ("input", node.lineno)
             if isinstance(node.func, ast.Name) and node.func.id == "input" and "input" not in self.bindings:
                 return ("input", node.lineno, frozenset({"local-input"}))
-            if name in {f"{root}.{method}" for root in ("flask.request", "bottle.request", "quart.request", "fastapi.Request", "starlette.requests.Request", "django.http.HttpRequest", "pyramid.request.Request", "sanic.request.Request", "aiohttp.web.Request", "falcon.Request")
-                        for method in ("get_json", "get_data", "json", "args.get", "args.getlist", "form.get", "form.getlist", "forms.get", "values.get", "values.getlist", "query.get", "query_params.get", "headers.get", "cookies.get", "GET.get", "POST.get", "GET.getlist", "POST.getlist", "COOKIES.get")}:
+            if name in REQUEST_READ_APIS:
                 if any(kw.arg == "type" and isinstance(kw.value, ast.Name) and kw.value.id in {"int", "float"}
                        and kw.value.id not in self.bindings for kw in node.keywords):
                     return None
@@ -630,8 +639,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 return ("model-response", node.lineno)
         if resolved == "sys.argv":
             return ("input", node.lineno, frozenset({"local-input"}))
-        if resolved in {f"{root}.{attribute}" for root in ("flask.request", "bottle.request", "quart.request", "fastapi.Request", "starlette.requests.Request", "django.http.HttpRequest", "pyramid.request.Request", "sanic.request.Request", "aiohttp.web.Request", "falcon.Request")
-                               for attribute in ("args", "form", "forms", "values", "query", "query_params", "json", "data", "headers", "cookies", "files", "GET", "POST", "body", "COOKIES", "FILES", "params", "matchdict", "stream", "media")}:
+        if resolved in REQUEST_ATTRIBUTE_APIS:
             return ("input", node.lineno)
         if isinstance(node, ast.Name):
             source = self.taint.get(node.id)
@@ -1546,7 +1554,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         path_values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg in {"file", "filename", "path", "path_or_file", "name"}]
         path_source = self._combine(self._source(value) for value in path_values)
         path_sink = builtin == "open" or name in {"builtins.open", "io.open", "codecs.open", "flask.send_file", "quart.send_file", "starlette.responses.FileResponse", "fastapi.responses.FileResponse", "PIL.Image.open", "tarfile.open", "zipfile.ZipFile"}
-        if name in {f'pathlib.Path.{method}' for method in ('open', 'read_text', 'read_bytes', 'write_text', 'write_bytes')} and isinstance(node.func, ast.Attribute):
+        if name in PATH_FILE_APIS and isinstance(node.func, ast.Attribute):
             path_sink, path_source = True, self._source(node.func.value)
         if path_sink and path_source and path_source[0] == "input" and not self._safe_for(path_source, "path") and not self._safe_for(path_source, "local-input"):
             self._add(node, "PY-SAST-PATH-001", "External input controls a filesystem path", Severity.HIGH,
@@ -1587,7 +1595,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                           experimental=framework_redirect)
         url_values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg == "url"]
         url_source = self._combine(self._source(value) for value in url_values)
-        if name in {f"{library}.{method}" for library in ("requests", "httpx") for method in ("get", "post", "put", "patch", "delete", "head", "options")} | {"urllib.request.urlopen"} and url_source and url_source[0] == "input":
+        if name in HTTP_CLIENT_APIS | {"urllib.request.urlopen"} and url_source and url_source[0] == "input":
             self._add(node, "PY-SAST-SSRF-001", "External input controls an outbound request URL", Severity.HIGH, Category.SAST,
                       f"External input from line {url_source[1]} controls the destination URL of a resolved HTTP request.",
                       "Use a fixed destination allowlist, validate resolved IPs and redirects, and block internal or link-local addresses.", "CWE-918", source_line=url_source[1], source_file=url_source[3] if len(url_source) > 3 else None)
