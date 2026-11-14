@@ -1,10 +1,12 @@
 # Theron: realistic project assessment and improvement plan
 
-**Assessment date:** 15 November 2026. **Current correlation checkpoint:** `7b99d5c`. **Detection benchmark checkpoint:** `7b64719`. **Paired behavior evidence:** `15a4356`.
+**Assessment date:** 15 November 2026. **Current lock/entrypoint checkpoint:** `34ce50d`. **Detection benchmark checkpoint:** `7b64719`. **Paired behavior evidence:** `15a4356`.
 
-Latest increment: [tool-level correlation and package-attribution evidence](evaluation/tool-correlation-2026-11-15/README.md). Supported tool registration, bounded local call paths, collected distribution-record claims, source/advisory digests and frontend provenance are implemented. All 16 original controls match expectations, and two pinned upstream source examples each produce one tool group under generated configurations. These checks do not establish independent edge accuracy, new vulnerabilities or improved review decisions; the real-code research gate remains open.
+Earlier [tool-level correlation and package-attribution evidence](evaluation/tool-correlation-2026-11-15/README.md) established supported tool registration, bounded local call paths, collected distribution-record claims, source/advisory digests and frontend provenance. All 16 original controls matched expectations, and two pinned upstream source examples each produced one tool group under generated configurations. These checks do not establish independent edge accuracy, new vulnerabilities or improved review decisions; the real-code research gate remains open.
 
 ## Current verdict
+
+New [lock inventory and package-entrypoint checkpoint](evaluation/lock-entrypoints-development-2026-11-15/README.md): 859 Python tests, 21 frontend tests and the production build pass. Supported `uv.lock` inventory versions now reach OSV, and supported `uv run` / pinned `uvx` metadata resolves static entrypoint context. An exposed Office Word development replay made 37 successful OSV queries and returned 26 advisory matches across ten package names. These are locked-inventory candidates, not confirmed application vulnerabilities. Its absolute MCP launch still produces no groups. This does not replace the original frozen result or demonstrate the incremental research benefit.
 
 Latest external-source check: the [frozen real-repository correlation pilot](evaluation/real-correlation-2026-11-15/README.md) collected 126 verified files across three repositories. All seven declarations remained unresolved; no correlation groups were produced. All 35 parsed dependency declaration tuples lacked supported exact versions, so OSV made no requests. Correlation preserved finding payloads/counts, but this pilot demonstrates compatibility gaps rather than a cross-layer research benefit. The next engineering priorities are evidence-backed package launches, supported lockfile resolution and broader client path contracts, followed by a new reserve. These sources are now development-exposed.
 
@@ -36,8 +38,8 @@ The frontend displays the principal finding, obligation, dependency and correlat
 
 | Measurement | Recorded result | Meaning |
 | --- | --- | --- |
-| Python suite | **823 pass**, one dependency deprecation warning | Current correlation-increment regression checkpoint |
-| Frontend | **19 pass; production build passes** | Current correlation symbols, provenance and unresolved-state UI tested |
+| Python suite | **859 pass**, one dependency deprecation warning | Current lock/entrypoint regression checkpoint |
+| Frontend | **21 pass; production build passes** | Correlation symbols, package/lock provenance and unresolved-state UI tested |
 | Synthetic stability | **1,470 case outcomes and alert counts unchanged** after the latest detector changes | Recent changes preserve those exposed regressions |
 | Offline smoke | **52.89 seconds / 120 seconds**, 273 files read from 275 selected | One pinned offline SAST/AI/agentic workload; not a capacity or speed ranking |
 | Incomplete coverage | Three application notices, 12 context findings, two oversized files in that smoke | A completed scan is not complete analysis of every input |

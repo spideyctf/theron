@@ -1,0 +1,192 @@
+{
+  "repository": "GongRzhe/Office-Word-MCP-Server",
+  "revision": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+  "records": [
+    {
+      "path": "__init__.py",
+      "git_blob_sha": "d9b86b650fb7864f1efac779e71e8804f214e261",
+      "sha256": "a3d48770fedb1011946fe2b1d2de97ee5212e45000abed10a9b4f91b253cd547",
+      "bytes": 125
+    },
+    {
+      "path": "mcp-config.json",
+      "git_blob_sha": "246a3ef281c8662dc5c39d6e20fadee052b143dd",
+      "sha256": "e0fc2abc3e5ee788792b589056beec82fbdc8140ad9a571818f567e165ea727b",
+      "bytes": 374
+    },
+    {
+      "path": "office_word_mcp_server/__init__.py",
+      "git_blob_sha": "d71a049fba7526ec79dab14eda8c6b05fd9afcca",
+      "sha256": "9f81caad3781e49982666c9fb186133c9a3abbd30a35629ec84feeafd1ade863",
+      "bytes": 75
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob_sha": "ca9ea6a09addfa816a28e4f4377653d78cec011c",
+      "sha256": "00a4f078e7da767de14beecf0d6704b606d12be023a834082d410661f190f3c8",
+      "bytes": 1010
+    },
+    {
+      "path": "requirements.txt",
+      "git_blob_sha": "7077dbb023f05ac438bff446d19de19e09de31da",
+      "sha256": "713b0650babb1498cdc2598b7aeda0da4270378531a8986456864400fba46766",
+      "bytes": 59
+    },
+    {
+      "path": "setup_mcp.py",
+      "git_blob_sha": "f0caa5c4abf144aa4b54026e70347e2e876f9abc",
+      "sha256": "3dc16dc35954656864a2e8f5531f86ffff7474b2128d8391488a88a355b921b6",
+      "bytes": 19633
+    },
+    {
+      "path": "test_formatting.py",
+      "git_blob_sha": "f29f932a923a41c8d9113140604f7117842e1f4d",
+      "sha256": "5142bb02e50d50a86e40a301d77ddd9f71ff4f3bade75b1a99e1f66e9250246a",
+      "bytes": 3301
+    },
+    {
+      "path": "tests/test_convert_to_pdf.py",
+      "git_blob_sha": "c692fc82a982ff69176d78a3b8215ca7dc8f6c3a",
+      "sha256": "dff2120ff9c081939b0315fdc578d28114f791535be9994c16c017275555c3b2",
+      "bytes": 3562
+    },
+    {
+      "path": "word_document_server/__init__.py",
+      "git_blob_sha": "85d71f3950192d8de08036676e3a77808b40e72b",
+      "sha256": "b5adca72464ce060f7d64e0899617fd875a6aa778774b9ca71a9be89adb16c87",
+      "bytes": 475
+    },
+    {
+      "path": "word_document_server/core/__init__.py",
+      "git_blob_sha": "a0aa41db76cf40335a0fcbd63dff24bdd0dcc689",
+      "sha256": "490b03309f0699c98655858bf503174481571faaaca61e53b8ed1569bc8304ed",
+      "bytes": 679
+    },
+    {
+      "path": "word_document_server/core/comments.py",
+      "git_blob_sha": "9695c8b622044cdbf153093765de65824eb4d2ba",
+      "sha256": "85a94fe5387e785c493250f3b2979eb3ddd733a666816cb7e7f617fa25b9cbd2",
+      "bytes": 7207
+    },
+    {
+      "path": "word_document_server/core/footnotes.py",
+      "git_blob_sha": "f5147e0cf70d17475b712986c7f0b53c89c634ed",
+      "sha256": "72759d8ddcae7ea7c1ed682641136781898a14e110d91d79c5bde3ab48fd9494",
+      "bytes": 32618
+    },
+    {
+      "path": "word_document_server/core/protection.py",
+      "git_blob_sha": "e706fd79c6b14fbe94d588ecbb824f213d436acb",
+      "sha256": "4bfc28ff8b79fd9c2e063fbefecaba54c83e8abfa5536c7936cea5074f303251",
+      "bytes": 8462
+    },
+    {
+      "path": "word_document_server/core/styles.py",
+      "git_blob_sha": "49c5d51fbf00db7331a9f037c39c5f40789f9055",
+      "sha256": "31a6c5f6e3b9b1a6906874b2a8df238ac7e9891d3c83ae0c18fe50513087a141",
+      "bytes": 4942
+    },
+    {
+      "path": "word_document_server/core/tables.py",
+      "git_blob_sha": "9cc8dcf6cabee5f870d80dee8868c086688c9704",
+      "sha256": "fdd91d4bf61a793c8a33f2a6bdb76482913d4e3bfc04543cf846232a29f30463",
+      "bytes": 29656
+    },
+    {
+      "path": "word_document_server/core/unprotect.py",
+      "git_blob_sha": "8daddef20ef6af310d2b46021d121eb4ace8127c",
+      "sha256": "afde793e3c591733ba8ab5ea7a7313361e66fb796b20054a32f5943466c35313",
+      "bytes": 3053
+    },
+    {
+      "path": "word_document_server/main.py",
+      "git_blob_sha": "a6a0e491ddab71ba599ff84ca55e80fd455fe2ad",
+      "sha256": "967026a662e86b67d62994cbf020864995b66d48570ab0018dbe875a8002445d",
+      "bytes": 30505
+    },
+    {
+      "path": "word_document_server/tools/__init__.py",
+      "git_blob_sha": "e18325360c8c314e0a477998be870af590c39a48",
+      "sha256": "a51c81b7b81f3f6caccf6a6fe0af504aad3c3a099be3984c08ca86a618433a11",
+      "bytes": 1268
+    },
+    {
+      "path": "word_document_server/tools/comment_tools.py",
+      "git_blob_sha": "ffe88122f916665e7f887f8f962fa62225bccd69",
+      "sha256": "3f3a1c96c7a3e7066c73b58ed64037b7474f202dd87d0b900b63bb62eab4f58f",
+      "bytes": 5021
+    },
+    {
+      "path": "word_document_server/tools/content_tools.py",
+      "git_blob_sha": "d82500079412ccd47c97b8a2eb23812188230475",
+      "sha256": "45e54b7990093675dc4fd18b98da77b103ef16d8c69246ccd9fe1f9173cb6c44",
+      "bytes": 19600
+    },
+    {
+      "path": "word_document_server/tools/document_tools.py",
+      "git_blob_sha": "c15ad38ddc49a211db5634ab872a1f1af652bdd0",
+      "sha256": "e7a5f1106db3b5eeb45b0055e5e57916e60f22c3ccdae8fd74504849daf82f19",
+      "bytes": 7807
+    },
+    {
+      "path": "word_document_server/tools/extended_document_tools.py",
+      "git_blob_sha": "8e51b23054f4b9cb152120467b64ee364f85ac52",
+      "sha256": "977eb2e8ebcb45fffab3ccb73d8f596e95769edfd9822a5e48cef4a60cf79909",
+      "bytes": 8207
+    },
+    {
+      "path": "word_document_server/tools/footnote_tools.py",
+      "git_blob_sha": "72b0190da330ae34cca7d2498ab3654c2aef9f44",
+      "sha256": "483b04be6ed3865eb35228aef07a3132a7a7f0808c68aae2d21e7ca788260813",
+      "bytes": 25049
+    },
+    {
+      "path": "word_document_server/tools/format_tools.py",
+      "git_blob_sha": "a60fc0c4cb007ac60b8cfe408204f99f8bc77a22",
+      "sha256": "7be971915695e8f3cee38328e00bef7659248a3c1b3563393bb9a1afec62f76a",
+      "bytes": 44248
+    },
+    {
+      "path": "word_document_server/tools/protection_tools.py",
+      "git_blob_sha": "e52fd34a8343f860f10742bd4619b472cb1d4be5",
+      "sha256": "8bc7513df7f64f54a575791d467f4aabd6fc4ab92315314b624887fb6d87e4e4",
+      "bytes": 10634
+    },
+    {
+      "path": "word_document_server/utils/__init__.py",
+      "git_blob_sha": "1146a586e21741162f6e9d0cdd2f65f129843380",
+      "sha256": "fc4b29cd24dc0a208750d88513c6052e237fe4d22b2c7af0b927a81a643f55e7",
+      "bytes": 427
+    },
+    {
+      "path": "word_document_server/utils/document_utils.py",
+      "git_blob_sha": "c3681c08b85f31d5b6b967ebd8c6d1d0c4a3bfe0",
+      "sha256": "0b39155433a38b920a8ab79b7416726f6d187f1efccea0ae930f6c1b5b99529a",
+      "bytes": 24037
+    },
+    {
+      "path": "word_document_server/utils/extended_document_utils.py",
+      "git_blob_sha": "007d5ce1e35883fbf0822d6bc97f995fed2eefb7",
+      "sha256": "e04e6af24e1040df6347e28a5b5314028e7230d974d6908e8b32a870a2f8ecf7",
+      "bytes": 6987
+    },
+    {
+      "path": "word_document_server/utils/file_utils.py",
+      "git_blob_sha": "7974707c658071a2af6519c90ec538e07f0bbb85",
+      "sha256": "8b42a038ba0a3cb67bb37c95fa62391972dcdd8952e9b9d71283f8287130805c",
+      "bytes": 2641
+    },
+    {
+      "path": "word_mcp_server.py",
+      "git_blob_sha": "cd92472c04e9b4e375a066b9203d08dabd5b8804",
+      "sha256": "55bfc2002f979685aacd45d6c61268cd71e5d795dcae9a701a0aa53378590661",
+      "bytes": 237
+    },
+    {
+      "path": "uv.lock",
+      "git_blob_sha": "baa64d413c5a190c8c6dbef30754b59195612c31",
+      "sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+      "bytes": 85820
+    }
+  ]
+}

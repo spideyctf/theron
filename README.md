@@ -28,12 +28,12 @@ Repository code is analyzed as text. Runtime verification is a separate research
 
 ## Measured results
 
-Updated 15 November 2026. Correlation checkpoint `7b99d5c`; detection benchmark checkpoint `7b64719`.
+Updated 15 November 2026. Lock/entrypoint checkpoint `34ce50d`; detection benchmark checkpoint `7b64719`.
 
 | Measurement | Result |
 | --- | ---: |
-| Python regression tests | **823 passing** |
-| Frontend checkpoint | **19 passing tests; production build passes** |
+| Python regression tests | **859 passing** |
+| Frontend checkpoint | **21 passing tests; production build passes** |
 | Synthetic case outcomes tracked | **1,470** |
 | Exposed OWASP validation recall / label-matched precision | **91.67% / 100%** |
 | Exposed OWASP test recall / label-matched precision | **73.03% / 100%** |
@@ -42,6 +42,7 @@ Updated 15 November 2026. Correlation checkpoint `7b99d5c`; detection benchmark 
 | Original dependency/MCP correlation controls | **13/13 pass** |
 | Original tool/call-path/dependency controls | **16/16 expected outcomes** |
 | Frozen real-repository correlation pilot | **3 repositories; 126 verified files; 7 unresolved declarations; 0 groups** |
+| Exposed real lockfile development replay | **37/37 OSV queries complete; 26 advisory matches across 10 packages** |
 | Pilot projects with selected before/after behavior checks | **10** |
 | Pinned offline scan smoke | **273 files read in 52.89 seconds** |
 

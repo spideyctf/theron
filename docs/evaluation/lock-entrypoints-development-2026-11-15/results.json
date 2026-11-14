@@ -1,0 +1,2907 @@
+{
+  "implementation_revision": "34ce50deb1157d81c2ce6d1e6533035d40b7a4b0",
+  "development_exposed": true,
+  "independent_labels": false,
+  "target_code_executed": false,
+  "note": "Lock-inventory advisory candidates, not confirmed application vulnerabilities. Original machine-specific MCP launch remains unresolved.",
+  "query_count": 37,
+  "completed_queries": 37,
+  "advisory_candidates": 26,
+  "correlation_preserves_findings": true,
+  "result": {
+    "repo_full_name": "GongRzhe/Office-Word-MCP-Server",
+    "branch": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "findings": [
+      {
+        "title": "Unresolved uv lock inventory entries",
+        "severity": "INFO",
+        "category": "sca",
+        "module": "sca",
+        "description": "Some lock entries cannot be queried as exact PyPI versions: non_pypi_or_local_source, unsupported_exact_version. No target environment or installed package selection is assumed.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": null,
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-UV-UNRESOLVED-001",
+        "references": [],
+        "fingerprint": "07c31f6ed14d2cff691b8a9b",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "coverage-notice",
+        "aliases": [],
+        "severity_source": "rule",
+        "trace": []
+      },
+      {
+        "title": "Unresolved dependency versions",
+        "severity": "INFO",
+        "category": "sca",
+        "module": "sca",
+        "description": "Some declarations are ranges or unpinned. They remain in the SBOM but were not checked as installed versions.",
+        "file_path": "pyproject.toml",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Commit a supported lockfile or exact version pins for reliable advisory matching.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-UNRESOLVED-001",
+        "references": [],
+        "fingerprint": "e68870aad8d296b0f9d20987",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "coverage-notice",
+        "aliases": [],
+        "severity_source": "rule",
+        "trace": []
+      },
+      {
+        "title": "Unresolved dependency versions",
+        "severity": "INFO",
+        "category": "sca",
+        "module": "sca",
+        "description": "Some declarations are ranges or unpinned. They remain in the SBOM but were not checked as installed versions.",
+        "file_path": "requirements.txt",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Commit a supported lockfile or exact version pins for reliable advisory matching.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-UNRESOLVED-001",
+        "references": [],
+        "fingerprint": "64c0371c56267f12cc97d8ac",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "coverage-notice",
+        "aliases": [],
+        "severity_source": "rule",
+        "trace": []
+      },
+      {
+        "title": "Unresolved dependency versions",
+        "severity": "INFO",
+        "category": "sca",
+        "module": "sca",
+        "description": "Some declarations are ranges or unpinned. They remain in the SBOM but were not checked as installed versions.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Commit a supported lockfile or exact version pins for reliable advisory matching.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-UNRESOLVED-001",
+        "references": [],
+        "fingerprint": "2360e206fc06af375f1bdc66",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "coverage-notice",
+        "aliases": [],
+        "severity_source": "rule",
+        "trace": []
+      },
+      {
+        "title": "Vulnerable Dependency: anyio@4.9.0 \u2014 CVE-2026-63374",
+        "severity": "CRITICAL",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'anyio' version 4.9.0 in uv.lock matches advisory CVE-2026-63374: AnyIO: TLSStream IDNA 2003 host name encoding enables potential TLS certificate spoofing. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade anyio to a supported patched version. OSV lists fixed-version boundaries: 4.14.2. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-63374 for details.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-63374",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-82r6-8w77-94w6",
+          "https://osv.dev/vulnerability/PYSEC-2026-4025"
+        ],
+        "fingerprint": "533cc4fc6ff1c50b205b48f2",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-63374",
+          "GHSA-82r6-8w77-94w6",
+          "PYSEC-2026-4025"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "anyio",
+          "version": "4.9.0",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-63374",
+            "GHSA-82r6-8w77-94w6",
+            "PYSEC-2026-4025"
+          ],
+          "cwes": [
+            "CWE-295",
+            "CWE-297"
+          ],
+          "fixed_versions": [
+            "4.14.2"
+          ],
+          "queried_at": "2026-11-14T19:52:54.628078+00:00",
+          "advisory_record_sha256": "7313dca053840cf5efd99eeea85b246f8e0ff48b040a5c927f70999917df93c0",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: anyio@4.9.0 \u2014 CVE-2026-64847",
+        "severity": "MEDIUM",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'anyio' version 4.9.0 in uv.lock matches advisory CVE-2026-64847: AnyIO process-pool workers can block indefinitely on undrained stderr. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade anyio to a supported patched version. OSV lists fixed-version boundaries: 4.14.2. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-64847 for details.",
+        "cwe": "CWE-770",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-64847",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-5p39-cfhj-2xmp",
+          "https://osv.dev/vulnerability/PYSEC-2026-4024"
+        ],
+        "fingerprint": "53e7097b623658dd02aec08a",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-64847",
+          "GHSA-5p39-cfhj-2xmp",
+          "PYSEC-2026-4024"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "anyio",
+          "version": "4.9.0",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-64847",
+            "GHSA-5p39-cfhj-2xmp",
+            "PYSEC-2026-4024"
+          ],
+          "cwes": [
+            "CWE-770"
+          ],
+          "fixed_versions": [
+            "4.14.2"
+          ],
+          "queried_at": "2026-11-14T19:52:54.628078+00:00",
+          "advisory_record_sha256": "6af30d12c6ceb059bdbdcc3357c37a4bf9d85620b9118ee3c6898ab9a95fa861",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: certifi@2025.1.31 \u2014 GHSA-6q48-6c7w-9gw2",
+        "severity": "CRITICAL",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'certifi' version 2025.1.31 in uv.lock matches advisory GHSA-6q48-6c7w-9gw2: certifi bundles emSign root CAs with compromised intermediate CA keys. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade certifi to a supported patched version. OSV lists fixed-version boundaries: 2026.10.18. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2 for details.",
+        "cwe": "CWE-295",
+        "confidence": "high",
+        "rule_id": "SCA-GHSA-6q48-6c7w-9gw2",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
+          "https://osv.dev/vulnerability/PYSEC-2026-4320"
+        ],
+        "fingerprint": "3188cfc630c19de921cc1df1",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "GHSA-6q48-6c7w-9gw2",
+          "PYSEC-2026-4320"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "certifi",
+          "version": "2025.1.31",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "GHSA-6q48-6c7w-9gw2",
+            "PYSEC-2026-4320"
+          ],
+          "cwes": [
+            "CWE-295"
+          ],
+          "fixed_versions": [
+            "2026.10.18"
+          ],
+          "queried_at": "2026-11-14T19:52:54.628078+00:00",
+          "advisory_record_sha256": "eea4a686521ee63c391a9558cc0b35d35ac35ddd0908b9ff10790da87280fd11",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: cryptography@44.0.2 \u2014 CVE-2026-26007",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'cryptography' version 44.0.2 in uv.lock matches advisory CVE-2026-26007: cryptography Vulnerable to a Subgroup Attack Due to Missing Subgroup Validation for SECT Curves. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade cryptography to a supported patched version. OSV lists fixed-version boundaries: 46.0.5. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-26007 for details.",
+        "cwe": "CWE-345",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-26007",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-r6ph-v2qm-q3c2",
+          "https://osv.dev/vulnerability/PYSEC-2026-2141"
+        ],
+        "fingerprint": "10600d81acdbcf8f4230b374",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-26007",
+          "GHSA-r6ph-v2qm-q3c2",
+          "PYSEC-2026-2141"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "cryptography",
+          "version": "44.0.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-26007",
+            "GHSA-r6ph-v2qm-q3c2",
+            "PYSEC-2026-2141"
+          ],
+          "cwes": [
+            "CWE-345"
+          ],
+          "fixed_versions": [
+            "46.0.5"
+          ],
+          "queried_at": "2026-11-14T19:52:54.628583+00:00",
+          "advisory_record_sha256": "2ef117961b289e64ca120220e9de1e227f7682b20408dfad5ced624102b5f022",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: cryptography@44.0.2 \u2014 CVE-2026-34073",
+        "severity": "LOW",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'cryptography' version 44.0.2 in uv.lock matches advisory CVE-2026-34073: cryptography has incomplete DNS name constraint enforcement on peer names. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade cryptography to a supported patched version. OSV lists fixed-version boundaries: 46.0.6. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-34073 for details.",
+        "cwe": "CWE-295",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-34073",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-m959-cc7f-wv43",
+          "https://osv.dev/vulnerability/PYSEC-2026-35"
+        ],
+        "fingerprint": "f490d1cb8b4b7e69c130adb7",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-34073",
+          "GHSA-m959-cc7f-wv43",
+          "PYSEC-2026-35"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "cryptography",
+          "version": "44.0.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-34073",
+            "GHSA-m959-cc7f-wv43",
+            "PYSEC-2026-35"
+          ],
+          "cwes": [
+            "CWE-295"
+          ],
+          "fixed_versions": [
+            "46.0.6"
+          ],
+          "queried_at": "2026-11-14T19:52:54.628583+00:00",
+          "advisory_record_sha256": "faac6e1cc72ec29198affd1ddb6568cb5ee974cddddd50db5817037dabc839f8",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: cryptography@44.0.2 \u2014 CVE-2026-69247",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'cryptography' version 44.0.2 in uv.lock matches advisory CVE-2026-69247: cryptography: PKCS#7 EnvelopedData decryption exposes a Bleichenbacher oracle through distinguishable errors and timing. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade cryptography to a supported patched version. OSV lists fixed-version boundaries: 50.0.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-69247 for details.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-69247",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-g6cj-pr64-35w5",
+          "https://osv.dev/vulnerability/PYSEC-2026-3552"
+        ],
+        "fingerprint": "c02ee4177d90e85aa908d4cb",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-69247",
+          "GHSA-g6cj-pr64-35w5",
+          "PYSEC-2026-3552"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "cryptography",
+          "version": "44.0.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-69247",
+            "GHSA-g6cj-pr64-35w5",
+            "PYSEC-2026-3552"
+          ],
+          "cwes": [
+            "CWE-208",
+            "CWE-209"
+          ],
+          "fixed_versions": [
+            "50.0.0"
+          ],
+          "queried_at": "2026-11-14T19:52:54.628583+00:00",
+          "advisory_record_sha256": "c3863d28bcc6ed4a85ccb6b6870a22af6e010b97371d89e15e77ecb4915cda9b",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: cryptography@44.0.2 \u2014 CVE-2026-69248",
+        "severity": "MEDIUM",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'cryptography' version 44.0.2 in uv.lock matches advisory CVE-2026-69248: python-cryptography verifier accepts wildcard DNS names allowing escape from permittedSubtrees. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade cryptography to a supported patched version. OSV lists fixed-version boundaries: 49.0.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-69248 for details.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-69248",
+        "references": [
+          "https://osv.dev/vulnerability/PYSEC-2026-3554"
+        ],
+        "fingerprint": "63012db18f430d57ebf60759",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-69248",
+          "GHSA-m2h6-j472-rp4c",
+          "PYSEC-2026-3554"
+        ],
+        "severity_source": "cvss-base-score",
+        "trace": [],
+        "dependency": {
+          "package": "cryptography",
+          "version": "44.0.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-69248",
+            "GHSA-m2h6-j472-rp4c",
+            "PYSEC-2026-3554"
+          ],
+          "cwes": [],
+          "fixed_versions": [
+            "49.0.0"
+          ],
+          "queried_at": "2026-11-14T19:52:54.628583+00:00",
+          "advisory_record_sha256": "4e5e0b6832eed8220abf7cb52562738d31bb125895f0e7c43cdb691f4b67fe70",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: cryptography@44.0.2 \u2014 CVE-2026-69249",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'cryptography' version 44.0.2 in uv.lock matches advisory CVE-2026-69249: python-cryptography: Duplicate self-signed intermediates can cause exponential path-building. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade cryptography to a supported patched version. OSV lists fixed-version boundaries: 49.0.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-69249 for details.",
+        "cwe": "CWE-400",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-69249",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-jwv3-5hgf-82ww",
+          "https://osv.dev/vulnerability/PYSEC-2026-3553"
+        ],
+        "fingerprint": "7376633d4989494431feb045",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-69249",
+          "GHSA-jwv3-5hgf-82ww",
+          "PYSEC-2026-3553"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "cryptography",
+          "version": "44.0.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-69249",
+            "GHSA-jwv3-5hgf-82ww",
+            "PYSEC-2026-3553"
+          ],
+          "cwes": [
+            "CWE-400"
+          ],
+          "fixed_versions": [
+            "49.0.0"
+          ],
+          "queried_at": "2026-11-14T19:52:54.628583+00:00",
+          "advisory_record_sha256": "fef0499dc1540c25d6815d1472966edd572d6ea5bbf0d35d431e39d7b7f9902b",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: cryptography@44.0.2 \u2014 GHSA-537c-gmf6-5ccf",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'cryptography' version 44.0.2 in uv.lock matches advisory GHSA-537c-gmf6-5ccf: Vulnerable OpenSSL included in cryptography wheels. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade cryptography to a supported patched version. OSV lists fixed-version boundaries: 48.0.1. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/GHSA-537c-gmf6-5ccf for details.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-GHSA-537c-gmf6-5ccf",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-537c-gmf6-5ccf"
+        ],
+        "fingerprint": "fe0b0b81f83b9d010a2fcd10",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "GHSA-537c-gmf6-5ccf"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "cryptography",
+          "version": "44.0.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "GHSA-537c-gmf6-5ccf"
+          ],
+          "cwes": [
+            "CWE-125",
+            "CWE-1395"
+          ],
+          "fixed_versions": [
+            "48.0.1"
+          ],
+          "queried_at": "2026-11-14T19:52:54.629590+00:00",
+          "advisory_record_sha256": "ed7bf3e8e1c04251d902b7dfe4f2c665bcf19b8825c2214a1baa275c2d7b56f9",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: h11@0.14.0 \u2014 CVE-2025-43859",
+        "severity": "CRITICAL",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'h11' version 0.14.0 in uv.lock matches advisory CVE-2025-43859: h11 accepts some malformed Chunked-Encoding bodies. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade h11 to a supported patched version. OSV lists fixed-version boundaries: 0.16.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2025-43859 for details.",
+        "cwe": "CWE-444",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2025-43859",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-vqfr-h8mv-ghfj",
+          "https://osv.dev/vulnerability/PYSEC-2026-348"
+        ],
+        "fingerprint": "d7928236e62fbdde3d2e39c6",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2025-43859",
+          "GHSA-vqfr-h8mv-ghfj",
+          "PYSEC-2026-348"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "h11",
+          "version": "0.14.0",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2025-43859",
+            "GHSA-vqfr-h8mv-ghfj",
+            "PYSEC-2026-348"
+          ],
+          "cwes": [
+            "CWE-444"
+          ],
+          "fixed_versions": [
+            "0.16.0"
+          ],
+          "queried_at": "2026-11-14T19:52:54.629590+00:00",
+          "advisory_record_sha256": "601c4dc709ba279cd111d10c027229fae0bac87faa02d13d3b7fab1df908f772",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: idna@3.10 \u2014 CVE-2026-45409",
+        "severity": "MEDIUM",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'idna' version 3.10 in uv.lock matches advisory CVE-2026-45409: Internationalized Domain Names in Applications (IDNA): Specially crafted inputs to idna.encode() can bypass CVE-2024-3651 fix. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade idna to a supported patched version. OSV lists fixed-version boundaries: 3.15. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-45409 for details.",
+        "cwe": "CWE-1333",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-45409",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-65pc-fj4g-8rjx",
+          "https://osv.dev/vulnerability/PYSEC-2026-215"
+        ],
+        "fingerprint": "e631fdf22bec3bf95f0ad7b8",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-45409",
+          "GHSA-65pc-fj4g-8rjx",
+          "PYSEC-2026-215"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "idna",
+          "version": "3.10",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-45409",
+            "GHSA-65pc-fj4g-8rjx",
+            "PYSEC-2026-215"
+          ],
+          "cwes": [
+            "CWE-1333"
+          ],
+          "fixed_versions": [
+            "3.15"
+          ],
+          "queried_at": "2026-11-14T19:52:54.629590+00:00",
+          "advisory_record_sha256": "3621a3d5e52eccbb6944043285d5ee352f7366c87bf9145c13826e42cf7bf231",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: lxml@5.4.0 \u2014 CVE-2026-41066",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'lxml' version 5.4.0 in uv.lock matches advisory CVE-2026-41066: lxml: Default configuration of iterparse() and ETCompatXMLParser() allows XXE to local files. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade lxml to a supported patched version. OSV lists fixed-version boundaries: 6.1.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-41066 for details.",
+        "cwe": "CWE-611",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-41066",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-vfmq-68hx-4jfw",
+          "https://osv.dev/vulnerability/PYSEC-2026-87"
+        ],
+        "fingerprint": "0ed471e7f27a18a7af21b1e7",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-41066",
+          "GHSA-vfmq-68hx-4jfw",
+          "PYSEC-2026-87"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "lxml",
+          "version": "5.4.0",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-41066",
+            "GHSA-vfmq-68hx-4jfw",
+            "PYSEC-2026-87"
+          ],
+          "cwes": [
+            "CWE-611"
+          ],
+          "fixed_versions": [
+            "6.1.0"
+          ],
+          "queried_at": "2026-11-14T19:52:54.629590+00:00",
+          "advisory_record_sha256": "9a08f96e1650a9b3e475e2ab7a2248654e0e989fa73bee491ff14dfc05d003ce",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: mcp@1.6.0 \u2014 CVE-2025-53365",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'mcp' version 1.6.0 in uv.lock matches advisory CVE-2025-53365: MCP Python SDK has Unhandled Exception in Streamable HTTP Transport, Leading to Denial of Service. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.10.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2025-53365 for details.",
+        "cwe": "CWE-248",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2025-53365",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-j975-95f5-7wqh",
+          "https://osv.dev/vulnerability/PYSEC-2026-1618"
+        ],
+        "fingerprint": "5f1c7db9b681d7f5d6821a6b",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2025-53365",
+          "GHSA-j975-95f5-7wqh",
+          "PYSEC-2026-1618"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "mcp",
+          "version": "1.6.0",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2025-53365",
+            "GHSA-j975-95f5-7wqh",
+            "PYSEC-2026-1618"
+          ],
+          "cwes": [
+            "CWE-248"
+          ],
+          "fixed_versions": [
+            "1.10.0"
+          ],
+          "queried_at": "2026-11-14T19:52:54.629590+00:00",
+          "advisory_record_sha256": "2cac7aa0f195013a9244ac8e7add7ef6d666ae78820a7f644bfb5bc924f971ad",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: mcp@1.6.0 \u2014 CVE-2025-53366",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'mcp' version 1.6.0 in uv.lock matches advisory CVE-2025-53366: MCP Python SDK vulnerability in the FastMCP Server causes validation error, leading to DoS. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.9.4. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2025-53366 for details.",
+        "cwe": "CWE-248",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2025-53366",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-3qhf-m339-9g5v",
+          "https://osv.dev/vulnerability/PYSEC-2026-1616"
+        ],
+        "fingerprint": "6c2e2fd1b060679afe636b5c",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2025-53366",
+          "GHSA-3qhf-m339-9g5v",
+          "PYSEC-2026-1616"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "mcp",
+          "version": "1.6.0",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2025-53366",
+            "GHSA-3qhf-m339-9g5v",
+            "PYSEC-2026-1616"
+          ],
+          "cwes": [
+            "CWE-248"
+          ],
+          "fixed_versions": [
+            "1.9.4"
+          ],
+          "queried_at": "2026-11-14T19:52:54.629590+00:00",
+          "advisory_record_sha256": "95105a23cf2bb33e40d46b551f3ae360db43ec28c6e1a0a8aa32f5d396390ec8",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: mcp@1.6.0 \u2014 CVE-2025-66416",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'mcp' version 1.6.0 in uv.lock matches advisory CVE-2025-66416: Model Context Protocol (MCP) Python SDK does not enable DNS rebinding protection by default. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.23.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2025-66416 for details.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2025-66416",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-9h52-p55h-vw2f",
+          "https://osv.dev/vulnerability/PYSEC-2026-1617"
+        ],
+        "fingerprint": "e746ef513c7cebd843e0fe01",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2025-66416",
+          "GHSA-9h52-p55h-vw2f",
+          "PYSEC-2026-1617"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "mcp",
+          "version": "1.6.0",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2025-66416",
+            "GHSA-9h52-p55h-vw2f",
+            "PYSEC-2026-1617"
+          ],
+          "cwes": [
+            "CWE-1188",
+            "CWE-350"
+          ],
+          "fixed_versions": [
+            "1.23.0"
+          ],
+          "queried_at": "2026-11-14T19:52:54.630589+00:00",
+          "advisory_record_sha256": "37483704aeea502b600f2a6d794d2269fab619b26a74d4b7e0c1ee3feb929044",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: mcp@1.6.0 \u2014 CVE-2026-52869",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'mcp' version 1.6.0 in uv.lock matches advisory CVE-2026-52869: MCP Python SDK: HTTP transports serve session requests without verifying the authenticated principal. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.27.2. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-52869 for details.",
+        "cwe": "CWE-639",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-52869",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-jpw9-pfvf-9f58",
+          "https://osv.dev/vulnerability/PYSEC-2026-3482"
+        ],
+        "fingerprint": "1433934c2b78dac4ae9ca6a8",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-52869",
+          "GHSA-jpw9-pfvf-9f58",
+          "PYSEC-2026-3482"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "mcp",
+          "version": "1.6.0",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-52869",
+            "GHSA-jpw9-pfvf-9f58",
+            "PYSEC-2026-3482"
+          ],
+          "cwes": [
+            "CWE-639"
+          ],
+          "fixed_versions": [
+            "1.27.2"
+          ],
+          "queried_at": "2026-11-14T19:52:54.630589+00:00",
+          "advisory_record_sha256": "5a1b73acabf81eaea78faba07049edd5fd1aa761e67d1ca82e81047db38beab4",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: mcp@1.6.0 \u2014 CVE-2026-59950",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'mcp' version 1.6.0 in uv.lock matches advisory CVE-2026-59950: MCP Python SDK: WebSocket server transport does not support Host/Origin validation. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade mcp to a supported patched version. OSV lists fixed-version boundaries: 1.28.1. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-59950 for details.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-59950",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-vj7q-gjh5-988w",
+          "https://osv.dev/vulnerability/PYSEC-2026-3483"
+        ],
+        "fingerprint": "71902b4ab37684b3b92c51c4",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-59950",
+          "GHSA-vj7q-gjh5-988w",
+          "PYSEC-2026-3483"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "mcp",
+          "version": "1.6.0",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-59950",
+            "GHSA-vj7q-gjh5-988w",
+            "PYSEC-2026-3483"
+          ],
+          "cwes": [
+            "CWE-1385",
+            "CWE-346"
+          ],
+          "fixed_versions": [
+            "1.28.1"
+          ],
+          "queried_at": "2026-11-14T19:52:54.630589+00:00",
+          "advisory_record_sha256": "57a8b2208883daab3159beac936fae42922afef0adcd44ffc6a7730ace3c85aa",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: pygments@2.19.1 \u2014 CVE-2026-4539",
+        "severity": "LOW",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'pygments' version 2.19.1 in uv.lock matches advisory CVE-2026-4539: Pygments has Regular Expression Denial of Service (ReDoS) due to Inefficient Regex for GUID Matching. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade pygments to a supported patched version. OSV lists fixed-version boundaries: 2.20.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-4539 for details.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-4539",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-5239-wwwm-4pmq",
+          "https://osv.dev/vulnerability/PYSEC-2026-2987"
+        ],
+        "fingerprint": "6821593b92f6c9aff7458ec4",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-4539",
+          "GHSA-5239-wwwm-4pmq",
+          "PYSEC-2026-2987"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "pygments",
+          "version": "2.19.1",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-4539",
+            "GHSA-5239-wwwm-4pmq",
+            "PYSEC-2026-2987"
+          ],
+          "cwes": [
+            "CWE-1333",
+            "CWE-400"
+          ],
+          "fixed_versions": [
+            "2.20.0"
+          ],
+          "queried_at": "2026-11-14T19:52:54.631592+00:00",
+          "advisory_record_sha256": "e5262ee4183f83f7ff7a4bd351d4d529f3a155372f220c3ec348ff95efe7873f",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: python-dotenv@1.1.0 \u2014 CVE-2026-28684",
+        "severity": "MEDIUM",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'python-dotenv' version 1.1.0 in uv.lock matches advisory CVE-2026-28684: python-dotenv: Symlink following in set_key allows arbitrary file overwrite via cross-device rename fallback. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade python-dotenv to a supported patched version. OSV lists fixed-version boundaries: 1.2.2. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-28684 for details.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-28684",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-mf9w-mj56-hr94",
+          "https://osv.dev/vulnerability/PYSEC-2026-2270"
+        ],
+        "fingerprint": "d72b9029e112699f5bc986e1",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-28684",
+          "GHSA-mf9w-mj56-hr94",
+          "PYSEC-2026-2270"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "python-dotenv",
+          "version": "1.1.0",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-28684",
+            "GHSA-mf9w-mj56-hr94",
+            "PYSEC-2026-2270"
+          ],
+          "cwes": [
+            "CWE-59",
+            "CWE-61"
+          ],
+          "fixed_versions": [
+            "1.2.2"
+          ],
+          "queried_at": "2026-11-14T19:52:54.631592+00:00",
+          "advisory_record_sha256": "cfeed8c656afb63d4a671f6598b056a669c8e455e003b9a9c77be28f0ba5f25e",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: starlette@0.46.2 \u2014 CVE-2025-54121",
+        "severity": "MEDIUM",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'starlette' version 0.46.2 in uv.lock matches advisory CVE-2025-54121: Starlette has possible denial-of-service vector when parsing large files in multipart forms. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade starlette to a supported patched version. OSV lists fixed-version boundaries: 0.47.2. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2025-54121 for details.",
+        "cwe": "CWE-770",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2025-54121",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-2c2j-9gv5-cj73",
+          "https://osv.dev/vulnerability/PYSEC-2026-1941"
+        ],
+        "fingerprint": "6c164f93b64e78bc6b0d1ddf",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2025-54121",
+          "GHSA-2c2j-9gv5-cj73",
+          "PYSEC-2026-1941"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "starlette",
+          "version": "0.46.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2025-54121",
+            "GHSA-2c2j-9gv5-cj73",
+            "PYSEC-2026-1941"
+          ],
+          "cwes": [
+            "CWE-770"
+          ],
+          "fixed_versions": [
+            "0.47.2"
+          ],
+          "queried_at": "2026-11-14T19:52:54.631592+00:00",
+          "advisory_record_sha256": "9f3ddc668f178c8d278cda703f0a865677b8110def833c87ea218748a2fa7726",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: starlette@0.46.2 \u2014 CVE-2025-62727",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'starlette' version 0.46.2 in uv.lock matches advisory CVE-2025-62727: Starlette vulnerable to O(n^2) DoS via Range header merging in ``starlette.responses.FileResponse``. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade starlette to a supported patched version. OSV lists fixed-version boundaries: 0.49.1. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2025-62727 for details.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2025-62727",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-7f5h-v6xp-fcq8",
+          "https://osv.dev/vulnerability/PYSEC-2026-1942"
+        ],
+        "fingerprint": "238b0a1c9869e61e9b1ba952",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2025-62727",
+          "GHSA-7f5h-v6xp-fcq8",
+          "PYSEC-2026-1942"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "starlette",
+          "version": "0.46.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2025-62727",
+            "GHSA-7f5h-v6xp-fcq8",
+            "PYSEC-2026-1942"
+          ],
+          "cwes": [
+            "CWE-400",
+            "CWE-407"
+          ],
+          "fixed_versions": [
+            "0.49.1"
+          ],
+          "queried_at": "2026-11-14T19:52:54.631592+00:00",
+          "advisory_record_sha256": "cc3a1080b1f76073f850eaea6b3cf415b03a7b64189a415685c2576d3fde1887",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: starlette@0.46.2 \u2014 CVE-2026-48710",
+        "severity": "MEDIUM",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'starlette' version 0.46.2 in uv.lock matches advisory CVE-2026-48710: Starlette has missing Host header validation that poisons request.url.path, bypassing path-based security checks. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade starlette to a supported patched version. OSV lists fixed-version boundaries: 1.0.1. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-48710 for details.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-48710",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-86qp-5c8j-p5mr",
+          "https://osv.dev/vulnerability/PYSEC-2026-161"
+        ],
+        "fingerprint": "575e90af12ad52eb6d66b581",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-48710",
+          "GHSA-86qp-5c8j-p5mr",
+          "PYSEC-2026-161",
+          "X41-2026-002"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "starlette",
+          "version": "0.46.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-48710",
+            "GHSA-86qp-5c8j-p5mr",
+            "PYSEC-2026-161",
+            "X41-2026-002"
+          ],
+          "cwes": [
+            "CWE-1289",
+            "CWE-444"
+          ],
+          "fixed_versions": [
+            "1.0.1"
+          ],
+          "queried_at": "2026-11-14T19:52:54.631592+00:00",
+          "advisory_record_sha256": "af65d93ddd046e35cde2e201266b4dad7f64ad1407569b21488b70c2563e9e35",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: starlette@0.46.2 \u2014 CVE-2026-48817",
+        "severity": "MEDIUM",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'starlette' version 0.46.2 in uv.lock matches advisory CVE-2026-48817: Starlette: Arbitrary HTTP method dispatched to `HTTPEndpoint` attributes via `getattr`. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade starlette to a supported patched version. OSV lists fixed-version boundaries: 1.1.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-48817 for details.",
+        "cwe": "CWE-470",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-48817",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-x746-7m8f-x49c",
+          "https://osv.dev/vulnerability/PYSEC-2026-2280"
+        ],
+        "fingerprint": "3c5a5f945a1347028465eb5d",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-48817",
+          "GHSA-x746-7m8f-x49c",
+          "PYSEC-2026-2280"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "starlette",
+          "version": "0.46.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-48817",
+            "GHSA-x746-7m8f-x49c",
+            "PYSEC-2026-2280"
+          ],
+          "cwes": [
+            "CWE-470"
+          ],
+          "fixed_versions": [
+            "1.1.0"
+          ],
+          "queried_at": "2026-11-14T19:52:54.632589+00:00",
+          "advisory_record_sha256": "3885365c47a0a6724102a2c72f2511e4b66fe9e9a932b2acc24c9a598ee77ea1",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: starlette@0.46.2 \u2014 CVE-2026-48818",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'starlette' version 0.46.2 in uv.lock matches advisory CVE-2026-48818: Starlette: SSRF and NTLM credential theft via UNC paths in StaticFiles on Windows. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade starlette to a supported patched version. OSV lists fixed-version boundaries: 1.1.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-48818 for details.",
+        "cwe": "CWE-918",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-48818",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-wqp7-x3pw-xc5r",
+          "https://osv.dev/vulnerability/PYSEC-2026-2281"
+        ],
+        "fingerprint": "63fb19726433dd5005052f73",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-48818",
+          "GHSA-wqp7-x3pw-xc5r",
+          "PYSEC-2026-2281"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "starlette",
+          "version": "0.46.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-48818",
+            "GHSA-wqp7-x3pw-xc5r",
+            "PYSEC-2026-2281"
+          ],
+          "cwes": [
+            "CWE-918"
+          ],
+          "fixed_versions": [
+            "1.1.0"
+          ],
+          "queried_at": "2026-11-14T19:52:54.632589+00:00",
+          "advisory_record_sha256": "a885300bac888e6bb0967023e47e9e4e83de3f30751d42a842a0204d05fa3eb5",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: starlette@0.46.2 \u2014 CVE-2026-54282",
+        "severity": "LOW",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'starlette' version 0.46.2 in uv.lock matches advisory CVE-2026-54282: Starlette: Unvalidated request path concatenated into authority poisons request.url.hostname. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade starlette to a supported patched version. OSV lists fixed-version boundaries: 1.3.0. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-54282 for details.",
+        "cwe": null,
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-54282",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-jp82-jpqv-5vv3",
+          "https://osv.dev/vulnerability/PYSEC-2026-248"
+        ],
+        "fingerprint": "c1d96502157604b75ab5d30c",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-54282",
+          "GHSA-jp82-jpqv-5vv3",
+          "PYSEC-2026-248"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "starlette",
+          "version": "0.46.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-54282",
+            "GHSA-jp82-jpqv-5vv3",
+            "PYSEC-2026-248"
+          ],
+          "cwes": [
+            "CWE-20",
+            "CWE-706"
+          ],
+          "fixed_versions": [
+            "1.3.0"
+          ],
+          "queried_at": "2026-11-14T19:52:54.632589+00:00",
+          "advisory_record_sha256": "255c0a7c4f5f7b1de84ffd9bf17e026128aced96d779e0c4c2e3c2b0b342633f",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      },
+      {
+        "title": "Vulnerable Dependency: starlette@0.46.2 \u2014 CVE-2026-54283",
+        "severity": "HIGH",
+        "category": "sca",
+        "module": "sca",
+        "description": "Exact uv lock inventory PyPI package 'starlette' version 0.46.2 in uv.lock matches advisory CVE-2026-54283: Starlette: request.form() limits silently ignored for application/x-www-form-urlencoded enable DoS. Application reachability and exploitability have not been verified.",
+        "file_path": "uv.lock",
+        "line_number": null,
+        "code_snippet": null,
+        "recommendation": "Review and upgrade starlette to a supported patched version. OSV lists fixed-version boundaries: 1.3.1. These are not necessarily the latest release or a universally compatible upgrade. See https://osv.dev/vulnerability/CVE-2026-54283 for details.",
+        "cwe": "CWE-770",
+        "confidence": "high",
+        "rule_id": "SCA-CVE-2026-54283",
+        "references": [
+          "https://osv.dev/vulnerability/GHSA-82w8-qh3p-5jfq",
+          "https://osv.dev/vulnerability/PYSEC-2026-249"
+        ],
+        "fingerprint": "255b1c73015f990cb1679a71",
+        "maturity": "stable",
+        "status": "new",
+        "scope": "application",
+        "evidence_kind": "dependency-version-match",
+        "aliases": [
+          "CVE-2026-54283",
+          "GHSA-82w8-qh3p-5jfq",
+          "PYSEC-2026-249"
+        ],
+        "severity_source": "advisory-metadata",
+        "trace": [],
+        "dependency": {
+          "package": "starlette",
+          "version": "0.46.2",
+          "ecosystem": "PyPI",
+          "manifest": "uv.lock",
+          "provider": "OSV",
+          "advisory_ids": [
+            "CVE-2026-54283",
+            "GHSA-82w8-qh3p-5jfq",
+            "PYSEC-2026-249"
+          ],
+          "cwes": [
+            "CWE-770"
+          ],
+          "fixed_versions": [
+            "1.3.1"
+          ],
+          "queried_at": "2026-11-14T19:52:54.632589+00:00",
+          "advisory_record_sha256": "2cab159b3b71ba0b8c438212b9727023d14734ba22245eba961f930d3cd3b156",
+          "matching": "OSV response for an exact uv lock inventory version; target environment, installation and vulnerable-function reachability unverified",
+          "lock_provenance": {
+            "format": "uv.lock",
+            "source_text_sha256": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098",
+            "installation_verified": false,
+            "environment_selected": false
+          }
+        }
+      }
+    ],
+    "files_scanned": 31,
+    "modules_run": [
+      "sast",
+      "sca"
+    ],
+    "sbom": null,
+    "scan_duration_seconds": 0.0,
+    "summary": {
+      "repo": "GongRzhe/Office-Word-MCP-Server",
+      "branch": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+      "files_scanned": 31,
+      "total_findings": 30,
+      "context_findings": 0,
+      "vulnerability_findings": 26,
+      "by_severity": {
+        "INFO": 4,
+        "CRITICAL": 3,
+        "MEDIUM": 7,
+        "HIGH": 13,
+        "LOW": 3
+      },
+      "modules_run": [
+        "sast",
+        "sca"
+      ],
+      "scan_duration_seconds": 0.0
+    },
+    "project_profile": null,
+    "context_findings": [],
+    "commit_sha": "a3bbbb6d6167e68cf855d73ef7dc6cd8cfbfedba",
+    "correlation_enabled": true,
+    "correlation_groups": [],
+    "correlation_resolutions": [
+      {
+        "config_file": "mcp-config.json",
+        "pointer": "/mcpServers/word-document-server",
+        "status": "unresolved",
+        "reason": "unsupported_interpreter_or_wrapper",
+        "entrypoint": null,
+        "classification": "unknown",
+        "scope": "application",
+        "group_ids": []
+      }
+    ]
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-11-14T19:52:54.703966+00:00",
+      "component": {
+        "type": "application",
+        "name": "GongRzhe/Office-Word-MCP-Server"
+      },
+      "tools": [
+        {
+          "vendor": "Theron",
+          "name": "Theron",
+          "version": "1.0.0"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "python-docx",
+        "purl": "pkg:pypi/python-docx",
+        "bom-ref": "pkg:pypi/python-docx",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=1.1.2"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "fastmcp",
+        "purl": "pkg:pypi/fastmcp",
+        "bom-ref": "pkg:pypi/fastmcp",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=2.8.1"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "msoffcrypto-tool",
+        "purl": "pkg:pypi/msoffcrypto-tool",
+        "bom-ref": "pkg:pypi/msoffcrypto-tool",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=5.4.2"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "docx2pdf",
+        "purl": "pkg:pypi/docx2pdf",
+        "bom-ref": "pkg:pypi/docx2pdf",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=0.1.8"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "pytest",
+        "purl": "pkg:pypi/pytest",
+        "bom-ref": "pkg:pypi/pytest",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "pyproject.toml"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": ">=8.4.2"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "python-dotenv",
+        "purl": "pkg:pypi/python-dotenv",
+        "bom-ref": "pkg:pypi/python-dotenv",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "requirements.txt"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "unspecified"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "annotated-types",
+        "purl": "pkg:pypi/annotated-types@0.7.0",
+        "bom-ref": "pkg:pypi/annotated-types@0.7.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.7.0"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.7.0"
+      },
+      {
+        "type": "library",
+        "name": "anyio",
+        "purl": "pkg:pypi/anyio@4.9.0",
+        "bom-ref": "pkg:pypi/anyio@4.9.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.9.0"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "4.9.0"
+      },
+      {
+        "type": "library",
+        "name": "appscript",
+        "purl": "pkg:pypi/appscript@1.3.0",
+        "bom-ref": "pkg:pypi/appscript@1.3.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.3.0"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "1.3.0"
+      },
+      {
+        "type": "library",
+        "name": "certifi",
+        "purl": "pkg:pypi/certifi@2025.1.31",
+        "bom-ref": "pkg:pypi/certifi@2025.1.31",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2025.1.31"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "2025.1.31"
+      },
+      {
+        "type": "library",
+        "name": "cffi",
+        "purl": "pkg:pypi/cffi@1.17.1",
+        "bom-ref": "pkg:pypi/cffi@1.17.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.17.1"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "1.17.1"
+      },
+      {
+        "type": "library",
+        "name": "click",
+        "purl": "pkg:pypi/click@8.1.8",
+        "bom-ref": "pkg:pypi/click@8.1.8",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "8.1.8"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "8.1.8"
+      },
+      {
+        "type": "library",
+        "name": "colorama",
+        "purl": "pkg:pypi/colorama@0.4.6",
+        "bom-ref": "pkg:pypi/colorama@0.4.6",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.4.6"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.4.6"
+      },
+      {
+        "type": "library",
+        "name": "cryptography",
+        "purl": "pkg:pypi/cryptography@44.0.2",
+        "bom-ref": "pkg:pypi/cryptography@44.0.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "44.0.2"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "44.0.2"
+      },
+      {
+        "type": "library",
+        "name": "docx2pdf",
+        "purl": "pkg:pypi/docx2pdf@0.1.8",
+        "bom-ref": "pkg:pypi/docx2pdf@0.1.8",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.1.8"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.1.8"
+      },
+      {
+        "type": "library",
+        "name": "h11",
+        "purl": "pkg:pypi/h11@0.14.0",
+        "bom-ref": "pkg:pypi/h11@0.14.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.14.0"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.14.0"
+      },
+      {
+        "type": "library",
+        "name": "httpcore",
+        "purl": "pkg:pypi/httpcore@1.0.8",
+        "bom-ref": "pkg:pypi/httpcore@1.0.8",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.0.8"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "1.0.8"
+      },
+      {
+        "type": "library",
+        "name": "httpx",
+        "purl": "pkg:pypi/httpx@0.28.1",
+        "bom-ref": "pkg:pypi/httpx@0.28.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.28.1"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.28.1"
+      },
+      {
+        "type": "library",
+        "name": "httpx-sse",
+        "purl": "pkg:pypi/httpx-sse@0.4.0",
+        "bom-ref": "pkg:pypi/httpx-sse@0.4.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.4.0"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.4.0"
+      },
+      {
+        "type": "library",
+        "name": "idna",
+        "purl": "pkg:pypi/idna@3.10",
+        "bom-ref": "pkg:pypi/idna@3.10",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.10"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "3.10"
+      },
+      {
+        "type": "library",
+        "name": "lxml",
+        "purl": "pkg:pypi/lxml@5.4.0",
+        "bom-ref": "pkg:pypi/lxml@5.4.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.4.0"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "5.4.0"
+      },
+      {
+        "type": "library",
+        "name": "markdown-it-py",
+        "purl": "pkg:pypi/markdown-it-py@3.0.0",
+        "bom-ref": "pkg:pypi/markdown-it-py@3.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "3.0.0"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "3.0.0"
+      },
+      {
+        "type": "library",
+        "name": "mcp",
+        "purl": "pkg:pypi/mcp@1.6.0",
+        "bom-ref": "pkg:pypi/mcp@1.6.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.6.0"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "1.6.0"
+      },
+      {
+        "type": "library",
+        "name": "mdurl",
+        "purl": "pkg:pypi/mdurl@0.1.2",
+        "bom-ref": "pkg:pypi/mdurl@0.1.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.1.2"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.1.2"
+      },
+      {
+        "type": "library",
+        "name": "msoffcrypto-tool",
+        "purl": "pkg:pypi/msoffcrypto-tool@5.4.2",
+        "bom-ref": "pkg:pypi/msoffcrypto-tool@5.4.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "5.4.2"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "5.4.2"
+      },
+      {
+        "type": "library",
+        "name": "office-word-mcp-server",
+        "purl": "pkg:pypi/office-word-mcp-server",
+        "bom-ref": "pkg:pypi/office-word-mcp-server",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "unspecified"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "olefile",
+        "purl": "pkg:pypi/olefile@0.47",
+        "bom-ref": "pkg:pypi/olefile@0.47",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.47"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.47"
+      },
+      {
+        "type": "library",
+        "name": "pycparser",
+        "purl": "pkg:pypi/pycparser@2.22",
+        "bom-ref": "pkg:pypi/pycparser@2.22",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.22"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "2.22"
+      },
+      {
+        "type": "library",
+        "name": "pydantic",
+        "purl": "pkg:pypi/pydantic@2.11.3",
+        "bom-ref": "pkg:pypi/pydantic@2.11.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.11.3"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "2.11.3"
+      },
+      {
+        "type": "library",
+        "name": "pydantic-core",
+        "purl": "pkg:pypi/pydantic-core@2.33.1",
+        "bom-ref": "pkg:pypi/pydantic-core@2.33.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.33.1"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "2.33.1"
+      },
+      {
+        "type": "library",
+        "name": "pydantic-settings",
+        "purl": "pkg:pypi/pydantic-settings@2.9.1",
+        "bom-ref": "pkg:pypi/pydantic-settings@2.9.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.9.1"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "2.9.1"
+      },
+      {
+        "type": "library",
+        "name": "pygments",
+        "purl": "pkg:pypi/pygments@2.19.1",
+        "bom-ref": "pkg:pypi/pygments@2.19.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.19.1"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "2.19.1"
+      },
+      {
+        "type": "library",
+        "name": "python-docx",
+        "purl": "pkg:pypi/python-docx@1.1.2",
+        "bom-ref": "pkg:pypi/python-docx@1.1.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.1.2"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "1.1.2"
+      },
+      {
+        "type": "library",
+        "name": "python-dotenv",
+        "purl": "pkg:pypi/python-dotenv@1.1.0",
+        "bom-ref": "pkg:pypi/python-dotenv@1.1.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.1.0"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "1.1.0"
+      },
+      {
+        "type": "library",
+        "name": "pywin32",
+        "purl": "pkg:pypi/pywin32",
+        "bom-ref": "pkg:pypi/pywin32",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "unresolved"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "unspecified"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ]
+      },
+      {
+        "type": "library",
+        "name": "rich",
+        "purl": "pkg:pypi/rich@14.0.0",
+        "bom-ref": "pkg:pypi/rich@14.0.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "14.0.0"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "14.0.0"
+      },
+      {
+        "type": "library",
+        "name": "shellingham",
+        "purl": "pkg:pypi/shellingham@1.5.4",
+        "bom-ref": "pkg:pypi/shellingham@1.5.4",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.5.4"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "1.5.4"
+      },
+      {
+        "type": "library",
+        "name": "sniffio",
+        "purl": "pkg:pypi/sniffio@1.3.1",
+        "bom-ref": "pkg:pypi/sniffio@1.3.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "1.3.1"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "1.3.1"
+      },
+      {
+        "type": "library",
+        "name": "sse-starlette",
+        "purl": "pkg:pypi/sse-starlette@2.3.3",
+        "bom-ref": "pkg:pypi/sse-starlette@2.3.3",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "2.3.3"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "2.3.3"
+      },
+      {
+        "type": "library",
+        "name": "starlette",
+        "purl": "pkg:pypi/starlette@0.46.2",
+        "bom-ref": "pkg:pypi/starlette@0.46.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.46.2"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.46.2"
+      },
+      {
+        "type": "library",
+        "name": "tqdm",
+        "purl": "pkg:pypi/tqdm@4.67.1",
+        "bom-ref": "pkg:pypi/tqdm@4.67.1",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.67.1"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "4.67.1"
+      },
+      {
+        "type": "library",
+        "name": "typer",
+        "purl": "pkg:pypi/typer@0.15.2",
+        "bom-ref": "pkg:pypi/typer@0.15.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.15.2"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.15.2"
+      },
+      {
+        "type": "library",
+        "name": "typing-extensions",
+        "purl": "pkg:pypi/typing-extensions@4.13.2",
+        "bom-ref": "pkg:pypi/typing-extensions@4.13.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "4.13.2"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "4.13.2"
+      },
+      {
+        "type": "library",
+        "name": "typing-inspection",
+        "purl": "pkg:pypi/typing-inspection@0.4.0",
+        "bom-ref": "pkg:pypi/typing-inspection@0.4.0",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.4.0"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.4.0"
+      },
+      {
+        "type": "library",
+        "name": "uvicorn",
+        "purl": "pkg:pypi/uvicorn@0.34.2",
+        "bom-ref": "pkg:pypi/uvicorn@0.34.2",
+        "properties": [
+          {
+            "name": "source_file",
+            "value": "uv.lock"
+          },
+          {
+            "name": "theron:version_status",
+            "value": "exact"
+          },
+          {
+            "name": "theron:declared_version",
+            "value": "0.34.2"
+          },
+          {
+            "name": "theron:version_basis",
+            "value": "locked inventory; installation and environment selection unverified"
+          },
+          {
+            "name": "theron:source_text_sha256",
+            "value": "d5b406f06a6c3fd2d83d87fd29352c5a383788676a343e72f960d784f222b098"
+          }
+        ],
+        "version": "0.34.2"
+      }
+    ]
+  }
+}
