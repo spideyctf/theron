@@ -1,0 +1,71 @@
+{
+  "baseline": "bc34e7fc26c679052be047b5189ad11d98c6c28d",
+  "records": [
+    {
+      "id": "CVE-2026-82411",
+      "domain": "authorization",
+      "metadata_source_revision": "74be3883281f235199e31e1bcbe3421e8d30ec3c",
+      "metadata_path": "cves/2026/82xxx/CVE-2026-82411.json",
+      "metadata_error": null,
+      "metadata_sha256": "a5c5cc39d28e2821953c9a9b8d241072509b68ba435f66929f214822040272c9",
+      "prior_manifest_membership": false,
+      "source_opened": false,
+      "selection": "Purposive external advisory metadata selection before implementation; not a random sample"
+    },
+    {
+      "id": "CVE-2026-58373",
+      "domain": "authorization",
+      "metadata_source_revision": "74be3883281f235199e31e1bcbe3421e8d30ec3c",
+      "metadata_path": "cves/2026/58xxx/CVE-2026-58373.json",
+      "metadata_error": null,
+      "metadata_sha256": "7e56c8a74433fa57e23f3cea6dd7fde868fcb7e1005ebf40726f05a207291d40",
+      "prior_manifest_membership": false,
+      "source_opened": false,
+      "selection": "Purposive external advisory metadata selection before implementation; not a random sample"
+    },
+    {
+      "id": "CVE-2024-33663",
+      "domain": "crypto",
+      "metadata_source_revision": "74be3883281f235199e31e1bcbe3421e8d30ec3c",
+      "metadata_path": "cves/2024/33xxx/CVE-2024-33663.json",
+      "metadata_error": null,
+      "metadata_sha256": "ea024cc2f7e4e4e91974c95b093b006a33113310bda9df469a0e75de5c42931c",
+      "prior_manifest_membership": false,
+      "source_opened": false,
+      "selection": "Purposive external advisory metadata selection before implementation; not a random sample"
+    },
+    {
+      "id": "CVE-2022-39227",
+      "domain": "crypto",
+      "metadata_source_revision": "74be3883281f235199e31e1bcbe3421e8d30ec3c",
+      "metadata_path": "cves/2022/39xxx/CVE-2022-39227.json",
+      "metadata_error": null,
+      "metadata_sha256": "2c4ec2cc49f61b1bbbe08fd38a1141c2c60a7e2d72d2d78b32dac3919bfd4592",
+      "prior_manifest_membership": false,
+      "source_opened": false,
+      "selection": "Purposive external advisory metadata selection before implementation; not a random sample"
+    },
+    {
+      "id": "CVE-2022-24761",
+      "domain": "protocol",
+      "metadata_source_revision": "74be3883281f235199e31e1bcbe3421e8d30ec3c",
+      "metadata_path": "cves/2022/24xxx/CVE-2022-24761.json",
+      "metadata_error": null,
+      "metadata_sha256": "8fe6884630b6930859c408ba1d1633b84a0de8fabcb776e50f42c3ed44ec001b",
+      "prior_manifest_membership": false,
+      "source_opened": false,
+      "selection": "Purposive external advisory metadata selection before implementation; not a random sample"
+    },
+    {
+      "id": "CVE-2024-1135",
+      "domain": "protocol",
+      "metadata_source_revision": "74be3883281f235199e31e1bcbe3421e8d30ec3c",
+      "metadata_path": "cves/2024/1xxx/CVE-2024-1135.json",
+      "metadata_error": null,
+      "metadata_sha256": "fc2b1fa4db2bb123c2d47ce66f2f6c706dc954843cb40e6f9363d55be34a4cfb",
+      "prior_manifest_membership": false,
+      "source_opened": false,
+      "selection": "Purposive external advisory metadata selection before implementation; not a random sample"
+    }
+  ]
+}
