@@ -1,0 +1,1110 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Theron",
+          "version": "1.0.0",
+          "informationUri": "https://github.com/spideyctf/theron",
+          "rules": [
+            {
+              "id": "PY-SHELL-PEER-001",
+              "name": "sast",
+              "shortDescription": {
+                "text": "Peer address used as a shell command; injection control unverified"
+              },
+              "fullDescription": {
+                "text": "A peer address reaches a shell command. Normal IP address syntax does not establish attacker-controlled shell syntax; proxy and deployment semantics need review."
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/78.html",
+              "defaultConfiguration": {
+                "level": "none"
+              }
+            },
+            {
+              "id": "PY-SAST-SESSION-001",
+              "name": "sast",
+              "shortDescription": {
+                "text": "External input crosses a session storage boundary"
+              },
+              "fullDescription": {
+                "text": "A request-controlled value is stored under a fixed session key. This alone does not establish a privilege or authorization violation."
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/501.html",
+              "defaultConfiguration": {
+                "level": "none"
+              }
+            },
+            {
+              "id": "PY-SAST-PATH-001",
+              "name": "sast",
+              "shortDescription": {
+                "text": "External input controls a filesystem path"
+              },
+              "fullDescription": {
+                "text": "External input from line 70 reaches a file operation without an observed path boundary."
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/22.html",
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "PY-PARSE-001",
+              "name": "sast",
+              "shortDescription": {
+                "text": "Python analysis skipped: syntax could not be parsed"
+              },
+              "fullDescription": {
+                "text": "Syntax-aware checks could not analyse this file."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              }
+            },
+            {
+              "id": "PY-SAST-SSTI-001",
+              "name": "sast",
+              "shortDescription": {
+                "text": "Untrusted text controls server-side template source"
+              },
+              "fullDescription": {
+                "text": "Untrusted text from line 11 reaches the source argument of a resolved template-string renderer. Context-variable values are not treated as template source."
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/1336.html",
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "AI-ID-003",
+              "name": "insecure_model_deployment",
+              "shortDescription": {
+                "text": "Debug Mode Enabled"
+              },
+              "fullDescription": {
+                "text": "Debug mode enabled \u00e2\u20ac\u201d exposes stack traces and sensitive information."
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/489.html",
+              "defaultConfiguration": {
+                "level": "none"
+              }
+            },
+            {
+              "id": "AI-ID-001",
+              "name": "insecure_model_deployment",
+              "shortDescription": {
+                "text": "Flask App Bound to All Interfaces"
+              },
+              "fullDescription": {
+                "text": "Flask app bound to 0.0.0.0 \u00e2\u20ac\u201d model endpoint exposed to the entire network."
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/918.html",
+              "defaultConfiguration": {
+                "level": "none"
+              }
+            },
+            {
+              "id": "AI-SE-018",
+              "name": "secret_exposure",
+              "shortDescription": {
+                "text": "Hardcoded Secret/Password (unverified)"
+              },
+              "fullDescription": {
+                "text": "A provider-shaped credential pattern was found at this location. Validity and actual use have not been verified."
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/798.html",
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "JS-SAST-CMD-001",
+              "name": "sast",
+              "shortDescription": {
+                "text": "External input controls process execution"
+              },
+              "fullDescription": {
+                "text": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified."
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/78.html",
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "JS-SAST-SQL-001",
+              "name": "sast",
+              "shortDescription": {
+                "text": "External input is interpolated into a SQL statement"
+              },
+              "fullDescription": {
+                "text": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified."
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/89.html",
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "JS-PARSE-001",
+              "name": "sast",
+              "shortDescription": {
+                "text": "JavaScript/TypeScript syntax analysis incomplete"
+              },
+              "fullDescription": {
+                "text": "The selected grammar could not parse this file completely. Source/sink checks were skipped; regex fallbacks do not establish semantic coverage."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              }
+            },
+            {
+              "id": "sca",
+              "name": "sca",
+              "shortDescription": {
+                "text": "No Dependency Declarations Parsed"
+              },
+              "fullDescription": {
+                "text": "No dependency declarations could be parsed from supported manifests. SCA coverage is incomplete, not a clean bill of health."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "PY-SHELL-PEER-001",
+          "ruleIndex": 0,
+          "level": "none",
+          "message": {
+            "text": "A peer address reaches a shell command. Normal IP address syntax does not establish attacker-controlled shell syntax; proxy and deployment semantics need review."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Command Injection/tainted.py"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "INFO",
+            "category": "sast",
+            "module": "ai",
+            "confidence": "high",
+            "recommendation": "Avoid shell execution for peer addresses and use fixed operations with structured arguments.",
+            "fingerprint": "21640e117858e38e96035b25",
+            "maturity": "stable",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "review-context",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "sink",
+                "file_path": "Command Injection/tainted.py",
+                "line_number": 9
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "21640e117858e38e96035b25"
+          }
+        },
+        {
+          "ruleId": "PY-SAST-SESSION-001",
+          "ruleIndex": 1,
+          "level": "none",
+          "message": {
+            "text": "A request-controlled value is stored under a fixed session key. This alone does not establish a privilege or authorization violation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Path Traversal/py_ctf.py"
+                },
+                "region": {
+                  "startLine": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "INFO",
+            "category": "sast",
+            "module": "ai",
+            "confidence": "medium",
+            "recommendation": "Validate the value against server-side records and allowlist session keys before storing trusted state.",
+            "fingerprint": "77c3993ed22929558baa0935",
+            "maturity": "stable",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "review-context",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "Path Traversal/py_ctf.py",
+                "line_number": 29
+              },
+              {
+                "role": "sink",
+                "file_path": "Path Traversal/py_ctf.py",
+                "line_number": 36
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "77c3993ed22929558baa0935"
+          }
+        },
+        {
+          "ruleId": "PY-SAST-PATH-001",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "External input from line 70 reaches a file operation without an observed path boundary."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Path Traversal/py_ctf.py"
+                },
+                "region": {
+                  "startLine": 78
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "sast",
+            "module": "ai",
+            "confidence": "high",
+            "recommendation": "Resolve the candidate and trusted root, reject paths outside that root using path-component containment, and avoid following untrusted symlinks.",
+            "fingerprint": "92ff40b9f6210363b92ca4c7",
+            "maturity": "stable",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "static-flow",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "Path Traversal/py_ctf.py",
+                "line_number": 70
+              },
+              {
+                "role": "sink",
+                "file_path": "Path Traversal/py_ctf.py",
+                "line_number": 78
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "92ff40b9f6210363b92ca4c7"
+          }
+        },
+        {
+          "ruleId": "PY-SAST-SESSION-001",
+          "ruleIndex": 1,
+          "level": "none",
+          "message": {
+            "text": "A request-controlled value is stored under a fixed session key. This alone does not establish a privilege or authorization violation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Server Side Template Injection/asis_ssti_pt.py"
+                },
+                "region": {
+                  "startLine": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "INFO",
+            "category": "sast",
+            "module": "ai",
+            "confidence": "medium",
+            "recommendation": "Validate the value against server-side records and allowlist session keys before storing trusted state.",
+            "fingerprint": "ef9a31690b9a16d71f69a447",
+            "maturity": "stable",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "review-context",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "Server Side Template Injection/asis_ssti_pt.py",
+                "line_number": 29
+              },
+              {
+                "role": "sink",
+                "file_path": "Server Side Template Injection/asis_ssti_pt.py",
+                "line_number": 36
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "ef9a31690b9a16d71f69a447"
+          }
+        },
+        {
+          "ruleId": "PY-SAST-PATH-001",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "External input from line 70 reaches a file operation without an observed path boundary."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Server Side Template Injection/asis_ssti_pt.py"
+                },
+                "region": {
+                  "startLine": 78
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "sast",
+            "module": "ai",
+            "confidence": "high",
+            "recommendation": "Resolve the candidate and trusted root, reject paths outside that root using path-component containment, and avoid following untrusted symlinks.",
+            "fingerprint": "f3cf7c194f4613c4e5f2f96a",
+            "maturity": "stable",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "static-flow",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "Server Side Template Injection/asis_ssti_pt.py",
+                "line_number": 70
+              },
+              {
+                "role": "sink",
+                "file_path": "Server Side Template Injection/asis_ssti_pt.py",
+                "line_number": 78
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "f3cf7c194f4613c4e5f2f96a"
+          }
+        },
+        {
+          "ruleId": "PY-PARSE-001",
+          "ruleIndex": 3,
+          "level": "none",
+          "message": {
+            "text": "Syntax-aware checks could not analyse this file."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Unsafe Deserialization/pickle2.py"
+                },
+                "region": {}
+              }
+            }
+          ],
+          "properties": {
+            "severity": "INFO",
+            "category": "sast",
+            "module": "ai",
+            "confidence": "high",
+            "recommendation": "Check syntax and supported Python version, then scan again.",
+            "fingerprint": "7399e23fb4e6684ecd0de264",
+            "maturity": "stable",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "coverage-notice",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": []
+          },
+          "partialFingerprints": {
+            "theron/v1": "7399e23fb4e6684ecd0de264"
+          }
+        },
+        {
+          "ruleId": "PY-SAST-SSTI-001",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Untrusted text from line 11 reaches the source argument of a resolved template-string renderer. Context-variable values are not treated as template source."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Server Side Template Injection/test.py"
+                },
+                "region": {
+                  "startLine": 11
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "sast",
+            "module": "ai",
+            "confidence": "high",
+            "recommendation": "Keep template source trusted and pass untrusted values through template context variables. HTML escaping does not neutralize template syntax.",
+            "fingerprint": "4fee5e0970aac9d09b2d4b8d",
+            "maturity": "stable",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "static-flow",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "Server Side Template Injection/test.py",
+                "line_number": 11
+              },
+              {
+                "role": "sink",
+                "file_path": "Server Side Template Injection/test.py",
+                "line_number": 11
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "4fee5e0970aac9d09b2d4b8d"
+          }
+        },
+        {
+          "ruleId": "AI-ID-003",
+          "ruleIndex": 5,
+          "level": "none",
+          "message": {
+            "text": "Debug mode enabled \u00e2\u20ac\u201d exposes stack traces and sensitive information."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Command Injection/tainted.py"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "INFO",
+            "category": "insecure_model_deployment",
+            "module": "ai",
+            "confidence": "medium",
+            "recommendation": "Disable debug mode in production. Use environment-based configuration.",
+            "fingerprint": "8b61415f67f7d1d45ae43c1b",
+            "maturity": "experimental",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "configuration-observation",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": []
+          },
+          "partialFingerprints": {
+            "theron/v1": "8b61415f67f7d1d45ae43c1b"
+          }
+        },
+        {
+          "ruleId": "AI-ID-001",
+          "ruleIndex": 6,
+          "level": "none",
+          "message": {
+            "text": "Flask app bound to 0.0.0.0 \u00e2\u20ac\u201d model endpoint exposed to the entire network."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Path Traversal/py_ctf.py"
+                },
+                "region": {
+                  "startLine": 85
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "INFO",
+            "category": "insecure_model_deployment",
+            "module": "ai",
+            "confidence": "medium",
+            "recommendation": "Bind to localhost (127.0.0.1) unless external access is required. If needed, use a reverse proxy with auth and TLS.",
+            "fingerprint": "671ee7c42c1437fdc234eed2",
+            "maturity": "experimental",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "configuration-observation",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": []
+          },
+          "partialFingerprints": {
+            "theron/v1": "671ee7c42c1437fdc234eed2"
+          }
+        },
+        {
+          "ruleId": "AI-ID-001",
+          "ruleIndex": 6,
+          "level": "none",
+          "message": {
+            "text": "Flask app bound to 0.0.0.0 \u00e2\u20ac\u201d model endpoint exposed to the entire network."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Server Side Template Injection/asis_ssti_pt.py"
+                },
+                "region": {
+                  "startLine": 85
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "INFO",
+            "category": "insecure_model_deployment",
+            "module": "ai",
+            "confidence": "medium",
+            "recommendation": "Bind to localhost (127.0.0.1) unless external access is required. If needed, use a reverse proxy with auth and TLS.",
+            "fingerprint": "791bfdad3400214900b6b22e",
+            "maturity": "experimental",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "configuration-observation",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": []
+          },
+          "partialFingerprints": {
+            "theron/v1": "791bfdad3400214900b6b22e"
+          }
+        },
+        {
+          "ruleId": "AI-ID-001",
+          "ruleIndex": 6,
+          "level": "none",
+          "message": {
+            "text": "Flask app bound to 0.0.0.0 \u00e2\u20ac\u201d model endpoint exposed to the entire network."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Unsafe Deserialization/pickle2.py"
+                },
+                "region": {
+                  "startLine": 148
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "INFO",
+            "category": "insecure_model_deployment",
+            "module": "ai",
+            "confidence": "medium",
+            "recommendation": "Bind to localhost (127.0.0.1) unless external access is required. If needed, use a reverse proxy with auth and TLS.",
+            "fingerprint": "806de3b724b37369df93d1b6",
+            "maturity": "experimental",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "configuration-observation",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": []
+          },
+          "partialFingerprints": {
+            "theron/v1": "806de3b724b37369df93d1b6"
+          }
+        },
+        {
+          "ruleId": "AI-SE-018",
+          "ruleIndex": 7,
+          "level": "error",
+          "message": {
+            "text": "A provider-shaped credential pattern was found at this location. Validity and actual use have not been verified."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "SQL Injection/example2.js"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "secret_exposure",
+            "module": "ai",
+            "confidence": "medium",
+            "recommendation": "If this value is a real credential, revoke or rotate it and remove it from source. For a deliberate fixture, keep it clearly labeled as synthetic.",
+            "fingerprint": "f5d0778f46aa59858d202146",
+            "maturity": "experimental",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "credential-pattern-unverified",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": []
+          },
+          "partialFingerprints": {
+            "theron/v1": "f5d0778f46aa59858d202146"
+          }
+        },
+        {
+          "ruleId": "AI-SE-018",
+          "ruleIndex": 7,
+          "level": "error",
+          "message": {
+            "text": "A provider-shaped credential pattern was found at this location. Validity and actual use have not been verified."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Sensitive Data Exposure/hardcoded.ts"
+                },
+                "region": {
+                  "startLine": 2
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "secret_exposure",
+            "module": "ai",
+            "confidence": "medium",
+            "recommendation": "If this value is a real credential, revoke or rotate it and remove it from source. For a deliberate fixture, keep it clearly labeled as synthetic.",
+            "fingerprint": "2a5ce307f1fa78fb6efd9c23",
+            "maturity": "experimental",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "credential-pattern-unverified",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": []
+          },
+          "partialFingerprints": {
+            "theron/v1": "2a5ce307f1fa78fb6efd9c23"
+          }
+        },
+        {
+          "ruleId": "JS-SAST-CMD-001",
+          "ruleIndex": 8,
+          "level": "error",
+          "message": {
+            "text": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Command Injection/exec.js"
+                },
+                "region": {
+                  "startLine": 8
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "sast",
+            "module": "sast",
+            "confidence": "medium",
+            "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.",
+            "fingerprint": "cc06ba4726b4a2c1120f60ee",
+            "maturity": "advisory",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "static-flow",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "Command Injection/exec.js",
+                "line_number": 8
+              },
+              {
+                "role": "sink",
+                "file_path": "Command Injection/exec.js",
+                "line_number": 8
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "cc06ba4726b4a2c1120f60ee"
+          }
+        },
+        {
+          "ruleId": "JS-SAST-CMD-001",
+          "ruleIndex": 8,
+          "level": "error",
+          "message": {
+            "text": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Command Injection/exec.js"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "sast",
+            "module": "sast",
+            "confidence": "medium",
+            "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.",
+            "fingerprint": "3226ac0d20268d00212e1016",
+            "maturity": "advisory",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "static-flow",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "Command Injection/exec.js",
+                "line_number": 19
+              },
+              {
+                "role": "sink",
+                "file_path": "Command Injection/exec.js",
+                "line_number": 18
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "3226ac0d20268d00212e1016"
+          }
+        },
+        {
+          "ruleId": "JS-SAST-SQL-001",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "SQL Injection/mysql.js"
+                },
+                "region": {
+                  "startLine": 21
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "sast",
+            "module": "sast",
+            "confidence": "medium",
+            "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.",
+            "fingerprint": "9ebf4cf78223c1c7480e5c17",
+            "maturity": "advisory",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "static-flow",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "SQL Injection/mysql.js",
+                "line_number": 17
+              },
+              {
+                "role": "sink",
+                "file_path": "SQL Injection/mysql.js",
+                "line_number": 21
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "9ebf4cf78223c1c7480e5c17"
+          }
+        },
+        {
+          "ruleId": "JS-SAST-SQL-001",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "SQL Injection/mysql.js"
+                },
+                "region": {
+                  "startLine": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "sast",
+            "module": "sast",
+            "confidence": "medium",
+            "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.",
+            "fingerprint": "8e9c3932cb6e9f4efe4f5a80",
+            "maturity": "advisory",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "static-flow",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "SQL Injection/mysql.js",
+                "line_number": 27
+              },
+              {
+                "role": "sink",
+                "file_path": "SQL Injection/mysql.js",
+                "line_number": 28
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "8e9c3932cb6e9f4efe4f5a80"
+          }
+        },
+        {
+          "ruleId": "JS-SAST-SQL-001",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "SQL Injection/mysql.js"
+                },
+                "region": {
+                  "startLine": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "sast",
+            "module": "sast",
+            "confidence": "medium",
+            "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.",
+            "fingerprint": "a47b44b8b42f39b84dd2e616",
+            "maturity": "advisory",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "static-flow",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "SQL Injection/mysql.js",
+                "line_number": 34
+              },
+              {
+                "role": "sink",
+                "file_path": "SQL Injection/mysql.js",
+                "line_number": 35
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "a47b44b8b42f39b84dd2e616"
+          }
+        },
+        {
+          "ruleId": "JS-SAST-SQL-001",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "SQL Injection/example2.js"
+                },
+                "region": {
+                  "startLine": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "category": "sast",
+            "module": "sast",
+            "confidence": "medium",
+            "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.",
+            "fingerprint": "1ea8ded9d787dac2639f1e9d",
+            "maturity": "advisory",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "static-flow",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": [
+              {
+                "role": "source",
+                "file_path": "SQL Injection/example2.js",
+                "line_number": 7
+              },
+              {
+                "role": "sink",
+                "file_path": "SQL Injection/example2.js",
+                "line_number": 26
+              }
+            ]
+          },
+          "partialFingerprints": {
+            "theron/v1": "1ea8ded9d787dac2639f1e9d"
+          }
+        },
+        {
+          "ruleId": "JS-PARSE-001",
+          "ruleIndex": 10,
+          "level": "none",
+          "message": {
+            "text": "The selected grammar could not parse this file completely. Source/sink checks were skipped; regex fallbacks do not establish semantic coverage."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Unsafe Deserialization/de.js"
+                },
+                "region": {}
+              }
+            }
+          ],
+          "properties": {
+            "severity": "INFO",
+            "category": "sast",
+            "module": "coverage",
+            "confidence": "high",
+            "recommendation": null,
+            "fingerprint": "9605b9154cc169e6483af250",
+            "maturity": "advisory",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "coverage-notice",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": []
+          },
+          "partialFingerprints": {
+            "theron/v1": "9605b9154cc169e6483af250"
+          }
+        },
+        {
+          "ruleId": "sca",
+          "ruleIndex": 11,
+          "level": "none",
+          "message": {
+            "text": "No dependency declarations could be parsed from supported manifests. SCA coverage is incomplete, not a clean bill of health."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "N/A"
+                },
+                "region": {}
+              }
+            }
+          ],
+          "properties": {
+            "severity": "INFO",
+            "category": "sca",
+            "module": "sca",
+            "confidence": "high",
+            "recommendation": "Add a dependency manifest file to enable SCA scanning and SBOM generation.",
+            "fingerprint": "8c0f973e7f1f2dca9c6d9ab5",
+            "maturity": "stable",
+            "status": "new",
+            "scope": "application",
+            "evidence_kind": "coverage-notice",
+            "aliases": [],
+            "severity_source": "rule",
+            "trace": []
+          },
+          "partialFingerprints": {
+            "theron/v1": "8c0f973e7f1f2dca9c6d9ab5"
+          }
+        }
+      ],
+      "properties": {
+        "commit_sha": "eafa783645f4132b2d84a23c3dfb84d74985591d",
+        "context_findings": [],
+        "correlation_enabled": true,
+        "correlation_groups": [],
+        "correlation_resolutions": []
+      }
+    }
+  ]
+}

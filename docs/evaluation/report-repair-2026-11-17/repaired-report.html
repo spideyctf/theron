@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Security Scan Report — chris-koch-penn/gpt3_security_vulnerability_scanner</title>
+    <style>
+        :root {
+            --bg: #0d1117; --card-bg: #161b22; --border: #30363d;
+            --text: #c9d1d9; --text-dim: #8b949e; --accent: #58a6ff;
+            --critical: #f85149; --high: #ff7b72; --medium: #d29922;
+            --low: #58a6ff; --info: #8b949e; --green: #3fb950;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        h2 { font-size: 1.3rem; margin: 24px 0 12px; }
+        .header { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        .meta { color: var(--text-dim); font-size: 0.9rem; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin: 16px 0; }
+        .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-align: center; }
+        .stat-card .num { font-size: 2rem; font-weight: bold; }
+        .stat-card .label { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; }
+        .stat-critical .num { color: var(--critical); }
+        .stat-high .num { color: var(--high); }
+        .stat-medium .num { color: var(--medium); }
+        .stat-low .num { color: var(--low); }
+        .stat-info .num { color: var(--info); }
+        .stat-total .num { color: var(--accent); }
+        .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .filter-btn { background: var(--card-bg); border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+        .filter-btn:hover { border-color: var(--accent); }
+        .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+        .finding { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+        .finding-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+        .badge { padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+        .badge-critical { background: var(--critical); color: #fff; }
+        .badge-high { background: var(--high); color: #fff; }
+        .badge-medium { background: var(--medium); color: #000; }
+        .badge-low { background: var(--low); color: #fff; }
+        .badge-info { background: var(--info); color: #000; }
+        .badge-category { background: var(--border); color: var(--text); }
+        .finding-title { font-weight: 600; font-size: 1rem; }
+        .finding-meta { color: var(--text-dim); font-size: 0.85rem; margin: 4px 0; }
+        .finding-desc { margin: 8px 0; font-size: 0.9rem; }
+        .finding-rec { background: rgba(63,185,80,0.1); border-left: 3px solid var(--green); padding: 8px 12px; margin: 8px 0; font-size: 0.85rem; border-radius: 0 4px 4px 0; }
+        .code-block { background: #0d1117; border: 1px solid var(--border); border-radius: 4px; padding: 12px; font-family: 'SF Mono', Monaco, monospace; font-size: 0.8rem; overflow-x: auto; margin: 8px 0; white-space: pre; }
+        .tab-bar { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+        .tab { padding: 8px 16px; cursor: pointer; border-bottom: 2px solid transparent; color: var(--text-dim); }
+        .tab.active { border-bottom-color: var(--accent); color: var(--accent); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .sbom-pre { background: #0d1117; border: 1px solid var(--border); border-radius: 4px; padding: 12px; font-family: monospace; font-size: 0.8rem; overflow-x: auto; max-height: 600px; overflow-y: auto; }
+        .no-findings { text-align: center; padding: 40px; color: var(--green); font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 AI Infrastructure Security Scan Report</h1>
+            <p class="meta">
+                <strong>Repository:</strong> chris-koch-penn/gpt3_security_vulnerability_scanner &nbsp;|&nbsp;
+                <strong>Branch:</strong> main &nbsp;|&nbsp;
+                <strong>Files Scanned:</strong> 65 &nbsp;|&nbsp;
+                <strong>Modules:</strong> agentic, ai, sast, sca &nbsp;|&nbsp;
+                <strong>Duration:</strong> 0.38s
+            </p>
+        </div>
+        <div class="summary-grid">
+            <div class="stat-card stat-total"><div class="num">21</div><div class="label">Total</div></div>
+            <div class="stat-card stat-critical"><div class="num">0</div><div class="label">Critical</div></div>
+            <div class="stat-card stat-high"><div class="num">11</div><div class="label">High</div></div>
+            <div class="stat-card stat-medium"><div class="num">0</div><div class="label">Medium</div></div>
+            <div class="stat-card stat-low"><div class="num">0</div><div class="label">Low</div></div>
+            <div class="stat-card stat-info"><div class="num">10</div><div class="label">Info</div></div>
+        </div>
+        <p class="meta">11 non-informational findings; 10 informational review/coverage notices. Static findings require validation.</p>
+        <div class="tab-bar">
+            <div class="tab active" onclick="switchTab('findings')">Findings (21)</div>
+            <div class="tab" onclick="switchTab('sbom')">SBOM</div>
+            <div class="tab" onclick="switchTab('correlation')">MCP links (pilot)</div>
+        </div>
+        <div id="tab-findings" class="tab-content active">
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterFindings('all', this)">All</button>
+                <button class="filter-btn" onclick="filterFindings('CRITICAL', this)">Critical</button>
+                <button class="filter-btn" onclick="filterFindings('HIGH', this)">High</button>
+                <button class="filter-btn" onclick="filterFindings('MEDIUM', this)">Medium</button>
+                <button class="filter-btn" onclick="filterFindings('LOW', this)">Low</button>
+                <button class="filter-btn" onclick="filterFindings('INFO', this)">Info</button>
+            </div>
+            <div id="findings-list"></div>
+            <details><summary>Tests, examples and documentation evidence (excluded from application totals)</summary><pre class="sbom-pre" id="context-evidence"></pre></details>
+        </div>
+        <div id="tab-correlation" class="tab-content">
+            <h2>MCP configuration-to-code links (pilot)</h2>
+            <p>Static declarations and code evidence only. Runtime reachability, exposure, authentication and privileges remain unknown. Groups do not add vulnerability counts.</p>
+            <pre class="sbom-pre" id="correlation-evidence"></pre>
+        </div>
+        <div id="tab-sbom" class="tab-content">
+            <h2>Software Bill of Materials (SBOM)</h2>
+            <p class="meta">CycloneDX 1.5 format — auto-generated from dependency manifests</p>
+            <pre class="sbom-pre" id="sbom-content"></pre>
+        </div>
+    </div>
+    <script>
+        const findings = [{"title": "Peer address used as a shell command; injection control unverified", "severity": "INFO", "category": "sast", "module": "ai", "description": "A peer address reaches a shell command. Normal IP address syntax does not establish attacker-controlled shell syntax; proxy and deployment semantics need review.", "file_path": "Command Injection/tainted.py", "line_number": 9, "code_snippet": "9:     os.system(request.remote_addr)", "recommendation": "Avoid shell execution for peer addresses and use fixed operations with structured arguments.", "cwe": "CWE-78", "confidence": "high", "rule_id": "PY-SHELL-PEER-001", "references": [], "fingerprint": "21640e117858e38e96035b25", "maturity": "stable", "status": "new", "scope": "application", "evidence_kind": "review-context", "aliases": [], "severity_source": "rule", "trace": [{"role": "sink", "file_path": "Command Injection/tainted.py", "line_number": 9}]}, {"title": "External input crosses a session storage boundary", "severity": "INFO", "category": "sast", "module": "ai", "description": "A request-controlled value is stored under a fixed session key. This alone does not establish a privilege or authorization violation.", "file_path": "Path Traversal/py_ctf.py", "line_number": 36, "code_snippet": "29:     golem = request.form.get(\"golem\") or None\n36:         session['golem'] = golem", "recommendation": "Validate the value against server-side records and allowlist session keys before storing trusted state.", "cwe": "CWE-501", "confidence": "medium", "rule_id": "PY-SAST-SESSION-001", "references": [], "fingerprint": "77c3993ed22929558baa0935", "maturity": "stable", "status": "new", "scope": "application", "evidence_kind": "review-context", "aliases": [], "severity_source": "rule", "trace": [{"role": "source", "file_path": "Path Traversal/py_ctf.py", "line_number": 29}, {"role": "sink", "file_path": "Path Traversal/py_ctf.py", "line_number": 36}]}, {"title": "External input controls a filesystem path", "severity": "HIGH", "category": "sast", "module": "ai", "description": "External input from line 70 reaches a file operation without an observed path boundary.", "file_path": "Path Traversal/py_ctf.py", "line_number": 78, "code_snippet": "70:         page = request.args.get('name')\n78:         template = open('/home/golem/articles/{}'.format(page)).read()", "recommendation": "Resolve the candidate and trusted root, reject paths outside that root using path-component containment, and avoid following untrusted symlinks.", "cwe": "CWE-22", "confidence": "high", "rule_id": "PY-SAST-PATH-001", "references": [], "fingerprint": "92ff40b9f6210363b92ca4c7", "maturity": "stable", "status": "new", "scope": "application", "evidence_kind": "static-flow", "aliases": [], "severity_source": "rule", "trace": [{"role": "source", "file_path": "Path Traversal/py_ctf.py", "line_number": 70}, {"role": "sink", "file_path": "Path Traversal/py_ctf.py", "line_number": 78}]}, {"title": "External input crosses a session storage boundary", "severity": "INFO", "category": "sast", "module": "ai", "description": "A request-controlled value is stored under a fixed session key. This alone does not establish a privilege or authorization violation.", "file_path": "Server Side Template Injection/asis_ssti_pt.py", "line_number": 36, "code_snippet": "29:     golem = request.form.get(\"golem\") or None\n36:         session['golem'] = golem", "recommendation": "Validate the value against server-side records and allowlist session keys before storing trusted state.", "cwe": "CWE-501", "confidence": "medium", "rule_id": "PY-SAST-SESSION-001", "references": [], "fingerprint": "ef9a31690b9a16d71f69a447", "maturity": "stable", "status": "new", "scope": "application", "evidence_kind": "review-context", "aliases": [], "severity_source": "rule", "trace": [{"role": "source", "file_path": "Server Side Template Injection/asis_ssti_pt.py", "line_number": 29}, {"role": "sink", "file_path": "Server Side Template Injection/asis_ssti_pt.py", "line_number": 36}]}, {"title": "External input controls a filesystem path", "severity": "HIGH", "category": "sast", "module": "ai", "description": "External input from line 70 reaches a file operation without an observed path boundary.", "file_path": "Server Side Template Injection/asis_ssti_pt.py", "line_number": 78, "code_snippet": "70:         page = request.args.get('name')\n78:         template = open('/home/golem/articles/{}'.format(page)).read()", "recommendation": "Resolve the candidate and trusted root, reject paths outside that root using path-component containment, and avoid following untrusted symlinks.", "cwe": "CWE-22", "confidence": "high", "rule_id": "PY-SAST-PATH-001", "references": [], "fingerprint": "f3cf7c194f4613c4e5f2f96a", "maturity": "stable", "status": "new", "scope": "application", "evidence_kind": "static-flow", "aliases": [], "severity_source": "rule", "trace": [{"role": "source", "file_path": "Server Side Template Injection/asis_ssti_pt.py", "line_number": 70}, {"role": "sink", "file_path": "Server Side Template Injection/asis_ssti_pt.py", "line_number": 78}]}, {"title": "Python analysis skipped: syntax could not be parsed", "severity": "INFO", "category": "sast", "module": "ai", "description": "Syntax-aware checks could not analyse this file.", "file_path": "Unsafe Deserialization/pickle2.py", "line_number": null, "code_snippet": null, "recommendation": "Check syntax and supported Python version, then scan again.", "cwe": null, "confidence": "high", "rule_id": "PY-PARSE-001", "references": [], "fingerprint": "7399e23fb4e6684ecd0de264", "maturity": "stable", "status": "new", "scope": "application", "evidence_kind": "coverage-notice", "aliases": [], "severity_source": "rule", "trace": []}, {"title": "Untrusted text controls server-side template source", "severity": "HIGH", "category": "sast", "module": "ai", "description": "Untrusted text from line 11 reaches the source argument of a resolved template-string renderer. Context-variable values are not treated as template source.", "file_path": "Server Side Template Injection/test.py", "line_number": 11, "code_snippet": "11:     renderer = Template('Hello, ' + request.args['name'])", "recommendation": "Keep template source trusted and pass untrusted values through template context variables. HTML escaping does not neutralize template syntax.", "cwe": "CWE-1336", "confidence": "high", "rule_id": "PY-SAST-SSTI-001", "references": [], "fingerprint": "4fee5e0970aac9d09b2d4b8d", "maturity": "stable", "status": "new", "scope": "application", "evidence_kind": "static-flow", "aliases": [], "severity_source": "rule", "trace": [{"role": "source", "file_path": "Server Side Template Injection/test.py", "line_number": 11}, {"role": "sink", "file_path": "Server Side Template Injection/test.py", "line_number": 11}]}, {"title": "Debug Mode Enabled", "severity": "INFO", "category": "insecure_model_deployment", "module": "ai", "description": "Debug mode enabled \u00e2\u20ac\u201d exposes stack traces and sensitive information.", "file_path": "Command Injection/tainted.py", "line_number": 15, "code_snippet": "13: \n14: if __name__ == \"__main__\":\n15:     app.run(debug=True)", "recommendation": "Disable debug mode in production. Use environment-based configuration.", "cwe": "CWE-489", "confidence": "medium", "rule_id": "AI-ID-003", "references": [], "fingerprint": "8b61415f67f7d1d45ae43c1b", "maturity": "experimental", "status": "new", "scope": "application", "evidence_kind": "configuration-observation", "aliases": [], "severity_source": "rule", "trace": []}, {"title": "Flask App Bound to All Interfaces", "severity": "INFO", "category": "insecure_model_deployment", "module": "ai", "description": "Flask app bound to 0.0.0.0 \u00e2\u20ac\u201d model endpoint exposed to the entire network.", "file_path": "Path Traversal/py_ctf.py", "line_number": 85, "code_snippet": "83: \n84: if __name__ == \"__main__\":\n85:     app.run(host='0.0.0.0', debug=False)", "recommendation": "Bind to localhost (127.0.0.1) unless external access is required. If needed, use a reverse proxy with auth and TLS.", "cwe": "CWE-918", "confidence": "medium", "rule_id": "AI-ID-001", "references": [], "fingerprint": "671ee7c42c1437fdc234eed2", "maturity": "experimental", "status": "new", "scope": "application", "evidence_kind": "configuration-observation", "aliases": [], "severity_source": "rule", "trace": []}, {"title": "Flask App Bound to All Interfaces", "severity": "INFO", "category": "insecure_model_deployment", "module": "ai", "description": "Flask app bound to 0.0.0.0 \u00e2\u20ac\u201d model endpoint exposed to the entire network.", "file_path": "Server Side Template Injection/asis_ssti_pt.py", "line_number": 85, "code_snippet": "83: \n84: if __name__ == \"__main__\":\n85:     app.run(host='0.0.0.0', debug=False)", "recommendation": "Bind to localhost (127.0.0.1) unless external access is required. If needed, use a reverse proxy with auth and TLS.", "cwe": "CWE-918", "confidence": "medium", "rule_id": "AI-ID-001", "references": [], "fingerprint": "791bfdad3400214900b6b22e", "maturity": "experimental", "status": "new", "scope": "application", "evidence_kind": "configuration-observation", "aliases": [], "severity_source": "rule", "trace": []}, {"title": "Flask App Bound to All Interfaces", "severity": "INFO", "category": "insecure_model_deployment", "module": "ai", "description": "Flask app bound to 0.0.0.0 \u00e2\u20ac\u201d model endpoint exposed to the entire network.", "file_path": "Unsafe Deserialization/pickle2.py", "line_number": 148, "code_snippet": "146: \n147: if __name__ == '__main__':\n148:     app.run(host=\"0.0.0.0\", port=5051)", "recommendation": "Bind to localhost (127.0.0.1) unless external access is required. If needed, use a reverse proxy with auth and TLS.", "cwe": "CWE-918", "confidence": "medium", "rule_id": "AI-ID-001", "references": [], "fingerprint": "806de3b724b37369df93d1b6", "maturity": "experimental", "status": "new", "scope": "application", "evidence_kind": "configuration-observation", "aliases": [], "severity_source": "rule", "trace": []}, {"title": "Hardcoded Secret/Password (unverified)", "severity": "HIGH", "category": "secret_exposure", "module": "ai", "description": "A provider-shaped credential pattern was found at this location. Validity and actual use have not been verified.", "file_path": "SQL Injection/example2.js", "line_number": 18, "code_snippet": "18: [credential-like value redacted]", "recommendation": "If this value is a real credential, revoke or rotate it and remove it from source. For a deliberate fixture, keep it clearly labeled as synthetic.", "cwe": "CWE-798", "confidence": "medium", "rule_id": "AI-SE-018", "references": [], "fingerprint": "f5d0778f46aa59858d202146", "maturity": "experimental", "status": "new", "scope": "application", "evidence_kind": "credential-pattern-unverified", "aliases": [], "severity_source": "rule", "trace": []}, {"title": "Hardcoded Secret/Password (unverified)", "severity": "HIGH", "category": "secret_exposure", "module": "ai", "description": "A provider-shaped credential pattern was found at this location. Validity and actual use have not been verified.", "file_path": "Sensitive Data Exposure/hardcoded.ts", "line_number": 2, "code_snippet": "2: [credential-like value redacted]", "recommendation": "If this value is a real credential, revoke or rotate it and remove it from source. For a deliberate fixture, keep it clearly labeled as synthetic.", "cwe": "CWE-798", "confidence": "medium", "rule_id": "AI-SE-018", "references": [], "fingerprint": "2a5ce307f1fa78fb6efd9c23", "maturity": "experimental", "status": "new", "scope": "application", "evidence_kind": "credential-pattern-unverified", "aliases": [], "severity_source": "rule", "trace": []}, {"title": "External input controls process execution", "severity": "HIGH", "category": "sast", "module": "sast", "description": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified.", "file_path": "Command Injection/exec.js", "line_number": 8, "code_snippet": "    exec(`${req.body.url}`, (error) => {\n        if (error) {\n            return res.send('error');\n        }\n        res.send('pong')\n    })", "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.", "cwe": "CWE-78", "confidence": "medium", "rule_id": "JS-SAST-CMD-001", "references": [], "fingerprint": "cc06ba4726b4a2c1120f60ee", "maturity": "advisory", "status": "new", "scope": "application", "evidence_kind": "static-flow", "aliases": [], "severity_source": "rule", "trace": [{"role": "source", "file_path": "Command Injection/exec.js", "line_number": 8}, {"role": "sink", "file_path": "Command Injection/exec.js", "line_number": 8}]}, {"title": "External input controls process execution", "severity": "HIGH", "category": "sast", "module": "sast", "description": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified.", "file_path": "Command Injection/exec.js", "line_number": 18, "code_snippet": "    exec(\n        'gzip ' + req.query.file_path,\n        function (err, data) {\n          console.log('err: ', err)\n          console.log('data: ', data);\n          res.send('done');\n    });", "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.", "cwe": "CWE-78", "confidence": "medium", "rule_id": "JS-SAST-CMD-001", "references": [], "fingerprint": "3226ac0d20268d00212e1016", "maturity": "advisory", "status": "new", "scope": "application", "evidence_kind": "static-flow", "aliases": [], "severity_source": "rule", "trace": [{"role": "source", "file_path": "Command Injection/exec.js", "line_number": 19}, {"role": "sink", "file_path": "Command Injection/exec.js", "line_number": 18}]}, {"title": "External input is interpolated into a SQL statement", "severity": "HIGH", "category": "sast", "module": "sast", "description": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified.", "file_path": "SQL Injection/mysql.js", "line_number": 21, "code_snippet": "    connection.query(query,(err, result) => {\n        res.json(result);\n    });", "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.", "cwe": "CWE-89", "confidence": "medium", "rule_id": "JS-SAST-SQL-001", "references": [], "fingerprint": "9ebf4cf78223c1c7480e5c17", "maturity": "advisory", "status": "new", "scope": "application", "evidence_kind": "static-flow", "aliases": [], "severity_source": "rule", "trace": [{"role": "source", "file_path": "SQL Injection/mysql.js", "line_number": 17}, {"role": "sink", "file_path": "SQL Injection/mysql.js", "line_number": 21}]}, {"title": "External input is interpolated into a SQL statement", "severity": "HIGH", "category": "sast", "module": "sast", "description": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified.", "file_path": "SQL Injection/mysql.js", "line_number": 28, "code_snippet": "    connection.query(\"SELECT * FROM users WHERE id=\" + userId,(err, result) => {\n        res.json(result);\n    });", "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.", "cwe": "CWE-89", "confidence": "medium", "rule_id": "JS-SAST-SQL-001", "references": [], "fingerprint": "8e9c3932cb6e9f4efe4f5a80", "maturity": "advisory", "status": "new", "scope": "application", "evidence_kind": "static-flow", "aliases": [], "severity_source": "rule", "trace": [{"role": "source", "file_path": "SQL Injection/mysql.js", "line_number": 27}, {"role": "sink", "file_path": "SQL Injection/mysql.js", "line_number": 28}]}, {"title": "External input is interpolated into a SQL statement", "severity": "HIGH", "category": "sast", "module": "sast", "description": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified.", "file_path": "SQL Injection/mysql.js", "line_number": 35, "code_snippet": "    connection.query({\n        sql : \"SELECT * FROM users WHERE id=\" +userId\n    },(err, result) => {\n        res.json(result);\n    });", "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.", "cwe": "CWE-89", "confidence": "medium", "rule_id": "JS-SAST-SQL-001", "references": [], "fingerprint": "a47b44b8b42f39b84dd2e616", "maturity": "advisory", "status": "new", "scope": "application", "evidence_kind": "static-flow", "aliases": [], "severity_source": "rule", "trace": [{"role": "source", "file_path": "SQL Injection/mysql.js", "line_number": 34}, {"role": "sink", "file_path": "SQL Injection/mysql.js", "line_number": 35}]}, {"title": "External input is interpolated into a SQL statement", "severity": "HIGH", "category": "sast", "module": "sast", "description": "A supported syntax-level source reaches the statement/command/HTML argument. Callback arguments are not treated as model output. Startup, branch feasibility and exploitability are unverified.", "file_path": "SQL Injection/example2.js", "line_number": 26, "code_snippet": "\tthis.query(the_Query).execute(function(error, result)", "recommendation": "Use structured arguments, parameterized statements and context-appropriate encoding; review the source/sink evidence.", "cwe": "CWE-89", "confidence": "medium", "rule_id": "JS-SAST-SQL-001", "references": [], "fingerprint": "1ea8ded9d787dac2639f1e9d", "maturity": "advisory", "status": "new", "scope": "application", "evidence_kind": "static-flow", "aliases": [], "severity_source": "rule", "trace": [{"role": "source", "file_path": "SQL Injection/example2.js", "line_number": 7}, {"role": "sink", "file_path": "SQL Injection/example2.js", "line_number": 26}]}, {"title": "JavaScript/TypeScript syntax analysis incomplete", "severity": "INFO", "category": "sast", "module": "coverage", "description": "The selected grammar could not parse this file completely. Source/sink checks were skipped; regex fallbacks do not establish semantic coverage.", "file_path": "Unsafe Deserialization/de.js", "line_number": null, "code_snippet": null, "recommendation": null, "cwe": null, "confidence": "high", "rule_id": "JS-PARSE-001", "references": [], "fingerprint": "9605b9154cc169e6483af250", "maturity": "advisory", "status": "new", "scope": "application", "evidence_kind": "coverage-notice", "aliases": [], "severity_source": "rule", "trace": []}, {"title": "No Dependency Declarations Parsed", "severity": "INFO", "category": "sca", "module": "sca", "description": "No dependency declarations could be parsed from supported manifests. SCA coverage is incomplete, not a clean bill of health.", "file_path": "N/A", "line_number": null, "code_snippet": null, "recommendation": "Add a dependency manifest file to enable SCA scanning and SBOM generation.", "cwe": null, "confidence": "high", "rule_id": null, "references": [], "fingerprint": "8c0f973e7f1f2dca9c6d9ab5", "maturity": "stable", "status": "new", "scope": "application", "evidence_kind": "coverage-notice", "aliases": [], "severity_source": "rule", "trace": []}];
+        const contextEvidence = [];
+        const correlationEvidence = {
+  "enabled": true,
+  "groups": [],
+  "resolutions": []
+};
+        const sbom = {
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-16T19:29:43.739623+00:00",
+    "component": {
+      "type": "application",
+      "name": "chris-koch-penn/gpt3_security_vulnerability_scanner"
+    },
+    "tools": [
+      {
+        "vendor": "Theron",
+        "name": "Theron",
+        "version": "1.0.0"
+      }
+    ]
+  },
+  "components": []
+};
+        function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : ''; }
+        function renderFindings(filter) {
+            const list = document.getElementById('findings-list');
+            const filtered = filter === 'all' ? findings : findings.filter(f => f.severity === filter);
+            if (filtered.length === 0) { list.innerHTML = '<div class="no-findings">✅ No findings at this severity level</div>'; return; }
+            list.innerHTML = filtered.map((f, i) => `
+                <div class="finding" data-severity="${f.severity}">
+                    <div class="finding-header">
+                        <span class="badge badge-${f.severity.toLowerCase()}">${f.severity}</span>
+                        <span class="badge badge-category">${f.category}</span>
+                        <span class="finding-title">${esc(f.title)}</span>
+                    </div>
+                    <div class="finding-meta">📁 ${esc(f.file_path)}:${f.line_number || 'N/A'} &nbsp;|&nbsp; 🏷️ ${esc(f.cwe || 'N/A')} &nbsp;|&nbsp; 🎯 ${esc(f.confidence)} &nbsp;|&nbsp; 📦 ${esc(f.module)}</div>
+                    <div class="finding-desc">${esc(f.description)}</div>
+                    <div class="finding-evidence"><strong>Evidence classification:</strong> ${esc(f.evidence_kind || 'unspecified')} · Scope: ${esc(f.scope || 'application')} · Maturity: ${esc(f.maturity || 'unspecified')}
+                    ${Array.isArray(f.trace) && f.trace.length ? `<ol>${f.trace.map(step => `<li>${esc(step.role)}: <code>${esc(step.file_path)}:${esc(step.line_number)}</code></li>`).join('')}</ol>` : '<p>No source-to-sink trace supplied.</p>'}
+                    ${f.fingerprint ? `<div>Fingerprint: <code>${esc(f.fingerprint)}</code></div>` : ''}</div>
+                    ${f.dependency ? `<div class="finding-dependency"><strong>OSV package evidence:</strong> ${esc(f.dependency.ecosystem)} · ${esc(f.dependency.package)}@${esc(f.dependency.version)}
+                      <p>Declared in ${esc(f.dependency.manifest)} · Checked ${esc(f.dependency.queried_at)}</p>
+                      <p>Fixed-version boundaries: ${esc((f.dependency.fixed_versions || []).join(', ') || 'Not supplied')}</p>
+                      <p>Advisory identities: ${esc((f.dependency.advisory_ids || []).join(', '))}</p>
+                      <p>${esc(f.dependency.matching)}</p></div>` : ''}
+                    ${f.obligation ? `<div class="finding-obligation"><strong>Required security condition:</strong> ${esc(f.obligation.required)}
+                      <p>${esc(f.obligation.observed)}</p>
+                      ${Array.isArray(f.obligation.assumptions) ? `<ul>${f.obligation.assumptions.map(a=>`<li>${esc(a)}</li>`).join('')}</ul>` : ''}
+                      ${Array.isArray(f.obligation.related_locations) ? `<ul>${f.obligation.related_locations.map(p=>`<li>${esc(p.role)}: ${esc(p.file_path)}:${esc(p.line_number)}</li>`).join('')}</ul>` : ''}</div>` : ''}
+                    ${f.recommendation ? `<div class="finding-rec">💡 <strong>Recommendation:</strong> ${esc(f.recommendation)}</div>` : ''}
+                    ${f.code_snippet ? `<div class="code-block">${esc(f.code_snippet)}</div>` : ''}
+                </div>
+            `).join('');
+        }
+        function filterFindings(severity, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderFindings(severity);
+        }
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('tab-' + tabName).classList.add('active');
+        }
+        document.getElementById('context-evidence').textContent = JSON.stringify(contextEvidence, null, 2);
+        document.getElementById('correlation-evidence').textContent = JSON.stringify(correlationEvidence, null, 2);
+        renderFindings('all');
+        document.getElementById('sbom-content').textContent = sbom ? JSON.stringify(sbom, null, 2) : 'No SBOM generated (SCA module not run or no dependencies found)';
+    </script>
+</body>
+</html>

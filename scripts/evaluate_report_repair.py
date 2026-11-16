@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import subprocess
 import time
+from importlib.metadata import version
 from scanner.models import ScanContext,ScanResult
 from scanner.profiler import ProjectProfiler
 from scanner.plugins import discover_plugins,clear_registry
@@ -64,6 +65,8 @@ def report_replay(path):
         development_exposed=True,independent_labels=False,target_code_executed=False,
         old_summary=original['summary'],new_summary=result.summary,
         original_report_sha256=hashlib.sha256(Path(path).read_bytes()).hexdigest(),
+        evaluation_driver_sha256=hashlib.sha256(Path(__file__).read_text(encoding='utf-8').encode()).hexdigest(),
+        parser_versions={name:version(name) for name in ('tree-sitter','tree-sitter-javascript','tree-sitter-typescript')},
         scanner_source_sha256={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_text(encoding='utf-8').encode()).hexdigest() for folder in ('scanner','rules') for p in (ROOT/folder).rglob('*') if p.suffix in {'.py','.yaml'}},
         interpretation='Same pinned 65-file snapshot, all modules and experimental rules enabled. Development correction, not fresh accuracy or vulnerability confirmation.'))
     print('Previous',original['summary'],flush=True)

@@ -1,0 +1,327 @@
+[
+  {
+    "path": "Command Injection/exec.js",
+    "git_blob_sha": "6d295f41049ff3df4eb84fb40e0210f57ac74ead",
+    "sha256": "acec72d68eae36f5cfe7b7fe30d44397f3648784d65f916ed9c217e049193302"
+  },
+  {
+    "path": "Code Injection/README.md",
+    "git_blob_sha": "b8f56f4d3188b1d10c8773f33a9f6f6745a18757",
+    "sha256": "a4bbd4ac498812747fd5061ab3a84b9a384495aff10bf5a0efd8c1e744cd64d4"
+  },
+  {
+    "path": "Command Injection/README.md",
+    "git_blob_sha": "58db56a63170a234ad46353fff1283afc57265c9",
+    "sha256": "b74dab6cbcdfb130ea1ccb53540194190319815153f0b425369ca31bcc889dce"
+  },
+  {
+    "path": "Code Execution/README.md",
+    "git_blob_sha": "58b6e65ee867557bafb6206b706cafbfd8bea319",
+    "sha256": "ceeca878fe7630644c7929de9d31045dc3e5422ed5d809bf56ba74855abe8b28"
+  },
+  {
+    "path": "Buffer Overflow/README.md",
+    "git_blob_sha": "26e39e66475ce2ac0990fc6a5ed7bd7e0bccfe8b",
+    "sha256": "bbc9e7b51ab5a3afc1b399469480e7e6bbf37e77972de7ca4661b81dfafcd6a0"
+  },
+  {
+    "path": "Command Injection/tainted.py",
+    "git_blob_sha": "35abc25e0ad1156b0b2110315f19fb5c4f33039d",
+    "sha256": "c147d466337b4575e391ac500de02544fb9a49accac3d08a9267aea5fa5e13c8"
+  },
+  {
+    "path": "Connection String Injection/README.md",
+    "git_blob_sha": "712508c892626b15f77a5479eee564ba4abcf353",
+    "sha256": "a4eb761145347458b0138c7e201c1c3f1c832fe0a6091a7c40afdeba46e702f1"
+  },
+  {
+    "path": "Format String Attacks/README.md",
+    "git_blob_sha": "ffdb6304d75fbb8f9b5572d023656dba2c2b0d0d",
+    "sha256": "654b2df74f906f06c71df73e3bddc54939630f58c652fbeff0969f8a70308303"
+  },
+  {
+    "path": "File Inclusion/README.md",
+    "git_blob_sha": "badfccb472d3c6afc7e9e940bde385e5b5dad9e6",
+    "sha256": "ddfef0109ec46b32e79104102d9c3b0899622ed90c0679035c13bebbcfeaaae5"
+  },
+  {
+    "path": "Denial Of Service/README.md",
+    "git_blob_sha": "d92533417d5a42332e449e7d144bfc3109932fcf",
+    "sha256": "c9ee1ce532fcd5882141e3b51ee1f3a689b4ca5960977154e1c3f5881661cbaa"
+  },
+  {
+    "path": "Denial Of Service/dos.js",
+    "git_blob_sha": "b634fd7121e5d0859500d24d961f0d8f07023c7d",
+    "sha256": "6af971df4408aaec6a30bcb78d405d919aae5d843c70d62490393f633df3c9e5"
+  },
+  {
+    "path": "IDOR/README.md",
+    "git_blob_sha": "b3b6724ca736d63ecf145cbead5c6cc43ef167ce",
+    "sha256": "1009b03863bbea39a13fe3cbffbbb50839c2908199c5e0df3a737551b030aeb6"
+  },
+  {
+    "path": "NoSQL Injection/README.md",
+    "git_blob_sha": "cfd264ed04734cd0199c112de5a588266465b927",
+    "sha256": "29afc312bc6b89bc3c4c7f22b1f3a02a130aafdd0612ac5b1e2b703d58c6c3f0"
+  },
+  {
+    "path": "Insecure File Uploads/README.md",
+    "git_blob_sha": "1565e318a16bb92b0df554002d5dec87a818d928",
+    "sha256": "92a922aaf2e583066d47c48bbde4d0cc779101e2247b07a04b9dfca8b0096291"
+  },
+  {
+    "path": "Log Forging/README.md",
+    "git_blob_sha": "9cbfcf8f17a0d9b639000b9f1d2f68ba36481cff",
+    "sha256": "261243f3dd073766b1b1fbb24e932f2281cfbd3e5010b4df59da4b389f6c7b66"
+  },
+  {
+    "path": "LDAP Injection/README.md",
+    "git_blob_sha": "4daa6d85249998ce49b98e03560278c1a81a3108",
+    "sha256": "744207263afa1a5429239904030c2ac1485961d07e363221aae6f00f25f5df8f"
+  },
+  {
+    "path": "Integer Overflow/README.md",
+    "git_blob_sha": "caa0875eaf77c18ce82c0ebc5cead46357a9d7f0",
+    "sha256": "7de0492651b96d4d86b26a615d84ca5de74f472daf8256bb7963e7dd085d5c9e"
+  },
+  {
+    "path": "NoSQL Injection/mongodb.js",
+    "git_blob_sha": "bb566aa4955a03afc53e1b85c36aad51365a86f5",
+    "sha256": "fee6e5eafb70c131ccfe9e297609bd9c6a9dfa50c6048fb6b2a820d62aaad5db"
+  },
+  {
+    "path": "Open Redirect/README.md",
+    "git_blob_sha": "b95ed737c02dd74f730c77aa9a10d216f77c506c",
+    "sha256": "565be512c7f4fa7176e5875eb2f112eaee400729c229bb81b0c87a24cce1a646"
+  },
+  {
+    "path": "Out of Bounds/README.md",
+    "git_blob_sha": "e2002e2ff05832fc81e9595f8ba6e3ed27b52a56",
+    "sha256": "351d68ee421bca44f94372457e018b0d1f249c88e805b70a24419bebb9ca33fa"
+  },
+  {
+    "path": "Open Redirect/koa.js",
+    "git_blob_sha": "e09accfc9f03eec9a98edfef80ef3f81fd6dcfa9",
+    "sha256": "11824ade24d1bcfb63bbd546d98199f1d103dbe0b039bef23dc7756da2ad65c1"
+  },
+  {
+    "path": "Open Redirect/redirect.js",
+    "git_blob_sha": "a8c229cd40643c75d2eefe0e396d7e2369fb60af",
+    "sha256": "e1455bed06b803e3c85fd2061a33c45029ea8fbbce5cc564688b856c97f998d5"
+  },
+  {
+    "path": "PHP Object Injection/README.md",
+    "git_blob_sha": "0a90565972082fcb80a94e79e285d816bb2f8045",
+    "sha256": "448dbb19987015fe94cdd17d73ee993e437ae0f5f917f3e6c10fa378e8bb53df"
+  },
+  {
+    "path": "Path Traversal/README.md",
+    "git_blob_sha": "28e9ed21ddbfbcdc359878d9f7bc6a683eea41af",
+    "sha256": "36a8593c2b65e282dbba22b00f39311faaa86107dd45d4becc81849414584d5f"
+  },
+  {
+    "path": "PostMessage Security/challenge1.js",
+    "git_blob_sha": "4e640f1243f0840fada93f443eb32cdd4f17b0d2",
+    "sha256": "4869d59ed79b9c76302aa78d68f348897385289b8cb37b1b58a7554daacccad8"
+  },
+  {
+    "path": "PostMessage Security/challenge3.js",
+    "git_blob_sha": "e12e8f8db4c06134f79e0726bc33c58b95eca264",
+    "sha256": "c6d16adc7737358e83b8b266d18a4a4e246ef9a6d6a63572e01e653abdacaec7"
+  },
+  {
+    "path": "PostMessage Security/README.md",
+    "git_blob_sha": "c46c6ed414b4fcc0b5c600a31ca54731904a381f",
+    "sha256": "904c45b61f3a79ffa0308b6f4ae9a08c325ad4f056dd305125e2c2b6225a9a6e"
+  },
+  {
+    "path": "Path Traversal/py_ctf.py",
+    "git_blob_sha": "a7aa75427a48cadbc52949a820d8069744cfcbc7",
+    "sha256": "c0ebe76a833717db9a058668a6242c3513c088d8a5262a5f0a0d1d40b0985812"
+  },
+  {
+    "path": "Path Traversal/gq.js",
+    "git_blob_sha": "5cd0839abf44ad3a40dcdcc9d8d9b185f9806775",
+    "sha256": "29a121a02f47c8ab740d16c32152a5a64d5674eb799ae5ce8312e7bdaa8ac614"
+  },
+  {
+    "path": "Path Traversal/expresstest.js",
+    "git_blob_sha": "3328874f3609bfea9d9314c543be842018c61010",
+    "sha256": "d2cb473e1c8ccf962302c1c843c144e6f3d9abb384cead7a34c4db7637bb2b57"
+  },
+  {
+    "path": "ReDoS/redos.js",
+    "git_blob_sha": "d3876bcdea4b288f9b2225401fcc1cea2f59e8b8",
+    "sha256": "0b61911d4b196b5e9f7832f70c1d449a67f55bd17e0e757b045def45e5f617bc"
+  },
+  {
+    "path": "PostMessage Security/challenge_2.js",
+    "git_blob_sha": "2bd19e223dc6d8524a003b29f9dd480e3d7ad8be",
+    "sha256": "25c4f79285444e13bbd303cac5e53ee046139f49a94874876c2492dd2426e154"
+  },
+  {
+    "path": "ReDoS/README.md",
+    "git_blob_sha": "7fc122c8c85155c1a98f82b356d6883ffeb8b47d",
+    "sha256": "f13c77d0cc42af06a16af50d3835e939f031acddc2ff18444223ab137c93c29b"
+  },
+  {
+    "path": "Prototype Pollution/lodash.js",
+    "git_blob_sha": "24b808c0539763d9e7fc1b59f3541afa1addfcc6",
+    "sha256": "9f95ecbcdce671da023de17947214352e247aee0666707332fc557bbbfe3c92f"
+  },
+  {
+    "path": "README.md",
+    "git_blob_sha": "57cb0b14331838e38bf020dc3914591f3102309e",
+    "sha256": "18a94473103a7af9313862a23e8a3862bce06fe4a12616ff5675dbcffe4e9e77"
+  },
+  {
+    "path": "Prototype Pollution/README.md",
+    "git_blob_sha": "59fc7e6521cb95b590078fa538b912f101612faa",
+    "sha256": "204189728a28109b2c80e4890a2c0aa609da50c81dff5cfde62999dc5d3fe67f"
+  },
+  {
+    "path": "SQL Injection/README.md",
+    "git_blob_sha": "dfc56d7acdf5db8d3fd2ff37820d38e6d0c05428",
+    "sha256": "5034f150360785b885d6473852afa33e6d2454e4ab14cc20b84aff57051b1ddd"
+  },
+  {
+    "path": "SQL Injection/sql.js",
+    "git_blob_sha": "ee11853ed43bd0199aa79bfa8aa658a4f212d228",
+    "sha256": "45035b224e87e60004c68068e1e2457eb98da18a012b59721d06db7a7646b130"
+  },
+  {
+    "path": "SQL Injection/mysql.js",
+    "git_blob_sha": "89029c3ef5ed820e39603f831e3fa611ef78b4f0",
+    "sha256": "339a66c04abfdf0e7e2e68d0aed1c13a23405c9ec60ab72d91861ffe65427ca6"
+  },
+  {
+    "path": "SSRF/README.md",
+    "git_blob_sha": "822f5599c05a2dab39c8700fa88026beaf19f448",
+    "sha256": "741740d786ae97ddef9434d25638892f6b9549d0298e5147c76a94eb585d3bbc"
+  },
+  {
+    "path": "SQL Injection/example2.js",
+    "git_blob_sha": "40d4d532b6659a7932c16434e8acfd1fcecc211a",
+    "sha256": "7899a291880c72ef386f49830796362c76990f0a1df6d517758c92eb3275f741"
+  },
+  {
+    "path": "Resource Injection/README.md",
+    "git_blob_sha": "73d689628fc6b55f63ce8d3425c74f9f42113782",
+    "sha256": "d4e35e7dd73b14b4844ff3fe30e6b904db87f90e47a9fb90a32ac2873e1e1383"
+  },
+  {
+    "path": "Server Side Template Injection/README.md",
+    "git_blob_sha": "a9bf6161d60193af81f4efe5adc301f2361d7329",
+    "sha256": "9e57a46c324d2125d46acaa803f488e885f5017606764de0b0a293101d09b0bb"
+  },
+  {
+    "path": "Sensitive Data Exposure/graphql.ts",
+    "git_blob_sha": "9c2d4338adfb04a280b8b4d1f656af83cddb1381",
+    "sha256": "4ba2fb28ee76d22220a48793e02e79ca22f90369b5bb7a14562adb59083e0b02"
+  },
+  {
+    "path": "Server Side Template Injection/asis_ssti_pt.py",
+    "git_blob_sha": "a7aa75427a48cadbc52949a820d8069744cfcbc7",
+    "sha256": "c0ebe76a833717db9a058668a6242c3513c088d8a5262a5f0a0d1d40b0985812"
+  },
+  {
+    "path": "Sensitive Data Exposure/hardcoded.ts",
+    "git_blob_sha": "1b4ebb36d534d82ff12193d6c09c1d83d78a93b4",
+    "sha256": "615364e2695df4b751ebc0b0e68c033ee9f6feadb60092cd075aa8b118b254a0"
+  },
+  {
+    "path": "Sensitive Data Exposure/README.md",
+    "git_blob_sha": "1e10850ffb68959c422ca361ebd52ee00d05467e",
+    "sha256": "26e4e9ad09ff711674ba476e4c8e748b6aa29e3621a476f3482b100a11e50367"
+  },
+  {
+    "path": "SSRF/express.js",
+    "git_blob_sha": "9a41667a463dd0a09e0fb7df78645b5076ce3776",
+    "sha256": "f3e4629ed50205f88b55239b845a4d777ea66d60ff034fc8c8fc4d0a7e837032"
+  },
+  {
+    "path": "Unsafe Deserialization/pickle2.py",
+    "git_blob_sha": "acc76721d7d7142d0f5b22c8cb5a9a2438e82bd2",
+    "sha256": "23fa361e779334fde9373850982de45a4c532d39650927dbd27398cd0a2e422a"
+  },
+  {
+    "path": "Unsafe Deserialization/de.js",
+    "git_blob_sha": "5635ab85719d58a9c7dc3424fc48ac9fc02d8fde",
+    "sha256": "708dfc79da727047318c86ba611aa2bd14df676a5bf76ce13471aa17fa44ae00"
+  },
+  {
+    "path": "Symlink Attack/README.md",
+    "git_blob_sha": "16c64f9f5615fa260ce5bdd6fb38ad0dda47ba47",
+    "sha256": "6610ef515d8042ac255644f026e6e2ffe202597ebd63e38987975851f992ab09"
+  },
+  {
+    "path": "Unsafe Deserialization/CVE-2017-2809.py",
+    "git_blob_sha": "db257fc0500d6929c4d7f2f368d3824e32a63886",
+    "sha256": "5215076a8db402fa7587a5a9bbc56d86ee7acde55fab5eb1f32fe07d7ff0bf98"
+  },
+  {
+    "path": "Server Side Template Injection/test.py",
+    "git_blob_sha": "04d511820554dea6c5b5ce847ef67ed4298040e4",
+    "sha256": "79aebcd56ae4e5d9492acc9eb789c5df07aebc5c528f176cd8cc2732dce20bbd"
+  },
+  {
+    "path": "Unsafe Deserialization/README.md",
+    "git_blob_sha": "1c89a67cf9d174632974ae3d022e356be681c696",
+    "sha256": "77732b88fcf673b26497ca7a5970824a032075565acfb3cf902031c41d978247"
+  },
+  {
+    "path": "Unsafe Deserialization/unsafe.js",
+    "git_blob_sha": "a350be9ef7699c45ee7f83ddcb5188425ccdbe1c",
+    "sha256": "42eb3616ccac5906932149a16bfbf22ffa4a76a5d893b7e2e35d77b3d3a60722"
+  },
+  {
+    "path": "XSS/README.md",
+    "git_blob_sha": "22dc508e086a2b3e8d1420f529a71c53ab7c77fb",
+    "sha256": "cf6a6d2293b5b523e60e591f37379cfc2a24f5c463ea23458c08ec26545035ca"
+  },
+  {
+    "path": "XSS/express.js",
+    "git_blob_sha": "048e4ab7eac894823040a7285c53b295b832fbd2",
+    "sha256": "230dabad9d0c316b083a56280ac3bd7099a3e813042ade934d17b0235c78ce90"
+  },
+  {
+    "path": "XXE/README.md",
+    "git_blob_sha": "26157eaea1d61a0e1207f82f3d3ef63c0d1e8f32",
+    "sha256": "f98a2ae965b6a681efbc5fe29ebdaf6d5b64446fbba2fd109d538d86eb3908ec"
+  },
+  {
+    "path": "XPATH Injection/README.md",
+    "git_blob_sha": "549dcb5d39f82d86f16ffa7bd67af082bf04eaa0",
+    "sha256": "1fa030dd16d9cfe99c9bb6d4af5392a687dea44076907bed80892a0813891d2f"
+  },
+  {
+    "path": "Use After Free/README.md",
+    "git_blob_sha": "2347dd749ad58376ca8bf337156c533f642386ef",
+    "sha256": "37bbebdaf85f3c9237c7c30344c6f4e5fab075be9c2b5a2ea4ccaf8d50c26c66"
+  },
+  {
+    "path": "attributions.md",
+    "git_blob_sha": "618d43aad904ad2084dcfc79b58814c9f711c1f7",
+    "sha256": "dfd49b32451a173a7ae12d6f7522fa09f601b93c5712e0de8a7478712db3fc04"
+  },
+  {
+    "path": "Zip Traversal/README.md",
+    "git_blob_sha": "3122b96e5aa40b44698c2926a4d16a7c4b62ef41",
+    "sha256": "5698acff78533cfe9c2042acb75afa74da457ca41e9412fd7bf2f9ea56cfa2a1"
+  },
+  {
+    "path": "summarize_results.py",
+    "git_blob_sha": "b895104e6adb61a0bf32c24bbd09acb21b262d75",
+    "sha256": "6937fea71ed1e385492bcb45884194baed2f1293ee5f45b40f5243b752903140"
+  },
+  {
+    "path": "XXE/xxe.js",
+    "git_blob_sha": "2a2199aefdf41e220f8640f0e799445f156e03c8",
+    "sha256": "9dc1b3bdf8d3254dcd0c74a7cb1ec7ec0e243f4cccf50e21e7d797be163f87d3"
+  },
+  {
+    "path": "count_files.py",
+    "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

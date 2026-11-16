@@ -6,6 +6,8 @@
 
 The original supplied JSON remains unchanged. [Per-alert assessment and source receipts](gpt3-scanner-report-2026-11-17.json) records all 60 fingerprints, locations, original severities/maturities and conclusions. Credential literals are not reproduced.
 
+**Follow-up:** the [detector repair and same-source replay](../evaluation/report-repair-2026-11-17/README.md) records the subsequent fixes. The assessment below remains about the original supplied report.
+
 ## Created and finished timestamps
 
 The raw values in the screenshot are valid UTC instants. India time is:

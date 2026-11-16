@@ -1,10 +1,12 @@
 # Theron: realistic project assessment and improvement plan
 
-**Assessment date:** 15 November 2026. **Current application-evidence core checkpoint:** `71e6c88`. **Detection benchmark checkpoint:** `7b64719`. **Paired behavior evidence:** `15a4356`.
+**Assessment date:** 17 November 2026. **Current detector repair checkpoint:** `b7ca4da`. **Previous application-evidence checkpoint:** `71e6c88`. **Paired behavior evidence:** `15a4356`.
 
 Earlier [tool-level correlation and package-attribution evidence](evaluation/tool-correlation-2026-11-15/README.md) established supported tool registration, bounded local call paths, collected distribution-record claims, source/advisory digests and frontend provenance. All 16 original controls matched expectations, and two pinned upstream source examples each produced one tool group under generated configurations. These checks do not establish independent edge accuracy, new vulnerabilities or improved review decisions; the real-code research gate remains open.
 
 ## Current verdict
+
+The latest [source-grounded report repair](evaluation/report-repair-2026-11-17/README.md) passes 933 Python tests, 25 frontend tests and production build. Replaying the same 65-file supplied snapshot with experimental rules enabled reduces non-informational candidates from 38 to 11: nine source/sink flows plus two unverified credential literals. All 23 audited false-positive paths and unsupported README/LLM labels are removed; three missed source/sink paths are added. A bounded Tree-sitter JS/TS pass replaces the affected sink heuristics, and Python template/session/context modelling is more precise. All 1,470 exposed synthetic label outcomes are preserved, with the same unscorable PySASTBench case; total unrelated alert payloads differ. These results are development-exposed, not independent accuracy or exploit verification. Python 3.10+ is now required, with 3.12 verified. Automatic approval review blocked backend restart, so manual activation may still be required.
 
 Latest [application-source and launch-binding checkpoint](evaluation/application-context-2026-11-15/README.md): 882 Python tests, 23 frontend tests and production build pass. All 26 exposed advisory candidates now have source observations and assistant condition reviews: seven have direct package calls, nineteen have no direct usage observed; none is confirmed as an application vulnerability by this replay. HTTP and absolute launches accept explicit hash-bound implementation claims; unpinned packages can expose a unique collected-version candidate. These are distinct from runtime verification. The Office Word absolute declaration is source-bound under an explicit mapping but still yields zero tool groups; Figma remote identity and arxiv distribution metadata remain unknown. Matching deployed/isolated environments and affected/repaired behavior tests are still needed.
 
@@ -40,8 +42,8 @@ The frontend displays the principal finding, obligation, dependency and correlat
 
 | Measurement | Recorded result | Meaning |
 | --- | --- | --- |
-| Python suite | **882 pass**, one dependency deprecation warning | Current application-evidence regression checkpoint |
-| Frontend | **23 pass; production build passes** | Application observations, floating candidates, explicit source bindings and provenance tested |
+| Python suite | **933 pass**, one dependency deprecation warning | Current detector-repair regression checkpoint |
+| Frontend | **25 pass; production build passes** | Application observations, source bindings, provenance and readable local timestamps tested |
 | Synthetic stability | **1,470 case outcomes and alert counts unchanged** after the latest detector changes | Recent changes preserve those exposed regressions |
 | Offline smoke | **52.89 seconds / 120 seconds**, 273 files read from 275 selected | One pinned offline SAST/AI/agentic workload; not a capacity or speed ranking |
 | Incomplete coverage | Three application notices, 12 context findings, two oversized files in that smoke | A completed scan is not complete analysis of every input |

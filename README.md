@@ -17,6 +17,7 @@ The broader project goal is a unified security platform for application code, de
 | --- | --- |
 | Inspectable findings | Source/sink traces, exact locations, remediation, confidence, evidence type and explicit assumptions |
 | Python flow analysis | Selected framework/CLI inputs, local imports and helpers, containers, returns, instance state and context-specific sanitizers |
+| Selected JS/TS source/sink checks | Syntax-based Express/browser/Node inputs, imported shell/SQL APIs, multiline calls, safe SQL values and supported HTML text encoding |
 | AI and agent coverage | Selected model-output-to-dangerous-operation flows, credential candidates, MCP configuration and tool/permission checks |
 | Security-state checks | Bounded authorization, JWT/JWS, HTTP framing, HTML transformation, TLS and AST-interpreter checks |
 | Live dependency evidence | OSV exact-version matching, advisory aliases, severity provenance, fixed-version boundaries and CycloneDX inventory |
@@ -28,12 +29,12 @@ Repository code is analyzed as text. Runtime verification is a separate research
 
 ## Measured results
 
-Updated 15 November 2026. Application-evidence core checkpoint `71e6c88`; detection benchmark checkpoint `7b64719`.
+Updated 17 November 2026. Detection repair checkpoint `b7ca4da`; current exposed-corpus replay preserves the previous label outcomes.
 
 | Measurement | Result |
 | --- | ---: |
-| Python regression tests | **882 passing** |
-| Frontend checkpoint | **23 passing tests; production build passes** |
+| Python regression tests | **933 passing** |
+| Frontend checkpoint | **25 passing tests; production build passes** |
 | Synthetic case outcomes tracked | **1,470** |
 | Exposed OWASP validation recall / label-matched precision | **91.67% / 100%** |
 | Exposed OWASP test recall / label-matched precision | **73.03% / 100%** |
@@ -44,10 +45,11 @@ Updated 15 November 2026. Application-evidence core checkpoint `71e6c88`; detect
 | Frozen real-repository correlation pilot | **3 repositories; 126 verified files; 7 unresolved declarations; 0 groups** |
 | Exposed real lockfile development replay | **37/37 OSV queries complete; 26 advisory matches across 10 packages** |
 | Exposed advisory application-source review | **26 reviewed: 7 with direct package calls; 19 without direct usage observed; no application vulnerabilities confirmed** |
+| Supplied noisy-report development repair | **Same 65 files: 38 → 11 non-informational candidates; 23 audited false-positive paths removed; 3 missed paths added** |
 | Pilot projects with selected before/after behavior checks | **10** |
 | Pinned offline scan smoke | **273 files read in 52.89 seconds** |
 
-The [application-evidence increment](docs/evaluation/application-context-2026-11-15/README.md) adds advisory source observations, explicit HTTP/absolute implementation bindings and floating-package candidates. These distinguish inspectable source claims from runtime verification. The earlier [tool-level correlation increment](docs/evaluation/tool-correlation-2026-11-15/README.md) includes original controls and two upstream source examples; these are not independent real-world accuracy. Runtime checks comprise five unmodified upstream pairs, two adapted upstream pairs and three author-derived pairs; they validate selected library behavior. Scanner detection results are reported separately in the [assessment](docs/PROJECT_ASSESSMENT.md).
+The latest [report repair](docs/evaluation/report-repair-2026-11-17/README.md) replaces affected text heuristics with bounded syntax/context checks. Its remaining candidates are nine source/sink flows and two unverified credential literals, not eleven confirmed vulnerabilities. All 1,470 exposed synthetic label outcomes are preserved; some unrelated alert payloads changed. This is development evidence, not new holdout accuracy. Earlier [application evidence](docs/evaluation/application-context-2026-11-15/README.md) and [tool-level correlation](docs/evaluation/tool-correlation-2026-11-15/README.md) distinguish source claims from runtime verification. Selected runtime checks comprise five unmodified upstream pairs, two adapted upstream pairs and three author-derived pairs. Detailed limits remain in the [assessment](docs/PROJECT_ASSESSMENT.md).
 
 ### Benchmark comparison
 

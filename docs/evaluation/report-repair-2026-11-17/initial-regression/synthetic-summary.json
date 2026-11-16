@@ -1,0 +1,60 @@
+{
+  "exposed_data": true,
+  "partitions": {
+    "development": {
+      "summary": {
+        "tp": 202,
+        "fn": 77,
+        "fp": 10,
+        "tn": 448,
+        "errors": 0,
+        "precision": 0.9528301886792453,
+        "recall": 0.7240143369175627,
+        "f1": 0.8228105906313645,
+        "false_positive_rate": 0.021834061135371178
+      },
+      "case_outcomes_and_alert_counts_unchanged": false
+    },
+    "validation": {
+      "summary": {
+        "tp": 61,
+        "fn": 23,
+        "fp": 0,
+        "tn": 164,
+        "errors": 0,
+        "precision": 1.0,
+        "recall": 0.7261904761904762,
+        "f1": 0.8413793103448276,
+        "false_positive_rate": 0.0
+      },
+      "case_outcomes_and_alert_counts_unchanged": false
+    },
+    "test": {
+      "summary": {
+        "tp": 65,
+        "fn": 24,
+        "fp": 0,
+        "tn": 156,
+        "errors": 0,
+        "precision": 1.0,
+        "recall": 0.7303370786516854,
+        "f1": 0.8441558441558441,
+        "false_positive_rate": 0.0
+      },
+      "case_outcomes_and_alert_counts_unchanged": true
+    },
+    "pysastbench": {
+      "summary": {
+        "tp": 93,
+        "fn": 26,
+        "fp": 4,
+        "tn": 116,
+        "errors": 1,
+        "precision": 0.9587628865979382,
+        "recall": 0.7815126050420168,
+        "false_positive_rate": 0.03333333333333333
+      },
+      "case_outcomes_and_alert_counts_unchanged": false
+    }
+  }
+}
