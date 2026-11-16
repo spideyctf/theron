@@ -5,6 +5,18 @@ import type { ApplicationReview, CorrelationEndpoint, Finding, ScanJob, ScanResu
 type Component = { name?: string; version?: string; purl?: string; type?: string; 'bom-ref'?: string; properties?: { name: string; value: string }[] }
 type Bom = { bomFormat?: string; specVersion?: string; components?: Component[] }
 const pretty = (value: unknown) => JSON.stringify(value, null, 2)
+export function formatScanTimestamp(value: string, timeZone?: string) {
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return 'Unavailable'
+  return new Intl.DateTimeFormat(undefined, {
+    year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit',
+    hour12: true, timeZoneName: 'short', ...(timeZone ? {timeZone} : {}),
+  }).format(date)
+}
+
+function ScanTimestamp({value}: {value: string}) {
+  return <time dateTime={value} title={`Recorded timestamp: ${value}`}>{formatScanTimestamp(value)}</time>
+}
 const endpoint = (value: CorrelationEndpoint) => value.symbol
   ? `${value.symbol}${value.file_path ? ` (${value.file_path}${value.line_number ? `:${value.line_number}` : ''})` : ''}`
   : value.package ? `${value.package}@${value.version || 'unknown version'}` : value.file_path || value.fingerprint || value.kind
@@ -92,7 +104,7 @@ export function ScanDetails({ result, job, sample }: { result: ScanResult; job: 
     <div><dt>Modules completed</dt><dd>{result.modules_run.join(', ') || 'None'}</dd></div><div><dt>Informational notices</dt><dd>{notices.length}</dd></div>
     <div><dt>Report origin</dt><dd>{sample ? 'Illustrative sample data' : 'Live scan'}</dd></div>
     <div><dt>MCP correlation pilot</dt><dd>{result.correlation_enabled === undefined ? 'Not supplied' : result.correlation_enabled ? 'Enabled' : 'Disabled'}</dd></div>
-    {job && <><div><dt>Scan ID</dt><dd><code>{job.id}</code></dd></div><div><dt>Status</dt><dd>{job.status}</dd></div><div><dt>Modules requested</dt><dd>{job.modules.join(', ')}</dd></div><div><dt>Experimental rules</dt><dd>{job.include_experimental ? 'Enabled — review candidates' : 'Disabled'}</dd></div><div><dt>Created at</dt><dd>{job.created_at}</dd></div><div><dt>Finished at</dt><dd>{job.finished_at || 'Not finished'}</dd></div></>}
+    {job && <><div><dt>Scan ID</dt><dd><code>{job.id}</code></dd></div><div><dt>Status</dt><dd>{job.status}</dd></div><div><dt>Modules requested</dt><dd>{job.modules.join(', ')}</dd></div><div><dt>Experimental rules</dt><dd>{job.include_experimental ? 'Enabled — review candidates' : 'Disabled'}</dd></div><div><dt>Created at</dt><dd><ScanTimestamp value={job.created_at} /></dd></div><div><dt>Finished at</dt><dd>{job.finished_at ? <ScanTimestamp value={job.finished_at} /> : 'Not finished'}</dd></div></>}
   </dl><p className="report-note">An empty findings list does not prove a project is secure. Review informational notices for skipped files, unresolved versions and unavailable advisory lookups. History resets when the backend restarts.</p>
     {job && <details className="raw-data"><summary>Complete job metadata</summary><pre>{pretty(Object.fromEntries(Object.entries(job).filter(([key]) => key !== 'result')))}</pre></details>}
     <details className="raw-data"><summary>Complete report data</summary><pre>{pretty(result)}</pre></details>

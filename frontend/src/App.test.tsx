@@ -117,7 +117,7 @@ describe('workspace', () => {
     await user.click(screen.getByRole('tab', { name: 'Scan details' }))
     expect(screen.getByText('audit-job')).toBeInTheDocument()
     expect(screen.getByText('Enabled — review candidates')).toBeInTheDocument()
-    expect(screen.getByText('2026-10-28T10:01:00Z', { exact: true })).toBeInTheDocument()
+    expect(screen.getByTitle('Recorded timestamp: 2026-10-28T10:01:00Z')).toHaveAttribute('datetime', '2026-10-28T10:01:00Z')
     await user.click(screen.getByText('Complete report data', { exact: true }))
     expect(screen.getByText(/"repo_full_name": "owner\/audit"/)).toBeVisible()
   })
