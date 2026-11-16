@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- **Python 3.9 or higher**
+- **Python 3.10 or higher** (Python 3.12 is the verified development setup)
 - **pip** (comes with Python)
 - **A GitHub Personal Access Token** (only needed for GitHub scanning, not for local scans)
 

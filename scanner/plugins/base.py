@@ -67,6 +67,15 @@ class Scanner(ABC):
         from scanner.models import Finding, Severity, Category
 
         findings = []
+        from pathlib import PurePosixPath
+        basename=PurePosixPath(file_path).name.lower()
+        instruction_file=basename in {'skill.md','agents.md','agent.md','claude.md','instructions.md','gummie.md'} or any(word in basename for word in ('system_prompt','instruction','skill'))
+        if (rule.id.startswith(('AG-AP-','AI-PI-')) and basename.endswith(('.md','.txt')) and not instruction_file):
+            return findings
+        # Identifier spelling alone cannot establish an LLM source. Python/JS flow
+        # analyzers own these boundaries; retire the ungrounded text heuristics.
+        if rule.id.startswith('AI-TAINT-'):
+            return findings
         if rule.maturity == "experimental" and not getattr(self, "include_experimental", False):
             return findings
         lines = content.splitlines()
@@ -93,6 +102,8 @@ class Scanner(ABC):
 
             # Skip placeholders — only check the matched text, not the whole line
             matched_text = match.group()
+            if rule.id=='PY-SAST-001' and matched_text.endswith('request.') and line[match.end():].startswith('remote_addr'):
+                continue
             if self._is_placeholder(matched_text):
                 continue
             if rule.skip_if_contains and any(value.lower() in line.lower() for value in rule.skip_if_contains):
@@ -111,6 +122,8 @@ class Scanner(ABC):
                 severity = Severity(severity_str)
             except ValueError:
                 severity = Severity.MEDIUM
+            if rule.id in {'AI-ID-001','AI-ID-003'}:
+                severity=Severity.INFO
 
             try:
                 category = Category(rule.category)
@@ -133,6 +146,7 @@ class Scanner(ABC):
                 rule_id=rule.id,
                 references=rule.references,
                 maturity=rule.maturity,
+                evidence_kind='configuration-observation' if rule.id in {'AI-ID-001','AI-ID-003'} else 'static-pattern',
             ))
 
         return findings

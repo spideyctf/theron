@@ -70,6 +70,9 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.flask_route = 0
         self.auth_stores = set()
         self.project = project
+        delimiter_keys={'variable_start_string','variable_end_string','block_start_string','block_end_string','line_statement_prefix','jinja_options','jinja_env'}
+        # A changed delimiter contract invalidates default-Jinja filtering assumptions.
+        self.custom_template_delimiters=any(key in content for key in delimiter_keys)
         if project:
             self.functions.update(project.functions)
             self.classes.update(project.classes)
@@ -631,11 +634,21 @@ class PythonAIAnalyzer(ast.NodeVisitor):
                 if source:
                     if node.func.attr == 'replace' and len(node.args) == 2 and not node.keywords:
                         removed, inserted = (self._constant(arg) for arg in node.args)
-                        if removed in {"'", '"'} and isinstance(inserted, str) and removed not in inserted:
+                        if not isinstance(removed,str) or not isinstance(inserted,str):
+                            return (source[0],source[1],frozenset())+source[3:4]
+                        flags=set(source[2] if len(source)>2 else ())
+                        flags={flag for flag in flags if not (flag.startswith('excludes-') and flag[len('excludes-'):] in inserted)}
+                        source=(source[0],source[1],frozenset(flags))+source[3:4]
+                        if removed in {"'", '"', '{', '}'} and isinstance(inserted, str) and removed not in inserted:
                             return self._mark_safe(source, 'excludes-' + removed)
+                    if node.func.attr == 'decode':
+                        return (source[0],source[1],frozenset())+source[3:4]
+                    if node.func.attr == 'format':
+                        return (source[0],source[1],frozenset(flag for flag in (source[2] if len(source)>2 else ()) if not flag.startswith('excludes-')))+source[3:4]
                     return source
                 if node.func.attr == "format":
-                    return next((self._source(value) for value in node.args + [kw.value for kw in node.keywords] if self._source(value)), None)
+                    combined=self._combine(self._source(value) for value in node.args + [kw.value for kw in node.keywords])
+                    return (combined[0],combined[1],frozenset(flag for flag in combined[2] if not flag.startswith('excludes-')))+combined[3:4] if combined else None
             if self._is_llm_call(node):
                 return ("model-response", node.lineno)
         if resolved == "sys.argv":
@@ -664,7 +677,16 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         # shortcut: propagate transparent expressions only, expand with framework-specific tests.
         if isinstance(node, (ast.Attribute, ast.Subscript, ast.BinOp, ast.BoolOp, ast.JoinedStr, ast.FormattedValue, ast.Starred,
                              ast.List, ast.Tuple, ast.Dict, ast.Await)):
-            return self._combine(self._source(child) for child in ast.iter_child_nodes(node))
+            combined=self._combine(self._source(child) for child in ast.iter_child_nodes(node))
+            if combined and isinstance(node,(ast.BinOp,ast.JoinedStr)):
+                # Literal construction can reintroduce delimiters. Hole-level proofs
+                # remain in interpolation snapshots, but are not whole-string proofs.
+                flags=set(combined[2])
+                for part in ast.walk(node):
+                    if isinstance(part,ast.Constant) and isinstance(part.value,str):
+                        flags={flag for flag in flags if not (flag in {'excludes-{','excludes-}'} and flag[-1] in part.value)}
+                combined=(combined[0],combined[1],frozenset(flags))+combined[3:4]
+            return combined
         return None
 
     def _assign(self, target, value):
@@ -722,11 +744,17 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             if owner in {'flask.session', 'quart.session', 'django.http.HttpRequest.session'}:
                 incoming = self._combine([source, key_source])
                 if incoming and incoming[0] == 'input':
-                    self._add(target, 'PY-SAST-SESSION-001', 'External input crosses a session storage boundary',
-                              Severity.MEDIUM, Category.SAST,
-                              'A request-controlled key or value is stored in session state. Verify validation and authorization before treating it as trusted identity or privilege data.',
+                    dynamic_key=bool(key_source and key_source[0]=='input')
+                    session_key=self._constant(target.slice)
+                    identity_key=session_key in {'userid','user_id','uid','authenticated','is_authenticated','is_admin','admin','role','roles','permissions','auth_token','access_token','csrf_token'} if isinstance(session_key,str) else False
+                    security_state=dynamic_key or identity_key
+                    self._add(target, 'PY-SAST-SESSION-001', 'External input controls a session key' if dynamic_key else 'External input reaches a conventional security-state session key' if identity_key else 'External input crosses a session storage boundary',
+                              Severity.MEDIUM if security_state else Severity.INFO, Category.SAST,
+                              'A request-controlled session key can select which server-side state is overwritten. Apply a fixed key allowlist; authentication impact still requires review.' if dynamic_key else
+                              'Untrusted input is stored under a conventional identity/privilege/token session key. This is an explicit key-name contract, not proof of an authentication bypass; verify application semantics and prior validation.' if identity_key else
+                              'A request-controlled value is stored under a fixed session key. This alone does not establish a privilege or authorization violation.',
                               'Validate the value against server-side records and allowlist session keys before storing trusted state.',
-                              'CWE-501', source_line=incoming[1], source_file=incoming[3] if len(incoming)>3 else None, confidence='medium')
+                              'CWE-501', source_line=incoming[1], source_file=incoming[3] if len(incoming)>3 else None, confidence='medium', evidence_kind='static-flow' if dynamic_key else 'advisory-flow' if identity_key else 'review-context', maturity='advisory' if identity_key else None)
             if source and source[0] == 'weak-random' and (self._key(target.value) in self.auth_stores
                     or owner in {'flask.session', 'quart.session'}):
                 self._weak_random_sink(target, source)
@@ -984,6 +1012,13 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         self.literal_sets = {key: value for key, value in states[0][2].items()
                              if all(key in state[2] and ast.dump(state[2][key]) == ast.dump(value)
                                     for state in states)}
+        # Untainted alternatives (including None) cannot introduce an untrusted
+        # template hole. Retain equal construction snapshots on all tainted paths.
+        for key in self.taint:
+            alternatives=[state[2].get(key) for state in states if key in state[1]]
+            if alternatives and isinstance(alternatives[0],ast.JoinedStr) and all(
+                    isinstance(value,ast.JoinedStr) and ast.dump(value)==ast.dump(alternatives[0]) for value in alternatives):
+                self.literal_sets[key]=alternatives[0]
         # Preserve equal-length list alternatives so later appends retain slots.
         for key, value in states[0][2].items():
             alternatives = [state[2].get(key) for state in states]
@@ -1023,6 +1058,12 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             self._visit_block(node.body if constant else node.orelse)
             return
         initial = self._state()
+        none_guard=None
+        if (isinstance(node.test,ast.Compare) and len(node.test.ops)==1
+                and isinstance(node.test.ops[0],(ast.Is,ast.IsNot))
+                and isinstance(node.test.left,ast.Name) and isinstance(node.test.comparators[0],ast.Constant)
+                and node.test.comparators[0].value is None):
+            none_guard=node.test.left.id,isinstance(node.test.ops[0],ast.Is)
         quote_guard = None
         if (isinstance(node.test, ast.Compare) and len(node.test.ops) == 1
                 and isinstance(node.test.ops[0], (ast.In, ast.NotIn))
@@ -1035,6 +1076,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         literal_boundary = self._python_literal_boundary(node.test)
         exception_key, exception_positive = self._exception_class_boundary(node.test)
         states = []
+        if none_guard and none_guard[1]:self.taint.pop(none_guard[0],None)
         if exception_key and exception_positive:
             self.taint[exception_key] = self._mark_safe(self.taint.get(exception_key),'exception-class')
         if quote_guard and isinstance(node.test.ops[0], ast.NotIn):
@@ -1049,6 +1091,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         if self._visit_block(node.body):
             states.append(self._state())
         self._restore(initial)
+        if none_guard and not none_guard[1]:self.taint.pop(none_guard[0],None)
         if exception_key and not exception_positive:
             self.taint[exception_key] = self._mark_safe(self.taint.get(exception_key),'exception-class')
         if literal_boundary:
@@ -1125,7 +1168,32 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             return [value.value]
         if isinstance(value, ast.BinOp) and isinstance(value.op, ast.Add):
             return self._xpath_parts(value.left, depth + 1) + self._xpath_parts(value.right, depth + 1)
+        if isinstance(value,ast.BinOp) and isinstance(value.op,ast.Mod) and isinstance(self._constant(value.left),str):
+            literal=self._constant(value.left)
+            matches=list(re.finditer(r'% ?s',literal))
+            if len(matches)==1:
+                span=matches[0]
+                return [ast.Constant(value=literal[:span.start()]),value.right,ast.Constant(value=literal[span.end():])]
         return [value]
+
+    def _template_text_boundary(self, expression):
+        if self.custom_template_delimiters:return False
+        state=None;tail='';seen=False
+        for part in self._xpath_parts(expression):
+            if isinstance(part,ast.Constant) and isinstance(part.value,str):
+                text=tail+part.value
+                for token in re.findall(r'\{\{|\{%|\{#|}}|%}|#}',text):
+                    if state is None and token in {'{{','{%','{#'}:state=token
+                    elif state and token=={'{{':'}}','{%':'%}','{#':'#}'}[state]:state=None
+                tail=text[-1:] if text else ''
+            else:
+                source=part.value if isinstance(part,ast.Constant) and isinstance(part.value,tuple) else self._source(part)
+                if source:
+                    seen=True
+                    if state is not None or tail=='{' or not (self._safe_for(source,'excludes-{') and self._safe_for(source,'excludes-}')):return False
+                    tail=''
+                else:return False
+        return seen
 
     def _xpath_source(self, expression):
         """Quote exclusion protects only substitution inside that XPath literal."""
@@ -1483,10 +1551,11 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         builtin = node.func.id if isinstance(node.func, ast.Name) and node.func.id not in self.bindings else ""
         values = node.args[:1] + [kw.value for kw in node.keywords if kw.arg in {"source", "object", "command", "args", "s", "data", "file"}]
         source = next((self._source(value) for value in values if self._source(value)), None)
-        if name in {'flask.render_template_string', 'quart.render_template_string'}:
-            template = node.args[0] if node.args else next((kw.value for kw in node.keywords if kw.arg == 'source'), None)
+        if name in {'flask.render_template_string', 'quart.render_template_string', 'jinja2.Template'}:
+            template = node.args[0] if node.args else next((kw.value for kw in node.keywords if kw.arg in {'source','s'}), None)
             template_source = self._source(template)
-            if template_source and template_source[0] in {'input','model'}:
+            default_delimiters_safe=self._template_text_boundary(template)
+            if template_source and template_source[0] in {'input','model'} and not default_delimiters_safe:
                 self._add(node, 'PY-SAST-SSTI-001', 'Untrusted text controls server-side template source', Severity.HIGH, Category.SAST,
                           f'Untrusted text from line {template_source[1]} reaches the source argument of a resolved template-string renderer. Context-variable values are not treated as template source.',
                           'Keep template source trusted and pass untrusted values through template context variables. HTML escaping does not neutralize template syntax.',
@@ -1495,6 +1564,10 @@ class PythonAIAnalyzer(ast.NodeVisitor):
         shell_sink = name in {"os.system", "os.popen"} or (
             name in {"subprocess.run", "subprocess.call", "subprocess.Popen", "subprocess.check_call", "subprocess.check_output"}
             and any(kw.arg == "shell" and isinstance(kw.value, ast.Constant) and kw.value.value is True for kw in node.keywords))
+        if shell_sink and node.args and self._name(node.args[0]) in {'flask.request.remote_addr','quart.request.remote_addr'}:
+            self._add(node,'PY-SHELL-PEER-001','Peer address used as a shell command; injection control unverified',Severity.INFO,Category.SAST,
+                      'A peer address reaches a shell command. Normal IP address syntax does not establish attacker-controlled shell syntax; proxy and deployment semantics need review.',
+                      'Avoid shell execution for peer addresses and use fixed operations with structured arguments.', 'CWE-78', evidence_kind='review-context')
         if name in {'subprocess.run', 'subprocess.call', 'subprocess.Popen', 'subprocess.check_call', 'subprocess.check_output'}:
             arguments = node.args[0] if node.args else next((k.value for k in node.keywords if k.arg == 'args'), None)
             shell_source = self._explicit_shell_source(arguments)
@@ -1639,7 +1712,7 @@ class PythonAIAnalyzer(ast.NodeVisitor):
             description=description, file_path=self.file_path, line_number=node.lineno,
             code_snippet=snippet, recommendation=recommendation, cwe=cwe,
             confidence=confidence or ("medium" if experimental else "high"), rule_id=rule_id,
-            maturity=maturity or ("experimental" if experimental else "stable"), evidence_kind="coverage-notice" if severity == Severity.INFO else evidence_kind,
+            maturity=maturity or ("experimental" if experimental else "stable"), evidence_kind="coverage-notice" if severity == Severity.INFO and evidence_kind=='static-flow' else evidence_kind,
             trace=([{"role": "source", "file_path": source_file or self.file_path, "line_number": source_line}] if source_line else [])
                   + [{"role": "sink", "file_path": self.file_path, "line_number": node.lineno}],obligation=obligation))
 

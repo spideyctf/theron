@@ -146,6 +146,8 @@ class AgenticScanner(Scanner):
         return any(re.search(p, content, re.IGNORECASE) for p in indicators)
 
     def _is_agent_config(self, file_path: str, content: str) -> bool:
+        if file_path.replace('\\','/').rsplit('/',1)[-1].lower() in {'agents.md','agent.md','skill.md','instructions.md'}:
+            return True
         config_indicators = [
             "agent_config", "agent_type", "max_iterations", "max_tokens",
             "allowed_tools", "permissions", "capabilities", "agent_role",

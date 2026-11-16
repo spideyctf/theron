@@ -56,7 +56,7 @@ rules:
   - id: PY-SAST-006
     title: "SQL Injection"
     severity: CRITICAL
-    pattern: '(execute|cursor\.execute)\s*\(\s*.*(?:f[''"]|\.format|%s|\+).*user|request|input'
+    pattern: '\b(?:execute|cursor\.execute)\s*\(\s*.*(?:f[''"]|\.format|%s|\+).*(?:user|request|input)'
     cwe: CWE-89
     confidence: medium
     description: "Potential SQL injection — user input concatenated into SQL query string."

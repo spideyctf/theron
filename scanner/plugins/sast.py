@@ -47,6 +47,9 @@ class SASTScanner(Scanner):
                     evidence_kind='coverage-notice'))
 
         for file_path, content in context.files.items():
+            if file_path.endswith(('.js','.jsx','.ts','.tsx')) and not any(skip in file_path.replace('\\','/').split('/') for skip in self.SKIP_DIRS):
+                from scanner.javascript_analysis import analyze_javascript
+                findings.extend(analyze_javascript(file_path,content))
             if file_path.endswith(".py") and not any(skip in file_path.replace("\\", "/").split("/") for skip in self.SKIP_DIRS):
                 findings.extend(analyze_python(file_path, content, module=self.name, project=project,
                                                include_experimental=self.include_experimental,
@@ -67,6 +70,8 @@ class SASTScanner(Scanner):
                     continue
 
                 for rule in rule_set.rules:
+                    if ext in {'.js','.jsx','.ts','.tsx'} and rule.id in {'JS-SAST-001','JS-SAST-002','JS-SAST-003'}:
+                        continue
                     # If rule specifies file extensions, filter by them
                     if rule.file_extensions and ext not in rule.file_extensions:
                         continue

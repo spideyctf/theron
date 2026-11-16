@@ -59,7 +59,7 @@ def normalize_findings(findings: Iterable[Finding], config: Optional[dict] = Non
             finding.recommendation = "If this value is a real credential, revoke or rotate it and remove it from source. For a deliberate fixture, keep it clearly labeled as synthetic."
             if finding.severity == Severity.CRITICAL:
                 finding.severity = Severity.HIGH
-        elif finding.severity == Severity.INFO:
+        elif finding.severity == Severity.INFO and finding.evidence_kind in {'static-pattern','static-flow'}:
             finding.evidence_kind = "coverage-notice"
         finding.fingerprint = finding.fingerprint or fingerprint(finding)
         finding.status = "existing" if finding.fingerprint in accepted else "new"

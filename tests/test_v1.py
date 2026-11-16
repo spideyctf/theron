@@ -55,7 +55,7 @@ def test_sarif_exposes_fingerprint_and_status():
 def test_javascript_rules_are_marked_advisory():
     root = Path(__file__).resolve().parents[1]
     context = ScanContext(
-        files={"app.js": "eval(userInput)"}, repo_info={}, project_profile=ProjectProfile(),
+        files={"app.js": "eval(process.argv[2])"}, repo_info={}, project_profile=ProjectProfile(),
         rule_loader=RuleLoader(root / "rules"), config={"include_experimental": True},
     )
     findings = ensure_plugins_loaded()["sast"].scan(context)
